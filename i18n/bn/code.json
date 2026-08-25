@@ -63,10 +63,6 @@
     "message": "বিস্তীর্ণ",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "বস্তু ১|{count}বস্তু",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "সহায়তার পৃষ্ঠা",
     "description": "The ARIA label for the docs pagination"
@@ -138,10 +134,6 @@
     "message": "ট্যাগ:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "বন্ধ",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "সতর্কতা",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -166,6 +158,10 @@
     "message": "সতর্কতা",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "বন্ধ",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "সম্প্রতি ব্যবহৃত ব্লগ",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -177,6 +173,10 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "স্থানীয় হোস্ট-নেম সম্পাদনা 'আ'{label}'আ'",
     "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(নতুন ট্যাবের মধ্যে খোলা হবে)",
+    "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "প্রধান",
@@ -230,6 +230,10 @@
     "message": "হোম পেজ",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "সাইডবার",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "স্থানীয় অ্যাড্রেস বই",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -237,10 +241,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "স্থানীয় অ্যাড্রেস বই",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "সাইডবার",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "ন্যাভিগেশন বার বন্ধ করো",
@@ -345,6 +345,10 @@
     "message": "এই পৃষ্ঠা একটি খসড়া। এটা শুধু নমুনায় দেখা যাবে এবং উৎপাদনশীল নির্মাণ থেকে বঞ্চিত হবে।",
     "description": "The draft content banner message"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "বস্তু ১|{count}বস্তু",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "পুনরায় প্রচেষ্টা করুন",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
@@ -356,9 +360,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "ট্যাগ",
     "description": "The title of the tag list page"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(নতুন ট্যাবের মধ্যে খোলা হবে)",
-    "description": "The ARIA label for the external link icon"
   }
 }

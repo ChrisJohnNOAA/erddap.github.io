@@ -1,93 +1,95 @@
 ---
 sidebar_position: 3
 ---
-#  ERDDAP™ Kibocsátási folyamat
-* Győződjön meg róla, hogy a képösszehasonlítás fájlok rendelkezésre állnak (Ez azt jelenti, hogy futás. `mvn ellenőrzés` , ha azt szeretnénk, hogy gyorsítsa fel, hogy korlátozza, hogy csak az ImageComparison csoport azonban megjegyzi, hogy még mindig szükséges futtatni Jetty tesztek) 
-* A függések frissítése
+#  ERDDAP™ Release Process
+* Győződjön meg róla, hogy a kép összehasonlító fájlok elérhetőek (Ez azt jelenti, hogy futni `mvn ellenőrzés` , ha azt szeretné, hogy felgyorsítsa, hogy korlátozza csak a ImageComparison csoport, bár megjegyzi, hogy még mindig szüksége van futó Jetty tesztek) 
+* frissítési függőségek
 ```
 mvn versions:display-dependency-updates   // (displays updates)
 mvn versions:use-latest-versions  // (updates dependencies, though sometimes we don’t want to do all of them)
 mvn versions:update-properties // (updates versions in the property block)
 ```
-* A bővítmények frissítése
+* Frissítés pluginok
 ```
 mvn versions:display-plugin-updates // (displays updates, need to manually update)
 ```
-* Futtasd le a teszteket, hogy a függőségi frissítések ne törjenek meg semmit minden nagyobb konfigurációnál. (adatsorok különösen, bár bármilyen más jelentős beállítások is) . Vegye figyelembe, hogy a külső tesztlakosztály nagyon flúgos lehet. A lassított AWS tesztlakosztály nagyon sokáig eltarthat.
+* Run tesztek, hogy megbizonyosodjanak arról, hogy a függőségi frissítések nem törnek semmit a nagy konfigurációk (különösen az olyan adatkészletek, amelyek egyéb jelentős beállításokat is tartalmaznak) ... Vegye figyelembe, hogy a külső tesztcsomag nagyon ízletes lehet. A lassúAWS tesztcsomag nagyon hosszú időt vehet igénybe.
 ```
 mvn verify
 mvn verify -P external
 mvn verify -P slowAWS
 ```
-* Felhasználás `python fordítás / translate.py` szükség esetén a fordítások frissítése.
-* EDStatic.java készlet fejlesztése A hamisítás módja, a verziószám módosítása és a kiadás dátuma.
-* Csináld meg&#33;
+* Használat `python fordítás/translate.py` szükség esetén frissíteni a fordításokat.
+* EDStatic.java létrehozta a fejlesztést Módja hamis, változtassa meg a verziószámot, és adja meg a kiadás dátumát.
+* Csináld az építést&#33;
 ```
 mvn clean
 mvn compile
 mvn package
 ```
 ## Kanári
-Küldje el a háborús fájlt terjesztésre a Coastwatch szerver vagy más szerver, amely használja a legtöbb adatkészlet típusok és kap egy csomó forgalom.
-Megpróbálunk hibákat találni az épület szélesebb körű elterjedése előtt.
+Küldje el a háborús fájlt a Coastwatch szerveren vagy más szerveren, amely a legtöbb adatkészlettípust használja, és sok forgalmat kap.
+Meg akarjuk próbálni hibákat találni az építkezés szélesebb elosztása előtt.
 
-Az üzenet beillesztése egy új kiadáshoz.
+Tartsa be az üzenetet, amikor egy új kiadásról beszél.
 
-Az általános eljárás a következő:
-* Töltse fel a .war fájlt a parti őrség \\[ Nincs magyar neve \\] / tartalom / erddap /
-* Felhasználóként = tomcat:
-  * In \\[ Nincs magyar neve \\] / Bin /:
-. / shutdow.sh / / használja a "ps-fu tomcat" annak biztosítására, hogy leállt
-  * In \\[ Nincs magyar neve \\] / Webalkalmazások /:
-rm - rf erddap
-Erddap. háború
-cp.. / tartalom / erddap / erddap2.22.war Erddap. War / / vagy bármi is a szám
-  * In \\[ Nincs magyar neve \\] / Bin /:
-/ starttupsh
-  * A ERDDAP visszaadott egy weboldalt, \\[ Nincs magyar neve \\] / Webalkalmazások /:
-chgrp-R erddap erddap
-chmod - R g + rw erddap
-chmod -R o- rwx erddap
+A szabványos eljárás:
+* Töltse fel a .war fájlt a partra \\[ Tomcat \\] /content/erddap/
+* Felhasználóként=tomcat:
+  * Inkább \\[ Tomcat \\] /bin/ :
+./shutdown.sh //use "ps -fu tomcat" annak biztosítása érdekében, hogy megállt
+  * Inkább \\[ Tomcat \\] /webapps/ :
+rm -rf erddap
+rm erddap. háború
+cp ../content/erddap/erddap2.22.war erddap.war/vagy bármi legyen is a szám
+  * Inkább \\[ Tomcat \\] /bin/ :
+./startup.sh
+  * utána ERDDAP visszatért egy weboldalra, \\[ Tomcat \\] /webapps/ :
+Chgrp - R erddap erddap
+Chmod - R g+rw erddap
+Chmod - R o-rwx erddap
 
 ## GitHub kiadás
-Draft the GitHub release, include erddap.war and erddapContent .zip   (nincs verziószám) 
+Raft the GitHub kiadás, beleértve erddap.war és erddapContent .zip   (Nincs verziószám) 
 
 title: The official v2.25 version
-leírja: Lásd a változtatási listát:
+Leírás: Lásd a változások listáját
        https://erddap.github.io/changes#version-225
  
 
-## Dokumentáció frissítése
-* A verziószám frissítése a docusaurus.config.ts fájlban (a lábszárrész) .
-* A dokumentációs oldalak szerkesztése (deploy- install.md és deploy- update.md) .
-  * Keresés \\[ Erddap. War \\]  
-  * A meglévő információk másolása (kissé átalakított) a korábbi létesítmények listájához 2.
-  * Az erddap aktuális megjelenési adatainak módosítása. háború \\[ Erddap. War \\] 
-* Futtassa le a fordítások a dokumentáció oldalon.
-* Készítsen egy húzókérést és egyesítse a változásokat.
-* A dokumentáció telepítése (lásd readme) .
+## Dokumentáció frissítés
+* Frissítse a verziószámot a docusaurus.config.ts fájlban (a lábléc szakaszában) ...
+* Törölje az i18n/en könyvtárat (szükséges, mert az írás-fordítások nem írják felül a meglévő fájlt) futás `npm ír-transzlációk` exportálni az új lábléc.
+* Szerkeszteni a dokumentációs oldalakat (telepítés-install.md és telepítés-update.md) ...
+  * Keresés \\[ erddap.war \\]  
+  * Másolja a meglévő információkat (kissé megreformálva) a korábbi létesítmények listájára.
+  * Változtassa meg a jelenlegi kiadási információkat az erddap számára. háború \\[ erddap.war \\] 
+* Futtassa a dokumentációs oldal fordítását. Javasoljuk, hogy csak fordítsunk olyan oldalakat, amelyek megváltoztak, mivel ez a lépés nagyon lassú lehet.
+  * Győződjön meg róla, hogy a lábléceket az új verziószámmal fordítják le.
+* Készítsen egy húzó kérést, és egyesítse a változásokat.
+* Dokumentációs webhely telepítése (Olvass tovább) ...
 
-## Annak biztosítása, hogy szükség esetén más repók is naprakészek legyenek
-Ez elsősorban azt jelenti, hogy az ErddapContent és az ErdapTest, de a fejlesztési változások során naprakészen kell tartani őket.
+## Gondoskodjon más válaszok naprakészek
+Főleg ez azt jelenti, hogy ErddapContent és ErddapTest, de a fejlesztési változások során naprakészen kell tartani őket.
 
-## A felhasználók értesítése
-Először értesítsenek minden olyan felhasználót, aki változást kért (vagy akinek a hibáit rögzítették) . Adjon nekik időt a változások ellenőrzésére és / vagy a kérdések felvetésére.
+## Bejelentse a felhasználókat
+Először értesítsen minden olyan felhasználót, aki módosított (vagy kinek a hibái rögzítettek) ... Adj nekik időt a változások ellenőrzésére és / vagy kérdéseket.
 
- ERDDAP A 2.25-ös verzió már elérhető&#33;
+ ERDDAP A 2.25 verzió már elérhető&#33;
 
-A változásokról a következő címen olvashat:
+Elolvashatja a változásokat a
  https://erddap.github.io/changes#version-225
  
 
-Néhány változtatás az ön által javasolt változtatás. Köszönöm a javaslatait. Keresd meg a neved a változások listáján, hogy lásd a részleteket. Jó lenne, ha hamarosan kipróbálná az új funkciókat, mielőtt bejelentem ezt az új verziót egy szélesebb közönségnek.
+A változások egy része megváltozik, amit javasolt. Köszönöm nagyon a javaslatokat. Keresse meg a nevét a változások listáján, hogy lássa a részleteket. Nagyszerű lenne, ha hamarosan kipróbálnák az új funkciókat, mielőtt bejelentem volna ezt az új verziót egy szélesebb közönségnek.
 
-Ha Ön ERDDAP adminisztrátor, a korszerűsítési utasítások:
+Ha Ön egy ERDDAP adminisztrátor, a frissítési utasítások vannak
  https://erddap.github.io/docs/server-admin/deploy-update
  
 
-Ha bármilyen problémája, kérdése, javaslata van, kérem, írjon nekem.
+Ha bármilyen problémád van, kérdéseid, javaslataid, küldj nekem.
 
-Köszönöm, hogy használja ERDDAP .
+Köszönöm, hogy használja ERDDAP ...
 
-### A kibocsátás bejelentése
-Küldjön egy bejelentést a bejelentések levelezési listájára.
+### Bejelentkezés
+Küldjön bejelentést a Bejelentések Mailing listájához.

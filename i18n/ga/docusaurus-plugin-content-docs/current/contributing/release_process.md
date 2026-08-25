@@ -2,8 +2,8 @@
 sidebar_position: 3
 ---
 #  ERDDAP™ irl - Library Service
-* Déan cinnte comhaid comparáid íomhá ar fáil (d'fhéadfadh sé seo i gceist ag rith `mvn fhíorú` , más mian leat chun dlús a chur suas srian a chur ach an grúpa ImageComparison cé faoi deara go n-éilíonn fós tástálacha Scairdty ag rith) 
-* spleáchas cothrom le dáta
+* Déan cinnte comhaid comparáid íomhá ar fáil (D'fhéadfadh sé seo i gceist ag rith `mvn fhíorú` , más mian leat chun dlús a chur suas a shrianadh go dtí díreach ar an ngrúpa ImageComparison cé faoi deara go n-éilíonn fós ag rith tástálacha Jetty) 
+* Nuashonraigh spleáchas
 ```
 mvn versions:display-dependency-updates   // (displays updates)
 mvn versions:use-latest-versions  // (updates dependencies, though sometimes we don’t want to do all of them)
@@ -58,12 +58,14 @@ cur síos: Féach ar an liosta athruithe ar
  
 
 ## Nuashonraigh Doiciméid
-* Nuashonrú an uimhir leagan sa docusaurus.config.ts comhad (sa rannóg footer) .
+* Nuashonrú an uimhir leagan sa docusaurus.config.ts comhad (i alt footer) .
+* Scrios an eolaire i18n/en (ag teastáil toisc nach mbeidh scríobh-translations scríobh comhad atá ann cheana) agus a reáchtáil `npm reáchtáil scríobh-translations` a onnmhairiú an teaghrán footer nua.
 * Cuir na leathanaigh doiciméadachta in eagar (imscaradh-install.md agus imscaradh-suasdate.md) .
   * Cuardaigh le haghaidh \\[ erddap.war \\]  
-  * Cóipeáil an t-eolas atá ann cheana (beagán reformatted) leis an liosta de na suiteálacha roimhe seo 2. 2. 2.
+  * Cóipeáil an t-eolas atá ann cheana (beagán reformatted) leis an liosta de na suiteálacha roimhe seo.
   * Athraigh an t-eolas scaoileadh reatha le haghaidh erddap. cogadh ag \\[ erddap.war \\] 
-* Rith na haistriúcháin don suíomh doiciméadúcháin.
+* Rith na haistriúcháin don suíomh doiciméadúcháin. Moltar ach leathanaigh a aistriú a d'athraigh ós rud é gur féidir an chéim seo a bheith an-mhall.
+  * Bí cinnte go bhfuil na footers aistrithe leis an uimhir leagan nua.
 * Déan iarratas tarraingt agus na hathruithe a chumasc.
 * Déan iniúchadh ar an suíomh doiciméadúcháin (féach readme) .
 

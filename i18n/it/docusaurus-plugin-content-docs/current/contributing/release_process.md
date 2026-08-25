@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 #  ERDDAP™ Processo di rilascio
-* Assicurarsi che i file di confronto immagine siano disponibili (questo potrebbe significare `verifica mvn` , se si desidera accelerare che fino limitarsi a solo il gruppo ImageComparison anche se nota che richiede ancora eseguire test Jetty) 
+* Assicurarsi che i file di confronto immagine siano disponibili (questo potrebbe significare `verifica mvn` , se si desidera accelerare che fino limitarsi a solo il gruppo ImageComparison anche se nota che ancora richiede l'esecuzione di test Jetty) 
 * Dipendenze di aggiornamento
 ```
 mvn versions:display-dependency-updates   // (displays updates)
@@ -13,7 +13,7 @@ mvn versions:update-properties // (updates versions in the property block)
 ```
 mvn versions:display-plugin-updates // (displays updates, need to manually update)
 ```
-* Eseguire test per assicurarsi che gli aggiornamenti di dipendenza non hanno rotto nulla per tutte le configurazioni principali (parsing in particolare, anche se altre impostazioni significative) . Si noti che la suite di prova esterna può essere molto piccante. La suite di prova slowAWS può richiedere molto tempo.
+* Eseguire test per assicurarsi che gli aggiornamenti di dipendenza non hanno rotto nulla per tutte le principali configurazioni (parsing in particolare, anche se altre impostazioni significative) . Si noti che la suite di prova esterna può essere molto piccante. La suite di prova slowAWS può richiedere molto tempo.
 ```
 mvn verify
 mvn verify -P external
@@ -38,19 +38,19 @@ La procedura standard è:
 * Come utente=tomcat:
   * In \\[ tomcat \\] :
 ./shutdown.sh //use "ps -fu tomcat" per assicurarsi che si sia fermato
-  * In \\[ tomcat \\] /webapps/:
+  * In \\[ tomcat \\] /webapps/ :
 rm -rf erddap
 Erddap. guerra
 C ../content/erddap/erddap2.22.war erddap.war //o qualunque sia il numero
   * In \\[ tomcat \\] :
 ./startup.sh
-  * Dopo ERDDAP ha reso una pagina web, in \\[ tomcat \\] /webapps/:
+  * Dopo ERDDAP ha reso una pagina web, in \\[ tomcat \\] /webapps/ :
 chgrp -R erddap erddap
 chmod -R g+rw erddap
 chmod -R o-rwx erddap
 
-## Rilasciare GitHub
-Progetto del rilascio di GitHub, includono erddap.war e erddapContent .zip   (nessun numero di versione) 
+## Comunicato GitHub
+Progetto del rilascio di GitHub, includere erddap.war e erddapContent .zip   (nessun numero di versione) 
 
 title: The official v2.25 version
 descrivere: Vedere l'elenco delle modifiche
@@ -59,19 +59,21 @@ descrivere: Vedere l'elenco delle modifiche
 
 ## Aggiornamento della documentazione
 * Aggiornare il numero di versione nel file docusaurus.config.ts (nella sezione del piè di pagina) .
+* Eliminare la directory i18n/en (necessario perché le traduzioni di scrittura non sovrascriveranno un file esistente) e correre `npm run write-translations` esportare la nuova stringa di piè di pagina.
 * Modificare le pagine della documentazione (deploy-install.md e deploy-update.md) .
   * Ricerca per \\[ erddap.war \\]  
-  * Copia le informazioni esistenti (leggermente riformattato) all'elenco delle installazioni precedenti 2.
+  * Copia le informazioni esistenti (leggermente riformattato) all'elenco delle installazioni precedenti.
   * Modificare le informazioni di rilascio attuali per erddap. guerra \\[ erddap.war \\] 
-* Eseguire le traduzioni per il sito di documentazione.
+* Eseguire le traduzioni per il sito di documentazione. Si raccomanda di tradurre solo pagine che sono cambiate in quanto questo passaggio può essere molto lento.
+  * Assicurati che i piè di pagina siano tradotti con il nuovo numero di versione.
 * Fai una richiesta pull e unisci i cambiamenti.
 * Distribuire il sito di documentazione (vedi leggere) .
 
 ## Assicurarsi che altri repos sono aggiornati secondo le necessità
-Principalmente questo significa ErddapContent e ErddapTest, ma devono essere tenuti aggiornati durante i cambiamenti di sviluppo.
+Principalmente questo significa ErddapContent e ErddapTest, ma dovrebbero essere tenuti aggiornati durante i cambiamenti di sviluppo.
 
 ## Informare gli utenti
-Prima avvisare gli utenti che hanno richiesto modifiche (o i cui bug sono stati fissi) . Dare loro tempo per verificare le modifiche e/o sollevare problemi.
+Prima avvisare gli utenti che hanno richiesto modifiche (o i cui bug sono stati fissi) . Date loro il tempo per verificare le modifiche e/o sollevare problemi.
 
  ERDDAP versione 2.25 è ora disponibile&#33;
 
@@ -79,7 +81,7 @@ Si può leggere sui cambiamenti a
  https://erddap.github.io/changes#version-225
  
 
-Alcuni dei cambiamenti sono i cambiamenti che hai suggerito. Grazie mille per i vostri suggerimenti. Cerca il tuo nome nell'elenco delle modifiche per visualizzare i dettagli. Sarebbe bello se si potesse provare le nuove funzionalità presto, prima di annunciare questa nuova versione a un pubblico più ampio.
+Alcuni dei cambiamenti sono i cambiamenti che hai suggerito. Grazie mille per i vostri suggerimenti. Cerca il tuo nome nell'elenco delle modifiche per vedere i dettagli. Sarebbe fantastico se si potesse provare le nuove funzionalità presto, prima di annunciare questa nuova versione a un pubblico più ampio.
 
 Se sei un ERDDAP amministratore, le istruzioni per l'aggiornamento sono a
  https://erddap.github.io/docs/server-admin/deploy-update

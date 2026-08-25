@@ -19,6 +19,14 @@
     "message": "Tip and trick writeups for server administrators",
     "description": "The generated-index page description for category 'Admin Tips' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Dataset Examples": {
+    "message": "Dataset Examples",
+    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
+    "message": "Examples of dataset definitions",
+    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Contributing": {
     "message": "Contributing",
     "description": "The label for category 'Contributing' in sidebar 'docSidebar'"
@@ -78,13 +86,5 @@
   "sidebar.docSidebar.category.User Tips.link.generated-index.description": {
     "message": "Tip and trick writeups for users",
     "description": "The generated-index page description for category 'User Tips' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples": {
-    "message": "Dataset Examples",
-    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
-    "message": "Examples of dataset definitions",
-    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
   }
 }

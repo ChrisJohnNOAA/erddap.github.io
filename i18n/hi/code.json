@@ -63,10 +63,6 @@
     "message": "ब्रेडक्रंब",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 आइटम|{count}आइटम",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "डॉक्स पेज",
     "description": "The ARIA label for the docs pagination"
@@ -138,10 +134,6 @@
     "message": "टैग:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "बंद",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "सावधानी",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -166,6 +158,10 @@
     "message": "चेतावनी",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "बंद",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "हाल के पोस्ट नेविगेशन",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -177,6 +173,10 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "पतन साइडबार श्रेणी '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(नया टैब में खुलता है)",
+    "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "मुख्य",
@@ -230,6 +230,10 @@
     "message": "होम पेज",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "पतन साइडबार",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -237,10 +241,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "पतन साइडबार",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "बंद नेविगेशन बार",
@@ -345,6 +345,10 @@
     "message": "यह पृष्ठ एक प्रारूप है। यह केवल देव में दिखाई देगा और उत्पादन निर्माण से बाहर रखा जाएगा।",
     "description": "The draft content banner message"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 आइटम|{count}आइटम",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "फिर से कोशिश करो",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
@@ -356,9 +360,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "टैग",
     "description": "The title of the tag list page"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(नया टैब में खुलता है)",
-    "description": "The ARIA label for the external link icon"
   }
 }

@@ -3,7 +3,7 @@ sidebar_position: 3
 ---
 #  ERDDAP™ Release-Prozess
 * Stellen Sie sicher, dass Bildvergleichsdateien verfügbar sind (Das könnte bedeuten `mvn überprüfen` , wenn Sie wollen, dass bis zu nur die ImageComparison Gruppe beschränken, obwohl beachten, dass noch laufende Jetty-Tests erfordert) 
-* Abhängigkeiten aktualisieren
+* Aktualisieren von Abhängigkeiten
 ```
 mvn versions:display-dependency-updates   // (displays updates)
 mvn versions:use-latest-versions  // (updates dependencies, though sometimes we don’t want to do all of them)
@@ -31,7 +31,7 @@ mvn package
 Senden Sie die Kriegsdatei für die Distribution auf dem Coastwatch-Server oder einem anderen Server, der die meisten Datensatztypen verwendet und viel Traffic erhält.
 Wir wollen versuchen, Fehler zu finden, bevor eine größere Verteilung des Aufbaus.
 
-Fügen Sie die Nachricht ein, wenn Sie von einer neuen Veröffentlichung erzählen.
+Fügen Sie Nachricht ein, wenn Sie über eine neue Veröffentlichung erzählen.
 
 Das Standardverfahren ist:
 * Laden Sie die .war-Datei nach Coastwatch hoch \\[ Tomcat \\] /Fortsetzung/Erlaubung/
@@ -41,7 +41,7 @@ Das Standardverfahren ist:
   * In \\[ Tomcat \\] /webapps/ :
 rm -rf erddap
 rm erddap. Krieg
-cp ../Fortsetzung/erdap/erddap2.22.war erddap.war //oder was auch immer die Nummer ist
+c) ../Fortsetzung/erdap/erddap2.22.war erddap.war //oder was auch immer die Nummer ist
   * In \\[ Tomcat \\] /bin/
 ./startup.sh
   * Nach dem ERDDAP hat eine Webseite zurückgegeben, in \\[ Tomcat \\] /webapps/ :
@@ -50,24 +50,26 @@ chmod -R g+rw erddap
 chmod -R o-rwx erddap
 
 ## GitHub Veröffentlichung
-Entwurf der GitHub-Veröffentlichung, beinhalten erddap.war und erdddapContent .zip   (keine Versionsnummern) 
+Entwurf der GitHub-Veröffentlichung, beinhalten erddap.war und erddapContent .zip   (keine Versionsnummern) 
 
 title: The official v2.25 version
 Beschreibung: Siehe die Änderungsliste
        https://erddap.github.io/changes#version-225
  
 
-## Dokumentations-Update
+## Dokumentation Update
 * Aktualisieren Sie die Versionsnummer in der Datei docusaurus.config.ts (im Fußabschnitt) .
+* Löschen Sie das Verzeichnis i18n/en (benötigt, weil Schreib-Übersetzungen keine bestehende Datei überschreiben) und laufen `npm Schreib-Übersetzungen ausführen` die neue Fußzeile exportieren.
 * Bearbeiten der Dokumentationsseiten (deploy-install.md und deploy-update.md) .
-  * Suche nach \\[ erddap.war \\]  
-  * Kopieren der vorhandenen Informationen (leicht reformiert) zur Liste der früheren Anlagen 2.
-  * Ändern Sie die aktuellen Release-Informationen für erddap. Krieg gegen \\[ erddap.war \\] 
-* Führen Sie die Übersetzungen für die Dokumentationsseite aus.
-* Machen Sie eine Zuganfrage und fügen Sie die Änderungen zusammen.
+  * Suche nach \\[ Erddap.war \\]  
+  * Kopieren der vorhandenen Informationen (leicht reformiert) in die Liste der vorherigen Installationen.
+  * Ändern Sie die aktuellen Release-Informationen für Erddap. Krieg gegen \\[ Erddap.war \\] 
+* Führen Sie die Übersetzungen für die Dokumentationsseite aus. Es wird empfohlen, nur Seiten zu übersetzen, die sich geändert haben, da dieser Schritt sehr langsam sein kann.
+  * Stellen Sie sicher, dass die Fußzeilen mit der neuen Versionsnummer übersetzt werden.
+* Machen Sie eine Pull-Anforderung und fügen Sie die Änderungen zusammen.
 * Bereitstellung der Dokumentationsseite (siehe readme) .
 
-## Gewährleistung anderer Aufgaben
+## Stellen Sie sicher, dass andere Aufgaben bei Bedarf aktuell sind
 Hauptsächlich bedeutet dies ErddapContent und ErddapTest, aber sie sollten während der Entwicklung auf dem neuesten Stand gehalten werden.
 
 ## Benachrichtigen Sie Benutzer
@@ -81,13 +83,13 @@ Sie können über die Änderungen lesen
 
 Einige der Änderungen sind Änderungen, die Sie vorgeschlagen haben. Vielen Dank für Ihre Vorschläge. Suchen Sie nach Ihrem Namen in der Liste der Änderungen, um die Details zu sehen. Es wäre toll, wenn Sie die neuen Features bald ausprobieren könnten, bevor ich diese neue Version einem breiteren Publikum ankündige.
 
-Wenn Sie ein ERDDAP Administrator, die Anweisungen zum Upgrade sind bei
+Wenn Sie ein ERDDAP Administrator, die Anweisungen für den Upgrade sind bei
  https://erddap.github.io/docs/server-admin/deploy-update
  
 
 Wenn Sie Probleme haben, Fragen, Vorschläge, bitte mailen Sie mir.
 
-Danke für die Nutzung ERDDAP .
+Danke für die Verwendung ERDDAP .
 
 ### Ankündigung
 Senden Sie eine Mitteilung an die Ankündigungen Mailing-Liste.

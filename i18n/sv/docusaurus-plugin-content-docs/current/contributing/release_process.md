@@ -28,7 +28,7 @@ mvn compile
 mvn package
 ```
 ## Kanarieöarna
-Skicka krigsfilen för distribution på Coastwatch-servern eller någon annan server som använder de flesta datasettyper och tar emot mycket trafik.
+Skicka krigsfilen för distribution på Coastwatch-servern eller någon annan server som använder de flesta datasettyperna och får mycket trafik.
 Vi vill försöka hitta fel innan bredare distribution av byggnaden.
 
 Inkludera meddelande när du berättar om en ny release.
@@ -39,8 +39,8 @@ Standardförfarandet är:
   * Inom \\[ Tomcat \\] /bin/ :
 ./shutdown.sh //use "ps-fu tomcat" för att säkerställa att den har stoppats
   * Inom \\[ Tomcat \\] /webapps/ :
-Rm -rf Erddap
-Rm erddap. Krig krig
+RM -rf Erddap
+Rm erddap. krig
 cp ../innehåll/erddap/erddap2.22. Erddap.war //eller vad numret är
   * Inom \\[ Tomcat \\] /bin/ :
 Startup.sh
@@ -49,7 +49,7 @@ chgrp -R erddap erddap
 chmod -R g+rw erddap
 chmod -R o-rwx erddap
 
-## GitHub Släpp
+## GitHub frigör
 Draft GitHub release, inkluderar erddap.war och erddapContent .zip   (Inga versionsnummer) 
 
 title: The official v2.25 version
@@ -59,11 +59,13 @@ beskriva: Se ändringslistan på
 
 ## Dokumentationsuppdatering
 * Uppdatera versionsnummer i docusaurus.config.ts-filen (i sidosektionen) .
-* Redigera dokumentationssidorna (Deploy-install.md och deploy-update.md) .
+* Ta bort i18n/en-katalogen (behövs eftersom översättningar inte kommer att skriva över en befintlig fil) och springa `npm kör skrivöversättningar` exportera den nya sidosträngen.
+* Redigera dokumentationssidorna (deploy-install.md och deploy-update.md) .
   * Sök efter \\[ Erddap.war \\]  
-  * Kopiera befintlig information (Lite reformaterade) till listan över tidigare installationer 2.
+  * Kopiera befintlig information (Lite reformaterade) till listan över tidigare installationer.
   * Ändra den aktuella releaseinformationen för erddap. krig vid \\[ Erddap.war \\] 
-* Kör översättningarna för dokumentationswebbplatsen.
+* Kör översättningarna för dokumentationswebbplatsen. Det rekommenderas att bara översätta sidor som har ändrats eftersom detta steg kan vara mycket långsamt.
+  * Se till att sidfotorna översätts med det nya versionsnumret.
 * Gör en pull request och slå samman ändringarna.
 * Utplacera dokumentationswebbplatsen (Se Readme) .
 

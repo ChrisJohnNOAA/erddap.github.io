@@ -19,6 +19,14 @@
     "message": "সার্ভার অ্যাডমিনস্ট্রেটরের জন্য টিপ এবং ট্রিপ ব্যবস্থা",
     "description": "The generated-index page description for category 'Admin Tips' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Dataset Examples": {
+    "message": "উদাহরণ",
+    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
+    "message": "তথ্যের উদাহরণ",
+    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Contributing": {
     "message": "বাতিল করা",
     "description": "The label for category 'Contributing' in sidebar 'docSidebar'"
@@ -78,13 +86,5 @@
   "sidebar.docSidebar.category.User Tips.link.generated-index.description": {
     "message": "ব্যবহারকারীদের জন্য টিপ এবং কৌতুক",
     "description": "The generated-index page description for category 'User Tips' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples": {
-    "message": "উদাহরণ",
-    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
-    "message": "তথ্যের উদাহরণ",
-    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
   }
 }

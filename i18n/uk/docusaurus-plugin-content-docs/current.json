@@ -19,6 +19,14 @@
     "message": "Поради та рекомендації для адміністраторів сервера",
     "description": "The generated-index page description for category 'Admin Tips' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Dataset Examples": {
+    "message": "Приклади даних",
+    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
+    "message": "Приклади визначення даних",
+    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Contributing": {
     "message": "Внески",
     "description": "The label for category 'Contributing' in sidebar 'docSidebar'"
@@ -78,13 +86,5 @@
   "sidebar.docSidebar.category.User Tips.link.generated-index.description": {
     "message": "Поради та рекомендації для користувачів",
     "description": "The generated-index page description for category 'User Tips' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples": {
-    "message": "Приклади даних",
-    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
-    "message": "Приклади визначення даних",
-    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
   }
 }

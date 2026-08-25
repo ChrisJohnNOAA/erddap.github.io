@@ -19,6 +19,14 @@
     "message": "Tips og trick-skrivere for serveradministratorer",
     "description": "The generated-index page description for category 'Admin Tips' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Dataset Examples": {
+    "message": "Datasett eksempler",
+    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
+    "message": "Eksempler på definisjoner av datasett",
+    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Contributing": {
     "message": "Bidrag",
     "description": "The label for category 'Contributing' in sidebar 'docSidebar'"
@@ -78,13 +86,5 @@
   "sidebar.docSidebar.category.User Tips.link.generated-index.description": {
     "message": "Tips og triks scriptups for brukere",
     "description": "The generated-index page description for category 'User Tips' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples": {
-    "message": "Datasett eksempler",
-    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
-    "message": "Eksempler på definisjoner av datasett",
-    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
   }
 }

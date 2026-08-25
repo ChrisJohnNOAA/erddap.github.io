@@ -58,11 +58,13 @@ describe: See the changes list at
 
 ## Documentation Update
 * Update the version number in the docusaurus.config.ts file (in the footer section).
+* Delete the i18n/en directory (needed because write-translations will not overwrite an existing file) and run `npm run write-translations` to export the new footer string.
 * Edit the documentation pages (deploy-install.md and deploy-update.md).
   * Search for \[erddap.war\] 
-  * Copy the existing information (slightly reformatted) to the list of previous installations 2.
+  * Copy the existing information (slightly reformatted) to the list of previous installations.
   * Change the current release information for erddap.war at \[erddap.war\]
-* Run the translations for the documentation site.
+* Run the translations for the documentation site. It is recommended to only translate pages that have changed since this step can be very slow.
+  * Make sure the footers are translated with the new version number.
 * Make a pull request and merge the changes.
 * Deploy the documentation site (see readme).
 

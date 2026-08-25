@@ -63,10 +63,6 @@
     "message": "Pancroci",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 elemento|{count}Articolo",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "Documenti",
     "description": "The ARIA label for the docs pagination"
@@ -138,10 +134,6 @@
     "message": "Tag:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Chiudi",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "cautela",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -166,6 +158,10 @@
     "message": "avvertimento",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Chiudi",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "Blog recenti articoli di navigazione",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -177,6 +173,10 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "Categoria della barra laterale del collo '{label}'",
     "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(apre nella nuova scheda)",
+    "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "Principale",
@@ -230,6 +230,10 @@
     "message": "Pagina iniziale",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "Barra laterale del collo",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -237,10 +241,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "Barra laterale del collo",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "Chiudi barra di navigazione",
@@ -345,6 +345,10 @@
     "message": "Questa pagina è una bozza. Sarà visibile solo in dev ed essere escluso dalla produzione.",
     "description": "The draft content banner message"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 elemento|{count}Articolo",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "Riprova",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
@@ -356,9 +360,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(apre nella nuova scheda)",
-    "description": "The ARIA label for the external link icon"
   }
 }

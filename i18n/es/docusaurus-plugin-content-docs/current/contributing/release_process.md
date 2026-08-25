@@ -2,8 +2,8 @@
 sidebar_position: 3
 ---
 #  ERDDAP™ Proceso de liberación
-* Asegúrese de que los archivos de comparación de imagen están disponibles (esto podría significar correr `mvn verificar` , si desea acelerar que hasta restringir a sólo el grupo ImageComparison aunque tenga en cuenta que todavía requiere realizar pruebas Jetty) 
-* Actualizar las dependencias
+* Asegúrese de que los archivos de comparación de imágenes están disponibles (esto podría significar correr `mvn verificar` , si desea acelerar que hasta restringir a sólo el grupo ImageComparison aunque tenga en cuenta que todavía requiere realizar pruebas Jetty) 
+* Dependencias de actualización
 ```
 mvn versions:display-dependency-updates   // (displays updates)
 mvn versions:use-latest-versions  // (updates dependencies, though sometimes we don’t want to do all of them)
@@ -13,7 +13,7 @@ mvn versions:update-properties // (updates versions in the property block)
 ```
 mvn versions:display-plugin-updates // (displays updates, need to manually update)
 ```
-* Realizar pruebas para asegurarse de que las actualizaciones de dependencia no rompieran nada para todas las configuraciones principales (datasets parsing in particular, though any other significant settings as well) . Tenga en cuenta que la suite de prueba externa puede ser muy floja. La suite de pruebas lentaAWS puede tardar mucho tiempo.
+* Ejecute pruebas para asegurarse de que las actualizaciones de dependencia no rompieran nada para todas las configuraciones principales (datasets parsing in particular, though any other significant settings as well) . Tenga en cuenta que la suite de prueba externa puede ser muy floja. La suite de pruebas lentaAWS puede tardar mucho tiempo.
 ```
 mvn verify
 mvn verify -P external
@@ -57,13 +57,15 @@ describir: Ver la lista de cambios
        https://erddap.github.io/changes#version-225
  
 
-## Documentación Actualización
+## Actualización de documentación
 * Actualizar el número de versión en el archivo docusaurus.config.ts (en la sección de pie) .
+* Eliminar el directorio i18n/en (necesario porque las traducciones de escritura no sobreescribir un archivo existente) y correr `npm ejecutar escritura-traducciones` para exportar la nueva cuerda de pie.
 * Editar las páginas de documentación (deployment-install.md y deployment-update.md) .
-  * Buscar \\[ Erddap.war \\]  
-  * Copiar la información existente (ligeramente reformado) a la lista de instalaciones anteriores 2.
+  * Búsqueda \\[ Erddap.war \\]  
+  * Copiar la información existente (ligeramente reformado) a la lista de instalaciones anteriores.
   * Cambia la información de liberación actual para erddap. guerra contra \\[ Erddap.war \\] 
-* Ejecute las traducciones para el sitio de documentación.
+* Ejecute las traducciones para el sitio de documentación. Se recomienda traducir sólo páginas que han cambiado ya que este paso puede ser muy lento.
+  * Asegúrese de que los pies se traduzcan con el nuevo número de versión.
 * Haga una solicitud de tirada y fusione los cambios.
 * Despliegue el sitio de documentación (ver readme) .
 

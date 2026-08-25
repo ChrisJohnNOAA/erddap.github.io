@@ -19,6 +19,14 @@
     "message": "Tip and trick writeups dla administratorów serwerów",
     "description": "The generated-index page description for category 'Admin Tips' in sidebar 'docSidebar'"
   },
+  "sidebar.docSidebar.category.Dataset Examples": {
+    "message": "Przykłady zbioru danych",
+    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
+  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
+    "message": "Przykłady definicji zbioru danych",
+    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
+  },
   "sidebar.docSidebar.category.Contributing": {
     "message": "Wkład",
     "description": "The label for category 'Contributing' in sidebar 'docSidebar'"
@@ -78,13 +86,5 @@
   "sidebar.docSidebar.category.User Tips.link.generated-index.description": {
     "message": "Tip i trick writeup dla użytkowników",
     "description": "The generated-index page description for category 'User Tips' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples": {
-    "message": "Przykłady zbioru danych",
-    "description": "The label for category 'Dataset Examples' in sidebar 'docSidebar'"
-  },
-  "sidebar.docSidebar.category.Dataset Examples.link.generated-index.description": {
-    "message": "Przykłady definicji zbioru danych",
-    "description": "The generated-index page description for category 'Dataset Examples' in sidebar 'docSidebar'"
   }
 }

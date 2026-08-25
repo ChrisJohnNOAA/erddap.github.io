@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 #  ERDDAP™ Loslaten
-* Zorg ervoor dat afbeelding vergelijking bestanden beschikbaar zijn (Dit kan hardlopen betekenen. `mvn verifiëren` , als je dat wilt versnellen beperken tot alleen de ImageComparison groep hoewel opmerking dat nog steeds het uitvoeren van Jetty tests vereist) 
+* Zorg ervoor dat afbeelding vergelijking bestanden beschikbaar zijn (Dit kan hardlopen betekenen. `mvn verifiëren` , als je dat wilt versnellen beperken tot alleen de ImageComparison groep hoewel nota die nog steeds het uitvoeren van Jetty testen vereist) 
 * Afhankelijkheden bijwerken
 ```
 mvn versions:display-dependency-updates   // (displays updates)
@@ -19,7 +19,7 @@ mvn verify
 mvn verify -P external
 mvn verify -P slowAWS
 ```
-* Gebruik `python translation/translate.py` om vertalingen bij te werken indien nodig.
+* Gebruik `python translation/translate.py` vertalingen bijwerken indien nodig.
 * EDStatic.java set ontwikkeling Wijzig het versienummer en geef de releasedatum op.
 * Doe de bouw.
 ```
@@ -29,7 +29,7 @@ mvn package
 ```
 ## Canarische eilanden
 Stuur het oorlogsbestand voor distributie op de Coastwatch server of een andere server die de meeste datasets gebruikt en veel verkeer ontvangt.
-We willen proberen om fouten te vinden voordat een bredere distributie van de bouw.
+We willen proberen fouten te vinden voordat de bouw breder verspreid wordt.
 
 Inclusief bericht bij het vertellen over een nieuwe release.
 
@@ -53,25 +53,27 @@ chmod -R o-rwx erddap
 Ontwerp de GitHub release, inclusief erddap.war en erddapContent .zip   (geen versienummers) 
 
 title: The official v2.25 version
-Beschrijf: Zie de lijst met wijzigingen op
+beschrijven: Zie de lijst met wijzigingen op
        https://erddap.github.io/changes#version-225
  
 
 ## Documentatie bijwerken
-* Het versienummer bijwerken in het documentsaurus.config.ts bestand (in de voettekst) .
+* Versienummer bijwerken in het documentsaurus.config.ts bestand (in de voettekst) .
+* De i18n/en-map verwijderen (nodig omdat write-translations geen bestaand bestand zal overschrijven) en rennen `npm run write-translations` om de nieuwe voettekst te exporteren.
 * De documentatiepagina's bewerken (implement-install.md en implement-update.md) .
-  * Zoekopdracht \\[ Erddap.war \\]  
-  * De bestaande informatie kopiëren (licht geformatteerd) naar de lijst van eerdere installaties 2.
-  * Wijzig de huidige release-informatie voor erddap. oorlog bij \\[ Erddap.war \\] 
-* Voer de vertalingen voor de documentatie site.
+  * Zoeken \\[ erddap.war \\]  
+  * De bestaande informatie kopiëren (licht geformatteerd) naar de lijst van eerdere installaties.
+  * Verander de huidige release-informatie voor erddap. oorlog bij \\[ erddap.war \\] 
+* Voer de vertalingen voor de documentatie site. Het wordt aanbevolen om alleen pagina's te vertalen die zijn veranderd sinds deze stap kan zeer traag zijn.
+  * Zorg ervoor dat de voetteksten worden vertaald met het nieuwe versienummer.
 * Maak een pull request en merge de wijzigingen.
-* Gebruik de documentatiesite (zie readme) .
+* Implementeer de documentatiesite (zie readme) .
 
-## Ervoor zorgen dat andere repo's zo nodig up-to-date zijn
-Voornamelijk betekent dit ErddapContent en ErddapTest, maar ze moeten worden bijgewerkt tijdens ontwikkelingswijzigingen.
+## Ervoor zorgen dat andere repo's zo nodig bijgewerkt zijn
+Dit betekent voornamelijk ErddapContent en ErddapTest, maar deze moeten tijdens ontwikkelingswijzigingen op de hoogte gehouden worden.
 
 ## Gebruikers op de hoogte brengen
-Waarschuw eerst alle gebruikers die wijzigingen hebben aangevraagd (of wiens bugs werden gerepareerd) . Geef ze de tijd om wijzigingen te verifiëren en/of problemen aan te kaarten.
+Waarschuw eerst alle gebruikers die wijzigingen hebben aangevraagd (of wiens bugs zijn gerepareerd) . Geef ze de tijd om wijzigingen te verifiëren en/of problemen aan te kaarten.
 
  ERDDAP versie 2.25 is nu beschikbaar&#33;
 
@@ -79,7 +81,7 @@ U kunt lezen over de wijzigingen op
  https://erddap.github.io/changes#version-225
  
 
-Sommige van de veranderingen zijn veranderingen die u voorstelde. Hartelijk dank voor uw suggesties. Zoek naar uw naam in de lijst met wijzigingen om de details te zien. Het zou geweldig zijn als je de nieuwe features binnenkort kunt uitproberen, voordat ik deze nieuwe versie bekend maak aan een breder publiek.
+Sommige van de wijzigingen zijn veranderingen die u voorstelde. Hartelijk dank voor uw suggesties. Zoek naar uw naam in de lijst met wijzigingen om de details te zien. Het zou geweldig zijn als je de nieuwe features binnenkort kunt uitproberen, voordat ik deze nieuwe versie bekend maak aan een breder publiek.
 
 Als u een ERDDAP beheerder, de instructies voor het upgraden zijn op
  https://erddap.github.io/docs/server-admin/deploy-update
