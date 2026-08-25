@@ -1,4 +1,4 @@
-Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP grupa użytkowników](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP™ grupa użytkowników](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optymalizacja plików netcdf dla chmury
 - - - - - - - - - - -
@@ -7,7 +7,8 @@ a. przepakowywanie i rozmiar strony
 
 Ostatnio podczas badań natknąłem się na bardzo interesujący artykuł:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Nic nie budzi pasji, jak dyskusje o językach programowania, edytorów i formatach plików, a to nie jest rekomendacja jakiego formatu (s) należy użyć, ale raczej zrozumieć, co jest w tej gazecie i zobaczyć, jak wiele poprawy można uzyskać ( ERDDAP™ zawsze starał się być agnostykiem w wielu z tych kwestii, a raczej wybrać spróbować i pracować z tym, jak ludzie rzeczywiście pracować z danymi) .
 
@@ -86,26 +87,27 @@ Więc handel jest nie nieistotny wzrost wielkości pliku.
 
 d. następujące "technologie": Ale jeśli i tak będę musiał przetworzyć pliki...?
 
-Dobrym pytaniem jest, czy muszę napisać skrypt, aby przetworzyć pliki, dlaczego po prostu nie napisać skryptu, aby przetłumaczyć go na format jak powiedzmy zarr? zarr ma wielu zwolenników i jeśli jesteś zainteresowany Zarr po prostu zrobić szybkie wyszukiwanie duckduckgo i tam wiele dobrych postów, być może bardziej zrównoważony widok jest nahttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Interesujące jest to, że wiele punktów podnosi są to, co w formacie lodowym próbują rozwiązać) . Więc dlaczego nie chcesz przetłumaczyć swoich plików na coś takiego jak zarr, Po pierwsze, jeśli utworzyć pliki netcdf regularnie, można rozpocząć optymalizację plików od teraz, które z czasem będzie widać przyrost prędkości i nie będzie trzeba ponownie formatować poprzednie pliki, i ERDDAP™ nadal będzie w stanie agregować nad plikami, nawet jeśli niektóre ustawienia wewnętrzne różnią się. Po drugie, możesz mieć wiele narzędzi, które zależą od plików netcdf, a to podejście oznaczałoby, że nie musiałbyś zmieniać tego, co może być dużą ilością kodu. Chodzi o to, aby być świadomym opcji i wybrać, co działa najlepiej dla swojej sytuacji. Tylko jako przypomnienie, jeśli zdecydujesz się użyć plików zarr z ERDDAP™ , muszą być to pliki zarr format v2.
+Dobrym pytaniem jest, czy muszę napisać skrypt, aby przetworzyć pliki, dlaczego po prostu nie napisać skryptu, aby przetłumaczyć go na format jak powiedzmy zarr? zarr ma wielu zwolenników i jeśli jesteś zainteresowany Zarr po prostu zrobić szybkie wyszukiwanie duckduckgo i tam wiele dobrych postów, być może bardziej zrównoważony widok jest na https://www.youtube.com/watch?v=IEAcCmcOdJs   (Interesujące jest to, że wiele punktów podnosi są to, co w formacie lodowym próbują rozwiązać) . Więc dlaczego nie chcesz przetłumaczyć swoich plików na coś takiego jak zarr, Po pierwsze, jeśli utworzyć pliki netcdf regularnie, można rozpocząć optymalizację plików od teraz, które z czasem będzie widać przyrost prędkości i nie będzie trzeba ponownie formatować poprzednie pliki, i ERDDAP™ nadal będzie w stanie agregować nad plikami, nawet jeśli niektóre ustawienia wewnętrzne różnią się. Po drugie, możesz mieć wiele narzędzi, które zależą od plików netcdf, a to podejście oznaczałoby, że nie musiałbyś zmieniać tego, co może być dużą ilością kodu. Chodzi o to, aby być świadomym opcji i wybrać, co działa najlepiej dla swojej sytuacji. Tylko jako przypomnienie, jeśli zdecydujesz się użyć plików zarr z ERDDAP™ , muszą być to pliki zarr format v2.
 
 "Oprogramowanie" specjalnie zaprojektowane lub zmodyfikowane do "użytkowania" urządzeń wyszczególnionych w pozycji 1C001.b.3. Duże dane - na bok
 
 Duże dane mówią o wielu rzeczach, ale jak duże są dane, których większość ludzi używa i jak to się porównuje z możliwościami nowoczesnych laptopów (tak laptopy, nie serwery) . Ciekawe ujęcie jest na:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Zacznij około minuty 37 choć cała rozmowa jest ciekawa
+ https://www.youtube.com/watch?v=GELhdezYmP0 Zacznij około minuty 37 choć cała rozmowa jest ciekawa
 
 Badanie, o którym wspomina, jest w:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Tak więc jest stosunkowo mały odsetek użytkowników, którzy naprawdę muszą podkręcić moc, ale przeważająca większość użytkowników może zrobić swoje analizy na laptopie, 26TB napędy zewnętrzne są teraz poniżej 300 dolarów i plotki, że 60TB napędy zewnętrzne będą dostępne do końca roku. Coś do przemyślenia.
 
 2. Stosowanie ERDDAP™ z platformą Google Cloud lub innymi dostawcami chmur poza AWS
 - Tak.
 
-W tej chwili ERDDAP™ jest znany tylko do pracy ze sklepami obiektów AWS (S3) , choć poprawa i uogólnienie ERDDAP™ Obsługa sklepu z obiektami jest na liście todo (patrzhttps://github.com/ERDDAP/erddap/issues/158) . Więc co zrobić, jeśli powiedziano ci, że musisz uruchomić swój ERDDAP™ na platformie Google Cloud (GCP) lub podobną platformę? Po pierwsze, większość platform w chmurze oferuje różne poziomy pamięci masowej, zazwyczaj w tym takie, które są podobne do lokalnej pamięci masowej i są rozpoznawane przez system operacyjny, takie, które są podłączone przez sieć zwykle za pomocą NFS do dostępu (ponownie bezpośrednio dostępne przez system operacyjny) i sklep z przedmiotami. Pierwszym rozwiązaniem nie jest korzystanie ze sklepów z obiektami, i byłoby dobrze, aby przejść. Ale jak zawsze, TANSTAAFL i wady w tym przypadku jest jak przejść ze sklepu z obiektami - &gt; Dostęp do NFS - &gt; lokalnego sklepu koszty również idą w górę. (Dodam, że NFS jest również dostępny przez sieć, i ma własne problemy z opóźnieniem, to również korzystać z optymalizacji plików) .
+W tej chwili ERDDAP™ jest znany tylko do pracy ze sklepami obiektów AWS (S3) , choć poprawa i uogólnienie ERDDAP™ Obsługa sklepu z obiektami jest na liście todo (patrz https://github.com/ERDDAP/erddap/issues/158 ) . Więc co zrobić, jeśli powiedziano ci, że musisz uruchomić swój ERDDAP™ na platformie Google Cloud (GCP) lub podobną platformę? Po pierwsze, większość platform w chmurze oferuje różne poziomy pamięci masowej, zazwyczaj w tym takie, które są podobne do lokalnej pamięci masowej i są rozpoznawane przez system operacyjny, takie, które są podłączone przez sieć zwykle za pomocą NFS do dostępu (ponownie bezpośrednio dostępne przez system operacyjny) i sklep z przedmiotami. Pierwszym rozwiązaniem nie jest korzystanie ze sklepów z obiektami, i byłoby dobrze, aby przejść. Ale jak zawsze, TANSTAAFL i wady w tym przypadku jest jak przejść ze sklepu z obiektami - &gt; Dostęp do NFS - &gt; lokalnego sklepu koszty również idą w górę. (Dodam, że NFS jest również dostępny przez sieć, i ma własne problemy z opóźnieniem, to również korzystać z optymalizacji plików) .
 
-Jeśli musisz używać sklepu z obiektami, lub możesz sobie na nie pozwolić, odpowiedzią jest system plików FUSE (https://github.com/libfuse/libfuse) . Na GCP nazywa się to gcsfuse, a kroki do jego zainstalowania to:
+Jeśli musisz używać sklepu z obiektami, lub możesz sobie na nie pozwolić, odpowiedzią jest system plików FUSE ( https://github.com/libfuse/libfuse ) . Na GCP nazywa się to gcsfuse, a kroki do jego zainstalowania to:
 
 • Zainstaluj gcsfuse na swoim obrazie GCP Linux:
 sudo apt update

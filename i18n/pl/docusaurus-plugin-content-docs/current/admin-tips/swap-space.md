@@ -1,4 +1,4 @@
-Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP grupa użytkowników](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP™ grupa użytkowników](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Wiele wniosków o pomoc otrzymujemy problemy z wykorzystaniem pamięci w ERDDAP™ . Część z tego wynika ze zmian w zarządzaniu pamięcią w Java oraz interakcje z zarządzaniem pamięcią systemu Linux OS. Zaczynam wierzyć w Java 17, Java używa więcej pamięci niż to, co jest umieszczone w ustawieniach stosu. Możesz to zobaczyć, jeśli spojrzysz na ustawienia stosu, a następnie użyjesz poleceń takich jak top, htop lub btop, aby sprawdzić wykorzystanie pamięci aplikacji. Więc na przykład nasze ciężko używane ERDDAP™ ma spację stosu ustawioną na 21GB, ale w rzeczywistości użycie pamięci może uruchomić do 28GB- 30GB, czasami wyższe. Wartość ta może wzrosnąć, jeśli istnieje wiele jednocześnie dużych żądań do systemu.
 

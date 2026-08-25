@@ -1,4 +1,4 @@
-Ce contenu est basé sur [message de Roy Mendelssohn au ERDDAP groupe d'utilisateurs](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Ce contenu est basé sur [message de Roy Mendelssohn au ERDDAP™ groupe d'utilisateurs](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Courir ERDDAP™ dans le nuage est devenu un sujet chaud. Je dois noter que ERDDAP™ a toujours couru dans le cloud, juste la plupart du temps pas sur un serveur fourni par un fournisseur de cloud commercial, et le principal obstacle pour courir ERDDAP™ sur un fournisseur de cloud commercial est si vous utilisez le stockage S3, ce qui ne permet pas l'accès normal au bloc Linux. Si vous êtes prêt à payer plus pour utiliser les options d'accès par blocs fournies par votre fournisseur de cloud commercial, que de fonctionner sur un serveur de cloud commercial est fondamentalement le même que de fonctionner sur votre propre équipement, sauf bien sûr le coût.
 

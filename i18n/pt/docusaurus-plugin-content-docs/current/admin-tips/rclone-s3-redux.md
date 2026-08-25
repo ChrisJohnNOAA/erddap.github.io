@@ -1,4 +1,4 @@
-Este conteúdo é baseado em um [mensagem de Roy Mendelssohn para o ERDDAP grupo de usuários](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Este conteúdo é baseado em um [mensagem de Roy Mendelssohn para o ERDDAP™ grupo de usuários](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Correr ERDDAP™ na nuvem tornou-se um tópico quente. Eu devo notar que ERDDAP™ sempre foi executado na nuvem, na maioria das vezes não em um servidor fornecido por um provedor de nuvem comercial, e o grande impedimento para executar ERDDAP™ em um provedor de nuvem comercial é se você usar armazenamento S3, o que não permite o acesso normal do bloco Linux. Se você está disposto a pagar mais para usar as opções de acesso de bloco fornecidas pelo seu provedor de nuvem comercial, do que correr em um servidor de nuvem comercial é basicamente o mesmo que executar em seu próprio equipamento, exceto, claro, o custo.
 

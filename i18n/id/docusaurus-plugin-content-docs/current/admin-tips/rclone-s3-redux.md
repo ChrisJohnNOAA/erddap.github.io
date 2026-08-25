@@ -1,4 +1,4 @@
-Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP grup pengguna](https://groups.google.com/g/erddap/c/H-vJoGP42TI) Sitemap
+Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP™ grup pengguna](https://groups.google.com/g/erddap/c/H-vJoGP42TI) Sitemap
 
 Login ERDDAP™ di cloud telah menjadi topik panas. Saya harus dicatat bahwa Meme it ERDDAP™ selalu berjalan di cloud, hanya sebagian besar waktu tidak pada server yang disediakan oleh penyedia cloud komersial, dan hambatan utama untuk berjalan ERDDAP™ pada penyedia cloud komersial adalah jika Anda menggunakan penyimpanan S3, yang tidak memungkinkan akses blok Linux normal. Jika Anda bersedia untuk membayar lebih banyak untuk menggunakan opsi akses blok yang disediakan oleh penyedia cloud komersial Anda, daripada berjalan pada server cloud komersial pada dasarnya sama dengan berjalan pada peralatan Anda sendiri, kecuali tentu saja biaya.
 

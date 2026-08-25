@@ -1,4 +1,4 @@
-Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP Brugere gruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP™ Brugere gruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 En masse af de hjælpeanmodninger, vi får, involverer problemer med hukommelsesbrug i ERDDAP™ . Nogle af dette kommer fra ændringer i hukommelsesstyring i Java , og også interaktioner med Linux OS hukommelse management. Jeg tror på Java 17, Java Brug mere hukommelse, end hvad der er sat ned i heap-indstillingerne. Du kan se dette, hvis du ser på dine heap indstillinger og derefter bruge kommandoer som top, htop eller btop til at kontrollere hukommelsesforbruget af applikationer. Så for eksempel vores stærkt brugte ERDDAP™ har hæap plads sæt på 21 GB, men faktisk hukommelse brug kan køre til 28 GB-30 GB, nogle gange højere. Denne værdi kan spike, hvis der er en masse samtidig store anmodninger til systemet.
 

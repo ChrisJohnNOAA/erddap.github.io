@@ -1,4 +1,4 @@
-Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP brukergruppe](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) ..
+Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP™ brukergruppe](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) ..
 
 1. Optimerer netcdf-filer for skyen
 ——————————————-
@@ -7,7 +7,8 @@ a. ompakning og sidestørrelse
 
 Nylig i å gjøre noen forskning jeg kom over denne veldig interessante artikkelen:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Ingenting synes å inflamme lidenskaper som diskusjoner om programmeringsspråk, redaktører og filformater, og dette er ikke en anbefaling om hvilket format (s) du bør bruke, men heller å forstå hva som er i det papiret og å se hvor mye forbedring kan fås ( ERDDAP™ har alltid prøvd å være agnostikert om mange av disse sakene, snarere å velge å prøve og jobbe med hvordan folk faktisk jobber med data) ..
 
@@ -86,26 +87,27 @@ Så tradeoff er det en ikke ubetydelig økning i filstørrelse.
 
 d. Men hvis jeg må behandle filene uansett...
 
-Et godt spørsmål er om jeg må skrive et skript for å rebehandle filene, hvorfor ikke bare skrive et skript for å oversette til et format som si zarr? Zarr har mange tilhengere og hvis du er interessert i zarr bare gjøre en rask andduckgo søk og det mange gode innlegg, en kanskje mer balansert utsikt er påhttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Det er interessant at mange av poengene han hever er det ischunk-formatet prøver å adressere) .. Så hvorfor vil du ikke oversette filene dine til noe som zarr, først, hvis du oppretter netcdf-filer regelmessig, kan du begynne å optimalisere filene fra nå av, som over tid vil se hastighet gevinster og du trenger ikke å reformatere tidligere filer, og ERDDAP™ vil fortsatt være i stand til å aggregere over filene selv om noen av de interne innstillingene er forskjellig. For det andre kan du ha mye verktøy som avhenger av netcdf-filer, og denne tilnærmingen ville bety å ikke måtte retool hva som kan være en omfattende mengde kode. Poenget er å være oppmerksom på alternativer og velge hva som fungerer best for din situasjon. Akkurat som en påminnelse, hvis du velger å bruke zarr filer med ERDDAP™ , de må være zarr format v2 filer.
+Et godt spørsmål er om jeg må skrive et skript for å rebehandle filene, hvorfor ikke bare skrive et skript for å oversette til et format som si zarr? Zarr har mange tilhengere og hvis du er interessert i zarr bare gjøre en rask andduckgo søk og det mange gode innlegg, en kanskje mer balansert utsikt er på https://www.youtube.com/watch?v=IEAcCmcOdJs   (Det er interessant at mange av poengene han hever er det ischunk-formatet prøver å adressere) .. Så hvorfor vil du ikke oversette filene dine til noe som zarr, først, hvis du oppretter netcdf-filer regelmessig, kan du begynne å optimalisere filene fra nå av, som over tid vil se hastighet gevinster og du trenger ikke å reformatere tidligere filer, og ERDDAP™ vil fortsatt være i stand til å aggregere over filene selv om noen av de interne innstillingene er forskjellig. For det andre kan du ha mye verktøy som avhenger av netcdf-filer, og denne tilnærmingen ville bety å ikke måtte retool hva som kan være en omfattende mengde kode. Poenget er å være oppmerksom på alternativer og velge hva som fungerer best for din situasjon. Akkurat som en påminnelse, hvis du velger å bruke zarr filer med ERDDAP™ , de må være zarr format v2 filer.
 
 E. Big data - en side
 
 Store data snakkes om mye, men hvor store er dataene som de fleste bruker og hvordan sammenlignes det med funksjonene til moderne bærbare datamaskiner (ja bærbare datamaskiner, ikke servere) .. En interessant take er på:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Start rundt minutt 37 selv om hele samtalen er interessant
+ https://www.youtube.com/watch?v=GELhdezYmP0 Start rundt minutt 37 selv om hele samtalen er interessant
 
 Studien han nevner er på:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Så det er en relativt liten prosentandel av brukerne som virkelig trenger å veive opp kraften, men det overveldende flertallet av brukerne kan gjøre sine analyser på en bærbar PC, 26TB eksterne stasjoner er nå under $300 og rykter er at 60TB eksterne stasjoner vil være tilgjengelig innen slutten av året. Noe å tenke på.
 
 2. Bruker ERDDAP™ med Google Cloud Platform eller andre skyleverandører i tillegg til AWS
 -------------------------------------------------------------------
 
-I øyeblikket ERDDAP™ er kjent bare for å jobbe med AWS-objektbutikker (S3) Selv om de forbedrer og generaliserer ERDDAP™ Støtten for objektbutikk er på Todo-listen (sehttps://github.com/ERDDAP/erddap/issues/158) .. Så hva du skal gjøre hvis du får beskjed om at du må kjøre din ERDDAP™ Google Cloud Platform (GCP) Eller en lignende plattform? For det første tilbyr de fleste skyplattformer forskjellige lagringsnivåer, vanligvis inkludert en som ligner lokal lagring og gjenkjennes av operativsystemet, en som er tilkoblet over nettverket som vanligvis bruker NFS for tilgang (På nytt direkte tilgjengelig av OS) En som er en objektbutikk. Den første løsningen er ikke å bruke objektbutikker, og du vil være god til å gå. Men som alltid, er TANSTAAFL og ulempen i dette tilfellet som du går fra objektbutikk -&gt; NFS-tilgang -&gt; Lokale lagre kostnadene dine går også opp. (Jeg vil legge til at NFS er også tilgjengelig over nettverket, og har sine egne latensproblemer, vil dette også dra nytte av filoptimering) ..
+I øyeblikket ERDDAP™ er kjent bare for å jobbe med AWS-objektbutikker (S3) Selv om de forbedrer og generaliserer ERDDAP™ Støtten for objektbutikk er på Todo-listen (se https://github.com/ERDDAP/erddap/issues/158 ) .. Så hva du skal gjøre hvis du får beskjed om at du må kjøre din ERDDAP™ Google Cloud Platform (GCP) Eller en lignende plattform? For det første tilbyr de fleste skyplattformer forskjellige lagringsnivåer, vanligvis inkludert en som ligner lokal lagring og gjenkjennes av operativsystemet, en som er tilkoblet over nettverket som vanligvis bruker NFS for tilgang (På nytt direkte tilgjengelig av OS) En som er en objektbutikk. Den første løsningen er ikke å bruke objektbutikker, og du vil være god til å gå. Men som alltid, er TANSTAAFL og ulempen i dette tilfellet som du går fra objektbutikk -&gt; NFS-tilgang -&gt; Lokale lagre kostnadene dine går også opp. (Jeg vil legge til at NFS er også tilgjengelig over nettverket, og har sine egne latensproblemer, vil dette også dra nytte av filoptimering) ..
 
-Hvis du må bruke objektbutikken eller bare har råd til en objektbutikk, er svaret et FUSE-filsystem (https://github.com/libfuse/libfuse) .. På GCP kalles dette gcsfuse, og trinnene for å installere det er:
+Hvis du må bruke objektbutikken eller bare har råd til en objektbutikk, er svaret et FUSE-filsystem ( https://github.com/libfuse/libfuse ) .. På GCP kalles dette gcsfuse, og trinnene for å installere det er:
 
 • Installer gcsfuse på GCP Linux-bildet ditt:
 sudo apt-oppdatering

@@ -1,4 +1,4 @@
-이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP 사용자 그룹](https://groups.google.com/g/erddap/c/H-vJoGP42TI) ·
+이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP™ 사용자 그룹](https://groups.google.com/g/erddap/c/H-vJoGP42TI) ·
 
 지원하다 ERDDAP™ 구름에 뜨거운 화제가되었습니다. 나는 주의해야 ERDDAP™ 항상 클라우드에서 실행, 단지 대부분의 시간의 상업 클라우드 공급자에 의해 제공되지, 및 실행을위한 주요 impediment ERDDAP™ 상업 클라우드 공급자는 S3 스토리지를 사용하는 경우 일반 Linux 블록 액세스를 허용하지 않습니다. 상업 클라우드 서버에서 실행하는 것보다 상업 클라우드 공급자가 제공하는 블록 액세스 옵션을 사용하여 더 많은 비용을 지불하는 것은 기본적으로 자신의 장비에서 실행과 동일합니다. 물론 비용.
 

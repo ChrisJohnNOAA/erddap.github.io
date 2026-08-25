@@ -1,4 +1,4 @@
-Detta innehåll är baserat på en [från Roy Mendelssohn till ERDDAP användare grupp](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Detta innehåll är baserat på en [från Roy Mendelssohn till ERDDAP™ användare grupp](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Running ERDDAP™ i molnet har blivit ett hett ämne. Jag bör notera att ERDDAP™ har alltid kört i molnet, bara för det mesta inte på en server som tillhandahålls av en kommersiell molnleverantör, och det stora hindret för körning ERDDAP™ på en kommersiell molnleverantör är om du använder S3 lagring, vilket inte tillåter normal Linux blockåtkomst. Om du är villig att betala mer för att använda blockåtkomstalternativen som tillhandahålls av din kommersiella molnleverantör, än att köra på en kommersiell molnserver är i grunden samma som att köra på din egen utrustning, förutom naturligtvis kostnaden.
 

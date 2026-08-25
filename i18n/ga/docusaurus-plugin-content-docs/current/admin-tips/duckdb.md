@@ -1,4 +1,4 @@
-Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP web development](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP™ web development](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ iarracht a bheith agnostic faoi na formáidí sonraí a úsáideann daoine as a gcuid sonraí, ina ionad sin ag iarraidh a bheith ag obair leis na formáidí sonraí an chuid is mó a úsáid do na pobail a bhfreastalaíonn muid go príomha. Mar go bhfuil níos mó agus níos mó oibre sa scamall, agus tá plethora na formáidí sonraí a úsáideann daoine sa scamall, bheadh sé deas má ERDDAP™ D'fhéadfadh tacaíocht a lán de na formáidí. Alas, ERDDAP™ Tá forbairt agus cothabháil faoi deara cheana féin, agus cad a bheadh inmhianaithe é a úsáid a bhaint as an obair daoine eile chun an sprioc seo a bhaint amach, gan a bheith a mhodhnú ERDDAP™ .
 
@@ -9,11 +9,13 @@ Cuir isteach [Diúscairt](https://duckdb.org/) agus [cliceáil grianghraf a mhé
 
 Chun DuckDB a úsáid i ERDDAP™ ní mór duit duckDB a shuiteáil ar do ríomhaire, agus an cónascaire DuckDB JDBC a shuiteáil isteach ERDDAP™ . Treoracha ar shuiteáil DuckDB féin ag
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Is féidir leis an DuckDB JDBC cónascaire a íoslódáil ó
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Má tá do tomcat suite ag $ TOMCAT_HOME, ansin ba mhaith leat a chur ar an gcomhad ag $ TOMCAT_HOME / apps / erddap / WEB-INF /lib.
 

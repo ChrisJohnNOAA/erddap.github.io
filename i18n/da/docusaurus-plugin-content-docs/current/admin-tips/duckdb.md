@@ -1,4 +1,4 @@
-Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP Brugere gruppe](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP™ Brugere gruppe](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ forsøger at være engnosticering om, hvilke dataformater folk bruger til deres data, i stedet at forsøge at arbejde med de dataformater af mest brug til de samfund, vi hovedsageligt tjener. Som mere og mere arbejde er i skyen, og der er en overflod af dataformater, som folk bruger i skyen, ville det være rart, hvis ERDDAP™ kunne støtte en masse af disse formater. Aks, ERDDAP™ udvikling og vedligeholdelse er allerede under bemandet, og hvad ville være ønskeligt er at gøre brug af andres arbejde for at opnå dette mål, uden at skulle ændre ERDDAP™ .
 
@@ -9,11 +9,13 @@ Indtast Indtast Indtast Indtast [I nærheden af DuckDB](https://duckdb.org/) og 
 
 For at bruge DuckDB i ERDDAP™ du er nødt til at installere andeDB på din computer, og til at installere AndDB JDBC stik til ERDDAP™ . Instruktioner om installation af DuckDB selv er på
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 The DuckDB JDBC stik kan downloades fra
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Hvis din tomcat er placeret på $TOMCAT_HOME, så vil du sætte denne fil på $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

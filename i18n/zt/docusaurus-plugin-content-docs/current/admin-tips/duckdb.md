@@ -1,4 +1,4 @@
-此內容基于 [羅伊·門德爾索恩致 ERDDAP 使用者群組](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+此內容基于 [羅伊·門德爾索恩致 ERDDAP™ 使用者群組](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ 試著忽略人們用於數據的資料格式, 越来越多的工作在云中, 和有很多數據格式 人們在云中使用, ERDDAP™ 可以支持很多這些格式。 唉 ERDDAP™ 發展與維持已經人手不足, ERDDAP™ .
 
@@ -9,11 +9,13 @@
 
 要在其中使用 DuckDB ERDDAP™ 您需要安裝 DuckDB 在您的電腦上, 並安裝 DuckDB JDBC 連接器 ERDDAP™ . 關於安裝 DuckDB 本身的指令已存在
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC 連接器可以從中下載
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 如果您的 tomcat 位於 $TOMCAT_ HOME , 您要將此檔案放在 $TOMCAT_ HOME/webapps/erddap/WEB- INF/ lib 中 。
 

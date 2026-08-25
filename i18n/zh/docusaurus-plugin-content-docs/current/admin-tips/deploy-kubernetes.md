@@ -1,6 +1,6 @@
-# 如何部署 ERDDAP 库伯涅特
+# 如何部署 ERDDAP™ 库伯涅特
 
-部署 ERDDAP 在 Kubernetes 上为您的数据服务器提供了一个可扩展的、具有弹性的环境。 本指南涵盖主办《公约》缔约方会议 ERDDAP 使用标准 Kubernetes显示,包括管理持续存储,部署应用程序,配置网络,以及直接从集群内生成新的数据集XML.
+部署 ERDDAP™ 在 Kubernetes 上为您的数据服务器提供了一个可扩展的、具有弹性的环境。 本指南涵盖主办《公约》缔约方会议 ERDDAP™ 使用标准 Kubernetes显示,包括管理持续存储,部署应用程序,配置网络,以及直接从集群内生成新的数据集XML.
 
 ## 先决条件
 在开始之前,请确保:
@@ -11,7 +11,7 @@
 - - - - - - - 说说看
 
 ## 一、导 言 持久性储存 (聚氯乙烯) 
- ERDDAP 需要持续的存储来维护缓存文件,日志,并声明横跨cock重启. 使用a `长期索赔`   (聚氯乙烯) 确保您 `大家长会`   (地点 ERDDAP 存储其生成的数据) 如果一个吊舱坠落,则不会丢失。 此音量也可以链接到原始数据文件所在的数据存储位置.
+ ERDDAP™ 需要持续的存储来维护缓存文件,日志,并声明横跨cock重启. 使用a `长期索赔`   (聚氯乙烯) 确保您 `大家长会`   (地点 ERDDAP™ 存储其生成的数据) 如果一个吊舱坠落,则不会丢失。 此音量也可以链接到原始数据文件所在的数据存储位置.
 
 创建名为的文件 `维基月球在线解说-亚姆尔` 像这样:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 - - - - - - 说吧
 
-## 2. 国家 那个 ERDDAP 部署
-部署清单管理 ERDDAP 潜伏自己。 我们建议使用官方的 erddap/erddap Docker 图像,长期支持。
+## 2. 国家 那个 ERDDAP™ 部署
+部署清单管理 ERDDAP™ 潜伏自己。 我们建议使用官方的 erddap/erddap Docker 图像,长期支持。
 
 :::信息
 截止2026年5月, [页:1](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) 是最新的版本。 明智的做法是偶尔重新部署以适应安全方面的弱点。
 :::
 
-在这个配置中,我们注入关键环境变量来处理时区设置,确保Tomcat有正确的存储音量读写权限,并告诉 ERDDAP 当坐在库伯涅兹入侵之后时如何正确路径 URL 。 我们还把聚氯乙烯挂到 `/erddapData 数据`   (默认 `大家长会` ) 输入 datasets.xml 并设置.xml 进入 `/usr/当地/Tomcat/内容/erddap` 。 。 。 。
+在这个配置中,我们注入关键环境变量来处理时区设置,确保Tomcat有正确的存储音量读写权限,并告诉 ERDDAP™ 当坐在库伯涅兹入侵之后时如何正确路径 URL 。 我们还把聚氯乙烯挂到 `/erddapData 数据`   (默认 `大家长会` ) 输入 datasets.xml 并设置.xml 进入 `/usr/当地/Tomcat/内容/erddap` 。 。 。 。
 
 创建名为的文件 `部署. yaml` 数字 :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **特兹** 数字 : 设置Tomcat服务器的时区和 ERDDAP 木头。
+-  **特兹** 数字 : 设置Tomcat服务器的时区和 ERDDAP™ 木头。
 
--  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** 数字 : 默认情况下, ERDDAP 容器作为特定的用户运行Tomcat. 如果挂载到/erddapData的持久性音量为您主机存储系统上不同的用户/组ID所拥有, ERDDAP 将会因为被拒绝的许可而崩溃 。 设置这些变量会迫使Tomcat与匹配的ID运行.
+-  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** 数字 : 默认情况下, ERDDAP™ 容器作为特定的用户运行Tomcat. 如果挂载到/erddapData的持久性音量为您主机存储系统上不同的用户/组ID所拥有, ERDDAP™ 将会因为被拒绝的许可而崩溃 。 设置这些变量会迫使Tomcat与匹配的ID运行.
 
     :::提示
 在 NFS 挂载这样的服务器上查找您的用户 UID : `编号 - u <your-user_name> ` 。 。 。 这将返回所需的数值 。
     :::
 
--  ** ERDDAP 基数( B) ERDDAP 基数(_B) 乌尔尔** 数字 : 何时 ERDDAP Tomcat认为它服务于当地host:8080。 这些变量覆盖 ERDDAP 内部 URL 生成以链接 (类似您的自定义标志或数据集链接) 正确确定您的公开域名。
+-  ** ERDDAP 基数( B) ERDDAP 基数(_B) 乌尔尔** 数字 : 何时 ERDDAP™ Tomcat认为它服务于当地host:8080。 这些变量覆盖 ERDDAP 内部 URL 生成以链接 (类似您的自定义标志或数据集链接) 正确确定您的公开域名。
 
 :::说明
 如果运行单独的Production 和 QA 环境,请谨慎地分享单个PVC. 在一个环境中修改或删除缓存数据将立即影响另一个环境. 我们使用QA和Production的部署叠加管理,并为每个叠加增加子文件夹。 这样我们就可以用一个QA数据集在QA测试. XML在接触生产部署前.
@@ -137,7 +137,7 @@ spec:
 ---
 
 ## 3个 联网:服务和入侵
-揭发你 ERDDAP 在网络上,您需要一个服务 来引导内部集群流量, 和入侵 把它绑在一个公共 DNS 名称。
+揭发你 ERDDAP™ 在网络上,您需要一个服务 来引导内部集群流量, 和入侵 把它绑在一个公共 DNS 名称。
 
 创建名为的文件 `服务. yaml` 数字 :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-创建 `kustomization.yaml (英语).` 用于收集所有资源并映射您的自定义设置和数据集XML文件的文件。 这些会传给你 ERDDAP 部署时粘贴图像, 以便样式 ERDDAP 页面并添加您 GitHub 寄存器中的数据集,同时启用 `暂停` 把他们定位到部署中
+创建 `kustomization.yaml (英语).` 用于收集所有资源并映射您的自定义设置和数据集XML文件的文件。 这些会传给你 ERDDAP™ 部署时粘贴图像, 以便样式 ERDDAP™ 页面并添加您 GitHub 寄存器中的数据集,同时启用 `暂停` 把他们定位到部署中
 
 #### 基础 ( `碱基/酮化. yaml` ) 
 基础Kustomimization只是将你共享的核心资源捆绑在了整个覆盖层。 我们继续制作 ` datasets.xml ` 和 `设置. xml` 在基部中,只有在QA测试后才能更新。
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

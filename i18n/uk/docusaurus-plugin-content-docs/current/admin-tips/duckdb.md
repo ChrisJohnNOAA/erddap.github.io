@@ -1,4 +1,4 @@
-Цей вміст ґрунтується на [повідомлення від Roy Mendelssohn до ERDDAP група користувачів](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) й
+Цей вміст ґрунтується на [повідомлення від Roy Mendelssohn до ERDDAP™ група користувачів](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) й
 
  ERDDAP™ намагається бути діагностикою про те, які формати даних використовують для своїх даних, а не намагатися працювати з форматами даних, які використовують для громад, які ми в основному обслуговуємо. Більшість і більше роботи в хмарі, і є безліч форматів даних, які люди використовують в хмарі, це буде приємно, якщо ERDDAP™ може підтримувати багато таких форматів. Алас, ERDDAP™ розвиток і обслуговування вже недооцінені, і що бажано зробити використання роботи інших для досягнення цієї мети, не маючи необхідності модифікувати ERDDAP™ й
 
@@ -9,11 +9,13 @@
 
 Для використання DuckDB в ERDDAP™ вам потрібно встановити duckDB на комп'ютер, і встановити роз'єм DuckDB JDBC в ERDDAP™ й Інструкція по установці DuckDB саме на
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Роз'єм DuckDB JDBC можна завантажити з
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Якщо ваш томікат знаходиться в $TOMCAT_HOME, то ви хочете поставити цей файл в $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

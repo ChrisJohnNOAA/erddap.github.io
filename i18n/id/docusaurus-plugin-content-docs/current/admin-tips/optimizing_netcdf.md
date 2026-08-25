@@ -1,4 +1,4 @@
-Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP grup pengguna](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) Sitemap
+Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP™ grup pengguna](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) Sitemap
 
 1. Mengoptimalkan file netcdf untuk cloud
 ————————————————
@@ -7,7 +7,8 @@ a. repacking dan ukuran halaman
 
 Baru-baru ini dalam melakukan beberapa penelitian saya menemukan artikel yang sangat menarik ini:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Tidak seperti inflame gairah seperti diskusi bahasa pemrograman, editor, dan format file, dan ini bukan rekomendasi dari format apa (Login) Anda harus menggunakan, tetapi lebih untuk memahami apa yang ada di kertas itu dan untuk melihat berapa banyak perbaikan yang bisa ( ERDDAP™ selalu mencoba untuk menjadi agnostik tentang banyak masalah ini, agak memilih untuk mencoba dan bekerja dengan bagaimana orang benar-benar bekerja dengan data) Sitemap
 
@@ -86,26 +87,27 @@ Jadi tradeoff ada peningkatan tidak signifikan dalam ukuran file.
 
 Sitemap Tapi jika saya harus memproses ulang file pula ...?
 
-Pertanyaan yang baik adalah jika saya harus menulis skrip untuk memproses ulang file, mengapa tidak hanya menulis skrip untuk menerjemahkan ke format seperti mengatakan zarr? zarr memiliki banyak proponents dan jika Anda tertarik dengan zarr hanya melakukan pencarian bebek cepat dan ada banyak posting yang baik, tampilan yang mungkin lebih seimbang adalah dihttps://www.youtube.com/watch?v=IEAcCmcOdJs  (menarik bahwa banyak poin yang dia maksud adalah apa format eschunk mencoba untuk mengatasi) Sitemap Jadi mengapa Anda tidak ingin menerjemahkan file Anda ke sesuatu seperti zarr, Pertama, jika Anda membuat file netcdf secara teratur, Anda dapat mulai mengoptimalkan file dari saat ini, yang seiring waktu akan melihat kenaikan kecepatan dan Anda tidak harus memformat file masa lalu, dan ERDDAP™ akan tetap dapat agregat di atas file meskipun beberapa pengaturan internal berbeda. Kedua, Anda mungkin memiliki banyak perkakas yang tergantung pada file netcdf, dan pendekatan ini berarti tidak harus membangun kembali apa yang bisa menjadi sejumlah besar kode. Titiknya adalah menyadari pilihan dan memilih apa yang terbaik untuk situasi Anda. Sama seperti pengingat, jika Anda memilih untuk menggunakan file zarr dengan ERDDAP™ zarr format v2 file.
+Pertanyaan yang baik adalah jika saya harus menulis skrip untuk memproses ulang file, mengapa tidak hanya menulis skrip untuk menerjemahkan ke format seperti mengatakan zarr? zarr memiliki banyak proponents dan jika Anda tertarik dengan zarr hanya melakukan pencarian bebek cepat dan ada banyak posting yang baik, tampilan yang mungkin lebih seimbang adalah di https://www.youtube.com/watch?v=IEAcCmcOdJs   (menarik bahwa banyak poin yang dia maksud adalah apa format eschunk mencoba untuk mengatasi) Sitemap Jadi mengapa Anda tidak ingin menerjemahkan file Anda ke sesuatu seperti zarr, Pertama, jika Anda membuat file netcdf secara teratur, Anda dapat mulai mengoptimalkan file dari saat ini, yang seiring waktu akan melihat kenaikan kecepatan dan Anda tidak harus memformat file masa lalu, dan ERDDAP™ akan tetap dapat agregat di atas file meskipun beberapa pengaturan internal berbeda. Kedua, Anda mungkin memiliki banyak perkakas yang tergantung pada file netcdf, dan pendekatan ini berarti tidak harus membangun kembali apa yang bisa menjadi sejumlah besar kode. Titiknya adalah menyadari pilihan dan memilih apa yang terbaik untuk situasi Anda. Sama seperti pengingat, jika Anda memilih untuk menggunakan file zarr dengan ERDDAP™ zarr format v2 file.
 
 Sitemap Big data - sisi
 
 Data besar dibicarakan tentang banyak, tetapi bagaimana besar adalah data yang paling banyak digunakan orang dan bagaimana yang membandingkan dengan kemampuan laptop modern (ya laptop, bukan server) Sitemap Mengambil yang menarik adalah di:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Mulai sekitar menit 37 meskipun seluruh pembicaraan menarik
+ https://www.youtube.com/watch?v=GELhdezYmP0 Mulai sekitar menit 37 meskipun seluruh pembicaraan menarik
 
 Studi ia menyebutkan di:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Jadi ada persentase pengguna yang relatif kecil yang benar-benar perlu engkol daya, tetapi sebagian besar pengguna dapat melakukan analisis mereka di laptop, drive eksternal 26TB sekarang di bawah $ 300 dan rumor adalah bahwa drive eksternal 60TB akan tersedia pada akhir tahun. Sesuatu yang berpikir tentang.
 
 2. Sitemap ERDDAP™ dengan Google Cloud Platform atau penyedia cloud lainnya selain AWS
 -------------------------------------------------------------------------------------
 
-Saat ini ERDDAP™ dikenal hanya untuk bekerja dengan toko objek AWS (S3) meskipun meningkatkan dan generalisasi ERDDAP™ dukungan toko objek ’s adalah pada daftar todo (Loginhttps://github.com/ERDDAP/erddap/issues/158) Sitemap Jadi apa yang harus Anda lakukan jika Anda mengatakan Anda harus menjalankan Anda Meme it ERDDAP™ di Google Cloud Platform (Login) atau platform serupa? Platform cloud pertama menawarkan tingkat penyimpanan yang berbeda, biasanya termasuk salah satu yang mirip dengan penyimpanan lokal dan diakui oleh sistem operasi, salah satu yang terhubung melalui jaringan biasanya menggunakan NFS untuk akses (lagi langsung diakses oleh OS) , dan satu yang merupakan toko objek. Solusi pertama tidak menggunakan toko objek, dan Anda akan bagus untuk pergi. Tapi seperti biasa, TANSTAAFL dan kelemahan dalam kasus ini adalah saat Anda pergi dari toko objek -&gt; Akses NFS -&gt; toko lokal biaya Anda juga naik. (Saya akan menambahkan NFS juga diakses melalui jaringan, dan memiliki masalah latensi sendiri, ini juga akan mendapat manfaat dari optimasi file) Sitemap
+Saat ini ERDDAP™ dikenal hanya untuk bekerja dengan toko objek AWS (S3) meskipun meningkatkan dan generalisasi ERDDAP™ dukungan toko objek ’s adalah pada daftar todo (Login https://github.com/ERDDAP/erddap/issues/158 ) Sitemap Jadi apa yang harus Anda lakukan jika Anda mengatakan Anda harus menjalankan Anda Meme it ERDDAP™ di Google Cloud Platform (Login) atau platform serupa? Platform cloud pertama menawarkan tingkat penyimpanan yang berbeda, biasanya termasuk salah satu yang mirip dengan penyimpanan lokal dan diakui oleh sistem operasi, salah satu yang terhubung melalui jaringan biasanya menggunakan NFS untuk akses (lagi langsung diakses oleh OS) , dan satu yang merupakan toko objek. Solusi pertama tidak menggunakan toko objek, dan Anda akan bagus untuk pergi. Tapi seperti biasa, TANSTAAFL dan kelemahan dalam kasus ini adalah saat Anda pergi dari toko objek -&gt; Akses NFS -&gt; toko lokal biaya Anda juga naik. (Saya akan menambahkan NFS juga diakses melalui jaringan, dan memiliki masalah latensi sendiri, ini juga akan mendapat manfaat dari optimasi file) Sitemap
 
-Jika Anda harus menggunakan toko objek, atau hanya dapat membeli toko objek, jawabannya adalah sistem file FUSE (https://github.com/libfuse/libfuse) Sitemap Di GCP, ini disebut gcsfuse, dan langkah-langkah untuk menginstalnya:
+Jika Anda harus menggunakan toko objek, atau hanya dapat membeli toko objek, jawabannya adalah sistem file FUSE ( https://github.com/libfuse/libfuse ) Sitemap Di GCP, ini disebut gcsfuse, dan langkah-langkah untuk menginstalnya:
 
 • Instal gcsfuse pada gambar Linux GCP Anda:
 sudo apt update

@@ -1,4 +1,4 @@
-Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP web development](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP™ web development](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Ag rith ERDDAP™ sa scamall a bheith ina ábhar te. Ba chóir dom a thabhairt faoi deara go ERDDAP™ Tá reáchtáil i gcónaí sa scamall, ach an chuid is mó den am nach ar fhreastalaí ar fáil ag soláthraí scamall tráchtála, agus an bac mór do reáchtáil ERDDAP™ ar sholáthraí scamall tráchtála má úsáideann tú stóráil S3, nach bhfuil cead rochtana bloc Linux gnáth. Má tá tú sásta a íoc níos mó a bhaint as na roghanna rochtain bloc ar fáil ag do sholáthraí scamall tráchtála, ná ag rith ar freastalaí scamall tráchtála go bunúsach mar an gcéanna le reáchtáil ar do threalamh féin, ach amháin ar ndóigh an costas.
 

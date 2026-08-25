@@ -1,6 +1,6 @@
-# Hogyan telepítsünk ERDDAP Kubernetes
+# Hogyan telepítsünk ERDDAP™ Kubernetes
 
-telepítés ERDDAP A Kubernetes skálázható, ellenálló környezetet biztosít az adatkiszolgáló számára. Ez az útmutató lefedi a fogadóhoz szükséges alapvető összetevőket ERDDAP szabvány használata A Kubernetes megnyilvánul, beleértve a tartós tárolást, az alkalmazás telepítését, a hálózatépítést és az új adatkészletek létrehozását közvetlenül a klaszteren belül.
+telepítés ERDDAP™ A Kubernetes skálázható, ellenálló környezetet biztosít az adatkiszolgáló számára. Ez az útmutató lefedi a fogadóhoz szükséges alapvető összetevőket ERDDAP™ szabvány használata A Kubernetes megnyilvánul, beleértve a tartós tárolást, az alkalmazás telepítését, a hálózatépítést és az új adatkészletek létrehozását közvetlenül a klaszteren belül.
 
 ## Előfeltételek
 Mielőtt elkezdené, biztosítsa, hogy:
@@ -11,7 +11,7 @@ Mielőtt elkezdené, biztosítsa, hogy:
 -----
 
 ## 1. Állandó tárolás (PVC) 
- ERDDAP tartós tárolást igényel a cache fájlok, a logok és az állam fenntartásához a pod újraindításokon keresztül. Használjon egy `PersistentVolumeClaim`   (PVC) biztosítja, hogy a te `bigParentDirectory[szerkesztés]`   (ahol ERDDAP tárolja generált adatait) nem veszítik el, ha egy pod lemegy. Ez a mennyiség kapcsolódhat az adattároló helyéhez is, ahol a nyers adatfájlok élnek.
+ ERDDAP™ tartós tárolást igényel a cache fájlok, a logok és az állam fenntartásához a pod újraindításokon keresztül. Használjon egy `PersistentVolumeClaim`   (PVC) biztosítja, hogy a te `bigParentDirectory[szerkesztés]`   (ahol ERDDAP™ tárolja generált adatait) nem veszítik el, ha egy pod lemegy. Ez a mennyiség kapcsolódhat az adattároló helyéhez is, ahol a nyers adatfájlok élnek.
 
 Készítsen egy fájlt neve `pvc.yaml` mint így:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 ----
 
-## 2. 2. 2. A ERDDAP Telepítés
-A telepítés manifesztálja a ERDDAP pod maga. Javasoljuk a hivatalos erddap / erddap Docker kép használatát hosszú távú támogatással.
+## 2. 2. 2. A ERDDAP™ Telepítés
+A telepítés manifesztálja a ERDDAP™ pod maga. Javasoljuk a hivatalos erddap / erddap Docker kép használatát hosszú távú támogatással.
 
 :::Info
 2026 májusától, [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) volt a legújabb verzió. Bölcs dolog alkalmanként újratelepíteni a biztonsági sebezhetőségeket.
 :::
 
-Ebben a konfigurációban a kulcsfontosságú környezeti változókat az időzóna beállításainak kezelésére injektáljuk, biztosítva, hogy a Tomcat rendelkezik a megfelelő olvasási / írási engedélyekkel a tárolási volumenhez, és elmondja ERDDAP hogyan kell megfelelően útvonalazni az URL-eket egy Kubernetes Ingress mögött. A PVC-t is felszereljük `/erddapData`   (az alapértelmezett `bigParentDirectory[szerkesztés]` ) injekcióba datasets.xml and setup.xml into `/usr/local/tomcat/content/erddap` ...
+Ebben a konfigurációban a kulcsfontosságú környezeti változókat az időzóna beállításainak kezelésére injektáljuk, biztosítva, hogy a Tomcat rendelkezik a megfelelő olvasási / írási engedélyekkel a tárolási volumenhez, és elmondja ERDDAP™ hogyan kell megfelelően útvonalazni az URL-eket egy Kubernetes Ingress mögött. A PVC-t is felszereljük `/erddapData`   (az alapértelmezett `bigParentDirectory[szerkesztés]` ) injekcióba datasets.xml and setup.xml into `/usr/local/tomcat/content/erddap` ...
 
 Készítsen egy fájlt neve `telepítés.yaml` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** : Beállítja az időzónát a Tomcat szervernek és ERDDAP logok.
+-  **TZ** : Beállítja az időzónát a Tomcat szervernek és ERDDAP™ logok.
 
--  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** : Alapértelmezéssel, ERDDAP konténer fut Tomcat, mint egy adott felhasználó. Ha a /erddapData-hoz felszerelt tartós kötet egy másik felhasználó/csoportos azonosító tulajdonában van a tárhelyrendszerén, ERDDAP összeomlik az engedély megtagadott hibái miatt. Ezeknek a változóknak a beállítása Tomcat a megfelelő azonosítókkal fut.
+-  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** : Alapértelmezéssel, ERDDAP™ konténer fut Tomcat, mint egy adott felhasználó. Ha a /erddapData-hoz felszerelt tartós kötet egy másik felhasználó/csoportos azonosító tulajdonában van a tárhelyrendszerén, ERDDAP™ összeomlik az engedély megtagadott hibái miatt. Ezeknek a változóknak a beállítása Tomcat a megfelelő azonosítókkal fut.
 
     :::Tippek
 Keresse meg az UID felhasználóját a szerveren, ahol az NFS-hegy ilyen: `id -u <your-user_name> ` ... Ez visszaadja a szükséges számértéket.
     :::
 
--  ** ERDDAP _baseUrl & ERDDAP _baseHttps Url** : Mikor ERDDAP fut Kubernetes mögött egy Szolgáltatás és egy Ingress, Tomcat úgy gondolja, hogy ez szolgálja a forgalom a helyi:8080. Ezek a változók felülírják ERDDAP Belső URL-generáció, így linkek (mint az Ön egyedi logója vagy adatkészlet linkjei) helyesen oldja meg a nyilvánosan néző domain nevét.
+-  ** ERDDAP _baseUrl & ERDDAP _baseHttps Url** : Mikor ERDDAP™ fut Kubernetes mögött egy Szolgáltatás és egy Ingress, Tomcat úgy gondolja, hogy ez szolgálja a forgalom a helyi:8080. Ezek a változók felülírják ERDDAP Belső URL-generáció, így linkek (mint az Ön egyedi logója vagy adatkészlet linkjei) helyesen oldja meg a nyilvánosan néző domain nevét.
 
 :::Megjegyzés
 Ha külön termelési és QA környezetet futtat, óvatos legyen az egyetlen PVC megosztása. A sütött adatok egy környezetben történő módosítása vagy törlése azonnal hatással lesz a másikra. Ezt a telepítési átfedések alkalmazásával kezeljük a QA-t és a termelést, és minden átfedéshez alkatrészeket adunk hozzá. Ez lehetővé teszi számunkra, hogy teszteljük a QA-t egy QA adatkészlettel. XML, mielőtt megérinti a termelési telepítést.
@@ -137,7 +137,7 @@ Ha külön termelési és QA környezetet futtat, óvatos legyen az egyetlen PVC
 ---
 
 ## 3. 3. 3. Hálózat: Szolgáltatás és Ingress
-Lásd ki ERDDAP pod az internetre, szüksége van egy Szolgáltatásra, hogy belső klaszterforgalmat irányítson, és egy Ingress csatlakoztassa a nyilvános DNS-nevhez.
+Lásd ki ERDDAP™ pod az internetre, szüksége van egy Szolgáltatásra, hogy belső klaszterforgalmat irányítson, és egy Ingress csatlakoztassa a nyilvános DNS-nevhez.
 
 Készítsen egy fájlt neve `Szolgáltatás.yaml` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-Hozzon létre `kustomization.yaml` fájl gyűjteni az összes erőforrást, és térképezze fel a szokásos telepítési és adatkészletek XML fájlokat. Ezek áthaladnak a tiédbe ERDDAP Docker kép, amikor telepítve van, így stílusban lehet ERDDAP oldal és adjon hozzá adatkészleteket a GitHub repository-ból, miközben hagyja `kustomize` térképezze őket a telepítéshez.
+Hozzon létre `kustomization.yaml` fájl gyűjteni az összes erőforrást, és térképezze fel a szokásos telepítési és adatkészletek XML fájlokat. Ezek áthaladnak a tiédbe ERDDAP™ Docker kép, amikor telepítve van, így stílusban lehet ERDDAP™ oldal és adjon hozzá adatkészleteket a GitHub repository-ból, miközben hagyja `kustomize` térképezze őket a telepítéshez.
 
 #### Alap ( `alap/kustomization.yaml` ) 
 A bázis kustomizáció egyszerűen megfosztja az alapvető erőforrásait a tétek során. Megtartjuk a termelést ` datasets.xml ` és `setup.xml` bázisban és csak frissítse ezeket a QA tesztelése után.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

@@ -1,8 +1,8 @@
-이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP 사용자 그룹](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) ·
+이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP™ 사용자 그룹](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) ·
 
 최근에 AWS S3에 액세스하는 데 도움이되는 많은 문의를 얻고 있습니다. ERDDAP™ · 첫 번째, ERDDAP™ 버전 2.29은 비-AWS 객체 저장소에서도 작업해야 하는 S3 액세스가 향상됩니다. (감사합니다&#33;) · 그러나 이전에 FUSE 기반 시스템을 사용하여 S3 저장소가 서버 또는 VM의 파일 시스템처럼 나타납니다.
 
-이것을 할 수있는 한 가지 방법은 "rclone"을 사용합니다. (https://rclone.org/) . rclone는 많은 다른 S3 체계에 작동하고, 많은 다른 조정이 가동 FUSE에서 속도 벌금의 일부를 상쇄할 수 있는 캐시 크기를 조정하기를 포함하여 성과를 낙관하기 위하여 있습니다. rclone를 사용하여 이점 ERDDAP TM는 S3와 모든 상호 작용을 처리하는 것입니다, 그래서 dataset 유형은 좋아합니다 EDDGrid FromNcFiles는 로컬 파일이 있다면 직접 사용할 수 있습니다. 이것은 객체 저장소에 접근하기 위해 rclone 설정 방법을 파악해야하며 나머지는 정상적인 Linux 유형 설정입니다.
+이것을 할 수있는 한 가지 방법은 "rclone"을 사용합니다. ( https://rclone.org/ ) . rclone는 많은 다른 S3 체계에 작동하고, 많은 다른 조정이 가동 FUSE에서 속도 벌금의 일부를 상쇄할 수 있는 캐시 크기를 조정하기를 포함하여 성과를 낙관하기 위하여 있습니다. rclone를 사용하여 이점 ERDDAP™ rclone는 S3와 모든 상호 작용을 처리하므로 dataset 유형은 다음과 같습니다. EDDGrid FromNcFiles는 로컬 파일이 있다면 직접 사용할 수 있습니다. 이것은 객체 저장소에 접근하기 위해 rclone 설정 방법을 파악해야하며 나머지는 정상적인 Linux 유형 설정입니다.
 
 이제 난 그냥 그에 그것을 왼쪽, 그리고 예를 제공하지 않는 경우 다시 놓을 것입니다. 다음에 나는 익명으로 마운트하려고 NOAA Goes17 데이터는 Ubuntu 서버 중 하나에 공개 액세스 AWS S3 저장소에 있습니다. 초기 설정에서 rclone 프로세스는 모든 작업을 테스트하는 것이 더 쉽게 테스트 할 수 있도록 전경에서 실행됩니다. 그리고 배경에서 ii를 서비스로 전환하는 방법을 논의 할 것입니다. 아래에있는 것을 참고하십시오. 캐시는 1GB로 설정됩니다. 성능은 훨씬 더 큰 캐시를 만들기에 의해 향상 될 수있다, 5GB-10GB 또는 더 큰 말한다. 또한 설정은 성능을 최적화 할 수있는 것에 내 추측이지만 최선의 것일 수 없습니다. ERDDAP™ ·
 

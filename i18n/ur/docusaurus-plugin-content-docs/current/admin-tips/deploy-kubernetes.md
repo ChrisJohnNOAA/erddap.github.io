@@ -1,6 +1,6 @@
-# کیسے ؟ ERDDAP کوبرنیٹس پر
+# کیسے ؟ ERDDAP™ کوبرنیٹس پر
 
-رنگ ERDDAP کوبرنیٹس پر آپ کے ڈیٹا سرور کے لیے ایک قابل قبول، قابل برداشت ماحول فراہم کرتا ہے۔ یہ گائیڈ میزبان کے لئے درکار ضروری اجزاء پر محیط ہے۔ ERDDAP معیار استعمال کریں کوبرنیٹز ظاہر کرتے ہیں جن میں مسلسل ذخیرہ کا انتظام کرنا ، درخواست کو پورا کرنا ، نیٹ‌ورک نیٹ ورکنگ کرنا اور نئے ڈیٹا سیٹ کو کمپیوٹر کے اندر سے براہِ‌راست ترتیب دینا شامل ہے ۔
+رنگ ERDDAP™ کوبرنیٹس پر آپ کے ڈیٹا سرور کے لیے ایک قابل قبول، قابل برداشت ماحول فراہم کرتا ہے۔ یہ گائیڈ میزبان کے لئے درکار ضروری اجزاء پر محیط ہے۔ ERDDAP™ معیار استعمال کریں کوبرنیٹز ظاہر کرتے ہیں جن میں مسلسل ذخیرہ کا انتظام کرنا ، درخواست کو پورا کرنا ، نیٹ‌ورک نیٹ ورکنگ کرنا اور نئے ڈیٹا سیٹ کو کمپیوٹر کے اندر سے براہِ‌راست ترتیب دینا شامل ہے ۔
 
 ## ذمہ‌داری
 شروع کرنے سے پہلے، آپ کو یقین ہے:
@@ -11,7 +11,7 @@
 ----
 
 ## 1۔ مستقل‌مزاجی (پی ٹی سی) 
- ERDDAP کیچ فائلوں ، لاگس اور ریاست کو دوبارہ تعمیر کرنے کیلئے مسلسل ذخیرہ کرنے کی ضرورت ہے ۔ ایک استعمال `مستقل‌مزاجی`   (پی ٹی سی) آپ کو یقین دلاتا ہے `بڑے کیمیائی مرکبات`   (کہاں ERDDAP اس کے پیدا کردہ اعداد و شمار کو ذخیرہ کریں) اگر پود نیچے جاتا ہے تو گم نہیں ہوتا۔ اس حجم کو آپ کے ڈیٹا ذخیرہ گاہ سے بھی منسلک کیا جا سکتا ہے جہاں خام ڈیٹا فائل رہیں گے۔
+ ERDDAP™ کیچ فائلوں ، لاگس اور ریاست کو دوبارہ تعمیر کرنے کیلئے مسلسل ذخیرہ کرنے کی ضرورت ہے ۔ ایک استعمال `مستقل‌مزاجی`   (پی ٹی سی) آپ کو یقین دلاتا ہے `بڑے کیمیائی مرکبات`   (کہاں ERDDAP™ اس کے پیدا کردہ اعداد و شمار کو ذخیرہ کریں) اگر پود نیچے جاتا ہے تو گم نہیں ہوتا۔ اس حجم کو آپ کے ڈیٹا ذخیرہ گاہ سے بھی منسلک کیا جا سکتا ہے جہاں خام ڈیٹا فائل رہیں گے۔
 
 فائل کا نام بنائیں `pvc.yaml` اس طرح:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 --
 
-## ۲ ۔ جواب ERDDAP غیر متصل
-ظاہر ظاہری کا انتظام کرتا ہے۔ ERDDAP خود کود. ہم طویل عرصے تک معاونت کے ساتھ سرکاری ایرڈاپ/رڈاپ ڈکر تصویر استعمال کرتے ہیں۔
+## ۲ ۔ جواب ERDDAP™ غیر متصل
+ظاہر ظاہری کا انتظام کرتا ہے۔ ERDDAP™ خود کود. ہم طویل عرصے تک معاونت کے ساتھ سرکاری ایرڈاپ/رڈاپ ڈکر تصویر استعمال کرتے ہیں۔
 
 :::معلومات
 جیسا کہ مئی 2026ء کی بات ہے۔ ['وی2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) تازہ ترین ورژن تھا۔ حفاظتی سرگرمیوں کے ساتھ وقتاًفوقتاً دوبارہ رہنا دانشمندی کی بات ہے۔
 :::
 
-اس ڈھانچے میں، ہم نے کلیدی ماحول تبدیل کر دیا ہے تاکہ ٹائمز کی ترتیبات کو حل کیا جا سکے، ٹامکاٹ کو ذخیرہ کرنے کے لیے درست پڑھا / لکھنے کے اجازے موجود ہیں ERDDAP جب کوبرنیٹس انگریس کے پیچھے بیٹھا تو درست روٹ URLs کیسے بن سکتا ہے۔ ہم پی وی سی کو بھی ماؤنٹ کرتے ہیں۔ `/ بچہ`   (طے شدہ `بڑے کیمیائی مرکبات` ) کھانے کے لئے datasets.xml اور برابر برابر بچھے ہوئے قالین `/usr/local/tomcat/content/reddap` . .
+اس ڈھانچے میں، ہم نے کلیدی ماحول تبدیل کر دیا ہے تاکہ ٹائمز کی ترتیبات کو حل کیا جا سکے، ٹامکاٹ کو ذخیرہ کرنے کے لیے درست پڑھا / لکھنے کے اجازے موجود ہیں ERDDAP™ جب کوبرنیٹس انگریس کے پیچھے بیٹھا تو درست روٹ URLs کیسے بن سکتا ہے۔ ہم پی وی سی کو بھی ماؤنٹ کرتے ہیں۔ `/ بچہ`   (طے شدہ `بڑے کیمیائی مرکبات` ) کھانے کے لئے datasets.xml اور برابر برابر بچھے ہوئے قالین `/usr/local/tomcat/content/reddap` . .
 
 فائل کا نام بنائیں `مَیں نے اُس سے پوچھا : ” کیا مَیں اِس بات پر یقین رکھتا ہوں کہ یہوواہ خدا مجھے معاف کر دے گا ؟ “` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** : ٹامکاٹ سرور کے لیے ٹائمز سیٹ کرتا ہے اور ERDDAP لاگس.
+-  **TZ** : ٹامکاٹ سرور کے لیے ٹائمز سیٹ کرتا ہے اور ERDDAP™ لاگس.
 
--  **خرچ کریں** : قَسم ہے بُرجوں (یعنی گواہی دینے والا) ERDDAP برتن مخصوص صارف کے طور پر ٹومکاٹ چلاتا ہے۔ اگر آپ کے میزبان اسٹور سسٹم پر ایک مختلف صارف/ گروپ شناخت کی ملکیت ہے، ERDDAP اجازت کی وجہ سے تباہ ہو جائے گا۔ ان متغیرات کو آپس میں ملانے کے لئے ٹومکاٹ پر زور دیں
+-  **خرچ کریں** : قَسم ہے بُرجوں (یعنی گواہی دینے والا) ERDDAP™ برتن مخصوص صارف کے طور پر ٹومکاٹ چلاتا ہے۔ اگر آپ کے میزبان اسٹور سسٹم پر ایک مختلف صارف/ گروپ شناخت کی ملکیت ہے، ERDDAP™ اجازت کی وجہ سے تباہ ہو جائے گا۔ ان متغیرات کو آپس میں ملانے کے لئے ٹومکاٹ پر زور دیں
 
     :::اوپر
 سرور پر آپ کا صارف ایوی ایشن تلاش کریں جہاں این ایف ایس ماؤنٹ اس طرح ہے: `id - <your-user_name> ` . . اس سے آپ کو ضرورت پڑنے والی نیوکلیائی قدر واپس مل جائے گی۔
     :::
 
--  ** ERDDAP _محفوظہ & ERDDAP _تاریخِ تبدیلی سے اورل** : کب ERDDAP کوبرنیٹز میں ایک سروس اور ایک انگرس کے پیچھے چلتی ہے، ٹومکاٹ کا خیال ہے کہ یہ مقامیہوست:8080 پر ٹریفک کی خدمت کر رہی ہے۔ یہ تبدیلی ERDDAP ' اندرونی طور پر پیدا ہونے والی نسل تاکہ تعلقات (اپنے دستور لاگو یا ڈیٹا سیٹ تعلقات کی طرح) آپ کے پبلک شناختی ڈومین نام سے درست طور پر حل.
+-  ** ERDDAP _محفوظہ & ERDDAP _تاریخِ تبدیلی سے اورل** : کب ERDDAP™ کوبرنیٹز میں ایک سروس اور ایک انگرس کے پیچھے چلتی ہے، ٹومکاٹ کا خیال ہے کہ یہ مقامیہوست:8080 پر ٹریفک کی خدمت کر رہی ہے۔ یہ تبدیلی ERDDAP ' اندرونی طور پر پیدا ہونے والی نسل تاکہ تعلقات (اپنے دستور لاگو یا ڈیٹا سیٹ تعلقات کی طرح) آپ کے پبلک شناختی ڈومین نام سے درست طور پر حل.
 
 :::نوٹ
 اگر آپ الگ پروڈکشن اور QA ماحول چلا رہے ہیں تو ایک پی وی سی کو شیئر کرنے کے بارے میں محتاط رہیں ۔ ایک ماحول میں کیڈنگ ڈیٹا کو ختم کرنا یا اسے ختم کرنا دوسرے ماحول میں فوری طور پر متاثر ہوگا۔ ہم KA اور پروڈکشن کے لئے زیادہ ٹیکسوں کا استعمال کرتے ہوئے اس کا انتظام کرتے ہیں اور ہر سطح کے لیے ذیلی حصے شامل کرتے ہیں۔ اس سے ہم QA A پر ایک QA datasss کے ساتھ جانچ سکتے ہیں۔ پیداواری برآمدات کو چھونے سے پہلے XML.
@@ -137,7 +137,7 @@ spec:
 ---
 
 ## 3۔ ذمہ‌داری : خدمت اور آغاز
-آپ کو چھپانے کے لئے ERDDAP ویب پر آپ کو ایک سروس کی ضرورت ہوتی ہے تاکہ آپ اسے عوامی DNS کے نام سے باندھ سکیں ۔
+آپ کو چھپانے کے لئے ERDDAP™ ویب پر آپ کو ایک سروس کی ضرورت ہوتی ہے تاکہ آپ اسے عوامی DNS کے نام سے باندھ سکیں ۔
 
 فائل کا نام بنائیں `خدمت ۔` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-بنائیں `Kustomization.yaml` تمام وسائل جمع کرنے اور اپنے دستوری سیٹ اپ اور ڈیٹا سیٹس XML فائل کے لیے فائل۔ وہ آپ میں داخل ہو جائیں گے۔ ERDDAP اِس کے بعد آپ اُس کی تصویر بنا سکتے ہیں ۔ ERDDAP صفحہ اور اعداد و شمار آپ کے GitHub کے ذخیرہ سے اخذ کیے گئے اعداد و شمار میں شامل کرتے ہیں۔ `قبرص` ان کو آپ کے انکار پر نشان لگائیں.
+بنائیں `Kustomization.yaml` تمام وسائل جمع کرنے اور اپنے دستوری سیٹ اپ اور ڈیٹا سیٹس XML فائل کے لیے فائل۔ وہ آپ میں داخل ہو جائیں گے۔ ERDDAP™ اِس کے بعد آپ اُس کی تصویر بنا سکتے ہیں ۔ ERDDAP™ صفحہ اور اعداد و شمار آپ کے GitHub کے ذخیرہ سے اخذ کیے گئے اعداد و شمار میں شامل کرتے ہیں۔ `قبرص` ان کو آپ کے انکار پر نشان لگائیں.
 
 #### بیس ( `بنیاد/kostomization.yaml` ) 
 بنیادی طور پر آپ کے بنیادی وسائل کو مجموعی طور پر تقسیم کرتے ہیں. ہم پیداوار سنبھالتے ہیں۔ ` datasets.xml ` اور `تیار` بنیاد میں اور صرف کی اے اے پر امتحان کے بعد ان کو اپ ڈیٹ کیا.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

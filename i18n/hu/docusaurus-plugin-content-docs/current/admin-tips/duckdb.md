@@ -1,4 +1,4 @@
-Ez a tartalom egy [Roy Mendelssohn üzenete a ERDDAP felhasználók csoport](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ...
+Ez a tartalom egy [Roy Mendelssohn üzenete a ERDDAP™ felhasználók csoport](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ...
 
  ERDDAP™ megpróbálja agnosztikusnak lenni abban, hogy milyen adatformátumokat használnak az emberek az adataikhoz, ahelyett, hogy megpróbálnának a legtöbb felhasználási adatformátummal dolgozni az általunk főként szolgáló közösségekhez. Ahogy egyre több munka van a felhőben, és vannak olyan adatformátumok plethorája, amelyeket az emberek használnak a felhőben, jó lenne, ha ERDDAP™ sok ilyen formátumot támogathat. Alanya, ERDDAP™ a fejlesztés és a karbantartás már megalapozott, és mi lenne kívánatos, hogy használja a munka mások számára, hogy elérje ezt a célt, anélkül, hogy módosítania kell ERDDAP™ ...
 
@@ -9,11 +9,13 @@ Belépés [DuckDB](https://duckdb.org/) és [Trino](https://trino.io/) ... Mindk
 
 A DuckDB használatához ERDDAP™ duckDB-t kell telepítenie a számítógépre, és telepítenie kell a DuckDB JDBC csatlakozót ERDDAP™ ... Maga a DuckDB telepítésének utasításai
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 A DuckDB JDBC csatlakozó letölthető
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Ha a tomcat a $TOMCAT_HOME-nál található, akkor ezt a fájlt a $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

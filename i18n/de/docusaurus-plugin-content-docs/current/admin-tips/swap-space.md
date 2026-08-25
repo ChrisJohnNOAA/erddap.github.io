@@ -1,4 +1,4 @@
-Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP Benutzergruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP™ Benutzergruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Viele der Hilfe-Anfragen, die wir bekommen Probleme mit der Speichernutzung in ERDDAP™ . Einige davon stammen aus Änderungen im Speichermanagement in Java , und auch Interaktionen mit Linux OS Speichermanagement. Anfangs glaube ich an Java ANHANG Java verwendet mehr Speicher als das, was in den Haufen-Einstellungen gesetzt wird. Sie können dies sehen, wenn Sie Ihre Heap-Einstellungen betrachten und dann Befehle wie Top, Htop oder btop verwenden, um die Speichernutzung von Anwendungen zu überprüfen. So zum Beispiel unsere stark genutzte ERDDAP™ hat Heap-Raum auf 21GB gesetzt, aber tatsächlich Speicher verwenden kann zu 28GB-30GB laufen, manchmal höher. Dieser Wert kann spike, wenn es viele gleichzeitig große Anforderungen an das System gibt.
 

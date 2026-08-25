@@ -1,4 +1,4 @@
-Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP kullanıcılar grubu](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP™ kullanıcılar grubu](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Çok fazla yardım talebi, hafıza kullanımı ile ilgili sorunları hafıza kullanımı ile dahil ediyoruz ERDDAP™ . Bazıları hafıza yönetimindeki değişikliklerden geliyor Java Ayrıca Linux OS hafıza yönetimi ile etkileşimler. Starting I believe in Java 17, Java Heap ayarlarında yer alandan daha fazla hafıza kullanır. Bunu heap ayarlarınıza bakarsanız görebilirsiniz ve sonra uygulamanın hafıza kullanımını kontrol etmek için üst, htop veya btop gibi komutları kullanabilirsiniz. Örneğin ağır kullanımımız ERDDAP™ 21GB'de yer alan heap alanı var, ancak aslında hafıza kullanımı 28GB-30GB'ye, bazen daha yüksek olabilir. Bu değer, sisteme çok fazla eşzamanlı büyük istek varsa artabilir.
 

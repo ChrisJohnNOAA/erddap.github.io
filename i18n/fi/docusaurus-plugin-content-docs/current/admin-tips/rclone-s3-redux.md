@@ -1,4 +1,4 @@
-Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP Käyttäjäryhmä](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP™ Käyttäjäryhmä](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Juokseminen ERDDAP™ Pilvestä on tullut kuuma aihe. Huomaa, että ERDDAP™ on aina toiminut pilvessä, vain suurimman osan ajasta ei kaupallisen pilvipalvelun tarjoamassa palvelimessa, ja suuri este juoksemiselle. ERDDAP™ kaupallisessa pilvipalveluntarjoajassa on käytössä S3-tallennus, joka ei salli normaalia Linux-lohkon käyttöä. Jos olet valmis maksamaan enemmän kaupallisen pilvipalveluntarjoajan tarjoamien lohkojen käyttömahdollisuuksien käyttämisestä kuin kaupallisen pilvipalvelimen käyttö on pohjimmiltaan sama kuin omien laitteiden käyttö, paitsi tietenkin kustannukset.
 

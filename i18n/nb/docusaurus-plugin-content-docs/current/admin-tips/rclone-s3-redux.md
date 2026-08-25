@@ -1,4 +1,4 @@
-Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP brukergruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) ..
+Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP™ brukergruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) ..
 
 Kjøring ERDDAP™ I skyen er blitt et varmt emne. Jeg bør merke meg at ERDDAP™ har alltid kjørt i skyen, bare det meste av tiden ikke på en server gitt av en kommersiell skyleverandør, og den store hindringen for å kjøre ERDDAP™ på en kommersiell skyleverandør er hvis du bruker S3-lagring, som ikke tillater normal Linux blokk tilgang. Hvis du er villig til å betale mer for å bruke blokktilgangsalternativene fra din kommersielle skyleverandør, er det i utgangspunktet det samme som å kjøre på ditt eget utstyr, bortsett fra kostnadene.
 

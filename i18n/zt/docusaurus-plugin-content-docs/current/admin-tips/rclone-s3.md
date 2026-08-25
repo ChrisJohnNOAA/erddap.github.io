@@ -1,8 +1,8 @@
-此內容基于 [羅伊·門德爾索恩致 ERDDAP 使用者群組](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) .
+此內容基于 [羅伊·門德爾索恩致 ERDDAP™ 使用者群組](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) .
 
 最近我們收到多起詢問, ERDDAP™ . 首先 ERDDAP™ 2.29版本將改善 S3 存取功能, (多謝賽斯&#33;) . 但我之前提到過 使用基于 FUSE 的系統 讓 S3 商店在您的伺服器或 VM 上出現成檔案系統 。
 
-其一, (https://rclone.org/) . rclone 在许多不同的 S3 系統上工作, 并且有很多不同的設定來优化性能, 包括設定缓存大小, 希望它能抵消一些运行 FUSE 的速罰 。 使用 rclone 的优点 ERDDAP TM 是 rclone 處理所有與 S3 的互動, 所以數據集類型像 EDDGrid 從 NcFiles 可以直接使用, 好像有本地檔案一樣 。 這意味著你只需要想出如何設置 Rclone 才能進入你的物件商店, 其他的只是普通的 Linux 類型設定 。
+其一, ( https://rclone.org/ ) . rclone 在许多不同的 S3 系統上工作, 并且有很多不同的設定來优化性能, 包括設定缓存大小, 希望它能抵消一些运行 FUSE 的速罰 。 使用 rclone 的优点 ERDDAP™ 是rclone處理所有與 S3 的互動, 所以數據集類型像 EDDGrid 從 NcFiles 可以直接使用, 好像有本地檔案一樣 。 這意味著你只需要想出如何設置 Rclone 才能進入你的物件商店, 其他的只是普通的 Linux 類型設定 。
 
 現在如果我把它留在那 而不舉個例子 我會失職的 我將匿名登上 NOAA 在Ubuntu伺服器的一個公開的 AWS S3 商店上的Goes17 資料, 在最初設置中, rclone 行程將在前線執行, 以更容易測試所有東西都起作用, 然後我會討論如何將 ii 轉換成在背景中執行的服務 。 注意下面的快取被設定為 1GB 。 可能會增加性能, 這些設定也是我的猜測, ERDDAP™ .
 

@@ -1,4 +1,4 @@
-বিষয়বস্তু ভিত্তিক [রয় মেন্ডেস এর কাছ থেকে বার্তা ERDDAP ব্যবহারকারী গ্রুপ](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) . .
+বিষয়বস্তু ভিত্তিক [রয় মেন্ডেস এর কাছ থেকে বার্তা ERDDAP™ ব্যবহারকারী গ্রুপ](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) . .
 
  ERDDAP™ ডাটার জন্য তথ্য ব্যবহার করে ডাটা ফরম্যাট করা তথ্যের উপর ভিত্তি করে তথ্য ব্যবহার করার চেষ্টা করা হচ্ছে। মেঘে যত বেশি কাজ হয়, এবং তথ্যের এক টুকরো অংশ রয়েছে যা মেঘে ব্যবহার করা হয়, সেগুলো বেশ ভালো হবে। ERDDAP™ এই বিন্যাসে অনেক সমর্থন করা যায়। হায় ঈশ্বর, ERDDAP™ উন্নয়ন এবং রক্ষণাবেক্ষণের কাজ ইতিমধ্যে বন্ধ রয়েছে এবং অন্যদের এই লক্ষ্যে পৌঁছানোর জন্য অন্যদের যে কাজ দরকার তা কি, কোন পরিবর্তন ছাড়াই করা উচিত। ERDDAP™ . .
 
@@ -9,11 +9,13 @@
 
 DockDB ব্যবহারের জন্য ERDDAP™ আপনার কম্পিউটারে PockDB ইনস্টল করতে হবে, এবং DockDB BDবিসি এর সঙ্গে সংযোগ স্থাপন করতে হবে ERDDAP™ . . ইনস্টলের নির্দেশ নিজেই আছে
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DockDB JDC সংযোগের তালিকা থেকে ডাউনলোড করা যাবে
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 যদি আপনার MTOMCT_HOMEে অবস্থান হয়, তাহলে আপনি এই ফাইলটিকে $TOOMCS/WECT_MECT/MEDB/WBL-এ স্থানান্তর করতে চান।
 

@@ -1,4 +1,4 @@
-이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP 사용자 그룹](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ·
+이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP™ 사용자 그룹](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ·
 
  ERDDAP™ 데이터 형식의 사람들이 데이터를 사용하는 것에 대해 임신 한 것은 주로 봉사하는 지역 사회에 가장 많이 사용되는 데이터 형식과 함께 일하려고합니다. 더 많은 작업은 클라우드에 있으며 사람들이 클라우드에서 사용하는 데이터 형식의 plethora가 있으면 좋을 것입니다. ERDDAP™ 이러한 형식을 많이 지원할 수 있습니다. 알라, ERDDAP™ 개발 및 유지 보수는 이미 understaffed, 그리고 어떤 desirable가 다른 사람의 작업의 사용을 만들기 위해 이러한 목표를 달성, 수정하지 않고 ERDDAP™ ·
 
@@ -9,11 +9,13 @@
 
 DuckDB를 사용하려면 ERDDAP™ 당신은 당신의 컴퓨터에 DuckDB를 설치해야, 그리고 DuckDB JDBC 연결관을 설치하기 위하여 ERDDAP™ · DuckDB 자체 설치 지침은
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC 연결관은에서 다운로드될 수 있습니다
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 tomcat이 $TOMCAT_HOME에 위치한 경우, $TOMCAT_HOME/webapps/erddap/WEB-INF/lib에서 이 파일을 넣어 원합니다.
 

@@ -1,4 +1,4 @@
-Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP web development](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP™ web development](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 A lán de na hiarratais cabhrach a fháil againn i gceist fadhbanna le húsáid chuimhne i ERDDAP™ . Tagann cuid de seo ó athruithe i mbainistíocht chuimhne i Java , agus idirghníomhaíochtaí le bainistíocht cuimhne Linux OS. Ag tosú Creidim i Java 17, Java Úsáideann cuimhne níos mó ná an méid atá curtha síos i suímh gcarn. Is féidir leat é seo a fheiceáil má fhéachann tú ar do suímh gcarn agus ansin orduithe a úsáid ar nós barr, barr, nó btop a sheiceáil an úsáid chuimhne na n-iarratas. Mar sin, mar shampla ár n-úsáid go mór ERDDAP™ Tá spás gcarn leagtha ag 21GB, ach i ndáiríre is féidir úsáid chuimhne a reáchtáil go 28GB-30GB, uaireanta níos airde. Is féidir leis an luach seo spike má tá a lán iarrataí móra comhuaineacha ar an gcóras.
 

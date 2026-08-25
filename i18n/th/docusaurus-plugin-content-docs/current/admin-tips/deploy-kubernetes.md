@@ -1,6 +1,6 @@
-# จะ ทํา อย่าง ไร ดี? ERDDAP บน คู เบอร์ เนส์
+# จะ ทํา อย่าง ไร ดี? ERDDAP™ บน คู เบอร์ เนส์
 
-การลงเล่น ERDDAP บนคูแบร์เน็ตส์ เป็นสภาพแวดล้อมที่ทนทานและยืดหยุ่นได้ สําหรับเซิร์ฟเวอร์ข้อมูลของคุณ ส่วนเสริมนี้ครอบคลุมส่วนประกอบที่จําเป็นในการใช้โฮสต์ ERDDAP ใช้มาตรฐาน Kubernetes ออกรายการรวมไปถึงการจัดการจัดเก็บอย่างต่อเนื่อง, ใช้งานโปรแกรม, การปรับแต่งเครือข่าย, และสร้างข้อมูลใหม่ชุด XML โดยตรงจากภายในกลุ่ม.
+การลงเล่น ERDDAP™ บนคูแบร์เน็ตส์ เป็นสภาพแวดล้อมที่ทนทานและยืดหยุ่นได้ สําหรับเซิร์ฟเวอร์ข้อมูลของคุณ ส่วนเสริมนี้ครอบคลุมส่วนประกอบที่จําเป็นในการใช้โฮสต์ ERDDAP™ ใช้มาตรฐาน Kubernetes ออกรายการรวมไปถึงการจัดการจัดเก็บอย่างต่อเนื่อง, ใช้งานโปรแกรม, การปรับแต่งเครือข่าย, และสร้างข้อมูลใหม่ชุด XML โดยตรงจากภายในกลุ่ม.
 
 ## ความแหลม:
 ก่อนที่คุณจะเริ่มต้นแน่ใจว่าคุณมี:
@@ -11,7 +11,7 @@
 ---
 
 ## 1 การจัดเก็บต่อเนื่อง (แบบ PVC) 
- ERDDAP ต้องการ การ เก็บ อย่าง ต่อ เนื่อง เพื่อ คง ไว้ ซึ่ง แคช, ล็อก, และ รัฐ ต่าง ๆ ที่ อยู่ เหนือ ฝัก จะ เริ่ม ต้น ใหม่. ใช้ `ต่อเนื่อง VolumeClamm`   (แบบ PVC) เพื่อให้แน่ใจว่า `เครื่อง มือ ขนาด ใหญ่`   (ที่ไหน ERDDAP เก็บข้อมูลที่ถูกสร้าง) จะไม่หลงถ้าฝักลงไป ระดับเสียงนี้สามารถเชื่อมโยงไปยังตําแหน่งเก็บข้อมูลของคุณได้ โดยมีแฟ้มข้อมูลดิบมีชีวิตอยู่
+ ERDDAP™ ต้องการ การ เก็บ อย่าง ต่อ เนื่อง เพื่อ คง ไว้ ซึ่ง แคช, ล็อก, และ รัฐ ต่าง ๆ ที่ อยู่ เหนือ ฝัก จะ เริ่ม ต้น ใหม่. ใช้ `ต่อเนื่อง VolumeClamm`   (แบบ PVC) เพื่อให้แน่ใจว่า `เครื่อง มือ ขนาด ใหญ่`   (ที่ไหน ERDDAP™ เก็บข้อมูลที่ถูกสร้าง) จะไม่หลงถ้าฝักลงไป ระดับเสียงนี้สามารถเชื่อมโยงไปยังตําแหน่งเก็บข้อมูลของคุณได้ โดยมีแฟ้มข้อมูลดิบมีชีวิตอยู่
 
 สร้างแฟ้มชื่อ `ขนาด pvc. yaml` เช่น:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 ---
 
-## 2 เดอะ ERDDAP การ ว่าง งาน
-รายการ การ ลง มือ ทํา งาน จัด การ ERDDAP กระสวยเอง เราขอแนะนําให้ใช้ภาพของอาร์ดแนป/เซอร์แดป ดอกเกอร์อย่างไม่เป็นทางการ
+## 2 เดอะ ERDDAP™ การ ว่าง งาน
+รายการ การ ลง มือ ทํา งาน จัด การ ERDDAP™ กระสวยเอง เราขอแนะนําให้ใช้ภาพของอาร์ดแนป/เซอร์แดป ดอกเกอร์อย่างไม่เป็นทางการ
 
 :::ข้อมูล
 2026 เมื่อ พ.ศ. [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) เป็นฉบับล่าสุด เป็นการฉลาดที่บางครั้งจะลดความเร็วลง เพื่อตามความไม่มั่นคงของความปลอดภัย
 :::
 
-ในการปรับแต่งนี้ เราได้ฉีดตัวแปรแวดล้อมที่สําคัญ เพื่อจัดการการตั้งค่าเขตเวลา เพื่อให้แน่ใจว่าทอมแคทมีสิทธิ์ในการอ่าน/เขียนได้ถูกต้องสําหรับโวลต์จัดเก็บ และบอก ERDDAP วิธีทําเส้นทางที่อยู่ URL อย่างเหมาะสม เมื่อนั่งหลังคูเบอร์เน็ตต์แบบรุก เราเพิ่ม PVC ให้ `เคอร์ดัปดาต้า`   (ค่าปริยาย `เครื่อง มือ ขนาด ใหญ่` ) เพื่อฉีด datasets.xml และตั้งค่า.xml เข้าไป `/ usr/ local/tomcat/ content/erdap` .
+ในการปรับแต่งนี้ เราได้ฉีดตัวแปรแวดล้อมที่สําคัญ เพื่อจัดการการตั้งค่าเขตเวลา เพื่อให้แน่ใจว่าทอมแคทมีสิทธิ์ในการอ่าน/เขียนได้ถูกต้องสําหรับโวลต์จัดเก็บ และบอก ERDDAP™ วิธีทําเส้นทางที่อยู่ URL อย่างเหมาะสม เมื่อนั่งหลังคูเบอร์เน็ตต์แบบรุก เราเพิ่ม PVC ให้ `เคอร์ดัปดาต้า`   (ค่าปริยาย `เครื่อง มือ ขนาด ใหญ่` ) เพื่อฉีด datasets.xml และตั้งค่า.xml เข้าไป `/ usr/ local/tomcat/ content/erdap` .
 
 สร้างแฟ้มชื่อ `เรียกใช้งาน aml` .
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **ขนาด TZ** . ตั้งค่าเขตเวลาสําหรับเซิร์ฟเวอร์ Tomcat ERDDAP ล็อก
+-  **ขนาด TZ** . ตั้งค่าเขตเวลาสําหรับเซิร์ฟเวอร์ Tomcat ERDDAP™ ล็อก
 
--  **TOMCAT_SUID & TOMCAT_GUP_ID** . โดยปริยายแล้ว ERDDAP ตู้คอนเทนเนอร์ใช้ Tomcat เป็นผู้ใช้เฉพาะ หากโวลุมถาวรถูกเมานท์ไปยัง / serdapdata โดยหมายเลขผู้ใช้/กลุ่มผู้ใช้อื่นในระบบแฟ้มของคุณ ERDDAP จะเกิดความผิดพลาดเนื่องจากสิทธิ์ที่อนุญาต การกําหนดตัวแปรเหล่านี้บังคับให้ทอมแคท ทํางานกับ ID ที่ตรงกับ
+-  **TOMCAT_SUID & TOMCAT_GUP_ID** . โดยปริยายแล้ว ERDDAP™ ตู้คอนเทนเนอร์ใช้ Tomcat เป็นผู้ใช้เฉพาะ หากโวลุมถาวรถูกเมานท์ไปยัง / serdapdata โดยหมายเลขผู้ใช้/กลุ่มผู้ใช้อื่นในระบบแฟ้มของคุณ ERDDAP™ จะเกิดความผิดพลาดเนื่องจากสิทธิ์ที่อนุญาต การกําหนดตัวแปรเหล่านี้บังคับให้ทอมแคท ทํางานกับ ID ที่ตรงกับ
 
     :::เคล็ดลับ
 ค้นหาผู้ใช้ของคุณหมายเลขผู้ใช้บนเซิร์ฟเวอร์ที่จุดเมานท์ NFS เป็นเช่นนี้: `ไอดี-ยู <your-user_name> ` . นี่จะเป็นค่าตัวเลขที่คุณต้องการ
     :::
 
--  ** ERDDAP _ล้างข้อมูล ERDDAP _พื้นฐาน Url** . เมื่อ ERDDAP ทํางานในคูแบร์เน็ตส์ เบื้องหลังบริการ และอินเทรียล ทอมแคทคิดว่ากําลังให้บริการการจราจร บนเครื่องในท้องถิ่น:8080. การแทนที่ตัวแปรเหล่านี้ ERDDAP รุ่นที่อยู่ URL ภายในเพื่อให้ลิงก์ (เช่น โลโก้หรือลิงก์ที่กําหนดเอง) แก้ไขให้ถูกต้องกับชื่อโดเมนของคุณ
+-  ** ERDDAP _ล้างข้อมูล ERDDAP _พื้นฐาน Url** . เมื่อ ERDDAP™ ทํางานในคูแบร์เน็ตส์ เบื้องหลังบริการ และอินเทรียล ทอมแคทคิดว่ากําลังให้บริการการจราจร บนเครื่องในท้องถิ่น:8080. การแทนที่ตัวแปรเหล่านี้ ERDDAP รุ่นที่อยู่ URL ภายในเพื่อให้ลิงก์ (เช่น โลโก้หรือลิงก์ที่กําหนดเอง) แก้ไขให้ถูกต้องกับชื่อโดเมนของคุณ
 
 :::ข้อความ
 ถ้าคุณทํางานแยกโปรดักชันและ QA สภาพแวดล้อม โปรดระวังเกี่ยวกับการใช้ PVC ร่วมกัน การ แก้ไข หรือ ลบ ข้อมูล ที่ เก็บ ไว้ ใน สภาพ แวด ล้อม หนึ่ง ๆ จะ ส่ง ผล กระทบ ต่อ อีก สภาพ การณ์ หนึ่ง ทันที. เราจัดการมันโดยใช้ส่วนทับของ QA และผลิตและเพิ่มโฟลเดอร์ย่อยในแต่ละชั้น นี่ช่วยให้เราทดสอบ QA ด้วยชุดข้อมูล QA  XML ก่อนจะสัมผัสตัวโปรแกรมการผลิต
@@ -137,7 +137,7 @@ spec:
 ---
 
 ## 3 ระบบเครือข่าย: บริการ และ ความ ดันทุรัง
-เพื่อเปิดเผยตัวตนของคุณ ERDDAP กระสวยไปที่เว็บ คุณจําเป็นต้องมีบริการในการเส้นทาง การจราจรภายในกลุ่ม และอินแอร์จะผูกมันเข้ากับชื่อ DNS ของสาธารณชน
+เพื่อเปิดเผยตัวตนของคุณ ERDDAP™ กระสวยไปที่เว็บ คุณจําเป็นต้องมีบริการในการเส้นทาง การจราจรภายในกลุ่ม และอินแอร์จะผูกมันเข้ากับชื่อ DNS ของสาธารณชน
 
 สร้างแฟ้มชื่อ `บริการ aml` .
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-สร้าง `การทํา kustomization. yaml` แฟ้มที่จะใช้เก็บทรัพยากรและแผนที่ต่าง ๆ ที่ตั้งค่าและชุดข้อมูล XML ที่กําหนดเองของคุณ มันจะถูกส่งต่อไปยังคุณ ERDDAP อิมเมจของโดกเกอร์เมื่อใช้งานเพื่อให้คุณสามารถฟอร์แมตของคุณได้ ERDDAP หน้าและเพิ่มชุดข้อมูลต่าง ๆ จากคลังข้อมูล GitHub ของคุณในขณะที่ให้ `ลูกบาศก์` ทําแผนที่ไปที่ระบบของคุณ
+สร้าง `การทํา kustomization. yaml` แฟ้มที่จะใช้เก็บทรัพยากรและแผนที่ต่าง ๆ ที่ตั้งค่าและชุดข้อมูล XML ที่กําหนดเองของคุณ มันจะถูกส่งต่อไปยังคุณ ERDDAP™ อิมเมจของโดกเกอร์เมื่อใช้งานเพื่อให้คุณสามารถฟอร์แมตของคุณได้ ERDDAP™ หน้าและเพิ่มชุดข้อมูลต่าง ๆ จากคลังข้อมูล GitHub ของคุณในขณะที่ให้ `ลูกบาศก์` ทําแผนที่ไปที่ระบบของคุณ
 
 #### ฐาน ( `ฐาน/ การขยายสัญญาณ` ) 
 การแบ่งตัวของฐาน ก็แค่รวมทรัพยากรหลักของคุณเข้าด้วยกัน เราเก็บการผลิต ` datasets.xml ` ถึง `ตั้งค่า. xml` ในฐานและการปรับปรุงเท่านั้น หลังจากการทดสอบบน QA
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

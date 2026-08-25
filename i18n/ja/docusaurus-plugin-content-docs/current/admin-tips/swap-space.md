@@ -1,4 +1,4 @@
-このコンテンツは、 [Roy Mendelssohnからのメッセージ ERDDAP ユーザーグループ](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) お問い合わせ
+このコンテンツは、 [Roy Mendelssohnからのメッセージ ERDDAP™ ユーザーグループ](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) お問い合わせ
 
 メモリ使用上の問題が発生した多くのヘルプリクエスト ERDDAP™ お問い合わせ この一部はメモリ管理の変化から Java Linux OS のメモリ管理と相互作用する。 私は信じてから始める Java 17,717円 Java ヒープ設定に置かれるものよりもメモリを消費します。 ヒープ設定を見て、アプリケーションのメモリ使用状況を確認するには、トップ、htop、btopなどのコマンドを使用して、このことができます。 たとえば、使用した ERDDAP™ 21GBで設定されたヒープスペースを持っていますが、実際にはメモリ使用は28GB-30GBに実行できます。 システムへの同時リクエストが多い場合、この値はスパイクできます。
 

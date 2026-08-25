@@ -1,4 +1,4 @@
-Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP grupul de utilizatori](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP™ grupul de utilizatori](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimizarea fișierelor netcdf pentru cloud
 - Da.
@@ -7,7 +7,8 @@ a. reambalare și dimensiunea paginii
 
 Recent în a face unele cercetări am dat peste acest articol foarte interesant:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Nimic nu pare a inflama pasiuni cum ar fi discuții de limbaje de programare, editori, și formate de fișiere, și aceasta nu este o recomandare de ce format (s) ar trebui să utilizați, dar mai degrabă pentru a înțelege ceea ce este în acea lucrare și pentru a vedea cât de mult se poate obține îmbunătățirea ( ERDDAP™ a încercat întotdeauna să fie agnostic despre o mulțime de aceste probleme, mai degrabă alegerea de a încerca și de a lucra cu modul în care oamenii de fapt lucrează cu date) .
 
@@ -86,26 +87,27 @@ Deci, compromisul este că există o creștere nu nesemnificativă a dimensiunii
 
 d. Dar dacă trebuie să reprocesez fişierele...?
 
-O întrebare bună este dacă trebuie să scriu un scenariu pentru a reprocesa fișierele, de ce nu scrie doar un script pentru a traduce într-un format cum ar fi spune zarr? Zarr are mulți susținători și dacă sunteți interesat în Zarr face doar o căutare rapidă rațăduckgo și există o mulțime de posturi bune, o vedere poate mai echilibrată este lahttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Este interesant că multe dintre punctele pe care le ridică sunt ceea ce formatul ghețar încearcă să abordeze) . Deci, de ce s-ar putea să nu doriți să traduceți fișierele la ceva de genul zarr, În primul rând, dacă creați în mod regulat fișiere netcdf, ați putea începe optimizarea fișierelor de acum încolo, care de-a lungul timpului va vedea câștiguri de viteză și nu va trebui să reformuleze fișierele trecute, și ERDDAP™ va fi încă în măsură să se compare peste fișiere, chiar dacă unele dintre setările interne diferă. În al doilea rând, s-ar putea avea o mulțime de instrumente care depinde de fișiere netcdf, și această abordare ar însemna să nu trebuiască să reevalueze ceea ce ar putea fi o cantitate extinsă de cod. Ideea este de a fi conștienți de opțiuni și de a alege ceea ce funcționează cel mai bine pentru situația dumneavoastră. La fel ca un memento, dacă alegeți să utilizați fișiere zarr cu ERDDAP™ , acestea trebuie să fie format zarr v2.
+O întrebare bună este dacă trebuie să scriu un scenariu pentru a reprocesa fișierele, de ce nu scrie doar un script pentru a traduce într-un format cum ar fi spune zarr? Zarr are mulți susținători și dacă sunteți interesat în Zarr face doar o căutare rapidă rațăduckgo și există o mulțime de posturi bune, o vedere poate mai echilibrată este la https://www.youtube.com/watch?v=IEAcCmcOdJs   (Este interesant că multe dintre punctele pe care le ridică sunt ceea ce formatul ghețar încearcă să abordeze) . Deci, de ce s-ar putea să nu doriți să traduceți fișierele la ceva de genul zarr, În primul rând, dacă creați în mod regulat fișiere netcdf, ați putea începe optimizarea fișierelor de acum încolo, care de-a lungul timpului va vedea câștiguri de viteză și nu va trebui să reformuleze fișierele trecute, și ERDDAP™ va fi încă în măsură să se compare peste fișiere, chiar dacă unele dintre setările interne diferă. În al doilea rând, s-ar putea avea o mulțime de instrumente care depinde de fișiere netcdf, și această abordare ar însemna să nu trebuiască să reevalueze ceea ce ar putea fi o cantitate extinsă de cod. Ideea este de a fi conștienți de opțiuni și de a alege ceea ce funcționează cel mai bine pentru situația dumneavoastră. La fel ca un memento, dacă alegeți să utilizați fișiere zarr cu ERDDAP™ , acestea trebuie să fie format zarr v2.
 
 a. Date mari - o parte
 
 Se vorbesc mult despre date importante, dar cât de mari sunt datele pe care majoritatea oamenilor le folosesc şi cum se compară asta cu capacităţile laptopurilor moderne (da laptopuri, nu servere) . O abordare interesantă este:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Începeţi în jurul minutului 37 deşi toată discuţia e interesantă.
+ https://www.youtube.com/watch?v=GELhdezYmP0 Începeţi în jurul minutului 37 deşi toată discuţia e interesantă.
 
 Studiul menţionat este la:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Deci există un procent relativ mic de utilizatori care au nevoie într-adevăr să manivela puterea, dar majoritatea copleșitoare a utilizatorilor pot face analizele lor pe un laptop, 26TB drive-uri externe sunt acum sub 300 $ și zvonurile sunt că 60TB drive-uri externe vor fi disponibile până la sfârșitul anului. Ceva la care să te gândeşti.
 
 2. Utilizarea ERDDAP™ cu Google Cloud Platform sau alți furnizori de cloud pe lângă AWS
 --------------------------------------------------------------------------
 
-În acest moment ERDDAP™ este cunoscut doar pentru a lucra cu magazine de obiecte AWS (S3) , deși îmbunătățirea și generalizarea ERDDAP™ Suport magazin obiect este pe lista de todo (Vezi?https://github.com/ERDDAP/erddap/issues/158) . Deci, ce să fac dacă vi se spune că trebuie să rulați dvs. ERDDAP™ pe Google Cloud Platform (GCP) sau o platformă similară? În primul rând, majoritatea platformelor de cloud oferă diferite niveluri de stocare, inclusiv, de obicei, unul similar cu cel de stocare locală și este recunoscut de sistemul de operare, unul care este conectat peste rețea, folosind de obicei NFS pentru acces (din nou accesibil direct de către SG) Şi unul care e un magazin de obiecte. Prima soluţie este să nu folosiţi magazine de obiecte şi aţi fi gata de plecare. Dar, ca întotdeauna, TanstaaFL și dezavantajul în acest caz este ca te duci de la magazin obiect -&gt; Acces NFS -&gt; magazin local costurile de asemenea cresc. (Aș adăuga că NFS este de asemenea accesat prin rețea și are propriile probleme de latență, acest lucru ar beneficia și de optimizarea fișierelor) .
+În acest moment ERDDAP™ este cunoscut doar pentru a lucra cu magazine de obiecte AWS (S3) , deși îmbunătățirea și generalizarea ERDDAP™ Suport magazin obiect este pe lista de todo (Vezi? https://github.com/ERDDAP/erddap/issues/158 ) . Deci, ce să fac dacă vi se spune că trebuie să rulați dvs. ERDDAP™ pe Google Cloud Platform (GCP) sau o platformă similară? În primul rând, majoritatea platformelor de cloud oferă diferite niveluri de stocare, inclusiv, de obicei, unul similar cu cel de stocare locală și este recunoscut de sistemul de operare, unul care este conectat peste rețea, folosind de obicei NFS pentru acces (din nou accesibil direct de către SG) Şi unul care e un magazin de obiecte. Prima soluţie este să nu folosiţi magazine de obiecte şi aţi fi gata de plecare. Dar, ca întotdeauna, TanstaaFL și dezavantajul în acest caz este ca te duci de la magazin obiect -&gt; Acces NFS -&gt; magazin local costurile de asemenea cresc. (Aș adăuga că NFS este de asemenea accesat prin rețea și are propriile probleme de latență, acest lucru ar beneficia și de optimizarea fișierelor) .
 
-Dacă trebuie să utilizați magazin obiect, sau poate permite doar un magazin obiect, răspunsul este un sistem de fișiere FUSE (https://github.com/libfuse/libfuse) . Pe GCP, acest lucru se numește GCSfuse, și pașii pentru a instala sunt:
+Dacă trebuie să utilizați magazin obiect, sau poate permite doar un magazin obiect, răspunsul este un sistem de fișiere FUSE ( https://github.com/libfuse/libfuse ) . Pe GCP, acest lucru se numește GCSfuse, și pașii pentru a instala sunt:
 
 • Instalați gcsfuse pe imaginea GCP Linux:
 sudo apt update

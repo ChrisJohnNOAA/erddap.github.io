@@ -1,4 +1,4 @@
-यह सामग्री एक पर आधारित है [Roy Mendelssohn से संदेश ERDDAP उपयोगकर्ता समूह](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ।
+यह सामग्री एक पर आधारित है [Roy Mendelssohn से संदेश ERDDAP™ उपयोगकर्ता समूह](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ।
 
  ERDDAP™ इसके बजाय हम मुख्य रूप से सेवा समुदायों के लिए सबसे अधिक उपयोग के डेटा प्रारूपों के साथ काम करने की कोशिश करते हुए, डेटा प्रारूपों के लिए लोग अपने डेटा के लिए क्या उपयोग करते हैं, इसके बारे में agnostic होने की कोशिश करता है। चूंकि बादल में अधिक से अधिक काम होता है, और वहाँ डेटा स्वरूपों कि लोग बादल में उपयोग का एक plethora हैं, यह अच्छा होगा अगर ERDDAP™ इन प्रारूपों का समर्थन कर सकता है। Alas, ERDDAP™ विकास और रखरखाव पहले से ही कम हो चुका है, और क्या वांछनीय होना चाहिए, इस लक्ष्य को प्राप्त करने के लिए दूसरों के काम का उपयोग करना, बिना संशोधन किए ERDDAP™ ।
 
@@ -9,11 +9,13 @@
 
 में DuckDB का उपयोग करने के लिए ERDDAP™ आपको अपने कंप्यूटर पर duckDB स्थापित करने और DuckDB JDBC कनेक्टर को स्थापित करने की आवश्यकता है। ERDDAP™ । DuckDB स्थापित करने के निर्देश
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC कनेक्टर से डाउनलोड किया जा सकता है
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 यदि आपका tomcat $TOMCAT_HOME पर स्थित है, तो आप इस फाइल को $TOMCAT_HOME/webapps/erddap/WEB-INF/lib पर रखना चाहते हैं।
 

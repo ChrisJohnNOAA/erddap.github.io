@@ -1,4 +1,4 @@
-Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP grupong gumagamit](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP™ grupong gumagamit](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Ang karamihan sa mga kahilingan sa atin ay nagsasangkot ng mga problema sa paggamit ng memorya ERDDAP™ . Ang ilan dito ay mula sa mga pagbabago sa pangangasiwa ng memorya sa Java , at mga interaksiyon din sa Linux OS memory management. Pagsisimula Naniniwala Ako Java 17, Java gumamit ng higit na memorya kaysa sa inilalagay sa bunton. Makikita mo ito kung titingnan mo ang iyong mga bunton at pagkatapos ay gagamit ka ng mga utos na gaya ng itaas, tuktok, o btop upang suriin ang paggamit sa memorya ng mga aplikasyon. Kaya halimbawa ang aming labis na gamit ERDDAP™ ay may puwang na itinakda sa 21GB, ngunit sa katunayan ang paggamit ng memorya ay maaaring tumakbo sa 28GB-30GB, kung minsan ay mas mataas pa. Ang halagang ito ay maaaring lumaki kung maraming sabay - sabay na malalaking kahilingan sa sistema.
 

@@ -1,4 +1,4 @@
-Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP skupina uživatelů](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP™ skupina uživatelů](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Běh ERDDAP™ v cloudu se stal žhavým tématem. Měl bych si všimnout, že ERDDAP™ vždy běží v cloudu, jen většinou ne na serveru poskytovaném komerčním poskytovatelem cloudů, a hlavní překážkou pro provoz ERDDAP™ na komerčním poskytovateli cloud je, pokud používáte S3 úložiště, což neumožňuje normální Linux blokový přístup. Pokud jste ochotni platit více za využití možností přístupu k bloku poskytovaných vaším komerčním poskytovatelem cloudu, než provoz na komerčním cloudovém serveru je v podstatě stejný jako provoz na vlastním zařízení, samozřejmě kromě nákladů.
 

@@ -1,4 +1,4 @@
-此內容基于 [羅伊·門德爾索恩致 ERDDAP 使用者群組](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+此內容基于 [羅伊·門德爾索恩致 ERDDAP™ 使用者群組](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 執行 ERDDAP™ 在雲中 已經成為熱門的话题 我應該注意到 ERDDAP™ 通常在云中运行, 只是大部分時間不是在 商業云提供商提供的伺服器上, ERDDAP™ 在商業雲端提供商上, 如果你愿意付出更多的錢來使用你的商業云端提供商提供的區塊存取選項,
 

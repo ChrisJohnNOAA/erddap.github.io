@@ -1,4 +1,4 @@
-Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP grup pengguna](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) Sitemap
+Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP™ grup pengguna](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) Sitemap
 
  ERDDAP™ mencoba untuk menjadi agnostik tentang format data apa yang digunakan orang untuk data mereka, bukan mencoba bekerja dengan format data yang paling banyak digunakan untuk masyarakat yang terutama kami layani. Semakin banyak pekerjaan di cloud, dan ada banyak format data yang digunakan orang di cloud, itu akan bagus jika ERDDAP™ bisa mendukung banyak format ini. Login ERDDAP™ pengembangan dan pemeliharaan sudah terganggu, dan apa yang akan diinginkan adalah untuk memanfaatkan pekerjaan orang lain untuk mencapai tujuan ini, tanpa harus memodifikasi ERDDAP™ Sitemap
 
@@ -9,11 +9,13 @@ Login [Login](https://duckdb.org/) Login [Login](https://trino.io/) Sitemap Kedu
 
 Untuk menggunakan DuckDB dalam ERDDAP™ Anda perlu menginstal duckDB ke komputer Anda, dan untuk menginstal konektor DuckDB JDBC ke ERDDAP™ Sitemap Instruksi untuk menginstal DuckDB sendiri Meme it
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Konektor DuckDB JDBC dapat diunduh dari
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Jika tomcat Anda terletak di $TOMCAT_HOME, maka Anda ingin menempatkan file ini di $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

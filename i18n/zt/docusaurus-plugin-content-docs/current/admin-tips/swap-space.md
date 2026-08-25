@@ -1,4 +1,4 @@
-此內容基于 [羅伊·門德爾索恩致 ERDDAP 使用者群組](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+此內容基于 [羅伊·門德爾索恩致 ERDDAP™ 使用者群組](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 我們收到的很多幫助要求 都涉及到內存用法的問題 ERDDAP™ . 其中一部分來自內存管理的改變 Java , 并与 Linux OS 記憶體管理器互動。 我開始相信 Java 17, Java 使用的記憶體比在堆積的設定中要多 。 您可以看到這個, 若您查看您的堆積設定, 然後使用上部、 htop 或 btop 等命令來檢查應用程式的內存用量 。 譬如說我們用得很重 ERDDAP™ 但實際上的內存使用可以跑到28GB-30GB, 如果系統有許多同時的大型要求, 此值可能會激增 。
 

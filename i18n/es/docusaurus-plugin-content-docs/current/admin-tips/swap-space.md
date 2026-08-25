@@ -1,4 +1,4 @@
-Este contenido se basa en un [mensaje de Roy Mendelssohn al ERDDAP Grupo de usuarios](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Este contenido se basa en un [mensaje de Roy Mendelssohn al ERDDAP™ Grupo de usuarios](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Muchas de las solicitudes de ayuda que recibimos implican problemas con el uso de memoria en ERDDAP™ . Parte de esto proviene de cambios en la gestión de memoria en Java , y también interacciones con la gestión de memoria de Linux OS. Comenzando creo en Java 17, Java usa más memoria de lo que se pone en la configuración del montón. Puedes ver esto si miras la configuración del montón y luego usa comandos como top, htop o btop para comprobar el uso de la memoria de las aplicaciones. Así que, por ejemplo, nuestro uso pesado ERDDAP™ tiene espacio de salto fijado en 21 GB, pero en realidad el uso de la memoria puede funcionar a 28GB-30GB, a veces más alto. Este valor puede aumentar si hay muchas solicitudes grandes simultáneas al sistema.
 

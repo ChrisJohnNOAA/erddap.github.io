@@ -1,4 +1,4 @@
-Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP grupul de utilizatori](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP™ grupul de utilizatori](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 O mulțime de cereri de ajutor ne implică probleme cu utilizarea memoriei în ERDDAP™ . Unele dintre acestea provin din schimbări în managementul memoriei în Java , precum și interacțiuni cu Linux OS de gestionare a memoriei. Incepand cred in Java 17, Java foloseşte mai multă memorie decât ceea ce este pus în setările grămezii. Puteți vedea acest lucru dacă vă uitați la setările dvs. grămadă și apoi utilizați comenzi, cum ar fi partea de sus, htop, sau btop pentru a verifica utilizarea memoriei de aplicații. Deci, de exemplu, noastre puternic utilizate ERDDAP™ are un spaţiu la 21GB, dar de fapt utilizarea memoriei poate rula la 28GB-30GB, uneori mai mare. Această valoare poate crește dacă există o mulțime de cereri simultane mari la sistem.
 

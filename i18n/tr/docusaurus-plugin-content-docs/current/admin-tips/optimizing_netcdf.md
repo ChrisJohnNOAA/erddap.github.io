@@ -1,4 +1,4 @@
-Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP kullanıcılar grubu](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP™ kullanıcılar grubu](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Bulut için netcdf dosyaları optimize edin
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -7,7 +7,8 @@ A. repacking ve sayfa büyüklüğü
 
 Son zamanlarda bu ilginç makalede rastladığım bazı araştırmalarda:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Hiçbir şey programlama dilleri, editörler ve dosya formatları hakkındaki tartışmalar gibi inflame tutkuları gibi görünüyor ve bu, hangi formatta bir öneri değil. (s) Kullanmanız gerekir, ancak bu makalede ne olduğunu anlamak ve ne kadar iyileşmenin kazanılabileceğini görmek için ( ERDDAP™ Her zaman bu konularda çok şey hakkında agnostic olmaya çalıştı, bunun yerine insanların aslında verilerle nasıl çalıştığını denemek ve çalışmak yerine.) .
 
@@ -86,26 +87,27 @@ Yani ticaret, dosya büyüklüğünde önemsiz bir artış değildir.
 
 d. Ama yine de dosyaları yeniden işlemem gerekiyorsa...?
 
-İyi bir soru, dosyaları yeniden işlemek için bir senaryo yazmak zorundaysam, neden sadece bir senaryo yazmamak gibi bir formata tercüme etmek için? Phenr'in birçok savunucusu var ve sadece hızlı bir ördek arama yapıyorsanız ve çok sayıda iyi yazı var, belki daha dengeli bir görünüm belki de daha iyi bir görünüm dahahttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Arttığı birçok noktanın buzchunk formatının ele almaya çalıştığı ilginçtir.) . Öyleyse neden dosyalarınızı somut gibi bir şeye dönüştürmek istemeyebilirsiniz, İlk olarak, netcdf dosyaları düzenli olarak yaratırsanız, dosyaları buradan optimize etmeye başlayabilirsiniz, hangi zaman hız kazançlarını görecek ve geçmiş dosyaları reform yapmanız gerekmez ve geçmiş dosyaları reform yapmanız gerekir. ERDDAP™ İç ayarlardan bazıları farklı olsa da hala dosyaların üzerinde toplanabilir. İkincisi, netcdf dosyalarına bağlı olan çok sayıda araç var olabilir ve bu yaklaşım, geniş bir kod miktarı olabilecekleri tekrarlamamak anlamına gelir. Nokta seçeneklerin farkında olmak ve durumunuz için neyin en iyi çalıştığını seçmek. Tıpkı bir hatırlatıcı olarak, eğer Zarr dosyalarını kullanarak kullanmayı seçerseniz ERDDAP™ Ancak, onlar klinis format v2 dosyaları olmalıdır.
+İyi bir soru, dosyaları yeniden işlemek için bir senaryo yazmak zorundaysam, neden sadece bir senaryo yazmamak gibi bir formata tercüme etmek için? Phenr'in birçok savunucusu var ve sadece hızlı bir ördek arama yapıyorsanız ve çok sayıda iyi yazı var, belki daha dengeli bir görünüm belki de daha iyi bir görünüm daha https://www.youtube.com/watch?v=IEAcCmcOdJs   (Arttığı birçok noktanın buzchunk formatının ele almaya çalıştığı ilginçtir.) . Öyleyse neden dosyalarınızı somut gibi bir şeye dönüştürmek istemeyebilirsiniz, İlk olarak, netcdf dosyaları düzenli olarak yaratırsanız, dosyaları buradan optimize etmeye başlayabilirsiniz, hangi zaman hız kazançlarını görecek ve geçmiş dosyaları reform yapmanız gerekmez ve geçmiş dosyaları reform yapmanız gerekir. ERDDAP™ İç ayarlardan bazıları farklı olsa da hala dosyaların üzerinde toplanabilir. İkincisi, netcdf dosyalarına bağlı olan çok sayıda araç var olabilir ve bu yaklaşım, geniş bir kod miktarı olabilecekleri tekrarlamamak anlamına gelir. Nokta seçeneklerin farkında olmak ve durumunuz için neyin en iyi çalıştığını seçmek. Tıpkı bir hatırlatıcı olarak, eğer Zarr dosyalarını kullanarak kullanmayı seçerseniz ERDDAP™ Ancak, onlar klinis format v2 dosyaları olmalıdır.
 
 e. Büyük veriler - bir kenara
 
 Büyük veriler çok fazla konuşuluyor, ancak çoğu insanın kullandığı veriler ve modern dizüstü bilgisayarların yetenekleri ile nasıl karşılaştırılır? (Evet dizüstü bilgisayarlar, sunucular değil) . İlginç bir take şu anda:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Yaklaşık dakika 37, ama bütün konuşma ilginç
+ https://www.youtube.com/watch?v=GELhdezYmP0 Yaklaşık dakika 37, ama bütün konuşma ilginç
 
 Bahsettiği çalışma şu anda:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Bu nedenle, gerçekten güce girmek için ihtiyaç duyan kullanıcıların nispeten küçük bir yüzdesi var, ancak kullanıcıların ezici çoğunluğu analizlerini bir dizüstü bilgisayarlarda yapabilir, 26TB dış sürücüler şimdi 300 $ ve söylentilerin altında 60TB dış sürücüler yılın sonuna kadar kullanılabilir. Düşünmek için bir şey.
 
 2. Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using Using ERDDAP™ Google Cloud Platform veya diğer bulut sağlayıcıları ile birlikte AWS Cloud Platform veya diğer bulut sağlayıcıları
 --- De ki: ---------------
 
-Şu anda ERDDAP™ Sadece AWS nesne depoları ile çalışmak bilinmektedir (S3) Ancak geliştirme ve genelleştirme rağmen ERDDAP™ 's object store support is on the todo list (see see see see see seehttps://github.com/ERDDAP/erddap/issues/158) . Öyleyse, size söylediğiniz gibi ne yapmalı ERDDAP™ Google Cloud Platform'da (GCP) veya benzer bir platform? İlk olarak, çoğu bulut platformu, genellikle yerel depolamaya benzer ve işletim sistemi tarafından tanınan biri dahil olmak üzere, ağ üzerinden genellikle erişim için NFS kullanan biri (Tekrar doğrudan OS tarafından erişilebilir) Ve bir nesne mağazası olan biri. İlk çözüm nesne mağazalarını kullanmamaktır ve gitmek için iyi olacaktır. Ama her zaman olduğu gibi, TANSTAAFL ve bu durumdaki dezavantajı nesne depolama -&gt; NFS Access -&gt; yerel maliyetlerinizi de saklar. (NFS'nin de ağ üzerinden eriştiğini ve kendi latency sorunları olduğunu ekleyeceğim, bu da dosya optimizasyonundan yararlanacaktır.) .
+Şu anda ERDDAP™ Sadece AWS nesne depoları ile çalışmak bilinmektedir (S3) Ancak geliştirme ve genelleştirme rağmen ERDDAP™ 's object store support is on the todo list (see see see see see see https://github.com/ERDDAP/erddap/issues/158 ) . Öyleyse, size söylediğiniz gibi ne yapmalı ERDDAP™ Google Cloud Platform'da (GCP) veya benzer bir platform? İlk olarak, çoğu bulut platformu, genellikle yerel depolamaya benzer ve işletim sistemi tarafından tanınan biri dahil olmak üzere, ağ üzerinden genellikle erişim için NFS kullanan biri (Tekrar doğrudan OS tarafından erişilebilir) Ve bir nesne mağazası olan biri. İlk çözüm nesne mağazalarını kullanmamaktır ve gitmek için iyi olacaktır. Ama her zaman olduğu gibi, TANSTAAFL ve bu durumdaki dezavantajı nesne depolama -&gt; NFS Access -&gt; yerel maliyetlerinizi de saklar. (NFS'nin de ağ üzerinden eriştiğini ve kendi latency sorunları olduğunu ekleyeceğim, bu da dosya optimizasyonundan yararlanacaktır.) .
 
-Eğer nesne dükkanı kullanmak zorundaysanız veya sadece bir nesne mağazası karşılayabilirseniz, cevap bir FUSE dosya sistemidir. (https://github.com/libfuse/libfuse) . GCP'de, bu jiyon denir ve yükleme adımları şunlardır:
+Eğer nesne dükkanı kullanmak zorundaysanız veya sadece bir nesne mağazası karşılayabilirseniz, cevap bir FUSE dosya sistemidir. ( https://github.com/libfuse/libfuse ) . GCP'de, bu jiyon denir ve yükleme adımları şunlardır:
 
 • GCP Linux imajınıza gcsify:
 Sudo apt update

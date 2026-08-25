@@ -1,6 +1,6 @@
-# कैसे तैनात करें ERDDAP Kubernetes
+# कैसे तैनात करें ERDDAP™ Kubernetes
 
-तैनाती ERDDAP Kubernetes पर अपने डेटा सर्वर के लिए एक स्केलेबल, लचीला वातावरण प्रदान करता है। यह गाइड मेजबान के लिए आवश्यक आवश्यक घटक को कवर करता है ERDDAP मानक का उपयोग Kubernetes प्रकट होता है, जिसमें लगातार भंडारण का प्रबंधन, एप्लिकेशन को तैनात करना, नेटवर्किंग को कॉन्फ़िगर करना और क्लस्टर के भीतर सीधे नए डेटासेट XML उत्पन्न करना शामिल है।
+तैनाती ERDDAP™ Kubernetes पर अपने डेटा सर्वर के लिए एक स्केलेबल, लचीला वातावरण प्रदान करता है। यह गाइड मेजबान के लिए आवश्यक आवश्यक घटक को कवर करता है ERDDAP™ मानक का उपयोग Kubernetes प्रकट होता है, जिसमें लगातार भंडारण का प्रबंधन, एप्लिकेशन को तैनात करना, नेटवर्किंग को कॉन्फ़िगर करना और क्लस्टर के भीतर सीधे नए डेटासेट XML उत्पन्न करना शामिल है।
 
 ## आवश्यकता
 शुरू होने से पहले, सुनिश्चित करें कि आपके पास है:
@@ -11,7 +11,7 @@
 -----
 
 ## 1. लगातार भंडारण (पीवीसी) 
- ERDDAP कैश फ़ाइलों को बनाए रखने के लिए लगातार भंडारण की आवश्यकता होती है, लॉग और पोड पुनः आरंभ में राज्य। उपयोग करना `PersistentVolumeClaim`   (पीवीसी) सुनिश्चित करता है कि आपका `बड़ाParentDirectory`   (कहाँ ERDDAP अपने उत्पन्न डेटा स्टोर) अगर कोई पोड नीचे जाता है तो खो नहीं जाता है। इस वॉल्यूम को आपके डेटा स्टोरेज स्थान से भी जोड़ा जा सकता है जहां कच्चे डेटा फ़ाइलों को जीना होगा।
+ ERDDAP™ कैश फ़ाइलों को बनाए रखने के लिए लगातार भंडारण की आवश्यकता होती है, लॉग और पोड पुनः आरंभ में राज्य। उपयोग करना `PersistentVolumeClaim`   (पीवीसी) सुनिश्चित करता है कि आपका `बड़ाParentDirectory`   (कहाँ ERDDAP™ अपने उत्पन्न डेटा स्टोर) अगर कोई पोड नीचे जाता है तो खो नहीं जाता है। इस वॉल्यूम को आपके डेटा स्टोरेज स्थान से भी जोड़ा जा सकता है जहां कच्चे डेटा फ़ाइलों को जीना होगा।
 
 नाम की एक फ़ाइल बनाएं `पीवीसी` इसी तरह:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 -----
 
-## 2. The The most of the ERDDAP तैनाती
-तैनाती प्रकट होने का प्रबंधन करता है ERDDAP खुद को पोड करें। हम लंबी अवधि के समर्थन के साथ आधिकारिक erddap/erddap Docker छवि का उपयोग करने की सलाह देते हैं।
+## 2. The The most of the ERDDAP™ तैनाती
+तैनाती प्रकट होने का प्रबंधन करता है ERDDAP™ खुद को पोड करें। हम लंबी अवधि के समर्थन के साथ आधिकारिक erddap/erddap Docker छवि का उपयोग करने की सलाह देते हैं।
 
 :::जानकारी
 मई 2026 तक [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) नवीनतम संस्करण था। कभी-कभी सुरक्षा कमजोरियों के साथ रहने के लिए इसे फिर से लागू करने के लिए बुद्धिमान है।
 :::
 
-इस विन्यास में, हम टाइमज़ोन सेटिंग्स को संभालने के लिए प्रमुख पर्यावरण चर इंजेक्ट करते हैं, यह सुनिश्चित करते हैं कि टॉमकैट के पास स्टोरेज वॉल्यूम के लिए सही रीड / राइट अनुमतियां हैं, और बताते हैं कि टॉमकैट के पास स्टोरेज वॉल्यूम के लिए सही रीड / राइट अनुमतियां हैं। ERDDAP कैसे ठीक से यूआरएल रूट करने के लिए जब एक Kubernetes प्रवेश के पीछे बैठे। हम पीवीसी को भी माउंट करते हैं `/erddapData`   (डिफ़ॉल्ट `बड़ाParentDirectory` ) इंजेक्शन datasets.xml और सेटअप.xml में `/usr/local/tomcat/content/erddap` ।
+इस विन्यास में, हम टाइमज़ोन सेटिंग्स को संभालने के लिए प्रमुख पर्यावरण चर इंजेक्ट करते हैं, यह सुनिश्चित करते हैं कि टॉमकैट के पास स्टोरेज वॉल्यूम के लिए सही रीड / राइट अनुमतियां हैं, और बताते हैं कि टॉमकैट के पास स्टोरेज वॉल्यूम के लिए सही रीड / राइट अनुमतियां हैं। ERDDAP™ कैसे ठीक से यूआरएल रूट करने के लिए जब एक Kubernetes प्रवेश के पीछे बैठे। हम पीवीसी को भी माउंट करते हैं `/erddapData`   (डिफ़ॉल्ट `बड़ाParentDirectory` ) इंजेक्शन datasets.xml और सेटअप.xml में `/usr/local/tomcat/content/erddap` ।
 
 नाम की एक फ़ाइल बनाएं `तैनाती.yaml` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** : टॉमकैट सर्वर के लिए टाइमज़ोन सेट करता है और ERDDAP लॉग
+-  **TZ** : टॉमकैट सर्वर के लिए टाइमज़ोन सेट करता है और ERDDAP™ लॉग
 
--  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** : डिफ़ॉल्ट रूप से, ERDDAP कंटेनर एक विशिष्ट उपयोगकर्ता के रूप में टॉमकैट चलाता है। यदि लगातार मात्रा /erddapData पर चढ़कर आपके होस्ट स्टोरेज सिस्टम पर एक अलग उपयोगकर्ता / समूह आईडी के स्वामित्व में है, ERDDAP अनुमति अस्वीकार त्रुटियों के कारण दुर्घटनाग्रस्त हो जाएगा। इन चरों की स्थापना से टॉमकैट को मिलान आईडी के साथ चलाने के लिए मजबूर किया जाता है।
+-  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** : डिफ़ॉल्ट रूप से, ERDDAP™ कंटेनर एक विशिष्ट उपयोगकर्ता के रूप में टॉमकैट चलाता है। यदि लगातार मात्रा /erddapData पर चढ़कर आपके होस्ट स्टोरेज सिस्टम पर एक अलग उपयोगकर्ता / समूह आईडी के स्वामित्व में है, ERDDAP™ अनुमति अस्वीकार त्रुटियों के कारण दुर्घटनाग्रस्त हो जाएगा। इन चरों की स्थापना से टॉमकैट को मिलान आईडी के साथ चलाने के लिए मजबूर किया जाता है।
 
     :::टिप
 सर्वर पर अपने उपयोगकर्ता UID खोजें जहां NFS माउंट इस तरह है: `id -u <your-user_name> ` । यह आपको आवश्यक संख्यात्मक मान लौटा देगा।
     :::
 
--  ** ERDDAP _baseUrl ERDDAP बेसहैट Url** : कब ERDDAP एक सेवा और एक प्रवेश के पीछे Kubernetes में चलाता है, टॉमकैट लगता है कि यह स्थानीय होस्ट: 8080 पर यातायात की सेवा कर रहा है। ये चर ओवरराइड ERDDAP ’ s आंतरिक URL जनरेशन (अपने कस्टम लोगो या डेटासेट लिंक की तरह) अपने डोमेन नाम को सही ढंग से हल करें।
+-  ** ERDDAP _baseUrl ERDDAP बेसहैट Url** : कब ERDDAP™ एक सेवा और एक प्रवेश के पीछे Kubernetes में चलाता है, टॉमकैट लगता है कि यह स्थानीय होस्ट: 8080 पर यातायात की सेवा कर रहा है। ये चर ओवरराइड ERDDAP ’ s आंतरिक URL जनरेशन (अपने कस्टम लोगो या डेटासेट लिंक की तरह) अपने डोमेन नाम को सही ढंग से हल करें।
 
 :::नोट
 यदि आप अलग उत्पादन और क्यूए वातावरण चल रहे हैं, तो एक एकल पीवीसी साझा करने के बारे में सावधान रहें। एक वातावरण में कैश डेटा को संशोधित या हटाने से तुरंत दूसरे को प्रभावित होगा। हम क्यूए और प्रोडक्शन के लिए इस तैनाती ओवरले का प्रबंधन करते हैं और प्रत्येक ओवरले के लिए सबफ़ोल्डर्स को जोड़ते हैं। यह हमें क्यूए डेटासेट के साथ क्यूए पर परीक्षण करने की अनुमति देता है। एक्सएमएल उत्पादन तैनाती को छूने से पहले।
@@ -137,7 +137,7 @@ spec:
 ---
 
 ## 3. नेटवर्किंग: सेवा और प्रवेश
-अपने को उजागर करने के लिए ERDDAP वेब के लिए फली, आपको आंतरिक क्लस्टर यातायात मार्ग करने के लिए एक सेवा की आवश्यकता है, और इसे सार्वजनिक DNS नाम से बांधने के लिए एक प्रवेश की आवश्यकता है।
+अपने को उजागर करने के लिए ERDDAP™ वेब के लिए फली, आपको आंतरिक क्लस्टर यातायात मार्ग करने के लिए एक सेवा की आवश्यकता है, और इसे सार्वजनिक DNS नाम से बांधने के लिए एक प्रवेश की आवश्यकता है।
 
 नाम की एक फ़ाइल बनाएं `सेवा` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-बनाना `kustomization.yaml` सभी संसाधनों को इकट्ठा करने और अपने कस्टम सेटअप और डेटासेट XML फ़ाइलों को मैप करने के लिए फ़ाइल। ये आपके पास आएंगे ERDDAP जब तैनात किया गया तो डोकर छवि, ताकि आप अपनी शैली बना सकें ERDDAP पृष्ठ और अपने गिटहब भंडार से डेटासेट जोड़ने जबकि देते हैं `कस्टोम` उन्हें अपनी तैनाती के लिए मैप करें।
+बनाना `kustomization.yaml` सभी संसाधनों को इकट्ठा करने और अपने कस्टम सेटअप और डेटासेट XML फ़ाइलों को मैप करने के लिए फ़ाइल। ये आपके पास आएंगे ERDDAP™ जब तैनात किया गया तो डोकर छवि, ताकि आप अपनी शैली बना सकें ERDDAP™ पृष्ठ और अपने गिटहब भंडार से डेटासेट जोड़ने जबकि देते हैं `कस्टोम` उन्हें अपनी तैनाती के लिए मैप करें।
 
 #### बेस ( `बेस / kstomization.yaml` ) 
 बेस कुस्टोमाइज़ेशन बस ओवरले में साझा किए गए अपने कोर संसाधनों को बंडल करता है। हम उत्पादन करते हैं ` datasets.xml ` और `साइटमैप` आधार में और केवल QA पर परीक्षण के बाद इन अद्यतन।
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

@@ -1,4 +1,4 @@
-Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP Käyttäjäryhmä](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP™ Käyttäjäryhmä](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ pyrkii olemaan agnostikko siitä, mitä datamuotoja ihmiset käyttävät tietoihinsa, sen sijaan, että yrittäisivät työskennellä useimpien käyttämiemme yhteisöjen tietomuotojen kanssa. Koska pilvessä on yhä enemmän työtä, ja pilvessä on paljon datamuotoja, olisi mukavaa, jos ERDDAP™ voi tukea monia näistä muodoista. Alas, ERDDAP™ kehittämistä ja ylläpitoa on jo alennettu, ja se, mikä olisi toivottavaa, on käyttää muiden työtä tämän tavoitteen saavuttamiseksi ilman muutosta. ERDDAP™ .
 
@@ -9,11 +9,13 @@ sisään [DuckDB](https://duckdb.org/) ja [Trino](https://trino.io/) . Molemmat 
 
 Käyttää DuckDB ERDDAP™ Sinun on asennettava duckDB tietokoneeseen ja asennettava DuckDB JDBC -liitin tietokoneeseen. ERDDAP™ . Ohjeet DuckDB:n asentamiseen ovat
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC-liitäntä voidaan ladata
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Jos tomcat sijaitsee $ TomCAT_HOME, haluat laittaa tämän tiedoston $ TomCAT_HOME/webapps/erddap/WEB-INF/lib.
 

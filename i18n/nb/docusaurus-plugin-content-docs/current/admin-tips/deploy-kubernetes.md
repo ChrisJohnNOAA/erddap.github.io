@@ -1,6 +1,6 @@
-# Hvordan å deploy ERDDAP på Kubernetes
+# Hvordan å deploy ERDDAP™ på Kubernetes
 
-Deploying ERDDAP Kubernetes gir et skalerbart og robust miljø for dataserveren din. Denne guiden dekker essensielle komponenter som kreves for å være vert. ERDDAP bruker standard Kubernetes manifesterer, inkludert å administrere vedvarende lagring, distribuere programmet, konfigurere nettverk og generere nye datasett XML direkte fra inne i klyngen.
+Deploying ERDDAP™ Kubernetes gir et skalerbart og robust miljø for dataserveren din. Denne guiden dekker essensielle komponenter som kreves for å være vert. ERDDAP™ bruker standard Kubernetes manifesterer, inkludert å administrere vedvarende lagring, distribuere programmet, konfigurere nettverk og generere nye datasett XML direkte fra inne i klyngen.
 
 ## Forutsetninger
 Før du begynner, sørg for at du har:
@@ -11,7 +11,7 @@ Før du begynner, sørg for at du har:
 -----
 
 ## 1. Vedvarende lagring (PVC) 
- ERDDAP krever vedvarende lagring for å opprettholde cache-filer, logger og tilstand over pod starter på nytt. Bruker en `PersistentVolumeClaim`   (PVC) sikrer at din `bigParentDirectory`   (hvor ERDDAP lagrer sine genererte data) Er ikke tapt hvis en pod går ned. Dette volumet kan også kobles til datalagringsstedet der rådatafilene vil bo.
+ ERDDAP™ krever vedvarende lagring for å opprettholde cache-filer, logger og tilstand over pod starter på nytt. Bruker en `PersistentVolumeClaim`   (PVC) sikrer at din `bigParentDirectory`   (hvor ERDDAP™ lagrer sine genererte data) Er ikke tapt hvis en pod går ned. Dette volumet kan også kobles til datalagringsstedet der rådatafilene vil bo.
 
 Opprett en fil som heter `pvc.yaml` Som så:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 ----
 
-## 2. Den ERDDAP Deployment
-Deployment manifestet håndterer ERDDAP Selve pod. Vi anbefaler å bruke det offisielle Erddap/erddap Docker-bildet med langsiktig støtte.
+## 2. Den ERDDAP™ Deployment
+Deployment manifestet håndterer ERDDAP™ Selve pod. Vi anbefaler å bruke det offisielle Erddap/erddap Docker-bildet med langsiktig støtte.
 
 :::info
 Fra mai 2026, [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) Den siste versjonen. Det er klokt å gjenoppta tidvis å holde tritt med sikkerhetsproblem.
 :::
 
-I denne konfigurasjonen injiserer vi viktige miljøvariabler for å håndtere tidssoneinnstillinger, sikre at Tomcat har riktig lese-/skrive-løyve for lagringsvolumet, og fortel ERDDAP Hvordan rute URLs riktig når du sitter bak en Kubernetes Ingress. Vi monterer også PVC til `/erddapData`   (standard `bigParentDirectory` ) å injisere datasets.xml og oppsett.xml i `/usr/lokal/tomcat/innhold/erddap` ..
+I denne konfigurasjonen injiserer vi viktige miljøvariabler for å håndtere tidssoneinnstillinger, sikre at Tomcat har riktig lese-/skrive-løyve for lagringsvolumet, og fortel ERDDAP™ Hvordan rute URLs riktig når du sitter bak en Kubernetes Ingress. Vi monterer også PVC til `/erddapData`   (standard `bigParentDirectory` ) å injisere datasets.xml og oppsett.xml i `/usr/lokal/tomcat/innhold/erddap` ..
 
 Opprett en fil som heter `implementation.yaml` :)
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** :) Stiller tidssone for Tomcat-serveren og ERDDAP Logger.
+-  **TZ** :) Stiller tidssone for Tomcat-serveren og ERDDAP™ Logger.
 
--  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** :) Som standard er ERDDAP container kjører Tomcat som en bestemt bruker. Hvis det vedvarende volumet montert til /erddapData eies av en annen bruker/gruppe-ID på vertslagringssystemet ditt, ERDDAP vil krasje på grunn av tillatelse nektet feil. Setting av disse variablene tvinger Tomcat til å kjøre med de matchende ID-ene.
+-  **TOMCAT_USER_ID & TOMCAT_GROUP_ID** :) Som standard er ERDDAP™ container kjører Tomcat som en bestemt bruker. Hvis det vedvarende volumet montert til /erddapData eies av en annen bruker/gruppe-ID på vertslagringssystemet ditt, ERDDAP™ vil krasje på grunn av tillatelse nektet feil. Setting av disse variablene tvinger Tomcat til å kjøre med de matchende ID-ene.
 
     :::tip
 Finn brukerens UID på serveren der NFS-monteringen er slik: `id-u <your-user_name> ` .. Dette vil returnere den numeriske verdien du trenger.
     :::
 
--  ** ERDDAP _BaseUrl & ERDDAP _BaseHttps Url** :) Når ERDDAP kjører i Kubernetes bak en tjeneste og en ingresjon, Tomcat mener det betjener trafikk på lokalhost:8080. Disse variablene overstyrer ERDDAP intern URL-produksjon slik at lenker (som din egendefinerte logo eller datasett lenker) Løs riktig til ditt domenenavn.
+-  ** ERDDAP _BaseUrl & ERDDAP _BaseHttps Url** :) Når ERDDAP™ kjører i Kubernetes bak en tjeneste og en ingresjon, Tomcat mener det betjener trafikk på lokalhost:8080. Disse variablene overstyrer ERDDAP intern URL-produksjon slik at lenker (som din egendefinerte logo eller datasett lenker) Løs riktig til ditt domenenavn.
 
 :::Note
 Hvis du kjører separate produksjons- og QA-miljøer, vær forsiktig med å dele en enkelt PVC. Å endre eller slette cachede data i ett miljø vil umiddelbart påvirke den andre. Vi administrerer dette ved hjelp av distribusjonsoverlegg for QA og produksjon og legger til undermapper for hvert overlegg. Dette gjør det mulig å teste QA med QA-datasett. XML før du berører produksjonen.
@@ -137,7 +137,7 @@ Hvis du kjører separate produksjons- og QA-miljøer, vær forsiktig med å dele
 ---
 
 ## 3. Nettverk: Service og ingresjon
-Å avsløre din ERDDAP pod til nettet, trenger du en tjeneste for å rute intern cluster trafikk, og en Ingress for å binde det til et offentlig DNS-navn.
+Å avsløre din ERDDAP™ pod til nettet, trenger du en tjeneste for å rute intern cluster trafikk, og en Ingress for å binde det til et offentlig DNS-navn.
 
 Opprett en fil som heter `service.yaml` :)
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-Opprette `kustomization.yaml` fil å samle alle ressursene og kartlegge ditt egendefinerte oppsett og datasett XML-filer. Disse vil bli passert inn i din ERDDAP Docker bilde når implementert slik at du kan stile din ERDDAP side og legg til datasett fra GitHub-arkivet mens du lar `Kustomize` Kartlegg dem til din distribusjon.
+Opprette `kustomization.yaml` fil å samle alle ressursene og kartlegge ditt egendefinerte oppsett og datasett XML-filer. Disse vil bli passert inn i din ERDDAP™ Docker bilde når implementert slik at du kan stile din ERDDAP™ side og legg til datasett fra GitHub-arkivet mens du lar `Kustomize` Kartlegg dem til din distribusjon.
 
 #### Base ( `base/kustomization.yaml` ) 
 Basekustomisering bare pakker kjerneressursene dine som deles over lag. Vi beholder produksjonen ` datasets.xml ` og `config.xml` i base og bare oppdater disse etter testing på QA.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

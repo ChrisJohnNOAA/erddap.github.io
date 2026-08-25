@@ -1,4 +1,4 @@
-Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP gebruikersgroep](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP™ gebruikersgroep](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ probeert agnostisch te zijn over welke dataformaten mensen gebruiken voor hun gegevens, in plaats daarvan proberen te werken met de gegevensformaten van de meeste gebruik voor de gemeenschappen die we voornamelijk dienen. Aangezien er steeds meer werk in de cloud zit, en er een overvloed aan dataformaten zijn die mensen gebruiken in de cloud, zou het leuk zijn als ERDDAP™ kan veel van deze formaten ondersteunen. Helaas, ERDDAP™ ontwikkeling en onderhoud is al onderbemand, en wat wenselijk zou zijn is gebruik te maken van het werk van anderen om dit doel te bereiken, zonder te hoeven wijzigen ERDDAP™ .
 
@@ -9,11 +9,13 @@ Wat?
 
 Om DuckDB te gebruiken in ERDDAP™ U moet eendDB installeren op uw computer, en de DuckDB JDBC connector installeren in ERDDAP™ . Instructies voor installatie DuckDB zelf zijn op
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 De DuckDB JDBC connector kan worden gedownload van
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Als uw Tomcat zich op $TOMCAT_HOME bevindt, dan wilt u dit bestand op $TOMCAT_HOME/webapps/erddap/WEB-INF/lib plaatsen.
 

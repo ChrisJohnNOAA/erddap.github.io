@@ -1,4 +1,4 @@
-Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP skupina uživatelů](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP™ skupina uživatelů](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Mnoho žádostí o pomoc dostaneme zahrnovat problémy s použitím paměti v ERDDAP™ . Některé z nich pocházejí ze změn v řízení paměti v Java , a také interakce s Linux OS správy paměti. Začínám věřit v Java 17, Java používá více paměti, než co je uvedeno v nastavení hromady. Můžete to vidět, pokud se podíváte na nastavení hromady a pak použít příkazy, jako je top, htop, nebo btop pro kontrolu využití paměti aplikací. Takže například naše těžce používané ERDDAP™ má hromadu prostoru nastavené na 21GB, ale ve skutečnosti použití paměti může běžet na 28GB-30GB, někdy vyšší. Tato hodnota se může zvýšit, pokud existuje mnoho současných velkých požadavků na systém.
 

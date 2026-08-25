@@ -1,4 +1,4 @@
-Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP grupa użytkowników](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Ta zawartość jest oparta na [wiadomość od Roy Mendelssohn do ERDDAP™ grupa użytkowników](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Uruchomienie ERDDAP™ w chmurze stał się gorący temat. Powinienem zauważyć, że ERDDAP™ zawsze działa w chmurze, tylko większość czasu nie na serwerze dostarczanym przez operatora chmury komercyjnej, i głównym utrudnieniem dla działania ERDDAP™ na komercyjnym dostawcą chmur jest, jeśli używasz pamięci masowej S3, która nie pozwala na normalny dostęp do bloku Linux. Jeśli jesteś skłonny zapłacić więcej, aby korzystać z opcji dostępu blokowego oferowanych przez operatora chmury komercyjnej, niż działa na komercyjnym serwerze chmur jest w zasadzie taki sam jak działa na własnym sprzęcie, z wyjątkiem oczywiście kosztów.
 

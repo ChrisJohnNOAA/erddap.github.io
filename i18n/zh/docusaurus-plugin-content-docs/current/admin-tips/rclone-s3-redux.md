@@ -1,4 +1,4 @@
-这一内容基于 [罗伊·门德尔索恩致 ERDDAP 用户组](https://groups.google.com/g/erddap/c/H-vJoGP42TI) 。 。 。 。
+这一内容基于 [罗伊·门德尔索恩致 ERDDAP™ 用户组](https://groups.google.com/g/erddap/c/H-vJoGP42TI) 。 。 。 。
 
 运行 ERDDAP™ 在云中已经成为热门话题。 我应当指出, ERDDAP™ 一直运行在云中, 只是大部分时间没有运行在 由商业云供应商提供的服务器上, ERDDAP™ 如果您使用 S3 存储器, 则无法正常使用 Linux 块。 如果你愿意支付更多的费用来使用由您的商业云提供商提供的块访问选项,比在商业云服务器上运行,与在自己的设备上运行基本相同,当然除了成本.
 
