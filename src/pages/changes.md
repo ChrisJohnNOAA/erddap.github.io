@@ -7,6 +7,23 @@ ERDDAP™ is a great example of [User-Driven Innovation](https://en.wikipedia.or
 
 Here are the changes associated with each ERDDAP™ release.
 
+## Version 2.31.0 {#version-2310}
+(released 2026-08-28)
+
+*   **New Features and Changes (for users):**
+      * New ncoJson as info output format available as a file called ncoJsonHeader and at both /erddap/info/datasetId.ncoJson and /erddap/info/datasetId/index.ncoJson.
+        Thanks to @srstsavage
+      * Additional metadata properties for ISO19139_2007 and ISO19115_3_2016 output: classification, topic_category, and maintenance_frequency
+        Thanks to @SethChampagneNRL
+      * New JSON webservice for variable attribute suggestions: /erddap/suggestVariableAttributes
+        Thanks to @srstsavage
+      * Improved querying of sql backed datasets so a request that does not contain any db columns will now succeed.
+      * Improved link detection and auto linkng for links in info text.
+
+*   **Things ERDDAP™ Administrators Need to Know and Do:**
+      * Improved support for complex path regex including multiple folder levels and multiple wildcards.
+      * Updated dependencies.
+
 ## Version 2.30.0 {#version-2300}
 (released 2026-04-07)
 

@@ -1,498 +1,515 @@
 ---
 title: "ERDDAP™ - Changes"
 ---
-#  ERDDAP™ Változások
+#  ERDDAP™ változások
 
- ERDDAP™ egy nagy példa a [Felhasználó- vezetett innováció](https://en.wikipedia.org/wiki/User_innovation) , ahol a termék innováció gyakran a fogyasztók ( ERDDAP™ felhasználók) Nem csak a producerek. ( ERDDAP™ fejlesztők) . Az évek során a legtöbb ötlet az új funkciók és változások ERDDAP™ a felhasználóktól származnak. Ezeket a felhasználókat az alábbiakban a nagy ötleteikért írják alá. Köszönöm&#33; Kérem, jöjjenek azok a nagyszerű javaslatok&#33;
+ ERDDAP™ nagyszerű példa erre [Felhasználó-vezérelt innováció](https://en.wikipedia.org/wiki/User_innovation) , ahol a termékinnováció gyakran a fogyasztóktól származik ( ERDDAP™ felhasználók) nem csak a termelők ( ERDDAP™ fejlesztők) ... Az évek során az új funkciók és változások ötleteinek többsége ERDDAP™ A felhasználókból jöttek. Ezek a felhasználók a nagy ötleteikért hitelesítettek. Köszönöm&#33; Kérjük, tartsa be ezeket a nagy javaslatokat&#33;
 
-Itt vannak a változások kapcsolódó minden ERDDAP™ Ereszd el.
+Íme a változások, amelyek mindegyikhez kapcsolódnak ERDDAP™ kiadás.
 
-## Version 2.30.0{#version-2300} 
- (felszabadult 2026- 04- 07) 
+## Verzió 2.31.0{#version-2310} 
+ (megjelent 2026-08-28) 
 
-Version v2.30.0 nagyrészt fókuszál hibajavítások, függőségi frissítések a stabilitás és a biztonság, és tesztelése teljesítmény javítása.
+*    **Új funkciók és változások (felhasználók számára) :** 
+      * Új ncoJson, mint információs formátum elérhető, mint egy nco nevű fájl JsonHeader és mindkettő /erddap/info/dataset Id .nc oJson és /erddap/info/datasetId/index .nc oJson.
+Köszönöm @srstsavage
+      * További metaadat tulajdonságok ISO19139_2007 és ISO19115_3_2016 kimenet: osztályozás, téma_kategória és karbantartás_frekvenciát
+Köszönöm @SethChampagneNRL
+      * Új JSON webszerviz változó tulajdonsági javaslatokhoz: /erddap/suggestVariableAttributes
+Köszönöm @srstsavage
+      * A sql támogatott adatkészletek jobb lekérdezése így egy olyan kérés, amely nem tartalmaz semmilyen db oszlopot, most sikerül.
+      * Javított kapcsolatfelderítés és auto link az információs szöveg linkjeihez.
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-      * Fokozott [Croissant](https://mlcommons.org/working-groups/data/croissant/) metaadatok kompatibilitása és nyilvánvaló támogatása, beleértve [mcroissant](https://pypi.org/project/mlcroissant/) kompatibilitás.
-      * Javított támogatás parketta booades.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+      * Javított támogatás komplex ösvényregex, beleértve több mappa szint és több vadkártyák.
+      * Frissített függőségek.
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-      * A nem használt parancssori eszközöket és a hozzájuk tartozó kódot eltávolították a kódból a technikai adósság csökkentése érdekében. Lásd https://github.com/ERDDAP/erddap/pull/432.
+## Verzió 2.30.0{#version-2300} 
+ (2026-04-07) 
+
+A V2.30.0 verzió nagyrészt a hibás javításokra összpontosít, a stabilitás és a biztonság függőségi frissítéseire, valamint a teljesítmény javítására.
+
+*    **Új funkciók és változások (felhasználók számára) :** 
+      * Hatalmas [Croissant](https://mlcommons.org/working-groups/data/croissant/) metadata kompatibilitás és a megnyilvánuló támogatás, beleértve [mlcroissant](https://pypi.org/project/mlcroissant/) kompatibilitás.
+      * Javított támogatás a parquet booleans számára.
+
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+      * A használt parancssori eszközöket és a kapcsolódó kódot eltávolították a kódbázisról a műszaki adósság csökkentésére. Lásd https://github.com/ERDDAP/erddap/pull/432.
  
-      * Új funkciózászló `forceSynchronousLoading` hozzáadták az alapértelmezett késleltetett adatbetöltési megközelítés felülbírálásához. Erre ritkán van szükség, és csak azokban az esetekben alkalmazható, amikor a késleltetett berakodás problémákat okoz. Lásd a [funkció zászló oldal](/docs/server-admin/feature-flags#forcesynchronousloading) Részletekért.
+      * Egy új funkció zászló `EmberSynchronousLoading` Hozzáadták az alapértelmezett visszaesett adatkészlet-terhelési megközelítés felülírásához. Ezt ritkán kell alkalmazni, és csak olyan esetekben használjuk fel, amikor a rossz terhelés problémákat okoz. Lásd: [Flag oldal](/docs/server-admin/feature-flags#forcesynchronousloading) részletekért.
 
-## Version 2.29.0{#version-2290} 
- (Szabad 2025- 12- 15) 
+## Verzió 2.29.0{#version-2290} 
+ (2025-12-15) 
 
-Cselekedni kell.
+Akció szükséges.
 
- ERDDAP™ változat 2.29.0 igényel jdk 25 vagy később. Frissítse a jdk verzióját. Ha ez probléma, építhetsz ERDDAP™ egy idősebb jdk (legalább 17-ig) a pom.xml fájl megváltoztatásával. JDK 25 egy LTS kiadás Java és számos javítást tartalmaz, elsősorban a jobb teljesítményt.
+ ERDDAP™ A 2.29.0 verzió a jdk 25-et vagy későbbi verziót igényel. Kérjük, frissítse a jdk verzióját. Ha ez egy probléma, akkor építhet ERDDAP™ egy idősebb jdk (legalább 17) a pom.xml fájl megváltoztatásával. A JDK 25 egy LTS kiadás Java és számos fejlesztést tartalmaz, leginkább javított teljesítményt.
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * ISO 19115 verziók: Lásd alább az admin információkat. A felhasználók számára most az ISO 19115 metaadatok speciális verzióit kérheti. Tedd ezt a griddap / tabledap a fájltípussal rendelkező adatkészlet oldalai leesnek. Ezek a verziók függetlenek lesznek a szerver alapértelmezésétől.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * ISO 19115 verziók: Lásd alább az admin információért. A felhasználók számára most az ISO 19115 metaadata speciális verzióit kérheti. Tedd ezt a griddap/ tabledap Az adatkészlet oldalai a fájltípus leesése. Ezek a verziók függetlenek lesznek a szerver alapértelmezettségétől.
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Új funkció, MQTT támogatás. További részletek Javaslom, olvassa el a [Új oldal.](/docs/server-admin/mqtt-integration) Ez magában foglalja az MQTT üzenetekből származó adatkészletek kiépítését és az adatkészlet megváltozásakor az MQTT üzenetek közzétételét. Alapértelmezés szerint kikapcsolt, tehát ha használni akarod, engedélyezned kell.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Új funkció, MQTT támogatás. A részletekért ajánlom olvasni a [új oldal erről.](/docs/server-admin/mqtt-integration) Ez magában foglalja, hogy képes adatokat építeni az MQTT üzenetekből, és közzéteszi az MQTT üzeneteket, amikor egy adatkészlet változik. Ez az alapértelmezett, így ha használni akarja, lehetővé kell tennie.
 
-Köszönet Ayush Singh-nek, hogy az MQTT-n dolgozott&#33;
+Köszönjük Ayush Singh munkáját az MQTT&#33;
 
-    * S3 fejlesztések: Támogatás hozzáadása S3 URI mint a cacheFromUrl érték. Ez lehetővé teszi ERDDAP az amazonaws.com-on található magánvödröket támogatni S3-as memória szivárgás.
+    * S3 fejlesztések: Az S3 URI-k támogatása a cacheFromUrl értékként. Ez lehetővé teszi ERDDAP a magánbucketek támogatása az amazonaws.com-on Szintén foglalkozott egy S3 memória szivárgással.
 
-Köszönet @ SethChampagneNRL-nek az S3-on végzett munkáért&#33;
+Hála a @SethChampagneNRL-nek az S3 munkájához&#33;
 
-    * ISO 19115 verziók: Jelenleg az ISO 19115 metaadatok 3 különböző verzióját támogatják. Az alapértelmezett verziót a setup.xml. beállításai vezérlik. Ha a SisISO19115 használata hamis, a kiszolgáló alapértelmezés szerint megadja NOAA módosított ISO19115 _ 2. Ha az useSisISO19115 igaz, akkor a kiszolgáló a SisisO19139 értékétől függően más verziót fog használni. Ha a SisISO19139 használata igaz, az alapértelmezett ISO19139 _ 2007 lesz, ha a SisISO19139 használata hamis, akkor az alapértelmezett ISO19115 _ 3 _ 2016 lesz. A SisisO19115 = igaz és a SisisO19139 = hamis használatát javasoljuk. A szervezetéhez különböző beállítások szükségesek.
+    * ISO 19115 verziók: Jelenleg az ISO 19115 metaadata 3 különböző verzióját támogatja. Az alapértelmezett verziót a beállítások vezérlik a setup.xml-ben. Ha a használatSisO19115 hamis, a szerver alapértelmezett nyújtással rendelkezik NOAA módosított ISO19115_2. Ha a használatSisO19115 igaz, akkor a szerver más verziót használ a használat értékétől függőenSisISO19139. Ha a használatSisO19139 igaz, az alapértelmezés ISO19139_2007 lesz, ha a SisISO19139 hamis, az alapértelmezés ISO19115_3_2016 lesz. Javasoljuk, hogy használja használniSisISO19115=igaz és használjaSisISO19139=hamis. A szervezete különböző beállításokat igényelhet.
 
-    * Elvándorolt a javába. időkönyvtár (Java.uth helyett. GregorianCalendar) . Ez teljesítményjavulást eredményezhet a dátum- / időoszlopokat tartalmazó lekérdezéseken. Az adatkészletek túlnyomó többsége esetében nem lehet észrevehető hatás. Az egyetlen ismert eset, ami változást okoz, ha az adatkészlet `0000- 01- 01 napja óta` vagy hasonló. Ha ez probléma egy változó, akkor hozzá ` <att name="legacy_time_adjust"> igaz </att> ` a addAttributes a dataVariable vagy axisVariable .
+    * Migrált a javára. Idő könyvtár (java.util helyett. GregorianCalendar) ... Ennek teljesítményjavítást kell biztosítania a dátum/idő oszlopokat érintő kérdésekben. Nem szabad észrevehető hatást gyakorolni az adatkészletek túlnyomó többségére. Az egyik ismert eset, hogy ez változást okoz, ha az adatkészlet használata `napok óta 0000-01-01` vagy hasonló. Ha ez egy változó probléma, akkor hozzáadhatja ` <att name="legacy_time_adjust"> Igaz </att> ` a addAttributes vagy egy dataVariable vagy axisVariable ...
     
-    *    datasets.xml jelenleg [StringSubstitutor](https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/StringSubstitutor.html) . Ennek sok haszna van, beleértve a magánértékek meghatározását (mint a jelszavak) környezeti változók használata. Ez letiltható a lehetségesEnvParsing setup.xml-ben történő hamisítás beállításával.
+    *    datasets.xml most feldolgozott egy [StringSubstitutor](https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/StringSubstitutor.html) ... Ez sok felhasználással rendelkezik, beleértve a magánértékek beállítását (mint a jelszavak) környezeti változók használata. Ezt letilthatja a beállítás lehetővé teszi az EnvParsing számára, hogy hamis a setup.xml-ben.
 
-    * Nyomástengely: A nyomásemelkedés különleges esetét adja hozzá. Ezt elsősorban a meteorológiai adatokban alkalmazzák, amelyek az izobarikus szintek függőleges emelkedését határozzák meg. MEGJEGYZÉS: A kisebb nyomásértékek magasabb emelkedést jelentenek, így a tengely a méterekben vagy lábakban meghatározott normál emelkedéssel szemben fut.
+    * Nyomás tengely: Speciális esetet ad a nyomás által meghatározott emelésekhez. Ezt elsősorban a Meteorológiai adatkészletekben használják, amelyek a vertikális magasságokat az isobarikus szintekben határozzák meg. MEGJEGYZÉS: A kisebb nyomásértékek magasabb emeléseket jelentenek, így a tengely ellentétes a normál emelkedésekkel, melyeket mérőkben vagy lábakban határoznak meg.
 
 Köszönöm [SethChampagneNRL](https://github.com/ERDDAP/erddap/pull/373) 
 
-    *    EDDGrid FromNcFiles változó méretekkel: Van (kísérleti) támogatás EDDGrid FromNcFiles adatkészletek, hogy változók, amelyek nem használják ugyanazt a tengelyt. Kérem, számoljon be arról, hogy ez hogyan működik, vagy ha a viselkedése nem tűnik helyesnek.
+    *    EDDGrid FromNcFiles különböző dimenziókkal: Ott van (kísérleti) támogatás EDDGrid FromNcFiles adatkészletek, hogy olyan változók, amelyek nem használják ugyanazt a tengelyt. Kérjük, jelentse meg, hogy ez hogyan működik az Ön számára, vagy ha a viselkedés nem tűnik elég helyesnek.
 
-    * Van egy gyűjtemény optimalizált, hogy kell biztonságos, de a zászlók, hogy visszatérjen a régi viselkedés, ha szükséges. Ha úgy találja, hogy be kell állítani a zászlók, kérjük, adjon be egy hibát. Ha nem hallunk semmilyen problémáról, ezek többsége a jövőben az új viselkedési alapértelmezéssel megszűnik. Van egy... [új oldal a funkciózászlókról](/docs/server-admin/feature-flags) ahol olvashatsz ezekről és más zászlókról.
+    * Vannak olyan optimalizálások gyűjteménye, amelyeknek biztonságosnak kell lenniük, de szükség esetén zászlókkal kell visszatérni a régi viselkedéshez. Ha megtalálja annak szükségességét, hogy beállítsa a zászlók, kérjük, adja meg a hibát. Ha nem hallunk ilyen kérdéseket, akkor a jövőben eltávolítjuk az új viselkedési alapot. Van egy [új oldal a zászlókról](/docs/server-admin/feature-flags) ahol olvashatsz ezekről és más zászlókról.
 
-      * érintés Fonal Csak Amikor elemek: Ez egy változás, hogy a touchThread csak akkor fut, ha vannak elemek a sorban, hogy megérintse. Eggyel kevesebb szálfutás kisebb optimalizálás, de még mindig hasznos. Az alapértelmezés igaz.
+      * Kapcsolat Szál Csak Amikor Items: Ez egy változás, hogy az érintésThread csak akkor fog futni, ha vannak tárgyak a sorban érinteni. Egy kevesebb szál futás egy kisebb optimalizálás, de még mindig hasznos. Alapértelmek az igazhoz.
 
-      * useNcMetamfetamin ForFileTable: Ez a módosítás lehetővé teszi, hogy a belső fájltábla nc attribútumokat használjon, különösen egy változó tényleges _ range attribútumot, hogy elkerülje az egész nc fájl olvasását. Ez drasztikusan felgyorsíthatja az nc files alapú adatkészletek kezdeti betöltését, ha az egyes változók tényleges _ tartománya attribútumként szerepel. Ne feledje, hogy ez megbízik az érték, így ha nem, a belső fájl tábla lesz hibás információkat. Az alapértelmezés igaz.
+      * NcMetadata ForFileTable: Ez a változás lehetővé teszi a belső fájl táblázatot, hogy nc tulajdonságokat használjon, különösen egy változó tényleges_range tulajdonságot, hogy elkerülje az egész nc fájl olvasását. Ez drasztikusan felgyorsíthatja a nc fájlokon alapuló adatkészletek kezdeti betöltését, ha az egyes fájlokban lévő minden variálható tényleges_range jellemző. Vegye figyelembe, hogy ez bízik az értékben, így ha helytelen, a belső fájl táblázatnak helytelen információi lesznek. Alapértelmek az igazhoz.
 
-      * ncHeader MakeFile: Ez a módosítás lehetővé teszi az nc fejléc fájlok generálását a reprezentatív nc fájl létrehozása nélkül. Ez egy kis optimalizálása EDDTable, de egy hatalmas optimalizálása sok EDDGrid kérések. Alapértelmezett (mint a hamis a tervezett optimalizált viselkedés) .
+      * ncHeader MakeFile: Ez a változás lehetővé teszi a nc header fájlok generálását anélkül, hogy először generálná a reprezentatív nc fájlt. Ez egy kis optimalizálás az EDDTable számára, de sok optimalizálás EDDGrid kérések. Alapértelmek hamis (mint a hamis, a tervezett optimalizált viselkedés) ...
 
-      * háttér CreateSubset táblázat: Ez a módosítás az adatkészletek kezdeti feldolgozásának egy részét háttérszálra mozgatja. Ez javítaná az adatkészletek betöltésének idejét. Konkrétan a késleltetett rész alkészlet táblázatok, amelyek akkor is keletkeznek, ha szükséges, ha a késleltetett feldolgozás még nem történt meg. Az alapértelmezés igaz.
+      * háttér háttér CreateSubset táblázatok: Ez a változás az adatkészletek kezdeti feldolgozását egy háttérszálba helyezi. Ez javítja az adatkészletek betöltésének idejét. Konkrétan a késleltetett rész táblák, amelyeket szükség esetén is generálnak, ha a késleltetett feldolgozás még nem történt meg. Alapértelmek az igazhoz.
 
-    * Néhány apró módosítás, hibajavítások (köszönöm Italo Borrelli az EDDTableFromAggregateRows, Köszönöm. @ SethChampagneNRL a 360-nál nagyobb teljesítmény engedélyezéséhez EDDGrid LonPM180, és számos egyéb hibajavítás) és optimalizált.
+    * Néhány kis változás, hibajavítás (Köszönöm Italo Borrellinek az EDDTableFromAggregateRows javítását, Köszönöm @SethChampagneNRL, hogy lehetővé tegye a hosszúságok nagyobb, mint 360-ban EDDGrid LonPM180 és számos más hibajavaslat) , és optimalizálás.
 
-*    **A ERDDAP™ Fejlesztők:** 
-    * További optimalizálások, beleértve a vizsgálati idő kettévágását.
+*    **Mert ERDDAP™ Fejlesztők:** 
+    * További optimalizálások, beleértve a vágási teszt időtartamát félig.
 
-    * Új vizsgálati profilok nagyon pelyhes (külső) vagy rendkívül lassú (Lassú) vizsgálatok.
+    * Új tesztprofilok nagyon flaky (külső) vagy rendkívül lassú (LassúAWS) tesztek.
 
-## Változat 2.28.1{#version-2281} 
- (szabad 2025- 09- 05) 
+## Verzió 2.28.1{#version-2281} 
+ (2025-09-05) 
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Támogatás az X- Forwarded- Prefinhez. Ez különösen fontos az administrs futó szerverek egy alpályán. Kérjük, olvassa el a frissített dokumentációt [Apache](/docs/server-admin/deploy-install#apache) és [Nginx](/docs/server-admin/deploy-install#nginx) további információkért.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Az X-Forwarded-Prefix támogatása. Ez különösen érdekelt a szerverek futtatása a subpath-on. Kérjük, olvassa el a frissített dokumentációt [Apache](/docs/server-admin/deploy-install#apache) és [Nginx](/docs/server-admin/deploy-install#nginx) További információkért.
 
-Köszönöm [@ srstaird](https://github.com/srstsavage) 
+Köszönöm [@srstsavage](https://github.com/srstsavage) 
 
-## Változat 2.28.0{#version-2280} 
- (kiadás 2025- 08- 29) 
+## Verzió 2.28.0{#version-2280} 
+ (2025-08-29) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    [Croissant-séma](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) Most már elérhető. Az alkalmazások ellenőrizni tudják, hogy az alapértelmezett metaadatok Croissant-t használnak-e, de a 2.28.0-tól kezdve kérhetik a Croissant definícióját az új exportfájltípushoz. "croissant" (amely jsonld fájlt tartalmaz) .
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    [Croissant schema](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) most elérhető. Az adminok ellenőrizhetik, hogy az alapértelmezett metaadat Croissant-ot használ-e, de 2,28,0-val kezdődően kérheti a Croissant meghatározását az új exportfájltípus ".croissant"-jével. (amely egy jsonld fájlt biztosít) ...
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Új dokkoló A kép minden egyesített mozgatási kérésen létrejött. Ezek alfa építmények, nem visszaforgatott kiadványok. Olyan címkék lesznek, mint a "20250814T034025", ami jelzi, hogy mikor épült. Ha szeretné kipróbálni a legújabb funkciók lehet használni ezeket. Ha valami stabilabbat szeretnél használni, használd a kiadásainkat szemantikus verziócímkével. (pl. 2.28.0) . Mindig arra törekszünk, hogy az alfa-kibocsátás használható legyen, de kevesebb a tesztelés, mint a mi verzióink. Mindig azt javasoljuk, hogy legalább olyan újat használj, mint a mi "legújabb" kiadásunk, ami a legújabb szemantikai verziós kiadás lesz.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Új Docker A kép minden egyes összeolvadt pull kérésre készült. Ezek az alfa épít, ezek nem változatos kiadások. Olyan címkékkel rendelkeznek, mint a "20250814T034025", amely jelzi, mikor épült. Ha meg akarja próbálni a legújabb funkciókat, használhatja ezeket. Ha azt szeretné, hogy valami stabilabb használja a kiadásokat egy szemantikai verzió címke (pl. 2.28.0) ... Mindig arra törekszünk, hogy az alfa-kibocsátás használható legyen, de kevésbé teszteljük őket, mint a változatos kiadásaink. Mindig javasoljuk, hogy legalább olyan újat használjon, mint a "legjobb" kiadás, amely a legutóbbi szemantikai változatos kiadás lesz.
 
-    * Docker Képek most már elérhető a [GitHub](https://github.com/ERDDAP/erddap/pkgs/container/erddap) valamint [DockerHub](https://hub.docker.com/r/erddap/erddap) .
+    * Docker Képek most elérhetők [GitHub](https://github.com/ERDDAP/erddap/pkgs/container/erddap) mellett [DockerHub](https://hub.docker.com/r/erddap/erddap) ...
 
-Köszönöm [@ ocefpaf](https://github.com/ocefpaf) , [@ abkfenris](https://github.com/abkfenris) , [@ srstaird](https://github.com/srstsavage) , és [MathewBiddle](https://github.com/MathewBiddle) a Docker-képek körüli hozzájárulásukhoz. Ebbe beletartoztak az első hozzászólások, kivéve @ stsvage&#33;
+Köszönöm [@ocefpaf](https://github.com/ocefpaf) , [@abkfenris](https://github.com/abkfenris) , [@srstsavage](https://github.com/srstsavage) és [MathewBiddle](https://github.com/MathewBiddle) hozzájárulásuk a Docker Images körül. Ez magában foglalta az első hozzájárulást mind közülük, kivéve a @ststsavage&#33;
     
-    * Most már van támogatás a termeléshez [Croissant-séma](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) fájlok. Alapértelmezés szerint be van kapcsolva. Ön letilthatja a Croissant séma a setup.xml (NEM JAVASOL- Kérjük, vegye fel a kapcsolatot a GitHub-mal, vagy tegyen panaszt, ha ezt meg kell tennie.) :
+    * Jelenleg támogatást nyújt a generáláshoz [Croissant schema](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) fájlok. Ez az alapértelmezett. Letilthatja a Croissant schema a setup.xml-ben (NEM ELŐTTT - Kérjük, vegye ki vagy dobjon egy problémát a GitHub-on, ha ezt meg kell tennie) :
     ```
         <generateCroissantSchema>false</generateCroissantSchema>
     ```
 
-    * Néhány beállítás megváltoztatta az alapértelmezett értékeket. useHeadersForUrl and useEddReflection now both default to true. Ha problémát okoznak, és hamisnak kell beállítani őket, kérem, hozzon létre egy kérdést. A szándék az, hogy távolítsa el őket egy jövőbeli kiadás.
+    * Egyes beállítások megváltoztatták az alapértelmezett értékeiket. HasználatHeadersForUrl és használjaEddReflection most mind alapértelmezett az igaz. Ha problémát okoznak, és hamisnak kell beállítania őket, kérlek hozzon létre egy problémát. A szándék az, hogy eltávolítsa őket egy jövőbeli kiadásban.
 
-    * Néhány beállítást eltávolítottak. useSharedWatchService és átirányított dokumentáció A TogitHublo alapértelmezés szerint több kiadás esetében is igaz volt, és ezen a ponton elég jól tesztelték. Eltávolítom ezeket néhány kódtisztításhoz.
+    * Néhány beállítást eltávolítottak. HasználatSharedWatchService és redirectDocumentation A ToGitHubIo-t a többszörös kiadások alapértelmezettje határozta meg, és ezen a ponton nagyon jól tesztelték. Ezek eltávolítása lehetővé tette néhány kód tisztítását.
 
-    * Néhány apró változás, hibajavítás és optimalizáció.
+    * Néhány kis változás, hibajavítás és optimalizálás.
 
-*    **A ERDDAP™ Fejlesztők:** 
-    * Sok halott kódot távolítottak el. Sok figyelmeztetés rögzítve.
+*    **Mert ERDDAP™ Fejlesztők:** 
+    * Sok halott kód eltávolított. Sok figyelmeztetés rögzített.
 
-## Version 2.27.0{#version-2270} 
- (szabad 2025- 06- 11) 
+## Verzió 2.27.0{#version-2270} 
+ (2025-06-11) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * Új adatok a / erddap / converting / color.html szervereken lévő színbar átalakítóhoz
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Új adatok a színesbar konverterhez a szervereken /erddap / Convert / Color.html
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Az alapértelmezett viselkedés az, hogy a gyorsítótár most független lesz a nagyobb betöltési adatkészletek feladatától. Ez lehetővé teszi a régi gyorsítótárfájlok megbízhatóbb és rendszeresebb tisztítását. Van további munka, hogy javítsa a szerver viselkedését, ha alacsony a lemez tér (visszatérés egy hiba a kérések valószínű, hogy a szerver fut ki a helyből, és tisztítása a gyorsítótár gyakrabban alacsony lemez körülmények között, hogy megpróbálja megelőzni a hibákat) . In datasets.xml   (vagy szetup.xml) az új gyorsítótár hozzáadása / beállítása ClearPerc paraméter annak ellenőrzésére, hogy a kiszolgáló milyen gyakran ellenőrzi a gyorsítótár kiürítését. Megjegyzés, A jelenlegi cachePercept paraméter szabályozza a kort a fájlokat kell tartani, az új gyorsítótár A ClearMinuts arra vonatkozik, hogy milyen gyakran kell tisztázni a dolgokat.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Az alapértelmezett viselkedés az, hogy a gyorsítótárat mostantól függetlenül tisztázzák a nagy terhelési adatkészletek feladatától. Ez lehetővé teszi a régi cache fájlok megbízhatóbb és rendszeresebb tisztítását. További munka van a szerver viselkedésének javítására, ha alacsony a lemezterületen (hiba visszatérése a kérésekhez valószínű, hogy a kiszolgáló kifut az űrből, és gyakrabban az alacsony lemezes körülmények között, hogy megpróbálja megakadályozni a hibákat) ... Inkább datasets.xml   (vagy setup.xml) hozzáadhatja / állíthatja az új gyorsítótárat A ClearMinutes paramétere annak ellenőrzésére, hogy a szerver milyen gyakran ellenőrzi a gyorsítót. Vegye figyelembe, hogy a meglévő cacheMinutes paraméter irányítja a fájlok korát, az új cache A ClearMinutes az, hogy milyen gyakran kell egy láncot tisztázni.
     ```
         <cacheClearMinutes>15</cacheClearMinutes>
     ```
-Az új gyorsítótár letiltható a CacheClear beállításával, de ez nem ajánlott.
-gyorsítótár Az elszámolási jegyzőkönyv szintén szerepel a [adatkészletek dokumentációja](/docs/server-admin/datasets#cacheclearminutes) .
+Letilthatja az új cache egyértelmű ellenőrzéseket a feladat CacheClear hamis beállításával.xml, bár ez nem ajánlott.
+Húsvét A ClearMinutes szintén a [adatkészlet dokumentáció](/docs/server-admin/datasets#cacheclearminutes) ...
     
-    * Helyi adatkészlet metaadatok támogatása. Támogatja a lokalizáció értékek egy addAttributes szakasz. Egyszerűen adjunk hozzá egy attribútumot a további xml: lang tag. Például adjunk hozzá egy francia címet egy adatkészlet addAttributes A szakasz a következőket tartalmazza:
+    * Helyi adatkészlet metaadat támogatás. Támogatja az értékek lokalizációját egyben addAttributes rész. Egyszerűen adjon hozzá egy tulajdonságot a további xml:lang címkével. Például egy francia cím hozzáadása egy adatkészlethez addAttributes A rész tartalmazza:
     ```
         <att name="title">Data from a local source.</att>
         <att name="title" xml:lang="fr">Donn&#xE9;es provenant d'une source locale.</att>
     ```
-További részletek a [helyi metaadatok dokumentációja](/docs/server-admin/localized-metadata) .
+További részletek elérhetők a [lokalizált metaadat dokumentáció](/docs/server-admin/localized-metadata) ...
 
-    * Új dokkoló Készítsen fájlt SSL opciókkal és egy mezítláb Prométheusz szerver. Hála Shane St. Savage-nek az SSL-ért és Jiahui Hu-nak a Prométheuszért.
+    * Új Docker Kompozz fájlt az SSL és egy barebones Prometheus szerver opcióival. Shane St. Savagenak köszönhetően az SSL és Jiahui Hu a Prometheus számára.
 
-    * Támogatás a fejlécekben lévő információk felhasználásához a kiszolgáló URL meghatározásához, ahelyett, hogy a config fájlra hagyatkoznánk. Ez lehetővé teszi, hogy a szerver hozzáférjen több nevet, és egyszerűsítheti bizonyos konfigurációk. Engedélyezze, és küldjön visszajelzést.
+    * Támogatja az információk használatát a fejlécekben, hogy meghatározza a szerver URL-t, ahelyett, hogy a konfig fájlra támaszkodna. Ez lehetővé teszi, hogy egy kiszolgáló több néven elérhető legyen, és egyszerűsítse bizonyos konfigurációkat. Kérjük, engedélyezze és küldjön visszajelzést.
     ```
         <useHeadersForUrl>true</useHeadersForUrl>
     ```
 
-    * Néhány apró változás, hibajavítás és optimalizáció.
+    * Néhány kis változás, hibajavítás és optimalizálás.
 
-*    **A ERDDAP™ Fejlesztők:** 
-    * Reaktor arra, hogyan definiálják a kimeneti fájltípusokat a kódban. Ez kell, hogy ez így fájltípusok lehet hozzáadni anélkül, hogy megérintené sok kód helyek.
+*    **Mert ERDDAP™ Fejlesztők:** 
+    * Refaktor, hogy a kimeneti fájltípusokat hogyan definiálják a kódban. Ehhez olyan fájltípusokat kell hozzáadni anélkül, hogy sok kódhelyet érintene.
 
-## változat{#version-226} 
- (felszabadult 2025- 03- 31) 
+## Verzió 2.26{#version-226} 
+ (2025-03-31) 
 
-*    **Mindenkinek:** 
-    * Nagy frissítés a dokumentáció honlapunkra: https://erddap.github.io/
+*    **Mert All:** 
+    * Nagy frissítés a dokumentációs oldalunkra: https://erddap.github.io/
  
-A frissített megjelenés mellett jobb a navigáció, a keresés, a fordítás, és könnyebb lesz fenntartani a továbblépést&#33;
+A frissített megjelenés mellett jobb navigáció, keresés, fordítás, és könnyebben kell fenntartani a haladást&#33;
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * Előfizetés és RSS a frissítéseknek megbízhatóbbnak kell lenniük a fájlváltozásokból gyakran frissülő adatkészleteknél.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Előfizetések és RSS A frissítéseknek megbízhatóbbá kell válniuk az olyan adatkészletek esetében, amelyek gyakran frissülnek a fájlváltozásokból.
 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Az alapértelmezett kiadás megköveteli / támogatja Java verzió 21. Vissza ebben a kiadásban képes könnyen Java 17 kompatibilis bináris.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Az alapértelmezett kiadás megköveteli/támogatja Java 21. Hát ebben a kiadásban könnyen elkészíthető Java 17 kompatibilis bináris.
 
-    * Új funkció, hogy személyre szabja az adatok megjelenített adatait az EU-ban. Elvárjuk, hogy ez különösen hasznos legyen olyan dolgok hozzáadásához, mint az adatkészlet idézés. További részletek a [új dokumentáció](/docs/server-admin/display-info) . Köszönet Ayush Singh-nek a hozzájárulásért&#33;
+    * Új funkció az UI adatkészleteiről megjelenített információk testreszabásához. Arra számítunk, hogy ez különösen hasznos lehet olyan dolgokat hozzáadni, mint az adatállomány idézetei. További részletekért olvassa el a [új dokumentáció](/docs/server-admin/display-info) ... Köszönjük Ayush Singh-nak a hozzájárulásért&#33;
 
-    * További Prométheusz metria. A legnagyobb ` http _ kérés _ időtartam _ másodperc` "request _ type", "dataset _ id", "dataset _ type", "file _ type", "lang _ code", "status _ code"
-Ez a géppel olvasható formátum lehetővé teszi, hogy jobban gyűjtsük össze a mérőszámokat, hogy megértsük, hogyan használják a felhasználók a szervert.
+    * További Prometheus metrikák. A legnagyobb az ` http _request_duration_ másodpercek` amely magában foglalja a kérelemre adott válaszidőket: "request_type", "dataset_id", "dataset_type", "file_type", "lang_code", "status_code"
+Ez a gép olvasható formátum lehetővé teszi a mutatók jobb gyűjtését, hogy megértsék, hogy a felhasználók hogyan használják a szervert.
 
-    * Új módszer ISO19115 XML fájlok létrehozására. Az Apache SIS-t használja, és új lehetőség ebben a kiadásban. Engedélyezze, és küldjön visszajelzést.
+    * Új módja az ISO19115 XML fájlok létrehozásának. Az Apache SIS-t használja, és ez egy új lehetőség ebben a kiadásban. Kérjük, engedélyezze és küldjön visszajelzést.
     ```
         <useSisISO19115>true</useSisISO19115>
     ```
 
-    * Az UI most egyedi linkeket fog létrehozni minden egyes url területeken, mint a infoUrl és összefoglalást.
+    * Az UI most egyedi linkeket fog létrehozni minden késztetéshez olyan területeken, mint amilyen a infoUrl és összefoglaló.
 
-    * Előfizetés és RSS A frissítéseknek megbízhatóbbnak kell lenniük a fájlváltozásokból gyakran frissülő adathalmazoknál. Ha ez problémákat okoz, kérjük, vegye fel a kapcsolatot a GitHub-on és tiltsa le a funkcionalitást azáltal, hogy a setup.xml-hez hozzáadja az alábbi zászlót.
-NEM AJÁNLOTT
+    * Előfizetések és RSS A frissítéseknek megbízhatóbbá kell válniuk az olyan adatkészletek esetében, amelyek gyakran frissülnek a fájlváltozásokból. Ha ez problémákat okoz, kérjük, érje el a GitHub-ot, és tiltsa le a funkcionalitást az alábbi zászló hozzáadásával a setup.xml-hez.
+NEM ELŐTTT
     ```
         <updateSubsRssOnFileChanges>false</updateSubsRssOnFileChanges>
     ```
 
-    * A részváltozók már nem lesznek automatikusan generálva az EDDTableFromNcCFFiles adatkészlethez. Ha a viselkedésre hagyatkozol, (előkezelt oldat) a subsetVariables az adatkészlet definíciójához datasets.xml , vagy adja hozzá az alábbi zászlót a setup.xml. Ha úgy érzi, hogy ezt be kell kapcsolnia, kérjük, lépjen kapcsolatba a GitHub-dal, hogy jobban tudjuk támogatni az előremenő használati esetét.
-NEM AJÁNLOTT
+    * Az anyagi változókat már nem fogják automatikusan generálni az EDDTableFromNcCFFiles adatkészlettípusra. Ha a viselkedésre támaszkodtál, akkor akár (preferált megoldás) add hozzá subsetVariables az adatkészlet meghatározása az Ön adataiban datasets.xml , vagy add hozzá az alábbi zászlót a setup.xml-hez. Ha úgy érzi, hogy ezt meg kell fordítania, kérjük, érje el a GitHub-ot, hogy jobban támogassuk a használati esetet előre.
+NEM ELŐTTT
     ```
     <includeNcCFSubsetVariables>true</includeNcCFSubsetVariables>
     ```
 
-    * A kiszolgáló most átirányítja a dokumentációs kéréseket (letöltések alatt / amely a dokumentáció, hogy már vándorolt) az új dokumentációs oldalra. Ha szükséges, letilthatja ezt egy zászlóval a setup.xml-ben:
-NEM AJÁNLOTT
+    * A szerver most átirányítja a dokumentációs kérelmeket (letöltés alatt / ami a dokumentáció, amely áttelepült) az új dokumentációs oldalra. Ha szükséges, akkor ezt egy zászlóval letilthatja a setup.xml-ben:
+NEM ELŐTTT
     ```
         <redirectDocumentationToGitHubIo>false</redirectDocumentationToGitHubIo>
     ```
 
-    * Néhány apró változtatás és hibajavítás.
+    * Néhány kis változás és hibajavítás.
 
-*    **A ERDDAP™ Fejlesztők:** 
-    * További kódminőség-javítások és halott kód tisztítás. Ez magában foglalja a kisebb optimalizálásokat, a lezárható erőforrások jobb kezelését és a hosszú ideje elavult adattípusoktól való eltávolodást (Mint Vector) .
+*    **Mert ERDDAP™ Fejlesztők:** 
+    * Több kódminőség javítása és halott kód tisztítás. Ez magában foglalja a kisebb optimalizálásokat, a lezárható erőforrások jobb kezelését, és eltávolítja a hosszú elavult adattípusokat (mint Vector) ...
 
-    * Nagy megcáfolása EDStatic, hogy húzza ki a legtöbb a config, üzenet, és metrikus kódot. Ez is jobban magában foglalja inicializálás és kezelése könyvtár utak (Az utolsó kettő még hátra van.) 
+    * Nagy refaktoring EDStatic, hogy húzza ki a legtöbb konfigurált, üzenet és metrikus kód. Ez is jobban képesíti a könyvtári utak kezdetiesítését és kezelését (Az utolsó 2-nek többet kell tennie.) 
 
-    * Sok előrelépés történt egy hivatalosan támogatott Docker Image felé. A terv az, hogy véglegesítik és kiadja után a ERDDAP™ 2.26 kiadás áll rendelkezésre.
+    * Sok előrelépés egy hivatalosan támogatott Docker Image. A terv az, hogy véglegesítsük és felszabadítsuk a ERDDAP™ 2.26 kiadás áll rendelkezésre.
 
-## változat{#version-225} 
- (kiadás 2024- 10- 31) 
+## Verzió 2.25{#version-225} 
+ (2024-10-31) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * EDDTableFromFiles most már támogatja lekérdezések csak származtatott kimenetek (globals, jexl script, vagy változók) .
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Az EDDTableFromFiles most csak meghatározott kimenetekkel támogathatja a lekérdezéseket (Globálisok, jexl script vagy változók) ...
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
     * A 2.25-ös verzió megköveteli Java 21 vagy újabb. Ez az LTS verzió, és már több mint egy éve elérhető.
          
-    * A SharedWatchService most az alapértelmezett. Ha ki kell kapcsolnia, kérem lépjen kapcsolatba Chris-szel. John a Noaa.gov, hogy tudassa velem, így tudom javítani a jövőbeli verziók, és hozzá:
-        &lt;useSharedWatchService &gt; hamis&lt;/ useSharedWatchService &gt; a setup.xml.
+    * A SharedWatchService most az alapértelmezett. Ha le kell tiltani, kérjük, lépjen kapcsolatba a krízissel. john at noaaa.gov, hogy hadd tudjam, így tudom javítani a jövőbeni verziók és hozzá:
+        &lt;Használat:SharedWatchService&gt;False&lt;/useSharedWatchService&gt; a beállításhoz.xml.
          
-    * A ERDDAP™ A servlet most indul a szerver indításánál. Ami azt jelenti, hogy az adatkészletek azonnal elkezdenek berakodni, ahelyett, hogy várnának, amíg kérés érkezik.
+    * A ERDDAP™ A servlet most kezdi a szerver indítását. Ez azt jelenti, hogy az adatkészletek azonnal elkezdenek betölteni, ahelyett, hogy várnának, amíg egy kérést nem tesznek.
          
-    * Az EDDTableFromMMultidimNcFiles removeMVRows paramétere most már hatásos. A hamisítás jelentősen felgyorsíthat néhány lekérdezést, de ez nem minden adatkészletre alkalmazható. További információkért lásd: [a paraméter leírása](/docs/server-admin/datasets#removemvrows) .
+    * A eltávolításMVRows paraméter az EDDTableFromMultidimNcFiles-ben most hatással lesz. A hamisítás beállítása jelentősen felgyorsíthat néhány kérdést, de ez nem alkalmas minden adatkészletre. További információkért lásd: [a paraméter leírása](/docs/server-admin/datasets#removemvrows) ...
          
-    * Adatbázisok (EDDTableFromNcFiles és EDDGrid FromNcFiles) a zarr fájlok használata már támogatott. A "zarr" -t vagy a fileNameRegex vagy path Regex fájlba kell beírni. Lásd a [marr secion az adatkészletek dokumentációjában](/docs/server-admin/datasets#zarr) további részletekért.
+    * Adatkészletek (EDDTableFromNcFiles és EDDGrid FromNcFiles) A zarr fájlok használata most támogatott. Tartalmazniuk kell a "zarr"-t vagy a fájlNameRegex-et vagy az útRegex-et. Lásd: [zarr secion az adatkészletek dokumentációjában](/docs/server-admin/datasets#zarr) További részletekért.
          
-    * Új adatkészlet típus, EDDTableFromParquetFiles most támogatott. Lásd a [EDDTableFromParquetFile secion in the datasets documentation](/docs/server-admin/datasets#eddtablefromparquetfiles) további részletekért.
+    * Új adatkészlettípus, EDDTableFromParquetFiles már támogatott. Lásd: [EDDTableFromParquetFiles secion in the datasets dokumentáció](/docs/server-admin/datasets#eddtablefromparquetfiles) További részletekért.
          
-    *    [Prometheus metrics](https://prometheus.io/) már elérhetők az / erddap / metrics címen.
+    *    [Prometheus metrikák](https://prometheus.io/) jelenleg elérhető /erddap/metrikus.
          
-    * Új XML elemzőprogram áll rendelkezésre. Ez az új elemező lehetővé teszi az Xinclide használatát a datasets.xml . Köszönet Ayush Singhnek a műsorért.
+    * Egy új XML parser implementáció áll rendelkezésre. Ez az új parser lehetővé teszi a XInclude használatát datasets.xml ... Köszönhetően Ayush Singh a funkcióért.
          
-    * Új paraméter datasets.xml hogy ellenőrizzék a szokatlan aktivitású e-maileket. unusualActivity A százalék a régi 25% -ra csökken. Köszönet Ayush Singhnek a műsorért.
+    * Új paraméter datasets.xml a szokatlan tevékenységi e-mailek ellenőrzése. szokatlanAktivitás A FailPercent 25% -os régi értékre alapozza. Köszönhetően Ayush Singh a funkcióért.
          
-    * Új paraméter a setup.xml-ben, amely azt szabályozza, ha az adatkészlet betöltési hibái megjelennek a status.html oldalon. Nem felel meg a valóságnak, ha a státus oldalon az adatkészlet hibáinak letiltása történik, akkor a LoadErrorsOnStatusPage-et kell beállítani:&lt;show LoadErrorsOnStatusPage &gt; hamis&lt;/ show LoadErrorsOnStatusPage &gt;
+    * Az új paraméter a setup.xml-ben, amely ellenőrzi, ha az adatkészletek betöltési hibái a status.html oldalon jelennek meg. Alapértelmezett az igaz, hogy letiltsa az adatkészlet hibáit a status oldalon, állítsa be a showLoadErrorsOnStatusPage hamis:&lt;dalszöveg: LoadErrorsOnStatusPage&gt; False&lt;/showLoadErrorsOnStatusPage&gt;
          
-    * Néhány apró változtatás és hibajavítás.
+    * Néhány kis változás és hibajavítás.
          
-*    **A ERDDAP™ Fejlesztők:** 
-    * Az egységre szétválasztott vizsgálat és integrálás (lassú) vizsgálatok. További vizsgálatok engedélyezve, és a vizsgálatok már kevésbé pelyhes.
+*    **Mert ERDDAP™ Fejlesztők:** 
+    * Elkülönült tesztelés az egységre és az integrációra (lassú) tesztek. Szintén több teszt engedélyezett és tesztek készült kevésbé ízesített.
          
-    * Hiba nyomtatás (néhány ellenőrzés még mindig nem működik) és Spot bogarak integrálva Maven.
+    * Error Prone (Néhány ellenőrzés még mindig fogyatékkal élő) Spot Bugs integrálva Maven.
          
-    * Teljes kódú bázis, a Google Style Guide-hoz igazítva.
+    * Teljes kód bázis formázva, hogy megfeleljen a Google Style Guide.
          
 
-## változat{#version-224} 
- (felszabadult 2024- 06- 07) 
+## Verzió 2.24{#version-224} 
+ (2024-06-07) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * Új színű paletta EK80 akusztikus adatkészletekhez. Köszönet Rob Cermaknak ezért.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Új színes paletta EK80 az akusztikus adatkészletek számára. Ennek köszönhetően Rob Cermak.
          
-    * Fixen olyan kérdés, ahol EDDTableAggregateRows nem mutatott megfelelő tartományok minden gyermek. Köszönet Marco Albának a hibajelentésért.
+    * Rögzítsen egy problémát, ahol az EDDTableAggregateRows nem mutatott megfelelő tartományokat minden gyermektől. Marco Albanak köszönhetően a fix és hibajelentésért.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TY: BIZTONSÁGI VÁLTOZÁS: A Google Authentication megváltoztathatja a CSP-jét.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: SZECURITY CHANGE: A Google hitelesítése módosíthatja a CSP-jét.
         
-Konkrétan, akkor is szükség lehet https://accounts.google.com/gsi/style Stlye- src és https://accounts.google.com/gsi/ Connect- src. A script- src most már használható https://accounts.google.com/gsi/client.
+Pontosabban, akkor is hozzá kell adni https://accounts.google.com/gsi/style a stlye-src és https://accounts.google.com/gsi/ a connect-src. A script-src-hez most használhatsz https://accounts.google.com/gsi/client.
  
         
-További információkért elmehet a [Google oldal](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid#content_security_policy) a CSP konfigurációról.
+További információkért mehetsz a [Google oldal](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid#content_security_policy) a CSP konfigurációról.
          
         
-    * Új Közös Őrszolgálat. Ez egy új lehetőség a könyvtárak frissítéséhez. Minden fájlrendszer esetében egy szál van egy szál helyett. Valószínűleg ez drasztikusan csökkenti a szálak számát, hogy figyelje a változásokat. Ez azt jelenti, hogy minden adatkészlet együtt frissül, ahelyett, hogy minden adatkészlet saját frissítési frekvenciával rendelkezne. Legvalószínűbb, hogy ez a legtöbb adatkészlet gyakoribb frissítését jelenti.
+    * Új megosztott Watch szolgáltatás. Ez egy új lehetőség a könyvtárak figyelésére a frissítésekre. Egy szál van minden fájlrendszerhez, ahelyett, hogy egy szál lenne adatkészletenként. Valószínűleg ez drasztikusan csökkenti a változások figyelésére használt szálak számát. Ez azt jelenti, hogy minden adatkészlet frissül, ahelyett, hogy minden adatállomány saját frissítési gyakorisággal rendelkezik. Valószínűleg ez gyakoribb frissítéseket jelent a legtöbb adatkészlet számára.
         
-Ennek lehetővé tétele&lt;useSharedWatchService &gt; igaz&lt;/ useSharedWatchService &gt; a setup.xml.
+Ennek lehetővé tétele&lt;HasználatSharedWatchService&gt;&lt;/useSharedWatchService&gt; a beállításhoz.xml.
         
           
-Kérlek, próbáld ki, és jelentsd, hogy működik Chris-nek. John a Noaa.govban.
+Kérjük, próbálja meg ezt, és jelentse vissza, hogyan működik az Ön számára, hogy krízis. John at noaa.gov.
          
-    * Javítsa meg a hibás var neveket a naplókban. Ayush Singh-nek köszönhetően.
+    * Fix a helytelen var nevek a logokban. Köszönhetően Ayush Singh a fix.
          
-    * Néhány apró változtatás és hibajavítás.
+    * Néhány kis változás és hibajavítás.
          
 *    **Javítások ERDDAP™ fejlesztők:** 
-    * A helyi fejlesztés támogatása Docker használatával. Köszönöm Matt Hopson és Roje.
+    * A helyi fejlesztés támogatása a Docker segítségével. Köszönöm Matt Hopson és Roje.
          
-    * A helyi fejlesztés támogatása Jetty használatával és a dokumentáció javítása. Köszönöm Micah Wengren.
+    * A helyi fejlesztés támogatása a Jetty és a dokumentáció javításával. Köszönöm Micah Wengren.
          
-    * A vizsgálatok módosítása a problémák határokon átnyúló csökkentése érdekében. Köszönöm. Shane St. Savage.
-         
-
-## változat{#version-223} 
- (szabad 2023- 02- 27) 
-
-Megjegyzendő, hogy ezt a kiadást Bob Simons készítette, ami azt mutatja, hogy még mindig itt van és aktív az utódja, Chris John felé való átmenet során. Ezzel a kiadással az összes kódváltozást Chis John végzi, hacsak másként nem rendelkezik.
-
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    (Nincs)   
-         
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TY: BIZTONSÁGI VÁLTOZÁS: A Google Authentication most az új Google Identity Services könyvtáron keresztül valósul meg, amely a "Sign In with Google" része. A Google támogatása a régi "Google Sign In" rendszer 2023- 03- 31 leáll. Tehát, ha a Google Authentication-t használja a ERDDAP™ telepítés, meg kell frissíteni ERDDAP™ v2.23 + előtte. (Bob sajnálja a rövid felmondást. Bob hibája.)   
-         
-    * JAVÍTÁS: Az NCCSV most v1.2. A változás az, hogy a fájlok most UTF- 8- kódolt fájlok (ASCII-k voltak.) és így most már bármilyen Unicode karakter, mint van, nélkül kódolás\\ u _ hhhh _, bár ez még mindig megengedett.
-Az NCCV fájlok írásakor, ERDDAP™ Most V1.2 fájlokat ír.
-         ERDDAP™ még mindig olvassa NCCSV fájlokat, amelyek követik a v1.0 és v1.1 specifikáció.
-Köszönet Pauline- Chauvet, n-a- t- e, és thogar- számítógép, hogy ezt sugallja, és a tesztek, hogy a különböző táblázatkezelő programok importálhatnak UTF- 8 fájlokat. Köszönet Bob Simonsnak ezért a kódváltásért.
-         
-    * ÚJ: A status.html weboldalon most már van egy sor a tetején, amely jelzi, hogy melyik adatkészlet betöltése és kapcsolódó statisztikák, vagy nincs, ha nincs adatkészlet betöltése. Ez nagyon hasznos lehet ERDDAP™ adminisztrátorok próbálják kitalálni, miért terhelés A adatbázisok olyan sokáig tartanak. Az nGridDatasets, nTableDatasets és az nTotalDatasets is az alatt van, ami most már azonnali (Korábban az utolsó nagyobb rakomány végén voltak. Adatbázisok) .
-Ez a változás Roy Mendelssohn-nak szól. Köszönet Bob Simonsnak ezért a kódváltásért.
-         
-    * JAVÍTOTT: GenerateDatasets Az Xml most a CF- 1, 10 értékre változik (CF- 1,6) a "Conventions" attribútumokban.
-Köszönet Bob Simonsnak ezért a kódváltásért.
-         
-    * Néhány apró változtatás és hibajavítás.
+    * Változások tesztek csökkentése kérdések kereszt platform. Köszönöm Shane St. Savage.
          
 
-## változat{#version-222} 
- (Szabad 2022- 12- 08) 
+## Verzió 2.23{#version-223} 
+ (2023-02-27) 
 
-Megjegyzendő, hogy ezt a kiadást Bob Simons készítette, ami azt mutatja, hogy még mindig itt van és aktív az utódjára való áttérés során.
+Ne feledje, hogy ezt a kiadást Bob Simons tette, ezáltal azt mutatja, hogy még mindig a Chris John-ra való áttérés során aktív. Ezzel a kiadással kapcsolatban minden kódváltozást Chis John végzi, kivéve, ha másként meghatározott.
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    (Nincs)   
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    (Nem)   
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Semmit.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: SZECURITY CHANGE: A Google Authentication most az új Google Identity Services könyvtáron keresztül valósul meg, amely a "Sign In with Google" része. A Google támogatja a régi "Google Sign In" rendszert, megszünteti a 2023-03-31-et. Tehát, ha a Google hitelesítést használja az Önben ERDDAP™ telepítés, frissíteni kell ERDDAP™ v2.23+ azelőtt. (Bob sajnálja a rövid értesítést. Ez Bob hibája.)   
          
-    * Biztonsági BUG FIX: Volt egy Cross Site Scripting- kapcsolódó hiba a kód a nyelvi választás csepp le. Köszönöm NOAA Biztonsági szkennerek, hogy elkaphassuk. Ez azt mutatja, hogy NOAA a biztonság aktívan és rendszeresen keresi a biztonsági hiányosságokat ERDDAP .
+    * IMPROVED: NCCSV most v1.2. A változás az, hogy a fájlok most UTF-8 kódolt fájlok (Ők voltak ASCII) és így most is tartalmazhat bármilyen Unicode karaktert, mint az, anélkül, hogy kódolnánk \\u_hhh_, bár ez még mindig megengedett.
+NCCSV fájlok írásakor, ERDDAP™ most v1.2 fájlokat ír.
+         ERDDAP™ Még mindig olvassa el az NCCSV fájlokat, amelyek követik a v1.0 és v1.1 specifikációt.
+Köszönhetően Pauline-Chauvet, n-a-t-e, és a thogar-számítógép ezt javasolja, és a tesztek, hogy biztosítsák a különböző terepprogramok import UTF-8 fájlokat. Bob Simonsnak köszönhetően ez a kódváltozás.
          
-    * BIZTONSÁGI FIX: A sok könyvtárak által használt ERDDAP™ a kiadás részeként a szokásos módon frissítették. Ez alkalommal a PostgreSQL illesztőprogram frissítése (amely volt egy biztonsági hiba) - 42.5.1.
+    * NEW: A status.html weboldalnak most van egy olyan vonala, amely azt jelzi, hogy az adatkészletek jelenleg terhelik és kapcsolódó statisztikákat, vagy sem, ha nincs adatkészlet betöltése. Ez nagyon hasznos lehet ERDDAP™ adminisztrátorok próbálják kitalálni, miért terhelik Az adatkészletek olyan hosszú ideig tartanak. Továbbá az nGridDatasets, nTableDatasets és az nTotalDatasets az alábbiakban számít, amelyek most azonnaliak (Korábban ők voltak az utolsó nagy terhelés végén Adatkészletek) ...
+Ez a változás Roy Mendelssohn számára készült. Bob Simonsnak köszönhetően ez a kódváltozás.
          
-    * JAVASOLT: ERDDAP A memóriagazdálkodási rendszernek csökkentenie kell annak az esélyét, hogy a rendelkezésre álló memória hiánya miatt egy adott kérés sikertelen legyen.
+    * IMPROVED: GenerateDatasets Az Xml most megváltoztatja a CF-1.10-et (volt CF-1.6) a „találkozók” tulajdonságaiban.
+Bob Simonsnak köszönhetően ez a kódváltozás.
          
-    * Néhány apró változtatás és hibajavítás.
-         
-
-## változat{#version-221} 
- (Szabad 2022- 10- 09) 
-
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    (Nincs)   
-         
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TENNI: Java 17, akkor nem kell\\ -d64 JAVA\\ _ OPTS a setenv.bat vagy setenv.sh. Szóval, ha ott van, kérem távolítsa el. Azt hiszem, a 64 bites mód most van kiválasztva, amikor letöltöd a 64 bites verziót Java . Hála Sam Woodmannek.
-         
-    * BUG FIX: Néha az új e-mail rendszer túl gyakran próbált bejelentkezni, ami miatt a Google E-mail szerverei elutasítottak minden jövőbeli naplózást. Az e-mail rendszer elkerüli ezt és a kapcsolódó problémákat.
+    * Néhány kis változás és hibajavítás.
          
 
-## változat{#version-220} 
- (released 2022- 09- 30) 
+## Verzió 2.22{#version-222} 
+ (megjelent 2022-12-08) 
 
-*    **Ne használj v2.20-at. Hibás.** De az adminisztrátorok még mindig meg kell csinálni a TO DO tételek alább, amikor korszerűsítés v2.21 +.
+Ne feledje, hogy ezt a kiadást Bob Simons tette, ezáltal azt mutatja, hogy még mindig körül van, és aktív az utódjára való átmenet során.
+
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    (Nem)   
+         
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: semmi.
+         
+    * SECURITY BUG FIX: Volt egy Cross Site Scripting-related bug a kód a nyelv kiválasztása leesett. Köszönöm NOAA Biztonsági ellenőrzések ennek elkapásához. Ez azt mutatja, hogy NOAA A biztonság aktívan és rutinszerűen biztonsági gyengeségeket keres ERDDAP ...
+         
+    * SECURITY FIX: A sok könyvtár használta ERDDAP™ Aktualizálták, mint általában, ennek a kiadásnak a részeként. Ezúttal ez magában foglalta a PostgreSQL sofőr frissítését (amely biztonsági hiba volt) 42.5.1.
+         
+    * IMPROVED: Több apró változás ERDDAP „A memóriamenedzsment rendszerének csökkentenie kell a rendelkezésre álló memória hiánya miatt elmulasztott kérés esélyét.
+         
+    * Néhány kis változás és hibajavítás.
+         
+
+## Verzió 2.21{#version-221} 
+ (2022-10-09) 
+
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    (Nem)   
+         
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: Mert Java 17, akkor nem kell használni \\-d64 JAVA\\_OPTS setenv.bat vagy setenv.sh. Tehát, ha ott van, kérlek, távolítsa el. Úgy gondolom, hogy 64 bites mód van kiválasztva, amikor letölt egy 64 bites verziót Java ... Sam Woodmannak köszönhetően.
+         
+    * BUG FIX: Néha az új e-mail rendszer túl gyakran próbálkozott bejelentkezni, ami miatt a Google e-mail szerverei visszautasítják az összes jövőbeli bejelentkezést. Most az e-mail rendszer elkerüli ezt és a kapcsolódó problémákat.
+         
+
+## Verzió 2.20{#version-220} 
+ (2022-09-30) 
+
+*    **Ne használja v2.20. Ez hibás.** De az adminisztrátoroknak még mindig meg kell tenniük a lent felsorolt TO DO elemeket a v2.21+-ra történő frissítéskor.
      
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    (Nincs)   
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    (Nem)   
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * JAVÍTÁS: A régi memóriagazdálkodási rendszert újra aktiváltuk (Math2.gondokElérhető) és módosította az új memóriagazdálkodási rendszert (EDStatic.therapent) hogy jobban működjön. Lásd [Memória állapota](/docs/server-admin/additional-information#memory-status) Részletekért.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * IMPROVED: A régi memóriakezelési rendszert újra bevezettük (Math2.ensureMemory elérhető) és módosította az új memóriakezelő rendszert (EDStatic.shed ThisRequest) hogy jobban működjön vele. Lásd [Memory Status](/docs/server-admin/additional-information#memory-status) részletekért.
          
-    * MEGVÁLTOZOTT: Az alapértelmezett&lt;ipAddressMaxApplications &gt; in datasets.xml 7-ről 15-re nőtt. Világos, hogy néhány törvényes WMS az ügyfelek több mint 7 egyidejű kérést generálhatnak.
+    * Összefüggő: Az alapértelmezettség&lt;ipAddressMaxRequests&gt; benne datasets.xml 7-től 15-ig nőttek. Világos, hogy néhány legitim WMS Az ügyfelek több mint 7 egyidejű kérést generálhatnak.
          
 
-## változat{#version-219} 
- (felszabadult 2022- 09- 01) 
+## Verzió 2.19{#version-219} 
+ (megjelent 2022-09-01) 
 
-*    **Ne használd a v2.19.-et. Hibás.** De az adminisztrátorok még mindig meg kell csinálni a TO DO tételek alább, amikor korszerűsítés v2.20 +.
+*    **Ne használja a v2.19-et. Ez hibás.** De az adminisztrátoroknak még mindig meg kell tenniük a lent felsorolt TO DO elemeket a v2.20+-ra történő frissítéskor.
      
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * Új: Van egy új szerveroldal funkció, orderBy Leereszkedés, ami így működik: orderBy , de inkább csökkenő sorrendben. Adam Leadbetternek köszönhetően.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * NEW: Van egy új szerveroldali funkció, orderBy Felemelkedés, amely úgy működik, mint orderBy , de fajta leszármazott rendben. Adam Leadbetternek köszönhetően.
          
-    * JAVÍTOTT: Most, grafikonok (de nem térképek) bővül, hogy töltse ki a rendelkezésre álló helyet a vásznon, azaz, tér nem használja a legenda. Magas grafikonok, négyszögletes grafikonok vagy széles grafikonok a & .size = _ width összeadásával és manipulálásával kaphatók | _ magasság _ paraméter (ahol a szélesség és a magasság határozza meg a vászon méretét, pixelben) URL kérésre. (Ez nem egy opció a .graph weboldalon. Kézzel kell hozzáadni az URL-hez.) Ha nem adja meg a & .size paraméter, kérések .small Png, .png, .largePng, .small Pdf, .pdf, és .large.pdf van előre meghatározott vászon méretek, így a grafikon bővül, hogy töltse ki a rendelkezésre álló helyet, de általában nagyjából négyzet. Hála Bob Flemingnek.
+    * IMPROVED: Most, grafikonok (de nem térképek) bővülni fog, hogy kitöltse a rendelkezésre álló helyet a vászonon, vagyis a legenda által nem használt térben. Magas grafikonokat, négyzet grafikonokat vagy széles grafikonokat kaphat a &.size=_width_ hozzáadásával és manipulálásával | _height_ paraméter (ahol a szélesség és a magasság meghatározza a vászon méretét, pixelekben) a kérelem URL. (Ez nem egy lehetőség a .graph weboldalon. Kézzel kell hozzáadni az URL-hez.) Ha nem határozza meg a &.size paramétert, kéri a .smallPng, .png, .largePng, .smallPdf, .pdf és .large.pdf előre meghatározott vászonméreteket, így a grafikon kiterjeszti a rendelkezésre álló teret, de általában nagyjából négyzet lesz. Bob Flemingnek köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TILOS: ERDDAP™ Most kell Java 17 és a kapcsolódó Tomcat 10. Követned kell a ERDDAP™ Beszerelési utasítások (vagy ezzel egyenértékű, pl. dokkoló esetében) telepíteni Java 17 and Tomcat 10 and copy your \\[ Nincs magyar neve \\] / Content könyvtár a Tomcat 8 telepítésről az új \\[ Nincs magyar neve \\] Könyvtár. Nincs más változás, amit meg kell tennie a ERDDAP a változáshoz kapcsolódó telepítés. Más szóval, ERDDAP™ Úgy működik, ahogy korábban.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: ERDDAP™ most megköveteli Java 17 és a kapcsolódó Tomcat 10. Követnetek kell ERDDAP™ telepítési utasítások (vagy az egyenértékű pl. Docker) telepítés Java 17 és Tomcat 10 és másolja a \\[ Tomcat \\] / Content könyvtár a Tomcat 8 telepítés az új \\[ Tomcat \\] könyvtár. Nincs más változás, amit meg kell tennie a ERDDAP e változáshoz kapcsolódó létesítmény. Más szavakkal, ERDDAP™ úgy működik, mint korábban.
         
-Ne felejtsd el, hogy a ERDDAP -kapcsolódó változások Tomcat server.xml és context.xml, ha frissíti Tomcat. Lásd ERDDAP s [A Tomcat telepítési utasításai](/docs/server-admin/deploy-install#tomcat) .
+Ne felejtsd el, hogy készítsd el ERDDAP - a Tomcat kiszolgálójának.xml és kontextusának megváltoztatása.xml, amikor frissíti a Tomcat-ot. Lásd ERDDAP A [Tomcat telepítési utasítások](/docs/server-admin/deploy-install#tomcat) ...
         
-A benyomásom Java 17 az, hogy jobban szeret több feldolgozási teljesítmény és memória a hosszú távú, nagyobb alkalmazások, mint ERDDAP™ , így működik kissé lassabban, mint Java 8 kis teljesítményű számítógépekkel (például 2 magot és minimális RAM-ot) és kissé gyorsabban hat, mint Java 8 nagyobb teljesítményű számítógépekkel (4 + magok és bőséges RAM) . Ha rossz teljesítményt látsz, használj olyan programokat, mint a Linux [felső](https://www.howtogeek.com/668986/how-to-use-the-linux-top-command-and-understand-its-output/) az erőforrás-felhasználás ellenőrzése és annak mérlegelése, hogy ERDDAP™ több erőforrás, különösen több memória. A memória olcsó&#33; A legtöbb telefonnak több processzora és memóriája van, mint azoknak a szervereknek, amiket maguk közül használnak a futáshoz. ERDDAP &#33;
-Hála Erin Turnbull-nak.
+Benyomásom a Java 17 az, hogy előnyben részesíti a feldolgozóképességet és a memóriát a hosszú távú, nagyobb alkalmazásokhoz, mint például ERDDAP™ Így valamivel lassabban működik, mint Java 8 alacsony teljesítményű számítógépekkel (pl. 2 kor és minimális RAM) és valamivel gyorsabban működik, mint Java 8 magasabb teljesítményű számítógépekkel (pl. 4+ kukorica és rengeteg RAM) ... Tehát, ha rossz teljesítményt lát, használjon olyan programokat, mint a Linux [felső](https://www.howtogeek.com/668986/how-to-use-the-linux-top-command-and-understand-its-output/) Ellenőrizze az erőforrás-felhasználást és fontolja meg az adást ERDDAP™ több erőforrás, különösen több memória. A memória olcsó&#33; A legtöbb telefon több processzorral és memóriával rendelkezik, mint a kiszolgálók, amelyeket néhányan közületek használnak. ERDDAP &#33;
+Erin Turnbullnak köszönhetően.
          
         
-    * TY: Ha Ön használja ERDDAP™ Cassandra-hoz, Cassandra-nak, továbbra is a Java amit a Cassandra vezetésére használtál. Csak válts rá Java 17 a Tomcat + futtatásához ERDDAP .
+    * TO DO: Ha használja ERDDAP™ hozzáférés Cassandra, a Cassandra, meg kell, hogy használja a verziót Java hogy a Cassandra futtatására használták. Csak váltson Java 17 a Tomcat+ futtatásához ERDDAP ...
          
-    * TY: Ajánlott: Ha a kiszolgáló CPU-ja 4 + maggal és 8 + GB RAM-mal rendelkezik, fontolja meg a beállítások megváltoztatását datasets.xml fájl:
+    * TO DO: ajánlott: Ha a kiszolgáló CPU 4 + fűvel és 8 + GB RAM-mal rendelkezik, fontolja meg a beállítások megváltoztatását a datasets.xml fájl:
 ```
           <nGridThreads>3</nGridThreads>  
           <nTableThreads>3</nTableThreads>  
 ```
 
-Ha a szervernek kevesebb erőforrása van, mindkét beállítás esetén ragaszkodjon az "1" -hez.
-Az nThreads rendszerek EDDGrid FromFiles és EDDTable A FromFiles jelentősen javult. Ezek a változások hatalmas sebességjavuláshoz vezettek. (pl. 2X gyorsulás, ha az nThreads 2 vagy több) A legkihívóbb kérések (amikor nagy számú fájlt kell feldolgozni az eredmények összegyűjtéséhez) . Néhány ehhez kapcsolódó változás Chris John-tól szintén általános gyorsasághoz vezet ERDDAP . E változások kódját Chris John adta meg. Köszönöm. Chris&#33;
+Ha a szerver kevesebb erőforrással rendelkezik, ragaszkodjon az "1"-hez mindkét beállításhoz.
+Az nThreads rendszerek EDDGrid FromFiles és EDDTable Az FromFiles jelentősen javult. Ezek a változások hatalmas sebességnöveléshez vezettek (pl. 2X sebesség, ha az nThreads 2 vagy annál több) a legnehezebb kérésekért (ha nagyszámú fájlt kell feldolgozni az eredmények összegyűjtésére) ... Néhány kapcsolódó változás Chris John is vezet egy általános sebességet az egészben ERDDAP ... Ezeknek a változásoknak a kódját Chris John segítette. Köszönöm, Chris&#33;
          
-    * Figyelmeztetés: kötőhártya datasetID 's are deprected and no more támogatott (bár technikailag még megengedett) . A következő kiadásban valószínűleg kizárják őket. Ha hyphens-t használ, váltson alátétekre, hogy elkerülje a bajt. Ha most változtatsz, az a te sebességed. Ha vársz a következő kiadásig, pánikba esel, és azon a napon meg kell birkóznod vele.
+    * FIGYELMEZTETÉS: hifének datasetID "Elképzelt és már nem támogatott (bár technikailag még mindig engedélyezett) ... Valószínűleg a következő felszabadításban fogják letiltani őket. Ha hyphens-t használ, váltson alulbecsülni most, hogy elkerülje a bajt. Ha most változtatsz, akkor saját sebességed van. Ha várja a következő kiadást, akkor egy pánikban lesz, és ezt a napot kell kezelnie.
          
-    * Most pedig .htmlTable adatválaszok, ha a sztringcellában lévő adatok adatokat tartalmaznak: kép / png; base64, majd egy bázis64 kódolt .png képet, ERDDAP™ megjelenik egy ikon (így a felhasználó láthatja a képet, ha lebegnek rajta) és gombok menteni a szöveget vagy a képet a vágólapra. Marco Albának köszönhetően (aki hozzájárult a kódhoz) és Bob Simons (aki kissé módosította.) .
+    * NEW: Most, .htmlTable adatválaszok, ha a String cellában lévő adatok adatokat tartalmaznak:image/png;base64, amelyet egy base64 kódolt .png kép követ, ERDDAP™ megjelenik egy ikon (így a felhasználó láthatja a képet, ha lebegnek rajta) és gombok menteni a szöveget vagy a képet a vágólapra. Marco Albanak köszönhetően (aki hozzájárult a kódhoz) Bob Simons (aki kissé módosította) ...
          
-    * ÚJ: -doNNotAddStandardName
-Ha a\\ -doNotAddStandardNames parancssor paraméterként van megadva, amikor a generál Adatbázisok Xml, generál Adatbázisok Az Xml nem ad hozzá standard\\_name a addAttributes a szélességi, hosszúsági, magassági, mélységi vagy időbeli változóktól eltérő változók esetében (amelyek nyilvánvalóak standard\\_name sz) . Ez hasznos lehet, ha a generálás kimenetét használjuk Adatbázisok Xml közvetlenül ERDDAP™ a kimenet szerkesztése nélkül, mert generál Adatbázisok Xml gyakran találgatások standard\\_name Helytelen. (Megjegyzés, hogy mindig azt javasoljuk, hogy szerkessze a kimenetet, mielőtt használja a ERDDAP .) Ennek a paraméternek a használata más kisebb kapcsolódó hatásokat okoz, mert a kitalált standard\\_name gyakran más célokra használják, például új long\\_name , és létrehozni a ColorBar beállításokat. Hála Kevin O 'Briennek.
+    * dalszöveg: DoNotAddStandardNames
+Ha tartalmazza a \\-doNotAddStandardNames mint parancssori paraméter, ha fut generál Adatkészletek Xml, generál Adatkészletek Xml nem fog hozzáadni standard\\_name a addAttributes bármilyen változó más, mint a latitude, hosszúság, magasság, mélység vagy idő (amely nyilvánvaló standard\\_name s) ... Ez hasznos lehet, ha a termelést használja Adatkészletek Xml közvetlenül ERDDAP™ a kimenet szerkesztése nélkül, mert generál Adatkészletek Xml gyakran guesses standard\\_name Helytelenül. (Vegye figyelembe, hogy mindig azt javasoljuk, hogy szerkesztse a kimenetet, mielőtt használja azt ERDDAP ...) Ezzel a paraméterrel más kisebb hatások is lesznek, mert a kitalált standard\\_name gyakran használják más célokra, például egy új létrehozásra long\\_name És létrehozni a színBar beállításokat. Kevin O'Briennek köszönhetően.
          
-    * Most már beteheted.&lt;frissítésMax. Események &gt; 10&lt;/ frissítésMaxEsemények &gt; in datasets.xml   (in a többi beállítások közelében a tetején) a fájlok maximális számának módosítása (alapértelmezés = 10) amit a ModeEveryNMillis rendszer fog feldolgozni. Nagyobb szám (100?) hasznos lehet, ha nagyon fontos, hogy az adatkészlet mindig naprakész legyen. Lásd a [frissítésMaxEsemények dokumentációja](/docs/server-admin/datasets#updatemaxevents) . Hála John Maurernek.
+    * NEW: Most már elhelyezheted&lt;frissítésMaxEvents&gt;10&lt;/updateMaxEvents&gt; benne datasets.xml   (a többi beállítás a felső közelében) a fájlok maximális számának megváltoztatása (default=10) Ezt feldolgozza a frissítésEveryNMillis rendszer. Nagyobb szám (100?) hasznos lehet, ha nagyon fontos, hogy az adatkészletet mindig naprakészen tartsák. Lásd: [frissítésMaxEvents dokumentáció](/docs/server-admin/datasets#updatemaxevents) ... John Maurernek köszönhetően.
          
-    * ÚJ: A globális támogatás növelése " real\\_time = true | hamis "String attribútum.
-Ha ez hamis (alapértelmezés) és ha az adatkészlet nem használ frissítést EveryNMillis, ERDDAP™ cache választ kérések fájltípusok, ahol az egész fájl kell létrehozni előtt ERDDAP™ elkezdheti elküldeni a választ a felhasználónak, és újrafelhasználhatja őket akár 15 percig (például: .nc , .png) .
-Ha ez igaz, vagy ha az adatkészlet frissítést használ EveryNMillis, ERDDAP™ soha nem tárolja a válaszfájlok és mindig visszatér az újonnan létrehozott fájlokat.
-Hála John Maurernek.
+    * NEW: Hozzáadott támogatás a globális " real\\_time = Igaz | hamis" String tulajdonság.
+Ha ez hamis (az alapértelmezett) és ha az adatkészlet nem használja a frissítést MindenNMillis, ERDDAP™ a fájltípusok iránti kérelmekre adott válaszokat, ahol az egész fájlt előbb kell létrehozni ERDDAP™ elkezdheti küldeni a választ a felhasználóra, és akár 15 percig újra felhasználhatja őket (pl.: .nc , .png) ...
+Ha ez igaz, vagy ha az adatkészlet frissítést használ MindenNMillis, ERDDAP™ Soha nem fogja összezúzni a válaszfájlokat, és mindig újonnan létrehozott fájlokat fog visszaküldeni.
+John Maurernek köszönhetően.
          
-    * Az e-maileket külön e-mailben küldik. Ez teszi betöltési adatkészletek és más akciók generál e-maileket gyorsabb, mert a loadDatasets nem kell várni, hogy az e-mail kell küldeni, ami néha sokáig tart. Az új rendszer több e-mailt is küldhet e-mail munkamenetenként, ezáltal csökkentve az e-mail szerver bejelentkezések számát, és csökkentve annak kockázatát, hogy a sikertelen, mert túl gyakori. Vannak statisztikák az emailThread a status.html oldalon és diagnosztikai üzenetek a log.txt -- keresd az "emailThread". Megjegyzés, hogy egy sor nEmailsPerSession = 0, jelzi a baj, azaz, egy e-mail munkamenet nem volt képes e-maileket küldeni.
-Hála Bob Simonsnak.
+    * ÚJ: Az e-maileket most egy külön e-mailben küldik. Ez olyan adatkészleteket és egyéb műveleteket terhel, amelyek gyorsabban generálják az e-maileket, mert a loadDatasets nem kell várnia az e-mail küldésére, ami néha hosszú időt vesz igénybe. Az új rendszer több e-mailt küldhet e-mail ülésen, így csökkenti az e-mail szerver bejelentkezések számát, és csökkenti a kudarc kockázatát, mert túl gyakoriak. Vannak statisztikák az e-mailThread a status.html oldalon és diagnosztikai üzenetek a log.txt - keresse az "emailThread". Vegye figyelembe, hogy az nEmailsPerSession=0 tallyja bajt jelez, azaz egy e-mail ülés nem volt képes elküldeni bármilyen e-mailt.
+Bob Simonsnak köszönhetően.
          
-    * MEGVÁLTOZOTT: Az e-maileket most kissé más kóddal küldik (mert Java 17 és az emailThread módosítása) . Ha nehézségei vannak e-mailek küldésével, kérjük, küldje el e-mailben erd.data at noaa.gov .
+    * KAPCSOLÓDÓ: Az e-maileket kissé más kóddal küldik (mert Java 17 és az e-mailThread módosítása) ... Ha baj küld e-maileket, kérjük e-maileket erd.data at noaa.gov ...
          
-    * ÚJ: Feliratkozási műveletek, amelyek "érintenek" egy távoli URL-t, most már külön touchThread-ben kezelhetők. Ez teszi a betöltési adatkészletek és más intézkedések, amelyek megérintik URL-ek gyorsabb, mert a loadDatasets nem kell várni, hogy az érintés befejeződjön, ami néha sokáig tart. Vannak statisztikák a touchThread a status.html oldalon és diagnosztikai üzenetek a log.txt -- keresse meg a "touchthread".
-Hála Bob Simonsnak.
+    * ÚJ: Az előfizetési intézkedések, amelyek "érintik" a távoli URL-t, most egy külön érintőképernyőben kezelik. Ez teszi a terhelés adatkészletek és egyéb intézkedések, amelyek érintik az URL-eket gyorsabban, mert a terhelésDatasets nem kell várni a kapcsolatot befejezni, ami néha hosszú időt vesz igénybe. Vannak statisztikák a touchThread a status.html oldalon és diagnosztikai üzenetek a log.txt - keresse meg a "touchThread".
+Bob Simonsnak köszönhetően.
          
-    * ÚJ: A status.html oldalon, a "Major LoadDatasets Time Series" -ban, van egy új "sher" oszlop, amely jelzi a kérelmek számát, amelyek a jelenlegi ERDDAP™ A memória túl magas volt. Kérések, amelyek istállót vissza HTTP státusz kód 503 "Szolgáltatás elérhető". Ezek a kérések nem voltak szükségszerűen probléma. Épp most érkeztek meg egy zsúfolt időben. Ez része volt annak, hogy ERDDAP™ foglalkozik a nagy memória használat.
+    * NEW: A status.html oldalon, a "Major LoadDatasets Time Series", van egy új "sült" oszlop, amely jelzi a kérések számát, amelyek fedezték, mert a jelenlegi ERDDAP™ A memóriahasználat túl magas volt. Azok a kérések, amelyek fedezetet kapnak, visszaküldik a HTTP státuszkódot 503 "Szolgáltatás elérhető". Ezek a kérések nem feltétlenül jelentek problémát. Csak egy elfoglalt időre érkeztek. Ez része volt egy revampának, hogyan ERDDAP™ foglalkozik a magas memóriahasználattal.
          
-    * ÚJ: Az Unix / Linux számítógépeken most már van egy "OS Info" vonal a status.html weboldalon a jelenlegi operációs rendszer információival, beleértve a CPU betöltését és a memória használatát.
+    * NEW: Az Unix/Linux számítógépeken most van egy "OS Info" sor a status.html weboldalon, ahol a jelenlegi operációs rendszerinformációk vannak, beleértve a CPU terhelést és a memóriahasználatot.
          
-    * JAVÍTOTT: Most, amikor ERDDAP™ újraindítása és a quickRestart = true, EDDTableFromFiles datasets will reuse alset .nc és elkülönül .nc . Néhány adatkészlet esetében ez jelentősen csökkenti az adatkészlet betöltésének idejét (például 60 másodperctől 0.3-ig) . Együtt az új emailThread és TaskThread (lásd fent) , Ez nagyban felgyorsítja az újraindítást ERDDAP™ sok ERDDAP™ berendezések. Hála Ben Adamsnek és John Kerfootnak.
+    * IMPROVED: Most, amikor ERDDAP™ újraindított és gyorsRestart=true, EDDTableFromFiles adatkészletek újrahasználata .nc Különböző .nc ... Néhány adatkészlet esetében ez nagymértékben csökkenti az adatkészlet betöltésének idejét (pl. 60 másodperctől 0,3-ig) ... Az új e-mailThread és a feladatThread mellett (lásd fent) , ez nagyban felgyorsítja az újraindítást ERDDAP™ sok ERDDAP™ telepítések. Ben Adamsnak és John Kerfootnak köszönhetően.
          
-    * Az előző részek tartalmából: (élő adatkészletek ERDDAP™ de nincs datasets.xml ) egyszerűen megjegyezték a státuszukat. html és log.txt minden nagyobb betöltési adatkészlet után. Most, automatikusan eltávolítják ERDDAP™ és rögzített status.html és a log.txt, és e-mailben Mindent. Tehát, ha el akarsz távolítani egy adatelemet ERDDAP™ , most már csak annyit kell tennie, hogy távolítsa el a darab xml datasets.xml és eltávolítjuk a következő nagy rakományadatbázisokban. Hála Bob Simonsnak.
+    * Előzőleg árva adatkészletek (olyan adatkészletek, amelyek élnek ERDDAP™ de nem datasets.xml ) egyszerűen megjegyezték a státuszt. html és log.txt után minden nagy terhelésDatasets. Most automatikusan eltávolítják őket ERDDAP™ és megjegyezte a status.html és a log.txt, és e-mailben Minden. Tehát, ha egy adatkészletet szeretne eltávolítani ERDDAP™ Most minden, amit meg kell tennie, eltávolítja az xml darabját datasets.xml és eltávolításra kerül a következő nagy terhelésDatasets. Bob Simonsnak köszönhetően.
          
-    * ISMERT BUG in netcdf- java v5.5.2 és v5.5.3: A EDDGrid FromThredek Katalógus opció az GenerateDatasets-ben Xml használt dolgozni THREDDS katalógusok, amelyek tartalmazzák a hivatkozások adatkészletek távoli THREDDS katalógusok. Most már nem. Jelentettem a problémát a netcdf- java fejlesztőknek.
+    * KNOWN BUG netcdf-java v5.5.2 és v5.5.3: A EDDGrid FromThredd Katalógus opció a GenerateDatasets-ben Xml használt dolgozni THREDDS katalógusok, amelyek tartalmazzák hivatkozások adatkészletek távoli THREDDS katalógusok. Most nem. Beszámoltam a problémát a netcdf-java fejlesztőknek.
          
-    * BUG FIX: A Docker felhasználók beállításához setup.xml paramétereket ERDDAP \\ _ _ paramName _: int és logikai paraméterekhez (például e-mail SmtpPort) , ERDDAP™ Helytelenül kerestük az _ paramName _. Most meg azt keresi: ERDDAP ParamName. Alessandro De Donno-nak köszönhetően.
+    * BUG FIX: A Docker felhasználók beállítása.xml paramétereken keresztül ERDDAP \\__paramName_: int és boolean paraméterek (pl. e-mail SmtpPort) , ERDDAP™ helytelenül keresett _paramName_. Most keres _ ERDDAP \\_paramName_. Alessandro De Donnonak köszönhetően.
          
-    * A ERDDAP™ a tesztelési rendszer most egy automatizált rendszert használ annak ellenőrzésére, hogy az újonnan létrehozott vizsgálati képek pontosan a vártnak felelnek meg. Chris-nek köszönhetően. John a javaslatért és Bob Simons a végrehajtásért.
-         
-
-## változat{#version-218} 
- (released 2022- 02- 23) 
-
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * NONE
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * BUG FIX: .nc Az aktákat nem zárták le bizonyos körülmények között. Most már igen. Hála Marco Albának, Roland Schweitzernek, John Maurernek és másoknak.
+    * CHANGE: A ERDDAP™ A tesztelési rendszer most egy automatizált rendszert használ annak ellenőrzésére, hogy az újonnan létrehozott tesztképek pontosan olyanok, mint amilyenek várhatóak. Chrisnek köszönhetően John a javaslatért és Bob Simons a végrehajtásért.
          
 
-## változat{#version-217} 
- (released 2022- 02- 16) 
+## Verzió 2.18{#version-218} 
+ (megjelent 2022-02-23) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * BUG FIX: A orderBy rendszer néhány évvel ezelőtt, Tabledap 's Make A Graph nem megfelelően kezelni sok kérdés, amely használt orderBy Xxx. Most már igen. Köszönet Maurice Libes-nek.
-         
-    * Korábban ERDDAP™ elutasított kérelmek. átlátható Png, amikor a szélességi és / vagy hosszúsági értékek részben vagy teljesen kívül voltak a tartományon. ( ERDDAP™ GitHub kérdések # 19, kifüggesztett by Rob Fuller -- köszönöm, hogy posztolta, hogy Rob) Most adja vissza az átlátszó pixeleket a kép minden tartományon kívüli területéhez. Ez sok kliens alkalmazás számára hasznos. A kód változtatásokat, hogy ez a változás tette teljes egészében Chris John. Köszönöm szépen, Chris&#33;
-         
-    * Korábban ERDDAP™ elutasított griddap kérelmek, ha egy adott dimenzió indexértékei \\[ magas: alacsony \\] . Most már érvényessé teszi ezeket a kérelmeket az alacsony és magas értékek kicserélésével. Ez megoldja a hosszú távú probléma a felhasználók és a külső programok, mint az xtracto, amelynek nyomon kellett követni a néhány adatkészletek, amelyek a szélességi értékek, amelyek a magas és alacsony, hogy a kérés, mint \\[  (50) : (20)  \\] hogy a kérés index tér volt \\[ alacsony: magas \\] . Lásd https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS3MonthV5.html Nos, egy kérés: \\[  (20) : (50)  \\] az egyik ilyen adatkészlet automatikusan értelmezi: \\[  (50) : (20)  \\] .
-         
-    * MEGVÁLTOZOTT: .esriAscii kérések most elindítja a "Fájl: Mentés" párbeszédablak a felhasználó böngészőjében. Joel Van Noordnak köszönhetően.
-         
-    * BUG FIX: Most, ha a hosszúsági változó egy gyermek adatkészlet a EDDGrid LonPM180 vagy EDDGrid Lon0360 dataset valid\\_min és / vagy valid\\_max attribútum, eltávolítják a EDDGrid LonPM180 vagy EDDGrid Lon0360 dataset. Hála Roy Mendelssohn-nak.
-         
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TY: Ha beállította volna&lt;dataProviderFormative &gt; a hamis, hogy ideiglenesen kezelni az XSS sebezhetőség, kérjük állítsa vissza a valós.
-         
-    * Security BUG FIX: Rögzített XSS sebezhetőség adatszolgáltatói űrlapon. Hála Genaro Contreras Gutiérreznek.
-         
-    * BUG FIX: Amikor egy AWS S3-as szemétdombon több mint 10000 fájl volt, ERDDAP™ Eldobott egy belső hibát. Ez már megoldódott. Hála Andy Zieglernek.
-         
-    * BUG FIX: EDDGrid SideBySide nem engedte a változó sourceName A különböző gyermekes adatállományokban azonos. Most már igen. Hála Joshua Stanfordnak.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Nem
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * BUG FIX: .nc A fájlokat bizonyos körülmények között nem zárták le. Most ők is. Marco Albanak, Roland Schweitzernek, John Maurernek és másoknak köszönhetően.
          
 
-## változat{#version-216} 
- (felszabadult 2021- 12- 17) 
+## Verzió 2.17{#version-217} 
+ (megjelent 2022-02-16) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * VÁLTOZÁS / BÖRÖGZÉS: Számos kis változtatások a fordítási rendszer köszönhetően javaslatok a nyelvi-specifikus szerkesztők. Hála Melanie Abecassisnak, Marco Albának, Jessy Barrette-nek, Filipe Fernandes-nek, Etienne Godin-nak, Jennifer Sevadjian-nak és Mike Smit-nek.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * BUG FIX: A változások után orderBy rendszer néhány évvel ezelőtt, Tabledap's Make A Graph nem megfelelően kezelt sok kérdést, amely használt orderBy _Xx_. Most ezt teszi. Maurice Libesnek köszönhetően.
          
-    * Hozzáadott egy megfelelő nyilatkozat és hozzárendelése a Google Translate, ahogy azt a feltételei a Google Translate. Továbbá, a&lt;html &gt; tag a HTML minden weboldalon most már megfelelően azonosítja a nem angol weboldalak, mint már lefordított gép. Hála Mike Smitnek.
+    * KANGE: Korábban, ERDDAP™ elutasított kérelmek . Átlátszó Png, amikor a magasság és/vagy a hosszúság értékek részben vagy teljes mértékben a rangsorban voltak. ( ERDDAP™ GitHub Issues #19, által közzétett Rob Fuller - köszönetet mondani, hogy Rob) Most átlátszó pixeleket hoz a kép bármely határterületére. Ez sok ügyfélalkalmazás számára hasznos. A kód megváltoztatja, hogy ezt a változást teljesen Chris John végezte. Köszönöm nagyon, Chris&#33;
          
-    * BUG FIX: A bejelentkezési weboldalak most megfelelően működnek a különböző nyelvi beállítások. Hála Mike Smitnek.
+    * KANGE: Korábban, ERDDAP™ elutasított griddap kérések, ahol az index értékek egy adott dimenzióban voltak \\[ magas: alacsony \\] ... Most ezeket a kéréseket az alacsony és magas értékek csökkentésével teszi érvényessé. Ez megoldja a felhasználók és a külső programok, mint az xtracto, hogy nyomon kell tartani a néhány adatkészletek, amelyek a magas és alacsony, hogy a kérés, mint például a \\[  (50.) : (20.)  \\] hogy az index térben a kérés \\[ alacsony: magas \\] ... Lásd https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS3MonthV5.html Most egy olyan kérés, mint \\[  (20.) : (50.)  \\] az egyik ilyen adatkészlet automatikusan értelmezhető, mint \\[  (50.) : (20.)  \\] ...
          
-    * ÚJ orderBy Sum szűrő. És új Check All and Uncheck Minden gomb bekapcsolva EDDGrid Adathozzáférési űrlap weboldal. Hála Marco Alba kódhozzájárulásának.
+    * KAPCSOLÓDÓ: .esriAscii kérések most indítanak egy "File : Save As" párbeszédpanelet a felhasználó böngészőjében. Joel Van Noordnak köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TY: ha Ön
-        &lt;questMarkImageFile &gt; QuestionMark.jpg&lt;/ questMarkImageFile &gt;
-a setup.xml fájlban az egész címkét el kell távolítani (ajánlott, így az alapértelmezett fájl használata) vagy módosítsa:
-        &lt;kérdés MarkImageFile &gt; kérdőív Mark.png&lt;/ questMarkImageFile &gt;
+    * BUG FIX: Most, ha a gyermek adatkészletének hosszúsága változó EDDGrid LonPM180 vagy EDDGrid Lon0360 adatkészlet valid\\_min vagy valid\\_max tulajdonképpen eltávolítják őket a EDDGrid LonPM180 vagy EDDGrid Lon0360 adatkészlet. Roy Mendelssohnnak köszönhetően.
          
-    * Csak hogy tudd, [Adoptium](https://adoptium.net/?variant=openjdk8) felváltotta az AdoptOpenJDK-t mint a Java   (OpenJDK) .
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: Ha beállítottad&lt;adatProviderFormActive&gt; hamis, hogy átmenetileg foglalkozik az XSS sebezhetőségével, kérjük, állítsa vissza az igazat.
          
-    * A naplófájlok ERDDAP™ , GenerateDatasets Xml, és DasDds most UTF- 8, nem a számítógép alapértelmezett karakterkészlete. Sokat ellenőriztem, és néhány változtatást tettem annak érdekében, hogy ERDDAP™ mindig meghatározza a megfelelő karakterkészlet olvasásakor vagy írásakor mindenféle fájlokat, és már nem (több esetben) a számítógép alapértelmezett karakterkészletére támaszkodik. Ez kijavított néhány hibát, és olyan közel került a cél, hogy az UTF- 8 a lehető legtöbb fájltípus (pl. .log, .xml, .html, .json , .json I, .nc Fejléc) . Megjegyzendő, hogy sok régebbi fájltípusra van szükség az ISO-8859-1 használatához (például: OPeNDAP .das, .dds, .csv, .tsv , .nc 3, .nccsv , .cpt) . Korábban próbáltam együtt dolgozni a CF csoport és Unidata az UTF- 8 támogatásának hozzáadása .nc 3 fájl, mindkettő ellenálló volt.
+    * SECURITY BUG FIX: fix XSS sebezhetőség az adatszolgáltatói formában. Genaro Contreras Gutiérreznek köszönhetően.
          
-    * ÚJ: AWS S3 fájlok letöltésekor, ERDDAP a gyorsítótár FromUrl rendszer EDDGrid FromFiles és EDDTable FromFiles most használja az új AWS Transfer Manager letöltéséhez fájlokat parallelized darabok (így nagyon gyors) . A cél átvitel be van állítva 20 Gbps, fájlonként, így ez jól működik minden AWS példány típusok, de különösen azok, amelyek kiváló "Networking Performance". Ezzel a változással ERDDAP a gyorsítótár FromUrl rendszer most kínál összehasonlítható sebességet az xarray megközelítése parallelized letöltések pre- chunked fájlokat, de anélkül, hogy szükséges, hogy átalakítsa a forrás fájlokat .nc és .hdf a chunked xarray fájlokba. Valójában, ERDDAP A rendszer jobb, ha van egy későbbi kérés olvasni ugyanabból a fájlból, mert ERDDAP™ Most van egy helyi másolata a fájlnak. A közösségünk éveket töltött szabványosítással .nc és .hdf fájlok. Ezt nem kell kidobnunk, csak hogy jó teljesítményt kapjunk, amikor adatokat tárolunk az AWS S3-ban. Hála Rich Signell-nek.
+    * BUG FIX: Amikor egy AWS S3 szennyezés több mint 10000 fájlt tartalmazott, ERDDAP™ "Belső hiba" Ez most rögzített. Andy Zieglernek köszönhetően.
          
-    * A keresőmotor = Lucene egyenlőre romlott. Ez egy összetett rendszer, amely gyakran hoz eredményeket, amelyek némileg különböznek a kívánatosabb viselkedését keresőmotor = eredeti. Majdnem minden ERDDAP™ berendezések, az időmegtakarítás Lucene nem ellensúlyozza a különbségeket az eredmények. Kérjük, használja a keresőmotor = eredeti helyett, ha lehetséges. Ha ez problémát okoz, kérjük, küldjön e-mailt Bobnak.
-         
-    * A Lucene keresőmotor most már jobban hasonlít az eredeti keresőmotorra. Már nincs olyan eset, amikor Lucene azt hiszi, hogy egy adatkészlet egyezik, és az eredeti nem. Továbbá, Lucene rangsora megegyezik az eredeti rangsorával. (mert az eredetit most már mindig a rangsorok kiszámításához használják.) .
-         
-    * BUG FIX: Egy újabb kiadással kezdve, ERDDAP™ nem lát többet, mint az első 1000 tárgy egy adott AWS S3 vödör. Nos, ERDDAP™ újra látja az összes tárgyat. Hála Andy Zieglernek.
-         
-    * BUG FIX: most EDDTableAggregate A sorok eltávolítják a actual\\_range attribútum, amikor egy vagy több gyermekadatkészlet soha nem ismeri a változóit ' actual\\_range   (pl. EDDTableFromDatabase) . Hála Erik Gelettinek.
+    * BUG FIX: EDDGrid A SideBySide nem tette lehetővé a változók számára sourceName S a különböző gyermekadatbázisokban, hogy ugyanaz legyen. Most ezt teszi. Joshua Stanfordnak köszönhetően.
          
 
-## változat{#version-215} 
- (released 2021- 11- 19) 
+## Verzió 2.16{#version-216} 
+ (2021-12-17) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    ERDDAP™ van egy új rendszer, amely lehetővé teszi a felhasználó adja meg a nyelvet kell használni minden weboldalon. Ha ERDDAP™ telepítés áll, hogy használja, a nyelvek listája jelenik meg a jobb felső sarokban minden weboldal. ERDDAP™ URL-ek előtt ez a verzió továbbra is működik, és mindig vissza angol tartalom, mint korábban.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * CHANGES/BUG FIXES: Számos kis változás a fordítási rendszerben a nyelvspecifikus szerkesztők javaslatainak köszönhetően. Melanie Abecassisnak köszönhetően Marco Alba, Jessy Barrette, Filipe Fernandes, Etienne Godin, Jennifer Sevadjian és Mike Smit.
+         
+    * A Google Fordítás megfelelő kimutatását és tulajdonát képezte, amint azt a Google Fordítás feltételei megkövetelik. Továbbá,&lt;html&gt; címke a HTML-ben minden weblap számára manapság megfelelően azonosítja a nem angol weboldalakat, ahogy a gépet lefordították. Mike Smitnek köszönhetően.
+         
+    * BUG FIX: A bejelentkezési weboldalak most megfelelően működnek különböző nyelvi beállításokkal. Mike Smitnek köszönhetően.
+         
+    * Új orderBy Sum szűrő. Új Ellenőrzés All és Uncheck Minden gomb EDDGrid Data Access Form weboldal. A Marco Alba kódhoz való hozzájárulásának köszönhetően.
+         
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: Ha van
+        &lt;KérdésMarkImageFile&gt;QuestionMark.jpg&lt;/questionMarkImageFile &gt;
+a setup.xml fájlban, el kell távolítania az egész tagot (ajánlott, így az alapértelmezett fájlt használják) vagy változtassa meg:
+        &lt;KérdésMarkImageFile&gt;QuestionMark.png&lt;/questionMarkImageFile &gt;
+         
+    * CHANGE: Csak így tudod, [Adoptium](https://adoptium.net/?variant=openjdk8) felváltotta az AdoptOpenJDK-t, mint a fő / ajánlott forrást Java   (OpenJDK) ...
+         
+    * CHANGE: A logfájlok ERDDAP™ , GenerateDatasets Xml és a DasDds most UTF-8, nem a számítógép alapértelmezett karakterkészlete. Rengeteg ellenőrzést végeztem, és néhány változtatást tettem annak biztosítására, hogy ERDDAP™ mindig meghatározza a megfelelő karakterkészletet az összes fájl olvasásakor vagy írásakor, és már nem (több esetben) támaszkodik a számítógép alapértelmezett karakterkészletére. Ez kijavított néhány hibát, és olyan közel került, mint tudtam használni UTF-8 a lehető legtöbb fájltípushoz (pl.: .log, .xml, .html, .json , .json l, .nc Fejlesztő) ... Vegye figyelembe, hogy sok régebbi fájltípusra van szükség az ISO-8859-1 használatához (pl.: OPeNDAP .das, .dds, .csv, .tsv , .nc 3, .nccsv , cpt) ... Korábban megpróbáltam együttműködni a CF csoporttal és azzal Unidata az UTF-8 támogatása .nc 3 fájl; mindkettő ellenálló volt.
+         
+    * ÚJ: A fájlok letöltése az AWS S3-ból, ERDDAP dalszöveg: Cache FromUrl rendszer EDDGrid FromFiles és EDDTable FromFiles most használja az új AWS Transfer Manager, hogy letöltse fájlokat párhuzamos zsákok segítségével (nagyon gyors) ... A célteljesítmény 20 Gbps-re van beállítva, fájlonként, így ez jól működik az összes AWS-típussal, de különösen azok, amelyek kiváló "hálózati teljesítményt" tartalmaznak. Ezzel a változással ERDDAP dalszöveg: Cache FromUrl rendszer most kínál összehasonlítható sebességek röntgen megközelítése párhuzamos letöltések előgyűjtött fájlok, de anélkül, hogy meg kell alakítani a forrásfájlokat a forrásfájlok .nc és .hdf betörött röntgenfájlokba. Valójában, ERDDAP a rendszer jobb, ha van egy későbbi kérés, hogy olvassa el ugyanazt a fájlt, mert ERDDAP™ most van egy helyi másolata a fájlnak. Közösségünk évekig szabványosított .nc és .hdf fájlok. Most nem kell kitűznünk, hogy csak azért, hogy jó teljesítményt érjünk el, amikor adatokat tárolunk az AWS S3-ban. Rich Signellnek köszönhetően.
+         
+    * CHANGE: keresésEngine=Lucene most, deprecált. Ez egy komplex rendszer, amely gyakran hoz olyan eredményeket, amelyek kissé különböznek a kívánatos viselkedés a keresésEngine=eredeti. Szinte minden ERDDAP™ létesítmények, Lucene időmegtakarítása nem ellensúlyozza az eredmények különbségeit. Kérjük, használja a kereséstEngine=eredeti helyett, ha lehetséges. Ha ez problémákat okoz, kérjük, e-mail Bob.
+         
+    * CHANGE: A Lucene keresésEngine most úgy viselkedik, mint az eredeti keresésEngine. Nincs többé olyan eset, amikor a lucene egy adatkészlet-mérkőzést gondol, és az eredeti nem. Továbbá, lucene rangsorok most egyenlő eredeti rangsorok (mert az eredetit mindig használják a rangsorok befejezésére) ...
+         
+    * BUG FIX: Kezdve egy közelmúltbeli kiadásban, ERDDAP™ abbahagyta, hogy az első 1000 objektumot egy adott AWS S3 vödörben látja. Most, ERDDAP™ ismét az összes objektumot látja. Andy Zieglernek köszönhetően.
+         
+    * BUG FIX: Most EDDTableAggregate A Rows eltávolítja a actual\\_range függetlenül attól, hogy egy vagy több gyermek adatkészlet nem ismeri a változókat "..." actual\\_range   (pl.: EDDTableFromDatabase) ... Erik Gelettinek köszönhetően.
+         
+
+## verzió 2.15{#version-215} 
+ (2021-11-19) 
+
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    ERDDAP™ új rendszerrel rendelkezik, amely lehetővé teszi, hogy a felhasználó megadja a nyelvet, hogy minden weboldalra használható legyen. Ha egy ERDDAP™ telepítés jön létre, hogy használja, a lista a nyelvek jelennek meg a felső jobb sarkában minden weboldal. ERDDAP™ Az URL-ek a verzió előtt továbbra is működnek, és mindig visszatérnek az angol tartalomhoz, mint korábban.
         
-Nem minden szöveget vagy weboldalt fordítottak le. A projekt időbeli korlátai megakadályozták, hogy Qi és Bob elérje a 100% -ot.
+Nem minden szöveget vagy minden weboldalt lefordították. Volt időkorlátok ezen a projekten, amely megakadályozta Qi és Bob elérése 100%.
         
-A nyilvánvaló kérdés az, hogy miért fektettünk bele ennyi energiát, amikor a Chrome lefordítja a weboldalt a -the- fly oldalon? A válasz: így sokkal jobban tudjuk irányítani a fordítást. Különösen sok szó van, amit nem kellene lefordítani a weboldalakon, például az adatkészletek címei és összefoglalói, a változók, paraméterek, egységek és szervezetek neve. A fordítási erőfeszítések nagy része a szavak és kifejezések azonosítása volt, amiket nem kellene lefordítani. Továbbá, a gép fordításai bizonyos típusú HTML markup-ot markoltak. A fordítás kezelése lehetővé tette számunkra, hogy minimalizáljuk ezt a problémát.
+A nyilvánvaló kérdés: miért tettünk ennyi erőfeszítést erre, amikor a Chrome lefordítja a weboldalakat a repülésen? A válasz: így sokkal több ellenőrzést kapunk arról, hogy a fordítás hogyan történik. Különösen sok olyan szó van, amelyet nem kell fordítani a weboldalakon, például az adatkészletek címei és összefoglalói, a változók, paraméterek, egységek és szervezetek neve. A fordítási erőfeszítések nagy része olyan szavakat és kifejezéseket azonosított, amelyeket nem szabad lefordítani. Továbbá, a gépi fordítások hajlamosak mangle bizonyos típusú HTML markup. A fordítás kezelése lehetővé tette számunkra, hogy minimalizáljuk ezt a problémát.
         
-A fordítási projekt Qi Zeng (a Google Summer of Code gyakornok) és Bob Simons a Google Fordítási webes szolgáltatását használja. Hatalmas projekt volt. Köszönöm. Qi&#33;
+A fordítási projektet Qi Zeng végezte (Google Nyári Kódex Belső) Bob Simons a Google Fordító webszolgáltatásával. Ez egy hatalmas projekt volt. Köszönöm, Qi&#33;
         
-    * BUG FIX: ERDDAP™ Így az ORCID azonosítója X lesz az utolsó számjegy. Köszönet Maurice Libes-nek.
+    * BUG FIX: ERDDAP™ Most lehetővé teszi az ORCID ID-nek, hogy X legyen az utolsó számjegy. Maurice Libesnek köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TILOS:
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO:
         
-        * Meg kell, hogy néhány módosítást kapcsolódó ERDDAP az új rendszer, amely lehetővé teszi a felhasználók számára, hogy meghatározzák a nyelvet a weboldalak.
-            * Az első sorban a setup.xml és datasets.xml files, change to: encoding = "UTF- 8" and change the document 's encoding in your text editor so it is mented as a UTF- 8 file. GenerateDatasets Xml most feltételezi, hogy a datasets.xml egy UTF- 8 fájl.
-            * Összeállított programozók ERDDAP : Valamennyi ERDDAP™ A .java fájlokat UTF- 8 fájlként kell kezelni. Lehet, hogy az "UTF- 8 kódolást" hozzá kell adni a javac parancssorhoz. (Igen.) 
-            * A rendszer lehetővé tétele (erősen ajánlott) , a&lt;startBodyHtml5 &gt; címke datasets.xml , a "& amp&#33; loginInfo;" helyett "& amp&#33; loginInfo; | & amp&#33; nyelv; "így a nyelvek listája megjelenik a jobb felső sarokban minden ERDDAP™ weboldalt.
-            *    ERDDAP™ kizárólag:&lt;startBodyHtml5 &gt; címke datasets.xml a HTML tartalom megadása a banner tetején minden ERDDAP™ weboldal, függetlenül attól, hogy a felhasználó milyen nyelvet választ. Ha megváltoztatod a címkét a használathoz
-" &EasierAccessToScientificData; "a tudományos adatokhoz való könnyebb hozzáférés helyett" és
-" &BroughtToYouBy; "Ahelyett, hogy" hozott neked ", ERDDAP™ használja a fordított változatok ezeket a mondatokat a banner.
-            * Hasonlóképpen, az új alapértelmezés&lt;ShortDescriptionHtml &gt; in datasets.xml ed
+        * Néhány változtatást kell végrehajtania a ERDDAP Az új rendszer, amely lehetővé teszi a felhasználók számára, hogy megadják a nyelvet a weboldalak számára.
+            * A setup.xml és datasets.xml fájlok, változtasson: encoding="UTF-8" és változtassa meg a dokumentum kódolását a szövegszerkesztőben, így UTF-8 fájlként mentésre kerül. GenerateDatasets Az Xml most feltételezi, hogy a datasets.xml UTF-8 fájl.
+            * Programozók, akik összeállítják ERDDAP : Minden ERDDAP™ .java fájlokat kell kezelni UTF-8 fájlok alapértelmezett. Előfordulhat, hogy hozzá kell adnia az "EB-8" kódolást a javac parancssorhoz. (Megtettem.) 
+            * E rendszer lehetővé tétele (erősen ajánlott) , a&lt;KezdőlapBodyHtml5&gt; címke, amelyet Ön megadott datasets.xml , változtassa meg a "&amp&#33;loginInfo-t;" a "&amp&#33;loginInfo-ba; | &amp&#33;language;", hogy a nyelvek listája megjelenik a felső jobb sarkában minden ERDDAP™ weboldal.
+            *    ERDDAP™ csak használja&lt;KezdőlapBodyHtml5&gt; címke, amelyet Ön megadott datasets.xml a HTML tartalmak meghatározása a banner számára minden tetején ERDDAP™ weboldal, függetlenül attól, hogy a felhasználó milyen nyelvet választ. Ha megváltoztatja ezt a címkét használni
+"..." &EasierAccessToScientificData; "Ahelyett, hogy a "Könnyebb hozzáférés a tudományos adatokhoz" és
+"..." &BroughtToYouBy; "Ahelyett, hogy "Brought to you", ERDDAP™ fordított változatokat fog használni ezeknek a kifejezéseknek a bannerben.
+            * Hasonlóképpen, az új alapértelmezettség&lt;dalszöveg: ShortDescriptionHtml datasets.xml az
                 
 ```
                 <theShortDescriptionHtml><!\\[CDATA\\[ 
@@ -502,467 +519,467 @@ A fordítási projekt Qi Zeng (a Google Summer of Code gyakornok) és Bob Simons
                 \\[standardShortDescriptionHtml\\]
                 \\]\\]></theShortDescriptionHtml>
 ```
-A tartalom utolsó 3 sora olyan dolog, amelyet lefordított szöveggel helyettesítenek. Ha bármelyiküket megtéríted (nevezetesen: Részecske Erddap;) vagy az összes, hogy kifejezett szöveg datasets.xml   (amely elsőbbséget élvez, ha jelen van) vagy messages.xml, hogy a szöveg jelenik meg, függetlenül attól, hogy a felhasználó milyen nyelvet választ. Ez nem tökéletes, de gondoltam, hogy kevés adminisztrátor szeretne szerkeszteni&lt;A ShortDescriptionHtml &gt; 35 különböző fájlban, hogy 35 különböző lefordított változatát a tag.
+Az utolsó 3 tartalomsor olyan dolgok, amelyeket fordított szöveggel helyettesítenek. Ha bármelyiket megtérítesz (Nevezetesen & This ParticularErddap;) vagy mindegyikük, hogy kifejezze a szöveget datasets.xml   (kiemelt, ha jelen van) vagy az üzenetek.xml, ez a szöveg nem fog megjelenni, függetlenül attól, hogy milyen nyelvet választ a felhasználó. Ez nem tökéletes, de rájöttem, hogy kevés adminisztrátor szeretne szerkeszteni&lt;theShortDescriptionHtml&gt; 35 különböző fájlban, hogy 35 különböző fordított verziót biztosítson a címkének.
         
           
          
-    * MEGVÁLTOZOTT: Néhány hibát most kissé másképp kezelnek, így hozzá lehet adni a status.html-en és a Daily Report Email-en lévő "sikertelen kérések" sorrendjéhez. Tehát ezek a számok valamivel nagyobbak, mint korábban.
+    * KAPCSOLÓDÓ: Néhány hibát manapság kissé másképp kezelik, és így hozzáadhatók a status.html és a Daily Report e-mailben. Tehát ezek a számok valamivel nagyobbak lehetnek, mint korábban.
          
-    * BUG FIX: GenerateDatasets Xml EDDGrid Lon0360 és EDDGrid A LONPM180 már nem tartalmazza a forrásadatokat datasetID = ~ ".\\*\\ _ LonPM180 "és datasetID = ~ ".\\*\\ _ Lon0360 ", illetve.
-         
-
-## változat{#version-214} 
- (szabad 2021- 07- 02) 
-
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    *    (nincs)   
-         
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * ÚJ: EDDGrid Lon0360, amely egy gridded adatkészlet hosszúsági értéke & gt; = 0 és&lt;= 360 egy gridded adatkészletből, amelynek hosszúsági értékei & gt; = -180 és&lt;= 180. Lásd a [ EDDGrid Lon0360 dokumentáció](/docs/server-admin/datasets#eddgridlon0360) . Hála Dale Robinsonnak.
-         
-    * ÚJ: ERDDAP™ Az adminisztrátorok most már felülbírálhatják a setup.xml értéket egy környezeti változón keresztül. ERDDAP \\ _ _ értéknév _ futás előtt ERDDAP . Például, használat ERDDAP \\ _ baseUrl felülírja a&lt;baseUrl &gt; érték. Ez hasznos lehet, amikor a telepítés ERDDAP™ Konténerrel, mivel a standard beállításokat a setup.xml-be lehet tenni, majd speciális beállításokat lehet biztosítani környezeti változókkal. Ha titkos információt szolgáltat ERDDAP™ ezen a módszeren keresztül ellenőrizze, hogy az információ titokban marad-e. ERDDAP™ csak egyszer olvassa el a környezeti változókat indításonként, az első másodpercben a startup, így az egyik módja annak, hogy használja: állítsa be a környezeti változók, start ERDDAP™ Várj, amíg ERDDAP™ megkezdődött, majd kibontja a környezeti változókat. Hála Marc Portier-nek.
-         
-    * JAVÍTOTT: Ha néhány fájl egy EDDTableFrom... A sok fájlból álló fájlok néhány nagyon hosszú String értékkel rendelkeznek, az adatkészlet sokkal gyorsabban töltődik és sokkal gyorsabban válaszol a kérésekre. Korábban... ERDDAP™ sok helyet biztosítana a min és max String értékeknek azokban a fájlokban, amelyeket az ilyen adathalmazokhoz szükséges fájladatokkal tárolnak. Az így kapott fájl hatalmas volt, ami miatt lassan kell írni és olvasni. Hála az OBIS-nak.
-         
-    * JAVÍTOTT: Most, ERDDAP™ jobb munkát végez a szokatlan és érvénytelen karaktersorozatok CSV fájlokban történő értelmezésében. Hála az OBIS-nak.
-         
-    * Egy év Cassandrával való zűrzavar után végre sikeresen telepítettem Cassandrát (v2) újra és így sikerült újrafuttatni a teszteket Cassandra v2-vel. Így magabiztosabban kijelenthetem, hogy ERDDAP™ A Cassandra v2-vel és v3-mal működik. Hála az ONC-nek.
+    * BUG FIX: GenerateDatasets Xml az EDDGrid Lon0360 és EDDGrid A LonPM180 most kizárja a forrásadatbázisokat datasetID = ~".\\*\\_LonPM180" és datasetID = ~".\\*\\_Lon0360", vagyis.
          
 
-## változat{#version-212} 
- (felszabadult 2021- 05- 14) 
+## Verzió 2.14{#version-214} 
+ (2021-07-02) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * BUG FIX: Ha az előfizetési feketelistán vagy, nem kérhetsz listát az előfizetéseidről.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    *    (Nem)   
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TY: ÚJ: olyan rendszer, amely automatikusan korlátozza a rosszindulatú felhasználók és a túlságosan agresszív, legitim felhasználók azon képességét, hogy nagyszámú egyidejű kérelmet nyújtsanak be, amelyek a rendszer teljesítményét más felhasználók számára rontják. Van 3 új opcionális címkék datasets.xml amelyet közvetlenül azután lehet / kell hozzáadni&lt;grafikus BackgroundColor &gt;:
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * NEW: EDDGrid Lon0360, amely a hálózati adatkészletet a hosszúsági értékekkel és gt;=0 és&lt;= 360 őrült adatkészletből, hosszúsági értékekkel és gt;=-180 és&lt;= 180. Lásd: [ EDDGrid Lon0360 dokumentáció](/docs/server-admin/datasets#eddgridlon0360) ... Dale Robinsonnak köszönhetően.
+         
+    * NEW: ERDDAP™ Az adminisztrátorok most felülírhatják a setup.xml értékét egy környezeti változón keresztül ERDDAP \\__értékName_ futás előtt ERDDAP ... Például használjon ERDDAP \\_baseUrl felülírja&lt;alapUrl&gt; érték. Ez hasznos lehet a telepítés során ERDDAP™ konténerrel, mivel szabványos beállításokat lehet elhelyezni a setup.xml-ben, majd speciális beállításokat kínálhat környezeti változókon keresztül. Ha titkos információkat nyújt ERDDAP™ ezen a módszeren keresztül győződjön meg róla, hogy az információ titokban marad. ERDDAP™ csak az induláskor egyszer olvassa el a környezet változóit, így az egyik módja annak, hogy ezt használja: állítsa be a környezet változóit, kezdje el ERDDAP™ Várjon, amíg ERDDAP™ Elkezdődik, majd beállítja a környezet változóit. Marc Portiernek köszönhetően.
+         
+    * IMPROVED: Most, ha néhány fájl egy EDDTableFrom... Files adatkészlet sok fájl van néhány nagyon hosszú String értékek, az adatkészlet sokkal gyorsabban tölti be, és reagál a kérések sokkal gyorsabb. Korábban, ERDDAP™ sok helyet osztana a bányák és a max String értékek számára olyan fájlokban, amelyeket fájlinformációkkal tárolnak az ilyen adatkészletek számára. A kapott fájl óriási volt, ami azt írja, és lassan olvassa el. Az OBIS-nek köszönhetően.
+         
+    * IMPROVED: Most, ERDDAP™ jobb munkát végez a szokatlan és érvénytelen karaktersorozatok értelmezése a CSV fájlokban. Az OBIS-nek köszönhetően.
+         
+    * FIX: Egy évnyi baj után Cassandra, végre sikeresen telepítettem Cassandra (v2) Ismét sikerült újraindítani a Cassandra v2 teszteket. Tehát most magabiztosabban kijelenthetem, hogy ERDDAP™ Cassandra v2 és v3. Az ONC-nak köszönhetően.
+         
+
+## Verzió 2.12{#version-212} 
+ (2021-05-14) 
+
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * BUG FIX: Ha az előfizetési feketelistán vagy, most nem kérhet fel az előfizetések listáját.
+         
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * TO DO: NEW: rendszer, amely automatikusan korlátozza a rosszindulatú felhasználók képességét, és túlságosan agresszív legitim felhasználókat, hogy számos egyidejű kérést tegyenek, amelyek lerombolják a rendszer teljesítményét más felhasználók számára. Három új opcionális címke van datasets.xml amit tudsz / tedd hozzá közvetlenül utána&lt;graphBackgroundColor:
 ```
         <ipAddressMaxRequests></ipAddressMaxRequests>  <!-- current default=7 -->
         <ipAddressMaxRequestsActive></ipAddressMaxRequestsActive>  <!-- current default=2 -->
         <ipAddressUnlimited></ipAddressUnlimited>  <!-- default=empty -->  
 ```
 
-További információk: [ipCímzettek Max. Kérések](/docs/server-admin/datasets#ipaddressmaxrequests) . ERDDAP™ "Egyedi felhasználók száma (indítás óta) "a status.html oldalon.
-Köszönhetően annak, aki Kínában megtámadta az én ERDDAP™ telepítés.
+További információkért lásd: [ipAddressMaxRequests](/docs/server-admin/datasets#ipaddressmaxrequests) ... ERDDAP™ szintén kinyomtatja az „Egyedülálló felhasználók számát (Kezdőlap) " a status.html oldalon.
+Hála a kínai embernek, aki megtámadta a ERDDAP™ telepítés.
          
-    * Váltás a Postgresql meghajtó viselkedésére: Amikor frissítettem a Postgresql meghajtót, a Postgresql és az GenerateDatasetsXml által generált táblázatlistában szereplő oszlopnevek minden nagybetűs eset helyett, mint korábban. Nem tudom, hogy ez hatással lesz-e más dolgokra, mivel az adatbázisok gyakran úgy vélik, hogy ezek a nevek érzéketlenek. A teszt adataim még mindig működnek. De ha a dataset nem dolgozik ezzel ERDDAP™ Frissítés, ez a lehetséges ok, hogy az első.
+    * CHANGE Postgresql sofőr viselkedése: Amikor frissítettem a Postgresql sofőrt, a Postgresql és a GenerateDatasetsXml által generált oszlop nevek az összes alsó táska helyett, mint korábban. Nem tudom, hogy ez hatással lesz-e más dolgokra, mivel az adatbázisok gyakran úgy vélik, hogy ezek a nevek érzéketlenek. A teszt adatkészletem továbbra is helyesen működik. De ha az adatkészlet nem működik ezzel ERDDAP™ frissítés, ez a lehetséges oka az első folytatásnak.
          
-    * BUG FIX: ERDDAP™ Most is kezeli a privát AWS S3 fájlokat helyesen. Az AWS S3 fájlok kezelésének más, ehhez kapcsolódó javításai voltak. Hála Michael Ganglnak és Dylan Pugh-nak.
+    * BUG FIX: ERDDAP™ most is megfelelően kezeli a magán AWS S3 fájlokat. Voltak más kapcsolódó fejlesztések az AWS S3 fájlok kezeléséhez. Michael Ganglnak és Dylan Pughnak köszönhetően.
          
-    * ÚJ: EDDGrid FromNcFiles és EDDGrid FromNcFiles A kicsomagolt adatok már olvashatók a "struktúrák" .nc 4 és .hdf 4 fájl. A változók azonosítására, hogy egy struktúra, a&lt; sourceName &gt; kell használni a formátum: _ fullStructureName | _ memberName _, például group1 / myStruct | A tagom. Hála az NRL-nek.
+    * NEW: EDDGrid FromNcFiles és EDDGrid FromNcFiles A nem csomagolt adatok most olvashatók a "struktúrákról" .nc 4 és .hdf 4 fájl. A változó azonosítása, amely egy szerkezetből származik,&lt; sourceName &gt; &gt; &gt; &gt; Használja a formátumot: _fullStructureName_ | _memberName_, például csoport1/myStruct | myMember. Az NRL-nek köszönhetően.
          
-    * MEGVÁLTOZOTT: Ha az aktuális memória használat plusz ez a kérés még egy kicsit magas, griddap készletek nThreads for this request to 1. Így, ERDDAP™ megőrzi az emlékeket, ha kevés az emlék. Köszönhetően annak, aki Kínában megtámadta az én ERDDAP™ telepítés.
+    * KAPCSOLÓDÓ: Most, ha a jelenlegi memóriahasználat és ez a kérés még kissé magas, griddap készletek nHárom ez a kérés az 1. Így, ERDDAP™ megőrzi az emlékezetet, amikor a memória szűkös. Hála a kínai embernek, aki megtámadta a ERDDAP™ telepítés.
          
-    * Új rendszer a nyitott fájlok számának nyomon követésére (amely magában foglalja a foglalatokat és más dolgokat, nem csak fájlokat) a Tomcat Linux számítógépeken. Ha néhány fájl tévedésből soha nem záródik be, a nyitott fájlok száma növekedhet, amíg meghaladja a maximálisan megengedett és számos nagyon rossz dolog történik. Tehát most, a Linux számítógépeken (az információ nem áll rendelkezésre a Windows) :
+    * Új rendszer a nyílt fájlok számának nyomon követésére (amely magában foglalja az aljzatokat és más dolgokat, nem csak fájlokat) Tomcatban Linux számítógépeken. Ha néhány fájl hibásan soha nem zárul le, a nyílt fájlok száma növekedhet, amíg meghaladja a megengedett maximális és számos nagyon rossz dolog történik. Tehát most, Linux számítógépeken (az információ nem elérhető a Windows számára) :
         
-        * Van egy új "Nyílt fájlok" oszlop a jobb oldalon a status.html weboldal mutatja a százalékos max fájlokat nyitott. A Windows csak azt mutatja, hogy "?".
-        * Mikor? ERDDAP™ generálja ezt az információt a végén minden nagyobb adatkészlet újratöltés, ez kinyomtatja a naplóba. txt fájl:
-openFileCount = _ current _ of max = _ max _% = _% _
-        * Ha a százalék &gt; 50%, egy e-mailt kell küldeni a ERDDAP™ adminisztrátor és az e-mail Minden. E-mail címekre.
+        * Van egy új "Open Files" oszlop a status.html weboldal szélsőjobboldalán, amely megmutatja a max fájlok százalékát. A Windows-on csak "?.
+        * Mikor ERDDAP™ generálja ezt az információt az egyes jelentős adatkészletek újratöltésének végén, a naplóra nyomtat. txt fájl:
+OpenFileCount=_current_ a max=_max_ %=_percent_
+        * Ha a százalék &gt;50%, egy e-mailt küldünk ERDDAP™ adminisztrátor és az e-mail Minden E-mail címekre.
         
-Hogy többet tudjon meg, vagy ha látja ezt a problémát a ERDDAP™ Látod? [Túl sok nyitott fájl](/docs/server-admin/additional-information#too-many-open-files) .
-Köszönhetően annak, aki Kínában megtámadta az én ERDDAP™ telepítés.
+Tudjon meg többet, vagy ha látja ezt a problémát a ERDDAP™ lásd [Túl sok nyílt fájl](/docs/server-admin/additional-information#too-many-open-files) ...
+Hála a kínai embernek, aki megtámadta a ERDDAP™ telepítés.
          
-    * Új: Tettem hozzá egy csomó ellenőrzés és kezelése "Túl sok nyitott fájlok", így a feladat csak megáll, és a felhasználó látja a hibaüzenet. Adatfájlok többé nem lesz megjelölve, mint rossz, ha az olvasás eredménye a "Túl sok nyitott fájlok" hiba.
+    * NEW: Hozzáadtam egy csomó ellenőrzést a "Túl sok nyílt fájl", így a feladat csak megáll, és a felhasználó látja a hibaüzenetet. Az adatfájlok már nem lesznek rosszak, ha elolvassák őket egy "Túl sok nyílt fájl" hibában.
          
-    * ÚJ \\[ bigParentDirectory \\] / badFilesFlag könyvtár:
-Ha ebbe a könyvtárba a datasetID fájlnév (A fájl tartalma nem számít.) , ERDDAP™ Törli a rossz fájlokat .nc fájl ehhez az adatkészlethez (ha van) és töltse újra az adatokat, amilyen gyorsan csak lehet. Ennek okai ERDDAP™ próbálja újra dolgozni a fájlokat korábban (Hibásan?) Úgy van jelölve, mint a rossz. Hála Marco Albának.
+    * Új \\[ bigParentDirectory[szerkesztés] \\] /badFilesFlag könyvtár:
+Ha fájlt helyez a könyvtárba egy datasetID mint a fájl neve (a fájl tartalma nem számít) , ERDDAP™ törli a rosszfiókokat .nc fájl ehhez az adatkészlethez (ha valaki) és újratöltse az ASAP adatkészletét. Ez okozza ERDDAP™ ismét próbálkozni a korábban használt fájlokkal (téves?) rosszul jelzett. Marco Albanak köszönhetően.
          
-    * Ha EDDGrid A... fájlokból vagy az EDDTableFrom... A fájloknak kezdetben 0 fájljuk van az ismert érvényes fájlok listájában (például, ez egy új adatkészlet) , akkor ERDDAP™ elhalasztja a betöltését, és úgy állítja be a zászlót, hogy a nagyobb betöltési adatkészletek befejezése után azonnal betöltse. Ez felgyorsítja a kezdeti indítást, amikor új adatkészletek vannak.
+    * KAPCSOLÓDÓ: Az induláskor, ha egy EDDGrid Fájlok vagy EDDTableFrom... A fájlok adatbázisa eredetileg 0 fájlt tartalmaz az ismert érvényes fájlok listáján (pl. ez egy új adatkészlet) Aztán ERDDAP™ betölti és beállít egy zászlót, hogy betöltse az ASAP-ot, miután a nagy terhelésDatasets befejeződik. Ez felgyorsítja a kezdeti indulást, amikor új adatkészletek vannak.
          
-    * MEGVÁLTOZOTT: FileVisitorNLS.testAWSS3 () és FileVisitorSubdir.testAWSS3 () ; most használja az AWS v2 (nem v1) SDK. Szóval most a Git ERDDAP™ distribution most tartalmazza az összes szükséges fájlokat, és már nem kell kézzel hozzáadni a masszív v1 AWS SDK jar fájlt.
+    * FileVisitorDNLS.testAWSS3 () FileVisitorSubdir.testAWSS3 () ; most használja az AWS v2 (nem v1) SDK. Tehát most a Git ERDDAP™ elosztás most magában foglalja az összes szükséges fájlokat, és már nem kell manuálisan hozzáadni a hatalmas v1 AWS SDK jar fájlt.
          
-    * Megváltoztam: Maven segítségével észleltem / gyűjtöttem függéseket (a .jar fájlok / lib) . Az AWS SDK v2-re történő módosítása ezt tette szükségessé. A jövőben más importált kódokra is szükség lesz. Hatalmas köszönet Kyle Wilcox-nak, aki biztosította az általa létrehozott és használt pom.xml-t, ami számos problémát megoldott számomra.
+    * KAPCSOLÓDÓ: Bekapcsoltam a Maven használatára, hogy észleljem / agyfüggőségeket (.jar fájlok /lib) ... Az AWS SDK v2-jének változása ezt szükségessé tette. Szükség lesz más importált kódra a jövőben. Hatalmas köszönet Kyle Wilcoxnak, aki biztosította a Pom.xml-t, amelyet létrehozott és használ, ami számos problémát megoldott nekem.
          
-    * VÁLTOZOTT: A classpath paraméter (- cp) Használt GenerateDatasetXml, DasDds és más kis programok, hogy jön ERDDAP™ , és a tanácsadás a programozók most sokkal egyszerűbb, és soha többé nem kell változtatni, mivel ez utal a könyvtár, nem az egyes fájlokat:
-\\ -cp osztályok; C:\\ programok\\\ _ tomcat\\ lib\\ servlet- apiijar; lib\\\ *
-         (vagy ':' helyett ';' Linux és Macs) .
-         (Már évekkel ezelőtt meg kellett volna tennem, amikor lehetőség lett belőle.)   
+    * KAPCSOLÓDÓ: Az osztálypata paraméter (-cp) használt GenerateDatasetXml, DasDds és más kis programok, amelyek jönnek ERDDAP™ , és a programozóknak szóló tanácsadásban most sokkal egyszerűbb, és soha nem szabad újra változni, mivel a könyvtárra utal, nem pedig az egyes fájlokra:
+\\-cp osztályok;C:\\programok_tomcat\\ lineservlet-api.jar;lib*
+         (vagy ":" ahelyett, hogy ";" Linux és Macskák) ...
+         (Évekkel ezelőtt kellett volna megtennem, amikor lehetőség lett.)   
          
-    * ÚJ: GenerateDatasets Xml van egy új közüzemi opció: find DuplicateTime, amely keresni fogja a gyűjteménye rácsozott .nc   (és kapcsolódó) fájlok keresése az időértékek másolásával. Lásd [FindDuplicate Idő](/docs/server-admin/datasets#findduplicatetime)   
+    * NEW: GenerateDatasets Xml egy új hasznossági lehetőség: FindDuplicateTime, amely a megfogott gyűjteményen keresztül keres .nc   (és kapcsolódó) fájlokat találni fájlokat duplikált időértékekkel. Lásd [FindDuplic Idő](/docs/server-admin/datasets#findduplicatetime)   
          
-    * ÚJ: datasets.xml a&lt;paletta &gt; címke, amely felülírja a&lt;paletta &gt; címke értéke üzenetek.xml (vagy visszatér az üzenet.xml értéke, ha üres) . Ez lehetővé teszi, hogy módosítsa a listát a rendelkezésre álló paletta, míg ERDDAP™ Rohan. Is, ha van egy cptfiles alkönyvtár a ERDDAP™ tartalomjegyzék, ERDDAP™ át fogja másolni az összes\\ * .cpt fájlt abban a könyvtárban a \\[ Nincs magyar neve \\] / Webaps / erddap / WEB- INF / cptfiles könyvtár minden alkalommal ERDDAP™ Elindul. Együtt, ezek a változások lehetővé teszi, hogy adjunk paletta és a változások továbbra is, ha telepít egy új változata ERDDAP . Lásd a [paletta dokumentáció](/docs/server-admin/datasets#palettes)   
-Hála Jennifer Sevadjian-nek, Melanie Abecassis-nek, és talán más parti őröknek.
+    * NEW: datasets.xml most tartalmazhat egy&lt;paletta&gt; címke, amely felülírja&lt;paletták&gt; címkeérték az üzenetekből.xml (vagy visszaállítja az üzeneteket.xml értéket, ha üres) ... Ez lehetővé teszi a rendelkezésre álló paletták listáját, miközben ERDDAP™ fut. Továbbá, ha van egy cptfiles aláírása a ERDDAP™ tartalomkezelő, ERDDAP™ lemásolja az összes \\*.cpt fájlt az adott könyvtárban \\[ Tomcat \\] /webapps/erddap/WEB-INF/cptfiles könyvtár minden alkalommal ERDDAP™ kezdődik. Együtt, ezek a változások lehetővé teszik, hogy a palettákat, és a változások továbbra is fennállnak, amikor telepít egy új verziót ERDDAP ... Lásd: [paletta dokumentáció](/docs/server-admin/datasets#palettes)   
+Köszönhetően Jennifer Sevadjian, Melanie Abecassis, és talán más CoastWatch emberek.
          
-    * Megváltozott.&lt;Lassú DownTroubleMillis &gt;] (/ docs / server- admin / datasets # lassuldowntroblemillis) most már minden sikertelen kéréshez használják, nem csak néhány típushoz.
+    * [[szerkesztés]]&lt;lassúDownTroubleMillis&gt;] (/docs/server-admin/adatbázisok#slowdowntroublemillis) most minden meghibásodott kérésre használják, nem csak néhány típusra.
          
-    * VÁLTOZOTT: A RunLoadDatasets szál most megszakítja a LoadDatasets szálat 3 / 4 LoadDatasets MaxMinutes így több idő van LoadDatasets észrevenni a megszakítás és a kilépés kecsesen. További és jobb diagnosztikai üzenetek erre.
+    * KAPCSOLÓDÓ: A RunLoadDatasets most megszakítja a LoadDatasets szálat 3/4 LoadDatasets MaxMinutes így több idő van a LoadDatasets számára, hogy észrevegye a megszakítást és kegyesen kilépjen. Ezenkívül egyre több és jobb diagnosztikai üzenet van.
          
-    * A Lucene régi verziójától a 8.7.0-ra változott.
+    * A Lucene régi verziójától a v8.7.0-ig.
          
-    * Elküldött e-mailek ERDDAP™ most jelenik meg egy fix szélességű betűtípussal.
+    * CHANGE: E-mailek küldése ERDDAP™ most egy rögzített szélességi betűvel jelenik meg.
          
-    * Váltás: EDDGrid FromFiles most kap tengelyértékek és attribútumok az ELT | Az utolsó fájl, az alábbiak szerint:&lt;metadataFrom &gt;. Köszönöm. (nem) Ken Casey, et al.
+    * Tanú: EDDGrid FromFiles most kap a tengelyértékek, valamint tulajdonságok FIRST | LAST fájl, amint meghatározott&lt;metadataFrom&gt;. Köszönöm (nem) Ken Casey, és al.
          
-    * ADDED támogatás az érvénytelen egységek "diploma\\ _ North" és "fokozat\\ _ East", amelyeket tévesen használt a legutóbbi fájlokat (2020- 10- 01 óta) AVHRR Pathfinder 5. 3 verziójában L3- kollated (L3C) SST adatkészletek (nceiph53 sst d1day és ncePH53 sst unit description in lists) . ERDDAP™ most már szabványosítani őket érvényes egységek. Köszönöm. (nem) Ken Casey, et al.
+    * ADDED támogatás a "degree\\_North" és a "degree\\_East" érvénytelen egységekhez, amelyeket tévesen használnak a legutóbbi fájlok (2020-10-01 óta) az AVHRR Pathfinder Version 5.3 L3-gyűjtve (L3C) SST adatkészletek (nceiPH53 sst d1day és nceiPH53 sst n1day) ... ERDDAP™ most szabványosíthatja őket érvényes egységekre. Köszönöm (nem) Ken Casey, és al.
          
 
-## változat{#version-211} 
- (Szabad 2020- 12- 04) 
+## Verzió 2.11{#version-211} 
+ (2020-12-04) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * BUG FIX: OrderByMean dobott egy NullPointerException, ha egy változó csak egy\\ _ FillValue vagy hiányzik\\ _ Érték meghatározása. Most jól kezeli a helyzetet. Hála Marco Albának.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * BUG FIX: OrderByMean dobott egy NullPointerException, ha egy változó volt csak az egyik \\_FillValue vagy hiányzó\\_ Az érték határozott. Most helyesen kezeli a helyzetet. Marco Albanak köszönhetően.
          
-    * BUG FIX: Voltak problémák az ODV szöveges fájlok által létrehozott ERDDAP™ a 2.10. pontban. Ezek a problémák megoldódtak. Hála Shaun Bellnek.
+    * BUG FIX: Voltak problémák az ODV szöveges fájlok által létrehozott ERDDAP™ V2.10-ban. Ezek a problémák rögzítve vannak. Shaun Bellnak köszönhetően.
          
-    * BUG FIX: Most jöttem. ERDDAP™ v2.10: Ha az URL-ben a lat lon határait határozták meg, a kerítő doboz nem került fel a világtérképre. Már megint az. Hála John Maurernek.
+    * BUG FIX: Csak a ERDDAP™ v2.10: Ha a lat lon kötelékeket az URL-ben határozták meg, a kötődoboz nem szerepelt a világtérképen. Most ismét. John Maurernek köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * BUG FIX: Most jöttem. ERDDAP™ v2.10: Az ArchiveADataset, GenerateDatasets szkriptfájlok Xml és DasDds nem működött, mert nem volt a változások a classpath, amely hozzáadott ERDDAP™ Most már tudják. Hála Marco Albának.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * BUG FIX: Csak a ERDDAP™ v2.10: A script fájlok ArchiveADataset, GenerateDatasets Az Xml és a DasDds nem működött, mert nem voltak változásai az osztálypátiának, amiket hozzáadtak ERDDAP™ V2.10. Most csinálják. Marco Albanak köszönhetően.
          
-    * ÚJ: In datasets.xml , akkor most már a címke:
+    * NEW: In datasets.xml Lehet, hogy most van a címke:
 ```
         <emailDiagnosticsToErdData></emailDiagnosticsToErdData> <!-- true (the default) or false -->  
 ```
 
-Jelenleg, ha igaz (vagy ha a címke üres, vagy ha a címke nincs a fájlban) , amikor a felhasználó kérése egy NullPointerException-hez vezet, ERDDAP™ e-mailben a stack nyomkövetés erd.data at noaa.gov   (a ERDDAP™ fejlesztési csoport) . Ennek biztonságosnak és biztonságosnak kell lennie, mivel nincsenek bizalmas információk. (pl. a kérelem) benne van az e-mailben. Ez lehetővé teszi, hogy elkapjon minden homályos, teljesen váratlan hibákat vezet NullPointers kivételek. Ellenkező esetben a felhasználó látja a kivételeket, de a ERDDAP™ A fejlesztők nem, szóval nem tudjuk, hogy van-e olyan probléma, amit meg kell oldani.
+Jelenleg, ha igaz (vagy ha a címke üres, vagy ha a címke nem szerepel a fájlban) Amikor egy felhasználó kérése NullPointerException-hez vezet, ERDDAP™ e-mailt küld a veremcsapdának erd.data at noaa.gov   (a ERDDAP™ Fejlesztő csapat) ... Ez biztonságosnak és biztonságosnak kell lennie, mivel nincs bizalmas információ (pl. a kérésUrl) az e-mailben szerepel. Ennek lehetővé kell tennie, hogy bármilyen homályos, teljesen váratlan hibát elkapjon, amely a NullPointerExceptionshez vezet. Ellenkező esetben a felhasználó látja a kivételeket, de a ERDDAP™ A fejlesztők nem, ezért nem tudjuk, hogy van olyan probléma, amelyet rögzíteni kell.
         
-Lehetséges, hogy ez a címke vezet más, hasonló diagnosztikai információk e-mailben erd.data at noaa.gov a jövőben. Az e-mail tartalma mindig minimális, és kapcsolódik a hibák, és nem, például, használati információk. Hála Marco Albának.
+Lehetséges, hogy ez a címke más, hasonló diagnosztikai információkhoz vezet, amelyeket e-mailben küldenek. erd.data at noaa.gov a jövőben. Az e-mail tartalma mindig minimális és kapcsolódik a hibákhoz, és nem, például a használati információkhoz. Marco Albanak köszönhetően.
          
         
-    * VÁLTOZOTT: Most, közös tömörített fájltípusok ( .bz2 , .gz , .gzip , .tar , .tgz , .z , .zip ) szintén tilos byte range kérések. Ez van megadva a&lt;extensionsNoRangeApplications &gt; in messages.xml.
+    * KAPCSOLÓDÓ: Most, közös tömörített fájltípusok ( .bz2 , .gz , .gzip , .tar , .tgz , .z , .zip ) tilos a byte hatótávú kérésekre is. Ezt a&lt;kiterjesztésekNoRangeRequests&gt; az üzenetekben.xml.
          
-    * Ismerős probléma: Mint ERDDAP™ 2.10, .nc ml fájlok, amelyek megpróbálnak változtatni egy attribútum, ne változtassa az attribútum. Ez egy ismert hiba a netcdf- java-ban, amit jelentettem, és azt mondják, hogy rögzítik a következő kiadás a netcdf- java.
+    * KNOWN PROBLEM: Mint ERDDAP™ 2.10, .nc ml fájlok, amelyek megpróbálják megváltoztatni a tulajdonságot, ne változtassa meg a tulajdonságot. Ez egy ismert hiba a netcdf-java-ban, amit bejelentem, és azt mondják, a netcdf-java következő kiadásában lesz rögzítve.
          
 
-## változat{#version-210} 
- (kiadás 2020- 11- 05) 
+## Verzió 2.10{#version-210} 
+ (2020-11-05) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * ÚJ: Az új [Interpolát](https://coastwatch.pfeg.noaa.gov/erddap/convert/interpolate.html) a konverter hatékonyan interpolálja a rácsozott adatkészlet értékeiből származó értékeket. Így különösen hasznos az állatforgalmi adatokkal dolgozó kutatók számára. Ez a konverter vesz egy asztalt szélességi, hosszúsági és időbeli oszlopok (és talán más oszlopok) és ad vissza egy táblázatot további oszlopokkal interpolált értékeket. Így ez hasonló a népszerű [Xtractomatic](https://coastwatch.pfeg.noaa.gov/xtracto) szkript eredetileg készítette Dave Foley, de kínál az előnye a feldolgozás akár 100 pont kérésre. Hála Dave Foley-nak és Jordan Watson-nak. ( NMFS ) .
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * ÚJ: Az új [Interpoláció](https://coastwatch.pfeg.noaa.gov/erddap/convert/interpolate.html) A konverter hatékonyan interpolálja az értékeket egy rácsos adatkészlet értékéből. Mint ilyen, különösen hasznos a kutatók, akik dolgoznak az állati nyomkövetési adatok. Ez a konverter egy asztalban van, magassággal, hosszúsággal és időoszlopokkal (és talán más oszlopok) és visszatér egy táblázat további oszlopokkal interpolált értékekkel. Így ez hasonló a népszerűséghez [Xtractomatic](https://coastwatch.pfeg.noaa.gov/xtracto) A Dave Foley által eredetileg létrehozott forgatókönyv, de kérésre akár 100 pontot is kínál. Dave Foleynek és Jordan Watsonnak köszönhetően ( NMFS ) ...
          
-    * JAVÍTOTT: Advanced Search most szigorú non-.html kérések. Most kivételeket vet ki az állandó hibákkal járó kérelmekre. (pl. kérések, ha minLat &gt; maxLat) vagy átmeneti hibák (például a standard\\_name Ez nem létezik.) . A html kérések, Advanced Search változatlan: mint a Google keresések, ez teszi a legjobb és csendben javít vagy figyelmen kívül hagyja a hibákat. Hála Rich Signell-nek.
+    * IMPROVED: Az Advanced Search most szigorú a nem-.html kérésekhez. Most kivételeket fog dobni olyan kérésekre, amelyek állandó hibákkal rendelkeznek (pl. kérések, ahol a minLat &gt; maxLat) vagy ideiglenes hibák (pl. kérések egy standard\\_name ez nem létezik) ... A .html kérések esetében az Advanced Search változatlan: a Google keresésekkel a legjobb és csendben rögzíti vagy figyelmen kívül hagyja a hibákat. Rich Signellnek köszönhetően.
          
-    * JAVASOLT: A térkép az Advanced Search oldalon most nagyobb (Még mindig hunyorítanod kell, de kevesebbet.) és lényegesen pontosabb (de még mindig nem tökéletes.) . Hála John Maurernek.
+    * IMPROVED: Az Advanced Search oldal térképe most nagyobb (Még mindig meg kell szokni, de kevesebb) és jelentősen pontosabb (de még mindig nem tökéletes) ... John Maurernek köszönhetően.
          
-    * JAVÍTOTT: A "Draw land mask" beállítás a Make A Graph weboldalak és a & .land =... beállítás az URLs-ben, amely egy térképet kér, most két további lehetőséget támogat:
-"vázlat" csak rajzolja a terepmaszk körvonalát, politikai határok, tavak és folyók.
-Az "off" nem rajzol semmit.
-Lásd a [& .land =... dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) .
-Hála John Maurernek.
+    * IMPROVED: A "Draw földmaszk" beállítása a Make A Graph weboldalain és a &.land=... beállítása az URL-ekben, amelyek kérik a térképet, most két további lehetőséget nyújtanak:
+"outline" csak vonzza a tájképet, politikai határokat, tavakat és folyókat.
+"off" nem húz semmit.
+Lásd: [&.land=... dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) ...
+John Maurernek köszönhetően.
          
-    * JAVASOLT: Az általa létrehozott grafikák és térképek ERDDAP™ Most már három új jelölőtípust használhat: Borderless Filled Square, Borderless Filled Circle, Borderless Filled Up Triangle. Ennek kódját az ETT / EMODnet fizika Marco Alba adta hozzá. Hála Marco Albának.
+    * IMPROVED: grafikonok és térképek, amelyeket létrehoztak ERDDAP™ most három új jelölőtípust használhat: Borderless Filled Square, Borderless Filled Circle, Borderless Filled Up Háromszög. A kód ehhez hozzájárult Marco Alba ETT / EMODnet fizika. Marco Albanak köszönhetően.
          
-    * ÚJ: "files" rendszer most támogatja a sima Fájltípus válaszok (CSV, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv vagy .xhtml .) például: [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv) .
-Kyle Wilcox-nak köszönhetően.
+    * NEW: "files" rendszer most támogatja a sima File típusú válaszok (.csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv vagy .xhtml ...) pl.: [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv) ...
+Kyle Wilcoxnak köszönhetően.
          
-    * JAVÍTOTT: A felhasználó adathozzáférési űrlapjának használatakor generált URL- ek (html) vagy egy Make- A- grafikont (ábra) Web page most megfelelően antide- kódolja a karakterek \\[ és \\] . Ez egy kicsit megnehezíti az emberek számára az URL-ek olvasását, de webbiztonsági szempontból jobb. Az igazgatóknak most lehetőségük van a relaxedQueryChars beállítására = ' \\[  \\]  | "a Tomcat server.xml fájlban (kevésbé biztonságos) vagy nem (biztonságosabb) .
-Hála Antoine Queric-nek, Dominic Fuller-Rowell-nek és másoknak.
+    * IMPROVED: Az URL-ek akkor keletkeztek, amikor egy felhasználó egy adathozzáférési formát használ (.html) vagy Make-A-Graph (.gráf) weblap most megfelelően százalék-kód a karakterek \\[ és \\] ... Ez teszi az URL-eket egy kicsit nehezebbé az emberek számára, hogy olvassák, de jobb egy web-biztonsági szempontból. Az adminisztrátoroknak most lehetőségük van pihenniQueryChars= "..." \\[  \\]  | " a Tomcat szerverben.xml fájl (kevésbé biztonságos) vagy nem (biztonságosabb) ...
+Antoine Quericnek, Dominic Fuller-Rowellnek és másoknak köszönhetően.
          
-    * ÚJ: Ha egy EDDTable adatkészletre vonatkozó kérés tartalmazza az & hozzáadást Változók ahol (_ attribútum Név, attribútum Érték _) , ERDDAP™ hozzáad minden változót, amely _ attribútum Név = attribútum Érték _ a kért változók listájára.
-Lásd a [& Hozzáadás Változók Ahol a dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#addVariablesWhere) . Köszönet Aurelie Briand, et al.
+    * ÚJ: Ha egy EDDTable adatkészlet iránti kérelem tartalmazza és adva Variables Hol (_attribute Név, tulajdonság Value_) , ERDDAP™ hozzáadja az összes változót, amelyek _attribute Név = tulajdonság Value_ a kért változók listájára.
+Lásd: [A Variables Hol dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#addVariablesWhere) ... Köszönhetően Aurelie Briand, et al.
          
-    * Megváltozott: ERDDAP™ most visszautasítja byte range kéréseket / fájlokat / .nc vagy .hdf fájlok. Ne próbálj kapcsolódni a távoli .nc vagy .hdf Akták, mintha helyi akták lennének. Szörnyen hatástalan, és gyakran más problémákat is okoz. Ehelyett:
-        * Felhasználás(OPeN)DAPkliens szoftver csatlakozni ERDDAP s DAP szolgáltatások ehhez az adatkészlethez (amelyek / griddap / vagy tabledap / az URL-ben) . Ez az. DAP - Igen.
-        * Az adatkészlet adatelérési űrlapjának használata adatkészlet kéréséhez.
-        * Ha az egész fájlra szüksége van, vagy hosszú időn keresztül ismételt hozzáférésre, használja curl , wget , vagy böngésző letölteni az egész fájlt, majd hozzáférni az adatokat a helyi másolat a fájl.
+    * Összefüggő: ERDDAP™ most elutasítja a byte hatótávolság iránti kérelmeket /files/ .nc vagy .hdf fájlok. Ne próbálja összekapcsolni a távoli .nc vagy .hdf fájlok, mintha helyi fájlok lennének. Ez szörnyen nem hatékony, és gyakran okoz más problémákat. Ehelyett:
+        * Használat(OPeN)DAPügyfélszoftver csatlakoztatása ERDDAP A DAP szolgáltatások az adatkészlethez (amely rendelkezik / griddap/ vagy tabledap / az URL-ben) ... Ez az, ami DAP az.
+        * Használja az adatkészlet Adathozzáférési Formáját, hogy kérjen egy adatkészletet.
+        * Ha szüksége van az egész fájlra vagy ismételt hozzáférésre hosszú ideig, használja curl , wget , vagy böngészője letölteni az egész fájlt, majd hozzáférni az adatokat a fájl helyi másolatából.
              
-    * JAVÍTOTT: a .odv A Txt kimeneti opció átírásra került, hogy támogassa az új verziót ODV .txt fájlok és a megfelelő ábrázolása röppálya, időmérők, és profiladatok.
+    * IMPROVED: The .odv A Txt output opciót újraírták az új verzió támogatására ODV .txt fájlok és a pályázati, időzítési és profiladatok megfelelő képviseletének támogatása.
          
-    * JAVÍTÁS: A kettős idézőjelben megadott keresési kifejezéseket json sztringként értelmezik, így\\ kódolt karaktereik lehetnek. Többek között ez lehetővé teszi, hogy egy attribútum pontos egyezését keressék, pl. "intézmény = NOAA  \\n "nem egyezik egy adatkészlet az intézmény = NOAA   NMFS . Hála Dan Nowackinek.
+    * IMPROVED: Most, keresési feltételek a kettős idézetek értelmezhető, mint egy json sztring, így lehet, hogy \\ kódolt karakterek. Többek között ez lehetővé teszi, hogy egy pontos egyezséget keressen egy attribútumhoz, például az „intézmény= NOAA  \\n "Nem fog egy adatkészletet találni az intézményrel NOAA   NMFS ... Dan Nowackinak köszönhetően.
          
-    * JAVÍTOTT: További helyeken lebegő pontszámok (különösen a páros úszók) most megjelenhet, mint egy kicsit kerekített változata a szám további helyeken, például egy úszó korábban egy dupla, mint 32.27998779296875, most tűnhet 32.28. Kyle Wilcox-nak köszönhetően.
+    * IMPROVED: További helyeken, lebegő pontszámok (különösen a duplákra átalakított úszók) most úgy tűnik, mint egy kissé kerekített változata a szám több helyen, pl. egy float korábban mutatott, mint egy kettős, mint 32.27998779296875, most úgy tűnik, mint 32.28. Kyle Wilcoxnak köszönhetően.
          
-    * BUG FIX: aláíratlan egész szám audio fájlokat olvastak kissé rosszul. Most már helyesen olvassák őket.
+    * BUG FIX: a nem aláírt integrált audiofájlokat kissé helytelenül olvasták. Most helyesen olvasnak.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * FIGYELEM: Először futsz ERDDAP™ v2.10, a helyi adatállományokon alapuló adatkészletek betöltése **Nagyon** lassan, mert ERDDAP™ újra kell létrehoznia a fájlinformációk adatbázisát. A lassú kezdeti újratöltés után gyorsan, mint korábban. Kérlek, légy türelmes.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * WARNING: Az első alkalom, amikor futsz ERDDAP™ v2.10, a helyi adatfájlokon alapuló adatkészletek betöltése **nagyon** lassan, mert ERDDAP™ újra kell létrehoznia a fájlinformációk adatbázisát. A lassú kezdeti újratöltés után gyorsan betöltik, mint korábban. Kérjük, légy türelmes&#33;
          
-    * A következőt kell tenned:
-        * Amikor először fut v2.10, néhány adatkészlet lehet, hogy nem tölt, mert ERDDAP™ most már szigorúbb néhány metaadat. Mint korábban, ERDDAP™ e-mailben a Daily Report, amikor először feltöltődik. Ez tartalmazza a hibaüzeneteket minden egyes nem betölthető adathoz. Olvassa el a hibaüzeneteket, hogy kitalálja a problémákat. A legtöbb esetben, csak meg kell, hogy egy kis változás az adatkészlet metaadatai megoldani a problémát.
+    * AZ IGAZSÁGOK:
+        * Amikor először futtatja a v2.10-t, néhány adatkészlet nem tölthet be, mert ERDDAP™ most szigorúbb bizonyos metaadatokról. Mint korábban, ERDDAP™ E-mailt küld egy Daily jelentést, amikor először feltöltődik. Ez magában foglalja az egyes adatkészletek hibás üzeneteit, amelyek nem töltöttek be. Olvassa el a hibaüzeneteket, hogy kitalálja a problémákat. A legtöbb esetben csak egy kis változást kell hoznia az adatkészlet metaadatára a probléma megoldására.
              
-        * In datasets.xml , keresés&lt; sourceName & gt; = (Megjegyzés: '=' jel, amely azonosítja a [rögzített érték sourceName ](/docs/server-admin/datasets#fixed-value-sourcenames) ) . A legtöbb ERDDAP™ Setups, ezek ritkák. Ha a következő értékek bármelyike '=' a húrok (nem számok) , Most kell csatolni a string dupla idézetek. Például,
-Előtte:&lt; sourceName & gt; = KZ401&lt;/ sourceName &gt;
-Ezután:&lt; sourceName & gt; = KZ401&lt;/ sourceName &gt;
+        * Inkább datasets.xml Keressen&lt; sourceName Gt;= (jegyezze meg '=' jel, amely azonosít egy [fix érték sourceName ](/docs/server-admin/datasets#fixed-value-sourcenames) ) ... A legtöbb ERDDAP™ beállítások, ezek ritkák. Ha az értékek bármelyike után '=' húrok (nem számok) Most már bezárja a sztringet a kettős idézetekbe. Például,
+Előző:&lt; sourceName Gt;=KZ401&lt;/ sourceName &gt; &gt; &gt; &gt;
+utána:&lt; sourceName Gt;="KZ401"&lt;/ sourceName &gt; &gt; &gt; &gt;
              
-        * ÚJ: Új opcionális beállítás van a setup.xml-ben,&lt;defaultAccessibleViaFiles &gt;, amely beállítja az alapértelmezett&lt;accessibleViaFiles &gt; minden adathoz. Az alapértelmezés az új címke hamis, amely utánozza az előző ERDDAP™ viselkedés. Ezt az alacsonyabb szintű beállítást egy adott adatkészlet felülbírálhatja&lt;accessibleViaFiles &gt; beállítás.
+        * NEW: Van egy új opcionális beállítás a setup.xml-ben,&lt;defaultAccessibleViaFiles&gt;, amely meghatározza az alapértelmezettséget&lt;hozzáférhetőViaFiles&gt; minden adatkészlethez. Az új címke alapértelmezettje hamis, ami az előzőt jelenti ERDDAP™ viselkedés. Ezt az alacsonyabb szintű beállítást egy adott adatkészlet felülmúlhatja&lt;hozzáférhetőViaFiles&gt; beállítás.
             
-AJÁNLVA (mert vannak felhasználók, akik ezt akarják) :
-Ha azt akarja, hogy minden EDD... FromFiles adatbázisok elérhetők a fájlrendszeren keresztül, majd
+JELENTÉS (mert vannak olyan felhasználók, akik ezt akarják) :
+Ha minden EDD-t akarsz készíteni... FromFiles adatkészletek elérhetőek a fájlrendszeren keresztül, majd
             
-            1. Adja hozzá ezt a címkét a setup.xml fájljához:
+            1. Adja hozzá ezt a címkét a setup.xml fájlhoz:
 ```
                 <defaultAccessibleViaFiles>true</defaultAccessibleViaFiles>
 ```
-            2.   (Választható) Az összes
+            2.   (Opcionálisan) Távolítsa el az összes
 ```
                 <accessibleViaFiles>true</accessibleViaFiles>
 ```
-in datasets.xml mivel az alapértelmezés most már igaz.
+benne datasets.xml mivel az alapértelmezés most igaz.
                  
-        * \\ _ FillValue attribútumok hozzáadása:
-             ERDDAP™ az összes egész számra vonatkozó\\ _ FillValue alapértelmezett értéke: az adattípus maximális értéke (pl. 127 bájt változó esetén) . Most már nem. Annak érdekében, hogy elkerüljék ezen értékek adatértékként való feltüntetését (nem hiányzó értékek) , meg kell, hogy kifejezetten ezeket a\\ _ FillValue attribútumok. Mostantól minden alkalommal, amikor elkezded ERDDAP™ , küld az adminisztrátor egy e-mailt a .csv táblázat egy listát egész forrásváltozók, amelyek nem rendelkezik\\ _ FillValue vagy missing\\_value attribútumok és a javasolt új\\ _ FillValue attribútumok. Lásd [@ info: whatsthis Értékattribútumok](/docs/server-admin/datasets#add-_fillvalue-attributes) további információkért és utasításokért.
+        * Adjon hozzá \\_FillValue tulajdonságokat:
+             ERDDAP™ használt alapértelmezett \\_FillValue minden integrált változó esetében: az adattípus maximális értéke (pl. 127 byte változó) ... Most nem. Annak elkerülése érdekében, hogy ezek az értékek adatértékként jelenjenek meg (nem hiányzó értékek) , meg kell határozottan kijelenteni ezeket a \\_FillValue tulajdonságokkal. Mostantól kezdve minden alkalommal, amikor elkezdesz ERDDAP™ , küldi az adminisztrátor egy e-mailt egy .csv asztallal, amely egy listát tartalmaz az integrált forrás változókról, amelyeknek nincs \\_FillValue vagy missing\\_value attribútumok és a javasolt új \\_FillValue tulajdonságok. Lásd [Add hozzá \\_Fill Érték tulajdonságok](/docs/server-admin/datasets#add-_fillvalue-attributes) További információk és utasítások.
              
-        * Ha összeállít ERDDAP™ , meg kell módosítani a classpath paraméter a javac parancssorokat, hogy adjunk egy hivatkozást ezen új üveg: lib / common-jexl.jar; lib / aws- java- sdk.jar; lib / jackson- annotations.jar; lib / jackson- core.jar; lib / jackson- admin.jar; lib / jackson- ademind.jar.
+        * Ha összeállítod ERDDAP™ , módosítania kell az osztálypata paramétert a javac parancssorokon, hogy hivatkozzon ezekre az új jarokra: lib/commons-jexl.jar;lib/aws-java-sdk.jar;lib/jackson-annotations.jar;lib/jackson-core.jar;lib/jackson-databind.jar; ...
              
-    * VÁLTOZOTT: Tomcat 9 most az ajánlott változata Tomcat ERDDAP . A Tomcat 8.5 + legújabb verziója is rendben van. Feltakarítottunk. ERDDAP s [A Tomcat telepítési utasításai](/docs/server-admin/deploy-install#tomcat) .
+    * KAPCSOLÓDÓ: Tomcat 9 most a Tomcat ajánlott verziója ERDDAP ... A Tomcat 8.5+ legfrissebb verziója szintén jó. Megtisztítottunk ERDDAP A [Tomcat telepítési utasítások](/docs/server-admin/deploy-install#tomcat) ...
         
-A legújabb verzió a Java 8 (nem Java 9, 10, 11,...) / [AdoptOpenJDK](https://adoptopenjdk.net/) továbbra is az ajánlott változata Java MELLÉKLET ERDDAP . Java 8 hosszú távú támogatás AdoptOpenJDK így továbbra is biztonságos használni, de ne feledje, hogy a legújabb verziót rendszeresen biztonsági okokból.
+A legújabb verziója Java 8. 8. (nem Java 9, 10, 11, ...) A [AdoptOpenJDK](https://adoptopenjdk.net/) továbbra is az ajánlott változata Java Mert ERDDAP ... Java 8 Long Term Support az AdoptOpenJDK-tól, így biztonságosan használható, de ne feledje, hogy rendszeresen megkapja a legújabb verzióját biztonsági okokból.
         
-    * ÚJ: Szkript szónevek / származékos változók táblázatos adatbázisokban
-EDDTableFromFiles, EDDTableFromDatabase, és EDDTableFromFileNames datasets most már tartalmazhat kifejezéseket és szkripteket a sourceName . Ez lehetővé teszi, hogy új változók alapján meglévő változók a forrás fájlokat. Egy adott új változó kiszámítása az eredmények egy sorában történik, ismételten minden sorban. Például a -180-180 ° -os tartományba eső hosszúsági változót a 0-360 ° tartományba eső változótól:
-        &lt; sourceName & gt; = Math2.anglePM180 (row.columnDouble ("lon") ) &lt;/ sourceName &gt;
-A részleteket lásd: [Szkript szónevek](/docs/server-admin/datasets#script-sourcenamesderived-variables)   
-Hála Bob Simonsnak. (Ki tervezte ezt korábban? ERDDAP™ v1.0 és végül megtalálta a módját, hogy végrehajtsa) , Kevin O 'Brien, Roland Schweitzer, John Maurer, és az Apache JEXL könyvtár, amiért a kemény részt csinálta (és jól csinálja.) .
+    * ÚJ: Script SourceNames / Derived Variables in Tabular Datasets
+Az EDDTableFromFiles, az EDDTableFromDatabase és az EDDTableFromFileNames adatkészletek most tartalmazhatnak kifejezéseket és szövegeket sourceName ... Ez lehetővé teszi, hogy új változók alapján meglévő változók a forrásfájlok. Az adott új változó számítása az eredmények egy sorában történik, ismételten minden sorban. Például, hogy hosszúságú változó értékek a tartományban -180 - 180° változó értékek 0 - 360°:
+        &lt; sourceName Gt;=Math2.anglePM180 (dalszöveg: row.columnDouble ("lon") ) &lt;/ sourceName &gt; &gt; &gt; &gt;
+Részletekért lásd [Script SourceNames](/docs/server-admin/datasets#script-sourcenamesderived-variables)   
+Bob Simonsnak köszönhetően (ki tervezte ezt korábban ERDDAP™ v1.0 és végül megtalálta a módját annak megvalósítására) Kevin O'Brien, Roland Schweitzer, John Maurer és az Apache JEXL könyvtár a nagyon nehéz rész elvégzésére (jól csinálni) ...
          
-    * ÚJ: Nem aláírt egész számra vonatkozó adattípusok (ubyte, ushort, uint, ulong) Most már támogatnak. Megjegyzés: sok fájltípus (pl. .das, .dds, .nc 3) nem támogatják ezeket az új adattípusokat. Lásd a [Adatok Típusdokumentáció](/docs/server-admin/datasets#data-types) részletekért arról, hogyan ERDDAP™ foglalkozik ezekkel a különbségekkel. Különösen azóta.(OPeN)DAP, különösen a .dds válasz, nem támogatja a dedikált byte, longs, vagy ulongs, akkor érdemes használni ERDDAP az .das és .das táblázatos ábrázolása a http ... / erddap / **információ** _ datasetID _ .html weboldal (például: [ https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html)  ) amit más fájltípusokba is beszerezhet .nccsv Metabolizmus válasz (például: [ https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata)  ) , mindkettő támogatja az összes adattípust minden helyzetben.
+    * NEW: Unsigned Integer adattípusok (Ubyte, ushort, uint, ulong) most támogatottak. Vegye figyelembe, hogy sok fájltípus (pl.: .das, .dds, .nc 3) Ne támogassa az összes ilyen új adattípust. Lásd: [Adatok Típusú dokumentáció](/docs/server-admin/datasets#data-types) részletek arról, hogyan ERDDAP™ foglalkozik ezekkel a különbségekkel. Nevezetesen, mivel(OPeN)DAP, nevezetesen a .dds válasz, nem támogatja aláírt bytees, longs vagy ulongs, lehet, hogy használni akarja ERDDAP A .das és a .das tabuláris reprezentációja, amint azt a http .../erddap/ **Info** ______ datasetID _.html weboldal (például, [ https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html)  ) amelyet más fájltípusokban is kaphat, vagy .nccsv Metadata válasz (például, [ https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata)  ) mindkettő támogatja az összes adattípust minden helyzetben.
         
-FIGYELEM: A változás által érintett adatkészletek esetében előfordulhat, hogy az adatkészlet problémákat fog látni, mert az adatok ERDDAP™ a forrástól származó adatok eltérhetnek (például a korábban aláírt egész számra vonatkozó változók most már aláíratlan egész számra értendők) . Az ebből eredő problémák közé tartozik: új fájlok nem kerülnek az adatkészletbe, és / vagy hibák, amikor megpróbálunk hozzáférni az adatokhoz. Ha egy adatkészletnek problémái vannak, az első dolog, amit megpróbálunk, hogy [kemény Lobogó](/docs/server-admin/additional-information#hard-flag) az adatkészletre. Ha ez nem oldja meg a problémát, akkor meg kell nézned a naplót. txt a hibaüzenetek megtekintéséhez datasets.xml az adatkészlet, és / vagy esetleg újra generateDatasets.xml az adatkészlet.
-Köszönet a netcdf- java 5.x (amely kényszerítette a kérdést) és a következő CF 1.9.
+FIGYELMEZTETÉS: Az ilyen változás által érintett adatkészletek esetében lehetséges, hogy problémákat fog látni az adatkészlettel, mert az adatok, amelyek ERDDAP™ a forrásból származó olvasmányok eltérőek lehetnek (pl. a korábban aláírt integrátorként elolvasott változók immár lehetetlen integrátorként olvashatók) ... A felmerülő problémák magukban foglalják: az adatkészlethez nem hozzáadott új fájlokat, és/vagy hibákat, amikor megpróbálja elérni az adatokat. Ha egy adatkészletnek van problémája, az első dolog, amit megpróbálni, az az, hogy [Nehéz zászló](/docs/server-admin/additional-information#hard-flag) az adatkészlethez. Ha ez nem oldja meg a problémát, akkor meg kell nézni a logot. txt látni a hibaüzeneteket, belemerülni datasets.xml az adatkészlet, és / vagy talán újraindítja a genetikaiDatasets.xml-t az adatkészlethez.
+Hála a netcdf-java 5.x (amely kényszerítette a problémát) és a következő CF 1.9.
         
-    * JAVÍTOTT: Van most [jobb dokumentáció / tanácsadás](/docs/server-admin/datasets#s3-buckets) az AWS S3 vödrökben található fájlokból származó adatkészlet létrehozásához. Hála Micah Wengrennek.
+    * IMPROVED: Most van [jobb dokumentáció / tanácsadás](/docs/server-admin/datasets#s3-buckets) Hogyan lehet létrehozni egy adatkészletet az AWS S3 buckets fájlokból. Micah Wengrennek köszönhetően.
          
-    * MEGVÁLTOZOTT: Számos változás kapcsolódik a "files" rendszer.
-        * Ezt a kódot átírták, hogy több osztály használhassa.
+    * KAPCSOLÓDÓ: Számos változás van kapcsolatban a "files" rendszer.
+        * A kód kezelni ezt újraírták, hogy használható több osztály.
              
-        * ÚJ: A könyvtárjegyzékek felhasználói kérései most azt kérhetik, hogy a válasz legyen az egyik standard sima asztaltípus a kívánt fájlkiterjesztés kiegészítésével: .csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv vagy .xhtml ). Például,
+        * NEW: A könyvtári listák felhasználói kérelmei most kérhetik, hogy a válasz az egyik standard egyszerű táblázattípus legyen a kívánt fájl kiterjesztésének módosításával: .csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv vagy .xhtml ). Például,
              [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv)   
-Hála Kyle Wilcox-nak és Shane St Savage-nek.
+Köszönhetően Kyle Wilcox és Shane St Savage.
              
-        * JAVÍTOTT: Most, generálj Adatbázisok Xml nem tartalmazza a&lt;accessibleViaFiles &gt; tag a kimeneten. A feltevés szerint az adatkészlet az új&lt;defaultAccessibleViaFiles &gt; tag in setup.xml. Lásd [hozzáférhető ViaFiles](/docs/server-admin/datasets#accessibleviafiles) .
+        * IMPROVED: Most, Generáció Adatkészletek Xml nem tartalmaz&lt;hozzáférhetőViaFiles&gt; címke a kimenetben. A feltételezés az, hogy az adatkészlet az új értékére támaszkodik.&lt;DefaultAccessibleViaFiles&gt; tag a setup.xml-ben. Lásd [hozzáférhető ViaFiles](/docs/server-admin/datasets#accessibleviafiles) ...
              
-        * JAVASOLT: A további adatkészlet típusok most már hozzáférhetők ViaFiles: EDDGrid SideBySide, EDDGrid AggregateExisting Dimension, EDDGrid FromErddap, EDDTableFromErddap, EDDGrid FromEDDTable, EDDTableFrom EDDGrid , és EDDGrid Frometopo. Ehhez egy adott távoli / gyermek adatkészlet fájljai csak akkor érhetők el, ha mind a szülő, mind a távoli / gyermek adatkészlet elérhető ViaFiles beállított igaz (talán via&lt;defaultAccessibleViaFiles &gt;). Hála Damian Smyth-nek és Rob Fullernek.
+        * IMPROVED: További adatkészlettípusok most a hozzáférhetőséget támogatják ViaFiles: EDDGrid SideBySide, EDDGrid AggregateExistingDimension, EDDGrid FromErddap, EDDTableFromErddap, EDDGrid FromEDDTable, EDDTableFrom EDDGrid és EDDGrid FromEtopo. Ezek számára az adott távoli/gyermekes adatkészletből származó fájlok csak akkor érhetők el, ha mind a szülő, mind a távoli/gyermekes adatkészlet hozzáférhető ViaFiles igaznak indult (talán át&lt;defaultAccessibleViaFiles&gt;). Damian Smythnek és Rob Fullernek köszönhetően.
              
-        * TY DO / AJÁNLÁS: Javasoljuk, hogy minden releváns adatkészlet a fájlrendszeren keresztül legyen elérhető beállítással&lt;defaultAccessibleViaFiles &gt; to true in setup.xml, mert van egy csoport felhasználók számára, akik számára ez a preferált módja az adatok megszerzésének. Egyéb okok mellett "files" rendszer megkönnyíti a felhasználók számára, hogy milyen fájlok állnak rendelkezésre, és amikor utoljára megváltozott, így megkönnyíti a felhasználó számára, hogy megőrizze saját másolatát a teljes adatkészlet. Ha általában nem szeretné az adatkészleteket a fájlrendszeren keresztül hozzáférhetővé tenni, állítsa be&lt;defaultAccessibleViaFiles &gt; to false. Mindkét esetben csak használja&lt;accessibleViaFiles &gt; a néhány adatkészlet, amelyek kivételek az általános politika által meghatározott&lt;defaultAccessibleViaFiles &gt; (például amikor az adatkészlet .nc ml fájlok, amelyek nem igazán hasznos a felhasználók számára) .
+        * TO DO / RECOMMENDATION: Javasoljuk, hogy az összes releváns adatkészlet elérhető legyen a fájlrendszeren keresztül&lt;defaultAccessibleViaFiles&gt; az igazi beállítás.xml, mert van egy csoport felhasználó, akinek ez a preferált módja az adatok megszerzésének. Egyéb okok között, "files" rendszer megkönnyíti a felhasználók számára, hogy lássák, mely fájlok állnak rendelkezésre, és amikor utoljára megváltoztak, így megkönnyíti a felhasználó számára a teljes adatkészlet saját másolatának fenntartását. Ha általában nem akarja, hogy az adatkészletek hozzáférhetők legyenek a fájlrendszeren keresztül, állítsa be&lt;defaultAccessibleViaFiles&gt; hamisítványhoz. Mindkét esetben csak használja&lt;hozzáférhetőViaFiles&gt; azon kevés adatkészlet esetében, amelyek kivételt képeznek az általános politikának, amelyet&lt;DefaultAccessibleViaFiles&gt; (Például, ha az adatkészlet használata .nc ml fájlok, amelyek nem igazán hasznosak a felhasználók számára) ...
              
-    * JAVASOLT: Most, ha a forrás adatkészlet CF rács\\ _ feltérképezési információ, generálni Adatbázisok Xml a rácsozott adatok hozzá az információt a globális&lt;addAtts &gt;, és az információk a globális&lt;sourceAtts &gt; minden egyes adat olvasható a fájlból. Az információ megjelenik az adatkészlet globális attribútumaiban, mint egy sor attribútum a prefix grid\\ _ feltérképezési\\ _.
+    * IMPROVED: Most, ha egy forrás adatkészlet CF grid\\_mapping információval rendelkezik, generál Adatkészletek Xml a rácsos adatkészletekhez hozzáadja az információkat a globális&lt;addAtts&gt;, és az információkat a globális&lt;ForrásAtts&gt; minden alkalommal az adatok olvashatók a fájlból. Az információ megjelenik az adatkészlet globális tulajdonságaiban, mint egy sor tulajdonság az előtag grid\\_mapping\\_ .
          
-    * JAVASOLT: A csoportok támogatása olvasáskor .nc 4 (és bizonyos mértékig .hdf 5) fájlok. Általában ERDDAP™ az adatkészlet a fájl egyik csoportjának változóiból készül. GenerateDatasets Xml EDDGrid FromNcFiles és EDDGrid FromNcFiles A kicsomagolás most egy "csoportot" kér. (pl. "" bármely / minden csoport "," someGroup "," someGroup / someSubGroup ", vagy" \\[ gyökér \\] "csak a root csoport) . Hála Charles Carletonnak és Jessica Hausmannek.
+    * IMPROVED: Csoportok támogatása az olvasás során .nc 4 4 4 (bizonyos mértékig .hdf 5) fájlok. Általában egy ERDDAP™ Az adatkészletet az egyik fájlcsoportban lévő változókból fogják építeni. Továbbá, GenerateDatasets Xml az EDDGrid FromNcFiles és EDDGrid FromNcFiles Unpacked most egy "csoportot" kér (pl.: "" bármilyen / minden csoport számára, "valami csoport", "valamiGroup / SomeSubGroup" vagy " \\[ gyökér \\] "Csak a gyökércsoportért) ... Charles Carletonnak és Jessica Hausmannak köszönhetően.
          
-    * JAVÍTOTT: GenerateDatasets Xml EDDGrid FromNcFiles és EDDGrid FromNcFiles Kicsomagolva most támogatja egy opcionális "DimensionsCSV" paraméter, amely lehetővé teszi, hogy adja meg a forrásnevét a dimenziók, hogy szeretné ezt az adatelemet használni. Használja a "", hogy a változók, amelyek a legtöbb méretet, mint korábban. Továbbá, egy ehhez kapcsolódó kis hiba, ami az ilyen típusú fájlokkal történt, most már fix. Hála Sujal Manandharnak.
+    * IMPROVED: GenerateDatasets Xml az EDDGrid FromNcFiles és EDDGrid FromNcFiles Unpacked most támogat egy opcionális "DimensionsCSV" paramétert, amely lehetővé teszi, hogy megjelölje a forrás nevét a dimenziók, hogy azt szeretné, hogy ez az adatkészlet használni. Használja a "" változókat, amelyek a legtöbb dimenziót használják, mint korábban. Továbbá egy kapcsolódó kis hiba, amely az ilyen típusú fájlokkal történt, most rögzített. Sujal Manandharnak köszönhetően.
          
-    * BUG FIX: GenerateDatasets Xml most megfelelően listák "EDDTableFromJsonlCSVFiles" (nem "EDDTableFromJsonlCSV") mint az EDDType egyik opciója. Hála Andy Zieglernek.
+    * BUG FIX: GenerateDatasets Az Xml most megfelelően felsorolja az "EDDTableFromJsonlCSVFiles" -t (Nem "EDDTableFromJsonlCSV") mint az egyik EDDType opció. Andy Zieglernek köszönhetően.
          
-    * JAVÍTOTT: EDDGrid FromNcFiles Kicsomagolva most szabványosítja az "egységek" attribútumokat a standard / "kanonikus" udegységekre (ugyanaz a módszer, mint az egység konverter) . Például, "meter per second" , "meters/second" , "m.s^-1" , és "m s-1" minden "m s-1" . Hála Andy Zieglernek.
+    * IMPROVED: EDDGrid FromNcFiles A nem csomagolt ma szabványosítja az "egységek" tulajdonságait a szabványos / "kanonikus" udunitákhoz (ugyanaz a módszer, mint az Units átalakító) ... Például, "meter per second" , "meters/second" , "m.s^-1" és "m s-1" Minden lesz "m s-1" ... Andy Zieglernek köszönhetően.
         
-FIGYELEM: Lehetséges, hogy ez problémákat okoz néhány meglévő adatkészletben (például új fájlok "rossz" jelölése) . Ha igen, [kemény Lobogó](/docs/server-admin/additional-information#hard-flag) az adatkészlet, hogy az összes forrás fájlokat újra kell olvasni az új rendszer.
+WARNING: Lehetséges, hogy ez problémákat okoz néhány meglévő adatkészlet számára (pl. új fájlokat kell megjelölni "rossz") ... Ha igen, [Nehéz zászló](/docs/server-admin/additional-information#hard-flag) az adatkészlet számára, hogy az összes forrásfájl újraolvassa az új rendszert.
         
-    * JAVÍTOTT: Most, egy változó&lt; sourceName &gt; megadhat egy fix értéket = NaN és a változó lehet actual\\_range a véges tartományt meghatározó attribútum. Ez néha hasznos, hogy egy adatkészlet (nevezetesen egy EDDTableFromFileName adatelem) lehet dummy változó (sz)   (pl. szélesség, hosszúság, idő) rögzített NaN értékkel, de érvényes actual\\_range   (az attribútum szerint) . Ezután az Advanced Search-ben a felhasználó megkeresheti azokat az adatkészleteket, amelyek egy adott szélességi, hosszúsági és időtartományban rendelkeznek adatokkal, és ez az adatkészlet azt mondhatja, hogy rendelkezik releváns adatokkal (Bár az összes tényleges adatsor NaN-t mutat) . Lásd a [rögzített érték dokumentációja](/docs/server-admin/datasets#fixed-value-sourcenames) .
-Hála Mathew Biddle-nek.
+    * IMPROVED: Most egy változó&lt; sourceName &gt; meghatározhatja az =NaN és a változó értékét actual\\_range tulajdonság, amely meghatározza a véges tartományt. Ez néha hasznos, hogy egy adatkészlet (nevezetesen EDDTableFromFileNames adatkészlet) lehet dummy változó (s)   (pl.: magasság, hosszúság, idő) rögzített értékekkel a NaN, de érvényes actual\\_range   (a tulajdonság szerint) ... Ezután az Advanced Search-ban egy felhasználó olyan adatkészleteket kereshet, amelyek egy adott magasságban, hosszúságban, időtartományban vannak, és ez az adatkészlet képes lesz azt mondani, hogy releváns adatokkal rendelkezik (Bár az összes tényleges adatsor megmutatja NaN) ... Lásd: [rögzített értékdokumentáció](/docs/server-admin/datasets#fixed-value-sourcenames) ...
+Mathew Biddle-nek köszönhetően.
          
-    * Most, a datasets.xml egy EDDTableFromAsciiFile vagy EDDTableFromColumnaAsciiFile adatállománya tartalmazhat egy címkét, amely megmondja ERDDAP™ figyelmen kívül hagyni az összes sort a fájl tetején egészen a sor, amely megfelel a megadott reguláris kifejezés. Például,
-        &lt;skipHeaderToRegex &gt;\\\*\\\*\\\*Fejének vége.\\*&lt;/ skipHeaderToRegex &gt;
-figyelmen kívül hagyja az összes sort fel, és tartalmazza a sort, hogy kezdődik "\\*\\*A HEADER VÉGE ". Lásd: [&lt;skipHeaderToRegex &gt; dokumentáció] (/ docs / server- admin / datasets # skipheadertoregex) .
-Hála Eli Hunternek.
+    * NEW: Most, datasets.xml cunk egy EDDTableFromAsciiFiles vagy EDDTableFromColumnarAsciiFiles adatkészlet tartalmazhat egy címkét, amely azt mondja ERDDAP™ figyelmen kívül hagyni az összes sort a fájl tetején, és beleértve azt a vonalat, amely megfelel a meghatározott rendszeres kifejezésnek. Például,
+        &lt;skipHeaderToRegex&gt; \\*↑\\*↑\\*HEADER END&#33;\\*&lt;/skipHeaderToRegex&gt;
+figyelmen kívül hagyja az összes sort, és magában foglalja azt a vonalat, amely a "\\*\\** END OF HEADER. Lásd:&lt;skipHeaderToRegex&gt; dokumentáció (/docs/server-admin/datasets#skipheadertoregex) ...
+Eli Hunternek köszönhetően
          
-    * Most, a datasets.xml egy EDDTableFromAsciiFile vagy EDDTableFromColumnarAsciiFilesdataset esetén lehet egy címkét, amely megmondja ERDDAP™ figyelmen kívül hagyni az összes sort a fájlban, amelyek megfelelnek a megadott reguláris kifejezés. Például,
+    * NEW: Most, datasets.xml cunk egy EDDTableFromAsciiFiles vagy EDDTableFromColumnarAsciiFilesdataset tartalmazhat egy címkét, amely azt mondja ERDDAP™ figyelmen kívül hagyni az összes sort a fájlban, amely megfelel a meghatározott rendszeres kifejezésnek. Például,
 ```
         <skipLinesRegex>#.\\*</skipLinesRegex>  
 ```
 
-kihagy minden sort, ami "#" -val kezdődik. Lásd: [&lt;skipLinesRegex &gt; dokumentáció] (/ docs / server- admin / datasets # skiplinesregex) .
+kihagyja az összes sort, amely a "#"-vel kezdődik. Lásd:&lt;skipLinesRegex&gt; dokumentáció (/docs/server-admin/datasets#skiplinesregex) ...
 Eli Hunternek köszönhetően.
          
-    * ÚJ: A datasets.xml bármilyen EDDTable adatkészlet darabja most már tartalmazhat & hozzáadható Változók ahol (A nevem:) . Ha mégis, ERDDAP™ widget hozzáadása minden egyes megadott attribútumhoz Az adatkészlet adathozzáférési űrlapjának neve (html weboldal) hogy a felhasználók könnyen hozzá és hozzá Változók ahol (_ attribútum Név, attribútum Érték _) a kérelemre.
-Lásd a [& Hozzáadás Változók Ahol a dokumentáció](/docs/server-admin/datasets#addvariableswhere) .
-Köszönet Aurelie Briand, et al.
+    * ÚJ: A datasets.xml cunk bármely EDDTable adatkészlethez most tartalmazhat &add Variables Hol (_attributeNamesCSV_) ... Ha igen, ERDDAP™ hozzáad egy widgetet az egyes meghatározott tulajdonságokhoz Az adatkészlet adathozzáférési formájának nevei (.html weboldal) hogy megkönnyítse a felhasználók számára, hogy hozzáadják &add Variables Hol (_attribute Név, tulajdonság Value_) kérésre.
+Lásd: [A Variables Hol dokumentáció](/docs/server-admin/datasets#addvariableswhere) ...
+Köszönhetően Aurelie Briand, et al.
          
-    * ÚJ Harmadik party eszköz: ERDDAP - Szín
-         ERDDAP -lint egy program Rob Fuller és Adam Leadbetter az Irish Marine Institute, hogy lehet használni, hogy javítsa a metaadatok ERDDAP™ adatkészletek. ERDDAP -lint "tartalmaz szabályokat és egy egyszerű statikus webes alkalmazás futtatni néhány ellenőrző vizsgálatok ellen ERDDAP™ szerver. Minden teszt a böngészőben fut ". Mint a [Unix / Linux lint eszköz](https://en.wikipedia.org/wiki/Lint_(software) ), lehet szerkeszteni a meglévő szabályokat, vagy új szabályokat. Lásd [ ERDDAP - Szín](https://github.com/IrishMarineInstitute/erddap-lint) további információkért.
+    * Új Harmadik fél eszköz: ERDDAP -lint
+         ERDDAP -lint egy program Rob Fuller és Adam Leadbetter az ír tengerészeti intézet, hogy lehet használni, hogy javítsa a metaadat a ERDDAP™ adatkészletek. ERDDAP -lint "megtartja a szabályokat és egy egyszerű statikus webes alkalmazást néhány ellenőrző teszt futtatásához ERDDAP™ szerver. Minden teszt fut a webböngészőben.” Mint a [Unix/Linux lint eszköz](https://en.wikipedia.org/wiki/Lint_(software) ) szerkesztheti a meglévő szabályokat, vagy új szabályokat adhat hozzá. Lásd [ ERDDAP -lint](https://github.com/IrishMarineInstitute/erddap-lint) További információkért.
         
-Ez az eszköz különösen hasznos az Ön által egy ideje létrehozott adathalmazok esetében, és most az aktuális metaadatok beállításaival szeretné a -to-date-ot. Például az GenerateDatasets korai verziói Xml nem tett semmilyen erőfeszítést a globális creator\\_name , creator\\_email , creator\\ _ type, vagy creator\\_url metaadatok. Használhatnád. ERDDAP -lint azonosítani az adatokat, amelyek hiányoznak a metaadatok attribútumok.
+Ez az eszköz különösen hasznos az olyan adatkészletek számára, amelyeket néhány évvel ezelőtt hoztál létre, és most naprakészen akarod hozni a jelenlegi metaadat preferenciáiddal. Például a GenerateDatasets korai verziói Az Xml nem tett erőfeszítést a globális megteremtés érdekében creator\\_name , creator\\_email , alkotó\\_type, vagy creator\\_url Metaadata. Használhatja ERDDAP -lint azonosítani azokat az adatkészleteket, amelyek hiányoznak ezek a metaadatok tulajdonságai.
         
-Köszönet Rob és Adam létre ezt az eszközt, és elérhetővé teszi a ERDDAP™ közösség.
+Robnak és Ádámnak köszönhetően, hogy létrehozza ezt az eszközt, és elérhetővé tegye azt ERDDAP™ közösség.
         
-    * Most már rendben van, ha néhány fájl egy EDDGrid A FromFiles adatok nem tartalmazzák az adatkészlet összes változóját. A fájlok lesznek benne, mintha a változók (az összes hiányzó értékkel) .
-Hála Dale Robinsonnak és Doug Latornellnek.
+    * NEW: Most rendben van, ha néhány fájl egy EDDGrid FromFiles adatkészlet nem rendelkezik az összes adatkészlet változójával. A fájlokat úgy fogják bevonni, mintha a változók voltak (minden hiányzó értékkel) ...
+Dale Robinsonnak és Doug Latornellnek köszönhetően.
          
-    * ÚJ: Új használati statisztikák vannak a naplófájlban és a Daily Report-ban, amelyek segítenek az adminisztrátoroknak azonosítani a memóriaproblémákat okozó felhasználókat. A statisztikák neve "OutOfMemory (Array méret) "," OutOfMemory (Túl nagy) ", és" OutOfMemory (Way Too Big) ". Megmutatják az e kategóriákban kérelmet benyújtó felhasználók IP-címét és az általuk benyújtott kérelmek számát. Ha nem lennének kellemetlen kérések, ezek a statisztikák nem jelennek meg." OutOfMemory (Array méret) "és" OutOfMemory (Way Too Big) "a kérelmek általában nem jelentenek problémát, mert a kérelmek olyan nagyok voltak, ERDDAP™ Gyorsan elfogták őket, és visszaadtak egy hibaüzenetet. Az "OutOfMemory (Túl nagy) "a kérések veszélyesebbek, mert ERDDAP™ tett egy kis erőfeszítést, mielőtt rájött, hogy nem volt elég memória jelenleg elérhető kezelni a kérést (Bár a probléma lehet más kérések közvetlenül e kérések előtt) .
+    * ÚJ: Új használati statisztikák vannak a logfájlban és a Daily jelentésben, hogy segítsenek az adminisztrátoroknak azonosítani azokat a felhasználókat, akik memóriaproblémákat okoznak. A statisztikákat „OutOfMemory”-nak nevezik. (Array méret) "OutOfMemory (Túl nagy) és „OutOfMemory (Út túl nagy) "..." Megmutatják a felhasználók IP-címeit, akik kérelmeket tettek e kategóriákban és az általuk készített kérések számát. Ha nem voltak gondos kérések, ezek a statisztikák nem jelennek meg. "OutOfMemory (Array méret) és "OutOfMemory" (Út túl nagy) A kérések általában nem jelentenek problémát, mert a kérések olyan nagyok voltak, hogy ERDDAP™ gyorsan elkapta őket, és hibaüzenetet küldött. "OutOfMemory (Túl nagy) "A kérések veszélyesebbek, mert ERDDAP™ erőfeszítést tett, mielőtt rájött volna, hogy jelenleg nem volt elegendő memória a kérelem kezeléséhez. (bár a probléma lehet más kérelmek, mielőtt ezek a kérések) ...
         
-Vannak olyan új statisztikák is, "Nagy kérés, IP-cím", amelyek a nagy kéréseket benyújtó felhasználók IP-címét mutatják (jelenleg .nc fájlok &gt; 1GB) .
+Vannak olyan új statisztikák is, amelyeket "Nagy Kérés, IP cím" neveznek, amelyek megmutatják a felhasználók IP-címeit, akik nagy kéréseket tettek (jelenleg, hülye .nc fájlok &gt; 1GB) ...
         
-Továbbá, az idősor tábla a status.html oldalon most tartalmazza a "memFail" oszlop mutatja a kérelmek számát, hogy nem sikerült az "OutOfMemory (Túl nagy) "hibák az utolsó nagyobb terhelési adatbázis óta. A 0-n kívül bármely szám aggodalomra ad okot.
-Hála Bob Simonsnak.
+Továbbá, az idő sorozat asztal a status.html oldalon most tartalmaz egy "memFail" oszlopot, amely megmutatja a "OutOfMemory"-val kudarcot vallott kérések számát (Túl nagy) "Az utolsó nagy Load Datasets óta elkövetett hibák. Minden 0-nál más szám legalább valamilyen aggodalomra ad okot.
+Bob Simonsnak köszönhetően.
         
-    * ÚJ: Az új változata Hyrax A könyvtárjegyzékek kijelzése eltér a korábbiaktól. ERDDAP™ Most már olvashatja a régi és új könyvtárjegyzékeket.
+    * NEW: Az új verzió Hyrax a könyvtári listákat másképp jeleníti meg, mint korábban. ERDDAP™ most olvassa el a régi és új könyvtári listákat.
          
-    * ÚJ: Dataset újratöltések és felhasználói válaszok, amelyek &gt; 10 másodperc a befejezésig (sikeresen vagy sikertelenül) " (&gt; 10-es&#33;) ". Így lehet keresni a log.txt fájlt erre a kifejezésre, hogy megtalálja a lassú újratölthető adatkészleteket vagy a kérések számát, amelyek lassan befejeződtek. Ezután a log.txt fájlban magasabbra nézhet, hogy lássa, mi volt az adatkészlet probléma, vagy mi volt a felhasználói kérés és ki volt az. Ezek a lassú adatkészlet terhelések és felhasználói igények néha adót ERDDAP . Így többet tudni ezekről a kérésekről segíthet azonosítani és megoldani a problémákat.
-    * JAVÍTOTT: A CF DSG adatkészlet hitelesítésekor, ERDDAP™ most biztosítja, hogy a cf\\ _ role attribútumokkal rendelkező változók a megfelelő cdm\\ _...\\ _ változók listában vannak, és nincsenek más cdm\\ _...\\ _ változók listában. Például, ha a TimeseriesProfile dataset-nek van egy "station\\ _ id" változója, aminek cf\\ _ role = timeseries\\ _ id attribútuma van, akkor a "station\\ _ id" -nek a cf\\ _ timeseries\\ _ változók listájában kell lennie, de nem szerepelhet a cf\\ _ profile\\ _ változók listáján.
-Hála Micah Wengrennek.
+    * NEW: Adatkészlet-visszatöltések és felhasználói válaszok, amelyek &gt;10 másodperccel befejeződnek (sikeresen vagy sikertelenül) "jellemzik" (&gt; 10-es évek&#33;) "..." Így megkeresheti a log.txt fájlt ehhez a kifejezéshez, hogy megtalálja azokat az adatkészleteket, amelyek lassúak voltak újratöltésre, vagy a kérelmek számát, amelyek lassan befejeződtek. Ezután magasabbra tekinthet a log.txt fájlban, hogy megnézze, mi volt az adatkészlet probléma, vagy mi volt a felhasználói kérelem, és kitől származott. Ezek a lassú adatkészletek és felhasználói kérések néha adóztatnak ERDDAP ... Tehát többet tudni ezekről a kérésekről, segíthet azonosítani és megoldani a problémákat.
+    * IMPROVED: A CF DSG adatkészlet érvényesítésekor, ERDDAP™ most biztosítja, hogy a cf\\_role tulajdonságokkal rendelkező változók a megfelelő cdm\\_...\\_variables listában vannak, és nem szerepelnek más cdm\\_...\\_variables listákban. Például, ha egy időzítettProfil adatkészletnek van egy "station\\_id" változója, amely rendelkezik a cf\\_role=timeseries\\_id tulajdonságával, akkor a "station\\_id"-nek a cf\\_variables listában kell lennie, de nem szabad a cf\\_profil\\_variables listában szerepelnie.
+Micah Wengrennek köszönhetően.
          
-    * JAVASOLT: Az 'Egyszerűsítés' most gyorsabb, kevesebb memóriát használ, és visszaadhatja a LongArray-t. Köszönöm Unidata .
+    * IMPROVED: "Simplify" most gyorsabb, kevesebb memóriát használ, és visszatérhet a LongArray-hoz. Köszönöm Unidata ...
          
-    * JAVÍTOTT: a quickRestart most jelentősen gyorsabb az EDDTableFrom (unit synonyms for matching user input) Fájlok (kivéve EDDTableFromNcCFFiles és EDDTableFromInvalidCRAFiles) mert Várt (és egy másik hely) Most csak olvassa el a minta fájl metaadatait, ahelyett, hogy elolvassa az összes adatot. Hála Jessica Austinnak.
+    * IMPROVED: a gyorsRestart jelentősen gyorsabb az EDDTableF-hez (nc-vel kapcsolatos) Fiók (kivéve az EDDTableFromNcCFFiles és az EDDTableFromInvalidCRAFiles) Mert Várható (egy másik hely) Most olvassa el a minta fájl metaadatát ahelyett, hogy elolvassa az összes adatot. Jessica Austinnak köszönhetően.
          
-    * JAVASOLT: A -milliszekundumnál nagyobb pontosságú idősztringek már támogathatók, ha a további számok mind 0-ak, pl. "2020- 05- 22T01: 02: 03.456000000Z". Hála Yibo Jiangnak.
+    * IMPROVED: Most már támogatjuk az időcsíkokat a precizitásnál nagyobb, mint a to-the-millisecond, ha a további számjegyek mind a 0, pl.: „2020-05-22T01:02:03.456000Z”. Yibo Jiangnak köszönhetően.
          
-    * JAVÍTOTT: GenerateDatasetsXml EDD.DestinationName használt eltávolítása '("és minden azt követően. Most eltávolítja.\\*) sourceName . Most meg eltávolítja. \\[ .\\* \\] Csak akkor, ha ez a vége a sourceName . Julien Paulnak köszönhetően.
+    * IMPROVED: GenerateDatasetsXml EDD.suggestDestinationName használt eltávolítani "(" és minden után. Most eltávolítja (...)\\*csak akkor, ha ez a vége sourceName ... Most is eltávolítja \\[ ...\\* \\] csak akkor, ha ez a vége sourceName ... Julien Paulnak köszönhetően.
          
-    * JAVÍTOTT: GenerateDatasets Xml most teszi a változó destinationName s egyedi hozzáadásával\\ _ 2,\\ _ 3,..., ha szükséges. Julien Paulnak köszönhetően.
+    * IMPROVED: GenerateDatasets Az Xml most teszi a változót destinationName egyedi hozzáadott \\_2, \\_3, ... szükség szerint. Julien Paulnak köszönhetően.
          
-    * JAVÍTOTT: Amikor a Calendar2.parseDateTime dd, hh, vagy HH, az első "számjegy" lehet egy tér.
-    * Ismerős probléma: Kezdve ERDDAP™ 2.10, .nc ml fájlok, amelyek megpróbálnak változtatni egy attribútum, ne változtassa az attribútum. Ez egy ismert hiba a netcdf- java-ban, amit jelentettem, és azt mondják, hogy rögzítik a következő kiadás a netcdf- java.
+    * IMPROVED: Amikor a Calendar2.parseDateTime dd, hh vagy HH, az első „digit” lehet most egy hely.
+    * KNOWN PROBLEM: Kezdőlap ERDDAP™ 2.10, .nc ml fájlok, amelyek megpróbálják megváltoztatni a tulajdonságot, ne változtassa meg a tulajdonságot. Ez egy ismert hiba a netcdf-java-ban, amit bejelentem, és azt mondják, a netcdf-java következő kiadásában lesz rögzítve.
          
-    * Broken Links FIX: Készítettem egy megfelelő rendszert a törött linkek tesztelésére. ERDDAP™ weboldalak, így most már nagyon kevés törött linkek (legalább minden kiadás dátuma -- új, törött linkek jönnek létre gyakran) .
+    * BROKEN LINKS FIX: Megfelelő rendszert készítettem a törött linkek tesztelésére ERDDAP™ weboldalak, így most nagyon kevés törött linknek kell lennie (legalábbis minden kibocsátási időpontban - új törött linkek keletkeznek gyakran) ...
          
-    * BUG FIX: EDDTableFromHttpGet nem bizonyos típusú kérések. Most már nem. Hála Emmának a BODC-ban.
+    * BUG FIX: Az EDDTableFromHttpGet bizonyos típusú kérésekkel kudarcot vallott. Most nem. Emma a BODC-nél.
          
-    * BUG FIX: Néhány kérés kezelése érdekében az EDDTable minden kért változóhoz készített egy ideiglenes fájlt, a változó nevével végződő fájlnévvel. Ha a változó neve is egyfajta tömörítés (pl. .Z) , ERDDAP Megpróbálná (és nem sikerül) az ideiglenes fájl dekompressziója. Most az ideiglenes fájlnevek véget érnek. Hála Mathew Biddle-nek.
+    * BUG FIX: Néhány kérés kezeléséhez az EDDTable ideiglenes fájlt készített minden kért változóhoz, a változó nevében végző fájlnévvel. Ha a változó neve is egyfajta tömörítés volt (pl.: .Z) , ERDDAP Próbálja ki (és kudarc) az ideiglenes fájl dekompresszálására. Most az ideiglenes fájlnév véget ér az ".temp"-ben. Mathew Biddle-nek köszönhetően.
          
-    * BUG FIX: GenerateDatasetsXml és Calendar2.convertTO Java Időpont Formátum most sokkal kevésbé valószínű, hogy egy helytelen változás, amikor megpróbálja rögzíteni egy esetleg érvénytelen dátum idő formátum. Nevezetesen nem módosítják az automatikus javasolt dateTime formátumot. Hála Mathew Biddle-nek.
+    * BUG FIX: GenerateDatasetsXml és Calendar2.convertTo Java DateTim Format most sokkal kevésbé valószínű, hogy egy helytelen változás, amikor megpróbálja megjavítani egy esetleg érvénytelen dátumidő formátumot. Figyelemre méltó, hogy egyetlen auto-szuggesztált dátum sem módosítható. Mathew Biddle-nek köszönhetően.
          
-    * BUG FIX: Ha hiba történt a tartalom távoli URL-ből való lekérdezése közben, és ha az errorStream tartalom tömörítve van, ERDDAP™ Most megfelelően dekompresszálja a hibaüzenetet. Hála Bob Simonsnak.
+    * BUG FIX: Ha hiba volt, miközben távoli URL-től kaptunk tartalmat, és ha a hibaStream tartalmat tömörítik, ERDDAP™ most megfelelően lenyomja a hibaüzenetet. Bob Simonsnak köszönhetően.
          
-    * BUG FIX:&lt;előfizetés ToRemoteErddappDataset &gt; nem alkalmazták, amikor a EDD... FromErddap dataset egy gyerek dataset volt. Most már igen. Hála Chris Romsosnak.
+    * BUG FIX:&lt;SubscribeToRemoteErddapDataset&gt; nem alkalmazták, amikor az EDD... FromErddap adatkészlet gyermek adatkészlet volt. Most van. Chris Romsosnak köszönhetően.
          
-    * BUG FIX: GenerateDatasets Xml már nem gondolja, hogy a forrás változó név kezdve "latin" lehet szélesség. Hála Vincent Luzzonak.
+    * BUG FIX: GenerateDatasets Az Xml már nem úgy gondolja, hogy a "latinnal" kezdődő forrás változó név szélességű lehet. Köszönhetően Vincent Luzzo.
          
-    * BUG FIX: Most, egy OutOfMemoryError olvasás közben egy adatfájl feldolgozása közben a felhasználó kérése nem ok, hogy adjunk egy fájlt a BadFiles listát. Hála Bob Simonsnak.
+    * BUG FIX: Most egy OutOfMemoryError, miközben egy adatfájlot olvas, miközben a felhasználó kérése feldolgozása nem ok arra, hogy fájlt adjon a BadFiles listához. Bob Simonsnak köszönhetően.
          
 
-## változat{#version-202} 
- (released 2009- 08- 21) 
+## Verzió 2.02{#version-202} 
+ (megjelent 2019-08-21) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * ÚJ: Most már kétféleképpen kereshetjük az adatkészleteket ERDDAP c. Egy kicsit másképp működnek, különböző interfészekkel és lehetőségekkel rendelkeznek.
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * ÚJ: Jelenleg két módja van az adatkészletek keresésének többszörösen ERDDAP S. Egy kicsit másképp dolgoznak, és különböző interfészekkel és opciókkal rendelkeznek.
         
-        *    [Keresés ERDDAP s.html](/SearchMultipleERDDAPs.html) Bob Simons / NOAA   NMFS   SWFSC   ERD .
-        *    [ http://erddap.com ](http://erddap.com) Rob Fuller / The Marine Institute of Ireland-től.
+        *    [SearchMultiple ERDDAP s.html](/SearchMultipleERDDAPs.html) Bob Simons/ NOAA   NMFS   SWFSC   ERD ...
+        *    [ http://erddap.com ](http://erddap.com) Rob Fuller / The Marine Institute of Ireland.
         
-Köszönet Tylar Murray-nek az eredeti kérésért.
+Tylar Murraynak köszönhetően az eredeti kérésre.
          
-    * JAVASOLT: a kérelem "files" rendszer letölteni egy fájlt, amely valójában egy távoli oldalon (pl. AWS S3) most vezet egy átirányítás, így a felhasználó ténylegesen letölti az adatokat a forrásból, ahelyett, hogy használja ERDDAP™ mint közvetítő. Andy Zieglernek és NOAA .
+    * IMPROVED: kérés a "files" rendszer letölteni egy fájlt, amely valójában egy távoli webhelyen van (pl.: AWS S3) most egy átirányításhoz vezet, így a felhasználó ténylegesen letölti az adatokat a forrásból, ahelyett, hogy használná ERDDAP™ közvetítőként. Andy Zieglernek és NOAA ...
          
-    * ÚJ: Példaként az új AWS S3-hoz kapcsolódó funkciók, és annak érdekében, hogy bárki számára könnyebb böngészni és letölteni fájlokat nyilvános AWS S3 vödrök, hoztunk létre
-         [~ 110 mintaadat](https://registry.opendata.aws/) amely lehetővé teszi, hogy bárki is böngészni a tartalmát szinte az összes
-         [AWS S3 Nyílt adatvödrök](https://registry.opendata.aws/) . Ha rákattint a "files" linket bármely ilyen minta adatkészletek, akkor böngészhet a könyvtár fa és a fájlokat, hogy S3 vödör. Mivel ezek az adatok működnek, ezek a listák mindig tökéletesen frissek, mert ERDDAP™ Felveszi őket a repülőre. Ha rákattint a könyvtárra, hogy egy fájl nevét, és kattintson a fájl nevét, ERDDAP™ átirányítja kérését az AWS S3-ra, így közvetlenül letöltheti a fájlt az AWS-ből. ERDDAP™ az adminisztrátorok
-         [olvasási útmutató más S3 vödrökhöz](/docs/server-admin/datasets#working-with-aws-s3-files) . Andy Zieglernek és NOAA .
+    * NEW: Az új AWS S3-hoz kapcsolódó funkciók példájaként, és megkönnyíti bárki számára, hogy böngészjen és letöltse a fájlokat a nyilvános AWS S3-ból, létrehoztunk
+         [110 minta adatkészlet](https://registry.opendata.aws/) ez lehetővé teszi bárki számára, hogy szinte az összes tartalmát böngészje
+         [AWS S3 Open Data buckets](https://registry.opendata.aws/) ... Ha rákattintasz a "files" link bármely ilyen minta adatkészlethez, böngészheti a könyvtárfát és fájlokat ebben az S3-ban. Mivel ezek az adatkészletek működnek, ezek a könyvtárak mindig tökéletesen naprakészek, mert ERDDAP™ a repülésen kapja meg őket. Ha rákattint a könyvtárfára egy tényleges fájlnévre, és kattintson a fájlnévre, ERDDAP™ átirányítja kérését az AWS S3-ra, hogy közvetlenül letölthesse a fájlt az AWS-től. ERDDAP™ adminisztrátorok képesek
+         [Olvassa el az utasításokat, hogyan kell ezt megtenni más S3 bucketekhez](/docs/server-admin/datasets#working-with-aws-s3-files) ... Andy Zieglernek és NOAA ...
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * TEVÉKENYSÉGEK
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * MINDEN MINDEN MINDEN: senki sem
          
-    * JAVÍTOTT: ERDDAP a húrok tömbjeinek tárolására szolgáló módszer (Stringarray) most sokkal emlékezetesebb. Húrozás A tömböket végig használják. ERDDAP™ különösen a táblázatos ASCII adatfájlok olvasásakor. Egyéb változások miatt a CSV / TSV / SSV ASCII, Columnar ASCII és a jsonlCSV táblázatos adatfájlok olvasása gyorsabb és sokkal emlékezethatékonyabb. Az eredmény: egy 764 MB ASCII adatvizsgálati fájl (de 52MB-re tömörítve .gz fájl) 3,503,266 sorral és 33 oszloppal, a maximális memória használat 10GB-ról 0.6GB-re csökkent (csúcs) . Az idő, hogy elolvassa ment ~ 7 perc (de nagyban változik, hogy mennyi fizikai memória a számítógép) ~ 36 másodperc (beleértve az egyszerűsítésre szánt 10-est () amelyet csak az GenerateDatasets használ Xml) . Sok más helyen ERDDAP™ hasznára válik ez a megnövekedett memória hatékonyság. Hála Tylar Murray-nek és Mathew Biddle-nek.
+    * IMPROVED: ERDDAP "Strings sorozatok tárolásának módja (StringArray) most sokkal inkább memóriahatékony. Hírek Array-ket használnak egészben ERDDAP™ , nevezetesen a mesés ASCII adatfájlok olvasásakor. Továbbá más változások teszik lehetővé a CSV / TSV / SSV ASCII, oszlop ASCII, és a jsonlCSV tabuláris adatfájlok gyorsabb és sokkal több memória hatékony. Az eredmény: 764 MB ASCII adattesztfájl esetében (de tömörített egy 52MB .gz fájl) 3,503,266 sorral és 33 oszloptal a maximális memóriahasználat 10 GB-ról 0,6 GB-ra csökkent. (a csúcson) ... Az olvasás ideje ~7 perc (de nagyban változik azzal, hogy mennyi fizikai memória van a számítógépen) 36 másodpercig (beleértve a 10-et az egyszerűsítéshez () amelyet csak a GenerateDatasets használ Xml) ... Sok más helyen ERDDAP™ hasznot húz ez a megnövekedett memóriahatékonyság. Tylar Murray és Mathew Biddle.
         
-Más megoldást kerestem. (Húrok tárolása Stringarray-ban UTF- 8- kódolt tömbök formájában) . Ez további 33% -kal csökkenti a memóriahasználatot, de 33% -os lassulás árán. A most használt rendszerhez képest ez rossz cserének tűnt. Könnyebb több memóriát adni egy számítógépnek. ($200-ért több memória vásárlása) hogy gyorsabb legyen. (vesz egy teljesen új számítógépet) .
+Egy másik megoldást vizsgáltam (strings in StringArray mint UTF-8 kódolt byte sorozatok) ... Ez csökkenti a memória használatát egy másik ~ 33%, de a költségek ~ 33% lelassul. Összehasonlítva a rendszert, amelyet most használnak, úgy tűnt, mint egy rossz kereskedelem. Könnyebb egy számítógép több memóriát adni (vásároljon több memóriát ~$200) mint gyorsabbá tenni (Vásároljon egy teljesen új számítógépet) ...
         
-Ha ez kényelmes, akkor is mindig jó ötlet, hogy ossza fel a hatalmas táblázatos adatok fájlokat több kisebb fájlokat alapján néhány kritérium, mint stationID és / vagy idő. ERDDAP™ gyakran csak meg kell nyitni az egyik kis fájlokat válaszul a felhasználó kérésére, és így képes reagálni sokkal gyorsabb.
+Ha kényelmes, még mindig jó ötlet, hogy megosztani hatalmas tabuláris adatfájlok több kisebb fájl alapján bizonyos kritériumok, mint például stationID és/vagy idő. ERDDAP™ Gyakran csak egy kis fájlt kell megnyitnia a felhasználó kérésére válaszul, és így sokkal gyorsabban reagálhat.
         
-    * JAVÍTOTT: Van most [ ERDDAP™ AWS S3 dokumentáció](/docs/server-admin/datasets#working-with-aws-s3-files) , amely leírja, hogyan lehet ERDDAP™ az AWS S3 vödörben lévő adatfájlokkal dolgozni.
-Továbbá, ERDDAP™ Most használ új funkciók az AWS S3 Java API.
-Továbbá, ERDDAP™ Most lehetővé teszi, hogy az AWS S3 URL további karaktereket tartalmazzon (menstruáció, hyphen, aláhúzás) Bakancsnevekkel.
-Továbbá, ERDDAP™ most azt írja elő, hogy az AWS S3 vödör URL-jeit egy meghatározott módon azonosítsák:
+    * IMPROVED: Most van [ ERDDAP™ AWS S3 dokumentáció](/docs/server-admin/datasets#working-with-aws-s3-files) , amely leírja, hogyan kell kapni ERDDAP™ adatfájlokkal való munka az AWS S3 bucketsben.
+Szintén ERDDAP™ most új funkciókat használ az AWS S3-ban Java API.
+Szintén ERDDAP™ most lehetővé teszi az AWS S3 URL-ek számára, hogy további karaktereket tartalmazzanak (periódus, hyphen, alscore) bucket nevekben.
+Szintén ERDDAP™ most előírja, hogy az AWS S3 bucket URL-eket konkrét módon kell azonosítani:
            https://_bucketName_.s3._aws-region._amazonaws.com/_prefix_/   
-ahol az előtag nem kötelező.
-Andy Zieglernek és NOAA .
+ahol az előtag opcionális.
+Andy Zieglernek és NOAA ...
          
-    * JAVÍTOTT: GenerateDatasets Xml most kezeli további gyakori missing\\_value s standins mint hiányzó értékek, és így valószínűbb, hogy átalakít egy oszlop egy numerikus adattípus. A PrimitiveArra.egyszerűsítés () most naplózza, hogy mely konkrét adatérték okozta, hogy egy adott oszlopot húroszlopként kezeljen. Hála Mathew Biddle-nek.
+    * IMPROVED: GenerateDatasets Az Xml most további közös missing\\_value s stand-ins, mint hiányzó értékek, és így nagyobb valószínűséggel konvertál egy oszlopot egy numerikus adattípusra. Továbbá, PrimitiveArray.simplify () most olyan naplók, amelyek bizonyos adatérték okozta, hogy egy adott oszlopot kezeljenek a sztringek oszlopaként. Mathew Biddle-nek köszönhetően.
          
-    * JAVÍTOTT:&lt;Kérjen feketelista &gt; most támogatja.\\*.\\*  (vagy:\\*:\\*az IPv6 esetében) az IP-címek végén, hogy az IP-címek nagyobb darabját, pl. 110,52-et feketelistára tehesd.\\*.\\*  (Kína Unicom Tianjin) . Lásd a [[&lt;Kérelmező feketelista &gt;] (/ docs / server- admin / datasets # applicblist) Köszönhetően a kínai unicom és a kínai Telecom.
+    * IMPROVED:&lt;A kérelemBlacklist&gt; most támogatja.\\*...\\*  (vagy:\\*:\\*IPv6) az IP-címek végén, hogy az IP-címek nagyobb részeit feketelistázhassa, például 110.52.\\*...\\*  (Kína Unicom Tianjin) ... Lásd a dokumentációt [&lt;kérésBlacklist&gt; (/docs/server-admin/datasets#requestblacklist) A China Unicomnak és a China Telecomnak köszönhetően.
          
-    * JAVÍTOTT: Ha egy adatkészlet forrása nem határozza meg a "institution" attribútum, GenerateDatasets Xml és loadDataset most kap ez egy "creator\\ _ institution" attribútum (ha rendelkezésre áll) . Hála Micah Wengrennek.
+    * IMPROVED: Ha egy adatkészlet forrása nem határozza meg a "institution" tulajdonság, GenerateDatasets Xml és loadDataset most kapja meg a "teremtő\\_institution" tulajdonságból (ha rendelkezésre áll) ... Micah Wengrennek köszönhetően.
          
     * BUG FIX: szabványosítás Amit nem mindig alkalmaztak az ASCII adatfájlokra.
-Továbbá, az EDDTable nem kezelte megfelelően az időértékeket, amikor a forrás Húros időértékek és szabványosítás Amit használtak.
-Hála Paloma de la Vallee-nek.
+Továbbá az EDDTable nem kezelte megfelelően az időértékek korlátozásait, amikor a forrásnak erősítette az időértékeket és szabványosította Mit használtak.
+Paloma de la Vallee-nek köszönhetően.
         
-Nem mondtam világosan, hogy használnod kéne a szabványt. Milyen funkciók, amikor valóban szükség van rájuk (pl. amikor a különböző forrásfájlok különböző módon tárolják az időértékeket) , mert néhány kérése adatkészleteket használó szabványosítás Mi lesz feldolgozni egy kicsit lassabban.
+Nem írtam egyértelműen: csak szabványosítani kell Milyen jellemzők, ha valóban szüksége van rájuk (pl. amikor a különböző forrásfájlok különböző módon tárolják az időértékeket) , mert egyes adatokra vonatkozó kérések, amelyek szabványosítással rendelkeznek Mi fog feldolgozni egy kicsit lassabb.
         
-    * BUG FIX: A hiba a kód által használt EDDGrid FromNcFiles okozta a hiba .nc 4 és .hdf 5 "hosszú" fájl (int64) változók. Ez már megoldódott. Hála Friedemann Wobusnak.
+    * BUG FIX: Bug a kódban használt EDDGrid FromNcFiles okozta, hogy kudarcot vall .nc 4 és .hdf 5 fájl, amely "hosszú" (Int64) változók. Ez most rögzített. Friedemann Wobusnak köszönhetően.
          
-    * BUG FIX: Kis módosítások az ISO 19115 fájlok, hogy egy másik validátor boldog. Chris MacDermaid-nek és Anna Milan-nak köszönhetően.
+    * BUG FIX: Kis változások az ISO 19115 fájlok, hogy egy másik érvényesítő boldog. Chris MacDermaidnak és Anna Milannak köszönhetően.
          
 
-## Version 2.01{#version-201} 
- (released 2009- 07- 02) 
+## Verzió 2.01{#version-201} 
+ (megjelent 2019-07-02) 
 
-*    **Új jellemzők és változások (felhasználók számára) :** 
-    * Nincs.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * BUG FIX: Egy hiba a kódban, amely létrehozza az adathozzáférési űrlapot tabledap adatkészletek miatt a weboldal üres néhány adatkészletek. Továbbá javítottam a váratlan hibák kezelésén minden HTML oldalon, így azok (általában) hibaüzenet megjelenítése. Hála Marco Albának.
-    * JAVÍTOTT: GenerateDatasets Az Xml már nem jelent hosszú figyelmeztetést a kimenet tetején. Helyette, kérem nézze meg [Generáció szerkesztése Adatbázisok Xml kimenet](/docs/server-admin/datasets#you-need-to-edit-the-output-from-generatedatasetsxml-to-make-it-better) . Hála Steven Baumnak.
-    * JAVÍTOTT: GenerateDatasets Xml most kissé eltérő ajánlásokat különböző helyzetekben&lt;updateEveryNMillis &gt; for EDD... from... files datasets. GenerateDatasets Az Xml most elriasztja az EDDTableFromFiles adatbázisok eredeti "kivonatát".
+*    **Új funkciók és változások (felhasználók számára) :** 
+    * Senki sem.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * BUG FIX: Egy hiba a kódban, amely létrehozza az adathozzáférési formanyomtatványt tabledap Az adatkészletek azt okozták, hogy a weboldal bizonyos adatkészletek számára üres legyen. Emellett javítottam a váratlan hibák kezelését az összes HTML-oldalon, így ők lesznek (általában) hibaüzenet megjelenítése. Marco Albanak köszönhetően.
+    * IMPROVED: GenerateDatasets Az Xml már nem nyomtat hosszú figyelmeztetést a kimenet tetején. Ehelyett, kérlek, lásd [Editing Generáció Adatkészletek Xml kimenet](/docs/server-admin/datasets#you-need-to-edit-the-output-from-generatedatasetsxml-to-make-it-better) ... Steven Baumnak köszönhetően.
+    * IMPROVED: GenerateDatasets Az Xml most kissé eltérő ajánlásokat tesz különböző helyzetekben&lt;frissítésEveryNMillis&gt; az EDD ... From... Files adatkészletek. Továbbá, GenerateDatasets Az Xml most elriasztja az eredeti "kivonat" rendszert az EDDTableFromFiles adatkészletekhez.
 
-## Version 2.00{#version-200} 
- (released 2009- 06- 26) 
+## Verzió 2.00{#version-200} 
+ (2019-06-26) 
 
-*    ** ERDDAP™ V2.00 végre itt van&#33; Igen&#33;**   
+*    ** ERDDAP™ A v2.00 végre itt van&#33; Igen&#33;**   
      
-    * Elnézést kérünk a hosszú késlekedésért, hogy befejezzük ezt a verziót.
-Köszönöm a türelmét.
+    * Elnézést kérünk a hosszú késéshez, ami szükséges ahhoz, hogy befejezzük ezt a verziót.
+Köszönöm a türelmeteket.
          
-    * A jó hír az, hogy a többletidőt arra használták, hogy a felhasználók által kért funkciók közül többet is hozzáadjanak. A rossz hír az, hogy még a késéssel is nem minden kívánt funkciót adtak hozzá. Sajnáljuk, de sokkal fontosabbnak tűnt, hogy kiadjuk ezt a kiadást, mint hogy tovább halasszuk. (Örökre?) folyamatosan új funkciók hozzáadása. Megígérjük, hogy a jövőben visszatérünk a gyakoribb kiadásokhoz.
+    * A jó hír az, hogy az extra időt arra használták, hogy több olyan funkciót adjon hozzá, amelyet a felhasználók kértek. A rossz hír az, hogy még a késéssel is, nem minden kért funkciót adtak hozzá. Sajnáljuk, de fontosabbnak tűnik, hogy kiszabaduljunk, mint késleltetni több (örökké?) folyamatosan új funkciók hozzáadása. Azt ígérjük, hogy visszatérünk a jövőben gyakoribb kiadásokhoz.
          
-    * "2. verzió? Vannak nagy változások és összeegyeztethetetlenségek?"
-Nagy új vonások? Igen.
-Nagy összeegyeztethetetlenség vagy változások rendszergazdák vagy felhasználók számára? Nem.
-V1.82-ről v2.00-ra ugrottunk:
-        * részben a 10 év ünneplésére (Most 11) a ERDDAP™   (v1.00 2008- 05- 06, ami külsőleg rendkívül hasonlított v2.00) . Abban az időben ERDDAP™ legalább 12 országban egy létesítményből majdnem 100 létesítménybe került (Ausztrália, Belgium, Kanada, Franciaország, India, Írország, Olaszország, Dél-Afrika, Spanyolország, Thaiföld, Egyesült Királyság, USA) .
-        * részben egy teljesen új irányba mutató jelentős kiegészítés: ERDDAP™ Most már van egy adatbeviteli rendszer, hogy menjen a meglévő adatszerver szolgáltatások (Látod? [EDDTableFromHttpGet](#eddtablefromhttpget) ) ,
-        * És részben azért, mert nem volt nagy ugrás 1.82-től 2.00-ig számszerűen, így ez tűnt a megfelelő időben.
+    * Version 2?&#33; Vannak-e nagy változások és összeegyeztethetetlenségek?”
+Nagyszerű új funkciók? Igen.
+Nagy kompatibilitások vagy változások az adminisztrátorok vagy a felhasználók számára? Nem.
+V1.82-től v2.00-ig ugrottunk:
+        * részben ünnepelni 10 évet (most 11) Az első nyilvános kiadás óta ERDDAP™   (v1.00 2008-05-06, amely kiemelkedően úgy nézett ki, mint a v2.00) ... Ebben az időben, ERDDAP™ az egyik létesítményből majdnem 100 létesítménybe került legalább 12 országban (Ausztrália, Belgium, Kanada, Franciaország, India, Írország, Olaszország, Dél-Afrika, Spanyolország, Thaiföld, Egyesült Királyság, USA) ...
+        * részben, hogy egy nagy kiegészítés egy teljesen új irányba: ERDDAP™ most van egy adatgyűjtő rendszer, hogy menjen a meglévő adatkiszolgáló szolgáltatásokkal (lásd: [EDDTableFromHttpGet](#eddtablefromhttpget) ) ,
+        * részben azért, mert nem volt nagy ugrás az 1,82-től 2,00-ig, így ez úgy tűnt, mint a megfelelő idő.
              
-    * A másik jó hír, hogy most két másik csoport is hozzájárul a kódhoz. ERDDAP™   (Ebben a verzióban, és a jelek továbbra is) : Rob Fuller és Adam Leadbetter az ír Tengerészeti Intézetből, és Roland Schweitzer a PMEL-től és Weathertop Consulting. Köszönöm szépen. Igaz, hogy a saját maguk által választott projekteken dolgoznak, de ez a klasszikus nyílt forráskódú fejlesztési modell -- a csoportok hozzájárulnak a hozzáadott funkciók kódjához. Hozzáadott előny a közreműködőknek: amint befejezték az új funkciók használatát; nem kell várniuk a következő kiadásra ERDDAP . A te csoportod is hozzájárulhat&#33; Lásd a [ ERDDAP™ Programozó útmutató](/docs/contributing/programmer-guide) .
+    * A másik jó hír az, hogy most két másik csoport is hozzájárul a kódhoz ERDDAP™   (ebben a verzióban és jelzésekkel folytatják) Rob Fuller és Adam Leadbetter of Ireland's Marine Institute, és Roland Schweitzer of PMEL és Weathertop Consulting. Köszönöm nagyon. Igaz, hogy a saját választásuk projektjén dolgoznak, de ez a klasszikus nyílt forráskódú fejlesztési modell - csoportok hozzájárulnak a kódexhez olyan funkciókhoz, amelyeket a legtöbben szeretnék látni. A hozzáadott előny a közreműködők számára: az új funkciókat amint befejezik; nem kell várniuk a következő kiadást ERDDAP ... A csoport örömmel járul hozzá, szintén&#33; Lásd: [ ERDDAP™ Programozó útmutató](/docs/contributing/programmer-guide) ...
          
-    * Reméljük tetszik. ERDDAP™ v2.00. Várjuk a következő 10 év ERDDAP™ fejlesztés és egyre több használat világszerte.
+    * Reméljük, tetszik ERDDAP™ V2.00. Várjuk a következő 10 évre ERDDAP™ Fejlesztés és egyre több használat világszerte.
          
-*    **Új jellemzők és változások (felhasználók számára) :**   
+*    **Új funkciók és változások (felhasználók számára) :**   
      
-    * ÚJ: orderByMean szűrő
-MELLÉKLET tabledap az adatkészletek kiszámítják a meghatározott csoportok eszközeit. Továbbá, az összes orderBy opciók most támogatják a csoportok meghatározásának egy további módját: _ numicVariable \\[ / szám \\[ időegységek \\]  \\[ : offset \\]  \\] _ pl. idő / 1 nap vagy mélység / 10: 5. Például, stationID , idő, víz Temp & orderByMean  (" stationID , idő / 1 nap ") az eredményeket stationID és idő, majd kiszámítja és visszaadja a víz Temp minden stationID minden nap. Ezek rendkívül hasznos és erőteljes új funkciók. Rob Fuller és Adam Leadbetter az írországi Tengerészeti Intézetből hozzájárultak az új kódhoz és a régi kód módosításához, majd Git-en keresztül nyújtották be. Köszönöm. Rob és Adam&#33;
+    * NEW: orderByMean Szűrő
+Mert tabledap Az adatkészletek kiszámítják a megadott csoportok eszközeit. Szintén az összes orderBy opciók most támogatják a csoportok meghatározásának további módját: _numericVariable \\[ /number \\[ IdőEgységek \\]  \\[ Offset \\]  \\] _, pl. idő/1day vagy mélység/10:5. Például, stationID Idő,waterTemp & orderByMean  ("..." stationID ,time/1day") rendezné az eredményeket stationID és az idő, majd kiszámítja és visszaadja a vizetTemp minden egyes stationID minden nap. Ezek rendkívül hasznos és erős új funkciók. Az új kódex ezekre a funkciókra és a régi kód változásaira Rob Fuller és Adam Leadbetter of Ireland's Marine Institute és Git által benyújtott. Köszönöm, Rob és Adam&#33;
          
-    * ÚJ: kimeneti fájltípus táblázatos adatkészletekhez: [.adat táblázat](https://developers.google.com/chart/interactive/docs/reference#dataparam) ,
-a JSON fájl formázva a Google Visualization kliens könyvtár ( Google Charts ) . A kódot Roland Schweitzer adta meg, és Git-en keresztül nyújtotta be. Köszönöm. Roland&#33;
+    * NEW: kimeneti fájltípus a tabuláris adatkészletekhez: [.data táblázat](https://developers.google.com/chart/interactive/docs/reference#dataparam) ,
+JSON fájl formázva használatra a Google Visualization ügyfél könyvtár ( Google Charts ) ... Ennek a kódexet Roland Schweitzer és Git segítségével nyújtotta be. Köszönöm, Roland&#33;
          
-    * ÚJ: kimeneti fájltípus táblázatos adatkészletekhez: [ .jsonlCSV1 ](https://jsonlines.org/examples/) ,
-ami olyan, mint a meglévő .jsonlCSV opció, de oszlopnevekkel az első sorban. Hála Eugene Burgernek.
+    * NEW: kimeneti fájltípus a tabuláris adatkészletekhez: [ .jsonlCSV1 ](https://jsonlines.org/examples/) ,
+olyan, mint a létező .jsonlCSV opció, de oszlop nevekkel az első sorban. Eugene Burgernek köszönhetően.
          
-    * ÚJ: Ha az adminisztrátor engedélyezi, a felhasználók bejelentkezhetnek a [ORCID](https://orcid.org) számla.
-Ez egy OAuth 2.0 hitelesítési rendszer, mint a Google hitelesítés. Az ORCID-t a kutatók széles körben használják arra, hogy egyedileg azonosítsák magukat. Az ORCID számlák ingyenesek, és nincsenek olyan adatvédelmi problémáik, mint a Google számláknak. Lásd ERDDAP s [Orcid hitelesítési utasítások](/docs/server-admin/additional-information#orcid) . A BCO- DMO-nak köszönhetően (Adam Shepard, Danie Kinkade stb.) .
+    * NEW: Ha az adminisztrátor lehetővé teszi, a felhasználók most bejelentkezhetnek a sajátjukkal [ORCID](https://orcid.org) Számla.
+Ez egy OAuth 2.0 hitelesítési rendszer, mint a Google hitelesítés. Az ORCID-t széles körben használják a kutatók, hogy egyedileg azonosítsák magukat. Az ORCID-fiókok ingyenesek, és nem rendelkeznek a Google-fiókok adatvédelmi kérdéseivel. Lásd ERDDAP A [Orcid hitelesítési utasítások](/docs/server-admin/additional-information#orcid) ... A BCO-DMO-nak köszönhetően (Adam Shepard, Danie Kinkade stb.) ...
          
-    * ÚJ: Az új URL konverter az elavult URL-eket up- to-date URL-ekké alakítja át.
-Lásd... / erddap / konvertálni / urls.html bármilyen ERDDAP™ telepítés, például,
-         [ez a link a konverter a ERD   ERDDAP ](https://coastwatch.pfeg.noaa.gov/erddap/convert/urls.html) . Ennek hasznosnak kell lennie az adatkezelők számára. Ezt az GenerateDatasetsXml is használja. Bob Simonsnak és Sharon Mesicknek köszönhetően.
+    * ÚJ: Egy új URL átalakító átalakítja a naprakész URL-eket naprakész URL-ekké.
+Lásd: .../erddap/convert/urls.html bármelyik oldalon ERDDAP™ telepítés, pl.
+         [ez a kapcsolat a konverterrel a ERD   ERDDAP ](https://coastwatch.pfeg.noaa.gov/erddap/convert/urls.html) ... Ez hasznos lehet az adatkezelők számára. Ezt belsőleg a GenerateDatasetsXml is használja. Bob Simonsnak és Sharon Mesicknek köszönhetően.
          
-    * JAVASOLT: [Időátalakító](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) most már lehetőségeket konvertálni a közös sztring idő egy ISO8601 string idő, vagy konvertálni a UDUNITS - mint az időegységek egy megfelelő UDUNITS időegységek sztring. Ennek is hasznosnak kell lennie ERDDAP™ adminisztrátorok, akiknek tudniuk kell, milyen formátumot kell megadni az "egységek" attribútum string idő változók. Ezt a GenerateDatasetsXml és a standardize is használja belsőleg. Hála Bob Simonsnak.
+    * IMPROVED: A [Idő átalakító](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) most van lehetőség arra, hogy bármilyen közös sztringidőt egy ISO8601 sztringidőbe alakítsunk, vagy átalakítsunk egy UDUNITS - mint az időegységek egy megfelelő UDUNITS időegységek sztring. Ez is hasznos lehet ERDDAP™ adminisztrátorok, akiknek tudniuk kell, hogy milyen formátumot kell meghatározni a szigorú időváltozatok "egységek" tulajdonságára. Ezt belsőleg a GenerateDatasetsXml és az EDDTableFromFiles szabványosítása is használja. Bob Simonsnak köszönhetően.
          
-    * ÚJ: A [Egységek átalakító](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) új "Szabványosítsa UDUnits" opcióval rendelkezik.
-Például a "deg\\ _ C / m" és a "deces\\ _ C meters-1" egyaránt átalakul
-"diploma\\ _ C m-1". Ezt a funkciót az EDDTableFromFiles standard is használja. Hála Bob Simonsnak.
+    * ÚJ: A [Units Converter](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) új "Standardize UDUnits" opcióval rendelkezik.
+Például a "deg\\_C/m" és a "degrees\\_C méter-1" mind átalakulnak
+"degree\\_C m-1". Ezt a funkciót az EDDTableFromFiles szabványosítása is használja. Bob Simonsnak köszönhetően.
          
-    * ÚJ: grafikonokhoz (nem felületi grafikonok) a griddap és tabledap 'Make A Graph weboldalak, ha az x tengely nem egy időtengely, ha csak egy részhalmaza az x tengely változó tartományát látható, most már gombok felett a grafikon, hogy eltolja az X tengely baloldali vagy jobb oldali. Hála Carrie Wall Bell / a Hydrophone projekt.
+    * ÚJ: grafikonokhoz (más, mint a felületi grafikonok) a griddap és tabledap "S Make A Graph weboldalak, amikor az x tengely nem idő tengely, ha csak az x tengelyváltozékony tartomány aljzata látható, most a grafikon felett van gombok az X Axis balra vagy jobbra váltásához. Carrie Wall Bell / Hydrophone projektnek köszönhetően.
          
-    * ÚJ: A grafikonok esetében az X és / vagy Y tengely most már logskálát is használhat.
-A felhasználók az Y Axis Scale-t a griddap és a tabledap Készíts egy grafikont honlapokat. Lásd a [.xRange és. yRange dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#xRange) . Hála Carrie Wall Bell / a Hydrophone projekt.
+    * ÚJ: A grafikonok esetében az X és/vagy Y tengelyek most használhatják a Log skáláját.
+A felhasználók ellenőrizhetik az Y Axis Scale-t egy új ledobási widgeten keresztül a griddap-on és tabledap Készítsen egy Graph weboldalakat. Lásd: [.xRange és yRange dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#xRange) ... Carrie Wall Bell / Hydrophone projektnek köszönhetően.
          
-    * JAVÍTOTT: ERDDAP™ most már jobban használja a különböző HTTP hibakódokat, és most visszatér a(OPeN)DAPv2.0- formázott hibaüzenet. Lásd [a részletek](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#Errors) . Hála Antoine Queric-nek és Aurelie Briand-nek.
+    * IMPROVED: ERDDAP™ most jobban használja a különböző HTTP hibakódokat, és most visszatér(OPeN)DAPv2.0-formatizált hibaüzenet fizetett. Lásd [a részletek](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#Errors) ... Antoine Queric és Aurelie Briandnak köszönhetően.
          
-    * JAVÍTOTT: Ne használja Netcdf- java / c vagy más szoftver eszközök csatlakozni .nc vagy .hdf az általa felszolgált fájlok ERDDAP A / fájlok / rendszer, mintha helyi fájlok. ERDDAP™ Most visszautasítja ezeket a kéréseket. Szörnyen hatástalan, és gyakran más problémákat is okoz. Ehelyett:
+    * IMPROVED: Ne használja a Netcdf-java / c vagy más szoftvereszközöket a csatlakozáshoz .nc vagy .hdf fájlok által szolgáltatott ERDDAP 's /files / rendszer, mintha helyi fájlok lennének. ERDDAP™ most elutasítja ezeket a kéréseket. Ez szörnyen nem hatékony, és gyakran okoz más problémákat. Ehelyett:
         
-        * Felhasználás(OPeN)DAPkliens szoftver csatlakozni ERDDAP s DAP az adatkészlet szolgáltatásai (amelyek / griddap / vagy tabledap / az URL-ben) . Ez az. DAP Nagyon jól csinálja.
-        * Vagy használja az adatkészlet adathozzáférési űrlapját, hogy kérje az adatok egy részhalmazát.
-        * Vagy, ha az egész fájlt, vagy ismételt hozzáférést hosszú idő alatt, használja curl , wget , vagy böngésző letölteni az egész fájlt, majd hozzáférni az adatokat a helyi másolat a fájl.
+        * Használat(OPeN)DAPügyfélszoftver csatlakoztatása ERDDAP A DAP szolgáltatások az adatkészlethez (amely rendelkezik / griddap/ vagy tabledap / az URL-ben) ... Ez az, ami DAP Ez azért van, és ezt jól teszi.
+        * Vagy használja az adatkészlet Adathozzáférési Formáját, hogy kérjen egy adatkészletet.
+        * Vagy ha szüksége van az egész fájlra vagy ismételt hozzáférésre hosszú ideig, használja curl , wget , vagy böngészője letölteni az egész fájlt, majd hozzáférni az adatokat a fájl helyi másolatából.
         
           
          
-    * JAVÍTOTT: A ERDDAP™ Homepage, Full Text Search most a "Tekintse meg az összes adatbázis listáját", mivel ez a legjobb kiindulópont a legtöbb felhasználó számára. Hála Didier Mallarinónak és Maurice Libesnek.
+    * IMPROVED: A ERDDAP™ Homepage, Full Text Search most a "View a List of All Datasets" felett van, mivel ez a legjobb kiindulópont a legtöbb felhasználó számára. Didier Mallarino és Maurice Libes.
          
-    * JAVÍTOTT: A DataProviderForm3.html Már vannak közös listáink. standard\\_name c. Hála valakinek az IOOS DMAC találkozón.
+    * IMPROVED: On DataProviderForm3.html vannak most leállított listák a közös standard\\_name S. Köszönjük valakinek az IOOS DMAC találkozóján.
          
-    * JAVASOLT: A / files / web oldalakon most már van egy link az új "Mit tehetek ezekkel a fájlokkal?" menüpontra. Az a rész leírja a különböző fájltípusokat, és javaslatokat ad a velük való együttműködésre. Köszönet Maurice Libes-nek.
+    * IMPROVED: A /files/weboldalakon most kapcsolódik az új "Mit tehetek ezekhez a fájlokhoz?" szakasza a /files/ dokumentáció. Ez a rész leírja a különböző fájltípusokat, és javaslatokat ad arra vonatkozóan, hogyan kell velük dolgozni. Maurice Libesnek köszönhetően.
          
-    * JAVÍTOTT: Szinte minden kérés ERDDAP™ Legalább egy kicsit gyorsabbnak kell lennie, és néha sokkal gyorsabbnak.
+    * IMPROVED: Szinte minden kérés ERDDAP™ legalább egy kicsit gyorsabb, és néha sokkal gyorsabb.
          
-    * BUG FIX: Bizonyos körülmények között, amikor egy EDDTable adatkészlet mentett adatokat bizonyos típusú .nc files, the global "id" attribútum volt beállítva a fájl javasolt nevét, amely magában foglalja a hash, hogy ez egyedi a kérés. Most az "id" megfelelően változatlan marad. (adott esetben) vagy az adatkészlethez datasetID   (ha nincs megadva) . Hála John Maurernek.
+    * BUG FIX: Bizonyos körülmények között, amikor az EDDTable adatkészlet bizonyos típusú adatokkal mentette meg az adatokat .nc fájlokat, a globális "id" tulajdonságot a fájl javasolt neve, amely magában foglalja a hash, hogy egyedivé tegye ezt a kérést. Most az "id" megfelelően változatlan marad (ha meghatározott) vagy az adatkészlethez datasetID   (ha nem meghatározott) ... John Maurernek köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    * TY: Ez a kiadás eltart egy ideig és dolgozni fog. Kérjük, legyenek türelemmel, és tervezzék meg, hogy néhány óra alatt elvégzik a szükséges változtatásokat, és néhány óra múlva kísérleteznek új funkciókkal.
+    * TO DO: Ez a kiadás egy kis időt vesz igénybe, és munkálkodik tőled. Kérjük, légy türelmes és tervezzen néhány órát a szükséges változtatások megtételére, és néhány órát az új funkciók kísérletére.
          
-    * TY: Biztonság érdekében készíts egy másolatot az aktuális setup.xml és datasets.xml fájlok, hogy vissza tudjon térni hozzájuk abban a valószínűtlen esetben, amikor vissza kell térni ERDDAP™ v1.82. pont
+    * TO DO: A biztonság érdekében készítsen biztonsági másolatot a jelenlegi setup.xml és datasets.xml fájlokat, hogy visszaállíthassa őket a valószínűtlen esetben, ahol vissza kell térnie ERDDAP™ v1.82.
          
-    * TY: Az ajánlott Java AdoptOpenJDK OpenJDK 8 (LTS) + HotSpot.
-Ez egy nyílt forráskódú változata a Java amelyek nem korlátozzák annak használatát (ellentétben Oracle s Java eloszlás) . Ez származik Oracle s Java egy folyamatban lévő módon, Oracle Az áldás. Biztonsági okokból fontos, hogy az Ön Java verzió up-to-date. Lásd ERDDAP s [ Java Beszerelési utasítások](/docs/server-admin/deploy-install#java) .
+    * TO DO: Az ajánlott Java Az AdoptOpenJDK OpenJDK 8. 8. (LTS) + HotSpot.
+Ez egy nyílt forráskódú változata Java nincs korlátozása annak használatára (Ellentétben Oracle A Java elosztás) ... Ez származik Oracle A Java folyamatban lévő módon, Oracle Áldás. Biztonsági okokból fontos megtartani a te Java verzió up-to-date. Lásd ERDDAP A [ Java telepítési utasítások](/docs/server-admin/deploy-install#java) ...
          
-    * TY: AdoptOpenJDK Java szüksége van egy kis kiegészítése a Tomcat telepítés: lásd a [Források gyorsítótár utasítások](/docs/server-admin/deploy-install#contentxml) . Úgy gondolom, hogy ez a -XX: MaxPermSize beállítást helyettesíti, ami (Elfogadás) Az OpenJDK már nem támogatja.
+    * AdoptOpenJDK Java kis kiegészítést igényel a Tomcat telepítéséhez: lásd [Resources Cache utasítások](/docs/server-admin/deploy-install#contentxml) ... Azt hiszem, ez egy csere a -XX:MaxPermSize beállításhoz, amely (Adopt) Az OpenJDK már nem támogatja.
          
-    * TY: Az új alapértelmezés és ajánlás&lt;fondFamily &gt; setup.xml beállítás
-Az AdoptOpenJDK-ba épített DejaVu Sans Java . Lásd a
-         [módosított betűtípus telepítési utasítások](/docs/server-admin/deploy-install#fonts) .
+    * TO DO: Az új alapértelmezettség és ajánlás&lt;betűFamily&gt; beállítás a setup.xml-ben
+DejaVu Sans, amely az AdoptOpenJDK Java ... Lásd:
+         [felülvizsgált betűtípus telepítési utasítások](/docs/server-admin/deploy-install#fonts) ...
          
-    * TY: Sok címke mozog setup.xml datasets.xml . Az az előnye, hogy megváltoztathatod az értékeiket, miközben ERDDAP™ fut, újraindítás nélkül ERDDAP . Különösen, könnyen megváltozhatsz.&lt;startBodyHtml5 &gt; ideiglenes üzenet megjelenítéséhez ERDDAP™ kezdőlap (például, "Nézd meg az új JPL MUR SST v4.1 dataset"... vagy "This ERDDAP™ offline lesz a karbantartáshoz 2019- 05- 08T17: 00: 00 PDT - 2019- 05- 08T20: 00: 00 PDT ".) . Ha / amikor ezeket a címkéket datasets.xml , a változások hatályba lépnek a következő alkalommal ERDDAP™ olvas datasets.xml .
+    * TO DO: Sok címke mozog a setup.xml-től datasets.xml ... Az előny az, hogy megváltoztathatja értékeiket, miközben ERDDAP™ fut, újraindítás nélkül ERDDAP ... Figyelemre méltó, hogy könnyen változhat&lt;Kezdőlap &gt;BodyHtml5&gt; ideiglenes üzenet megjelenítésére ERDDAP™ weboldal (pl.: "Keresse ki az új JPL MUR SST v4.1 adatkészletet..." vagy "Ez ERDDAP™ offline lesz 2019-05-08T17:00:00 PDT 2019-05-08T20:00 PDT.) ... Ha/ha megváltoztatod ezeket a címkéket datasets.xml A változások a következő alkalommal lépnek hatályba ERDDAP™ olvasó datasets.xml ...
          
         
-        1. @ info: whatsthis datasets.xml fájl (valahol a fájl elején, után&lt;erddapDatasets &gt;):
+        1. Másolja ezt a tartalmat az Önébe datasets.xml fájl (bárhol a fájl kezdete közelében, miután&lt;erddapDatasets&gt;):
 ```
             <!-- The tags below are described in setupDatasetsXml.html.
                  The defaults listed below are as of ERDDAP™ v2.00. -->
@@ -994,157 +1011,157 @@ Az AdoptOpenJDK-ba épített DejaVu Sans Java . Lásd a
             <standardPrivacyPolicy></standardPrivacyPolicy>
 ```
 
-        2. Egy-egy, másold le az értéket (ha van) minden egyes címke a setup.xml fájlt az új címke, hogy csak pasted (felül) in datasets.xml . Például, ha 30-as értéket használt volna&lt;cachePercode &gt; in setup.xml, akkor másolja ezt az értéket az új&lt;cachePercode &gt; címke datasets.xml   (Bár ha az érték ugyanaz, mint az új alapértelmezett érték, akkor a legjobb, ha csak hagyja a címke datasets.xml üres) .
+        2. Egy-egy, másolja az értéket (ha valaki) az egyes címkék a setup.xml fájlt az új címkére, amelyet csak pasztoltál (felett) benne datasets.xml ... Például, ha 30 értéket használtál a 30-ból&lt;cacheMinutes&gt; be setup.xml, meg kell másolni ezt az értéket az új&lt;cacheMinutes&gt; címke datasets.xml   (bár ha az érték ugyanaz, mint az új alapértelmezett érték, akkor a legjobb, ha csak elhagyja a címkét datasets.xml Blank) ...
             
-Ha az Ön értéke eltér az új javasolt alapértelmezett (kivéve:&lt;startBodyHtml5 &gt; és&lt;A ShortDescriptionHtml &gt;, amely hasznos testreszabásához ERDDAP™ installáció), kérjük, fontolja meg az új alapértékre való áttérést. Ez különösen igaz a&lt;részleges Rendszerkövetelmények &gt; és&lt;partialRequestMaxCells &gt;, ahol az alapértelmezett / javasolt érték jelentősen megváltozott az évek során.
+Ha az értéke más, mint az új javasolt alapértelmezés (más, mint az&lt;startBodyHtml5&gt; és&lt;AShortDescriptionHtml&gt;, amely hasznos a testreszabásához ERDDAP™ telepítés), kérjük, vegye fontolóra az új alapértelmezett értékekre való átállást. Ez különösen igaz&lt;PartialRequestMaxBytes&gt; és&lt;partialRequestMaxCells&gt;, ahol az alapértelmezett/szuggesztált érték jelentősen megváltozott az évek során.
             
-Miután minden értéket lemásolt, törölje a címkét és annak leírását a setup.xml-ből. Jobb, ha ezek a címkék datasets.xml . És most már vannak jobb leírások [setupDatasetsXml.html](/docs/server-admin/datasets#the-basic-structure-of-the-datasetsxml-file) .
+Miután minden értéket másol, törölje a címkét és annak leírását a setup.xml-től. Jobb, ha ezeket a címkéket bevonjuk datasets.xml ... És most jobb leírások vannak [setupDatasetsXml.html](/docs/server-admin/datasets#the-basic-structure-of-the-datasetsxml-file) ...
             
         
-Az új rendszer furcsasága, hogy az első weboldal, amikor elkezded ERDDAP lesz az alapértelmezett ERDDAP™ weboldalt. Minden későbbi weboldal a... Html tartalmat adja meg datasets.xml .
+Az új rendszer csúcsa az, hogy az első weboldal, amikor elkezdesz ERDDAP lesz az alapértelmezés ERDDAP™ weboldal. Minden későbbi weboldal használja a ...Html tartalmat, amelyet megadott datasets.xml ...
         
-    * FIGYELEM: Először futsz ERDDAP™ v2.0, a helyi adatállományokon alapuló adatkészletek betöltése **Nagyon** lassan, mert ERDDAP™ meg kell újítani az adatbázis fájlok egy kicsit más formátumban. A lassú kezdeti újratöltés után gyorsan, mint korábban. Kérlek, légy türelmes.
+    * WARNING: Az első alkalom, amikor futsz ERDDAP™ v2.0, a helyi adatállományokon alapuló adatkészletek terhelik **nagyon** lassan, mert ERDDAP™ újra kell létrehozni a fájlok adatbázisát egy kicsit más formátumban. A lassú kezdeti újratöltés után gyorsan betöltik, mint korábban. Kérjük, légy türelmes&#33;
          
 #### EDDTableFromHttpGet{#eddtablefromhttpget} 
-    *    [Nagy ÚJ FEATURE: EDDTableFromHttpGet](#eddtablefromhttpget)   
-Mostanáig, ERDDAP™ csak olvassa el az adatokat, és elérhetővé tette a felhasználók számára. Nos, ERDDAP™ van egy egyszerű, hatékony rendszer fogyasztására valós idejű adatok érzékelők. Többek között ez az adatkészlet fine-grained versioning: emlékszik minden változtatás az adatkészlet, amikor készült, és aki. A felhasználók általában csak az adatkészlet legújabb változatát akarják majd, az alkalmazott változtatásokkal együtt. A felhasználók azonban bármikor kérhetnek adatokat az adatkészletből. Ez megkönnyíti a reprodukálható tudományt. Így, ellentétben a legtöbb más közel valós idejű adatkészlet, ezek az adatkészletek jogosultak [ DOI sz](https://en.wikipedia.org/wiki/Digital_object_identifier) . mert találkoznak a DOI követelmény, hogy az adatkészlet változatlan maradjon, kivéve az összesítést. Lásd [EDDTableFromHttpGet](/docs/server-admin/datasets#eddtablefromhttpget) . Hála OOI-nak. (réges-rég és most) Eugene Burger emlékezteti, hogy mi a fontos.
+    *    [BIG NEW FEATURE: EDDTableFromHttpGet](#eddtablefromhttpget)   
+Mostanáig, ERDDAP™ csak olvassa el az adatokat, és elérhetővé tette a felhasználók számára. Most, ERDDAP™ egyszerű, hatékony rendszerrel rendelkezik az érzékelők valós idejű adatainak becslésére. Többek között ez az adatkészlet finoman megfogalmazott verziót kínál: emlékszik minden változásra az adatkészletben, amikor készült, és ki által. Általában a felhasználók csak az adatkészlet legfrissebb verzióját akarják, minden megváltozással. De van lehetőség a felhasználók számára, hogy adatokat kérjenek az adathalmaztól, mivel bármikor volt. Ez megkönnyíti a reprodukálható tudományt. Így, ellentétben a legtöbb más közeli idejű adatkészletekkel, ezek az adatkészletek jogosultak [ DOI s](https://en.wikipedia.org/wiki/Digital_object_identifier) ... mert találkoznak DOI követelmény, hogy az adatkészlet nem változik, kivéve az aggregáció. Lásd [EDDTableFromHttpGet](/docs/server-admin/datasets#eddtablefromhttpget) ... Köszönjük OOI (régen és most) a szükségességről és az Eugene Burgerről beszélni az emlékeztető számára, hogy mi fontos.
          
-    * Nagy újonc: ERDDAP™ most már közvetlenül szolgálhat adatokat külső tömörített adatfájlokból, beleértve .tgz , .tar  .gz , .tar  .gzip , .gz , .gzip , .zip , .bz2 , vagy .Z. adatbázisok tartalmazhatnak egy keveréket kívülről tömörített fájlokat (Talán a régebbi adatfájlok?) és nem külső tömörített fájlok, és akkor tömöríteni / dekompressziós fájlt bármikor.
+    * BIG NEW FEATURE: ERDDAP™ ma már közvetlenül a külsőleg elnyomott adatfájlokból szolgálhat adatokat, beleértve a .tgz , .tar  .gz , .tar  .gzip , .gz , .gzip , .zip , .bz2 , vagy .Z. Adatkészletek tartalmazhatnak külsőleg elnyomott fájlok keverékét (Talán az idősebb adatfájlok?) és külsőleg elnyomott fájlok, és bármikor tömörítheti / lebonthatja a fájlt.
         
-Ez remekül működik&#33;
-A legtöbb esetben, a lelassulás kapcsolódó dekompresszió az akták kisebb. Erősen bátorítjuk Önt, hogy próbálja ki ezt, különösen a ritkán használt adatkészletek és / vagy adatfájlok esetében.
+Ez nagyszerűen működik&#33;
+A legtöbb esetben a fájlok depressziójával kapcsolatos lassulás kisebb. Erősen arra ösztönözzük Önt, hogy próbálja meg ezt, különösen az adatkészletek és / vagy adatfájlok esetében, amelyeket gyakran használnak.
         
-Ez megspórolhat 30 ezret vagy többet&#33;
-Ez a kevesek egyike. ERDDAP™ olyan funkciók, amelyek sok pénzt takaríthatnak meg -- ha sok adatfájlt tömörít, sokkal kevesebb Ridear / merevlemezre lesz szüksége az adatok tárolásához, vagy fordítva, sokkal több adatot szolgálhat fel (10x-ig) Már így is van. Ha ez a funkció megment egy másik RAID vásárlástól, akkor 30 000 dollárt spórolt meg.
+Ez akár 300 000 dollárt is megtakaríthat&#33;
+Ez az egyik a kevesek közül ERDDAP™ olyan funkciók, amelyek sok pénzt takaríthatnak meg - ha sok adatfájlot tömörítenek, sokkal kevesebb RAID-ra / merevlemezre lesz szüksége az adatok tárolásához vagy fordítva, sokkal több adatot szolgálhat (akár 10x) a már rendelkezett RAID-okkal. Ha ez a funkció megmenti Önt egy másik RAID vásárlásától, akkor körülbelül 300 000 dollárt takarított meg.
         
-Lásd a [Külső tömörített fájlok dokumentációja](/docs/server-admin/datasets#externally-compressed-files) . Hála Benoit Perrimondnak és Paloma de la Vallee-nek.
+Lásd: [Külsőleg elnyomott fájldokumentáció](/docs/server-admin/datasets#externally-compressed-files) ... Benoit Perrimondnak és Paloma de la Vallee-nek köszönhetően.
         
-    * Nagy újonc: Valamennyi EDDGrid FromFiles and all EDDTableFromFiles datasets support a&lt;cacheFromUrl &gt; tag és a&lt;cacheSizeGB &gt; tag. Ha a cacheSizeGB nincs megadva, akkor ez letölti és fenntartja egy távoli adatkészlet teljes másolatát. Ha a cacheSizeGB van megadva, és &gt; 0, ez letölti fájlokat a távoli adatkészlet, szükség szerint, egy helyi gyorsítótár korlátozott méretű, amely hasznos, ha dolgozik felhőalapú (pl. S3) adatfájlok. Lásd a [gyorsítótár FromUrl dokumentáció](/docs/server-admin/datasets#cachefromurl) Részletekért. Köszönet Bob Simonsnak és Roy Mendelssohn-nak (akik évek óta írogatnak forgatókönyveket, hogy kezeljék a távoli adatállomány helyi másolatait) , Lloyd Cotten, Eugene Burger, Conor Delaney (amikor az Amazon Web Services-nél volt.) , és a Google Cloud Platform.
+    * BIG NEW FEATURE: Minden EDDGrid FromFiles és az összes EDDTableFromFiles adatkészlet támogatja a&lt;cacheFromUrl&gt; címke és&lt;cacheSizeGB&gt; címke. Ha a cacheSizeGB-t nem határozzák meg, ez letölti és fenntartja a távoli adatkészlet fájlainak teljes másolatát. Ha a cacheSizeGB-t megjelölik, és &gt;0, ez szükség szerint letölti a távoli adatkészletből származó fájlokat egy korlátozott méretű helyi cache-ba, amely hasznos a felhőalapú munkavégzés során. (pl. S3) adatfájlok. Lásd: [Húsvét FromUrl dokumentáció](/docs/server-admin/datasets#cachefromurl) részletekért. Bob Simonsnak és Roy Mendelssohnnak köszönhetően (aki évek óta írja a scripteket, hogy kezelje a távoli adatkészletek helyi másolatait) Lloyd Cotten, Eugene Burger, Conor Delaney (amikor az Amazon Web Services volt) , és a Google Cloud platform.
          
-    * ÚJ: Az új EDDTableFromJsonlCSV osztály olvasható táblázatos adatokat
-         [JSON A CSV vonalak fájljai](https://jsonlines.org/examples/)   ("Jobb, mint a CSV") . Hála az Írországi Tengerészeti Intézetben dolgozó embereknek, hogy meséltek nekem erről a formátumról, valamint Eugene Burger-nek és PMEL-nek, hogy támogatták, mint bemeneti típust.
+    * ÚJ: Az új EDDTableFromJsonlCSV Az osztály elolvashatja a tabuláris adatokat
+         [JSON Lines CSV fájlok](https://jsonlines.org/examples/)   ("Better, mint CSV") ... A Marine Institute of Ireland munkatársainak köszönhetően, hogy elmondják nekem ezt a formátumot, és Eugene Burgernek és PMEL-nek, hogy kérje, hogy támogassa azt bemeneti típusként.
          
-    * ÚJ: minden EDDGrid és minden EDDTableFromFile adatállomány támogatja a&lt;nThreads &gt; beállítás ERDDAP™ hány szálat kell használni a kérelemre adott válasz esetén. Lásd a [nThreads dokumentáció](/docs/server-admin/datasets#nthreads) Részletekért. Köszönet Rob Bocheneknek az axiómai adattudománytól, Eugene Burger, Conor Delaney (amikor az Amazon Web Services-nél volt.) , és a Google Cloud Platform.
+    * ÚJ: Minden EDDGrid és az összes EDDTableFromFiles adatkészlet támogatja a&lt;nThreads&gt; beállítás, amely azt mondja ERDDAP™ hány szálat kell használni, amikor válaszol egy kérésre. Lásd: [nHreads dokumentáció](/docs/server-admin/datasets#nthreads) részletekért. Rob Bocheneknek Axiom Data Science, Eugene Burger, Conor Delaney (amikor az Amazon Web Services volt) és a Google Cloud platform.
          
-    * Új szabványosítás Mi az összes EDDTableFromFile alosztály -
-Korábban, ha egy adott változó, az értékek a fontos attribútumok (például: scale\\_factor , add\\_offset , missing\\_value ,\\ _ FillValue, units) nem volt következetes, EDDTableFromFiles választana egy értéket minden attribútum, hogy "érvényes" és jelölje fájlokat más attribútum értékek "rossz fájlok". Van egy rendszer, ami szabványosítja a fájlokat, amint az EDDTableFromFiles elolvassa a fájlokat. Lásd [EDDTableFromFile szabványosítása Mi?](/docs/server-admin/datasets#standardizewhat) . Az egyik ERDDAP a fő célja, hogy az adatfájlok és adatkészletek következetesen hozzáférhetők legyenek. szabványosítás Mi egy fontos új eszköz, hogy ez valósággá váljon. Hála Marco Albának, Margaret O 'Briennek (és egyéb EML-felhasználók) , BCO- DMO, and InPort users.
+    * NEW szabványosítás Mi minden EDDTableFromFiles alosztály számára -
+Korábban, ha egy adott változó, a fontos tulajdonságok értékei (pl.: scale\\_factor , add\\_offset , missing\\_value \\_FillValue, egység) Nem voltak következetesek, az EDDTableFromFiles egy értéket választana minden tulajdonság számára, hogy „értékesek” legyenek, és más tulajdonságokkal rendelkező fájlokat jelöljenek meg, mint a „Bad Files”. Most van egy rendszer, hogy szabványosítsa a fájlokat, amint az EDDTableFromFiles olvassa el a fájlokat. Lásd [EDDTableFromFile szabványosítása Amit](/docs/server-admin/datasets#standardizewhat) ... Az egyik ERDDAP A fő célja, hogy az adatfájlokat és adatkészleteket következetes módon hozzáférhetővé tegyék. szabványosítás Mi egy fontos új eszköz, hogy ez a valóság. Marco Albanak köszönhetően Margaret O'Brien (más EML felhasználók) BCO-DMO és InPort felhasználók.
          
-    * ÚJ EDDTableFromInvalidCRAFiles lehetővé teszi, hogy egy adatkészlet gyűjteménye NetCDF   (v3 vagy v4)   .nc a CF DSG Ragged Array egyedi, érvénytelen, változatát használó fájlok (CRA) fájlok. Mintafájlok ehhez az adatkészlettípushoz megtalálhatók az alábbi címen: https://data.nodc.noaa.gov/thredds/catalog/ncei/wod/   \\[ 2020- 10- 21 Ez a szerver már nem megbízható \\] . Bár ERDDAP™ támogatja ezt a fájltípust, ez egy érvénytelen fájltípus, amit senki sem kezdhet el használni. A jelenleg ezt a fájltípust használó csoportokat erősen ösztönzik az alkalmazásra ERDDAP™ érvényes CF DSG CRA fájlokat generálni és leállítani ezeket a fájlokat. Hála Ajay Krishnannek és Tim Boyernek.
+    * NEW EDDTableFromInvalidCRAFiles lehetővé teszi, hogy egy adatkészlet egy gyűjtemény NetCDF   (v3 vagy v4)   .nc fájlok, amelyek egy adott, érvénytelen, változata a CF DSG Contiguous Ragged Array (CRA) fájlok. A mintafájlok az adatkészlet típusához megtalálhatók https://data.nodc.noaa.gov/thredds/catalog/ncei/wod/   \\[ 2020-10-21 Ez a szerver most már nem megbízhatóan elérhető \\] ... Bár ERDDAP™ támogatja ezt a fájltípust, ez egy érvénytelen fájltípus, amelyet senkinek nem kell használnia. Azok a csoportok, amelyek jelenleg ezt a fájltípust használják, erősen ösztönzik a használatra ERDDAP™ hiteles CF DSG CRA fájlok generálására, és hagyja abba ezeket a fájlokat. Köszönhetően Ajay Krishnan és Tim Boyer.
          
-    * EDDTableFromThreddsFiles and EDDTableFrom Hyrax Az akták tönkrementek. Kérjük, váltson az EDDTableFromNcFiles-re (vagy változat) plusz&lt;cacheFromUrl &gt;. Ha ez nem működik valamilyen oknál fogva, email erd.data at noaa.gov . Ha 2020 előtt nem érkezik panasz, ezeket az adatkészlettípusokat el lehet távolítani.
+    * EDDTableFromThreddsFiles és EDDTableFrom Hyrax A fájlokat most levonják. Kérjük, váltson EDDTableFromNcFiles-re (vagy változat) plusz&lt;cacheFromUrl&gt; Ha ez valamilyen okból nem működik, e-mail erd.data at noaa.gov ... Ha 2020 előtt nincsenek panaszok, ezeket az adatkészleteket el lehet távolítani.
          
-    * JAVÍTOTT -- A nem-ISO 8601-szer ISO 8601-re történő automatikus átalakító rendszer (bevezetés v1.82-ben) jelentős mértékben kibővült, hogy számos további formátummal foglalkozzon. Ez az GenerateDatasetsXml és ERDDAP a forrásmetaadatok kezelése.
+    * IMPROVED - A rendszer automatikusan átalakítja a nem-ISO 8601-szer az ISO 8601-szer (bevezetett v1.82) Nagymértékben bővült, hogy számos további formátumot kezeljen. Ez befolyásolja a GenerateDatasetsXml-t és ERDDAP A forrás metaadatának kezelése.
          
-    * JAVÍTOTT -- A string time parsing rendszer harmadik jelentős felülvizsgálatával (és remélhetőleg az utolsó) , ERDDAP™ már nem használható Java DateTimeFormatic miatt hibák, amelyek néha a szélsőséges időkben (évek&lt;= 0000). ERDDAP™ Most a saját rendszerét használja idősztringek feldolgozásához.
+    * IMPROVED - Harmadik fő felülvizsgálatával a String Time parsing rendszer (és remélhetőleg az utolsó) , ERDDAP™ már nem használ Java A DateTimeFormatter olyan hibák miatt, amelyek néha szélsőséges időket érintenek (évek).&lt;=0000). ERDDAP™ most használja a saját rendszerét az időcsíkok elválasztására.
          
-    * FIGYELEM: Az új String idő parsing rendszer valamivel szigorúbb. Ha az egyik adatkészlet hirtelen csak hiányzó értékeket időértékek, az ok szinte biztosan, hogy az időformátum string kissé rossz. A naplóba hibajelzéseket kell beírni. a txt olyan időértékekhez kapcsolódik, amelyek nem egyeznek az időformátummal -- ami segít megjavítani az időformátum sztringet az adathoz. Ha segítségre van szüksége, használja az opciót ERDDAP 's Time Converter which "Convert \\[ sz \\] bármely közös sztring idő az ISO 8601 sztring időben "-- azt a formátumot jelzi, amit a konverter használt a forrássztring feldolgozásához.
+    * FIGYELMEZTETÉS: Az új sztrájkidő-parsing rendszer valamivel szigorúbb. Ha az egyik adatkészlet hirtelen csak hiányzik az időértékek, az ok szinte biztosan, hogy az idő formátuma sztring kissé rossz. Hibaüzeneteknek kell lenniük a naplóban. txt kapcsolódik az időértékekhez, amelyek nem feleltek meg az időformátumnak - ez segít abban, hogy megjavítsa az adott adatkészlethez tartozó időt formátumot. Ha segítségre van szüksége, használja a lehetőséget ERDDAP Time Converter, amely "Convert \\[ s \\] bármilyen közös sztringidő egy ISO 8601-es sztringidőbe" - jelzi azt a formátumot, amelyet a konverter használt a forráskód lezárásához.
          
-    * AJÁNLÁS: A leggyorsabb, legegyszerűbb és legolcsóbb módja a felgyorsításnak ERDDAP a táblázatos adatokhoz való hozzáférése egy Solid State Drive-on van. (SSD) . A legtöbb táblázatos adatkészlet viszonylag kicsi, így egy 1 vagy 2 TB SSD valószínűleg elegendő az összes adatfájl tárolására az összes táblázatos adatkészlethez. Az SSD-k végül elkopnak, ha adatokat írsz egy cellába, törlöd, és túl sokszor írsz új adatokat annak a sejtnek. Ehelyett azt javaslom, hogy (amennyire csak lehet.) Csak használja az SSD-t, hogy írja az adatokat egyszer, és olvassa el többször. Akkor még egy fogyasztónak is sokáig kell tartania, valószínűleg sokkal tovább, mint bármelyik Hard Disk Drive-nak. (HDD) . A fogyókúrás SSD-k most olcsók. (2018-ban ~ $200 1 TB vagy ~ $400 2 TB) és az árak még mindig gyorsan csökkennek. Mikor? ERDDAP™ Hozzáférés egy adatfájlhoz, egy SSD mindkét
+    * JELENTÉS: A leggyorsabb, legkönnyebb és legolcsóbb módja annak, hogy felgyorsuljon ERDDAP A mesés adatokhoz való hozzáférés az adatfájlok egy szilárd állami meghajtóra való elhelyezése (SSD) ... A legtöbb tabuláris adatkészlet viszonylag kicsi, így egy 1 vagy 2 TB SSD valószínűleg elegendő ahhoz, hogy az összes adatfájl tartsa az összes tabuláris adatkészletet. Az SSD végül viseli, ha adatokat ír egy cellára, törölje és írjon új adatokat a cellára túl sokszor. Ehelyett azt javaslom, hogy (a lehető legtöbbet) Használja az SSD-t, hogy egyszer írja az adatokat, és sokszor olvassa el. Ezután még egy fogyasztói minőségű SSD-nek is hosszú ideig kell tartania, valószínűleg sokkal hosszabb, mint bármely Hard Disk Drive (HDD) ... A fogyasztói minőségű SSD most olcsó (2018-ban, ~ $ 200 1 TB vagy ~ $ 400 2 TB) és az árak még mindig gyorsan csökkennek. Mikor ERDDAP™ hozzáférés egy adatfájlhoz, az SSD mindketten
         
-        * rövidebb késleltetés (~ 0.1 ms, versus ~ 3 ms egy HDD, versus ~ 10 (?) M for a RAID, versus ~ 55ms for Amazon S3) , és
-        * magasabb áttétel (~ 500 MB / S, versus ~ 75 MB / s a HDD versus ~ 500 MB / s a RAID) .
+        * rövidebb latencia (~0.1ms, versus ~ 3ms egy HDD, versus ~ 10 (?) ms egy RAID, versus ~ 55ms az Amazon S3 számára) és
+        * magasabb teljesítmény (500 MB/S, versus ~ 75 MB/s egy HDD versus ~ 500 MB/s egy RAID) ...
         
-Így fel tudsz jutni egy ~ 10X teljesítménynövelésre (vs HDD) 200 dollárért&#33; Összehasonlítva a rendszer többi lehetséges változásával (Egy új szerver $10,000-ért? Egy új RAID 35 ezer dollárért? Egy új hálózati kapcsoló 5000 dollárért? stb.) Ez messze a legjobb megtérülés a beruházások terén (ROI) . Ha a szerver nincs megtöltve memóriával, további memória a szerver is egy nagy és viszonylag olcsó módja annak, hogy gyorsítsa fel az összes szempontból ERDDAP .
-         \\[ Az SSD-k is jók lennének a rácsozott adatokhoz, de a legtöbb rácsozott adatkészlet sokkal nagyobb, így az SSD nagyon drága. \\]   
+Tehát felállhat egy ~ 10X teljesítménynövekedésre (vs HDD) 200 dollárért&#33; Összehasonlítva a rendszer legtöbb lehetséges változásával (Új kiszolgáló 100 000 dollárért? Új RAID 35 000 dollárért? egy új hálózati kapcsoló 5000 dollárért? stb.) Ez messze a legjobb visszatérés a beruházásra (ROI) ... Ha a szerver nem tölti be a memóriát, a szerver további memóriája szintén nagyszerű és viszonylag olcsó módja annak, hogy felgyorsítsa az összes szempontot ERDDAP ...
+         \\[ Az SSD nagyszerű lenne a rácsos adatokhoz is, de a legtöbb rácsos adatkészlet sokkal nagyobb, így az SSD nagyon drága. \\]   
          
-    * ÚJ: Mindenki, aki bejelentkezett kap szerepet = \\[ Bárkit In \\] , még akkor is, ha nincs&lt;felhasználó &gt; címkék datasets.xml . Ha beállítod az adatokat&lt;accessibleTo &gt; to \\[ Bárkit In \\] , akkor bárki, aki bejelentkezett ERDDAP™   (például a Gmail vagy az Orcid fiókkal) Felhatalmazást kap, hogy hozzáférjen az adatkészlethez, még akkor is, ha nem adott meg&lt;felhasználó &gt; címkék datasets.xml . Köszönet Maurice Libes-nek.
+    * ÚJ: Mindenki, aki be van jelentkezve, szerepet kap = \\[ bárkit megadva Inkább \\] még akkor is, ha nincs&lt;felhasználói&gt; címke számukra datasets.xml ... Ha beállítása adatkészlet&lt;hozzáférhetőTo&gt; \\[ bárkit megadva Inkább \\] Akkor bárki, aki bejelentett ERDDAP™   (pl. Gmail vagy Orcid fiókjukon keresztül) engedélyezik az adatkészlethez való hozzáférést, még akkor is, ha nem adott meg egyet&lt;felhasználói&gt; címke számukra datasets.xml ... Maurice Libesnek köszönhetően.
          
-    * JAVASOLT: UDUNITS / UCUM egységek konverter jelentősen javult.
-Az érvénytelen egységek húrjait jobban kezeli. (az információ megőrzésére helyezett hangsúllyal kezdve, az érvényesség érvényesítése helyett) . Továbbá, az eredmények most már szabványos szintaxis.
+    * IMPROVED: A UDUNITS /UCUM egység átalakító széles körben javult.
+Az érvénytelen egységeket jobban kezeli (hangsúlyt fektetve az információk megőrzésére, ahelyett, hogy érvényességet érne el) ... Az eredmények most egy szabványosított szinaxis.
          
-    * ÚJ: A UDUNITS / UCUM egységek átalakító van egy új lehetőség szabványosítani a UDUNITS Húr.
-Ez jól működik érvényes UDUNITS strings és ésszerűen jól nem standard / érvénytelen UDUNITS A húrok. Például, UDUNITS = "méter per másodperc", "méter / másodperc", "m.s^-1" , és "m s-1" "M.s- 1". Erre az új szabványosításhoz volt szükség. A fent leírt rendszer. Hála Marco Albának, Margaret O 'Briennek (és egyéb EML-felhasználók) , BCO- DMO, and InPort users.
+    * ÚJ: A UDUNITS /UCUM egység átalakító új lehetőség a szabványosítására UDUNITS húr.
+Ez jól működik érvényesnek UDUNITS húrok és ésszerűen jól a nem szabványos / érvénytelen UDUNITS húrok. Például például, UDUNITS ="méter másodpercenként", "mérő/második", "m.s^-1" és "m s-1" Minden visszatér "m.s-1". Ez szükséges volt az új szabványosításhoz Milyen rendszert írtak le fent. Marco Albanak köszönhetően Margaret O'Brien (más EML felhasználók) BCO-DMO és InPort felhasználók.
          
-    * ÚJ: EDDTableFromMMultidimNcFiles most egy [Kezelés Méretek](/docs/server-admin/datasets#treatdimensionsas) opció, amely jelzi ERDDAP™ bizonyos méretek kezelése (pl. LAT és LON) mintha más dimenziók lennének. (pl. TIME) . Ez hasznos néhány hibás fájlnál, amelyek különböző dimenziókat használnak különböző változókhoz, amikor csak egy dimenziót kellett volna használniuk. (pl. TIME) . Hála Marco Albának és Maurice Libesnek.
+    * EDDTableFromMultidimNcFiles most van egy [ADimensions](/docs/server-admin/datasets#treatdimensionsas) opció, ez azt mondja ERDDAP™ bizonyos dimenziók kezelésére (LAT és LON) mintha más dimenziók lennének (pl.: TIME) ... Ez hasznos néhány helytelen fájl esetében, amelyek különböző dimenziókat használnak különböző változók számára, amikor csak egy dimenziót kellett volna használniuk. (pl.: TIME) ... Marco Albanak és Maurice Libesnek köszönhetően.
          
-    * Most mindenki EDDGrid A fájlok adatai egy új speciális tengelyt támogatnak sourceName ami elárulja ERDDAP™ a fájlnévből származó információk kinyerése (Csak filename.ext) és használja az értéket, hogy **helyettesítés** a bal oldali tengely jelenlegi értéke. A formátum:
-        \\*\\*\\ * helyettesítő FromFileName, _ dataType _, _ extractRegex _, _ captureGroupNumber _
-Lásd [Ez a dokumentáció](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Hála a NOAA Pathfinder Napi összesítési adatok.
+    * ÚJ: Most, minden EDDGrid A Files adatkészletek egy új különleges tengelyt támogatnak sourceName amit mond ERDDAP™ információ kivonása a fájlbólName (Just filename.ext) és használja az értéket **helyettesítő** a meglévő baloldali tengelyérték. A formátum az
+        \\*\\*\\*replaceFromFileName,_dataType_,_extractRegex_,_captureGroupNumber_
+Lásd [ez a dokumentáció](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) ... Köszönöm a NOAA Pathfinder Daily aggregációs adatkészlet.
          
-    * Most mindenki EDDGrid A fájlok adatai egy új speciális tengelyt támogatnak sourceName ami elárulja ERDDAP™ a fájl pathName-jából származó információk kinyerése (könyvtárak + filename.ext)   
-        \\*\\*\\ * path Name, _ dataType _, _ extractRegex _, _ captureGroupNumber _
-Ehhez a menetvonal neve mindig '/' mint könyvtárelválasztó karakter, soha '\\'.
-Lásd [Ez a dokumentáció](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Hála Paloma de la Vallee-nek.
+    * ÚJ: Most, minden EDDGrid A Files adatkészletek egy új különleges tengelyt támogatnak sourceName amit mond ERDDAP™ információ kinyerése a fájl útjárólName (könyvtárak + filename.ext)   
+        \\*\\*\\*pathName,_dataType_,_extractRegex_,_captureGroupNumber_
+Ehhez az út neve mindig használja '/' mint a rendezői szeparátor karakter, soha nem ''.
+Lásd [ez a dokumentáció](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) ... Paloma de la Vallee-nek köszönhetően.
          
-    * Az összes EDDTableFrom... A fájlok adatai további pszeudo változót támogatnak sourceName s a fájl fájlnevéből származó információkat (Csak filename.ext)   (Látod? [\\*\\*\\ * fájlnév](/docs/server-admin/datasets#filename-sourcenames) ) vagy a fájl teljes pathName (/ dir1 / dir2 / filename.ext)   (Látod? [\\*\\*\\ * path Name](/docs/server-admin/datasets#pathname-sourcenames) ) . Hála Paloma de la Vallee-nek.
+    * ÚJ: Most, minden EDDTableFrom... A Files adatkészletek további pseudo változót támogatnak sourceName s, amely kivonja az információkat a fájl fájlbólName (Just filename.ext)   (lásd: [\\*\\*\\*fileName](/docs/server-admin/datasets#filename-sourcenames) ) vagy a fájl teljes útjaName (/dir1/dir2/filename.ext)   (lásd: [\\*\\*PathName](/docs/server-admin/datasets#pathname-sourcenames) ) ... Paloma de la Vallee-nek köszönhetően.
          
-    * ÚJ: ha EDDGrid az adatkészlet egy vagy több igen nagy méretű (például értékek milliói) ami sok emléket vesz fel, akkor állítsa be az új [&lt;DimensionValuesInMemory &gt;] (/ docs / server- admin / datasets # dimensionvalisinmemory) hamis (az alapértelmezés igaz) , ami miatt az adatkészlet tárolja az értékeket a lemezen, és szükség esetén visszaszerezze azokat. Hála David Rodriguez-nek és Rich Signell-nek (: EDDGrid FromAudioFiles) .
+    * NEW: Ha egy EDDGrid Az adatkészletnek egy vagy több nagyon nagy dimenziója van (több millió érték) amely sok memóriát vesz fel, beállíthatja az újat [&lt;dimenzióValuesInMemory&gt;] (/docs/server-admin/datasets#dimenziós érzékszervi) beállítás hamis (az alapértelmezés igaz) , amely az adathalmazt okozza, hogy tárolja az értékeket a lemezen, és szükség esetén visszaszerezze őket. David Rodrigueznak és Rich Signellnek köszönhetően (Re: EDDGrid FromAudioFiles) ...
          
-    * JAVÍTÁS: Korábban, ha újra megrendelte a dataVariable s egy EDDTableFromFiles adatállományhoz és az adatállományhoz, az EDDTableFromFiles újraolvasná az összes adatállományt. Az átsorolás az összes adatfájl újraolvasása nélkül is megoldható. Hála Roland Schweitzernek.
+    * Előzőleg, ha újrarendelte a dataVariable s egy EDDTableFromFiles adatkészlet és újratölteni az adatkészletet, az EDDTableFromFiles újraolvasná az összes adatlapot. Most foglalkozhat a helyreállítással anélkül, hogy újraolvasná az összes adatfájlot. Roland Schweitzernek köszönhetően.
          
-    * JAVÍTOTT: Most, amikor ERDDAP™ ASCII, NCCSV és JSON Lines CSV táblázatos adatfájlokat olvas, ha hibát talál egy adott sorban (pl. a tételek helytelen száma) Ez egy figyelmeztető üzenet. ("FIGYELEM: A sor elhagyása"...) a [log.txt fájl](/docs/server-admin/additional-information#log) majd tovább olvassa az adatfájl többi részét. Ezért a te felelősséged, hogy rendszeresen nézz körül. (vagy írni egy szkriptet, hogy ezt) Az üzenet a naplóban. txt, hogy meg tudd oldani az adatfájlok problémáit. ERDDAP™ úgy van kialakítva, hogy a felhasználók továbbra is el tudják olvasni az összes érvényes adatot, annak ellenére, hogy a fájl egyes soraiban hibák vannak. Korábban... ERDDAP™ megjelölte a fájlt "rossz", és eltávolította az adatkészletből.
+    * IMPROVED: Most, amikor ERDDAP™ Olvassa el az ASCII-t, az NCCSV-t és a JSON Lines CSV tabuláris adatfájlokat, ha hibát talál egy adott sorban (pl. helytelen számú elem) figyelmeztető üzenetet jelent ("WARNING: Skipping sor #"... "váratlan számú elem...") a [log.txt fájl](/docs/server-admin/additional-information#log) Ezután továbbra is olvassa el az adatfájl többi részét. Így a te felelősséged rendszeresen nézni (vagy írjon egy forgatókönyvet, hogy ezt tegye) az üzenet a logban. txt, hogy rögzítse a problémákat az adatfájlokban. ERDDAP™ így van beállítva, hogy a felhasználók továbbra is elolvassák az összes rendelkezésre álló érvényes adatot, még akkor is, ha a fájl egyes vonalak hibái vannak. Korábban, ERDDAP™ a fájlt "rosszként" jelezte, és eltávolította az adatkészletből.
          
-    * JAVASOLT: Pontos időpontokban (például a legközelebbi második vagy ezredfordulóra) a forrásnál tárolják "percek óta"... (vagy nagyobb egységek) , ERDDAP™ most kerekíti őket a legközelebbi milliszekundum, amikor leolvassa az értékeket ERDDAP . Ellenkező esetben a lebegő pontok száma sérült, és az adatok kérése meghatározott időpontokban (pl., & time = 2018- 06- 15T01: 30: 00) nem sikerül. Korábban a lehető legpontosabban kiszámította őket. (és még akkor is, ha az egységek például "másodpercek óta" vagy "ezredmásodperc óta"...) . A legjobb elkerülni ezt a problémát nem használ nagy egységek (pl. perc vagy óra) pontos időértékek tárolása (pl. mikroszekundum) -- a számítógépek rosszul kezelik a tizedesjegyeket. Hála Marco Albának.
+    * IMPROVED: Amikor pontos idők (pl. a legközelebbi második vagy millisecond) tárolják a forrás, mint "percek óta ..." (vagy nagyobb egység) , ERDDAP™ most a legközelebbi milliszekundra kerekíti őket, amikor az értékeket beolvassa ERDDAP ... Ellenkező esetben a lebegő pontszámokat súlyosbítják, és bizonyos időpontokban kérik az adatokat (pl.: &time=2018-06-15T01:30:00) kudarcot vall. Korábban a lehető legpontosabban kiszámította őket (és még mindig, ha az egységek pl. „második azóta...” vagy „milliseconds óta...”) ... A legjobb, ha elkerüljük ezt a problémát, ha nem használunk nagy egységeket (pl. percek vagy órák) pontos időértékek tárolása (pl. mikro másodpercek) - a számítógépek rossz munkát végeznek a decimális számjegyek kezelésében. Marco Albanak köszönhetően.
          
-    * VÁLTOZÁSOK EDDTableFrom felé EDDGrid ami sokkal jobbá teszi. EDDTableFrom EDDGrid lehetővé teszi a felhasználók lekérdezését, mintha táblázatos adatkészletek lennének ("Kérdés érték szerint") .
+    * CHANGES EDDTableF EDDGrid ami sokkal jobbá teszi. EDDTableFrom EDDGrid lehetővé teszi a felhasználók számára, hogy lekérdezzék a rácsos adatkészleteket, mintha mesés adatkészletek lennének ("Kérdezés érték szerint") ...
         
-        * Ez most támogatja a&lt;maxAxis0 &gt; tag (alapértelmezés = 10) amely meghatározza a tengely maximális számát \\[ 0 \\]   (általában "time" ) olyan értékek, amelyek egyszerre kérdőjelezhetők meg. Ez megakadályozza a naiv kéréseket, hogy EDDTableFrom EDDGrid egy teljes gridded adatkészlet keresése (ami egy időtúllépési hiba esetén nem működne) .
-        * GenerateDatasets Xml most már van egy lehetőség, hogy EDDTableFrom EDDGrid adatkészletek az adott adatállományhoz tartozó összes rácsozott adatkészlethez ERDDAP™ amely megfelel egy meghatározott regexnek (használja.\\ * az összes adatkészlethez) . Az általa létrehozott adatkészleteknek az összefoglaló attribútumban további információik vannak, amelyek szerint ez egy rácsozott adatkészlet táblázatos változata. És a datasetID a datasetID a rácsozott adatkészlet, plusz "\\ _ AsATable".
-        * Van egy nagy sebesség fel a leggyakoribb beállítás: amikor a gridded adatkészlet EDDGrid FromErddap dataset that is the same ERDDAP .
+        * Ez most támogatja a&lt;maxAxis0&gt; címke (default=10) amely meghatározza a maximális tengelyszámot \\[ 0 0 \\]   (általában "time" ) olyan értékek, amelyek egyszerre lekérhetők. Ez megakadályozza a naiv kérelmeket, hogy EDDTableF-t kapjanak EDDGrid keressen egy teljes rácsos adatkészletet (amely elbukik az időzítési hiba miatt) ...
+        * GenerateDatasets Az Xml most lehetősége van az EDDTableF létrehozására EDDGrid adatkészletek az összes rácsos adatkészlethez egy adott ERDDAP™ amely megfelel egy meghatározott regexnek (Használjon .\\*-t az összes adatkészlethez) ... Azok az adatkészletek, amelyeket létrehoz, további információkat tartalmaznak az összefoglaló jellemzőkben, jelezve, hogy ez egy takaró változata egy rácsos adatkészletnek. És az ő datasetID az datasetID a rácsos adatkészlet, plusz "\\_Asatable".
+        * Nagy sebességgel jár a leggyakoribb beállításhoz: ha a rácsos adatkészlet egy EDDGrid FromErddap adatkészlet, amely ugyanabban az esetben van ERDDAP ...
         
-Hála James Gallaghernek és Ed Armstrongnak.
+James Gallaghernek és Ed Armstrongnak köszönhetően.
          
-    * ÚJ: generálás Adatbázisok Xml minden típusú adatkészlet most sokkal valószínűbb, hogy adjunk hozzá egy\\ _ FillValue vagy missing\\_value attribútum numerikus változóhoz addAttributes . Például ez akkor fordul elő, amikor a sztring hiányzik az értékjelzőkből (pl. ","., "?", "NA", "nd", "NaN") az adott változót a mintafájlban át kell alakítani ERDDAP az eredeti hiányzó értékek (127 bájt oszlopokban, 32767 rövid oszlopokban, 2147483647 int oszlopokban, 9223372036854775807 hosszú oszlopokban, és NaN úszó és kettős változók) . Ez is előfordul a NaN értékek úszó és dupla változók. Az "nd" -t is felvették a numerikus adatoszlopokban található közös hiányzó értékjelölők listájára, ERDDAP™ Meg kell keresnem. Hála Matt Biddle-nek a BCO- DMO-ból.
+    * NEW: generáció Adatkészletek Az Xml minden típusú adatkészlethez sokkal valószínűbb, hogy hozzáad egy \\_FillValue-t vagy missing\\_value a numerikus változó tulajdonságai addAttributes ... Például ez akkor következik be, amikor a szúrás hiányzó értékjelzők (pl.: "", "?", "NA", "nd", "NaN",) a mintafájlban ez a változó átalakul ERDDAP natív hiányzó értékek (127 byte oszlopban, 32767 rövid oszlopokban, 2147483647 int oszlopok, 9223372036854775807 hosszú oszlopokban és a NaN floatban és kettős változóban) ... Ez is előfordul a NaN értékek float és dupla változók. Továbbá a "nd"-t hozzáadták a számszerű adatoszlopok közös hiányzó értékjelzőinek listájához, amelyeket ERDDAP™ keresni kell. A BCO-DMO Matt Biddle-nek köszönhetően.
          
-    * JAVÍTOTT: az ncdump opció generálása Adatbázisok Az Xml most már inkább ncdump. (de még mindig használja a netcdf- java változata ncdump) . Most kinyomtatja a lehetőségek új listáját. Most pedig... .nc ml fájlok, ez kinyomtatja az ncdump kimenetet az eredmény .nc ml fájlváltozások az alapra .nc vagy .hdf akta.
+    * IMPROVED: a ncdump opció generál Adatkészletek Xml most több, mint a ncdump (de még mindig használja a ncdump netcdf-java verzióját) ... Most új listát nyomtat a lehetőségekről. Most, mert .nc ml fájlok, kinyomtatja a ncdump kimenetet az eredményért .nc ml fájlváltozások az alapul szolgáló .nc vagy .hdf fájl.
          
-    * BUG FIX: Volt egy fájlkiszivárogtatás. (végül okozza ERDDAP™ lefagyasztani) bizonyos típusú kimeneti fájlok, például .geotif létrehozásakor keletkezett hiba. Azt hiszem, remélem, ez most már megoldódott. Ha még mindig problémákat lát, kérem, mondja el, milyen típusú adatkészlet (rács vagy táblázat) és a fájl típusát, amely okozza a problémát. Hála Steven Beale-nek, Lynn DeWitt-nek, Jibei Zhao-nak és másoknak.
+    * BUG FIX: Volt egy fájlkezelő szivárgás (végül okozza ERDDAP™ fagyasztani) egyes típusú kimeneti fájlok létrehozásakor, például .geotif, különösen akkor, ha hibák történtek a létrehozás során. Azt hiszem / remélem, ez most minden rögzített. Ha még mindig látsz problémákat, mondd el nekem az adatkészlet típusát (háló vagy asztal) és a probléma okozó fájl típusa. Steven Beale, Lynn DeWitt, Jibei Zhao és másoknak köszönhetően.
          
-    * BUG FIX: A WMS   Leaflet A demo nem teljesen / megfelelően alakította át a "mélység" tengelyt "magasságra". De igen, és a megtört legendák kérései meg vannak javítva. Is, minden tengely opciók a drop-down listák mindig emelkedő rendezett sorrendben. Hála Antoine Queric-nek és Aurelie Briand-nek.
+    * BUG FIX: A WMS   Leaflet A demó nem teljesen / tulajdonképpen átalakította a "mély" tengelyt a "felemelkedéshez". Most, ez teszi, és a törött legenda kérések rögzítve vannak. Továbbá az összes tengely opció a lefelé irányuló listák mindig felemelkedő rendezés. Antoine Queric és Aurelie Briandnak köszönhetően.
          
-    * BUG FIX: EDDTableFromFiles most helyesen támogatja a string változók korlátozásait, amelyek az adatfájlok char változóiból jöttek létre. Hála Antoine Queric-nek és Aurelie Briand-nek.
+    * BUG FIX: Az EDDTableFromFiles jelenleg helyesen támogatja a String változókat, amelyeket az adatfájlokban a char változókból hoztak létre. Antoine Queric és Aurelie Briandnak köszönhetően.
          
-    * BUG FIX: Amikor egy adatkészlet elérhetetlenné válik, az adatkészlet megpróbálja értesíteni ("Ez az adat jelenleg nem elérhető".) előfizetői, jegyzett tevékenységei, rss és lonPM180 adatkészletei, amelyek rá támaszkodnak. Hála Roy Mendelssohn-nak és Bob Simons-nak.
+    * BUG FIX: Most, amikor egy adatkészlet nem érhető el, az adatkészlet megpróbálja értesíteni („Ez az adatkészlet jelenleg nem érhető el.”) előfizetői, felsorolt fellépései, rss és lonPM180 adatkészletei, amelyek rá támaszkodnak. Roy Mendelssohnnak és Bob Simonoknak köszönhetően.
          
-    * BUG FIX: Két hiba az EDDTableCopy-hoz kapcsolódik. Hála Sam McClatchie-nek.
+    * BUG FIX: Két hiba az EDDTableCopy-hoz kapcsolódó. Sam McClatchie-nak köszönhetően.
          
-    * JAVASOLT: A sikertelen kérések száma a status.html oldalon növekszik, mert több dolog számít hibának, mint korábban.
+    * IMPROVED: A status.html oldalon bemutatott sikertelen kérések száma növekedni fog, mert több dolog számít kudarcnak, mint korábban.
          
-    * JAVÍTOTT: ERDDAP Status.html most mutatja "Kérések (középértékek ms-ban) "az idősorozatban. Az előző részek tartalmából:
+    * IMPROVED: ERDDAP A status.html most azt mutatja, hogy "Requests (medián idő ms) "A sorozatban. Korábban a medián időket mutatták be az integráló másodpercekre.
          
-    * JAVÍTOTT: A jsonld kimenetben a jsonld "név" most jön a dataset "title" in ERDDAP , és a jsonld "főcím" most jön a dataset " datasetID " ERDDAP . Az előző részek tartalmából: Ez nem tűnik helyesnek, mert a normál angol használat, "név" általában egy rövid, (ideális esetben) egyedi azonosító, amely ritkán / soha nem változik (például Robert Middlename Simons) , nem egy leírás, amely nem egyedi, és amely könnyen és gyakran változik (Például, "Egy srác, aki szoftvereket ír NOAA "vs." Egy magas srác, aki szoftvereket ír NOAA ") . Jó lenne, ha a séma.org definíciója [Név](https://schema.org/name) A Dataset keretében konkrétabban fogalmaztak. A szoftverfejlesztők számára lehetővé kell tenni, hogy a termékleíráson alapuló termékleírás végrehajtását a szakértők útmutatása nélkül írhassák meg. De én a Google-t választom. (különösen Natasha Noy) , NCEI (nevezetesen John Relph) és Rob Fuller.
+    * IMPROVED: A jsonld kimenetben a jsonld "név" most az adatkészletből származik "title" benne ERDDAP , és a jsonld "fejvonal" most az adatkészlet " datasetID "A ERDDAP ... Korábban megfordították. Ez rossznak tűnik számomra, mert a normál angol használatban a "név" általában rövid, (ideális) egyedi azonosító, amely ritkán/soha nem változik (Robert Middlename Simons) nem olyan leírás, amely nem egyedi, és amely könnyen és gyakran változhat (pl.: "A srác, aki szoftvert ír NOAA "Vs. "A magas srác, aki szoftvert ír NOAA "...") ... Gee, nagyszerű lenne, ha a schema.org meghatározása [név](https://schema.org/name) A Dataset kontextusában konkrétabbak voltak. A szoftverfejlesztőknek képesnek kell lenniük arra, hogy egyedül a specifikáción alapuló specifikációt írják le a szakértők útmutatása nélkül. De elhalasztom a Google-t (nevezetesen Natasha Noy) NCEI (John Relph) Rob Fuller.
          
-    * JAVÍTOTT: A jsonld kimenetben a négy "spatialCoverage GeoShape box" érték minLat minLon maxLat maxLon. Az előző részek tartalmából: Jó lenne, ha a séma.org definíciója [GeoShape](https://schema.org/GeoShape) Meghatározta a helyes parancsot. A szoftverfejlesztők számára lehetővé kell tenni, hogy a termékleíráson alapuló termékleírás végrehajtását a szakértők útmutatása nélkül írhassák meg. Hála Natasha Noy-nak és Rob Fullernek.
+    * IMPROVED: A jsonld kimenetben a négy "spatialCoverage GeoShape box" értéke most minLat minLat maxLat maxLon. Korábban a lat és a lon pozíciókat visszafordították. Gee, nagyszerű lenne, ha a schema.org meghatározása [GeoShape](https://schema.org/GeoShape) meghatározta a helyes rendet. A szoftverfejlesztőknek képesnek kell lenniük arra, hogy egyedül a specifikáción alapuló specifikációt írják le a szakértők útmutatása nélkül. Natasha Noynak és Rob Fullernek köszönhetően.
 
-## Változat 1.82{#version-182} 
- (released 08- 01- 26) 
+## Verzió 1.82{#version-182} 
+ (megjelent 2018-01-26) 
 
-*    **Új jellemzők (felhasználók számára) :**   
+*    **Új funkciók (felhasználók számára) :**   
      
-    * Számos finom változások a megjelenés és érzés ERDDAP™ weboldalak.
-        * JAVÍTOTT: ERDDAP™ most HTML 5-öt használ, és jobban használja a CSS-t.
-        * JAVASOLT: A weboldalakat kissé módosították, hogy tisztábbak és kevésbé "elfoglaltak" legyenek. (Még mindig sűrű, és még mindig vannak dolgok, amikről panaszkodhatunk, de remélhetőleg sokkal kevésbé, mint korábban.) Köszönet John Kerfootnak néhány megjegyzésért.
-        * JAVASOLT: A weboldalak most már sokkal jobban néznek ki a mobiltelefonok és más kis eszközök, különösen, ha használja őket tájképi orientáció. Ők is jobban néz ki nagyon kicsi és nagyon nagy ablakok asztali böngészők.
-        * JAVASOLT: A biztonság és más okok javítása érdekében, egy elavult Openlayers verzió használata WMS A bemutató oldalak helyébe a következő szöveg lép: Leaflet .
-        * ÚJ: a kép-, hang- és videofájlok előnézetének támogatása "files" rendszer (például: [Ez a vizsgálati adatkészlet](https://coastwatch.pfeg.noaa.gov/erddap/files/testMediaFiles/ShouldWork/) ) és .htmlTable válasz, ha egy sejt kép-, hang- vagy videofájl URL-jével rendelkezik (például: [a kérelem](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/testMediaFiles.htmlTable?url%2Cname%2ClastModified%2Csize%2CfileType%26url=~%22.*ShouldWork.*%22) ) . Ha egy '?' ikon fölött lebeg, akkor egy képet, audiót vagy videó fájl előnézetet kell látnia. A fájllinkre kattintva megtekintheti a teljes képernyőt a böngészőben. Lásd a [Médiafájlok dokumentációja](/docs/server-admin/datasets#media-files) . Vegye figyelembe, hogy a különböző böngészők különböző fájltípusokat támogatnak, így előfordulhat, hogy a példák nem működnek a böngészőben.
-Köszönet ezeknek az embereknek / linkeknek az ötletekért és a CSS- csak képtippek mintakódjáért (volt https://codepen.io/electricalbah/pen/eJRLVd ) és késleltetett képbetöltés (volt https://varvy.com/pagespeed/defer-images.html )   (Bár a kódot a használat előtt módosították ERDDAP ) .
-Köszönet Cara Wilsonnak, Matthew Austinnak és Adam Shepherdnek / BCO- DMO-nak a képtámogatásért.
-Hála Jim Potemrának, Rich Signellnek, OOI-nak és Carrie Wall Bellnek az audió / hidrofon fájl támogatás iránti kérésekért.
-Hála az OOI-nak, hogy megmutatta, szükség van videóra.
-        * ÚJ: Az adatok bármely részhalmaza ERDDAP™ dataset (de általában egy adatkészlet audio fájlokból) most menthető egy .wav audio fájlban. ( [dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#wav) ) Hála Jim Potemrának, Rich Signellnek, OOI-nak és Carrie Wall Bellnek az audió / hidrofon fájl támogatás iránti kérésekért.
-        * JAVÍTOTT: A formátum a webes elérhetõ mappák (WAF)   (pl. a / fájlok / mappák) frissítve van HTML tábla használatához. Az új formátum az Apache újabb verziói által létrehozott weboldalak listázásának újabb verzióját utánozza. Az emberek rá fognak jönni, hogy a változások megkönnyítik az információ olvasását. Szoftver, amely ezeket a dokumentumokat tartalmazza (például az ISO 19115 dokumentumok gyűjtésére szolgáló szoftver ERDDAP ) felül kell vizsgálni, de az új formátumot könnyebb feldolgozni, mint az előző formátumot. (Figyelem, Anna Milan.) 
-        * ÚJ outOfDateDatasets.html oldal. ( [példa](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) ) Ezen a weboldalon látható egy táblázat az összes közel-real-time adatok, amelyek&lt; testOutOfDate &gt; címke (lásd alább) , rangsorolva, hogy az adatok mennyire elavultak. Ez a műszerfal hasznos lehet ERDDAP™ adminisztrátorok és végfelhasználók, ha tudni akarják, hogy mely adatkészletek elavultak. A dátumon kívüli adatok esetében feltehetően probléma van az adatforrással, így ERDDAP™ nem képes adatokat látni / beszerezni újabb időpontokból.
-Administrators: Ha nem akar Out- Of- Date Datasets weboldalt, ezt adja hozzá a setup.xml:
-            &lt;OfDateDatasetActive &gt; hamis&lt;/ OfDateDatasetActive &gt;
-Most már vannak. testOutOfDate és ki OfDate oszlopok a allDatasets Dataset.
-Köszönet Bob Simons-nak, aki évek óta ezt akarta, és az Írország Tengerészeti Intézetének okos embereinek, akik a Raspberry Pi-n és a monitoron keresztül ihletet adtak, ami mindig egy ilyen képernyőt mutat az irodájukban.
-        * JAVÍTOTT: .htmlTable és .xhtml a válasz most már jobban formázott, kompakt, és így gyorsabb. Hála a HTML5-nek és a CSS-nek.
-    * Új kimeneti fájltípus a griddap adatállományokhoz: .timeGaps. A táblázat a középértéknél nagyobb időértékek hiányosságait mutatja. ( [példa](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMHchla8day.timeGaps) ) Ez hasznos ERDDAP™ rendszergazdák és végfelhasználók, ha azt szeretnék tudni, hogy vannak-e váratlan hiányosságok az idő értékek egy adatkészlet, amely várhatóan rendszeresen osztott idő értékek. Köszönet Bob Simons-nak és Roy Mendelssohn-nak, akinek szüksége volt erre a funkcióra.
-    * JAVASOLT: Az alapértelmezett grafikon a allDatasets dataset most egy térkép x = maxLon és y = maxLat. Hála John Kerfootnak, Rich Signell-nek és OOL-CI-nak.
-    * ÚJ: [erddapy](https://github.com/ioos/erddapy) -- nem egy ERDDAP™ funkció, de lesz érdekes sok ERDDAP™ felhasználók. Erddapy ( ERDDAP™ + Python ) a Python könyvtár által létrehozott Filipe Fernandes, hogy "kihasználja a ERDDAP s RESTful web szolgáltatások és létrehozza a ERDDAP™ URL bármilyen kérés, mint a keresés adatkészletek, metaadatok megszerzése, letöltés, stb ". Hála Filipe Fernandesnek.
-    * Már korábban is említenem kellett volna: Van egy harmadik fél R csomag célja, hogy könnyebb dolgozni ERDDAP™ R-en belülről: [regddap](https://github.com/ropensci/rerddap#rerddap) . Köszönöm [rOpenSci](https://ropensci.org/) és Roy Mendelssohn.
+    * Számos finom változás a megjelenés és az érzék ERDDAP™ weboldalak.
+        * IMPROVED: ERDDAP™ most használja a HTML 5-et, és jobban használja a CSS-t.
+        * IMPROVED: Az oldalak kissé módosítottak, hogy tisztábbá és kevésbé "vásárlási". (Még mindig sűrűek, és még mindig vannak dolgok, amikre panaszkodni lehet, de remélhetőleg sokkal kevésbé, mint korábban.) John Kerfootnak köszönhetően néhány megjegyzésért.
+        * IMPROVED: A weboldalak most sokkal jobban néznek ki a mobiltelefonokon és más kis eszközökön, különösen akkor, ha táj-orientációban használják őket. Ők is jobban néznek ki nagyon kicsi és nagyon nagy ablakok asztali böngészők.
+        * IMPROVED: A biztonság javítása és egyéb okok, a naprakész Openlayers verzió használata a WMS a demonstrációs oldalakat felváltotta Leaflet ...
+        * NEW: a kép, az audio és a videofájlok előnézetének támogatása "files" rendszerrendszer (például, [ez a vizsgálati adatkészlet](https://coastwatch.pfeg.noaa.gov/erddap/files/testMediaFiles/ShouldWork/) ) és .htmlTable válaszok, ha egy cella rendelkezik egy kép, audio vagy videofájl URL-ével (például, [e kérelem](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/testMediaFiles.htmlTable?url%2Cname%2ClastModified%2Csize%2CfileType%26url=~%22.*ShouldWork.*%22) ) ... Ha egy "?" ikon felett forogsz, meg kell nézned egy képet, hangot vagy videofájl előnézetet. Ezután kattintson a fájl linkre, hogy megnézze a fájl teljes képernyőjét a böngészőben. Lásd: [Media Files dokumentáció](/docs/server-admin/datasets#media-files) ... Vegye figyelembe, hogy a különböző böngészők különböző fájltípusokat támogatnak, így a példák nem működhetnek a böngészőben.
+Ezeknek az embereknek/linkeknek köszönhetően ötletek és minta kód CSS-csak kép tooltips (volt https://codepen.io/electricalbah/pen/eJRLVd ) és elhalasztott képterhelést (volt https://varvy.com/pagespeed/defer-images.html )   (bár a kódot módosították, mielőtt használták ERDDAP ) ...
+Cara Wilsonnak, Matthew Austinnak és Adam Shepherd/BCO-DMO-nak köszönhetően a kép támogatás iránti kérelmekért.
+Köszönhetően Jim Potemra, Rich Signell, OOI és Carrie Wall Bell az audio / hidrofon fájl támogatás iránti kérelmekért.
+Az OOI-nak köszönhetően, hogy megmutassa a videó támogatás szükségességét.
+        * ÚJ: Az adatok bármilyen adatkészlete ERDDAP™ adatkészlet (de általában egy adatkészlet az audio fájlokból) most meg lehet menteni egy .wav audio fájlban. ( [dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#wav) ) Köszönhetően Jim Potemra, Rich Signell, OOI és Carrie Wall Bell az audio / hidrofon fájl támogatás iránti kérelmekért.
+        * IMPROVED: A web hozzáférhető mappák formátuma (WAF)   (pl. a /files/ mappa) A HTML asztal használatára frissítették. Az új formátum az Apache legújabb verziói által létrehozott weblapok listájának legújabb verzióját jelenti. Az emberek azt fogják találni, hogy a változások megkönnyítik az olvasást. Szoftver, amely elválasztja ezeket a dokumentumokat (pl. olyan szoftver, amely betakarítja az ISO 19115 dokumentumokat ERDDAP ) felül kell vizsgálni, de az új formátum könnyebb lesz párosítani, mint az előző formátum. (Figyelem, Anna Milan.) 
+        * Új outOfDateDatasets.html oldal. ( [példa](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) ) Ez a weboldal egy táblázatot mutat az összes közeli valós idejű adatkészlettel, amely rendelkezik&lt; testOutOfDate &gt; &gt; címke (lásd alább) rangsorolva, hogy az adatkészletek naprakésszé tétele milyen. Ez a dashboard hasznos lehet ERDDAP™ adminisztrátorok és végfelhasználók, amikor tudni akarják, hogy mely adatkészletek naprakészek. A naprakész adatkészletek esetében valószínűleg probléma merül fel az adatforrással, hogy ERDDAP™ képtelen meglátni/céladatokat a közelmúltban.
+Adminisztrátorok: Ha nem akar egy Out-Of-Date Datasets weboldalt, add hozzá ezt a beállításhoz.xml:
+            &lt;OutOfDateDatasetsActive&gt; hamis&lt;/outOfDateDatasetsActive&gt;
+Vannak most már testOutOfDate és Az OfDate oszlopok a allDatasets adatkészlet.
+Bob Simonsnak köszönhetően, aki évek óta ezt akarta, és Írország tengerészeti intézetének okos embereinek, akik az inspirációt az elkötelezett Raspberry Pi-n keresztül adtak nekem, és figyelemmel kísérik, amely mindig olyan képernyőt mutat, mint ez az irodájukban.
+        * IMPROVED: .htmlTable és .xhtml a válasz most jobb formázott, kompaktabb és így gyorsabban terheli. HTML5 és CSS.
+    * NEW output fájltípus griddap adatkészletekhez: .timeGaps. Megmutatja a hiányosságok listáját az időértékekben, amelyek nagyobbak, mint a medián szakadék. ( [példa](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMHchla8day.timeGaps) ) Ez hasznos ERDDAP™ adminisztrátorok és végfelhasználók, ha tudni akarják, hogy váratlan hiányosságok vannak-e az adatkészlet idejében, amely várhatóan rendszeresen elterjedt időértékeket tartalmaz. Bob Simonsnak és Roy Mendelssohnnak köszönhetően, akiknek szüksége volt erre a funkcióra.
+    * IMPROVED: Az alapértelmezett grafikon allDatasets Az adatkészlet most egy x=maxLon és y=maxLat térkép. John Kerfootnak, Rich Signellnek és OOI-CI-nak köszönhetően.
+    * NEW: [erddapy](https://github.com/ioos/erddapy) - nem egy ERDDAP™ jellemző, de érdekes lesz sokak számára ERDDAP™ felhasználók. Erddapy ( ERDDAP™ + Python ) egy Python a Filipe Fernandes által létrehozott könyvtár, amely "előnyt élvez ERDDAP A RESTful webszolgáltatások és létrehozza a ERDDAP™ URL minden olyan kérésre, mint az adatkészletek keresése, metadat megszerzése, adatok letöltése stb..” Filipe Fernandesnek köszönhetően.
+    * Korábban már említettem: Van egy harmadik fél R csomag célja, hogy megkönnyítse a munkát ERDDAP™ belülről R: [Rerdap](https://github.com/ropensci/rerddap#rerddap) ... Köszönöm [rOpenSci](https://ropensci.org/) Roy Mendelssohn.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    * TY: Setup.xml-ben, közvetlenül alatta&lt;Administration Institute &gt;, please add a&lt;AdministrationUrl &gt; tag, amely meghatározza az Ön intézményének URL-jét (vagy csoport) .
-    * TY: Ez a 3 címke setup.xml már nem használható:
-        &lt;start HeadHtml &gt;&lt;startBodyHtml &gt; és&lt;endBodyHtml &gt;. Ezek helyébe a következő szöveg lép:
-        &lt;startHeadHtml5 &gt;,&lt;startBodyHtml5 &gt; és&lt;endBodyHtml5 &gt;, amelynek alapértelmezett értékei az üzenetekben.xml (és az alábbiakban látható) .
+    * TO DO: A setup.xml-ben, közvetlenül alább&lt;adminInstitution&gt;, kérlek add hozzá egy&lt;adminInstitutionUrl&gt; címke, amely meghatározza az intézmény URL-jét (vagy csoport) ...
+    * TO DO: Ezek a 3 címke a setup.xml már nem használják:
+        &lt;Kezdőlap HeadHtml&gt;,&lt;startBodyHtml&gt; és&lt;végBodyHtml&gt; Őket helyettesítik
+        &lt;startHeadHtml5&gt;,&lt;startBodyHtml5&gt; és&lt;végBodyHtml5&gt;, amely az üzenetekben meghatározott alapértelmezett értékekkel rendelkezik.xml (alább látható) ...
         
-Javasoljuk az alapértelmezett&lt;startHeadHtml5 &gt; és&lt;endBodyHtml5 &gt;.
-Javasoljuk: Ha változtatott az eredeti&lt;startBodyHtml &gt; és / vagy szeretné testreszabni a ERDDAP™ Most, kérem másolja le az új&lt;startBodyHtml5 &gt; tag (alulról) a setup.xml és módosítsa, hogy testre ERDDAP™ hogy ERDDAP a weboldalak tükrözik a szervezet, nem NOAA   ERD . Nevezetesen, kérjük, hogy a "által hozott" a szervezet (sz) . Ha segítségre van szüksége, kérjük, küldje el e-mailben erd.data at noaa.gov . (Ha nem akarja testre szabni a ERDDAP™ Most használd az alapértelmezett&lt;startBodyHtml5 &gt;.)
+Javasoljuk az alapértelmezett használatát&lt;startHeadHtml5&gt; és&lt;végBodyHtml5&gt;
+Javasoljuk: Ha megváltoztatta az eredetit&lt;Kezdőlap &gt; és / vagy szeretné testreszabni ERDDAP™ most, kérlek, másolja az újat&lt;startBodyHtml5&gt; címke (alulról) Beállítása.xml és módosítsa azt, hogy testreszabja ERDDAP™ hogy ERDDAP A weboldalak tükrözik a szervezetet, nem NOAA   ERD ... Tulajdonképpen, kérjük, változtassa meg a "Brought to you"-t a szervezetéhez (s) ... Ha segítségre van szüksége, kérjük e-mailt erd.data at noaa.gov ... (Ha nem akarja testreszabni a ERDDAP™ most használja az alapértelmezést&lt;startBodyHtml5&gt;.)
         
-Ezután törölje a setup.xml-ben található 3 régi címkét, amelyeket már nem használnak.
+Ezután törölje a 3 régi címkét a setup.xml-ben, amelyet már nem használnak.
 
 ```
         <startBodyHtml5><!\\[CDATA\\[ 
@@ -1178,14 +1195,14 @@ Ezután törölje a setup.xml-ben található 3 régi címkét, amelyeket már n
         \\]\\]></startBodyHtml5>
 ```
 
-Vannak további lehetőségek is. [testre szabva ERDDAP™ ](/docs/server-admin/deploy-install#customize) így ERDDAP a weboldalak tükrözik a szervezet helyett NOAA   ERD .
+Vannak további módok, hogy lehet [testreszabása ERDDAP™ ](/docs/server-admin/deploy-install#customize) így ERDDAP A weboldalak tükrözik a szervezetet, ahelyett, hogy NOAA   ERD ...
         
-    * TY: A&lt; EDDGrid ... Példa & gt; címkék (kezdve&lt; EDDGrid Idext & gt;) és a&lt;EDDTable... Példa & gt; címkék (kezdve&lt;EDDTableIdExample & gt;) a setup.xml fájlban a griddap és tabledap dokumentáció. html weboldalak a ERDDAP .
+    * TO DO: A&lt; EDDGrid ...Example & gt; címkék (csillagolás&lt; EDDGrid IdExample & gt;) és&lt;EDDTable... Example & gt; címkék (csillagolás&lt;EDDTableIdExample & gt;) a setup.xml fájlban használják, hogy példákat hozzon létre a griddapban és tabledap dokumentáció. Html weboldalak az Ön ERDDAP ...
         
-Ha nem testesítette meg azokat a címkéket, kérjük, törölje őket a setup.xml fájlból. Most mindegyiknek vannak alapértelmezett üzenetei.xml, amely utal adatkészletek Bob ERDDAP™ a https://coastwatch.pfeg.noaa.gov/erddap/index.html . Tehát már nincs szükség speciális adatkészletekre ERDDAP . Ha felül szeretné írni az alapértelmezést, másolja le ezeket a címkéket a setup.xml-be, és változtassa meg az értékeket.
-Ha azt szeretné, hogy a példák az Ön ERDDAP™ , a legegyszerűbb módszer:
+Ha nem testreszabta ezeket a címkéket, törölje őket a setup.xml fájlból. Most mindegyiküknek vannak olyan alapjai az üzenetekben.xml-ben, amely a Bob adatkészleteire utal ERDDAP™ a https://coastwatch.pfeg.noaa.gov/erddap/index.html ... Tehát már nem kell konkrét adatkészleteket tartalmaznia az Ön számára ERDDAP ... Ha le akarja vetni az alapértelmeket, másolja néhány vagy az összes címkét a beállításba.xml-be, és megváltoztatja az értékeket.
+Ha azt akarja, hogy a példák rámutassanak a ERDDAP™ A legegyszerűbb módszer:
         
-        1. Ez a két adatkészlet a ERDDAP™ a datasets.xml :
+        1. Tartsa be ezeket a két adatkészletet az Önben ERDDAP™ hozzáadásával ezt a datasets.xml :
 ```
             <dataset type="EDDGridFromErddap" datasetID="jplMURSST41" active="true">
                 <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41</sourceUrl>
@@ -1195,382 +1212,382 @@ Ha azt szeretné, hogy a példák az Ön ERDDAP™ , a legegyszerűbb módszer:
             </dataset>
 ```
 
-        2. Adja hozzá ezt a címkét a setup.xml-hez, de váltsa az URL-t a ERDDAP s ( https ?) URL:
+        2. Adja hozzá ezt a címkét a setup.xml-hez, de változtassa meg az URL-t az Ön számára ERDDAP A ( https ?) URL:
 ```
             <EDDGridErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDGridErddapUrlExample>
             <EDDTableErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDTableErddapUrlExample>
 ```
         
-Ha ön testre szabja ezeket a címkék, hagyja őket, és kérjük, adja hozzá ezeket a 2 új címkék a setup.xml, hogy adja meg a ERDDAP™ URL ezekre az adathalmazokra, de változtassa meg az URL-t ERDDAP s ( https ?) URL:
+Ha testreszabta ezeket a címkéket, hagyja el őket, és kérjük, adja hozzá ezeket a 2 új címkét a setup.xml-hez, hogy megadja a ERDDAP™ URL ezeknek az adatkészleteknek, de módosítsa az URL-t az Ön számára ERDDAP A ( https ?) URL:
 ```
         <EDDGridErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDGridErddapUrlExample>
         <EDDTableErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDTableErddapUrlExample>
 ```
 
-    * TILOS: ERDDAP™ Most egy erddap2.css nevű css fájlt használ. Ha változtatott a \\[ Nincs magyar neve \\] / Webaps / erddap / images / erddap.css, fontolja meg az erddap2.css-hoz hasonló változtatásokat (ugyanabban a könyvtárban) .
-    * ÚJ: ERDDAP a weboldalak most már nagy számú szinte láthatatlan belső linkek (a szöveg fekete, és nem hangsúlyozza) . Ha ezen a linken lebegsz (általában az első néhány szót a címek és bekezdések) A kurzorból kéz lesz. Ha rákattint a linkre, az URL a belső link a dokumentum adott részére. Ez megkönnyíti a dokumentáció egyes szakaszaira történő hivatkozást. Hála Bob Simonsnak, aki évek óta ezt akarja.
-    * ÚJ: ERDDAP™ Most támogatja [Byte Range / Accept- Ranges](https://en.wikipedia.org/wiki/Byte_serving) a / files / files részek kérése. Erre azért volt szükség, hogy a böngészők audió és videó nézőit támogassuk.
-    * TY: Most, hogy javítsa a biztonságot, ha meg&lt;baseHttpsUrl &gt; in setup.xml (és így támogatás https ) , az ajánlott lobogó Url https URL egy biztonságosabb zászlóval. Ha igen, minden korábbi flagUrls / flagKeys érvénytelen lesz. Adagolás: Ha ezek a változások vonatkoznak az Ön ERDDAP™ és ha ERDDAP™ van EDDGrid FromErddap és EDDTable FromErddap 's that subsize to remote ERDDAP S, akkor, miután frissíteni ERDDAP , a ERDDAP™ automatikusan megpróbál feliratkozni az új flagUrl, így törölni kell a régi előfizetéseket, és érvényesíteni az új előfizetéseket, amikor megkapja az új előfizetési validálás e-maileket.
-    * TY: Ha ERDDAP™ van EDDGrid FromErddap adatkészletek az erdVH3 adatkészletekhez Bob parti őrségén ERDDAP™ , Kérjük, módosítsa őket, hogy hivatkozzanak az új erdVH2018 adatkészletekre.
-    * TY: Ha a jplAquariusSSS minta-adatkészleteit is tartalmazza ERDDAP™ , kérjük, változtassa meg a "V4" a datasetID A V5-re.
-    * TILOS: actual\\_range CF standard attribútum (CF- 1.7) és egyértelműen azt mondja, hogy ha a változó használja add\\_offset és / vagy scale\\_factor az adatértékek, majd a actual\\_range az értékeknek a csomagolatlan adattípust kell használniuk, és azokat ki kell csomagolniuk. Sajnos ez ellentétes az előző tanácsunkkal. GenerateDatasets Xml most csomagolva actual\\_range értékek, de ez nem rögzíti a meglévő adatok a datasets.xml akta.
+    * TO DO: ERDDAP™ most egy css fájlt használ erddap2.css néven. Ha változtatásokat tettél \\[ Tomcat \\] /webapps/erddap/images/erddap.css, fontolja meg a hasonló változásokat az erddap2.css-hez (ugyanabban a könyvtárban) ...
+    * NEW: ERDDAP A weboldalaknak most nagyszámú szinte láthatatlan belső linkje van (a szöveg fekete, és nem hangsúlyozott) ... Ha átmeleged ezen linkek egyikét (általában az első néhány fejezet és bekezdés) A kurzor kéz lesz. Ha rákattint a linkre, az URL a dokumentum ezen szakaszához való belső kapcsolat. Ez megkönnyíti a dokumentáció konkrét szakaszait. Bob Simonsnak köszönhetően, aki évek óta ezt akarta.
+    * NEW: ERDDAP™ most támogatja [Byte Range / Accept-Ranges](https://en.wikipedia.org/wiki/Byte_serving) /files/ fájlok adagjaira vonatkozó kérelmek. Ez volt szükség, hogy támogassa az audio és video nézők a böngészők.
+    * TO DO: Most, hogy javítsa a biztonságot, ha meghatározott&lt;baseHttpsUrl&gt; a setup.xml-ben (és így támogatás https ) Az ajánlott zászló Url egy https URL egy biztonságosabb zászlóKey. Ha igen, minden korábbi flagUrls/flagKeys érvénytelenné válik. Adminok: Ha ezek a változások érvényesek az Ön számára ERDDAP™ és ha a te ERDDAP™ A EDDGrid FromErddap és EDDTable FromErddap, aki feliratkozott a távoli ERDDAP S, akkor, miután frissített ERDDAP A te ERDDAP™ automatikusan megpróbálja feliratkozni az új flagUrl, így törölje a régi előfizetéseket, és érvényesítse az új előfizetéseket, amikor megkapja az új előfizetési validálási e-maileket.
+    * TO DO: Ha a te ERDDAP™ A EDDGrid FromErddap adatkészletek erdVH3 adatkészletek Bob partiwatch ERDDAP™ Kérjük, változtassa meg őket az új erdVH2018 adatkészletekre.
+    * TO DO: Ha tartalmazza a jplAquariusSS minta adatkészletek bármelyikét ERDDAP™ Kérjük, változtassa meg a "V4-et" a datasetID "V5-re".
+    * TO DO: actual\\_range most egy CF szabványos tulajdonság (CF-1.7) és egyértelműen azt mondja, hogy ha a változó használja add\\_offset vagy scale\\_factor az adatértékek csomagolására, majd a actual\\_range Az értékeknek a csomagolatlan adattípust kell használniuk, és csomagolatlan értékeknek kell lenniük. Sajnos ez a konfliktus az előző tanácsunkkal. GenerateDatasets Xml most csomagolatlan actual\\_range értékek, de ez nem javítja a meglévő adatkészleteket az Önben datasets.xml fájl.
         
-Tehát, kérjük, ellenőrizze adatkészleteit: ha egy változó értékei be vannak csomagolva, és actual\\_range a megadott adatértékek, kérjük, adja meg a&lt; addAttributes &gt; actual\\_range a csomagolatlan értékek megadásához szükséges érték. Ellenkező esetben az adatkészlet nem kerül be ERDDAP . Egy egyszerű és majdnem tökéletes módja ennek, hogy a keresés datasets.xml forrás Attribútumok, amelyek
+Tehát, kérjük, ellenőrizze az adatkészleteit: ha a változó értékek csomagolva vannak, és ha actual\\_range csomagolt adatértékként van meghatározva, kérjük, adjon hozzá&lt; addAttributes &gt; &gt; &gt; &gt; actual\\_range érték a nem csomagolt értékek meghatározásához. Ellenkező esetben az adatkészlet nem tölt be ERDDAP ... Egy egyszerű és szinte tökéletes módja ennek, hogy keresse a datasets.xml Forrás tulajdonságok, amelyek rendelkeznek
 ```
         <att name="actual\\_range" type="shortList">  
         or <att name="actual\\_range" type="intList">  
 ```
-és scale\\_factor az 1.0-tól eltérő. Azok... actual\\_range Olyan tulajdonságokat, amiket talán meg kell javítanod.
+és scale\\_factor más, mint 1.0. Ezek azok, akik actual\\_range tulajdonságait, hogy meg kell oldani.
         
-A tengelyváltozók: EDDGrid adatkészletek, ERDDAP™ mindig beállítja a actual\\_range attribútum, hogy a tényleges tartománya az értékek, mivel ismeri ezeket az értékeket.
+A tengely változók esetében EDDGrid adatkészletek, ERDDAP™ mindig állítja actual\\_range az értékek tényleges tartományának tulajdonítható, mivel ismeri ezeket az értékeket.
         
-A tengelyváltozók csökkenő értékekkel (például néhány szélességi változó) , ERDDAP™ Létrehozva actual\\_range a \\[ 0 \\] ... \\[ utolsó \\] értékek, amik magasak voltak... alacsonyak. Most mindig alacsony... magas értékeket használ az új CF definícióhoz.
+A tengelyváltozatokhoz csökkenő értékekkel (pl. néhány szélességi változó) , ERDDAP™ teremtés actual\\_range a \\[ 0 0 \\] ... \\[ utolsó \\] értékek, amelyek magasak voltak... alacsonyak. Most mindig alacsony... magas értékeket használ az új CF meghatározáshoz.
         
-A actual\\_range az EDDTable adatkészletei esetében az értékek különösen fontosak, mert ERDDAP™ gyorsan elutasítja a felhasználók kéréseit olyan adatértékek iránt, amelyek kisebbek, mint a actual\\_range minimális érték vagy amely nagyobb, mint a actual\\_range maximális érték.
+A helyesség a actual\\_range az értékek különösen fontosak az EDDTable adatkészletek számára, mert ERDDAP™ gyorsan elutasítja az adatértékek felhasználói kérelmeit, amelyek kevesebbek, mint actual\\_range minimális érték, vagy ami nagyobb, mint actual\\_range maximális érték.
         
-Kapcsolódó: a tényleges\\ _ min, tényleges\\ _ max, data\\_min és data\\_max Az attribútumok most romlottak. Kérjük, alakítsa át a datasets használni actual\\_range Inkább.
+Kapcsolódó: a tényleges\\_min, tényleges\\_max, data\\_min és data\\_max A tulajdonságokat most levonják. Kérjük, konvertálja az adatkészleteit használni actual\\_range Ehelyett.
         
-    * TILOS (választható, de ajánlott) : Minden közel-real-time és előrejelzés adatkészlet az Ön ERDDAP™ , kérjük, adja hozzá a [&lt; testOutOfDate &gt;] (/ docs / server- admin / datasets # testoutofdate) címkék, amelyek értéke a forma now- _ NU _, például, now- 2 nap. Ha az adatkészlet maximális időértéke ennél az értéknél régebbi, akkor az adatkészlet elavultnak tekintendő, és a [ outOfDateDatasets.html ](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) weboldalt. Ez könnyen belátható, ha valami baj van egy adatkészlet forrásával.
-    *    [ÚJ: Az adatkészletek szemantikai jelölése json- ld-vel (JSON Kapcsolt adatok) ](/docs/server-admin/additional-information#json-ld)   
-         ERDDAP™ most használja [json- ld (JSON Kapcsolt adatok) ](https://json-ld.org) hogy az adatok katalógus és adatkészletek része legyen a [szemantikai web](https://en.wikipedia.org/wiki/Semantic_Web) , ami Tim Berners-Lee ötlete, hogy a web tartalmat olvashatóbbá és érthetőbbé tegyük. Kereső motorok ( [Különösen a Google](https://developers.google.com/search/docs/data-types/datasets) ) és más szemantikai eszközök is felhasználhatják ezt a strukturált felárat a felfedezés és indexálás megkönnyítése érdekében. A json- ld strukturált markup láthatatlannak tűnik.&lt;script &gt; kód http://.../erddap/info/index.html weboldal (ami egy szemantikai háló [Adatkatalógus](https://schema.org/DataCatalog) ) és mindegyiken http://.../erddap/info/_datasetID_/index.html weboldal (ami egy szemantikai háló [Dataset](https://schema.org/Dataset) ) . (Külön köszönet Adam Leadbetter-nek és Rob Fuller-nek az írországi Tengerészeti Intézetből, amiért elvégezték a munka nehéz részeit, hogy ezt a részt ERDDAP .) 
-    * ÚJ: Vannak új adatkészlet típusok, amelyek képesek adatokat olvasni audio fájlokból:
-         [ EDDGrid FromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , amely az audio adatokat rácsozott adatként kezeli.
-         [EDDTableFromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , amely az audió adatokat táblázatos adatként kezeli. Hála Jim Potemrának, Rich Signellnek, OOI-nak és Carrie Wall Bellnek az audió / hidrofon fájl támogatás iránti kérésekért.
-    * Az GenerateDatasets módosítása Xml (és a kapcsolódó változások) :
-        * ÚJ: ERDDAP™ Most már egy rendszer automatikusan [update out- of- date URLs](/docs/server-admin/additional-information#out-of-date-urls) mindkettő az GenerateDatasets-ben Xml és az adatkészletek betöltésekor. Ha további URL-ekre vonatkozó javaslatai vannak, amelyeket el kell fogni és frissíteni kell, vagy ha úgy gondolja, hogy ezt szolgáltatássá kell alakítani (Mint a konverterek.) , kérem email erd.data at noaa.gov .
-        * Új: Most, ha GenerateDatasets Xml lát egy CF standard\\_name   (amelyek mind alacsonyak) nagybetűs karakterrel, az összes kisbetűs változatot hozzáadja&lt; addAttributes &gt;. Ha egy adatkészlet betöltődik, ERDDAP™ CF standard\\_name egy nagybetűs karakter, ez csendben megváltoztatja a standard\\_name . Hála Rich Signell-nek.
-        * Új: Most, ha GenerateDatasets Xml lát egy attribútum, hogy az idő, hogy nem ISO 8601 formátumban, ez hozzáadja az ISO 8601 formázott idő&lt; addAttributes &gt;. Ha ERDDAP™ nem ismeri fel a formátumot, az időérték változatlan marad. Ha látsz egy formátumot, ERDDAP™ nem ismeri fel és javít, kérjük, e-mailben erd.data at noaa.gov .
-        * JAVÍTOTT: Az alacsony szintű kód a EDDGrid FromThredek Katalógus opció az GenerateDatasets-ben Xml most a Unidata netcdf- java katalógus crawler kód (Három. katalógus osztályok) hogy kezelni tudja az összes THREDDS katalógust (ami meglepően bonyolult lehet) . Köszönet Roland Schweitzer, hogy javasolta ezt a változást, és köszönhetően Unidata a kódhoz.
-        * ÚJ: GenerateDatasets Xml EDDGrid FromDap most hozzáteszi, "startYear -EndYear" a cím végén alapuló tényleges időtengely értékek. Végév = "jelen", ha az adatok az elmúlt 150 napban léteznek.
-        * ÚJ: GenerateDatasets Xml EDDGrid FromDap most hozzáteszi: " \\[ szanálás \\] ° "a címre, ha az adatkészlet egyenletesen osztott, és a lat és lon esetében azonos.
-        * JAVASOLT: Az időkonverter most már további funkciókkal rendelkezik, nevezetesen azzal a képességgel, hogy a string times-t sokféle közös formátumban átalakítsa ISO 8601 sztringekre vagy UDUNitS kompatibilis számra. Minden korábban támogatott funkció változatlan marad.
-        * BUG FIX: GenerateDatasets Xml és a kulcsszavak konverter most tartalmazza "Föld tudomány &gt;" elején GCMD Science Kulcsszavak. Amikor egy adatkészlet be van töltve ERDDAP™ , ERDDAP™ Most javít minden GCMD kulcsszavak a kulcsszavak attribútum, hogy nem kezdődik a "Föld tudomány &gt;" vagy amely használ semmi mást, mint a cím esetében (ahol minden szó első betűjét tőkésítik) .
-        * JAVASOLT: Amikor javasoljuk&lt; destinationName &gt; 's, GenerateDatasets Xml EDDTableFromAsciiFiles csak a farok vége sourceName és '/'   (néhány filename- szerű) . Most az egész sourceName (pl. "blahblahblah (m / s)". Ez a változás jó lesz néhány adatkészletnek, és nem másoknak, de biztonságosabb viselkedés. Köszönet Maurice Libes-nek.
-        * BUG FIX: GenerateDatasets Xml és a dataset konstruktorok most biztosítja, hogy nincs másolat oszlop nevek. Köszönet Maurice Libes-nek.
-        * BUG FIX: GenerateDatasets Xml az EDDTableFromAsciiFiles nem írt&lt;ColumnSeparator &gt; a kimenet. Most már igen. Köszönet Maurice Libes-nek.
-    * ÚJ: A DasDds eszköz most kinyomtatja az időhézag adatait (a [.timeGaps információk](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#timeGaps) ) ha az adatkészlet rácsozott adatkészlet.
-    * ÚJ: Advanced Search most elfogadja a "now _\\ -nUnits _" időértékeket. Hála Rich Signell-nek.
-    * JAVASOLT: A biztonság javítása érdekében, ha egy adatkészlet metaadataiban vagy adataiban szereplő e-mail cím egy html weboldalra van írva, a "@" helyébe az "at" lép. Ez csak olyan e-mail címeket fog, amelyek a teljes metaadatok vagy adatérték, nem pedig hosszabb értékekbe ágyazott e-mail címeket.
-    * JAVASOLT: A biztonság növelése érdekében RSS a magánadatbázisokra vonatkozó információk már csak a felhasználók rendelkezésére állnak (és RSS olvasó) akik bejelentkeztek, és felhatalmazták őket, hogy használják az adatokat.
-    * Most, amikor egy adatkészlet betöltése, ha date\\_created , date\\_issued , date\\_modified , vagy dátum\\ _ metaadatok\\ _ módosított attribútum van egy időérték nem ISO 8601 formátumban, ERDDAP™ az ISO 8601 szabvány szerinti formázott időre változtatja. Ha ERDDAP™ nem ismeri fel a formátumot, az időérték változatlan marad. Ha látsz egy formátumot, ERDDAP™ nem ismeri fel és javít, kérjük, e-mailben erd.data at noaa.gov .
-    * JAVÍTOTT: .dods válaszok EDDGrid az adatkészleteknek most jelentősen gyorsabbnak kell lenniük. Hála Rich Signell-nek.
-    * Változások ERDDAP ISO 19115 dokumentumok létrehozása:
-        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, dataVariable Az egységek nem HTML attribútum kódolva és százalékban kódolva voltak. Most már igen. Hála az NGDC ISO 19115 validátorának.
-        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, date\\_created Úgy használták, ahogy van, olyan gyakran volt rossz formátum. Most az ISO 8601 Z sztring lesz. Hála az NGDC ISO 19115 validátorának.
-        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, ERDDAP™ most hosszabb írások dátumok év = 0000 (a klimatológiai adatkészletekhez hasonlóan) , mert az ISO 19115 séma nem engedélyezi dátumok év = 0000. Hála az NGDC ISO 19115 validátorának.
-    * ÚJ: Mint a kérés előtt http ... / erddap / verzió visszatér csak a verziószámot (szövegként) például ", ERDDAP \\ _ version = 1.82 ".
-Nos, egy kérés, hogy http ... / erddap / version\\ _ string visszaad egy számot és egy opcionális utótagot a '\\ _' plusz ASCII szövegből (nincs szóköz vagy vezérlőkarakter) például ", ERDDAP \\ _ version\\ _ string = 1.82\\ _ JohnsFork ". Az emberek a villa határozza meg ezt megváltoztatásával EDStatic.erddapVersion. Ez a módszer nem okoz problémát a korábbi verziók ERDDAP . Axiomnak köszönhetően (nevezetesen Kyle Wilcox) és Írország Tengerészeti Intézete (nevezetesen Rob Fuller) .
-    * BUG FIX: A wms verzió = 1.3.0, kérés = GetMap , cs = EPSG: 4326 (Nem CRS: 84) kérések: a bbox order legyen minLat, minLon, maxLat, maxLon. CRS esetében: 84 kérelem, mint korábban, bbox order legyen minLon, minLat, maxLon, maxLat. Ez javíthatja a ERDDAP s WMS 1.3.0 szolgáltatás ArcGIS   (Köszönet Paola Arce-nak) . Köszönöm. (nem) - OGC hogy ilyen bonyolulttá tette. Köszönöm Leaflet hogy helyesen kezeljem ezt, és hogy lehetőséget adjak a tesztelésre.
-    * JAVÍTOTT: Előző, a javasolt link RSS és e-mail előfizetések a http URL az Ön számára ERDDAP . Most már... https URL, ha ez aktív.
-    * ÚJ: EDDGrid A másolás most egy opcionális címkét támogat&lt;Csak mióta &gt; _ someValue _&lt;/ csak mióta &gt;, ahol az érték egy meghatározott ISO- 8601 formázott idő vagy now- units (unit) (például: now- 2 év) idő. Lásd a [Csak Dokumentáció óta](/docs/server-admin/datasets#onlysince) . Drew P. -nek köszönhetően
-    * JAVÍTOTT: Ha rendelkezésre áll, ERDDAP™ meg fogja mutatni a https URL (&lt;baseHttpsUrl &gt;, ha van) helyett a http URL, ha azt mondja a felhasználóknak, hogy az URL-t hozzáadják / validálják / eltávolítják / listázzák az előfizetést.
-    * BUG FIX: ERDDAP™ Most lehetővé teszi, hogy az előfizetés kezdődik " https://" . (Bob felpofozza a homlokát.) Jennifer Sevadjian-nek köszönhetően.
-    * BUG FIX: .jsonlKVP most használja ':' között minden kulcs és érték, ahelyett, hogy '=' . (Bob felpofozza a homlokát.) Alexander Barth-nak köszönhetően.
-    * BUG FIX: Az előző részek tartalmából... ERDDAP™ a quickRestart = true, és ha, mielőtt az adatkészlet újra lett volna töltve normál, akkor tett egy hívást egy EDDTableFromFiles adatsor, amely frissítette EveryEveryNMillis, és ha egy adatfájl csak most változott volna, a kérés sikertelen lenne egy null pointer hiba. Most a kérés sikeres lesz. Hála John Kerfootnak.
-    * ÚJ: Ha egy adatkészlet be van töltve ERDDAP™ , a kulcsszavak most átrendezett sorrendben, és minden új sor karakterek eltávolítva.
-    * Ha egy .geoJson, .json vagy .nc OJson kérése .json p paraméter, a válasz mime típus alkalmazás / javascript. Megjegyzés: .json p nem támogatott .jsonlCSV vagy .jsonlKVP Mivel nem működött. Hála Rob Fullernek.
-    * JAVÍTOTT: A json vonalak mime típusa fájltípus opciók most "alkalmazás / x- jsonlines". Ez egy jelentkezési lap volt. Jelenleg nincs végleges helyes választás.
-    * JAVASOLT: A nem sikerült kérések száma a status.html oldalon növekedni fog, mert több dolog számít hibának, mint korábban, például a ClientAbortException.
-    * JAVÍTOTT: Most, ha a válasz ERDDAP™ nem tömörített, akkor a fejléc a válasz tartalmazza "Content- Encoding" = "identitás".
-    * JAVÍTOTT: A "licence" attribútum nem volt szükséges. Ha nincs megadva, a standard licenc az üzenetekből.xml (vagy setup.xml-ből, ha van) alapértelmezésként használják.
-    * ÚJ: Van most egy opcionális [fileAccessSuffix attribútum](/docs/server-admin/datasets#fileaccessbaseurl) . amely használható a meglévő [fileAccessBaseUrl attribútum](/docs/server-admin/datasets#fileaccessbaseurl) .
-    * JAVASOLT: A biztonság növelése érdekében ezt a verziót a legfrissebb Java JDK v8u162.
-    * ÚJ: A biztonság növelése érdekében több közös terület nyújt ideiglenes e-mail címeket (pl. @ mailinator.com) most már egy állandó e-mail feketelista az előfizetési rendszer.
-    * ÚJ: A biztonság növelése érdekében a napi jelentés a következőket tartalmazza:
-SetDataset Az IP-cím nem sikerült (az utolsó napi jelentés óta)   
-SetDataset Az IP-cím nem sikerült (indítás óta)   
-SetDataset A zászló IP címe befejeződött (az utolsó napi jelentés óta)   
-SetDataset A zászló IP címe befejeződött (indítás óta)   
-A "nem sikerült" szavak megmutatják, hogy ki (Egy hacker?) próbálja beállítani a zászlót, de nem sikerül.
-    * JAVÍTOTT: A biztonság növelése érdekében e-mail címek a&lt;előfizetésEmailBlacklist &gt; az Ön datasets.xml most már esetlennek tekintik.
+    * DO (opcionális, de ajánlott) : Minden közeli idejű és előre jelzett adatkészlet az Ön ERDDAP™ Kérlek, add hozzá egy [&lt; testOutOfDate &gt;&gt;&gt;&gt;&gt;&gt; (/docs/server-admin/datasets#testoutofdate) címke értéke a formában now- _nUnits_, pl. now- 2 nap. Ha az adatkészlet maximális időértéke idősebb, mint ez az érték, az adatkészletet naprakésznek tekintik, és olyannak fogják jelölni, mint [ outOfDateDatasets.html ](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) weboldal. Ez egy egyszerű módja annak, hogy megnézze, hogy valami rossz az adatkészlet forrásával.
+    *    [ÚJ: Semantic Markup of Datasets with json-ld (JSON Linked adatok) ](/docs/server-admin/additional-information#json-ld)   
+         ERDDAP™ most használ [json-ld (JSON Linked adatok) ](https://json-ld.org) az adatkatalógus és adatkészletek része [szemantikai web](https://en.wikipedia.org/wiki/Semantic_Web) A Tim Berners-Lee ötlete, hogy a webes tartalmat könnyebbé tegyük, és a gép "megérthetetlen". Keresőmotorok ( [Google különösen](https://developers.google.com/search/docs/data-types/datasets) ) és más szemantikai eszközök is használhatják ezt a strukturált markupot, hogy megkönnyítsék a felfedezést és indexelést. A json-ld strukturált markup láthatatlan embernek tűnik&lt;script&gt; kód a http://.../erddap/info/index.html Weboldal (ami egy szemantikus web [Adatkezelés](https://schema.org/DataCatalog) ) és mindegyiken http://.../erddap/info/_datasetID_/index.html Weboldal (ami egy szemantikus web [Adatbázis](https://schema.org/Dataset) ) ... (Speciális köszönet Adam Leadbetter és Rob Fuller a tengeri intézet Írországban, hogy a kemény része a munka, hogy ezt a részét a munka. ERDDAP ...) 
+    * NEW: Vannak új adatkészlettípusok, amelyek az audiofájlokból olvashatók:
+         [ EDDGrid FromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , amely az audio adatokat hálózati adatokként kezeli.
+         [EDDTableFromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , amely az audio adatokat mentő adatokként kezeli. Köszönhetően Jim Potemra, Rich Signell, OOI és Carrie Wall Bell az audio / hidrofon fájl támogatás iránti kérelmekért.
+    * A GenerateDatasets változásai Xml (és a kapcsolódó változások) :
+        * NEW: ERDDAP™ most van egy rendszer automatikusan [naprakész URL-ek frissítése](/docs/server-admin/additional-information#out-of-date-urls) mindkettő a GenerateDatasets-ben Xml és az adatkészletek betöltésekor. Ha javaslatai vannak további URL-ekre, amelyeket le kell ragadni és frissíteni, vagy ha úgy gondolja, hogy ez egy szolgáltatássá válik (mint a konverterek) Kérlek e-mailt erd.data at noaa.gov ...
+        * NEW: Most, ha a GenerateDatasets Xml látja a CF-t standard\\_name   (aminek minden alsóbb esetnek kell lennie) egy uppercase karakterrel, hozzáadja az összes alsó tételes verziót&lt; addAttributes &gt;. Is, ha egy adatkészlet terheli, ha ERDDAP™ látja a CF-t standard\\_name egy felsőfokú karakterrel, csendben megváltoztatja azt standard\\_name ... Rich Signellnek köszönhetően.
+        * NEW: Most, ha a GenerateDatasets Az Xml olyan tulajdonságot lát, amely nem ISO 8601 formátumban van, hozzáadja az ISO 8601 formátumú időt&lt; addAttributes &gt;. Ha ERDDAP™ nem ismeri fel a formátumot, változatlanul hagyja az időértéket. Ha egy formátumot látsz, ERDDAP™ nem ismeri fel és rögzíti, kérem e-mailt, hogy erd.data at noaa.gov ...
+        * IMPROVED: Az alacsony szintű kód az EDDGrid FromThredd Katalógus opció a GenerateDatasets-ben Az Xml most a Unidata netcdf-java katalógus személyzeti kód (Szárak. katalógus osztályok) hogy kezelje az összes THREDDS katalógust (amely meglepően bonyolult lehet) ... Roland Schweitzernek köszönhetően ezt a változást javasolja, és ennek köszönhetően Unidata a kódhoz.
+        * NEW: GenerateDatasets Xml az EDDGrid FromDap most hozzáadja a ", startYear-EndYear"-t a tényleges idő tengelyértékek alapján. EndYear="present", ha az adatok az elmúlt 150 napban léteznek.
+        * NEW: GenerateDatasets Xml az EDDGrid FromDap hozzáteszi ", \\[ állásfoglalás \\] °" a címre, ha az adatkészlet egyenletes, és ugyanaz a lat és a lon.
+        * IMPROVED: Az időátalakítónak most további jellemzői vannak, nevezetesen a képesség, hogy a szigorú időket az ISO 8601-es sztrájkok széles skálájába konvertálja, vagy egy UDUnits-kompatibilis számba. Minden korábban támogatott funkció továbbra is működik, változatlan.
+        * BUG FIX: GenerateDatasets Xml és a kulcsszavak átalakítója most magában foglalja a "Föld tudomány" -t a GCMD Science Keywords kezdetén. Amikor egy adatkészletet töltenek be ERDDAP™ , ERDDAP™ most rögzíti a GCMD kulcsszavakat a kulcsszavakban, amelyek nem kezdődnek a "Föld Tudomány" -val, vagy amelyek mást használnak, mint a címes eset (ahol minden szó első betűje kapitalizálódik) ...
+        * IMPROVED: Amikor javasoljuk&lt; destinationName &gt;, GenerateDatasets Xml EDDTableFromAsciiFiles csak használta a farok végén sourceName S '/'   (Néhányan fájlnév-szerűek voltak) ... Most az egészet használja sourceName (pl.: „blahblahblah (m/s)”. Ez a változás jó lesz néhány adatkészlet számára, és nem mások számára, de biztonságosabb viselkedés. Maurice Libesnek köszönhetően.
+        * BUG FIX: GenerateDatasets Az Xml és az adatkészlet-konstrukciók most biztosítják, hogy nincsenek duplikált oszlop nevek. Maurice Libesnek köszönhetően.
+        * BUG FIX: GenerateDatasets Xml EDDTableFromAsciiFiles nem írt&lt;oszlopSeparator&gt; a kimenethez. Most ezt teszi. Maurice Libesnek köszönhetően.
+    * NEW: A DasDds eszköz most kinyomtatja az időbeli szakadék információit (a [TimeGaps információ](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#timeGaps) ) ha az adathalmaz megrúgott adathalmaz.
+    * NEW: Az Advanced Search most elfogadja a "now_\\-nUnits_" időértékeket. Rich Signellnek köszönhetően.
+    * IMPROVED: A biztonság javítása érdekében, amikor egy e-mail cím egy adatkészlet metaadatában vagy adatait egy html weboldalra írják, a "@" helyébe ". Ez csak olyan e-mail címeket tartalmaz, amelyek az egész metaadat vagy adatérték, nem pedig az e-mail címek, amelyeket hosszabb értékekbe foglaltak.
+    * IMPROVED: A biztonság növelése, a RSS A magánadatbázisokra vonatkozó információk jelenleg csak a felhasználók rendelkezésére állnak (és RSS olvasók) aki be van jelentkezve és engedélyezve, hogy használja ezt az adatkészletet.
+    * NEW: Most, amikor egy adatkészletet töltenek be, ha date\\_created , date\\_issued , date\\_modified , vagy dátum \\_metadata\\_modified attribute rendelkezik olyan időértékkel, amely nem ISO 8601 formátumban van, ERDDAP™ megváltoztatja az ISO 8601 formázott időt. Ha ERDDAP™ nem ismeri fel a formátumot, változatlanul hagyja az időértéket. Ha egy formátumot látsz, ERDDAP™ nem ismeri fel és rögzíti, kérem e-mailt, hogy erd.data at noaa.gov ...
+    * IMPROVED: .dods válaszok EDDGrid Az adatkészleteknek most jelentősen gyorsabbnak kell lenniük. Rich Signellnek köszönhetően.
+    * Változások kapcsolódnak ERDDAP ISO 19115 dokumentumok létrehozása:
+        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, dataVariable Az egységek nem voltak HTML tulajdonsága kódolt és százaléka kódolt. Most ők is. Az NGDC ISO 19115 validátorának köszönhetően.
+        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, date\\_created Úgy használták, mint az, gyakran rossz formátum volt. Most átalakul az ISO 8601 Z sztringre. Az NGDC ISO 19115 validátorának köszönhetően.
+        * BUG FIX: az ISO 19115 dokumentumok létrehozásakor, ERDDAP™ most már ír dátumokat az év =00 (mint a climatológia adatkészletek) Mivel az ISO 19115 schema nem engedélyezi a dátumokat az év=0000-val. Az NGDC ISO 19115 validátorának köszönhetően.
+    * ÚJ: Mint a kérés előtt http .../erddap/version csak a verziószámot fogja visszaadni (szöveg) pl.: " ERDDAP \\_version=1.82.
+Most egy kérés http .../erddap/version\\_string visszatér egy számot, és egy opcionális elegendő "\\_" plus ASCII szöveg (Nincs űr vagy kontroll karakter) pl.: " ERDDAP \\_version\\_string=1.82\\_JohnsFork. A villát végző emberek ezt az EDStatic.erddapVersion megváltoztatásával fogják meghatározni. Ez a módja annak, hogy ez nem okoz problémákat a korábbi verziók ERDDAP ... Axiomnak köszönhetően (nevezetesen Kyle Wilcox) Írország tengerészeti intézete (nevezetesen Rob Fuller) ...
+    * BUG FIX: wms verzió=1.3.0, kérés= GetMap crs=EPSG:4326 (nem CRS:84) kérések: a bbox megrendelésnek minLat,minLon,maxLat,maxLonnak kell lennie. CRS:84 kérések, mint korábban, bbox megrendelés kell minLon,minLat,maxLon,maxLat. Ez javíthatja a használatát ERDDAP A WMS 1.3.0 szolgáltatás ArcGIS   (Köszönöm Paola Arce) ... Köszönöm (nem) a OGC hogy ezt oly bonyolultsá tegyük. Köszönöm Leaflet ezt helyesen kezelni, és megadni nekem a módját, hogy ezt teszteljem.
+    * IMPROVED: Előző, a javasolt link a RSS és e-mail előfizetések rendelkeznek http URL az Ön számára ERDDAP ... Most ez az https URL, ha ez aktív.
+    * NEW: EDDGrid Copy most támogatja az opcionális címkét&lt;dalszöveg: SomeValue_&lt;/onlySince&gt;, ahol az érték egy specifikus ISO-8601-formatált idő vagy now- nUnits (pl.: now- 2 év) Idő. Lásd: [csak Dokumentáció óta](/docs/server-admin/datasets#onlysince) ... Drew P.
+    * IMPROVED: Ha elérhető, ERDDAP™ Megmutatja https URL (a&lt;baseHttpsUrl&gt;, ha rendelkezésre áll) helyett http URL, ha azt mondja a felhasználóknak, hogy az URL hozzáadja / eltávolítja / eltávolítja / listázza az előfizetést.
+    * BUG FIX: ERDDAP™ most lehetővé teszi az előfizetési akció elindítását " https://" ... (Bob megöli az előrelátását.) Jennifer Sevadjiannak köszönhetően.
+    * BUG FIX: .jsonlKVP most „:” minden kulcs és érték között, ahelyett, hogy '=' ... (Bob megöli az előrelátását.) Alexander Barthnak köszönhetően.
+    * BUG FIX: Korábban, ha újraindított ERDDAP™ A gyorsRestart=true-val, és ha az adatkészletet általában újratöltették, felhívott egy EDDTableFromFiles adatkészletre, amely frissítette az EveryNMillis-t, és ha egy adatfájl csak megváltozott volna, a kérés nullponter hiba esetén kudarcot vall. Most a kérés sikeres lesz. John Kerfootnak köszönhetően.
+    * NEW: Amikor egy adatkészletet betöltenek ERDDAP™ A kulcsszavak most átrendezett rendbe kerülnek, és minden újvonal karaktert eltávolítanak.
+    * IMPROVED: Most, ha egy .geoJson, .json vagy .nc oJson kérés .json p paraméter, a válasz mime típus alkalmazás/javascript. Vegyük észre, hogy .json p nem támogatott .jsonlCSV vagy .jsonlKVP Mivel nem működne. Rob Fullernek köszönhetően.
+    * IMPROVED: A json sorok mime típusa a fájlType opciók most "alkalmazási/x-jsonlines". Ez volt az alkalmazás/jsonl. Jelenleg nincs végleges helyes választás.
+    * IMPROVED: A status.html oldalon bemutatott sikertelen kérések száma növekszik, mert több dolgot számítanak kudarcnak, mint korábban, például a ClientAbortException.
+    * IMPROVED: Most, ha válasz a ERDDAP™ nem tömörül, majd a válasz vezetője magában foglalja a "Content-Encoding"="identitást".
+    * IMPROVED: A „licensz” tulajdonság nem volt szükség. Most, ha nem van megjelölve, a standardLicense az üzenetekből.xml (vagy a setup.xml, ha jelen van) az alapértelmezésként használják.
+    * NEW: Most van egy opcionális [fájlAccessSuffix tulajdonság](/docs/server-admin/datasets#fileaccessbaseurl) . amely használható a meglévő [fájlAccessBaseUrl tulajdonság](/docs/server-admin/datasets#fileaccessbaseurl) ...
+    * IMPROVED: A biztonság növelése érdekében ez a verzió a legutóbbi Java JDK v8u162.
+    * NEW: A biztonság növelése, számos közös domain, amelyek ideiglenes e-mail címeket kínálnak (pl.: @mailinator.com) most egy állandó e-mail feketelistán van az előfizetési rendszerhez.
+    * NEW: A biztonság növelése érdekében a Daily jelentésben jelenleg a következőket tartalmazza:
+Beállítások Flag IP cím hibás (az utolsó napi jelentés óta)   
+Beállítások Flag IP cím hibás (Kezdőlap)   
+Beállítások Flag IP cím sikeres (az utolsó napi jelentés óta)   
+Beállítások Flag IP cím sikeres (Kezdőlap)   
+A "csalódott" hazugságok azt látják, kik (Hacker?) zászlót próbál beállítani, de kudarcot vall.
+    * IMPROVED: A biztonság növelése, az e-mail címek a&lt;ElőfizetésEmailBlacklist&gt; az Ön datasets.xml most eseti érzékenynek tekintik.
          
 
-## változat{#version-180} 
- (kiadás dátuma: 2017- 08- 04) 
+## Verzió 1.80{#version-180} 
+ (közzétett 2017-08-04) 
 
-*    **Új jellemzők (felhasználók számára) :**   
+*    **Új funkciók (felhasználók számára) :**   
      
-    * ÚJ orderByCount  () szűrővel megadhatja, hogyan kerül sor az eredménytábla válogatására (vagy nem) és csak egy sort ad vissza minden fajta csoport, a szám a nem-missing- értékek minden változó.
-Például, orderByCount  (" stationID ") Elrendeződik stationID és minden egyes sorban egy-egy sort vissza stationID , az egyes változókhoz tartozó nem-hiányértékek számával.
-Ha csak megadod orderByCount  ("") , a válasz lesz csak egy sor a száma nem-hiány- értékek minden adat változó.
-Lásd a [ orderBy ... dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#orderBy) Hála Ben Adamsnek.
-    * ÚJ .nc oJson fájl Típusopció rácsozott és táblázatos adatkészletekhez. Ez az opció NCO lvl = 2 "pedantikus" JSON fájl az összes információt általában megtalálható a .nc akta. Lásd [ http://nco.sourceforge.net/nco.html#json ](https://nco.sourceforge.net/nco.html#json) Hála Charlie Zendernek.
-    * BUG FIX: A orderBy ... () opciók a Make A Graph weboldalon most megfelelően kezelik.
-    * BUG FIX: .geoJson output most nem nyomtat sorokat, ahol a lat vagy lon értékek hiányoznak. Magassági értékek (ha rendelkezésre áll) már szerepelnek a koordinátákban, nem adatértékként. Hála Jonathan Wilkinsnek.
+    * Új orderByCount  () A szűrő lehetővé teszi, hogy megadja, hogyan rendezik az eredménytáblát (vagy nem) és csak egy sort tér vissza minden egyes csoporthoz, a nem elbocsátott értékek számával minden változóban.
+Például, orderByCount  ("..." stationID "...") rendezni fog stationID és térj vissza egy sort mindegyikre stationID , a nem ígéretes értékek számával minden változó esetében.
+Ha csak megadja orderByCount  ("") A válasz csak egy sor lesz az egyes adatokra vonatkozó nem megfelelő értékek számával.
+Lásd: [ orderBy ... dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#orderBy) Ben Adamsnak köszönhetően.
+    * Új .nc oJson fájl Típusú lehetőség a rácsos és tabuláris adatkészletekre. Ez az opció teszi egy NCO lvl=2 "pedantic" JSON fájl minden információval általában egy .nc fájl. Lásd [ http://nco.sourceforge.net/nco.html#json ](https://nco.sourceforge.net/nco.html#json) Charlie Zendernek köszönhetően.
+    * BUG FIX: A orderBy ... () A Make A Graph weboldalán található lehetőségeket most helyesen kezelik.
+    * BUG FIX: .geoJson kimenet most nem nyomtatott sorokat, ahol hiányzik a lat vagy a lon értékek. Szintén magassági értékek (ha rendelkezésre áll) most szerepelnek a koordinátákban, nem pedig adatértékként. Jonathan Wilkinsnek köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    * BIZTONSÁGI KÉRDÉS: A provincis.js könyvtár használt a OpenLayers demo a WMS oldal ERDDAP™ van -off-date, és van egy hiba, amely lehetővé teszi, hogy visszaélnek vele. (Sajnos a frissítés OpenLayers és protokollok. Js nem könnyű.) Ez felveti annak lehetőségét, hogy a könyvtárat úgy állítsák fel, hogy lehetővé váljon a kereszteződés. Azonban, mivel ERDDAP™ kizárólag: felhasználások OpenLayers egy meghatározott előre beállított módon, és csak külön ERDDAP -alapú adatforrások, úgy gondoljuk, nincs kereszteződés sebezhetőség ERDDAP alkalmazása OpenLayers és provincis.j. Azonban, ha nem hisz ebben, akkor most már nem használja a OpenLayers demo a WMS oldalai ERDDAP™ hozzáadva
+    * SECURITY ISSUE: A protokollok.js könyvtár használt a OpenLayers Demo on WMS oldalak ERDDAP™ naprakész, és van egy hiba, amely potenciálisan lehetővé teszi, hogy visszaéljen. (Sajnos, frissítés OpenLayers és protokollok. A js nem könnyű.) Ez megnyitja azt a lehetőséget, hogy a könyvtár felállítható, hogy lehetővé tegye a helyszíni sebezhetőséget. Azonban, mivel ERDDAP™ csak használat OpenLayers specifikus előre beállított módon és csak specifikusan ERDDAP - alapú adatforrások, úgy véljük, nincs keresztoldali sebezhetőség ERDDAP Használata OpenLayers protokollok.js. Azonban, ha nem hiszed ezt, akkor most már letilthatja a használatát OpenLayers Demo on WMS oldalai ERDDAP™ hozzáadásával
 ```
         <openLayersActive>false</openLayersActive>  
 ```
-a setup.xml fájlba. Az alapértelmezés "igaz". Hála Charles Carletonnak és az NCEI-nek.
-    * BIZTONSÁGI VÁLTOZÁSOK: Használatlan .jar fájlok és másolás .jar fájlok (mert ők is a netcdfAll.jar) eltávolították ERDDAP™ eloszlás. Out- of- date .jar fájlokat frissítettük. Hála Charles Carletonnak és az NCEI-nek.
-    * BIZTONSÁGI VÁLTOZÁSOK: A netcdfAll.jar fájl elosztva ERDDAP™ a legújabb verzió (jelenleg 4.6.10) , de még mindig tartalmaz belső Jackson .jar fájlokat, amelyek ismert, hogy elavult és biztonsági sebezhetőségek, különösen a Jackson könyvtárak, amelyeket csak akkor használnak, amikor az Amazon S3 adatforrásokhoz. Ha nem az Amazon S3-on keresztül férsz hozzá az adatokhoz (Tudnád, ha) Ezek a sebezhetőségek nem relevánsak.
+a setup.xml fájlhoz. Az alapértelmezett "igaz". Charles Carletonnak és NCEI-nek köszönhetően.
+    * SECURITY CHANGES: Felhasználatlan .jar fájlok és duplikálja .jar fájlokat (mert ők is a netcdfAll.jar) eltávolították őket a ERDDAP™ elosztás. A naprakész .jar fájlokat frissítették. Charles Carletonnak és NCEI-nek köszönhetően.
+    * SZECURITY CHANGES: A netcdfAll.jar fájl, amely elosztott ERDDAP™ a legújabb verzió (Jelenleg 4.6.10) , de még mindig tartalmaz belső jackson .jar fájlokat, amelyekről ismert, hogy naprakésszé válnak, és biztonsági sebezhetőségekkel rendelkeznek, nevezetesen a Jackson könyvtárak, amelyeket csak az Amazon S3 adatforrásokhoz használnak. Ha nem hozzáfér az adatokhoz az Amazon S3-on keresztül (Tudnád, hogy te vagy) Ezek a sebezhetőségek nem relevánsak.
         
-A Netcdf- java fejlesztők fenntartják, hogy ezek a sebezhetőségek nem relevánsak, mert a netcdf kód használja ezeket a könyvtárakat, és minden esetben csak az Amazon S3 eléréséhez lenne releváns. Lásd [ https://github.com/Unidata/thredds/issues/866 ](https://github.com/Unidata/thredds/issues/866) . Hiszek nekik. Ha még mindig aggályai vannak ezzel kapcsolatban, lépjen kapcsolatba a netcdf- java fejlesztőkkel. (Ha nem hiszed, hogy a netcdf- java fejlesztők nem használják ERDDAP™ Emiatt, akkor nem kell használni THREDDS sem, mert THREDDS használ netcdf- java alapjaiban és átfogóbb, mint ERDDAP .) 
+A netcdf-java fejlesztők fenntartják, hogy ezek a sebezhetőségek nem relevánsak, mivel a netcdf kód ezeket a könyvtárakat használja, és minden esetben csak az Amazon S3-hoz való hozzáférés esetén lenne releváns. Lásd [ https://github.com/Unidata/thredds/issues/866 ](https://github.com/Unidata/thredds/issues/866) ... Hiszem őket. Ha még mindig vannak aggodalmai ennek, kérjük, vegye fel a kapcsolatot a netcdf-java fejlesztők. (Vedd figyelembe, hogy ha nem hiszed a netcdf-java fejlesztőket, és ne használja őket ERDDAP™ Emiatt nem szabad használni a THREDDS-t, mert a THREDS a netcdf-java-t alapvetően és kiterjedtebben használja, mint ERDDAP ...) 
         
-Részletek: A problémás kód és a sebezhetőségi figyelmeztetések a következők:
-netcdfAll- latest.jar / META- INF / maven / com.fasterxml.jackson.core / jackson- dategind / pom.xml
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Magas
-netcdfAll- latest.jar / META- INF / maven / com.fasterxml.jackson.dataformat / jackson- dataformat- cbor / pom.xml
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Magas
-netcdfAll- latest.jar / META- INF / maven / com.fasterxml.jackson.core / jackson- annotations / pom.xml
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Magas
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-3720 -- Kritikus
-netcdfAll- latest.jar / META- INF / maven / com.fasterxml.jackson.core / jackson- core / pom.xml
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Magas
-Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-3720 -- Kritikus
-"A 4.6.10-es verzióhoz az aws- java- sdk- core a Jackson 2.6.6-os verzióját húzza". (e-mail from netcdf- java people) .
-Hála Charles Carletonnak és az NCEI-nek.
+Részletek: A gondos kód és a kiszolgáltatott figyelmeztetések:
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 - Magas
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/pom.xml
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 - Magas
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-annotations/pom.xml
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 - Magas
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-3720 - Kritikus
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-7051 - Magas
+Lásd https://nvd.nist.gov/vuln/detail/CVE-2016-3720 - Kritikus
+"A 4.6.10-es verzióhoz az aws-java-sdk-core pulls a 2.6.6-os jackson-\\* műtárgyakban." (e-mail a netcdf-java emberektől) ...
+Charles Carletonnak és NCEI-nek köszönhetően.
         
-    * ÖSSZEEGYEZTETŐ VÁLTOZÁSOK: Ha újrafordítja ERDDAP™ , Megjegyzés, hogy a -cp classpath paraméter szükséges a parancssor most sokkal rövidebb, mint korábban. Lásd az új -cp beállítást [Ez a dokumentáció](/docs/contributing/programmer-guide#development-environment) . Hála Charles Carletonnak és az NCEI-nek.
-    * ÚJ LEHETŐSÉG az GenerateDatasets-ben Xml: EDDTableFromBcodmo, amely csak a BCO- DMO belső használatra szolgál.
+    * COMPILER CHANGES: Ha összeállítod ERDDAP™ , vegye figyelembe, hogy a parancssorhoz szükséges -cp osztálypata paraméter sokkal rövidebb, mint korábban. Lásd az új -cp beállítást [ez a dokumentáció](/docs/contributing/programmer-guide#development-environment) ... Charles Carletonnak és NCEI-nek köszönhetően.
+    * NEW OPTION in GenerateDatasets Xml: EDDTableFromBcodmo, amely csak belső használatra vonatkozik a BCO-DMO-ban.
 Adam Shepherdnek és BCODMO-nak köszönhetően.
-    * ÚJ ATTRIBUTE ÉS FEATURE: Ha az EDDTable oszlopban webes fájlok fájlnevei vannak (például kép, videó vagy audio fájlok) , akkor hozzá
+    * NEW ATTRIBUTE és FEATURE: Ha egy EDDTable oszlop rendelkezik a webes hozzáférhető fájlok fájlneveivel (pl. kép, videó vagy audio fájlok) Hozzáadhat
 ```
         <att name="fileAccessBaseUrl">_someBaseURL_</a>  
 ```
-a bázisURL megadása (vége: /) A fájlneveket teljes URL-ekké kell tenni. Akkor .htmlTable válaszok, ERDDAP™ a fájlnevet a kombinált URL linkjeként jeleníti meg (alap Url plusz a fájlnév) .
-Ha akarod. ERDDAP™ a kapcsolódó fájlok kiszolgálásához készítsünk egy külön EDDTableFromFileNames adatlapot ezekhez a fájlokhoz (lehet egy privát adatkészlet) .
+a bázis URL megadásához (befejezés /) szükséges, hogy a fájlnév teljes URL-ek. Aztán .htmlTable válaszok, ERDDAP™ megjeleníti a fájlnév, mint a link a kombinált URL (az alap Url plusz a fájlnév) ...
+Ha akarod ERDDAP™ a kapcsolódó fájlok kiszolgálása, külön EDDTableFromFileNames adatkészlet készítése ezekhez a fájlokhoz (lehet magán adatkészlet) ...
 Adam Shepherdnek és BCODMO-nak köszönhetően.
-    * ÚJ ATTRIBUTE AJÁNLÁS: Ha egy EDDTable oszlopban webes hozzáférhető fájlok fájlnevei vannak (például kép, videó vagy audio fájlok) amely archívumon keresztül hozzáférhető (például: .zip fájl) URL-en keresztül elérhető, használat
+    * ÚJ ATTRIBUTE RECOMMENDATION: Ha egy EDDTable oszlop rendelkezik fájlnévekkel web hozzáférhető fájlokat (pl. kép, videó vagy audio fájlok) amely egy archívumon keresztül elérhető (pl.: .zip fájl) hozzáférhető egy URL-en keresztül, használat
 ```
         <att name="fileAccessArchiveUrl">_theURL_</att>  
 ```
-az archívum URL-jének megadása.
-Ha akarod. ERDDAP™ az archívum kiszolgálásához készítsünk egy külön EDDTableFromFileNames adatlapot ehhez a fájlhoz (lehet egy privát adatkészlet) .
+meghatározni az URL-t az archívum számára.
+Ha akarod ERDDAP™ hogy szolgálja az archív fájlt, készítsen külön EDDTableFromFileNames adatkészletet az adott fájlhoz (lehet magán adatkészlet) ...
 Adam Shepherdnek és BCODMO-nak köszönhetően.
-    * JAVÍTÁSOK AZ generált adatbázisokhoz Xml az érvénytelen / rossz okok eltávolításához&lt; subsetVariables &gt; javaslatok és duplikált / rossz javasolt változó nevek, stb Hála Rich Signell-nek, Adam Shepherd-nek és BCO- DMO-nak.
-    * Új lehetőség: A politikai határokról szóló információk ERDDAP harmadik személytől származik, és kissé elavult. A világ számos pontján vannak vitatott határok, ahol különböző embereknek különböző elképzeléseik vannak arról, hogy mi a helyes. Nem vonjuk kétségbe a politikai Boundary-adatok helytállóságát ERDDAP . Ha nem tetszik a politikai határ információ, hogy jön ERDDAP™ Most már elmondhatod. ERDDAP™ soha nem húzza politikai határok hozzáadásával
+    * IMPROVEMENTS generálniDatasets Xml az érvénytelen/rossz okainak eltávolítására&lt; subsetVariables &gt; Javaslatok és duplikáció / bad javasolta változó nevek, stb. Rich Signellnek, Adam Shepherdnek és BCO-DMO-nak köszönhetően.
+    * ÚJ VÁLASZ: A politikai határokon átnyúló információ, amelyet a ERDDAP egy harmadik féltől származik, és kissé naprakész. Vannak vitatott határok a világ számos helyén, ahol különböző emberek lesznek különböző ötletek arról, hogy mi helyes. NEM KAPCSOLÓDÓ A POLITIKAI BOUNDARY DATA SZÜKSÉGE ERDDAP ... Ha nem szereted a politikai határinformációkat, amelyek jönnek ERDDAP™ Most már elmondhatod ERDDAP™ soha ne rajzoljon politikai határokat azáltal, hogy hozzáadja
 ```
         <politicalBoundariesActive>false</politicalBoundariesActive>  
 ```
-a setup.xml fájlba. Az alapértelmezés "igaz". Raju Devendernek köszönhetően.
-    * Új METADATA TAG: A datasets.xml egy adatkészlet esetében, most megadhatja az alapértelmezett színszámot Páncélburkolat dataVariable a grafikonon és a térképen,
+a setup.xml fájlhoz. Az alapértelmezett "igaz". Raju Devendernek köszönhetően.
+    * METADATA TAG: A datasets.xml egy adatkészlethez most meghatározhatja az alapértelmezett színszámot Bar szakaszok egy dataVariable grafikonokon és térképeken
 ```
         <att name="colorBarNSections">_anInteger_</att>  
 ```
-         (alapértelmezés = -1, ami azt mondja, hagyjuk ERDDAP™ döntés) . Lásd a [szín A bár beállításai](/docs/server-admin/datasets#color-bar-attributes) .
-    * JAVASOLT: az állami határvonal színe a térképen lila volt (Deep Purple for you Baby Boomers) . Most már szürke. (a nemzeti határ között szürke és a föld szürke) .
-    * BUG FIX:&lt;izo19115Fájl &gt; és&lt;fgdcFile &gt; in datasets.xml nem mindig megfelelően kezelték. Most már igen. Hála a BCO- DMO-nak.
+         (default=-1, ami azt mondja, hogy engedjük ERDDAP™ döntés) ... Lásd: [szín Bar beállítások](/docs/server-admin/datasets#color-bar-attributes) ...
+    * IMPROVED: az állami határ színe a térképeken a lila (Mély lila az Ön számára Baby Boomers) ... Most szürke (a nemzeti határszürke és a szürke között) ...
+    * BUG FIX:&lt;Iso19115Fil&gt; és&lt;fgdcFile&gt; datasets.xml nem mindig kezelték megfelelően. Most ők is. A BCO-DMO-nak köszönhetően.
 
-## változat{#version-178} 
- (kiadás dátuma: 2017- 05- 27) 
+## Verzió 1.78{#version-178} 
+ (közzétett 2017-05-27) 
 
-*    **Új jellemzők (felhasználók számára) :**   
+*    **Új funkciók (felhasználók számára) :**   
      
-    *    (nincs)   
+    *    (Nem)   
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    * JAVASOLT: A sorok sorrendje a "Major LoadDatasets Time Series" -ban a status.html oldalon most a legrégibb az alján.
-    * BUG FIX: ERDDAP™ Most ír .nccsv az időváltozóval rendelkező fájlok actual\\_range ISO-8601 Húridő. Ez javítja a hibát EDDTableFromErddap parsing info egy távoli adatkészlet és a quickRestart fájl minden EDDTableFrom... fájlok. (Az idő actual\\_range az adatkészlet első feltöltésekor téves lesz, de az újratöltés után helyes, például ha az adatkészlet be van jelölve.) 
+    * IMPROVED: A sorrend a "Major LoadDatasets Time Series" a status.html oldalon most a legrégebbi az alján.
+    * BUG FIX: ERDDAP™ most írja .nccsv fájlok az idő változója actual\\_range mint ISO-8601 String idő. Ez rögzíti a hiba EDDTableFromErddap parsing info egy távoli adatkészlet és a gyorsRestart fájl minden EDDTableFrom... Files adatkészletek. (Az idő actual\\_range Rossz lesz az első alkalom, hogy az adatkészlet v1.78-ban van, de helyes, miután újratöltődik, pl. ha zászlózik az adatkészletet.) 
 
-## változat{#version-176} 
- (kiadás dátuma: 2017- 05- 12) 
+## Verzió 1.76{#version-176} 
+ (közzétett 2017-05-12) 
 
-*    **Új jellemzők (felhasználók számára) :**   
+*    **Új funkciók (felhasználók számára) :**   
      
-    * VÁLTOZÁS Tomcat-ban: Kérelmek ERDDAP™ nem webböngészőkből származó szoftver (például: curl , R, Matlab , Python , Java ) :
-Mint a Tomcat korábbi változataiban (az alacsony szintű szoftver fut ERDDAP ) 2016 eleje óta a kérés lekérdezési részében szereplő karakterek közül egyre több URL [ **Kódolt százalék** ](/docs/server-admin/datasets#infourl) biztonsági okokból. A böngészők gondoskodnak a százalékos kódolásról. így ERDDAP™ a böngésző nem érinti, kivéve, ha a kérést átirányítják egy másik ERDDAP .
-    * JAVÍTOTT: Korábban, ERDDAP™ kezelt **Char változók** Inkább aláíratlan rövid egész számok, mint karakterek. Most úgy bánik velük, mint az 1-es karakterű UCS2-vel. (Unicode) Húrok. Lásd a [Char dokumentáció](/docs/server-admin/datasets#char) . Köszönet Aurelie Briand-nek és az Argo projektnek.
-    * JAVÍTOTT: Korábban, ERDDAP™ kevés támogatást nyújtott **Unicode karakterek** a 255-ös karakter felett a Strings-ben. Most, belül, ERDDAP™ teljes mértékben támogatja a 2- byte UCS2 chars (0-tól 65535-ig számozott karakterek) Stringsben. Amikor a sztringadatok különböző fájltípusokra vannak írva, ERDDAP™ megteszi, amit tud, hogy támogassa a 2 byte chars. Egy másik példa a .csv fájlok, amelyek ERDDAP™ ír az ISO-8859-1 charset (1 byte charset) , így ERDDAP™ minden karaktert a 255-ös karakter felett ír a JSON- like\\ u _ hhhh _ szintaxissal. Lásd [Húros adatok](/docs/server-admin/datasets#string) .
-    * JAVÍTOTT: .nc fájlok ERDDAP™ , Char változók kell értelmezni, mint Strings lesz az attribútum
-         **\\ _ Kódolás = ISO- 8859- 1**   
-In .nc fájlok olvasása ERDDAP™ , Char változók "\\ _ Encoding" lesz értelmezni, mint Strings a megadott charset.
-    * REMIDER: ERDDAP™ támaszok **JSON- like backslash- encoding** a speciális karakterek, ha meghatározza megszorítások Char és Húros változók. Így kérhetsz valami olyasmit, mint a & myString = "\\ u20ac", amikor adatsorokat akarsz, ahol a myString = €20ac óta az Euro szimbólum kódpontjának hexadecimális változata. Az interneten több forrás mutatja az Unicode szimbólumok kódpontszámait, például: [ https://en.wikipedia.org/wiki/Unicode ](https://en.wikipedia.org/wiki/Unicode) .
-    * JAVÍTOTT: Korábban, ERDDAP™ korlátozott támogatást nyújtott **hosszú egész szám** változók. Most ERDDAP™ teljes mértékben támogatja longs belül, és teszi a legjobb írásakor hosszú adatok különböző fájltípusok. Lásd a [hosszú dokumentáció](/docs/server-admin/datasets#long) . Hála az írországi Tengerészeti Intézetnek, Craig Risiennek, Rich Signell-nek, Christopher Wingardnak és OOI-nak.
-    * ÚJ: kimeneti fájl típusa griddap és tabledap : ** .nccsv ** , ami a NetCDF -szerű ASCII, CSV fájl, amely tartalmazza az összes metaadatokat, hogy lenne egy összehasonlítható .nc akta. Lásd a [NCSV Specifikáció](/docs/user/nccsv-1.00) . Hála Steve Hankinnek.
-    * ÚJ: ** orderByClosest szűrő** lehetővé teszi, hogy meghatározza, hogyan kerül sor az eredménytábla válogatására és egy intervallum (pl. 2 óra) . Az egyes csoportokon belül csak az intervallumhoz legközelebb eső sorok maradnak. Például, orderByClosest  (" stationID 2 óra ".) Elrendeződik stationID és idő, de csak vissza a sorok minden egyes stationID ahol az utolsó orderBy oszlop (idő) 2 órás időközökhöz van legközelebb. Ez a legközelebbi dolog tabledap az értékeket griddap kéréssel lépje. Ez az opció megadható bármilyen tabledap dataset .html weboldal, .graph weboldal, és bármely URL, hogy létre magad. Hála az ír Tengerészeti Intézetnek és az Ocean Networks Kanadának.
-    * ÚJ: ** orderByLimit szűrő** lehetővé teszi, hogy adja meg, hogyan kerül sor az eredménytábla válogatására és a limit szám (például 100) . Az egyes csoportokon belül csak az első "limit" sorok maradnak meg. Például, orderByMax  (" stationID , 100 ") Elrendeződik stationID , de csak vissza az első 100 sor minden stationID . Ez hasonló az SQL LIMIT záradékához. Ez az opció megadható bármilyen tabledap dataset .html weboldal, .graph weboldal, és bármely URL, hogy létre magad. Hála az ír Tengerészeti Intézetnek és az Ocean Networks Kanadának.
-    * ÚJ: Két új válaszfájltípus, ** .jsonlCSV és .jsonlKVP ** a rácsozott adatkészletekre, táblázatos adatkészletekre és számos más helyre ERDDAP   (például adatkészletekkel kapcsolatos információkérések) . A fájlok JSON Lines fájlok ( [ https://jsonlines.org/ ](https://jsonlines.org/) ) ahol minden vonalnak külön JSON objektuma van. .jsonlCSV csak az értékek CSV formátumban. .jsonlKVP van kulcsa: Értékpárokat. Minden vonal magától áll. A vonalak nem egy nagyobb JSON tömb vagy objektum. Például: [a minta iránti kérelem](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.jsonlKVP?longitude%2Clatitude%2Ctime%2Cstation%2Cwmo_platform_code%2CT_25%26time%3E=2015-05-23T12:00:00Z%26time%3C=2015-05-31T12:00:00Z) . Hála Damian Smyth-nek, Rob Fullernek, Adam Leadbetternek és Írország Tengerészeti Intézetének.
-    * ÚJ: Új dokumentáció [ **Hogyan férjünk hozzá a privát adatbázisokhoz ERDDAP™ Scripts** ](/docs/user/AccessToPrivateDatasets) . Lynn DeWitt-nek köszönhetően.
-    * JAVASOLT: A minimális kiterjedése a ** OpenLayers ** A térkép 2 fok volt, és most 4 adatpixel. Köszönet Rusty Hollemannek.
-    * JAVASOLT: Egyes közös esetekben olyan kérelmek, amelyek **reguláris kifejezés** A kényszer sokkal gyorsabb lesz.
+    * CHANGE Tomcatban: A kérésekhez ERDDAP™ a webböngészőktől eltérő szoftverekből jön (pl.: curl R, Matlab , Python , Java ) :
+Mint a Tomcat verzióinak korábbi módosításai (az alacsonyabb szintű szoftver, amely fut ERDDAP ) 2016 eleje óta a kérés URL lekérdezésének több karakterének kell lennie [ **Percent kódolva** ](/docs/server-admin/datasets#infourl) biztonsági okokból. A böngészők gondoskodnak a százalékos kódolásról az Ön számára. használat ERDDAP™ egy böngészőben nem érintett, kivéve, ha a kérés átirányul egy másikra ERDDAP ...
+    * Előzőleg, ERDDAP™ kezelt **char változók** jobban, mint a nem aláírt rövid integrátorok, mint a karakterek. Most úgy kezeli őket, mint az 1 karakterhosszú UCS-2 (Unicode) Húrok. Lásd: [char dokumentáció](/docs/server-admin/datasets#char) ... Az Aurelie Briandnek és az Argo projektnek köszönhetően.
+    * Előzőleg, ERDDAP™ Kis támogatást nyújtanak **Unicode karakterek** felett karakter #255 Strings. Most, belsőleg, ERDDAP™ teljes mértékben támogatja a 2 fehér UCS-2 chars (karakterek száma 0 65535) Húrokban. Amikor a String adatokat különböző fájltípusokra írják, ERDDAP™ a legjobb, hogy támogassa a 2 fehér chars. Egy másik példa az .csv fájlok, amelyek ERDDAP™ írja az ISO-8859-1 charset (1 fehér charset) , így ERDDAP™ ír minden karakter felett #255 a JSON-szerű \\u_hhhh_ szintax. Lásd [String adatok](/docs/server-admin/datasets#string) ...
+    * IMPROVED: In .nc fájlok írta ERDDAP™ , char variables to interpreted as Strings lesz a tulajdonsága
+         **\\_Encoding=ISO-8859-1**   
+Inkább .nc fájlok által olvasott ERDDAP™ A "\\_Encoding" jótékonysági változókat a meghatározott jelzáloghitelekkel fogják értelmezni.
+    * REMINDER: ERDDAP™ támogatás **JSON-szerű backslash kódolás** speciális karakterek, ha megadja a char és a String változókat. Így kérhet valamit, mint &myString="\\u20ac", amikor olyan adatokat akar, ahol a myString=€ 20ac óta az euró szimbólumának hexadecimális változata. Számos forrás az interneten bemutatja az Unicode szimbólumok kódszámát, például [ https://en.wikipedia.org/wiki/Unicode ](https://en.wikipedia.org/wiki/Unicode) ...
+    * Előzőleg, ERDDAP™ korlátozott támogatást nyújtottak **hosszú integráló** változók. Most ERDDAP™ teljes mértékben támogatja a hosszúságokat belsőleg, és a legjobb, ha hosszú adatokat ír különböző fájltípusokra. Lásd: [hosszú dokumentáció](/docs/server-admin/datasets#long) ... Az Írország tengerészeti intézetének, Craig Risiennek, Rich Signellnek, Christopher Wingardnak és OOI-nak köszönhetően.
+    * NEW: kimeneti fájltípus griddap és tabledap : ** .nccsv ** , ami egy NetCDF - mint az ASCII, CSV fájl, amely tartalmazza az összes metaadatot, amely összehasonlítható lenne .nc fájl. Lásd: [NCCSV Specifikáció](/docs/user/nccsv-1.00) ... Steve Hankinnak köszönhetően.
+    * NEW: ** orderByClosest Szűrő** lehetővé teszi, hogy megadja, hogyan rendezik az eredménytáblát, és egy intervallum (pl. 2 óra) ... Minden egyes csoporton belül csak az intervallumhoz legközelebbi sorokat fogják tartani. Például, orderByClosest  ("..." stationID Idő, 2 óra") rendezni fog stationID és idő, de csak vissza a sorokat minden egyes stationID ahol az utolsó orderBy oszlop (Idő) közel 2 órás intervallum. Ez a legközelebbi dolog tabledap értékek ösztönzése egy griddap kérelemben. Ezt az opciót bármelyik oldalon meg lehet határozni tabledap Az adatkészlet .html weboldala, .graph weboldala, és bármilyen URL által, amelyet Ön generál. Az Írország tengerészeti intézetének és az Ocean Networks Canada-nak köszönhetően.
+    * NEW: ** orderByLimit Szűrő** Határozza meg, hogyan rendezik meg az eredménytáblát, és korlátozza a számot (pl. 100) ... Minden egyes csoporton belül csak az első „korlát” sorokat fogják megtartani. Például, orderByMax  ("..." stationID 100") rendezni fog stationID De csak az első 100 sort adja vissza mindegyiknek stationID ... Ez hasonló az SQL LIMIT záradékához. Ezt az opciót bármelyik oldalon meg lehet határozni tabledap Az adatkészlet .html weboldala, .graph weboldala, és bármilyen URL által, amelyet Ön generál. Az Írország tengerészeti intézetének és az Ocean Networks Canada-nak köszönhetően.
+    * NEW: Két új válaszfájltípus, ** .jsonlCSV és .jsonlKVP ** rendelkezésre állnak a megfogott adatkészletek, tabuláris adatkészletek és sok más helyen ERDDAP   (pl. az adatkészletekkel kapcsolatos információk kérése) ... A fájlok JSON Lines fájlok ( [ https://jsonlines.org/ ](https://jsonlines.org/) ) ahol minden sor külön JSON objektummal rendelkezik. .jsonlCSV csak az értékek egy CSV formátumban. .jsonlKVP Van Key: Értékpárok. Minden vonal önmagában áll. A vonalakat nem zárják be egy nagyobb JSON tömbben vagy tárgyban. Például lásd [Ez a mintakérelem](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.jsonlKVP?longitude%2Clatitude%2Ctime%2Cstation%2Cwmo_platform_code%2CT_25%26time%3E=2015-05-23T12:00:00Z%26time%3C=2015-05-31T12:00:00Z) ... Damian Smythnek, Rob Fullernek, Adam Leadbetternek és Írország tengerészeti intézetének köszönhetően.
+    * ÚJ: Van új dokumentáció, amely leírja [ **Hogyan érhető el a magánadatok ERDDAP™ Szövegek** ](/docs/user/AccessToPrivateDatasets) ... Lynn DeWittnek köszönhetően.
+    * IMPROVED: A minimális mértékű ** OpenLayers ** A térkép 2 fok volt, és most 4 adatpixel. Rusty Hollemannak köszönhetően.
+    * IMPROVED: Bizonyos közös esetekben olyan kérelmek, amelyek tartalmaznak egy **rendszeres kifejezés** a korlátozást sokkal gyorsabban fogják feldolgozni.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    *    **Első lépés:** Az első alkalom, hogy elkezded ezt az új verziót, hosszú ideig fog tartani ERDDAP™ az összes adatkészlet betöltése, mert újra kell olvasnia az összes forrásadatot (bár csak a fejléc a rácsozott adatfájlok) . Ha megnézed a naplókat, lehet, hogy hibaüzeneteket látsz, melyek szerint "régi / nem támogatott javított verzió" néhány belső fájl -- ez rendben van -- ERDDAP™ elkészíti a belső fájlok új verzióit. Kérlek, légy türelmes.
-    * FELLÉPÉS: ERDDAP™ Most használja az új **Java.time** osztályok (más néven JSR 310) Joda helyett a húrokat numerikus időkre bontsa. Megjegyzések:
-        * Ha ERDDAP™ hirtelen problémái vannak a Húros idők egy adott adatkészlet, és így csak átalakítja a legtöbb vagy minden alkalommal a NaN (hiányzó értékek) , A probléma szinte mindig a dátum Időformátum sztring, amit a változó "egységeként" definiáltál. Az új rendszernek néha egy kicsit más datedTime formátumra van szüksége.
-        * Ha numerikus hónapok és napok a dateTime strings nem 0- párnázott (például "3 / 7 / 2016") , hogy a formátum csak egyetlen M és d (pl. "M / d / yyy", nem "MM / dd / yyy") .
-        * Minden törtmásodperces specifikáció módosítása, amely kisebb s-t használ (például a .sss in yyyy-MM-dd Nem.) tőkére S, (például: yyyy-MM-dd Nem.) .
-        *    ERDDAP™ már nem támogatja a sztring dátumát Kétjegyű időformátum (yy) implicit évszázad (Például 1900 vagy 2000) . A vállalkozások dollármilliárdokat költöttek erre a problémára az 1990-es évek végén. A tudósok nem használhatnak két számjegyű évet. Kérjük, javítsa meg a forrásfájlt (sz) 4 számjegyű évekre történő átváltással, majd a dátumban éééé Időformátum.
-        * Használhatja az ÉÉÉÉ-t vagy ÉÉÉÉ-t (amelyet ERDDAP™ átalakítja uuuuuba) 4 számjegyű év, beleértve a negatív éveket, pl. -4712 (ami Kr. e. 4713) . Hála a SeaDataNetnek, Thomas Gardnernek és a BODC-nak.
-        * Kérjük, továbbra is használja Z egy date Time formátumban, hogy ERDDAP Időeltolódás (pl. Z, + 0200, -08, -0800, -08: 30) .
-        *    **Győződjön meg róla, hogy Java 1.8.0\\ _ 21 vagy magasabb verzió.** 
-        * Programozók -- Ha írsz Java a futó programok ERDDAP™ kód, el kell távolítani a hivatkozást a joda-time. üveg az osztályút paraméterben.
-    * ÚJ: ERDDAP s [ArchiveA Adatkészlet](/docs/server-admin/additional-information#archiveadataset) létre tud hozni [ **BagIt fájlok** ](https://en.wikipedia.org/wiki/BagIt) . Az NCEI szabványosíthatja ezt a formátumot. Hála Scott Crossnak és John Relph-nek.
-    * JAVÍTOTT: A linkek letölteni az erddap. háború a ERDDAP™ weboldalak most rámutat, hogy **GitHub** . (Ezek nyilvános kapcsolatok, így nem kell csatlakoznod a GitHub-hoz.) Ez sokkal gyorsabb letöltéseket jelent. (legfeljebb 12Mb / s versus 1Mb / s) és kevés probléma a letöltéssel. Hála Damian Smyth, Rob Fuller, Adam Leadbetter, Conor Delaney és Írország Tengerészeti Intézete.
-    * JAVASOLT: **Status.html oldal és a napi állapotjelentés e-mail** Most egy "Major LoadDatasets Time Series" részt tartalmaz, amely a következő statisztikákat mutatja: ERDDAP™ az utolsó 100 fő terhelési adatkészlet minden nagyobb terhelési adatlapjának a végén. Köszönhetően a problémás RAID-unknak.
-    * ÚJ: új, opcionális (de ajánlott) EDDTableFromCassandra adatkészletek paramétere: [ ** &lt;partitionKeyCSV &gt; ** ] (/ docs / server- admin / datasets # partitionkeycsv) . Hála az Ocean Networks Kanadának.
-    * ÚJ: EDDTableFromAsciiFiles most támogatja ** &lt;Oldalelválasztó &gt; ** paraméter. Ha null vagy "", az osztály kitalálja, mint korábban, Ellenkező esetben, az első karakter lesz a oszlop elválasztó olvasásakor a fájlokat. Hála Sky Bristolnak és Abigail Bensonnak.
-    * Új: az új adatkészlet típusa, [ **EDDTableFromNccsvFiles** ](/docs/server-admin/datasets#eddtablefromnccsvfiles) , képes egy adatkészlet összesítésével [NCCSV .csv fájlok](/docs/user/nccsv-1.00) . Hála Steve Hankinnek.
-    * JAVÍTOTT: **EDDTableFromErddap** most használja .nccsv az információ távoli ERDDAP s és a metaadatok helyi archívumához. Ez lehetővé teszi a teljes támogatást a char és a hosszú adattípusok, és az Unicode (UCS- 2) Charset chars and Strings. Hála Rob Fullernek és Írország Tengerészeti Intézetének.
-    * JAVÍTOTT: EDDTableFromErddap és EDDGrid FromErddap most támogatja ** &lt;átirányítás &gt; hamis&lt;/ átirányítás &gt; ** ami elárulja ERDDAP™ soha ne irányítsa át a kérést a távoli ERDDAP . Az alapértelmezés igaz. Ez hasznos, ha a távoli ERDDAP™ magánszemély ERDDAP . Hála Damian Smyth-nek, Rob Fuller-nek és Írország Tengerészeti Intézetének.
-    * JAVÍTOTT: ERDDAP™ Most fogások **törölt felhasználói kérelmek** Előbb. És ERDDAP™ Most gyorsabban leáll, mert az alacsony szintű szálak gyorsabban záródnak le. Köszönhetően a problémás RAID-unknak.
+    *    **SLOW FIRST STARTUP:** Az első alkalommal, amikor elkezdi ezt az új verziót, hosszú időbe telik ERDDAP™ az összes adatkészlet betöltése, mert újra kell olvasnia az összes forrásadatot (bár csak a rácsos adatfájlok vezetője) ... Ha megnézi a naplókat, láthatja a hibaüzeneteket, amelyek azt mondják, hogy egyes belső fájlok „régi/nem támogatott továbbfejlesztett verziója” - ez rendben van - ERDDAP™ a belső fájlok új verzióit készíti. Kérjük, légy türelmes&#33;
+    * ACTION: ERDDAP™ most használja az újat **java.time** osztályok (JSR 310 néven ismert) Joda helyett, hogy a String-időket numerikus időkre tegye. Megjegyzések:
+        * Ha ERDDAP™ hirtelen problémái vannak, amelyek a String-időt egy adott adatkészletre választják, és így csak a NaN legtöbbször átalakítja a (hiányzó értékek) A probléma szinte mindig a dátummal Az idő formátum azt állítja, hogy a változó "egyetemeként" meghatározott. Az új rendszernek néha kissé eltérő dátumTime formátumú stringre van szüksége.
+        * Ha a numerikus hónapok és napok a dátumbanA húrok nem 0-padded (pl.: "3/7/2016") Győződjön meg róla, hogy a formátum csak egy M és d (pl. „M/d/yyyy”, nem „MM/dd/yyyy”) ...
+        * Változtasson bármilyen frakcionális másodperc specifikációt, amely az alkatrészt használja (pl. a .ss in yyyy-MM-dd T'HH:mm:ss.ss) , fővárosba S's, (pl.: yyyy-MM-dd T'HH:mm:ss.SS) ...
+        *    ERDDAP™ már nem támogatja a sztring dátumot Időformátumok kétszámjegyű évekkel (Igen,) egy implied évszázaddal (pl.: 1900 vagy 2000) ... A vállalkozások milliárd dollárt költöttek erre a problémára az 1990-es évek végén. A tudósoknak nem szabad két számjegyévet használniuk. Kérjük, javítsa ki a forrásfájlt (s) 4 számjegyű évre való áttérés, majd használjon igent a dátumban Idő formátum.
+        * Használhatja Yyyy vagy YYYY (melyik ERDDAP™ átalakítja az uuuu) 4 számjegyév, beleértve a negatív évet, például -4712 (amely 4713 BC) ... A SeaDataNetnek, Thomas Gardnernek és a BODC-nek köszönhetően.
+        * Kérjük, továbbra is használja Z egy dátumTime formátumot kapni ERDDAP parázz egy idő ofszet (pl. Z, +0200, -08, -0800, -08:30) ...
+        *    **Győződjön meg róla, hogy használja Java 1.8.0\\_21 vagy annál magasabb verzió.** 
+        * Programozók - Ha írsz Java programok futás ERDDAP™ kód, el kell távolítania a joda-időre való hivatkozást. jar az osztályút paraméterében.
+    * NEW: ERDDAP A [Archívum Adatkészlet eszköz](/docs/server-admin/additional-information#archiveadataset) most hozhat létre [ **BagIt fájlok** ](https://en.wikipedia.org/wiki/BagIt) ... Az NCEI szabványosíthatja ezt a formátumot. Köszönhetően Scott Cross és John Relph.
+    * IMPROVED: Az erddap letöltéséhez kapcsolódó linkek. háború a ERDDAP™ weboldalak most rámutatnak **GitHub** ... (Ezek nyilvános linkek, így nem kell csatlakoznia a GitHubhoz.) Ez sokkal gyorsabb letöltést jelent (12 Mb/s versus 1Mb/s) és néhány probléma a letöltésekkel. Damian Smyth, Rob Fuller, Adam Leadbetter, Conor Delaney és Írország tengerészeti intézetének köszönhetően.
+    * IMPROVED: A **status.html oldal és a napi Status Report e-mail** most tartalmaz egy "Major LoadDatasets Time Series" szakaszt, amely statisztikákat mutat ERDDAP™ a végén minden nagy terhelésDatasets az utolsó 100 fő terhelésDatasets. Hála a gondos RAID.
+    * NEW: egy új, opcionális (de ajánlott) paraméter az EDDTableFromCassandra adatkészletekhez: ** &lt;partitionKeyCSV&gt; ** ] (/docs/server-admin/datasets#partitionkeycsv) ... Az Ocean Networks Canada-nak köszönhetően.
+    * ÚJ: Az EDDTableFromAsciiFiles most támogatja ** &lt;oszlopSeparator&gt; ** paraméter. Ha null vagy "", az osztály kitalálja, mint korábban, Ellenkező esetben az első karaktert fogják használni, mint az oszlop elválasztó, amikor olvassa a fájlokat. A Sky Bristolnak és az Abigail Bensonnak köszönhetően.
+    * Új: az új adatkészlet típusa, [ **EDDTableFromNccsvFiles** ](/docs/server-admin/datasets#eddtablefromnccsvfiles) Adatkészletet készíthet aggregálással [NCCSV .csv fájlok](/docs/user/nccsv-1.00) ... Steve Hankinnak köszönhetően.
+    * IMPROVED: **EDDTableFromErddap** most használ .nccsv információt szerezni távolról ERDDAP s és a metaadat info helyi archívuma. Ez lehetővé teszi a char és a hosszú adattípusok teljes támogatását, valamint az Unicode számára (UCS-2) charset for chars és Strings. Rob Fullernek és Írország tengerészeti intézetének köszönhetően.
+    * IMPROVED: EDDTableFromErddap és EDDGrid FromErddap támogatás ** &lt;Átirányítás&gt;hamis&lt;/redirect&gt; ** amit mond ERDDAP™ Soha ne irányítsa a kérést a távolba ERDDAP ... Az alapértelmezettség igaz. Ez akkor hasznos, ha a távoli ERDDAP™ privát ERDDAP ... Damian Smythnek, Rob Fullernek és Írország tengerészeti intézetének köszönhetően.
+    * IMPROVED: ERDDAP™ macska **törölt felhasználói kérések** előbb. És ERDDAP™ most gyorsabban leáll, mert az alacsony szintű szálak gyorsabban leállnak. Hála a gondos RAID.
     *    **GenerateDatasets Xml:** 
-        * ÚJ: Az új speciális EDDType "ncdump" nyomtat [ncdump](https://linux.die.net/man/1/ncdump) \\ -szerű kinyomtatás a fejléc egy .nc akta. A megadott változók adatértékeit is kinyomtathatja (vagy írja be a "semmi", hogy ne nyomtasson semmilyen adatértéket) . Ez azért hasznos, mert az ncdump nélkül nehéz tudni, mi van egy fájlban, és így milyen EDDType-ot kell megadnod az GenerateDatasetsXml-hez. Craig Risiennek, Rich Sigellnek, Christopher Wingardnak és OOI-nak köszönhetően.
-        * ÚJ: Tengeri adatok esetében Nettó adatok:
-Adott esetben GenerateDatasets Xml most csinál egy speciális szemantikai konverzió segítségével távoli SPARQL lekérdezés: ha egy változó forrás metaadatai tartalmaznak sdn\\ _ paraméter\\ _ urn, például, sdn\\ _ paraméter\\ _ urn = "SDN: P01::: PSLTZZ01", GenerateDatasets Xml hozzáadja a megfelelő P02 attribútumot, pl. sdn\\ _ P02\\ _ urn = "SDN: P02::: PSAL". Ha van adatkészlete, amely ezeket az attribútumokat használja, és ha ERDDAP s&lt; categoryAttributes &gt; in setup.xml includes sdn\\ _ paraméter\\ _ urn and sdn\\ _ P02\\ urn, users will be able to use ERDDAP™ A kategóriás keresési rendszer ezen attribútumok egyedi értékeivel rendelkező adatkészletek keresésére szolgál. Köszönet a BODC-nak és Alexandra Kokkinaki-nak.
-        * JAVÍTOTT: GenerateDatasets Xml most sok változást http:// a metaadatok https:// adott esetben.
-        * JAVÍTOTT: GenerateDatasets Xml most próbálja kitalálni, készítő\\ _ type és kiadó\\ _ type.
-        * JAVASOLT: Az GenerateDatasets által javasolt adattípusok Az Xml egy kicsit jobb lesz. Hála Margaret O 'Briennek, LTER-nek és EML-nek.
-        * JAVÍTOTT: GenerateDatasets Az Xml jobb a&lt;cdm\\ _ data\\ _ type & gt;, és a hozzá tartozó, szükséges attribútumok (pl.,&lt;cdm\\ _ timeseries\\ _ változók & gt;), így ezt az információt megadhatja. Hála Rich Signell-nek.
-        * JAVASOLT: Általános adatbázisokban Xml, az EDDTable datasets, a javaslat&lt; subsetVariables &gt; most sokkal konzervatívabb. Hála John Kerfootnak.
-        * JAVÍTOTT: Ha datasets.xml adatsorok esetében meghatározza featureType de nem cdm\\ _ data\\ _ type, a featureType cdm\\ _ data\\ _ type néven kerül felhasználásra. Hála Rich Signell-nek.
-        * BUG FIX: generál Adatbázisok Xml most a helyes&lt;adattípus &gt; olyan adatváltozók esetében, amelyek scale\\_factor , add\\_offset és / vagy\\ _ Aláíratlan attribútumok.
-    * JAVÍTOTT: Mikor ERDDAP™ megnyitja a .nc fájl **rövidebb** mint aminek lennie kell (például, nem lett teljesen másolt a helyére) , ERDDAP™ Most már rosszul kezeli az aktát. Korábban... ERDDAP™ visszatért hiányzó értékek bármely hiányzó része a fájl, mert ez az alapértelmezett viselkedés a netcdf- java. ERDDAP™ Most ucar-t használ .nc 2.iosp.netcdf3.N3header.disallow FileTruncation = true; Hála a mi bajkeverő RAID-unknak és Christian Ward- Garrison-nak.
-    * JAVASOLT: az ISO 19115 író most használja **creator\\ _ type** , ha jelen van.
-    * JAVÍTOTT: ERDDAP™ Most használja a legújabb netcdf- java v4.6.9, amely olvassa el a további típusok **netcdf4 fájlok** . Hála Craig Risiennek, Rich Signell-nek, Christopher Wingardnak és OOI-nak.
-    * BUG FIX: kerülje a bajt, ha a különböző forrásfájlok különböző adattípusokkal rendelkeznek egy adott változóhoz. Hála Roy Mendelssohnnak és Eugene Burgernek.
-    * BUG FIX: **Időformátum-átalakítások** Most már jobban védve vannak a rossz időértékekkel szemben. Hála az NDBC-nek.
-    * BUG FIX: EDDGrid FromNcFiles Kicsomagolva kezeli az időértékeket **"hónapok óta"... és "évek óta"...** helyesen (a hónap vagy év növelésével, nem durván összeadva például 30 nappal többször) . Köszönet Soda3.3.1.
-    * BUG FIX: csak v1.74, **előfizetések** intézkedés előírása (például: http:// ...) , amely volt, és kell, hogy legyen választható.
-    * BUG FIX: EDDGrid FromMergeIRFiles.lowGetSourceMetaadatok () nem adott hozzá globális tulajdonságokat. Most már igen.
+        * ÚJ: Az új speciális EDDType "cdump" nyomtatott [ncdump](https://linux.die.net/man/1/ncdump) \\-szerű nyomtatás a vezető egy .nc fájl. Kinyomtathatja az adatértékeket a megadott változók esetében is (vagy lépjen be "semmi", hogy ne nyomtassa ki az adatértékeket) ... Ez azért hasznos, mert ncdump nélkül nehéz tudni, mi van egy fájlban, és így az EDDType meg kell határoznia a GenerateDatasetsXml-t. Craig Risiennek, Rich Signellnek, Christopher Wingardnak és OOI-nak köszönhetően.
+        * ÚJ: SeaData Net adatok:
+Adott esetben a GenerateDatasets Az Xml most egy specifikus szemantikai átalakulást végez egy távoli SPARQL lekérdezés segítségével: ha a változó metaadata tartalmaz egy sdn\\_paraméter\\_urn, például sdn\\_paraméter\\_urn = "SDN:P01:PSLTZZ01", GenerateDatasets Xml hozzáadja a megfelelő P02 tulajdonságot, pl. sdn\\_P02\\_urn = "SDN:P02::PSAL". Ha rendelkezik olyan adatkészletekkel, amelyek ezeket a tulajdonságokat használják, és ha a ERDDAP A&lt; categoryAttributes &gt; a setup.xml tartalmazza a sdn\\_paraméter\\_urn és sdn\\_P02\\_urn, a felhasználók képesek lesznek használni ERDDAP™ Kategória keresési rendszer az adatkészletek kereséséhez ezeknek a tulajdonságoknak a sajátos értékeivel. Köszönhetően BODC és Alexandra Kokkinaki.
+        * IMPROVED: GenerateDatasets Az Xml most sokat változtat http:// hivatkozások a metaadatában https:// adott esetben.
+        * IMPROVED: GenerateDatasets Az Xml most megpróbálja kitalálni a Teremtőt\\_típust és a kiadót\\_típust.
+        * IMPROVED: A változó adattípusok által javasolt GenerateDatasets Az Xml most egy kicsit jobb lesz. Köszönhetően Margaret O'Brien, LTER és EML.
+        * IMPROVED: GenerateDatasets Az Xml jobb, ha meghatározza a&lt;cdm\\_data\\_type & gt; és hozzáadja a kapcsolódó, szükséges tulajdonságokat (pl.&lt;cdm\\_timeseries\\_variables & gt;), így elláthatja ezt az információt. Rich Signellnek köszönhetően.
+        * IMPROVED: A GenerateDatasets-ben Xml, az EDDTable adatkészletek esetében, a javaslat&lt; subsetVariables &gt; most sokkal konzervatívabb. John Kerfootnak köszönhetően.
+        * IMPROVED: Ha datasets.xml egy adatkészlet esetében meghatározza featureType de nem cdm\\_data\\_type, featureType cdm\\_data\\_type-ként fogják használni. Rich Signellnek köszönhetően.
+        * BUG FIX: generál Adatkészletek Az Xml most azt sugallja, hogy helyes&lt;adatType&gt; olyan adatváltozatokra, amelyek scale\\_factor , add\\_offset és/vagy \\_ kijelölt tulajdonságok.
+    * IMPROVED: Amikor ERDDAP™ megnyit egy .nc fájl, amely **rövidebb** mint kellene, hogy legyen (pl. nem kapott teljesen másolatot a helyére) , ERDDAP™ most úgy kezeli a fájlt, mint rossz. Korábban, ERDDAP™ visszatért hiányzó értékek a fájl hiányzó részéhez, mert ez a netcdf-java alapértelmezett viselkedése. ERDDAP™ most használ Ucar .nc 2.iosp.netcdf3.N3header.disallowFileTruncation = igaz; Hála a gondos RAID és a keresztény Ward-Garrison.
+    * IMPROVED: az ISO 19115 író most használja **Készítő\\_type** Ha jelen van.
+    * IMPROVED: ERDDAP™ most használja a legfrissebb netcdf-java v4.6.9, amely olvasható további típusú **netcdf-4 fájlok** ... Craig Risiennek, Rich Signellnek, Christopher Wingardnak és OOI-nak köszönhetően.
+    * BUG FIX: elkerülje a bajt, ha a különböző forrásfájlok különböző adattípusokkal rendelkeznek egy adott változóhoz. Roy Mendelssohnnak és Eugene Burgernek köszönhetően.
+    * BUG FIX: **Idő formátum konverziók** most jobban védettek a rossz időértékek ellen. Az NDBC-nek köszönhetően.
+    * BUG FIX: EDDGrid FromNcFiles Unpacked most kezeli az időértékeket **"hónapok óta..." és "évek óta..."** helyesen (növelve a hónapot vagy az évet, nem durván hozzáadva, pl. 30 nap ismételten) ... A Soda3.3.1-nek köszönhetően
+    * BUG FIX: csak v1.74-ben, **Előfizetések** Szükséges cselekvés (pl.: http:// ...) , ami volt, és legyen opcionális.
+    * BUG FIX: EDDGrid FromMergeIRFiles.lowGetSourceMetadata () nem adott hozzá globális tulajdonságokat. Most ezt teszi.
          
 
-## Változat 1.74{#version-174} 
- (released 2016-10- 07) 
+## Verzió 1.74{#version-174} 
+ (2016-10-07) 
 
-*    **Új jellemzők (felhasználók számára) :**   
+*    **Új funkciók (felhasználók számára) :**   
      
-    * Most, amikor egy lista a adatbázisok (Minden, vagy egy keresés) weboldalon jelenik meg, a hosszú címek több sorban jelennek meg. Az előző részek tartalmából: Hála Margaret O 'Briennek, LTER-nek és EML-nek.
+    * Most, amikor az adatkészletek listája (All, vagy egy keresésből) egy weboldalon jelenik meg, a hosszú címek több sorban jelennek meg. Korábban egy hosszú cím közepét "..." váltotta fel. Köszönhetően Margaret O'Brien, LTER és EML.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   
      
-    * TY: A Linux számítógépeken változtasd meg az Apache időkimaradási beállításokat, hogy az időigényes felhasználói kérések ne időzzenek ("Proxy" vagy "Bad Gateway" hibával) . Mint a root felhasználó:
+    * TO DO: A Linux számítógépeken változtassa meg az Apache-idő beállításokat, hogy az időigényes felhasználói kérések ne ütközzenek (ami gyakran úgy tűnik, mint egy "Proxy" vagy "Bad Gateway" hiba) ... Mint a gyökérfelhasználó:
         
-        1. Az Apache módosítása http d.conf fájl (általában / etc / http d / conf /) :
-Változás a meglévő&lt;Időkérés &gt; beállítás (vagy adjon hozzá egyet a fájl végén) 3600-3600 (másodperc) 60 vagy 120 másodperc helyett.
-Változás a meglévő&lt;ProxyTimeout &gt; beállítás (vagy adjon hozzá egyet a fájl végén) 3600-3600 (másodperc) 60 vagy 120 másodperc helyett.
-        2. Újraindítás Apache: / usr / sbin / apachectl -k kecses (de néha egy másik könyvtárban van.) .
+        1. Módosítsa az Apache http d.conf fájl (általában /etc/ http d/conf/) :
+Változtassa meg a meglévő&lt;Timeout&gt; beállítás (vagy adjon hozzá egyet a fájl végén) 3600-ig (másodpercek) Az alapértelmezett 60 vagy 120 másodperc helyett.
+Változtassa meg a meglévő&lt;ProxyTimeout&gt; beállítás (vagy adjon hozzá egyet a fájl végén) 3600-ig (másodpercek) Az alapértelmezett 60 vagy 120 másodperc helyett.
+        2. Restart Apache: /usr/sbin/apachectl - k kegyes (de néha más könyvtárban van) ...
         
 Thomas Olivernek köszönhetően.
          
-    * ÚJ: \\[ bigParentDirectory / hard Zászló könyvtár
-Ez úgy működik, mint a zászló könyvtár, de a hardFlag verzió törli az összes tárolt adatállományt. Nincsenek URL-ek, hogy beállítsunk egy kemény zászlót. Ez csak akkor használható, ha egy fájlt a könyvtárba.
-kemény A zászlók nagyon hasznosak, ha olyat teszel, ami megváltoztatja a ERDDAP™ elolvassa és értelmezi a forrásadatokat, például, amikor egy új verziót telepít ERDDAP™ vagy ha bizonyos típusú változtatásokat hajtott végre az adatkészlet definíciójában datasets.xml . Lásd [Ez a dokumentáció](/docs/server-admin/additional-information#hard-flag) . Hála John Kerfootnak és az összes Argo csoportnak.
+    * NEW: \\[ bigParentDirectory/kemény Flag könyvtár
+Ez úgy működik, mint a zászlós könyvtár, de a hardFlag verzió is törli az összes csípős adatkészlet információt. Nincsenek URL-ek a hardFlag beállításához. Ezt csak akkor lehet használni, ha egy fájlt helyezünk be az adott könyvtárba.
+kemény A zászlók nagyon hasznosak, ha csinálsz valamit, ami változást okoz, hogyan ERDDAP™ olvassa el és értelmezi a forrásadatokat, például amikor új verziót telepít ERDDAP™ vagy ha bizonyos típusú változtatásokat tettél egy adatkészlet definíciójára datasets.xml ... Lásd [ez a dokumentáció](/docs/server-admin/additional-information#hard-flag) ... John Kerfootnak és az összes Argo csoportnak köszönhetően.
          
-    * ÚJ: GenerateDatasets Xml most már egy EDDTableFromEML opció
-amely egy adatelemet olvas egy ökológiai metaadatok nyelvén (EML) fájl, letöltése a kapcsolódó adatfájl, és létrehoz egy darab datasets.xml így az adatkészlet hozzáadható ERDDAP . Van egy EDDTableFromEMLLOT, amely ugyanezt teszi az összes EML fájlokat egy könyvtárban. Ez nagyon jól működik, mert az EML kiváló munkát végez az adatkészlet leírásában, és mert a KNB és a LTER elérhetővé teszi a tényleges adatfájlokat.
-EML plusz ERDDAP™ lehet egy nagy kombináció, mivel ERDDAP™ a felhasználók számára közvetlenebb hozzáférést biztosíthatna a KNB és a LTER adataihoz, és segíthetne ezeknek a projekteknek megfelelni az Egyesült Államok kormányának [A kutatási eredményekhez való nyilvános hozzáférés (PARR) követelmények](https://nosc.noaa.gov/EDMC/PD.DSP.php) az adatok internetes szolgáltatás útján történő hozzáférhetővé tételével.
-Lásd [Ez a dokumentáció](/docs/server-admin/EDDTableFromEML) . Hála Margaret O 'Briennek, LTER-nek és EML-nek.
+    * NEW: GenerateDatasets Xml most rendelkezik EDDTableFromEML opcióval
+amely egy ökológiai metaadata nyelven olvas egy adatkészlet leírását (EML) fájl, letölti a kapcsolódó adatfájlot, és egy darabot generál datasets.xml hogy az adatkészlet hozzáadható legyen ERDDAP ... Van egy EDDTableFromEMLBatch is, amely ugyanezt teszi az összes EML fájl számára egy könyvtárban. Ez nagyon jól működik, mert az EML kiváló munkát végez az adatkészlet leírására, és mivel a KNB és az LTER a tényleges adatfájlokat elérhetővé teszi.
+EML plusz ERDDAP™ nagyszerű kombináció lehet, mivel ERDDAP™ közvetlenebb hozzáférést biztosíthat a felhasználók számára a KNB és az LTER adatok gazdagságához, és segítheti ezeket a projekteket az amerikai kormánynak [Közös hozzáférés a kutatási eredményekhez (PARR) követelmények](https://nosc.noaa.gov/EDMC/PD.DSP.php) a webszolgáltatáson keresztül elérhető adatok elkészítésével.
+Lásd [ez a dokumentáció](/docs/server-admin/EDDTableFromEML) ... Köszönhetően Margaret O'Brien, LTER és EML.
          
-    * ÚJ: GenerateDatasets Xml most már egy EDDTableFromInPort opció
-amely elolvassa az adatkészlet leírását egy InPort XML fájlban, és megpróbálja létrehozni egy darab datasets.xml így az adatkészlet hozzáadható ERDDAP . Ez ritkán hoz létre egy "readyto- use" XML darabot datasets.xml , de létrehoz egy jó durva vázlatot, ami jó kiindulópont egy ember szerkesztéséhez.
-Nagyszerű lenne, ha az emberek az InPort-ot is használnák adataik dokumentálására. ERDDAP™ a tényleges adatok rendelkezésre bocsátása a ERDDAP a webes szolgáltatások, így megfelel az amerikai kormány és NOAA s [A kutatási eredményekhez való nyilvános hozzáférés (PARR) követelmények](https://www.whitehouse.gov/blog/2013/02/22/expanding-public-access-results-federally-funded-research) az adatok internetes szolgáltatás útján történő hozzáférhetővé tételével. Ez egy olyan megoldás, amit most használhatnánk. ( erd.data at noaa.gov Örömmel segít.)   
-Lásd [Ez a dokumentáció](/docs/server-admin/datasets#eddtablefrominport) . Hála Evan Howellnek és Melanie Abecassisnak.
+    * NEW: GenerateDatasets Xml most rendelkezik EDDTableFromInPort opcióval
+amely az InPort XML fájlban olvas egy adatkészlet leírását, és megpróbál létrehozni egy darabot datasets.xml hogy az adatkészlet hozzáadható legyen ERDDAP ... Ez ritkán hozza létre az XML kész használt darabját datasets.xml De egy jó durva tervezetet hoz létre, amely jó kiindulópont az ember szerkesztéséhez.
+Nagyszerű lenne, ha az InPortot használó emberek dokumentálnák az adatkészleteiket is ERDDAP™ a tényleges adatok elérhetővé tétele a ERDDAP webszolgáltatások és ezáltal megfelelnek az amerikai kormánynak és NOAA A [Közös hozzáférés a kutatási eredményekhez (PARR) követelmények](https://www.whitehouse.gov/blog/2013/02/22/expanding-public-access-results-federally-funded-research) a webszolgáltatáson keresztül elérhető adatok elkészítésével. Ez egy olyan megoldás, amelyet most lehet használni. ( erd.data at noaa.gov boldog, hogy segítsen.)   
+Lásd [ez a dokumentáció](/docs/server-admin/datasets#eddtablefrominport) ... Evan Howellnek és Melanie Abecassisnak köszönhetően.
          
-    * JAVÍTOTT: ERDDAP™ Most használ netcdf- java 4.6.6.
-A korábbi verziók, netcdf- java olvasni néhány kitöltési értékeket (Talán, csak a netcdf4 fájlokban) 0-ás. Néhányuk a netcdf standard kitöltési értéke: -127 bájt, -32767 rövidnadrág, -2147483647 int. Unidata Azt mondja, az új viselkedés a megfelelő viselkedés. Ha egy változó egy adatkészletben megjelenik ezen értékek egyikén, ahol a 0-as értékek voltak, hozzáadhatjuk például,
+    * IMPROVED: ERDDAP™ most használja a netcdf-java 4.6.6.
+A korábbi verziókkal a netcdf-java elolvasott néhány kitöltő értéket (Talán csak a netcdf-4 fájlokban) mint 0. Most néhányat közülük úgy olvas, mint a netcdf standard teljes érték: -127 bytes, -32767 rövidnadrág, -21473647 ints. Unidata Az új viselkedés a megfelelő viselkedés. Ha az adatkészlet változója elkezdi mutatni az egyik ilyen értéket, ahol 0-at mutattak, hozzáadhatja, pl.
 ```
         <att name="\\_FillValue" type="short">-32767</att>  
 ```
-a változó 's addAttributes Hogy elmondjam ERDDAP™ ezt az értéket a missing\\_value /\\ _ Töltse ki Érték. Sok esetben azonban ez nem hozza meg a kívánt eredményt: 0-as. Ha igen, fontolja meg a fájlok módosítását NCO vagy átírja a fájlokat. Panaszt? Kérem lépjen kapcsolatba Unidata ; -)
+a változó addAttributes Mondd el ERDDAP™ kezelni ezt az értéket, mint missing\\_value /\\_Fill Érték. Sok esetben azonban ez nem eredményezi a kívánt eredményt: 0. Ha igen, fontolja meg a fájlok módosítását NCO vagy újraírja a fájlokat. Panaszok? Kérjük, vegye fel a kapcsolatot Unidata ;-)
          
-    * TY: Új Topographyth Depth paletta
-Arra bátorítalak, hogy cseréld ki az összes adatot, ami az OceanDepth palettát használja az új Topographyth Depette-hez, ami olyan, mint a Topography, kivéve a színekkel, hogy alkalmas legyen a mélységi értékekre. (pozitív = lefelé) magassági értékek helyett (pozitív = fel) . A paletta ajánlott beállításai:
+    * dalszöveg: New TopographyDepth paletta
+Arra ösztönözlek benneteket, hogy kapcsoljatok át az összes adatkészletet, amely az OceanDepth palettát használja az új TopographyDepth palettát, amely olyan, mint a Topography, kivéve a színeket, hogy alkalmas legyen a mély értékekre. (pozitív=down) magassági értékek helyett (pozitív=up) ... A paletta ajánlott beállításai:
 ```
             <att name="colorBarMaximum" type="double">8000.0</att>
             <att name="colorBarMinimum" type="double">-8000.0</att>
             <att name="colorBarPalette">TopographyDepth</att> 
 ```
 
-    * ÚJ FEATURE: Húrozás missing\\_value és / vagy\\ _ FillValue
-Ha egy sztring változó definiálja a missing\\_value és / vagy\\ _ FillValue, ERDDAP™ most törli ezeket az értékeket az adatokból, és helyettesíti őket egy üres sztring, így a hiányzó értékek jelennek meg, mint az üres sztringek, mint más adatsorok ERDDAP . Hála Margaret O 'Briennek, LTER-nek és EML-nek.
+    * NEW FEATURE: Hírek missing\\_value és/vagy \\_FillValue
+Ha egy String változó meghatározza a missing\\_value és/vagy \\_FillValue, ERDDAP™ most eltávolítja ezeket az értékeket az adatokból, és üres sztringgel helyettesíti őket, hogy a hiányzó értékek üres sztringeknek tűnjenek, mint más adatkészleteknél. ERDDAP ... Köszönhetően Margaret O'Brien, LTER és EML.
          
-    * ÚJ FEATURE: A helyi idők támogatása
-időbélyegző változók forrás adatok Húrok most már meg egy időzóna a " time\\_zone "attribútum, amely vezet ERDDAP™ konvertálni a helyi időzóna forrásidejét (Van, aki a szokásos időben, van, aki nappal takarít.) be Zulu Times. Az érvényes időzóna-nevek listája valószínűleg megegyezik a TZ oszlopban szereplő listával [táblázat](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) . Az alapértelmezett " Zulu ". Gyakori amerikai időzónák: US / Hawaii, US / Alaska, US / Pacific, US / Mountain, US / Arizona, US / Central, US / Eastern. Az időbélyegző változók numerikus forrásadatokkal, akkor adja meg a" time\\_zone "attribútum, de az értéknek" Zulu "vagy" UTC ". Hála Margaret O 'Briennek, LTER-nek és EML-nek.
+    * NEW FEATURE: Helyi idők támogatása
+A Stringsből származó forrásadatokkal rendelkező ütemváltozatok most egy időzónát adhatnak meg egy " time\\_zone "A tulajdonság, amely vezet ERDDAP™ átalakítani a helyi-time-zóna forrási időket (néhány a Standard időben, néhány a Daylight Saving Time) a Zulu Idő. Az érvényes időzóna nevek listája valószínűleg azonos a TZ oszlop listáján [ez az asztal](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) ... Az alapértelmezett " Zulu "..." A közös amerikai időzónák: US/Hawaii, US/Alaska, US/Cacific, US/Mountain, US/Arizona, US/Central, US/Kelet. Az időbélyegző változók számszerű forrásadatokkal, megadhatja a " time\\_zone tulajdonság, de az értéknek " Zulu " vagy "UTC". Köszönhetően Margaret O'Brien, LTER és EML.
          
-    * ÚJ FEATURE: EDDTableFromAsciiFiles most támogatja a szemikolonszétválasztott fájlokat
-és okosabb a szeparátorban. Hála Margaret O 'Briennek, LTER-nek és EML-nek.
+    * NEW FEATURE: EDDTableFromAsciiFiles most támogatja a szemicolon-választott fájlokat
+és okosabb az elválasztó kitalálásáról. Köszönhetően Margaret O'Brien, LTER és EML.
          
-    * ÚJ FEATURE: Ha jelentős hiba van a Load Datasets-ben (jelentős vagy kisebb, például hiányzik vagy érvénytelen datasets.xml dokumentum) , ERDDAP™ most azt jelzi status.html, közvetlenül alatt "n Datasets sikertelen betölteni", mint ERROR: miközben feldolgozás datasets.xml : A részleteket lásd a log.txt oldalon.
+    * NEW FEATURE: Ha jelentős hiba van a loadDatasets-ben (nagy vagy kisebb, például egy hiányzó vagy érvénytelen datasets.xml dokumentum) , ERDDAP™ most jelzi a status.html-ben, közvetlenül a "n Datasets Failed to Load" alatt, mint ERROR: miközben a feldolgozás datasets.xml : lásd a log.txtot a részletekhez.
          
-    * ÚJ FEATURE: ERDDAP™ Árvákat keres.
-Mikor? ERDDAP™ nagy terhelést végez Datasets, ez most keres árva adatok (adatkészletek, amelyek ERDDAP™ de nem a datasets.xml ) . Ha megtalálják, akkor a status.html-ben vannak felsorolva, közvetlenül az "n Datasets Fail To Load" alatt, mint ERROR: n Orphan Datasets (adatkészletek ERDDAP™ de nem a datasets.xml ) =...
-Ha el szeretné távolítani (kirakodás) árva ERDDAP™ , meg kell adni
-        &lt;adatkészlet típusa = "_ anyValidType _" datasetID = "_ theDatasetID _" active = "false" / &gt;
-- datasets.xml amíg az adatkészlet ki nem kerül a következő nagyobb betöltési adatkészletekből.
+    * NEW FEATURE: ERDDAP™ keres árvák.
+Mikor ERDDAP™ jelentős terhelés Adatkészletek, most az árva adatkészleteket keresi (olyan adatkészletek, amelyek ERDDAP™ de nem datasets.xml ) ... Ha megállapítják, akkor status.html-ben szerepelnek, közvetlenül a "n Datasets Failed to Load" alatt, mint ERROR: n Orphan Datasets (adatkészletek ERDDAP™ de nem datasets.xml ) = ....
+Ha eltávolítani akar (Betöltés) dalszöveg: orphan ERDDAP™ Hozzá kell adnia
+        &lt;Dataset Type="_anyValidType_" datasetID ="_theDatasetID_" aktív="hamis" /&gt;
+a datasets.xml amíg az adatkészlet nem töltődik be a következő nagy terhelés alatt.
          
-    * BUG FIX: Ha egy adatkészlet volt egy numerikus időbélyegző változó egységek nem "seconds since 1970-01-01T00:00:00Z" valamint&lt;updateEveryNMillis &gt; System active, the timestable variator 's range was unright when the dataset was updated. Hála John Kerfootnak.
+    * BUG FIX: Ha egy adatkészletnek numerikus időbélyegzője változó volt más egységekkel, mint "seconds since 1970-01-01T00:00:00Z" és&lt;frissítésEveryNMillis&gt; rendszer aktív, az időbélyegző változó tartományt helytelenül határozták meg, amikor az adatkészletet frissítették. John Kerfootnak köszönhetően.
          
-    * BUG FIX: Ha&lt;A quickRestart &gt; igaz volt a setup.xml-ben, és adatokat kért egy EDDTableFrom... A használt adatállomány&lt;updateEveryNMillis &gt;, az első kérés az adatkészlet sikertelen, de a későbbi kérések sikeresek. Az első kérés nem fog elbukni. Hála John Kerfootnak.
+    * BUG FIX: Ha&lt;A gyorsRestart&gt; igaz volt a setup.xml-ben, és adatokat kért egy EDDTableF-től... Files adatkészlet, amely használt&lt;frissítésEveryNMillis&gt; az adatkészlet első kérése kudarcot vall, de a későbbi kérések sikeresek lesznek. Most az első kérés nem fog kudarcot vallani. John Kerfootnak köszönhetően.
          
-    * BUG FIX: A GenerateDatasetsXml.sh és a .bat nem működött &gt; 9 paraméter a parancssorban. Most már tudják. Hála John Kerfootnak.
+    * BUG FIX: A GenerateDatasetsXml.sh és .bat nem működött a parancssor 9 paraméterével. Most ők teszik. John Kerfootnak köszönhetően.
          
-    * BUG FIX: Az új EDDTableFromMMultidimNcFiles nem távolította el következetesen a trining szóközöket a húrokról. Most már igen. Ez különösen az ARGO fájlokra volt hatással. Hála Kevin O 'Briennek és Roland Schweitzernek.
+    * BUG FIX: Az új EDDTableFromMultidimNcFiles nem volt következetesen eltávolítva nyomkövető tereket a húroktól. Most ezt teszi. Különösen ez befolyásolta az ARGO fájlokat. Kevin O'Briennek és Roland Schweitzernek köszönhetően.
          
-    * BUG FIX: Minden hozzáférés távoli DAP A szolgáltatások most már modernebb kóddal kezdődnek. Ez rögzíti a "kapcsolat bezárt" hibát, amikor hozzáférsz néhány EDDTableFromErddap adatkészlethez. Hála Kevin O 'Briennek.
+    * BUG FIX: Minden távoli hozzáférés DAP a szolgáltatások most kezdeményezi a modernebb kódot. Ez rögzíti a "csatlakozás zárt" hibát, amikor hozzáfér néhány EDDTableFromErddap adatkészlethez. Kevin O'Briennek köszönhetően.
          
-    * BUG FIX: A orderBy ... () és elkülönül () visszatértek a legutóbbi változások előtti állapotukba: egy adott kérésnek több is lehet orderBy ... () és / vagy külön () szűrő; ERDDAP™ kezeli őket a megadott sorrendben. Hála David Karugának.
+    * BUG FIX: A kezelés orderBy ... () Különböző () most visszatértek a legutóbbi változások előtt: egy adott kérelemnek lehet több orderBy ... () vagy külön () szűrő; ERDDAP™ kezelni fogják azokat a sorrendben, amelyet megadnak. David Karuga-nak köszönhetően.
          
-    * BUG FIX: Ha az adatkészlet EDDTableFromDatabase és egy lekérdezés [sourceCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) és / vagy [sourceCanDosinty](/docs/server-admin/datasets#sourcecandodistinct) , akkor az adatbázis (a beállítások függvényében datasets.xml ) részben vagy teljesen fogantyú **Csak az első**   orderBy .. () vagy eltérő () . Hála David Karugának.
+    * BUG FIX: Ha az adatkészlet EDDTableFromDatabase és egy lekérdezés [forrásCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) vagy [forrásCanDoDistinct](/docs/server-admin/datasets#sourcecandodistinct) Ezután az adatbázis lehet (a beállításoktól függően datasets.xml ) részben vagy teljesen kezelni **csak az első**   orderBy (...) () vagy külön () ... David Karuga-nak köszönhetően.
          
-    * BUG FIX: A legutóbbi extra kódolás problémákat okozott néhány kérdés .nc CF fájlok, pl. "HTTP állapot 500 - Kérdés hiba: változó = állomás kétszer szerepel az eredményváltozók listáján". Hála Kevin O 'Briennek.
+    * BUG FIX: A közelmúltbeli extra százalékkódolás problémákat okozott néhány kérdéssel .nc CF fájlok, például: "HTTP Status 500 - Kérdés hiba: a változó=station kétszer szerepel az eredmények változó listáján.” Kevin O'Briennek köszönhetően.
          
-    * BUG FIX: EDDTableFromFiles volt nehéz újratölteni egy adatkészlet, amikor az egyik oszlop volt egy igazi char oszlop. Hála Roland Schweitzernek.
+    * BUG FIX: Az EDDTableFromFilesnek gondja volt egy adatkészlet újratöltése, amikor az egyik oszlop egy igazi char oszlop volt. Roland Schweitzernek köszönhetően.
          
-    * BUG FIX: EDDGrid FromNcFiles Most már kicsomagolt is. missing\\_value and\\ _ FillValue to standard values so files with different values can be aggregate. Mert ez a változás, miután telepítse ezt az új változata ERDDAP™ a [kemény Lobogó](/docs/server-admin/additional-information#hard-flag) minden egyes EDDGrid FromNcFiles Kicsomagolt adatkészlet ERDDAP .
+    * BUG FIX: EDDGrid FromNcFiles Unpacked most is átalakítja missing\\_value és a \\_FillValue szabványos értékekhez, így a különböző értékekkel rendelkező fájlok összesíthetők. Emiatt a változás miatt, miután telepítette ezt az új verziót ERDDAP™ Kérlek, állíts egy [kemény zászló](/docs/server-admin/additional-information#hard-flag) minden EDDGrid FromNcFiles Csomagolt adatkészlet az Ön ERDDAP ...
          
-    * JAVÍTOTT: EDDTableFromNcCFFiles most már kezelni fájlok több minta\\ _ dimenzió 's. Egy adott adatkészlet csak a minta\\ _ méreteinek egyikét használó változókat használhatja. Ajay Krishnannek köszönhetően.
+    * IMPROVED: Az EDDTableFromNcCFFiles jelenleg kezeli a több minta\\_dimenziója. Egy adott adatkészletnek csak olyan változókat kell használnia, amelyek a minta egyik dimenzióját használják. Ajay Krishnannak köszönhetően.
          
-    * JAVÍTOTT: az EDDTableFrom... fájlok,&lt;sortFilesBySourceNames &gt; Most lehetővé teszi a comma- elválasztott (ajánlott) vagy térelválasztó listák változó forrásnevek. Mindkét esetben az egyedi változó neveket kettős idézőjel veszi körül, például, ha a névnek belső helye van.
+    * IMPROVED: Az EDDTableF-re... Fájlok,&lt;dalszöveg: HowBySourceNames most lehetővé teszi a comma-elválasztott (ajánlott) vagy az űr elválasztott listák változó forrás nevek. Mindkét esetben az egyéni változó neveket kettős idézetek veszik körül, például, ha a névnek belső tere van.
 
-## változat{#version-172} 
- (released 2016-05- 12) 
+## Verzió 1.72{#version-172} 
+ (2016-05-12) 
 
-*    **Új jellemzők (felhasználók számára) :** Nincs.
+*    **Új funkciók (felhasználók számára) :** Senki sem.
      
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * ÚJ EDDTableFromMMultidimNcfiles [EDDTableFromMultidimNcFiles](/docs/server-admin/datasets#eddtablefrommultidimncfiles) az EDDTableFromNcFiles új alternatívája. Arra tervezték, hogy több változóval rendelkező fájlok csoportjaival foglalkozzon, közös méretekkel, például, var1 \\[ a \\]  \\[ b \\] , 2. \\[ a \\] , 3. \\[ b \\] SkalarVar. Köszönet az Argo Projektnek, Aurélie Briand-nek és Roland Schweitzernek.
-    * BUG FIX: ERDDAP™   (a FileVisitorDNLS és FileVistorSubdir osztályokon keresztül) Most a Linux szimbolikus linkjeit követi. ERDDAP™ Még mindig nem követi a Windows-on lévő inket.
-    * Az 1.70-ben bemutatott hiba BUG FIX-e: elkülönítés + orderBy egy kérésben nem megengedett. Már megint azok. Ezek nem zárják ki egymást / feleslegesek. Hála David Karugának.
-    * VÁLTOZÁS datasets.xml az IP-címek feketelistája:
-Az IP v4 címek látszólag ERDDAP™ 4 period- elválasztott hexaszám.
-Azt hiszem, az IP v6 címek 8, egymástól elválasztott átokszám.
-Szóval... ERDDAP™ most támogatja a colons az IP címek a listán, és:\\ * végén a lista, hogy blokkolja egy sor címet.
-    * JAVÍTOTT: ERDDAP™ Most használja NetcdfFileWriter írni .nc fájlok a netcdfFileWritible helyett. Nem lehet észrevehető változás a kapott fájlokat. Ez megnyitja a lehetőséget, hogy nagy .nc a .nc 3 64 bites kiterjesztés. Ha azt szeretné / szüksége van rá, kérjük, küldje el a kérelmet erd.data at noaa.gov .
-    * JAVASOLT: A távoli weboldalak számos linkje elavult. Most már up- to-date és használat https: helyett http : ha lehetséges.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * NEW EDDTableFromMultidimNcFiles [EDDTableFromMultidimNcFiles](/docs/server-admin/datasets#eddtablefrommultidimncfiles) az EDDTableFromNcFiles új alternatívája. Úgy tervezték, hogy kezelje a különböző változatokkal rendelkező fájlokat, például a var1 \\[ egy \\]  \\[ b) \\] var2 \\[ egy \\] var3 \\[ b) \\] ScalarVar. Az Argo Projectnek köszönhetően Aurélie Briand és Roland Schweitzer.
+    * BUG FIX: ERDDAP™   (a FileVisitorDNLS és a FileVistorSubdir osztályokon keresztül) most szimbolikus linkeket követ a Linuxon. ERDDAP™ Még mindig nem követi a .lnk Windows-t.
+    * BUG FIX bug bevezetett 1,70: külön + orderBy egyetlen kérelemben nem engedélyezték együtt. Most ismét. Ezek nem kölcsönösen kizárólagosak/hitelesek. David Karuga-nak köszönhetően.
+    * CHANGE datasets.xml IP címek feketelistája:
+IP v4 címek jelennek meg ERDDAP™ 4 időszakos hex számként.
+Úgy gondolom, hogy az IP v6 címek 8 gyarmatosított hex számként jelennek meg.
+Szóval ERDDAP™ most támogatja a gyarmatokat az IP címekben ebben a listában, és :\\* a lista végén, hogy blokkolja a címek egy sorát.
+    * IMPROVED: ERDDAP™ most használja a NetcdfFileWriter-t, hogy írjon .nc fájlok helyett a lenyűgöző NetcdfFileWriteable. Nem lehet megkülönböztethető változás a kapott fájlokban. Ez megnyitja annak lehetőségét, hogy nagy .nc fájlok, amelyek a .nc 3 64bit kiterjesztés. Ha ezt akarja / szükséges, küldjön kérést erd.data at noaa.gov ...
+    * IMPROVED: A távoli weboldalakhoz kapcsolódó linkek közül sokan naprakészek voltak. Most naprakészek és használnak https: helyette http - ha lehetséges.
     * Sok apró változás.
 
-## Változat 1.70{#version-170} 
- (released 2016-04- 15) 
+## Verzió 1.70{#version-170} 
+ (2016-04-15) 
 
-*    **Új jellemzők (felhasználók számára) :** Nincs.
+*    **Új funkciók (felhasználók számára) :** Senki sem.
      
-*    **Dolgok ERDDAP™ Administrators need to know and do:** Az alábbiakban több javasolt változtatások a dokumentáció a setup.xml fájlt.
-Kérem, most tegye meg ezeket a változtatásokat.
-30 perc munka most megspórolhat órákig tartó zűrzavart a jövőben.
-    * A hibajavítás: A probléma az volt, hogy a kéréseket egy távoli ERDDAP nem sikerült érvénytelen karakterrel " | 'hibaüzenet. Ez csak a Tomcat legújabb változataival történt meg. Köszönet Rusty Hollemannek, Conor Delaney-nek és Roy Mendelssohn-nak.
-    * A hibajavítás: ERDDAP™ most a netcdf- java up- to- date verzióját használja (Hosszú történet.) amely magában foglalja az NcML up-to-date támogatását, ami rögzíti a problémát az NcML LogicalReduce nem a várt módon működik. A metaadatok néhány apró változtatása ERDDAP™ lead via netcdf- java from .nc , .hdf , .grib és .bufr fájlok. Hála Favio Medranónak.
-    * Az új [EDDTableAggregateRows](/docs/server-admin/datasets#eddtableaggregaterows) lehetővé teszi, hogy egy egyesített EDDTable adatkészlet két vagy több EDDTable adatkészletből, amelyek azonos adatváltozókkal ugyanazokkal az egységekkel. Köszönöm Kevin O 'Briennek.
-    * Az EDDTableFromDatabase új opciói ( [sourceCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) és [sourceCanDosinty](/docs/server-admin/datasets#sourcecandodistinct) ) adja meg, hogy ERDDAP™ , az adatbázis, vagy mindkettő, kezelni külön és orderBy   (és valamennyi változat) megszorítások. Hála David Karugának.
-    * Most már az új [&lt;grafsAccessibleTo &gt; nyilvános&lt;/ grafsAccessibleTo &gt;] (/ docs / server- admin / datasets # grafsaccessito) Címke. Hála Emanuele Lombardi-nak.
-    * Ha egy sztring átmegy az GenerateDatasets-be Xml vagy DasDds körül dupla idézetek, ez nem idézett (Mintha ez egy JSON sztring lenne) . Hála John Kerfootnak és Melanie Abecassisnak.
-    * GenerateDatasets Xml most támogatja az "alapértelmezett", hogy az alapértelmezett és a "semmi", hogy kap egy üres string (Idézőjelekkel vagy anélkül dolgoznak) . Ez megoldja az üres húrok átadásával kapcsolatos problémákat.
-    * Most, az GenerateDatasets-ben Xml, mindenkinek EDDGrid FromFiles és EDDTable FromFile adatok, ha a minta A megadott név: "" (az üres sztring) , akkor használja az utolsó illeszkedő fájlnév a könyvtár + regex + rekurzív = igaz.
-    * Frissítve: A DisplayInBrowser kód, amelyet az GenerateDatasetsXml és DasDds eredményeinek megjelenítéséhez használnak Linux számítógépeken, elavult és furcsa üzenetet adott a Netscape-ről. Ez egy modern Linux eszközt használ: xdg- open. Melanie Abecassisnak köszönhetően.
-    * A allDatasets dataset most "files" oszlop, amely a / files link URL-jét jelzi (ha van) az adatkészletre.
-    * Növelje az Ön általános biztonságát ERDDAP™ a tomcat könyvtárhoz és a bigParentDirectory-hoz kapcsolódó engedélyek megváltoztatásával:
-         (Az alábbi parancsok Linuxra vonatkoznak. Más operációs rendszerekhez hasonló változtatásokat kell végrehajtani.) 
-        * Változtassa meg a "csoport", hogy a tomcat, a felhasználóneved, vagy a nevét egy kis csoport, amely magában foglalja tomcat és az összes adminisztrátor Tomcat / ERDDAP például:
-chgrp - R _ your UserName _ apache- tomcat- _ 8.0.23 _
-chgrp - R _ a UserName bigParentDirectory _
-        * A jogosultságokat úgy kell megváltoztatni, hogy a Tomcat és a csoport olvasson, írjon, hajtson végre jogosultságokat, pl.
-chmod -R ug + rwx apache- tomcat- _ 8.0.23 _
-chmod -R ug + rwx _ bigParentDirectory _
-        * Távolítsa el az "egyéb" felhasználó jogosultságait olvasni, írni vagy végrehajtani:
-chmod -R o- rwx apache- tomcat- _ 8.0.23 _
-chmod -R o- rwx _ bigParentDirectory _
-Ez fontos, mert megakadályozza, hogy más felhasználók esetleg érzékeny információkat ERDDAP™ beállítási fájlok, naplófájlok, és fájlok információkat a privát adatkészletek.
-    * A hitelesítési / bejelentkezési rendszer átkerült. Thomas Gardnernek, Emanuele Lombardinak és az amerikai kormánynak köszönhetően [HTTPS- only standard](https://home.dotgov.gov/management/preloading/dotgovhttps/) .
-        * A hitelesítési = nyitott opció eltávolításra került. Ez már lejárt lemez volt.
-        * Az új, ajánlott, [hitelesítés = Google](/docs/server-admin/additional-information#google) opciók használata Google Sign- In (OAuth 2.0 alapján) lehetővé teszi, hogy bárki Google e-mail fiókot (beleértve: Google kezelt fiókok, mint @noaa.gov ) Bejelentkezni.
-        * Az új, [hitelesítés = e-mail](/docs/server-admin/additional-information#email) Az opció egy mentés a hitelesítéshez = Google. Ez lehetővé teszi a felhasználók a&lt;felhasználó &gt; címke datasets.xml bejelentkezni egy e-mail küldésével egy speciális linket.
-        * A szetup.xml, kérjük, változtassa meg a leírás&lt;hitelesítés &gt; legyen
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** Az alábbiakban számos ajánlott változtatás van a dokumentációban a setup.xml fájlban.
+Kérjük, tegye ezeket a változásokat most.
+30 perc munka most mentheti meg órák zavar a jövőben.
+    * Bug fix: A probléma az volt, hogy a kéréseket, amelyek átirányították egy távoli ERDDAP elbukott egy érvénytelen karakter " | hibaüzenet. Ez csak a Tomcat legújabb verzióival történt. Rusty Hollemannak, Conor Delaneynek és Roy Mendelssohnnak köszönhetően.
+    * Bug fix: ERDDAP™ most a netcdf-java naprakész verzióját használja (ez egy hosszú történet) amely magában foglalja az NcML naprakész támogatását, amely rögzíti a problémát az NcML LogicalReduce-val, amely nem működik a várhatóan. Lehet, hogy néhány apró változás a metaadata, amely ERDDAP™ a netcdf-java-n keresztül .nc , .hdf , .grib és .bufr fájlok. Favio Medranonak köszönhetően.
+    * Az új [EDDTableAggregateRows](/docs/server-admin/datasets#eddtableaggregaterows) lehetővé teszi, hogy egy összeolvadt EDDTable adatkészletet két vagy több EDDTable adatkészletből készítsen, amelyek ugyanazokkal az adatváltozatokkal rendelkeznek, ugyanazokkal az egységekkel. Köszönjük Kevin O'Briennek.
+    * Új lehetőségek az EDDTableFromDatabase számára ( [forrásCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) és [forrásCanDoDistinct](/docs/server-admin/datasets#sourcecandodistinct) ) Hadd adja meg, hogy ERDDAP™ , az adatbázis, vagy mindkettő, kezelni a különböző és orderBy   (és minden változat) korlátok. David Karuga-nak köszönhetően.
+    * Most készíthet magánadatok grafikonját és metaadatát az újonnan elérhetővé [&lt;graphsAccessibleTo&gt; nyilvános&lt;/graphsAccessibleTo&gt;] (/docs/server-admin/adtasets#grafsaccessibleto) Tag. Emanuele Lombardinak köszönhetően.
+    * Most, ha egy sztring átment a GenerateDatasets-be Az Xml vagy a DasDds kettős idézetek veszik körül, idézetlen (ha ez egy JSON sztring) ... John Kerfootnak és Melanie Abecassisnak köszönhetően.
+    * GenerateDatasets Az Xml most támogatja az "alapértelmezett"-t, hogy megkapja az alapértelmezett és "semmi"-t, hogy üres sztringet kapjon (dolgoznak vagy idézetek nélkül) ... Ez megold néhány problémát az üres sztringek átadásával kapcsolatban.
+    * Most, a GenerateDatasets-ben Xml, minden EDDGrid FromFiles és EDDTable FromFiles adatkészletek, ha a minta A FileName megadja a "" (Az üres sztring) , ez fogja használni az utolsó megfelelő fájlName a könyvtár + regex + visszaszerzési = igaz.
+    * Frissítés: A megjelenítőInBrowser kód, amelyet a GenerateDatasetsXml és a DasDds a Linux számítógépeken való megjelenítésére használnak, naprakész volt, és furcsa üzenetet adott a Netscape-ről. Most ez egy modern Linux eszközt használ: xdg-open. Melanie Abecassisnak köszönhetően.
+    * A allDatasets adatkészlet most van egy "files" oszlop, amely a /files link alap URL-jét jelzi (ha van egy) az adatkészlethez.
+    * Növelje az általános biztonságot ERDDAP™ a tomcat könyvtárral és a bigParentDirectory-val kapcsolatos engedélyek megváltoztatásával:
+         (Az alábbi tényleges parancsok Linuxra vonatkoznak. Más OS-ok esetében az analóg változásokat.) 
+        * Változtassa meg a "csoport" tomcat, a felhasználónév, vagy a neve egy kis csoport, amely magában foglalja a tomcat és az összes adminisztrátorok Tomcat / ERDDAP pl.:
+Chgrp - R _yourUserName_ apache-tomcat-_8.0.23_
+Chgrp - R _your Felhasználónév BigParentDirectory_
+        * Változtassa meg az engedélyeket, hogy a tomcat és a csoport olvassa, írja, végrehajtsa a kiváltságokat, például.
+chmod - R ug+rwx apache-tomcat-_8.0.23_
+Chmod - R ug+rwx _bigParentDirectory_
+        * Távolítsa el a "másik" felhasználó engedélyeit az olvasáshoz, íráshoz vagy végrehajtáshoz:
+chmod - R o-rwx apache-tomcat-_8.0.23_
+Chmod - R o-rwx _bigParentDirectory_
+Ez fontos, mert megakadályozza, hogy más felhasználók olvassák esetleg érzékeny információkat ERDDAP™ fájlok, naplófájlok és fájlok létrehozása a magán adatkészletekről.
+    * A hitelesítési/login rendszert megújították. Thomas Gardnernek, Emanuele Lombardinak és az Egyesült Államok kormányának új [HTTPS-Only Standard](https://home.dotgov.gov/management/preloading/dotgovhttps/) ...
+        * A hitelesítés=openid opciót eltávolították. Ez naprakész volt.
+        * Az új, ajánlott, [hitelesítés = Google](/docs/server-admin/additional-information#google) opció használat Google Sign-In (OAuth 2.0 alapján) lehetővé tenni bárki számára egy Google e-mail fiókot (többek között Google kezelt fiókok, mint például @noaa.gov ) bejelentkezni.
+        * Az új, [hitelesítés = e-mail](/docs/server-admin/additional-information#email) opció a hitelesítési = Google támogatása. Ez lehetővé teszi a felhasználók számára egy&lt;felhasználói&gt; címke datasets.xml bejelentkezni azzal, hogy egy e-mailt küldenek egy speciális linkkel.
+        * A beállításban.xml, kérjük, változtassa meg a leírást&lt;hitelesítés&gt;
 ```
             <!-- If you want to restrict access to some datasets, 
             you need to specify the method used for logging on (authentication).
@@ -1582,7 +1599,7 @@ Ez fontos, mert megakadályozza, hogy más felhasználók esetleg érzékeny inf
             -->
 ```
 
-        * A setup.xml, kérjük, adja hozzá ezt alatt a&lt;hitelesítés &gt; tag
+        * A setup.xml-ben, kérjük, adja hozzá ezt a jobb alul&lt;hitelesítés&gt; tag
 ```
             <!-- If authentication=google, you must supply your Google Client ID. 
             See
@@ -1598,10 +1615,10 @@ Ez fontos, mert megakadályozza, hogy más felhasználók esetleg érzékeny inf
             <googleClientID></googleClientID>
 ```
 
-        * A nem bejelentkezett felhasználók használhatják http vagy https URL- ek (ha beállított&lt;baseHttpsUrl &gt; a szetup.xml). Hála az amerikai kormány új [HTTPS- only standard](https://https.cio.gov/) .
-        * Most, akkor bátorítani minden felhasználó, hogy használja https   (nem http ) beállítással&lt;baseUrl &gt; lesz egy https URL. A felhasználók kizárólag a használatra való kényszerítése https , akkor is meg kell változtatni az Apache / Tomcat beállítás blokkolása nem - https hozzáférés. Hála az amerikai kormány új [HTTPS- only standard](https://https.cio.gov/) .
+        * Most azok a felhasználók, akik nem jelentkeznek be, használhatják http vagy https URL-ek (ha létrehoztál&lt;baseHttpsUrl&gt; a beállításban.xml). Köszönhetően az amerikai kormány új [HTTPS-Only Standard](https://https.cio.gov/) ...
+        * Most arra ösztönözheti az összes felhasználót, hogy használja https   (nem http ) beállítás&lt;alapUrl&gt; egy https URL. A felhasználók kényszerítése csak használni https Azt is meg kell változtatni az Apache / Tomcat beállítást, hogy blokkolja a nem- https hozzáférés. Köszönhetően az amerikai kormány új [HTTPS-Only Standard](https://https.cio.gov/) ...
             
-A szetup.xml, kérjük, változtassa meg a leírás&lt;baseUrl &gt; lesz
+A beállításban.xml, kérjük, változtassa meg a leírást&lt;alapUrl&gt; lenni
 ```
             <!-- baseUrl is the start of the public URL, to which "/erddap" 
             is appended. For example:
@@ -1617,7 +1634,7 @@ A szetup.xml, kérjük, változtassa meg a leírás&lt;baseUrl &gt; lesz
             -->
 ```
 
-        * A lehetőségek&lt;jelszó kódolás &gt; Megváltozott. A szetup.xml, kérjük, változtassa meg a leírás&lt;jelszó kódolás &gt; legyen
+        * A lehetőségek&lt;jelszóEncoding&gt; megváltozott. A beállításban.xml, kérjük, változtassa meg a leírást&lt;jelszóEncoding&gt;
 ```
             <!-- For "custom" authentication, this specifies how you have 
             stored passwords in the roles tags in datasets.xml.
@@ -1633,7 +1650,7 @@ A szetup.xml, kérjük, változtassa meg a leírás&lt;baseUrl &gt; lesz
             --> 
 ```
 
-        * A szetup.xml, kérjük, változtassa meg a leírás&lt;baseHttpsUrl &gt; lesz
+        * A beállításban.xml, kérjük, változtassa meg a leírást&lt;BaseHttpsUrl&gt;
 ```
             <!-- This is a variant of <baseUrl> which is used when 
             authentication is active and the user is logged in.
@@ -1654,9 +1671,9 @@ A szetup.xml, kérjük, változtassa meg a leírás&lt;baseUrl &gt; lesz
             --> 
 ```
 
-        * Ha a ListPrivateDatasets = igaz setup.xml-ben, még kevesebb információ jelenik meg olyan adatkészletekről, amelyekhez a felhasználónak nincs hozzáférése.
-    * Most, különösen, amikor az első beállítás a ERDDAP Most már elmondhatod. ERDDAP™ nem próbál előiratkozni a távoli ERDDAP™ adatkészletek. Hála Filipe Rocha Freire-nek.
-A szetup.xml, közvetlenül előtt&lt;fontFamily &gt;, kérjük, adja hozzá
+        * Most, ha a listaPrivateDatasets=true in setup.xml, még kevésbé lesz információ az adatkészletekről, amelyekhez a felhasználónak nincs hozzáférése.
+    * Most, különösen, ha kezdetben felállítottad a ERDDAP Most már elmondhatod ERDDAP™ ne próbálja feliratkozni a távoli ERDDAP™ adatkészletek. A Filipe Rocha Freire-nek köszönhetően.
+A setup.xml-ben, közvetlenül mielőtt&lt;betűcsalád&gt;, kérjük, add hozzá
 ```
         <!-- Normally, if you have a EDDGridFromErddap or EDDTableFromErddap 
         dataset in your datasets.xml, it will try to subscribe to the remote 
@@ -1674,468 +1691,468 @@ A szetup.xml, közvetlenül előtt&lt;fontFamily &gt;, kérjük, adja hozzá
         <subscribeToRemoteErddapDataset>true</subscribeToRemoteErddapDataset>
 ```
 
-    * A szetup.xml, A fenti utasítások&lt;e-mail FromCíme &gt;, kérjük, illessze be:
-Ha lehetséges, állítsa be ezt egy biztonságos kapcsolat (SSL / TLS) az e-mail szerverre.
-Ha a beállítás nem használja a biztonságos kapcsolatot az e-mail szerveren, kérjük, hogy a módosításokat, hogy ez.
-    * Az Ön datasets.xml , kérjük, adja hozzá ezt a sort a leírás&lt;előfizetésEmailBlacklist &gt; az Ön datasets.xml :
-Használhatod a nevet "\\*"egy egész domain feketelistára, például,\\*@ example.com.
-    * Mivel a változás a naplózási rendszer v1.66, a naplófájl soha nem up- to-date. Mindig vannak üzenetek vagy üzenetrészek, amelyek arra várnak, hogy a naplófájlba írjanak. Most már felfrissítheted. (Egy pillanatra.) megtekintésével a ERDDAP status weboldal http://_your.domain.org_/erddap/status.html .
-    * HashDigest.......
-    * Egy kis változás. (húr2.kanonikus) ami segít gyorsan mozgásban tartani a dolgokat, amikor ERDDAP™ nagyon elfoglalt, és számos adatkészletgel is jobban foglalkozik.
-    * Szigorúan Ajánlott: hagyja abba a használatot&lt;convertToPublicSourceUrl &gt; in datasets.xml IP-számot konvertálni egy adatkészletben&lt; sourceUrl &gt; (például: http://192.168.#.#/ ) domain név (például: http : my.domain.org /) . Mostantól új előfizetések http://localhost , http://127.0.0.1 , és http://192.168.#.# Az URLS biztonsági okokból nem engedélyezett. Ezért kérjük, mindig használja a nyilvános domain nevet a&lt; sourceUrl &gt; címke (ha a DNS-problémák miatt szükséges) , akkor használja a [/ etc / hosts tábla a kiszolgálón](https://linux.die.net/man/5/hosts) a probléma megoldása a helyi domain nevek IP-számokra történő konvertálásával DNS-kiszolgáló használata nélkül. Tesztelheti, ha egy adott domain név megfelelően megoldódik a használatával
-Ping _ some.domain.name
-    * GenerateDatasets.xml-ben, távoli adathalmazokhoz (például egy THREDDS szerverről) , az automatikusan generált datasetID s a legtöbb domain esetében változatlan. Néhány domain, az első rész (azaz a név) az automatikusan generált datasetID Egy kicsit más lesz. A neveknek, amelyeknek volt egy részük, most már inkább két részük van. Például az adatok http://oos.soest.hawaii.edu korábban datasetID A hawaii-val kezdődött, de most datasetID Az első a hawaii _ soest\\ _. Ha ez gondot okoz neked, kérlek, írj nekem. Lehet, hogy van egy kis munka.
-    * A Cassandra driver frissítve volt cassandra- driver- core- 3.0.jar, és így a Cassandra v3. EDDTableFromCassandra nem használja ki az új funkciók Cassandra v3. Az indexek Cassandrában bonyolultabbak lehetnek, de ERDDAP™ még mindig használja a Cassandra v2 index modell, amely feltételezi, hogy egy indexált oszlop lehet közvetlenül queried '=' megszorítások. GenerateDatasets Xml EDDTableFromCassandra már nem detektálja oszlopok indexek; ha egy index egyszerű, meg kell adni, hogy datasets.xml Kézzel. Ha komplex indexek vagy egyéb új funkciók támogatására van szüksége, kérjük, emailezzen erd.data at noaa.gov .
-&#33; Ha még mindig a Cassandra 2.x-et használja, folytassa a kezelést ERDDAP™ v1.68, amíg nem fejleszted a Cassandra 3.x-et.
-    * Üvegek és a Classpath -- Szinte az összes benne lévő harmadik fél .jar fájlokat frissítették a legújabb verziók.
-        * slf4j.jar került a / lib és a classpath.
-        * Joid. Üveg és tsik. az üveget eltávolították a / lib-ből és a classpath-ból.
-        * Ha hibajelzéseket kapsz az olyan osztályokról, amelyek nem találhatóak meg, amikor fordítasz vagy futsz ERDDAP™ vagy valamelyik eszköz, hasonlítsa össze a parancssor classpath ERDDAP s [jelenlegi classpath](/docs/contributing/programmer-guide#development-environment) Hogy kitaláljam, melyik befőttesüveg hiányzik a classpath-odból.
+    * A setup.xml-ben, a fenti utasításokban&lt;e-mailFromAddress&gt; kérlek, írja be:
+Ha lehetséges, állítsa be ezt biztonságos kapcsolatot (SSL / TLS) az e-mail szerverhez.
+Ha a beállítás nem használja biztonságos kapcsolatot az e-mail szerverrel, kérjük, tegye meg a változtatásokat.
+    * A te datasets.xml Kérlek, add hozzá ezt a vonalat a leíráshoz&lt;ElőfizetésEmailBlacklist&gt; az Ön datasets.xml :
+Használhatja a "nevet"\\*"Egy egész domain feketelistára, pl.\\*@example.com .
+    * Mivel a v1.66-os naplórendszer változása, a logfájl soha nem naprakész. Mindig vannak üzenetek vagy üzenetek részei, amelyek arra várnak, hogy a naplófájlra írjanak. Most, elkészítheted up-to-date (Egy pillanatra) megtekintve ERDDAP status weboldal http://_your.domain.org_/erddap/status.html ...
+    * HashDigest......
+    * Egy kis változás (String2.canonical) segíteni kell a dolgokat gyorsan mozogni, amikor ERDDAP™ nagyon elfoglalt, és sokkal jobban foglalkozik egy nagyon sok adatkészlettel.
+    * Erős Ajánlott: hagyja abba a használatot&lt;átalakításToPublicSourceUrl&gt; benne datasets.xml IP szám átalakítása egy adatkészletben&lt; sourceUrl &gt; &gt; &gt; &gt; (pl.: http://192.168.#.#/ ) egy domain név (pl.: http My.domain.org/) ... Mostantól új előfizetések http://localhost , http://127.0.0.1 és http://192.168.#.# Az URLS nem engedélyezett biztonsági okokból. Ezért kérjük, mindig használja a nyilvános domain nevet&lt; sourceUrl &gt; &gt; címke (ha szükséges a DNS problémák miatt) Használhatja a [/etc/hosts táblázat a szerverén](https://linux.die.net/man/5/hosts) a probléma megoldása a helyi domain nevek IP-számokra való átalakításával anélkül, hogy DNS-kiszolgálót használna. Tesztelhet, ha egy adott domain név megfelelően megoldódik a használatával
+dalszöveg: Some.domain.name
+    * A geneDatasets.xml, a távoli adatkészletek számára (pl. THREDS szervertől) automatikusan generált datasetID S változatlanok a legtöbb domain számára. Néhány domain, az első rész (azaz a neve) a automatikusan generált datasetID egy kicsit más lesz. Figyelemre méltó, hogy a nevek, amelyek egy része most nagyobb valószínűséggel két rész. Például az adatkészletek http://oos.soest.hawaii.edu korábban vezetett datasetID s ez kezdődött a hawaii\\_, de most vezet datasetID Ez a hawaii\\_soest\\_ . Ha ez problémákat okoz az Ön számára, kérjük, küldjön nekem. Lehet, hogy munkakörnyezet van.
+    * A Cassandra sofőrt a cassandra-vezérelt-core-3.0.jar-ra frissítették, így Cassandra v3. EDDTableFromCassandra nem használja ki új funkciókat Cassandra-ban v3. Cassandra indexei most összetettebbek lehetnek, de ERDDAP™ még mindig használja a Cassandra v2 index modellt, amely feltételezi, hogy egy indexelt oszlop közvetlenül kapcsolódik '=' korlátok. GenerateDatasets Xml az EDDTableFromCassandra számára már nem észleli az indexekkel rendelkező oszlopokat; ha egy index egyszerű, meg kell határoznia azt datasets.xml kézzel. Ha több komplex indexre vagy más új funkcióra van szüksége, kérjük e-mailt erd.data at noaa.gov ...
+&#33;&#33;&#33; Ha még mindig használja Cassandra 2.x, kérjük, továbbra is használja ERDDAP™ v1.68, amíg frissíti a Cassandra 3.x használatát.
+    * Jars és az Classpath - Majdnem az összes érintett harmadik fél .jar fájlt frissítették legújabb verziójukra.
+        * Slf4j.jar hozzáadták /lib és az osztálypath.
+        * joid. jar és tsik. jar eltávolították a /lib és az osztálypata.
+        * Ha hibaüzeneteket kap az osztályokról, amelyeket nem találsz, ha összeállítod vagy futsz ERDDAP™ vagy az egyik eszköze, hasonlítsa össze a parancssor osztályát ERDDAP A [jelenlegi osztálypata](/docs/contributing/programmer-guide#development-environment) kitalálni, hogy melyik .jars hiányzik az osztálypátoktól.
 
-## Változat 1.68{#version-168} 
- (released 2016-02-08) 
+## Verzió 1.68{#version-168} 
+ (2016-02-08) 
 
-*    **Új jellemzők (felhasználók számára) :** Nincs.
+*    **Új funkciók (felhasználók számára) :** Senki sem.
      
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    *    [ EDDGrid FromFiles Aggregáció fájlnevek vagy globális metaadatok segítségével](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) --
-A EDDGrid FromFiles most összesíteni egy csoport fájlok hozzáadásával egy új bal dimenzió, általában idő, alapján egy érték származtatott minden fájlnév vagy egy globális attribútum, hogy minden fájl.
-    * JAVÍTOTT: Korábban azt javasoltuk, hogy talán szeretne létrehozni egy EDDGrid FromErddap dataset a datasets.xml amely hivatkozott, és újra szolgált a jplMU RSS T adatkészlet a mi ERDDAP . Mivel most már van egy újabb verziója ennek az adatkészletnek, ez az adatkészlet most romlik. Szóval, ha megvan az adatkészlet a... ERDDAP™ , kérjük, adja hozzá ezt az új adatlapot
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    *    [ EDDGrid FromFiles Aggregation keresztül File Names vagy Global Metadata](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) -
+Minden variáció EDDGrid A Files most összesítheti a fájlok egy csoportját egy új baloldali dimenzió hozzáadásával, általában az idő, amely az egyes fájlnévből származó értéken vagy az egyes fájlokban szereplő globális tulajdonság értékétől függ.
+    * IMPROVED: Korábban azt javasoltuk, hogy te is szeretne létrehozni egy EDDGrid FromErdp adatkészlet az Ön adataiban datasets.xml a hivatkozott és újra kiszolgálta a jplMU-t RSS T adatkészlet a miénkben ERDDAP ... Mivel most van egy új verziója ennek az adatkészletnek, ez az adatkészlet most eltökélt. Tehát, ha rendelkezik ez az adatkészlet az Önben ERDDAP™ Kérlek, add hozzá ezt az új adatkészletet
 ```
         <dataset type="EDDGridFromErddap" datasetID="jplMURSST41" active="true">  
           <!-- Multi-scale Ultra-high Resolution (MUR) SST analysis fv04.1, Global, 0.011 Degree, Daily -->  
           <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41</sourceUrl>  
         </dataset>  
 ```
-Ha szeretné eltávolítani a régi jplMU RSS T dataset a ERDDAP™   (Te döntesz.) "Igaz" helyett "hamis" lett.
-    * A hibajavítás: Kérjük, ellenőrizze a BigParentDirectory, hogy a megadott setup.xml. Ha nem vágtál volna a végén&lt;bigParentDirectory &gt; név, akkor ERDDAP™ több könyvtárat is létre fog hozni azzal, hogy a szavakat közvetlenül az Ön által megadott névhez csatolja, ahelyett, hogy alkönyvtárakat hozna létre. Kezdve az 1.68-as verzióval, ERDDAP™ Ha nem adott meg egyet, a könyvtárnév végére egy slot ad. Tehát, ha korábban nem adott meg egy slot a végén, akkor amikor telepíti ERDDAP™ v1.68 Meg kell mozgatni és átnevezni ezeket a könyvtárakat **után** Leállítod a régit. ERDDAP™ és **előtt** Te kezded az új ERDDAP . Például, ha tévesen megadott bigParentDirectory mint / home / erddapBPD (nincs korlát) és ERDDAP™ tévedésből létrehozott könyvtárak, mint
-/ otthon / erddappBPDcache
-/ otthon / erddappBPDcope
-/ otthon / erddapBPDdataset
-/ otthon / erddappBPDflag
-/ otthon / erddappBPDlogs
-/ otthon / erddapBPDlucene
-és egy fájl neve / home / erddapBPDsubptionsV1.txt,
-Akkor meg kell mozgatni, és átnevezni őket, hogy
-/ otthon / erddapBPD / gyorsítótár
-/ otthon / erddapBPD / másolat
-/ otthon / erddapBPD / adatkészlet
-/ otthon / erddapBPD / zászló
-/ otthon / erddapBPD / naplók
-/ otthon / erddapBPD / lucén
-és / home / erddapBPD / előfizetés V1.txt
-    * A hibajavítás: Bogarak voltak benne. EDDGrid LONPM180 ERDDAP™ v1.66, amely akkor történt, amikor a gyermek adatkészlet EDDGrid FromErddap.
-    * A hibajavítás: Volt egy bogár. EDDGrid FromFiles és EDDTable FromFile in ERDDAP™ v1.66, ami&lt;updateEveryNMillis &gt;, hogy figyelmen kívül hagyja az első alkalommal az adatkészlet betöltése után újraindítás.
-    * hibajavító / új funkció: Ha egy gyermek adatai belül EDDGrid AggregateExisting Dimension, EDDGrid Vettem. EDDGrid FromedDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy, vagy EDDTableFrom EDDGrid FromErddap dataset, hogy a szülő dataset most feliratkozik a mögöttes ERDDAP™ Dataset. Ha az alapul szolgáló eszköz ERDDAP™ dataset azonos ERDDAP™ , az előfizetés és annak validálása történik közvetlenül; akkor nem kap egy e-mailt kéri, hogy érvényesítse az előfizetés. Máskülönben, ha az előfizetési rendszer az Ön ERDDAP™ ki van kapcsolva, állítsa be a&lt;újratöltéseEveryNMinutes &gt; a szülőadatkészlet beállítása egy kis számra (60?) hogy naprakész maradjon.
-    * hibajavító / új funkció: Ha egy gyermek adatai belül EDDGrid AggregateExisting Dimension, EDDGrid Vettem. EDDGrid FromedDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy, vagy EDDTableFrom EDDGrid Aktív = "hamis", hogy a gyermek dataset most kimarad.
+Ha el akarja távolítani a régi jplMU RSS T adatkészlet az Ön ERDDAP™   (ez a választásod) , változtassa meg aktív beállítását "igaz" a "hamis".
+    * Bug fix: Kérjük, ellenőrizze a bigParentDirectory-t, amelyet a setup.xml-ben megadott. Ha nem tettél csapást a végén&lt;bigParentDirectory&gt; név, majd ERDDAP™ több könyvtárat hoztak létre azzal, hogy a szavakat közvetlenül a megadott névre helyezték, ahelyett, hogy előirányzatokat hoznának létre. Kezdő verzió 1.68, ERDDAP™ hozzáad egy slash-t a könyvtári név végéhez, ha nem adott meg egyet. Tehát, ha korábban nem határozott meg egy csapást a végén, akkor amikor telepíti ERDDAP™ v1.68 kell mozogni és újranevezni ezeket a könyvtárakat **utána** leállítod a régit ERDDAP™ és **előtte** elkezdi az újat ERDDAP ... Például, ha tévesen meghatározott bigParentDirectory, mint /home/erddapBPD (Nincs nyomvonal slash) és ERDDAP™ hibásan létrehozott könyvtárak, mint például
+/home/erddapBPDcache
+/home/erddapBPDcopy
+/home/erddapBPDdataset
+/home/erddapBPDflag
+/home/erddapBPDlogok
+/home/erddapBPDlucene
+és egy fájl neve /home/erddapBPDsubscriptionsV1.txt,
+Ezután meg kell mozgatni és átnevezni őket, hogy legyen
+/home/erddapBPD/cache
+/home/erddapBPD/copy
+/home/erddapBPD/adatkészlet
+/home/erddapBPD/flag
+/home/erddapBPD/logs
+/home/erddapBPD/lucene
+/home/erddapBPD/subscriptionsV1.txt
+    * Bug fix: Voltak hibák a EDDGrid LonPM180 ERDDAP™ v1.66, amely akkor következett be, amikor a gyermek adatkészlete egy EDDGrid FromErddap.
+    * Bug fix: Volt egy hiba EDDGrid FromFiles és EDDTable FromFiles in ERDDAP™ v1.66, ami okozta&lt;frissítésEveryNMillis&gt; figyelmen kívül hagyni az első alkalommal, amikor az adatkészletet újraindítás után töltötték be.
+    * Bug fix/új funkció: Ha egy gyermek adatkészlete belül EDDGrid AggregateExistingDimension, EDDGrid Másolás, EDDGrid FromEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy vagy EDDTableFrom EDDGrid egy ...FromErddap adatkészlet, hogy a szülői adatkészlet most az alapjául szolgál ERDDAP™ adatkészlet. Ha a mögöttes ERDDAP™ adatkészlet ugyanabban az esetben van ERDDAP™ , az előfizetés és annak validálása közvetlenül történik; nem kap egy e-mailt, amely arra kéri Önt, hogy érvényesítse az előfizetést. Ellenkező esetben, ha az előfizetési rendszer az Ön számára ERDDAP™ kikapcsolódik, állítsa be&lt;reloadEveryNMinutes&gt; a szülői adatkészlet kis számba történő beállítása (60?) hogy naprakész maradjon.
+    * Bug fix/új funkció: Ha egy gyermek adatkészlete belül EDDGrid AggregateExistingDimension, EDDGrid Másolás, EDDGrid FromEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy vagy EDDTableFrom EDDGrid aktív="hamis", hogy a gyermek adatkészlet most kihagyott.
 
-## változat{#version-166} 
- (released 2016-01-19) 
+## Verzió 1.66{#version-166} 
+ (2016-01-19) 
 
-*    **Új jellemzők (felhasználók számára) :** 
-    * Grafikák (Nem térképek) Most már lehetnek csökkenő értékek a tengelyeken. Ahhoz, hogy ezt egy Make A Graph weboldal, új Y tengely: emelkedő beállítás (alapértelmezés) Leereszkedni. Vagy egy grafikont igénylő URL-ben az új opcionális 3 " | "paraméter a [& .x Távolság és / vagy &. yRange kapcsolók](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) Ami nem lehet semmi. (alapértelmezés) , igaz, vagy t kap emelkedő értékek, vagy a hamis vagy f, hogy csökkenő értékeket. Az igaz | A hamis értékek érzéketlenek. Hála Chris Fullilove-nak, John Kerfoot-nak, Luke Campbell-nek és Cara Wilson-nak.
-    * A felhasználók most már megadhatják a grafikonok háttérszínét egy & .bgColor = 0x _ AARRGGBB _ switch to the URL which required the graph. Lásd .bgColor a Graphics Commands szakaszban a [graddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) és [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#GraphicsCommands) dokumentáció. Hála John Kerfootnak és Luke Campbellnek.
-    * A táblázatos adatkészletek esetében a megszorítások most már a min (_ someVariabeName _) vagy max. (_ someVariabeName _) . Lásd [perc () és max. () ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#min) . Hála John Kerfootnak.
-    * Táblázati adatkészletek esetében a használt időkorlátok [Most](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) most már megadhatja az időegységeket milliszekundum vagy milliszekundum.
-    * Egy táblázatos adatkészlet képére vonatkozó kérés most már térképet is készít (nem diagram) ha az x és y változók volta- like és latittude- like változók (kompatibilis egységek) . Hála Rich Signell-nek.
-    * hibajelzés: Az időtengelyek címkéi és a kullancsok néha furcsa szabálytalanságokat mutatnak, amikor egyszerre több grafikont kérnek (például egy weboldalon) . A probléma egy hiba volt az SGT grafikus könyvtárában. ERDDAP™ felhasználások (egy változó volt "statikus", hogy nem kellett volna) . Hála Bradford Butmannek.
+*    **Új funkciók (felhasználók számára) :** 
+    * Graphs (nem térképek) lehet most leszármazott értékek a tengelyeken. Ahhoz, hogy ezt a Make A Graph weboldalt használja, változtasson új Y Axis: Felemelkedő beállítást (az alapértelmezett) leereszkedni. Vagy egy olyan URL-ben, amely grafikont kér, használja az új opcionális 3. | "paraméter a [&.x Range és/vagy yRange kapcsolók](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) Ez nem lehet semmi (az alapértelmezett) , igaz, vagy t, hogy felemelkedő értékek, vagy használja hamis vagy f, hogy leszármazott értékeket. Az igaz | A hamis értékek érzéketlenek. Chris Fullilove, John Kerfoot, Luke Campbell és Cara Wilson.
+    * A felhasználók most meghatározhatják a háttérszínt a grafikonok számára azáltal, hogy hozzáadnak egy &.bgColor=0x_ Az AARRGGBB_ átkapcsolja az URL-t, amely kéri a grafikont. Lásd .bgColor a Graphics Commands részében [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) és [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#GraphicsCommands) dokumentáció. John Kerfootnak és Luke Campbellnek köszönhetően.
+    * A mesés adatkészletek esetében a korlátozások most a bányára utalhatnak (_someVariableName_) vagy max (_someVariableName_) ... Lásd [b) () és max () ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#min) ... John Kerfootnak köszönhetően.
+    * A tabuláris adatkészletek, az időkorlátok, amelyek használatát [most](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) most meghatározhatja a milliszekundumok vagy millisz időegységeit.
+    * A tabuláris adatkészlet képének kérése most térképet készít (nem grafikon) ha az x és a y változók hosszúságúak és szélességű változók (kompatibilis egységek) ... Rich Signellnek köszönhetően.
+    * Bug fix: Idő tengelycímkék és trükkök néha furcsa szabálytalanságokat kért több grafikon egyszerre (pl. weboldalon) ... A probléma egy hiba volt az SGT grafikai könyvtárban, amely ERDDAP™ Használat (az egyik változó "static" volt, amit nem kellett volna) ... Bradford Butmannak köszönhetően.
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Ez egy biztonsági kockázat, hogy az e-mail jelszavát egy egyszerű szöveges fájl, mint a setup.xml. A probléma enyhítése érdekében határozottan javasoljuk, hogy:
-        1. Állítson fel egy e-mail fiókot csak a ERDDAP Használata, például, erddap @ yourInstitution.org. Ennek más előnyei is vannak; nevezetesen egynél több ERDDAP™ Ezt követően az adminisztrátor hozzáférést kaphat az e-mail fiókhoz.
-        2. A setup.xml fájl jogosultságai rw (helyesen + írni) a felhasználó, aki fut Tomcat és ERDDAP™   (felhasználó = macska?) és nincs engedély (nem ír vagy ír) a csoport és más felhasználók számára. Hála Filipe Rocha Freire-nek.
-    * Az új [ArchiveADataset](/docs/server-admin/additional-information#archiveadataset) eszköz egyszerűsíti a .tar  .gz archiválásra alkalmas formátumú adatkészlet részhalmaza (különösen: NOAA NCEI) . Ez sokaknak hasznos lesz. ERDDAP™ adminisztrátorok sok helyzetben, de különösen csoportok belül NOAA .
-    * Az új adatkészlet típusa [ EDDGrid FromNcFilesKicsomagolva](/docs/server-admin/datasets#eddgridfromncfilesunpacked) a EDDGrid FromNcFiles. A különbség az, hogy ez az osztály kipakolja az egyes adatfájlokat, mielőtt EDDGrid FromFiles megnézi a fájlokat:
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Biztonsági kockázat, hogy az e-mail jelszót egy egyszerű szövegfájlba helyezze, mint a setup.xml. A probléma enyhítése érdekében határozottan javasoljuk, hogy:
+        1. E-mail fiók beállítása csak ERDDAP Használata, például erddap@yourInstitution.org. Ez más előnyökkel is jár; nevezetesen több, mint egy ERDDAP™ Az adminisztrátor ezt követően hozzáférhet az e-mail fiókhoz.
+        2. Készítse el a setup.xml fájl rw engedélyeit (Olvasó + írás) a felhasználó számára, aki fut Tomcat és ERDDAP™   (felhasználó=tomcat?) és nem engedélyek (nem olvas vagy ír) a csoport és más felhasználók számára. A Filipe Rocha Freire-nek köszönhetően.
+    * Az új [ArchiveADataset](/docs/server-admin/additional-information#archiveadataset) az eszköz egyszerűsíti egy .tar  .gz archívum egy adatkészlet egy olyan formátumban, amely alkalmas az archiválásra (nevezetesen, NOAA NCEI) ... Ez sokak számára hasznos lehet ERDDAP™ adminisztrátorok sok helyzetben, de különösen a csoportokban NOAA ...
+    * Az új adatkészlet típusa [ EDDGrid FromNcFilesUnpack](/docs/server-admin/datasets#eddgridfromncfilesunpacked) egy változata EDDGrid FromNcFiles. A különbség az, hogy ez az osztály minden adatfájlot kicsomagol, mielőtt EDDGrid FromFiles a fájlokat nézi:
         
-        * Csomagolja ki a használt változókat scale\\_factor és / vagy add\\_offset .
-        * Olyan egész változókat támogat, amelyek\\ _ Unsignated = valódi attribútumokkal rendelkeznek egy nagyobb egész adattípusra, így az értékek aláíratlan értékként jelennek meg. Például egy\\ _ Unauthorised = true byte (8 bit) változó lesz egy aláírt rövid (16 bit) változó.
-        * \\ _ FillValue és missing\\_value NaN-értékek (vagy MAX\\ _ érték egész adattípusokra) .
+        * Nem csomagolt változókat használnak scale\\_factor vagy add\\_offset ...
+        * Elősegíti az integrált változókat, amelyek \\_Unsigned=igazi tulajdonságokkal rendelkeznek egy nagyobb integrált adattípushoz, hogy az értékek a meg nem jelentett értékekként jelenjenek meg. Például egy \\_Unsigned=true byte (8 bit) változó lesz egy aláírt rövid (16 bit) változó.
+        * Megtéríti a \\_FillValue-t és missing\\_value A NaN értékei (vagy MAX\\_VALUE az integrált adattípusokhoz) ...
         
-A nagy előnye ennek az osztálynak, hogy biztosítja a módját, hogy kezelni a különböző értékek scale\\_factor , add\\_offset ,\\ _ FillValue vagy missing\\_value a gyűjtemény különböző fájljaiban. Máskülönben olyan eszközt kellene használnod, mint [NcML](/docs/server-admin/datasets#ncml-files) vagy [ NCO ](/docs/server-admin/datasets#netcdf-operators-nco) minden fájl módosítása a különbségek eltávolítása érdekében, hogy a fájlokat kezelni EDDGrid FromNcFiles. Ahhoz, hogy ez az osztály megfelelően működjön, a fájloknak a kapcsolódó attribútumok CF szabványait kell követniük. Hála Philippe Makowskinak.
-    * Az új adatkészlet típusa [ EDDGrid LONPM180](/docs/server-admin/datasets#eddgridlonpm180) lehetővé teszi a 180-nál nagyobb hosszúsági értékkel rendelkező adatkészletek megváltoztatását (például 0-360) a -180-180 tartományon belüli hosszúsági értékkel rendelkező adatkészletekbe (Longitione Plus vagy Minus 180, így a név) . A nagy előnye annak, hogy a -180-180-as tartományba eső hosszúsági értékekkel rendelkező adatkészleteket OGC szolgáltatások (például: WMS ) a hosszúsági értékeket ebben a tartományban kell meghatározni. Köszönet Lynne Tablewskinak, Fabien Guichardnak, Philippe Makowskinak és Martin Spelnek.
-2016- 01- 26 Frissítés: Eeek&#33; Ez a hiba akkor fordul elő, amikor a gyermek adatkészlet egy EDDGrid FromErddap, amely utal egy adatkészlet azonos ERDDAP . Ez a hiba be van javítva ERDDAP™ v1.68.
-    * In [GenerateDatasetsXml](/docs/server-admin/datasets#generatedatasetsxml) új speciális adatkészlet típussal, EDDGrid LonPM180FromErddapaddal, lehetővé teszi a generálás datasets.xml MELLÉKLET EDDGrid LONPM180 adatkészlet az összes EDDGrid adat ERDDAP amelyek hosszúsági értékei meghaladják a 180-at.
-    * For all EDDGrid adatkészletek, in datasets.xml most már használhatja az opcionális
-[&lt;hozzáférhető Via WMS &gt; igaz | hamis&lt;/ hozzáférhető Via WMS &gt;] (/ docs / server- admin / datasets # accessibleviawms)   (alapértelmezés = igaz) . Ha ezt hamis erőre állítjuk, az lehetetlenné teszi a WMS szolgáltatás erre az adatra. Ha igaz, az adatkészlet még mindig nem érhető el WMS egyéb okok miatt (pl. nincs lat- vagy lontengely) . Ez különösen hasznos az önmagában létező és EDDGrid LONPM180, hogy csak a LONPM180 verzió érhető el WMS .
-    * A setup.xml, meg lehet adni egy másik alapértelmezett szín a háttérben grafikonok. A szín a 0x _ AARRGGBB _ formában megadott 8 számjegyű hexadecimális érték, ahol az AA, RR, GG és BB az opacitás, a piros, a zöld és a kék komponensek, amelyeket 2 számjegyű hexadecimális számként határoznak meg. Megjegyzés, hogy a vászon mindig átlátszatlan fehér, így a (fél -) átlátszó grafikus háttér szín keveredik a fehér vászon. Az alapértelmezés világoskék:
+Ennek az osztálynak a nagy előnye, hogy utat biztosít a különböző értékek kezelésére scale\\_factor , add\\_offset \\_FillValue, vagy missing\\_value különböző fájlokban egy gyűjteményben. Ellenkező esetben olyan eszközt kell használnia, mint [NcML](/docs/server-admin/datasets#ncml-files) vagy [ NCO ](/docs/server-admin/datasets#netcdf-operators-nco) módosítani minden fájlt, hogy távolítsa el a különbségeket, hogy a fájlokat lehet kezelni EDDGrid FromNcFiles. Ahhoz, hogy ez az osztály megfelelően működjön, a fájloknak követniük kell a kapcsolódó tulajdonságok CF szabványait. Philippe Makowskinak köszönhetően.
+    * Az új adatkészlet típusa [ EDDGrid LonPM180](/docs/server-admin/datasets#eddgridlonpm180) lehetővé teszi, hogy megváltoztassa az adatkészleteket, amelyeknek több mint 180 értéke van (pl. a 0–360 közötti tartomány) a -180–180 közötti tartományon belüli hosszúsági értékekkel rendelkező adatkészletek (Longitude Plus vagy Minus 180, így a név) ... A nagy előnye, hogy az adatkészletek hosszúsági értékekkel rendelkeznek a -180–180 tartományban, az, hogy OGC Szolgáltatások (pl.: WMS ) hosszúsági értékeket igényel ebben a tartományban. Köszönhetően Lynne Tablewski, Fabien Guichard, Philippe Makowski és Martin Spel.
+2016-01-26 Frissítés: Eeek&#33; Ez egy hiba, amely akkor fordul elő, ha a gyermek adatkészlete egy EDDGrid FromErddap, amely ugyanazon adatkészletre hivatkozik ERDDAP ... Ez a hiba rögzítve van ERDDAP™ v1.68.
+    * Inkább [GenerateDatasetsXml](/docs/server-admin/datasets#generatedatasetsxml) új speciális adatkészlettípus, EDDGrid LonPM180FromErddapCatalog, lehetővé teszi, hogy létrehozza a datasets.xml Mert EDDGrid LonPM180 adatkészletek az összes EDDGrid adatkészletek egy ERDDAP olyan hosszúsági értékek, amelyek 180-nál nagyobbak.
+    * Minden EDDGrid adatkészletek, datasets.xml most használhatja az opcionális
+[[szerkesztés]]&lt;hozzáférhető Via WMS &gt; Igaz | hamis&lt;/Csak elérhető Via WMS &gt;&gt;&gt;&gt;&gt;&gt; (/docs/server-admin/adtasets#accessibleviawms)   (Default=true) ... Ezt tévesen letiltja a WMS szolgáltatás ez az adatkészlet. Ha igaz, az adatkészlet még mindig nem hozzáférhető WMS egyéb okokból (pl. nem lat vagy lon tengely) ... Ez különösen hasznos az olyan adatkészletek számára, amelyek a sajátjukban léteznek, és amelyeket az EDDGrid LonPM180, így csak a LonPM180 verzió elérhető WMS ...
+    * A setup.xml-ben megadhat egy másik alapértelmezett színt a grafikonok hátterében. A színt 8 számjegyű hexadecimális értékként határozzák meg a 0x_AARRGGBB_ formájában, ahol az AA, RR, GG és BB az opacitás, a vörös, a zöld és a kék összetevők, vagyis 2 számjegyű hexadecimális számok. Ne feledje, hogy a vászon mindig opaque fehér, így egy (Félig -) Átlátszó grafikon háttérszín keverékek a fehér vászon. Az alapértelmezett könnyű kék:
 ```
         <graphBackgroundColor>0xffccccff</graphBackgroundColor>  
 ```
-Hála John Kerfootnak és Luke Campbellnek.
-    * A setup.xml, akkor most adja meg a maximális méret a [naplófájl](/docs/server-admin/additional-information#log)   (amikor átnevezik naplóvá. Txt. korábbi és új napló. txt létrehozása) , in MegaBytes. A minimum 1. A maximum 2000. Az alapértelmezett 20 (MB) . Például:
+John Kerfootnak és Luke Campbellnek köszönhetően.
+    * A setup.xml-ben most meghatározhatja a maximális méretet [log fájl](/docs/server-admin/additional-information#log)   (amikor újra megnevezik a naplóra. txt. Előző és egy új log. txt jön létre) MegaBytesben. A megengedett minimum 1. A megengedett maximum 2000. Az alapértelmezettség 20 (MB) ... Például:
 ```
         <logMaxSizeMB>20</logMaxSizeMB>
 ```
-    * In datasets.xml , [&lt;fgdcFile &gt;] (/ docs / server- admin / datasets # fgdcfile) vagy [&lt;izo19115Fájl &gt;] (/ docs / server- admin / datasets # iso19115file) lehet egy helyi fájl (mint korábban) vagy URL (amit letöltenek, így van egy helyi másolat) . Ha ERDDAP™ nem tudja letölteni a fájlt, az adatkészlet betöltése folytatódik, de az adatkészletnek nem lesz fgdc vagy iso19115 fájlja.
-    *    EDDGrid FromFiles és EDDTable FromFiles datasets now do a quickRestart (a rendszer, amely ERDDAP™ megpróbálja használni, amikor az adatkészletek első betöltése ERDDAP™ újraindítása) . Ez felgyorsítja az újraindítást. ERDDAP .
-2016- 01- 26 Frissítés: Eeek&#33; Ez a hiba okozza&lt;updateEveryNMillis &gt;, hogy figyelmen kívül hagyja az első alkalommal az adatkészlet betöltése után újraindítás. Ez a hiba be van javítva ERDDAP™ v1.68.
-    * A QuickRestart rendszer általános javítása lehetővé teszi ERDDAP™ az adatkészletek gyorsabb betöltése, amikor ERDDAP™ újraindul.
-    * Valamennyi EDDGrid FromFiles és EDDTable FromFiles alosztályok most elfogadnak egy új&lt;pathRegex &gt; tag, általában itt van megadva&lt;rekurzív &gt;. Ha rekurzív "igaz", csak teljes alkönyvtári utak, amelyek megfelelnek a path Regex (alapértelmezett = "\\ *") Elfogadjuk. A&lt; sourceUrl s &gt; címke EDDGrid AggregateExistingDimension most már tartalmazza a pathoRegex attribútum (alapértelmezett = "\\ *") .
-    * Az alapértelmezett&lt;partialRendszerkövetelmények &gt; in setup.xml most 490000000 (~ 490 MB) . Ez elkerüli a THREDDS adatszerverek adatainak megszerzésével kapcsolatos problémákat / időtúllépéseket. Hála Leslie Thorne-nak.
-    * A log rendszer egy kis módosítása lehetővé teszi ERDDAP™ hogy jobban reagáljon, amikor nagyon, nagyon elfoglalt. Az információ most a lemezmeghajtón lévő naplófájlra van írva, meglehetősen nagy darabokban. Az az előnye, hogy ez nagyon hatékony... ERDDAP™ soha nem blokkolja arra várva, hogy az információkat a naplófájlba írják. A hátrány az, hogy a napló majdnem mindig egy részleges üzenettel ér véget, ami addig nem fejeződik be, amíg a következő darab meg nem íródik.
-    * Az inotifikálással és a [&lt;updateEveryNMillis &gt;] (/ docs / server- admin / datasets # updateevernmillis) rendszer EDDGrid FromFiles és EDDTable FromFiles adatok: Már nem szükséges megadni egy nagy fs.inotify.max\\ _ user\\ _ watches vagy fs.inotify.max\\ _ user\\ _ cases. Van egy bogár. Java Ez okozza néhány része Java Az inotify / WatchDirectory rendszer, hogy ne gyűjtsük össze a szemetet, amikor véglegesítik; végül, a zombi inotify órák vagy esetek száma meghaladná a maximális meghatározott számot. ERDDAP™ Most már működik ez Java Bogár.
-Továbbá, az inotify szálak száma szerepel a status.html weboldalon, így szemmel tarthatod annak használatát. Jellemzően, van 1 inotify szál per EDDGrid FromFiles és EDDTable FromFiles adatkészlet.
-    * Hibajavítás: sok helyen a hiba újraindítása helyett egy új hiba jött létre, amely csak egy rövid verziót tartalmazott az eredeti hibaüzenet és a stack nyomkövetés nélkül. Most, amikor egy új hiba keletkezik, ez megfelelően tartalmazza a teljes eredeti kivétel például, dobja új Exception ("néhány új üzenet", e) ;
+    * Inkább datasets.xml [[szerkesztés]]&lt;fgdcFile&gt; (/docs/server-admin/datasets#fgdcfile) [[szerkesztés]]&lt;Iso19115Fil&gt; (/docs/server-admin/adatkészletek#iso19115file) most lehet helyi fájl (mint korábban) vagy URL (amelyet le kell tölteni, így van egy helyi másolat) ... Ha ERDDAP™ nem tudja letölteni a fájlt, az adatkészlet betöltése folytatódik, de az adatkészletnek nem lesz fgdc vagy iso19115 fájlja.
+    *    EDDGrid FromFiles és EDDTable FromFiles adatkészletek most tehet egy gyorsRestart (a rendszer, amely ERDDAP™ megpróbálja használni, ha az adatkészleteket először töltik be, amikor ERDDAP™ újraindítás) ... Ez felgyorsítja az újraindítást ERDDAP ...
+2016-01-26 Frissítés: Eeek&#33; Ez egy hiba, ami okozza&lt;frissítésEveryNMillis&gt; figyelmen kívül hagyni az első alkalommal, amikor az adatkészletet újraindítás után töltik be. Ez a hiba rögzítve van ERDDAP™ v1.68.
+    * A gyorsRestart rendszer általános javítása lehetővé teszi ERDDAP™ az adatkészletek gyorsabb betöltése, ha ERDDAP™ újraindításra kerül.
+    * Minden EDDGrid FromFiles és EDDTable FromFiles alosztályok most elfogad egy új&lt;patRegex&gt; címke, általában az alábbiakban megadott&lt;ismétlődő&gt;. Ha az ismétlődő "igaz", csak a teljes átirányítási útvonalak, amelyek megfelelnek az útvonalnakRegex (default=".\\*") elfogadják. Hasonlóképpen, egy&lt; sourceUrl s&gt; címke egy EDDGrid Az AggregateExistingDimension most tartalmazhat egy utatRegex tulajdonság (default=".\\*") ...
+    * Az alapértelmezett&lt;PartialRequestMaxBytes&gt; a setup.xml-ben jelenleg 490000000 (490 MB) ... Ez elkerüli a THREDDS adatkiszolgálók adatainak megszerzéséhez kapcsolódó problémák/időszakokat. Leslie Thorne-nek köszönhetően.
+    * A logisztikai rendszer kis változásának lehetővé kell tennie ERDDAP™ felelősségteljesebbnek lenni, ha nagyon, nagyon elfoglalt. Az információ most a lemezmeghajtó naplófájljára íródik, meglehetősen nagy darabokban. Az előny az, hogy ez nagyon hatékony - ERDDAP™ Soha nem fogja megakadályozni, hogy az információt a naplófájlra írják. A hátrány az, hogy a napló szinte mindig egy részleges üzenettel fog véget érni, amely addig nem fejeződik be, amíg a következő darab meg nem íródik.
+    * Bug fix az inotifikációval és a [&lt;frissítésEveryNMillis&gt; (/docs/server-admin/datasets#updateeverynmillis) rendszer EDDGrid FromFiles és EDDTable FromFiles adatkészletek: Már nem szükséges meghatározni egy nagy fs.inotify.max\\_user\\_watches vagy fs.inotify.max\\_user\\_instances. Van egy hiba benne Java ez okoz néhány részét Java "Az inotify/WatchDirectory rendszert nem gyűjtik össze, amikor véglegesítik; végül a zombi inotify órák vagy esetek száma meghaladná a megadott maximális számot. ERDDAP™ most működik körül ez Java Bug.
+Továbbá, az inotify szálak száma szerepel a status.html weboldalon, így szemmel tarthatja a használatát. Jellemzően 1 inotify szál per EDDGrid FromFiles és EDDTable FromFiles adatkészlet.
+    * Bug fix: sok helyen, ahelyett, hogy egy hiba újrakezdődik, egy új hiba keletkezett, amely csak tartalmazott egy rövid változata az eredeti hibaüzenet és anélkül, hogy a verem nyomon. Most, amikor egy új hiba keletkezik, megfelelően tartalmazza az egész eredeti kivételt, pl. új kivételt ("valami új üzenet", e) ;
 Susan Perkinsnek köszönhetően.
-    * Hibajavítás: egészen mostanáig (V1.64?) , ha a... / datasetID URL-t kértek, ERDDAP™ az URL-hez egy html-t adna. V1.64-ben ez nem sikerült. (Helytelenül formázott URL jött létre, majd nem sikerült) . Most újra működik. Hála Chris Fullilove-nak.
+    * Bug fix: az utóbbi időben (v1.64?) ha .../ datasetID URL-t kértek, ERDDAP™ hozzáadná .html-t az URL-hez. V1.64-ben ez kudarcot vallott (helytelenül formázott URL-t hoztak létre, majd kudarcot vallottak) ... Most ez ismét működik. Chris Fullilove-nak köszönhetően.
 
-## Változat 1.64{#version-164} 
- (released 2015-08-19) 
+## Verzió 1.64{#version-164} 
+ (2015-08-19) 
 
-*    **Új jellemzők (felhasználók számára) :** 
-    * Most már van útmutatás a jelszóval védett privát ERDDAP™ adatkészletek ( https:// ) al curl és Python . Lásd a [ curl ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#curl) és [ Python ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#Python) utasítások.
-Hála Emilio Mayorgának a NANOOS-tól és Paul Janeceknek a Spyglass Technologies-tól.
+*    **Új funkciók (felhasználók számára) :** 
+    * Jelenleg útmutatás van a jelszó-védő privát hozzáféréshez ERDDAP™ adatkészletek ( https:// ) keresztül curl és Python ... Lásd: [ curl ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#curl) és [ Python ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#Python) utasítások.
+Emilio Mayorga NANOOS és Paul Janecek Spyglass Technologies
          
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    *    ERDDAP™ Most kell Java 1.8 +.
-         Java 1.7 [élet vége](https://www.oracle.com/technetwork/java/eol-135779.html)   (nincs több biztonsági frissítés) 2015 áprilisában. Ez a verzió a ERDDAP™ nem működik a verziók Java 1,8 alatt. Ha frissíti a Java 1, 7x (vagy korábban) , akkor is frissíteni Tomcat. Lásd a [ ERDDAP™ Útmutató beállítása](/docs/server-admin/deploy-install) linkek és tanácsok letöltéséhez.
-    * Új adatszolgáltatói űrlap.
-Amikor egy adatszolgáltató felkeresi Önt abban a reményben, hogy az Ön ERDDAP™ , nehéz és időigényes lehet összegyűjteni az összes metaadatok szükséges hozzáadása az adatkészlet ERDDAP . Számos adatforrás (például .csv fájlok, Excel fájlok, adatbázisok) nincs belső metaadata, így ERDDAP™ új adatszolgáltatói űrlappal rendelkezik, amely az adatszolgáltatótól származó metaadatokat gyűjt, és az adatszolgáltatónak más útmutatást is nyújt, beleértve az adatszolgáltatókra vonatkozó kiterjedt útmutatást is. A benyújtott információk átalakulnak a datasets.xml formátum, majd e-mailben a ERDDAP™ adminisztrátor (Ön) és írott (Melléklet) bigParentDirectory / log / dataProviderForm.log. Így a forma félig automatizálja a folyamatot, hogy egy adatkészlet ERDDAP™ , de a ERDDAP™ Az adminisztrátornak még ki kell töltenie a datasets.xml chunk és foglalkozik a szerzés az adatfájl (sz) a szolgáltatótól vagy az adatbázishoz való csatlakozástól. További információkért lásd a [Adatszolgáltató Formaleírás](/docs/server-admin/datasets#data-provider-form) .
-    * Új&lt;matchAxisNDigits &gt;
-használható EDDGrid FromFiles (és így a NcFiles és a MergeIRFiles) , EDDGrid AggregateExisting Dimension, EDDGrid Vettem, és EDDGrid SideBySide adatok annak meghatározására, hogy pontosan egyenlő a tengely értékek a különböző fájlokat (hány számjegy) : 0 = nincs ellenőrzés (Ne használd ezt&#33;) , 1- 18 a pontosság növelésére, vagy 20 (alapértelmezés) A pontos egyenlőségért. n = 1- 18, ERDDAP™ biztosítja, hogy a kettős értékek első n számjegye (vagy (n + 1) 2. ágazat: úszó értékek) egyenlő.
-        &lt;matchAxisNDigits &gt; helyettesíti&lt;Az AxisValuesAreEqual &gt;, amely most deprected. A "true" értéke "matchAxisNDigits = 20 lesz. A" false "értéke (Ne csináld ezt&#33;) lesz átalakítva, hogy megfeleljen AxisNDigits = 0.
-    *    EDDGrid FromFiles és EDDTable FromFiles lesz tölteni nagyon lassan az első alkalommal használja ezt a verziót a ERDDAP .
-         ERDDAP™ Most egy kicsit másképp tárolja a belső fájlinformációkat, ezért mindegyik adatkészlet belső adattábláját újra kell építeni. Szóval ne aggódj. Semmi baj. Egyszeri alkalom.
-    * Távoli forrásfájlok
-         EDDGrid FromNcFiles, EDDTableFromNcFiles, EDDTableFromNcCFFiles most lehetővé teszi, hogy a fájlok távoli fájlok legyenek egy könyvtárba hozzáférhető http://   (és valószínűleg https:// és ftp: / /, de nem tesztelt) ha a távoli kiszolgáló támogatja [Kérések tartománya](https://en.wikipedia.org/wiki/Byte_serving) a megkeresési fejlécben. Az Amazon azt állítja, hogy a LuxOpCo által a LuxOpCo-nak nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS által a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott hiteleket, a LuxSCS-nek nyújtott, a LuxSCS-nek nyújtott, a LuxSCS-nek és a LuxSCS-nek nyújtott szolgáltatások kivételével. Hyrax Nem. Ez a rendszer lehetővé teszi, hogy hozzáférjen az adatokhoz távoli fájlokban anélkül, hogy letöltené a fájlokat (ami hasznos, ha a távoli fájlok túl terjedelmesek) , de a hozzáférés ezekhez a fájlokhoz sokkal lassabb lesz, mint a helyi fájlokhoz való hozzáférés, vagy akár egy távoli OPeNDAP forrás.
-Ez magában foglalja a következőket: "files" Amazon S3 vödör, mivel ezek hozzáférhetők a http:// . Ha az S3 objektum neve olyan, mint a fájlnevek (Belső / 's, mint egy Linux könyvtárfa) , ERDDAP™ a fájlok elérhetõvé válhatnak ERDDAP s "files" rendszer. Ahhoz, hogy ez működjön, az S3-nak ~ / .aws / mandátumban kell lennie (Linux, OS X vagy Unix) vagy C:\\ Felhasználók\\ USERName\\ .aws\\ mandátumok (Windows) a szerveren ERDDAP . Lásd a [A LuxOpCo-nak a LuxOpCo-val kötött szerződésekből származó bevételei](https://docs.aws.amazon.com/sdk-for-java/?id=docs_gateway#aws-sdk-for-java,-version-1) .
-    * GenerateDatasets Xml egy új, szokatlan lehetőség: EDDsFromFiles.
-Ez átmegy egy fájlrendszeren (még egy távoli rendszer, mint egy Amazon S3, ha a tárgyak fájlszerű nevek) és létrehozza a datasets.xml Darabok egy sor adatkészlethez. A kilométere változhat. Ez jól működik, ha a fájlokat úgy szervezték, hogy az összes adatfájl egy adott könyvtárban (és alkönyvtárai) alkalmasak egy adatkészletre (pl. minden SST 1 napos kompozit) . Egyéb (például, ha egy könyvtár tartalmaz néhány SST fájlt és néhány klorofill- a fájlt) Ez rosszul működik, de még hasznos lehet.
-    * Programozók: új / lib .jar fájlok.
-Ha összeállít ERDDAP™ , kérjük, vegye figyelembe az új .jar fájlokat a classpath -cp paraméterben felsorolt ERDDAP™   [Programozó útmutató](/docs/contributing/programmer-guide) .
-    * tenger\\ _ víz\\ _ gyakorlati\\ _ sótartalom
-Ha a CF standard Sea\\ _ water\\ _ salainity nevet használja bármilyen változóhoz, arra biztatom, hogy váltson a Sea\\ _ water\\ _ practical\\ _ salinity-re, amely elérhető [a CF Standard Name Table 29. verziója](https://cfconventions.org/Data/cf-standard-names/29/build/cf-standard-name-table.html)   (és néhány korábbi verzió -- nem tudtam, hogy) . Ez a név azt jelzi, hogy ez valóban gyakorlati sótartalom Practical Salinity Units   ( PSU ) , szemben az idősebb g / kg értékkel. A kanonikus egységek különbözőek, de még mindig hihetetlenül haszontalanok: 1 (Feltehetően PSU / PSS- 78) , szemben az 1e3-mal (feltételezhetően g / kg-ot jelent) tengeri\\ _ víz\\ _ sótartalom. \\[ Hé, Unidata és CF: Más skálákat, például Fahrenheit-et vagy Celsius-t használó értékeket azonosítunk egy egység sztring segítségével, amely a skála neve vagy valamilyen variáció. Miért nem tudjuk azonosítani a sótartalom egységeket a skálájukon keresztül, például PSS- 78? Tudom, hogy a PSS- 78 értékek "unitless", de van egy implicit skála, nem? Ha feltalálok egy új gyakorlati sótartalom skálát, ahol az értékek 0,875 szorozva a PSS- 78 értékekkel, akkor a kanonikus egységek továbbra is "1" -esek legyenek? Hogy tudná egy felhasználó megkülönböztetni őket? Egységek 1e3 és 1 nem leíró és hasznos a felhasználók, akik próbálják kitalálni, mit mutatnak a számok. \\] 
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    *    ERDDAP™ most megköveteli Java 1.8+.
+         Java 1.7 elérte [az élet vége](https://www.oracle.com/technetwork/java/eol-135779.html)   (Nincs több biztonsági frissítés) 2015 áprilisában. Ez a verzió ERDDAP™ nem fog működni verziókkal Java alá: 1,8 Ha frissül Java 1.7x (vagy korábban) , akkor is frissíteni Tomcat. Lásd: [ ERDDAP™ Állítsa be az utasításokat](/docs/server-admin/deploy-install) letöltés linkek és tanácsok.
+    * Új adatszolgáltató forma.
+Amikor egy adatszolgáltató érkezik hozzád, remélve, hogy hozzáad néhány adatot a ERDDAP™ Nehéz és időigényes lehet összegyűjteni az összes metaadatot, ami szükséges ahhoz, hogy az adatkészletet hozzáadjuk ERDDAP ... Számos adatforrás (például .csv fájlok, Excel fájlok, adatbázisok) nincs belső metaadata, így ERDDAP™ új adatszolgáltatói forma, amely összegyűjti a metaadatot az adatszolgáltatótól, és más iránymutatást ad az adatszolgáltatónak, beleértve az adatok adatbázisainak kiterjedt útmutatását is. A benyújtott információ átalakul a datasets.xml formátum, majd e-mailben ERDDAP™ adminisztrátor (Te vagy) írás (Megjelent) a bigParentDirectory/logs/dataProviderForm.log . Így a forma félautomatizálja az adatkészlet beszerzésének folyamatát ERDDAP™ de a ERDDAP™ Az adminisztrátornak még mindig befejeznie kell datasets.xml cunk és foglalkozik az adatfájl megszerzésével (s) a szolgáltatótól vagy az adatbázishoz való csatlakozástól. További információkért lásd: [Adatszolgáltató Form leírás](/docs/server-admin/datasets#data-provider-form) ...
+    * Új&lt;AxisNDigits&gt;
+használható EDDGrid Fájlok (és így a NcFiles és a MergeIRFiles) , EDDGrid AggregateExistingDimension, EDDGrid Másolás és EDDGrid A SideBySide adatkészletei meghatározzák, hogy a különböző fájlokban pontosan egyenlő a tengelyértékekkel (hány számjegy) : 0 = nincs ellenőrzés (Ne használja ezt&#33;) 1-18 a növekvő pontosság érdekében, vagy 20 (az alapértelmezett) pontos egyenlőségért. n=1-18, ERDDAP™ biztosítja, hogy a kettős értékek első n számjegye (vagy (n+1) div 2 a float értékekért) egyenlőek.
+        &lt;meccsAxisNDigits&gt; helyettesíti&lt;biztosítja az AxisValuesAreEqual-ot, amelyet most levonnak. Az „igaz” értéke megtérül az AxisNDigits=20 mérkőzésre. A „hamis” érték (Ne csináld ezt&#33;) megtérül a mérkőzésre AxisNDigits=0.
+    *    EDDGrid FromFiles és EDDTable Az FromFiles nagyon lassan tölti be az első alkalommal, amikor ezt a verziót használja ERDDAP ...
+         ERDDAP™ most egy kicsit másképp tárolja a belső fájlinformációkat, így az egyes adatkészletek belső fájltábláját újra kell építeni. Tehát ne aggódj&#33; Semmi sem rossz. Ez egy idő dolog.
+    * Távoli Forrás Files
+         EDDGrid FromNcFiles, EDDTableFromNcFiles, EDDTableFromNcCFFiles most lehetővé teszi, hogy a fájlok távoli fájlok legyenek egy könyvtárban, amelyet a könyvtárban hozzáférhető http://   (és valószínűleg https:// Ftp: de nem teszteltek) ha a távoli szerver támogatja [Range kérések](https://en.wikipedia.org/wiki/Byte_serving) a kérelmezőben. THREDS és Amazon S3 támogatási Range kérések, Hyrax nem. Ez a rendszer lehetővé teszi az adatokhoz való hozzáférést a távoli fájlokban anélkül, hogy letöltené a fájlokat (ami hasznos, ha a távoli fájlok túl óriásiak) De ezekhez a fájlokhoz való hozzáférés sokkal lassabb lesz, mint a helyi fájlokhoz való hozzáférés vagy akár távoli OPeNDAP forrás.
+Ez magában foglalja "files" az Amazon S3 bucketben, mivel azok elérhetők http:// ... Ha az S3 objektum neve olyan, mint a fájlnév (belső / olyan, mint egy Linux könyvtár fa) , ERDDAP™ a fájlokat is elérhetővé teheti ERDDAP A "files" rendszer. Ehhez a munkához az S3 hitelesítőinek kell lenniük ~/.aws/credentials (Linux, OS X vagy Unix) , vagy C:\\Users\\USERNAME\\.aws\\credentials (Windows-on) a szerveren a ERDDAP ... Lásd: [Amazon SDK dokumentáció](https://docs.aws.amazon.com/sdk-for-java/?id=docs_gateway#aws-sdk-for-java,-version-1) ...
+    * GenerateDatasets Az Xml-nek új, szokatlan lehetősége van: EDDsFromFiles.
+Ez egy fájlrendszeren megy keresztül (még egy távoli rendszer, mint egy Amazon S3, ha az objektumok fájlszerű nevek) és hozzon létre datasets.xml cunks egy sor adatkészlet. A mérfölded változhat. Ez jól működik, ha a fájlokat megszervezik, hogy az összes adatfájl egy adott könyvtárban (aláírói) alkalmas egy adatkészletre (pl. az összes SST 1 napos kompozit) ... Egyébként (pl. ha egy könyvtár tartalmaz néhány SST fájlt és néhány Chlorophyll-a fájlt) Ez rosszul működik, de még mindig hasznos lehet.
+    * Programozók: új /lib .jar fájlok.
+Ha összeállítod ERDDAP™ Kérjük, vegye figyelembe az új .jar fájlokat az osztálypath-cp paraméterben, amelyet felsoroltak ERDDAP™   [Programozó útmutató](/docs/contributing/programmer-guide) ...
+    * tenger\\_water\\_gyakorlati\\_szalon
+Ha a CF szabványos nevet használja, a Sea\\_water\\_salinity minden változó számára, arra ösztönözlek benneteket, hogy váltsatok át a tengeri\\_water\\_practical\\_salinity-re, amely elérhető [A CF Standard Name Table 29 verziója](https://cfconventions.org/Data/cf-standard-names/29/build/cf-standard-name-table.html)   (és néhány korábbi verzió - nem tudtam, hogy) ... Ez a név azt jelzi, hogy ez valóban Gyakorlati Szalinitás érték használata Practical Salinity Units   ( PSU ) , szemben egy idősebb g/kg értékkel. A kanonikus egységek különbözőek, de még mindig hihetetlenül hasznosak: 1 (feltehetően imply PSU /PSS-78) szemben az 1e-3-mal (feltehetően g/kg) Sea\\_water\\_salinitás. \\[ Hé, Unidata CF: Olyan értékeket azonosítunk, amelyek más skálákat használnak, például Fahrenheit vagy Celsius egy olyan egységen keresztül, amely a skála vagy néhány variáció neve. Miért nem tudjuk azonosítani a szaloni egységeket a skálán keresztül, például a PSS-78-on keresztül? Tudom, hogy a PSS-78 értékek "kétségtelenek", de van egy implikált skála, nem létezik? Ha feltalálok egy új, praktikus szalonitási skálát, ahol az értékek 0,875-szeresek a PSS-78 értékek, akkor a kánonikus egységek még mindig „1”? Hogyan mondhatná el egy felhasználó? Az 1e-3 és az 1-es egységek sem leíróak, sem nem hasznosak azoknak a felhasználóknak, akik megpróbálják kitalálni, hogy mit jeleznek a számok. \\] 
 
-## változat{#version-162} 
- (released 2015-06- 08) 
+## Verzió 1.62{#version-162} 
+ (2015-06-08) 
 
-*    **Új jellemzők (felhasználók számára) :** 
-    * A EDDGrid datasets, users can now make Graph Type: Surface grafikonok bármilyen kombinációja numerikus tengelyek, nem csak a hosszúság versus szélesség. Ez lehetővé teszi, hogy x versus y (előrejelzés) grafikonok és különböző [Hovmöller diagramok](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram) például hosszúsági és mélységi ábrázolás, vagy idő kontra mélység. \\[ Megjegyzés: ha a mélység az Y tengelyen van, akkor valószínűleg a kívánt értékhez lesz igazítva. Sajnálom, még nem lehet kikapcsolni. \\] Hála Cara Wilsonnak és Lynn DeWittnek.
-    * Van egy új [Oceanic / Atmospheric Accronym Converter](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericAcronyms.html) amely lehetővé teszi, hogy a közös óceáni / atmoszféra rövidítés egy teljes név.
-    * Van egy új [Óceán / atmoszféra Változó névátalakító](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericVariableNames.html) amely lehetővé teszi, hogy egy közös oceanic / atmoszféra változó nevet egy teljes név / -ból konvertálj.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    *    Java 7 / 8
-         Oracle már nem támogatja (biztonsági hibajavításokat biztosít)   Java 7. ERDDAP™ még mindig támogatja Java 7, de kérem, menjen a Java 8. A következő kiadás ERDDAP™ valószínűleg szükséges lesz Java 8.
-    *    valid\\_min / max / tartomány
-Korábban és most, ha dataVariable volt scale\\_factor és add\\_offset metaadatok, ERDDAP™ kipakolja az adatértékeket, és eltávolítja azokat a metaadatokat. Korábban... ERDDAP™ nem módosította / csomagolta ki valid\\_range , valid\\_min , valid\\_max metaadatok (amely általában / csomagolt értékeket tartalmaz) a scale\\_factor és add\\_offset . Most már igen. Keresse meg a ERDDAP™ az "érvényes\\ _" kifejezéshez, és győződjön meg arról, hogy az összes változót valid\\_range , valid\\_min vagy valid\\_max van a helyes értékeket, amikor az adatok jelennek meg az új verzió ERDDAP . Lásd [ valid\\_range / perc / max dokumentáció](/docs/server-admin/datasets#valid_range) .
-    * ACDD- 1.3
-Korábban... ERDDAP™   (különösen az GenerateDatasets Xml) az eredeti (1, 0) a [ NetCDF Attribútum-egyezmény a Dataset Discovery számára](https://wiki.esipfed.org/ArchivalCopyOfVersion1) amelyre " Unidata Dataset Discovery v1.0 "a globális egyezményekben és Metadata\\_Conventions jellemzők. Javasoljuk [ACDD 1.3. változat](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3) amelyet 2015 elején ratifikáltak, és "ACDD -1.3" -ként hivatkoznak Szerencsére az ACDD- 1.3 nagymértékben visszafelé kompatibilis az 1.0 verzióval. Javasoljuk, hogy [ACDD- 1, 3](/docs/server-admin/datasets#switch-to-acdd-13) . Nem nehéz.
-    * GenerateDatasets Xml attribútumok
-A&lt; addAttributes &gt; az GenerateDatasets által javasolt értékek Xml a globális egyezmények esetében, creator\\_name / email / url, kulcsszavak, összefoglaló, és cím attribútumok és a változó long\\_name attribútum. Néhány módosítás az ACDD- 1.3. új használatához kapcsolódik
+*    **Új funkciók (felhasználók számára) :** 
+    * Mert EDDGrid adatkészletek, a felhasználók most készíthetnek Graph Type: Surface grafikonok bármilyen kombinációja numerikus tengelyek, nem csak a hosszúságú versus latitude. Ez lehetővé teszi x versus y (projekt) grafikonok és különböző [Hovmöller diagramok](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram) Például a hosszúság versus mélysége, vagy az idő versus mélysége. \\[ Megjegyzés: ha a mélység az Y tengelyen van, akkor valószínűleg el lesz dobva attól, amit akar. Sajnálom, felemelve, hogy még nincs lehetőség. \\] Cara Wilsonnak és Lynn DeWittnek köszönhetően.
+    * Van egy új [Oceanic/Atmospheric Acronym Converter](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericAcronyms.html) amely lehetővé teszi, hogy egy közös óceáni / légköri akronymát alakítson át / egy teljes névből.
+    * Van egy új [Oceanic/Atmospheric Variable Names Converter](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericVariableNames.html) amely lehetővé teszi, hogy egy közös óceáni / légköri változó nevet alakítsunk át egy teljes névre.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    *    Java 7/8
+         Oracle már nem támogatja (Biztonsági hibajavítások biztosítása)   Java 7. ERDDAP™ Még mindig támogatja Java 7, de kérlek, költözz Java 8. A következő kiadás ERDDAP™ valószínűleg szükség lesz Java 8.
+    *    valid\\_min /max/range
+Korábban és most, ha egy dataVariable Volt scale\\_factor és add\\_offset metadata, ERDDAP™ kicsomagolja az adatértékeket, és eltávolítja ezt a metaadatot. Korábban, ERDDAP™ nem módosított/csomagolt valid\\_range , valid\\_min , valid\\_max metadata (amely általában / a csomagolt értékeket tartalmazza) által scale\\_factor és add\\_offset ... Most ezt teszi. Kérjük, keresse meg a ERDDAP™ "érvényes\\_", és győződjön meg róla, hogy az összes változó, amely rendelkezik valid\\_range , valid\\_min vagy valid\\_max megfelelő értékekkel rendelkezik, ha az adatkészletek megjelenik az új verzióban ERDDAP ... Lásd [ valid\\_range /min/max dokumentáció](/docs/server-admin/datasets#valid_range) ...
+    * ACDD-1.3
+Korábban, ERDDAP™   (nevezetesen GenerateDatasets Xml) használt/ajánlott az eredeti (1.0) változata [ NetCDF Attribute Convention for Dataset Discovery](https://wiki.esipfed.org/ArchivalCopyOfVersion1) amelyet "-nak" neveztek. Unidata Dataset Discovery v1.0" a globális egyezményekben és Metadata\\_Conventions tulajdonságok. Most ajánljuk [ACDD verzió 1.3](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3) amelyet 2015 elején ratifikáltak, és „ACDD-1.3”-nak nevezik. Szerencsére az ACDD-1.3 nagyon visszafelé kompatibilis az 1.0 verzióval. Elképzeljük, hogy te [váltson az ACDD-1.3-ra](/docs/server-admin/datasets#switch-to-acdd-13) ... Nem nehéz.
+    * GenerateDatasets Xml tulajdonságok
+Számos változás történt a javításhoz&lt; addAttributes &gt; A GenerateDatasets által javasolt értékek Xml a globális egyezményekhez, creator\\_name /email/url, kulcsszavak, összefoglaló és címjellemzők és változók számára long\\_name tulajdonság. Néhány változás kapcsolódik az ACDD-1.3 új felhasználásához.
     * EDDTableFrom SOS adatkészletek
-Alkalmanként új típusú SOS szerverek és változások a régi szerverek, egyre nehezebb ERDDAP™ automatikusan észlelni a szerver típusát a kiszolgáló válaszaiból. [&lt;sosServerType &gt;] (/ docs / server- admin / datasets # eddtable from sos- skeleton- xml)   (IOOS\\ _ NDBC, IOOS\\ _ NOS értékkel, OOSTethys , vagy WHOI) Most már erősen ajánlja. Ha bármelyik ilyen típusú adatállományának problémái vannak az új verzióban ERDDAP , próbálja újra futtatni GenerateDatasets Xml SOS szerver generálni egy új darab datasets.xml az adatra. GenerateDatasets Xml lehetővé teszi, hogy kipróbálja a különböző&lt;sosServerType &gt; opciók, amíg meg nem találod az adott szerver megfelelőjét. Ha még mindig vannak problémái, kérem, tudassa velem, hogy mi a probléma, és a kiszolgáló URL-je, és megpróbálok segíteni.
-    * EDDTableFromFileName adatkészletek
-Néhány attribútum, amit javasoltak addAttributes Most már a sourceAttriumok. Valószínűleg semmit sem kell megváltoztatnod a meglévő adataid miatt. datasets.xml .
-    * A hibajavítás az EDDTableFromNcCFFiles adataihoz kapcsolódó bizonyos kérésekhez kapcsolódik.
-Az alapul szolgáló módszerek meglévő nagy számú egységvizsgálatához is hozzáadtam egy sor egységvizsgálatot. (100 forgatókönyv van.) . Eli Hunternek köszönhetően.
-    * A hibajavítás / kis változtatások EDDGrid FromMergeIr.
-Jonathan Lafite-nak és Philippe Makowski-nak köszönhetően
-    * A hibajavítás: EDDGrid A FromErddap akkor is működik, ha egy távoli adatnak nincs ioos\\_category változó tulajdonságok.
-Hála Kevin O 'Briennek.
-    * Hibajavítás a .graph weboldalon EDDGrid adatkészletek, ha csak egy tengely változó több mint egy érték.
-Hála Charles Carletonnak.
-    * Voltak más kis fejlesztések, változások, és hibajavítások.
+Az új típusok alkalmi kiegészítésével SOS szerverek és változások a régi szerverek, egyre nehezebb ERDDAP™ a szerver típusának automatikusan felismerése a szerver válaszaiból. [[[szerkesztés]]]]&lt;SosServerType&gt; (/docs/server-admin/adatkészletek#eddtablefromsos-skeleton-xml)   (az IOOS\\_NDBC, IOOS\\_NOS értékével, OOSTethys vagy WHOI) Mostanra szigorúan elismert. Ha az ilyen típusú adatkészletek bármelyikének problémái vannak az új verzióban ERDDAP Próbálja újra futtatni a GenerateDatasets-t Xml a SOS szerver létrehozni egy új darabot datasets.xml az adatkészlethez. GenerateDatasets Xml lehetővé teszi, hogy kipróbálja a különböző&lt;sosServerType&gt; opciók, amíg megtalálja a megfelelőt egy adott szerver számára. Ha még mindig problémái vannak, hadd tudjam a problémát, amit látsz, és a szerver URL-je, és megpróbálok segíteni.
+    * EDDTableFromFileNames adatkészletek
+Néhány tulajdonság, amit ajánlottak addAttributes most forrásAttributes. Valószínűleg nem kell semmit megváltoztatnia a meglévő adatkészletekért az Önben datasets.xml ...
+    * Bug fix bizonyos kérések EDDTableFromNcCFFiles adatkészletek.
+Hozzátettem egy nagyszámú egységvizsgálatot is az alapul szolgáló módszerek meglévő nagyszámú egységvizsgálatához. (100 forgatókönyv van) ... Eli Hunternek köszönhetően.
+    * Bug fix/kis változás EDDGrid FromMergeIR.
+Jonathan Lafite és Philippe Makowski
+    * Bug fix: EDDGrid FromErddap még akkor is működik, ha egy távoli adatkészlet nem rendelkezik ioos\\_category változó tulajdonságok.
+Kevin O'Briennek köszönhetően.
+    * Bug fix .graph weboldalon EDDGrid adatkészletek, ha csak egy tengely változó, több mint egy érték.
+Charles Carletonnak köszönhetően.
+    * Voltak más kis fejlesztések, változások és hibajavítások.
 
-## változat{#version-160} 
- (kiadás dátuma: 2015-03-12) 
+## Verzió 1.60{#version-160} 
+ (2015-03-12) 
 
-*    **Új jellemzők (felhasználók számára) :** nincs
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * STRONGLY AJÁNLVA: Frissítse a szerver [robots.txt](/docs/server-admin/additional-information#robotstxt) a következőket tartalmazó fájl:
-Kibocsátó: / erddap / files /
-    * A probléma bejelentése és megoldása:
-Linux számítógépeken, ha használod&lt;updateEveryNMillis &gt; a típus adataival = EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Másolás, EDDTableCopy, vagy alosztályok, láthat egy problémát, ha egy adatkészlet nem betölti (esetenként vagy következetesen) A hibaüzenet: "IOException: User limit of inotify inotify accreded or too many open files". Ha igen, megoldhatod ezt a problémát, ha felhívod (gyökér) :
-echo fs.inotify.max\\ _ user\\ _ watches = 65536 | tee - a / etc / sysctl.conf
-echo fs.inotify.max\\ _ user\\ _ cases = 1024 | tee - a / etc / sysctl.conf
-sysctl - p
-Vagy használj nagyobb számokat, ha a probléma továbbra is fennáll. Az alapértelmezés 8192 óra. Az esetek alapértelmezett értéke 128. \\[ UPDATE: Van egy hiba Java ami miatt nem gyűjtik össze az inotizáló eseteket. Ez a probléma elkerülhető ERDDAP™ v1.66 és magasabb. Tehát a jobb megoldás az, hogy váltsunk a legújabb verzió ERDDAP . \\] 
-    * NoSuchFileException A hibajavítás:
-Volt egy hiba, ami olyan típusú adathalmazokat okozott, EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Másolás, EDDTableCopy, vagy azok alosztályok, hogy ne töltsön alkalmanként a hiba "NoSuchFileException: _ someFileName _". A hiba a FileVisitor használatához kapcsolódik, és a ERDDAP™ v1.56. A probléma ritka, és nagy valószínűséggel befolyásolja az adatkészleteket, ahol számos gyakran változó adatfájl található.
-    * Volt néhány apró javítások, változások, és hibajavítások.
+*    **Új funkciók (felhasználók számára) :** Nem
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * STRONGLY RECOMMENDED: Frissítse a szerverét [robotok.txt](/docs/server-admin/additional-information#robotstxt) fájl, hogy tartalmazza:
+Párnák: /erddap/files/
+    * Inotify probléma és megoldás:
+Linux számítógépeken, ha használja&lt;frissítésEveryNMillis&gt; adatkészletekkel a típus= EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Másolás, EDDTableCopy vagy alosztálya, láthat egy problémát, ahol egy adatkészlet nem terheli (alkalmanként vagy következetesen) hibaüzenet: "IOException: Az elért vagy túl sok nyílt fájl értesítésének felhasználói korlátozása." Ha igen, akkor megoldhatja ezt a problémát azáltal, hogy hívja (mint gyökér) :
+echo fs.inotify.max\\_user\\_watches=65536 | tee -a /etc/sysctl.conf
+echo fs.inotify.max\\_user\\_instances=1024 | tee -a /etc/sysctl.conf
+Sysctl -p
+Vagy használjon magasabb számokat, ha a probléma továbbra is fennáll. Az órák alapértelmezettje 8192. Az esetek alapértelmezettje 128. \\[ UPDATE: Van egy hiba Java ami inotifikálja az eseteket, hogy ne gyűjtsenek szemetet. Ezt a problémát elkerülik ERDDAP™ v1.66 és magasabb. Tehát a jobb megoldás az, hogy váltson a legújabb verzióra ERDDAP ... \\] 
+    * NoSuchFileException Bug Fix:
+Volt egy hiba, ami okozhat adatkészletek típus= EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Másolás, EDDTableCopy, vagy azok alosztályai, hogy ne töltsenek alkalmanként a hiba "NoSuchFileException: _someFileName_". A hiba a FileVisitor használatával kapcsolatos, és bevezették ERDDAP™ v1.56. A probléma ritka, és valószínűleg számos gyakran változó adatfájlokkal érinti az adatkészleteket.
+    * Volt néhány kis fejlesztés, változások és hibajavítás.
 
-## változat{#version-158} 
- (released 2015-02-25) 
+## Verzió 1.58{#version-158} 
+ (2015-02-25) 
 
-*    **Új jellemzők (felhasználók számára) :** 
-    * Az új [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) a rendszer lehetővé teszi a virtuális fájlrendszer böngészését és a forrásadatok letöltését sok fájlból ERDDAP™ adatkészletek. A "files" a rendszer alapértelmezés szerint aktív, de ERDDAP™ Az adminisztrátorok letilthatják, ha
+*    **Új funkciók (felhasználók számára) :** 
+    * Az új [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) rendszer lehetővé teszi, hogy böngészjen egy virtuális fájlrendszert, és letöltse a forrásadat fájlokat sokból ERDDAP™ adatkészletek. A "files" a rendszer alapértelmezett, de ERDDAP™ Az adminisztrátorok letilthatják azt azáltal, hogy
 ```
         <filesActive>false</filesActive>  
 ```
-az ERDDAP™ Setup.xml fájl. Külön köszönet Philippe Makowskinak, aki kitartott mellettem, amikor lassan értékeltem ennek az ötletnek a szépségét.
-    * időpont Max... Korábban az EDDTable időváltozója, közel valós idejű adatokkal, a NaN sorrendjeMax volt, ami azt jelentette, hogy az adatkészlet maximális időértéke friss, de nem pontosan ismert és gyakran változik. Nos, a DestinationMax-nek van egy valós értéke, ami a legutóbb ismert. Számos adatkészlet folyamatosan frissítette az adatokat. ERDDAP™ támogatja a legújabb adatokhoz való hozzáférést, még akkor is, ha az a legutóbbi ismert után történt. Megjegyzés: az új [&lt;updateEveryNMillis &gt;] (/ docs / server- admin / datasets # updateevernmillis) támogatás EDDGrid FromFiles és EDDTable FromFiles adatok frissítik az időváltozó destinationMax. A változás másik következménye, hogy datasetID = allDatasets az adatkészlet most tartalmazza a jelenleg ismert utolsó alkalommal a maxTime oszlopokban. Hála John Kerfootnak.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * STRONGLY AJÁNLVA: Frissítse a szerver [robots.txt](/docs/server-admin/additional-information#robotstxt) a következőket tartalmazó fájl:
-Kibocsátó: / fájlok /
-Kibocsátó: / erddap / files /
-    * Minta datasets.xml -- Tavaly számos kiváló adatkészletet ajánlottunk a parti őrségnek ERDDAP™ amit hozzá tudna adni a ERDDAP™ csak hozzá néhány sort a datasets.xml . Ha hozzáadjuk az erdVH adatkészleteket, kérjük váltsunk az újabb erdVH2 adatkészletekre:
-        * Készíts egy másolatot az erdVH adatállományokról és változtasd meg a másolatot datasetID az erdVH-tól az erdVH2-ig... és a hivatkozott sourceUrl az erdVH-tól az erdVH2-ig....
-        * Állítsa be az erdVH... adatkészleteket aktív = "hamis".
-    * Valamennyi EDDGrid FromFiles és EDDTable FromFiles alosztályok most támogatja [&lt;accessibleViaFiles &gt;] (/ docs / server- admin / datasets # accessibleviafles) a forrásadat-fájlok hozzáférhetővé tétele a "files" rendszerek. Alapértelmezés szerint ez a rendszer minden adatkészlet esetében kikapcsolt. Meg kell adni a címkét, hogy lehetővé tegye. Hála Philippe Makowskinak.
-    * Valamennyi EDDGrid FromFiles és EDDTable FromFiles alosztályok most támogatja [&lt;updateEveryNMillis &gt;] (/ docs / server- admin / datasets # updateevernmillis) . Alapértelmezés szerint ez a rendszer minden adatkészlet esetében kikapcsolt. Meg kell adni a címkét, hogy lehetővé tegye. Hála Dominic Fuller- Rowell-nek és az NGDC-nek.
-    * Az új [EDDTableFromFileNames](/docs/server-admin/datasets#eddtablefromfilenames) létrehoz egy adatkészletet a szerverfájlrendszerben található fájlok egy csoportjáról, de nem szolgáltat adatokat a fájlokból. Például ez hasznos a képfájlok, audio fájlok, videó fájlok, szavak-feldolgozó fájlok és táblázatfájlok gyűjteményeinek terjesztéséhez. Ez működik kéz a kézben az új [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) rendszer, hogy a felhasználók letölthessék a fájlokat. Külön köszönet Philippe Makowskinak, aki kitartott mellettem, amikor lassan értékeltem ennek az ötletnek a szépségét.
-    * Az új [ EDDGrid FromedDTable](/docs/server-admin/datasets#eddgridfromeddtable) lehetővé teszi, hogy a táblázatos adatállományt rácsozott adatmá alakítsuk. Hála az Ocean Networks Kanadának.
-    * Az új [ EDDGrid FromMergeIRFiles](/docs/server-admin/datasets#eddgridfrommergeirfiles) a helyi MergeIR-csoport aggregált adatai .gz fájlok. EDDGrid FromMergeIRFiles a különbség, hogy az első darab kód hozzájárult ERDDAP . A segítségünk nélkül történt. Háromszoros hurrá és különleges köszönet Jonathan Lafite-nak és Philippe Makowski-nak az R.Tech Engineering-től.
-    * Van egy új, opcionális setup.xml címke,&lt;unitTestDataDir &gt;, amely meghatározza a könyvtárat az egység vizsgálati adatfájlokkal, amelyek egy új GitHub adattáron keresztül elérhetők: [ https://github.com/ERDDAP/erddapTest ](https://github.com/ERDDAP/erddapTest) . Például:
+a ERDDAP™ setup.xml fájl. Külön köszönet Philippe Makowskinak, aki ragaszkodott, amikor lassan értékelem ennek az ötletnek a szépségét.
+    * Időcél Max -- Korábban az EDDTable adatkészletek időbeli változója a közeli valós idejű adatokkal rendelkezik a NaN célértékével, ami azt jelenti, hogy az adatkészlet maximális időértéke a közelmúltban van, de nem pontosan ismert és gyakran változik. Most, a célMax van egy igazi érték, jelezve a jelenleg ismert legutóbb. Számos adatkészlet folyamatosan frissített adatokat. ERDDAP™ támogatja a legfrissebb adatokhoz való hozzáférést, még akkor is, ha a jelenleg ismert múlt idő után van. Ne feledje, hogy az új [[szerkesztés]]]&lt;frissítésEveryNMillis&gt; (/docs/server-admin/datasets#updateeverynmillis) támogatás EDDGrid FromFiles és EDDTable FromFiles adatkészletek frissíti az idő változó célMax. Ennek a változásnak a másik következménye az, hogy a datasetID = allDatasets Az adatkészlet most a maxTime oszlopokban jelenleg ismertté teszi. John Kerfootnak köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * STRONGLY RECOMMENDED: Frissítse a szerverét [robotok.txt](/docs/server-admin/additional-information#robotstxt) fájl, hogy tartalmazza:
+Párnák: /files/
+Párnák: /erddap/files/
+    * minta datasets.xml - Tavaly számos kiváló adatkészletet ajánlottunk a part menti forgalomban ERDDAP™ hozzáadhatnád magadhoz ERDDAP™ Csak néhány vonal hozzáadása az Ön számára datasets.xml ... Ha hozzáadta az erdVH adatkészleteket, kérjük, váltson az újabb erdVH2 adatkészletekre:
+        * Készítsen egy másolatot az erdVH adatkészletekről, és változtassa meg a másolatot datasetID "Az erdVH... az erdVH2-re... és a hivatkozott sourceUrl erdVH... az erdVH2...
+        * Állítsa be az erdVH-t... az adatkészleteket az aktív="hamis" -ra.
+    * Minden EDDGrid FromFiles és EDDTable FromFiles alosztályok most támogatás [&lt;hozzáférhetőViaFiles&gt;] (/docs/server-admin/adtasets#accessibleviafiles) a forrásadatfájlok elérhetővé tétele a "files" rendszerek. Alapértelmezéssel ez a rendszer minden adatkészletre le van kapcsolva. Hozzá kell adnia a címkét, hogy lehetővé tegye. Philippe Makowskinak köszönhetően.
+    * Minden EDDGrid FromFiles és EDDTable FromFiles alosztályok most támogatás [&lt;frissítésEveryNMillis&gt; (/docs/server-admin/datasets#updateeverynmillis) ... Alapértelmezéssel ez a rendszer minden adatkészletre le van kapcsolva. Hozzá kell adnia a címkét, hogy lehetővé tegye. A Dominic Fuller-Rowell és az NGDC köszönhetően.
+    * Az új [EDDTableFromFileNames](/docs/server-admin/datasets#eddtablefromfilenames) Adatkészletet hoz létre a szerver fájlrendszerében lévő fájlok csoportjáról, de nem szolgálja az adatokat a fájlokban. Például ez hasznos a képfájlok, audió fájlok, videofájlok, szófeldolgozó fájlok, és a táblázatfájlok forgalmazásához. Ez kézzel működik az új [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) rendszer, így a felhasználók letölthetik a fájlokat. Külön köszönet Philippe Makowskinak, aki ragaszkodott, amikor lassan értékelem ennek az ötletnek a szépségét.
+    * Az új [ EDDGrid FromEDDTable](/docs/server-admin/datasets#eddgridfromeddtable) lehetővé teszi, hogy egy mesés adatállományt egy rácsolt adatkészletbe konvertáljon. Az Ocean Networks Canada-nak köszönhetően.
+    * Az új [ EDDGrid FromMergeIRFiles](/docs/server-admin/datasets#eddgridfrommergeirfiles) összesíti a helyi MergeIR csoport adatait .gz fájlok. EDDGrid FromMergeIRFiles a különbség, hogy az első darab kód hozzájárult, hogy ERDDAP ... Teljesen segítségünk nélkül történt. Három sark és különleges köszönhetően Jonathan Lafite és Philippe Makowski R.Tech Engineering.
+    * Van egy új, opcionális setup.xml címke,&lt;egységTestDataDir&gt;, amely meghatározza a könyvtárat az egységes teszt adatfájlokkal, amelyek egy új GitHub repository segítségével érhetők el: [ https://github.com/ERDDAP/erddapTest ](https://github.com/ERDDAP/erddapTest) ... Például:
 ```
         <unitTestDataDir>/erddapTest/</unitTestDataDir>  
 ```
-Ez még nem hasznos, de része annak a lépésnek, hogy minél több egység tesztet futtatni más emberek által lehetséges. Hála Terry Rankinenek.
-    * Sok apró javítások, változások és hibajavítások voltak.
+Ez még nem hasznos, de része a lépésnek, hogy minél több egység tesztet végezzen más emberek által. Terry Rankine-nak köszönhetően.
+    * Sok kis fejlesztés, változások és hibajavítás volt.
 
-## változat{#version-156} 
- (Közzétéve 2014- 12- 16) 
+## Verzió 1.56{#version-156} 
+ (2014-12-16) 
 
-*    **Új jellemzők (felhasználók számára) :**   (Nincs) 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Valószínűleg már tudod, hogy [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) és [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) amely lehetővé teszi, hogy linket az adatok más ERDDAP és jelenjen meg a ERDDAP . A felhasználóknak az ilyen adatállományokból származó tényleges adatokat láthatatlanul a forráshoz kell eljuttatniuk ERDDAP™ Így az adatok nem áramlanak át a rendszerén, és nem használják a sávszélességet. A mintában az ajánlott adatkészletek nagy listája található. datasets.xml in erddapContent .zip . Hogy belevegye őket az Ön ERDDAP™ , Csak annyit kell tennie, hogy másolja és illessze be azokat, amiket akar datasets.xml . Hála Conor Delaney-nek.
-    * Ha összeállít ERDDAP™ - Hozzá kell adnod valami újat. üveg fájlok az Ön [classpath -cp kapcsoló](/docs/contributing/programmer-guide#development-environment) Javac és Java számára.
-    * Az új [EDDTableFromCassandra](/docs/server-admin/datasets#eddtablefromcassandra) kezeli az adatok megszerzését [Cassandra](https://cassandra.apache.org/) . Hála az Ocean Networks Kanadának.
-    * Az új [EDDTableFromColumnarAsciiFiles](/docs/server-admin/datasets#eddtablefromcolumnarasciifiles) kezeli a rögzített szélességű oszlopokkal rendelkező ASCII adatállományokból származó adatok megszerzését. Hála Philippe Makowskinak.
-    * Valamennyi EDDGrid FromFiles és EDDTable FromFiles alosztályok most egy új módszert használ, FileVisitor (hozzáadva Java 1, 7) információt gyűjteni az aktákról. Ez nem lehet előnyös az első gyűjtése fájlinformációk egy adott adatkészlet, de úgy tűnik, hogy egy hatalmas előnye a későbbi összejövetelek, ha hamarosan, míg a OS még mindig tárolja az információt. Hála az NGDC-nek.
+*    **Új funkciók (felhasználók számára) :**   (Nem) 
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Valószínűleg már tud róla [ EDDGrid FromErdap](/docs/server-admin/datasets#eddfromerddap) és [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) amely lehetővé teszi, hogy más adatkészletekhez kapcsolódjon ERDDAP és megjelennek a te ERDDAP ... Ezekből az adatkészletekből származó tényleges adatok iránti kérelmek láthatatlanul a forráshoz vezetnek ERDDAP™ Így az adatok nem áramlanak át a rendszerén, vagy a sávszélességét használják. Most van egy nagy lista az ajánlott adatkészletekről a mintában datasets.xml erddapContent .zip ... Tartsd be őket a te ERDDAP™ Mindössze annyit kell tennie, hogy másolja és beilleszti azokat, akiket a tiédbe akarsz datasets.xml ... Conor Delaneynek köszönhetően.
+    * Ha összeállítod ERDDAP™ Hozzá kell adnia néhány újat. jar fájlok a [osztálypath - cp kapcsoló](/docs/contributing/programmer-guide#development-environment) javac és java.
+    * Az új [EDDTableFromCassandra](/docs/server-admin/datasets#eddtablefromcassandra) kezeli az adatok gyűjtését [Cassandra](https://cassandra.apache.org/) ... Az Ocean Networks Canada-nak köszönhetően.
+    * Az új [EDDTableFromColumnarAsciiFiles](/docs/server-admin/datasets#eddtablefromcolumnarasciifiles) kezeli az ASCII adatfájloktól származó adatokat rögzített szélességi oszlopokkal. Philippe Makowskinak köszönhetően.
+    * Minden EDDGrid FromFiles és EDDTable FromFiles alosztályok most használ egy új módszer, FileVisitor (Hozzáadás Java 1.7) információkat gyűjteni a fájlokról. Ez nem lehet előnye a fájlinformációk első gyűjtésének egy adott adatkészlet számára, de úgy tűnik, hogy hatalmas előnye van a későbbi összejöveteleknek, ha hamarosan megtörténik, míg az OS még mindig rendelkezik az információval. Az NGDC-nek köszönhetően.
         
-Még mindig javasoljuk: Ha egy adatkészlet nagy számú fájlt (pl. &gt; 1000) , az operációs rendszer (és így EDDGrid FromFiles és EDDTableFromFiles) sokkal hatékonyabban fog működni, ha a fájlokat alkönyvtárakban tárolja (évente egy vagy havonta egy adatkészlet nagyon gyakori fájlokkal) , hogy soha nem sok fájlok egy adott könyvtárban.
+Még mindig ajánljuk: Ha egy adatkészlet nagyszámú fájlt tartalmaz (pl.:&gt;1,000) , operációs rendszer (és így EDDGrid FromFiles és EDDTableFromFiles) sokkal hatékonyabban fog működni, ha a fájlokat egy sor aláíróban tárolja (egy évente, vagy havonta egy adatkészletek nagyon gyakori fájlokkal) Annak érdekében, hogy soha ne legyen sok fájl egy adott könyvtárban.
         
-    * Számos kis fejlesztések EDDTableFromAsciiFiles.
-    * Az EDDTableFromAsciiServiceNos javításai, nevezetesen azért, hogy a forrástól további információkat kapjunk. Lynn DeWitt-nek köszönhetően.
-    * Néhány kis hibajavítás az ISO 19115 szerint ERDDAP™ generál. Hála Anna Milánónak.
+    * Számos kis fejlesztés az EDDTableFromAsciiFiles számára.
+    * Néhány fejlesztés az EDDTableFromAsciiServiceNOS-hoz, különösen, hogy további információs oszlopokat szerezzen a forrásból. Lynn DeWittnek köszönhetően.
+    * Az ISO 19115-hez kapcsolódó kis hibajavítások, amelyek ERDDAP™ generál. Anna Milannak köszönhetően.
 
-## Változat 1.54{#version-154} 
- (kiadás dátuma: 2014- 10- 24) 
+## Verzió 1.54{#version-154} 
+ (megjelent 2014-10-24) 
 
-*    **Új jellemzők (felhasználók számára) :** 
-    * Egyes változók most már az idő a milliszekundum pontosság, például, 2014-10- 24T16: 41: 22.485Z. Hála Dominic Fullernek, Rowell.
-*    **Kis változások / hibajelzés:** 
-    * hibajavítás: a körülmények bizonyos kombinációjával, EDDGrid A FromNcFile adatkészletei csökkentett pontossággal szolgáltattak adatokat (például a páros helyett úszó) . Ez csak a 8-nál nagyobb értékű adatértékeket érintheti. Elnézést. (És ez egy klasszikus számítógépes programozási hiba volt: egy rossz karakter.) Hála Dominic Fullernek, Rowell.
+*    **Új funkciók (felhasználók számára) :** 
+    * Néhány változó most dolgozik az idő a milliseconds precision, például 2014-10-24T16:41:22.485Z. Dominikai Fuller-Rowellnek köszönhetően.
+*    **Kis változások/Bug javítások:** 
+    * Bug fix: bizonyos körülmények kombinációjával, EDDGrid FromNcFile adatkészletek visszatért adatok csökkent pontosság (pl. a duplák helyett úszók) ... Ez csak az adatértékeket érintheti a 8 jelentős számmal. Elnézést kérek. (És ez egy klasszikus számítógépes programozási hiba volt: egy rossz karakter.) Dominikai Fuller-Rowellnek köszönhetően.
     * Sok apró változás.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * A griddap adatkészletek most támogatják az időbélyegző tengelyváltozókat és adatváltozókat (azaz, változók időértékek, de a destinationName nem "time" ) . Hála Dominic Fullernek, Rowell.
-    *    ERDDAP™ most megfelelően támogatja milliszekundum time\\_precision "1970- 01- 01T00: 00: 00.000Z". Egy szándékos furcsaság: amikor az idők emberközpontú fájlokba íródnak (például .csv, .tsv , .json , .xhtml ) , ERDDAP™ használja a meghatározott time\\_precision ha másodperceket és / vagy tizedesjegyeket tartalmaz; egyébként másodperceket használ time\\_precision "1970- 01- 01T00: 00: 00Z" (a következetesség és a visszafelé való kompatibilitás érdekében) . Hála Dominic Fullernek, Rowell.
-    *    EDDGrid FromNcFiles most támogatja az olvasást String dataVariable c.
-    *    .nc fájlokat írt griddap most már String dataVariable c.
-    * GenerateDatasets Az Xml most több öblítést tartalmaz () hívások, hogy elkerüljék a problémát az információ nem írt a fájlokat. Thierry Valerónak köszönhetően.
-    * Az GenerateDatasetsXml dokumentációja javításra került, nevezetesen, hogy rámutassunk arra, hogy az -i kapcsoló csak akkor működik, ha megadjuk az összes választ a parancssorban (például script mód) . És a forgatókönyv mód meg van magyarázva. Thierry Valerónak köszönhetően.
-    *    ERDDAP™ már nem teszi lehetővé két változó egy adatkészlet, hogy ugyanaz sourceName . (Ha valaki korábban tette, valószínűleg hibajelentésekhez vezetett.) Mint korábban, ERDDAP™ nem teszi lehetővé két változó egy adatkészlet, hogy ugyanaz destinationName .
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * A Griddap adatkészletek most támogatják az időbélyegző tengelyváltozatokat és az adatok változóit (azaz változók az időértékekkel, de egy destinationName más, mint "time" ) ... Dominikai Fuller-Rowellnek köszönhetően.
+    *    ERDDAP™ most helyesen támogatja a milliszekundumokat time\\_precision "1970-01-01T00:00:00:00.000Z". Egy szándékos kiáltás: amikor időket ír az emberi orientált fájlokra (pl.: .csv, .tsv , .json , .xhtml ) , ERDDAP™ használja a megadott time\\_precision ha a másodperceket és/vagy döntő másodperceket tartalmaz; máskülönben másodperceket használ time\\_precision "1970-01-01T00:00Z" (konzisztencia és visszafelé kompatibilitás) ... Dominikai Fuller-Rowellnek köszönhetően.
+    *    EDDGrid FromNcFiles most támogatja a String olvasását dataVariable S.
+    *    .nc A griddap által írt fájlok most már String dataVariable S.
+    * GenerateDatasets Az Xml most több flusht tartalmaz () felhívja a figyelmet arra, hogy elkerülje a fájlokhoz nem írt információ problémáját. Thierry Valeronak köszönhetően.
+    * A GenerateDatasetsXml dokumentációja javult, különösen arra, hogy rámutassa, hogy az -i kapcsoló csak akkor működik, ha megjelöli az összes választ a parancssoron. (pl. script mód) ... És a forgatókönyv módot elmagyarázzák. Thierry Valeronak köszönhetően.
+    *    ERDDAP™ már nem teszi lehetővé két változót egy adatkészletben, hogy ugyanaz legyen sourceName ... (Ha valaki korábban megtette, valószínűleg hibaüzenetekhez vezetett.) Mint korábban, ERDDAP™ nem engedélyezi a két változót egy adatkészletben, hogy ugyanaz legyen destinationName ...
 
-## változat{#version-152} 
- (kiadás dátuma: 2014- 10- 03) 
+## Verzió 1.52{#version-152} 
+ (2014-10-03) 
 
-*    **Új jellemzők:**   (nincs) 
-*    **Kis változások / hibajelzés:** 
-    * Egy másik (kisebb) változtatás ERDDAP™ Gyorsabban.
-    * Javítás az ISO 19115 fájlok által generált ERDDAP : újonnan javasolt&lt;gmd: protokoll & gt; értékek (információ, keresés, OPeNDAP : OPeNDAP , ERDDAP : griddap, és ERDDAP : tabledap ) belül&lt;gmd: CI\\ _ OnlineResource & gt;. Hála Derrick Snowdennek és John Maurernek.
+*    **Új funkciók:**   (Nem) 
+*    **Kis változások/Bug javítások:** 
+    * Egy másik (kisebb) változás, hogy ERDDAP™ gyorsabb.
+    * Javítás ISO 19115 fájlok által generált ERDDAP Hozzáadott újonnan ajánlott&lt;gmd: protokoll & gt; értékek (információ, keresés, OPeNDAP : OPeNDAP , ERDDAP griddap és ERDDAP : tabledap ) belül&lt;gmd:CI\\_OnlineResource & gt; Derrick Snowdennek és John Maurernek köszönhetően.
     * Sok apró változás.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Bugfix: GenerateDatasetsXml.sh és DasDds.sh nem volt erddap.war 1.48 és 1.50. Most már igen. Thierry Valerónak köszönhetően.
-    * Kis változások néhány sebesség vizsgálatok TestAll, hogy kevésbé érzékeny a véletlenre. Hála Terry Rankinenek.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Bug fix: GenerateDatasetsXml.sh és DasDds.sh nem volt erddap.warban 1,48 és 1,50. Most ők is. Thierry Valeronak köszönhetően.
+    * Kis változások bizonyos sebességvizsgálatok TestAll, hogy azok kevésbé érzékeny a véletlen. Terry Rankine-nak köszönhetően.
 
-## Változat 1.50{#version-150} 
- (kiadás dátuma: 2014.-09-06) 
+## Verzió 1.50{#version-150} 
+ (megjelent 2014-09-06) 
 
-*    **Új jellemzők:**   (nincs) 
-*    **Kis változások / hibajelzés:** 
-    * Ez ERDDAP™ Sokkal gyorsabbnak kell lennie, mint a legutóbbi verziók.
-*    **Dolgok ERDDAP™ Administrators need to know and do:**   (Semmi.) 
+*    **Új funkciók:**   (Nem) 
+*    **Kis változások/Bug javítások:** 
+    * Ez a ERDDAP™ sokkal gyorsabbnak kell lennie, mint a legújabb verziók.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:**   (Nincs semmi) 
 
-## változat{#version-148} 
- (kiadás dátuma: 2014.-09-04) 
+## Verzió 1.48{#version-148} 
+ (megjelent 2014-09-04) 
 
-*    **Új jellemzők:** 
-    *    ERDDAP™ Most mindig létrehoz egy táblázatos adatlapot, datasetID = allDatasets , amely egy táblázat információt az összes adatkészlet ebben ERDDAP . Megkérdőjelezhető, mint bármely más táblázatos adatkészlet. Ez a jelenlegi rendszer hasznos alternatívája az adatkészletekkel kapcsolatos információk programosan történő beszerzésére.
-    * Két új kimeneti fájltípus van az EDDTable-hez és EDDGrid , .csv0 és .tsv 0. Ezek comma- and tab- separated-value fájlok, amelyek nem tartalmaznak sorokat oszlopnevekkel vagy egységekkel. Az adatok az első sorban kezdődnek. Ezek különösen hasznos szkriptek, hogy csak egy darab információt ERDDAP .
-*    **Kis változások / hibajelzés:** 
-    * Térképek készíthetők a -720-720-as tartományban.
-    * Az új .nc ml válasz File Type elérhető mindenkinek EDDGrid adatkészletek. Visszaadja a [NCML](https://docs.unidata.ucar.edu/netcdf-java/current/userguide/ncml_overview.html) \\ - az adatkészlet formázott leírása (hasonló a .dds + .das kombinációhoz) .
-    * hibajavítás: táblázatos adatok mentése egy .nc a fájl változónként 100 000 értékre korlátozódott. Most már csak 2 GB teljes fájlméret. Hála Kevin O 'Briennek.
-    * A hibajavítás: a mentességek Matlab a módszerek biztosítják, hogy datasetID s biztonságos lesz Matlab változó nevek. De még mindig erősen ajánlom, hogy hozzon létre datasetID s, amelyek érvényes változó nevek: kezdve egy betűvel, majd csak az A-Z, a-z, 0-9 és\\ _. Lásd [ datasetID ](/docs/server-admin/datasets#datasetid) . Hála Luke Campbell-nek.
-    * Az EDDTableFromDatabase hibajavítása: Bizonyos típusú adatbázisokkal, NO\\ _ Az adatbázisból származó adatválasz értelmetlen 30 másodperces késéshez vezetett ERDDAP . Hála Greg Williamsnek.
-    * A hibajavítás: EDDGrid Egy grafikont a grafikus típus = vonalak (vagy markerek vagy markerek és vonalak) Az x tengelyváltozót az időnek kell tekinteni. Most már bármelyik tengely lehet. Lynn DeWitt-nek köszönhetően.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * STRONGLY AJÁNLOTT: Frissítés Java   
-Ez a verzió a ERDDAP™ szükséges Java legalább 7, de Java 7 lesz eléri a végén az élet áprilisban 2015 (Hamarosan&#33;) Itt az ideje, hogy váltsunk Java 8. Java A 8-at erősen ajánljuk. I teszt Java 8. Megjegyzés: Java 6 2013 februárjában ért véget (Nincs több biztonsági hiba&#33;) .
-    * STRONGLY AJÁNLOTT: Frissítés
-Ha Tomcat-ot használ, kérjük, váltson a Tomcat legújabb verziójára. Tomcat 8 tervezett dolgozni Java 8.
-    * " ERDDAP "már nem rövidítés. Most már csak egy név. Nem akarom, hogy a név kiemelje ERD . I want ERDDAP™ hogy kiemelje intézményét és adatait.
-    * Kérlek. [testre ERDDAP™ telepítés az intézmény és az adatok kiemelésére](/docs/server-admin/deploy-install#customize) . Egy órányi munkával szép fejlesztéseket végezhetsz, ami örökké fog tartani.
-    * In setup.xml, a&lt;Display DiagnosticInfo &gt; opció most mindig figyelmen kívül hagyja, és kezelni, mintha az érték hamis.
-AJÁNLJA: Távolítsa el a&lt;displayDiagnosticInfo &gt; tag és kapcsolódó információk a setup.xml.
-    * A setup.xml, az alapértelmezett&lt; drawLandMask &gt; volt "vége", de most "alatt", ami egy jobb általános alapértelmezés (jól működik az összes adatkészlet) .
-    * A GenerateDatasetsXml.sh és DadDds.sh Linux szkriptek most bash-t használnak csh helyett, és a .sh. kiterjesztéssel rendelkeznek. Hála Emilio Mayorgának.
-    * GenerateDatasets Xml és DasDds most létrehozza saját naplófájljait (GenerateDatasetsXml.log és DasDds.log) és kimeneti fájlok (GenerateDatasetsXml.out és DadDds.out) in _ bigParentDirectory _ / log /, and never put their results on the clipboard.
-    * GenerateDatasets Xml most támogatja a -i parancssor paraméter, amely behelyezi a kimenetet a megadott fájlt egy megadott helyen. Lásd a [dokumentáció](/docs/server-admin/datasets#generatedatasetsxml) . Hála Terry Rankinenek.
-    * EDDTableFromDatabase most támogatja&lt;Idézőjelek &gt;&lt;/ ColumnNameQuotes &gt;, érvényes értékekkel " (alapértelmezés) ", vagy semmi. Ez a karakter (ha van) az SQL lekérdezések oszlopneve előtt és után kerül felhasználásra. Különböző típusú adatbázisok, különböző módon, szükség lesz különböző oszlopnév idézőjelek.
-    * Táblázati szélességi és hosszúsági változók most már testreszabott long\\_name például a profilszélesség. Az előző részek tartalmából:
-    * Mostantól az adatkészlet globális metaadataiban (azaz,&lt;addatt &gt;), nem külön&lt;defaultDataQuery &gt; és&lt;defaultGraphQuery &gt; tags. (Habár, ha még mindig megadod őket a címkéken keresztül, ERDDAP™ automatikusan globális attribútumokat hoz létre az információval.) 
+*    **Új funkciók:** 
+    *    ERDDAP™ most mindig tabuláris adatkészletet hoz létre, datasetID = allDatasets , amely táblázatot tartalmaz az összes adatkészletről ebben ERDDAP ... Bármely más tabuláris adatkészlethez hasonlóan lehet lekérni. Ez egy hasznos alternatíva a jelenlegi rendszer, hogy információt az adatkészletek programozva.
+    * Két új kimeneti fájltípus van az EDDTable-hez és EDDGrid , .csv0 és .tsv 0. Képregény- és lapos értékű fájlok, amelyek nem rendelkeznek oszlopnevekkel vagy egységekkel. Az adatok az első sorban kezdődnek. Különösen hasznosak a szkriptek számára, amelyek csak egy darab információt akarnak ERDDAP ...
+*    **Kis változások/Bug javítások:** 
+    * A Térképek most a tartományban -720-720-720-ig terjednek.
+    * Az új .nc ml válasz File Type elérhető minden számára EDDGrid adatkészletek. Visszatér a [NCML](https://docs.unidata.ucar.edu/netcdf-java/current/userguide/ncml_overview.html) \\-formatizált leírás az adatkészletről (hasonló egy kombinált .dds + .das) ...
+    * Bug fix: Tabular adatok mentése egy .nc A fájl változatos módon 100.000 értékre korlátozódott. Most csak 2 GB teljes fájlméretre korlátozódik. Kevin O'Briennek köszönhetően.
+    * Bug fix: a mentésAs Matlab módszerek most biztosítják, hogy datasetID S biztonságossá váltak Matlab változó nevek. De még mindig erősen ajánlom, hogy hozzon létre datasetID s ez érvényes változó nevek: kezdve egy levelet, majd csak használja A-Z, a-z, 0-9 és \\_. Lásd [ datasetID ](/docs/server-admin/datasets#datasetid) ... Luke Campbellnek köszönhetően.
+    * Bug fix EDDTableFromDatabase: Bizonyos típusú adatbázisokkal, NO\\_ A DATA válasz az adatbázisból egy értelmetlen 30 másodperces késéshez vezetett ERDDAP ... Greg Williamsnek köszönhetően.
+    * Bug fix: EDDGrid Készítsen egy grafikont a Graph Type = sorokkal (vagy markerek vagy markerek és vonalak) kényszerített x tengely változó, hogy idő. Most lehet bármilyen tengely. Lynn DeWittnek köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * HATÁROZAT: frissítés Java   
+Ez a verzió ERDDAP™ követelmények Java 7 vagy annál magasabb, de Java 7 fogja elérni az élet végét 2015 áprilisában (hamarosan&#33;) Tehát most jó ideje váltani Java 8. Szóval Java 8 HATÁROZATOS RECOMMENDED Tesztelek Java 8. Ne feledje, hogy Java 6 2013 februárjában elérte az élet végét (Nincs több biztonsági hibajavaslat&#33;) ...
+    * Stonegly RECOMMENDED: Frissítés Tomcat
+Ha a Tomcatot használja, kapcsolja be a Tomcat legújabb verzióját. Tomcat 8 célja, hogy dolgozzon együtt Java 8.
+    * "..." ERDDAP " többé nem akronym. Most ez csak egy név. Nem akarom a nevet kiemelni ERD ... Azt akarom ERDDAP™ kiemelni az intézményt és az adatait.
+    * PEASE [testreszabja a megjelenését ERDDAP™ telepítés, hogy kiemelje az intézmény és az adatok](/docs/server-admin/deploy-install#customize) ... Egy órás munkával jó fejlesztéseket végezhet, amelyek örökké tartanak.
+    * A beállításban.xml,&lt;A kijelzőDiagnosticInfo&gt; opció most mindig figyelmen kívül hagyja és kezeli, mintha az érték hamis lenne.
+TUDATOK: Távolítsa el a&lt;megjelenítőDiagnosticInfo&gt; címke és kapcsolódó információ a setup.xml-től.
+    * A setup.xml, az alapértelmezett&lt; drawLandMask &gt; "túl" volt, de most "alul", ami jobb általános alapértelmezettség (jól működik az összes adatkészlettel) ...
+    * A GenerateDatasetsXml.sh és a DadDds.sh Linux szkriptek most csh helyett használnak bashot, és megvan a kiterjesztés .sh. Emilio Mayorga-nak köszönhetően
+    * GenerateDatasets Az Xml és a DasDds most saját logfájlokat hoz létre (GenerateDatasetsXml.log és DasDds.log) Kimeneti fájlok (GenerateDatasetsXml.out és apuds.out) _bigParentDirectory_/logs/, és soha nem tette az eredményt a vágólapra.
+    * GenerateDatasets Az Xml most egy -i parancssori paramétert támogat, amely egy meghatározott helyen beilleszti a kimenetet. Lásd: [dokumentáció](/docs/server-admin/datasets#generatedatasetsxml) ... Terry Rankine-nak köszönhetően.
+    * Az EDDTableFromDatabase most támogatja&lt;oszlopNameQuotes&gt;&lt;/columnNameQuotes&gt;, érvényes értékekkel " (az alapértelmezett) „, vagy semmi. Ez a karakter (ha valaki) az SQL lekérdezések előtt és után fogják használni. Különböző típusú adatbázisok, amelyek különböző módon vannak felállítva, különböző oszlopnév-kvótákra lesz szükség.
+    * A tabuláris magasság és a hosszúság változói most testreszabhatók long\\_name "S, pl. a Profil Latitude. Korábban csak Latitude és Longitude lehetnek.
+    * Mostantól a "defaultDataQuery" és a "defaultGraphQuery" mint tulajdonságok az adatkészlet globális metaadatában (azaz,&lt;addAtts&gt;), nem különálló&lt;defaultDataQuery&gt; és&lt;defaultGraphQuery&gt; címkék. (Bár, ha még mindig megadja őket a címkéken keresztül, ERDDAP™ automatikusan létrehozza a globális tulajdonságokat az információval.) 
 
-## változat{#version-146} 
- (kiadás dátuma: 2013.-07-09) 
+## Verzió 1.46{#version-146} 
+ (2013-07-09) 
 
-*    **Új jellemzők:** 
-    *    (Nincs) 
-*    **Kis változások / hibajelzés:** 
-    * hibajavítás: az EDDTableFromDatabase-ban, csak az 1.44-es verzióban, ERDDAP™ Helytelenül idézte az adatbázis táblázatának nevét SQL kimutatásokban. Ez már megoldódott. Hála Kevin O 'Briennek.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    *    ** Ha nem módosítjuk a standard üzeneteket az üzenetekben.xml,
-Törlés \\[ Nincs magyar neve \\] / tartalom / erddap / messages.xml. **   
-Az alapértelmezett üzenet.xml fájl most az erddap. háborús fájl, nem erddapContent .zip . Tehát már nem kell manuálisan frissíteni az üzeneteket.xml.
-    * Ha módosítjuk az üzeneteket.xml, mostantól, minden alkalommal frissíteni ERDDAP™ vagy:
-        * Ugyanazokat a változtatásokat, mint korábban az új
-             \\[ Nincs magyar neve \\] / Webapps / erddap / WEB- INF / class / gov / noaa / pfel / erddap / util / messages.xml.
-És ez egyszer: törlés \\[ Nincs magyar neve \\] / tartalom / erddap / messages.xml.
-        * Vagy találd ki, mi változott az új üzenetekben. (diff) , és módosítsa a
-             \\[ Nincs magyar neve \\] / content / erddap / messages.xml fájl ennek megfelelően.
+*    **Új funkciók:** 
+    *    (Nem) 
+*    **Kis változások/Bug javítások:** 
+    * Bug fix: Az EDDTableFromDatabase-ban csak 1.44 verzióban, ERDDAP™ helytelenül idézte az adatbázis táblázat nevét az SQL nyilatkozatokban. Ez most rögzített. Kevin O'Briennek köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    *    ** Ha nem módosítja a szabványos üzeneteket az üzenetekben.xml,
+törlés \\[ Tomcat \\] /content/erddap/messages.xml . **   
+Az alapértelmezett üzenetek.xml fájl jelenleg az erddap. háborús fájl, nem erddapContent .zip ... Tehát már nem kell manuálisan frissíteni az üzeneteket.xml .
+    * Ha módosítja az üzeneteket az üzenetekben.xml, mostantól minden alkalommal, amikor frissít ERDDAP™ vagy:
+        * Készíts ugyanazokat a változásokat, amelyeket az új
+             \\[ Tomcat \\] /webapps/erddap/WEB-INF/classes/gov/noa/pfel/erddap/util/messages.xml.
+És ez egy alkalommal: törlés \\[ Tomcat \\] /content/erddap/messages.xml .
+        * Vagy kitaláljuk, mi változott az új üzenetekben.xml (keresztül diff) és módosítsa a
+             \\[ Tomcat \\] /content/erddap/messages.xml fájl ennek megfelelően.
 
-## változat{#version-144} 
- (kiadás dátuma: 2013.-05-30) 
+## Verzió 1.44{#version-144} 
+ (2013-05-30) 
 
-*    **Új jellemzők:** 
-    * Kérdések az EDDTable adatbázisokhoz orderBy Min (...) & orderByMinMax  (...)   (ami mindkét csoportban két sort ad vissza, az utolsó minimum és maximum orderBy érték) . Lynn DeWitt-nek köszönhetően.
-    * Van két új tabledap fájltípusok: .nc CFHeader és .nc CFMAHeader (ami visszaadja a megfelelő .nc CF és .nc CFMA fájltípusok) . Hála Steve Hankinnek.
-*    **Kis változások / hibajelzés:** 
-    * hibajavítás: a sok időértékkel rendelkező adatkészletek .grafikus és .html weblapjainak betöltése lassú volt, mert ERDDAP™ lassú volt, amikor létrehozta az időcsúszós lehetőségeket. Most már mindig gyors. Hála Michael Barrynek, OOICI-nak és Kristian Sebastian Blalidnak.
-    * A hibajavítás: Az EDDTable egyes adattípusaiban az időkorlátokat nem mindig megfelelően kezelték. Most már igen. Hála John Maurernek és Kevin O 'Briennek.
-    * hibajavítás: az adatok nem töltődnek, ha az összes subsetVariables fix értékű változók voltak. Most fognak. Lynn DeWitt-nek és John Peterson-nak köszönhetően.
-    * JAVASOLT: most, minden lekérdezés csak alset változók jár, mintha & elkülönítve () a lekérdezés része.
-    * JAVÍTOTT: most, a lekérdezések, amelyek tartalmazzák a & .json p = _ functionName _, _ function Név _ KELL lennie egy sorozat 1 vagy több (periodelválasztott) szavak. Minden szónak ISO 8859 betűvel vagy "\\ _" betűvel kell kezdődnie, amelyet 0 vagy több ISO 8859 betűnek, számnak vagy "\\ _" -nek kell követnie. Igen, ez szigorúbb, mint Java A szkript követelményei a függvény neveire.
-    * Az időtengely grafikonon most már jól működik hosszabb ideig (80 - 10000 év) és rövidebb időtartományok (0,003 - 180 másodperc) .
-    *    ERDDAP™ most már megbocsátóbb, amikor az ISO- 8601 formátumú időadatok változatát dolgozza fel.
+*    **Új funkciók:** 
+    * Az EDDTable adatkészleteknek most támogatást és orderBy Min (...) és orderByMinMax  (...)   (amely minden egyes csoportban két sort ad vissza, az utolsó minimális és maximális orderBy érték) ... Lynn DeWittnek köszönhetően.
+    * Két új tabledap fájltípusok: .nc CFHeader és .nc CFMAHeader (amely visszatér a megfelelő ncdump-szerű vezetőjéhez .nc CF és .nc CFMA fájltípusok) ... Steve Hankinnak köszönhetően.
+*    **Kis változások/Bug javítások:** 
+    * Bug fix: a .graph és a .html weboldalak betöltése a sok időértékű adatkészletekhez lassú volt, mert ERDDAP™ lassú volt, amikor létrehozta az időcsúcs opciókat. Most mindig gyors. Michael Barrynek, OOICI-nak és Kristian Sebastian Blalidnak köszönhetően.
+    * Bug fix: Egyes EDDTable adatkészlettípusokban az időkorlátokat nem mindig kezelték megfelelően. Most ők is. John Maurernek és Kevin O'Briennek köszönhetően.
+    * Bug fix: az adatkészletek nem töltenek be, ha az összes subsetVariables rögzített értékváltozatok voltak. Most ők is. Lynn DeWittnek és John Petersonnak köszönhetően.
+    * IMPROVED: most minden kérdés, hogy csak alkatrész változók működnek, mintha &distinct () a lekérdezés része.
+    * IMPROVED: most, azokra a kérdésekre, amelyek tartalmazzák és .json p=_functionName_, _funkció Név_ MUST most egy sor 1 vagy több (Időszakos elválasztott) szavak. Minden szónak ISO 8859 betűvel vagy "\\_"-vel kell kezdődnie, és ezt 0 vagy több ISO 8859 betűvel, számjegyekkel vagy "\\_" követi. Igen, ez korlátozóbb, mint Java Script követelményei a funkció nevekre.
+    * A grafikonok ideje most jól működik a hosszabb időtartományoknál (80 - 10000 év) rövidebb időtartományok (0.003 - 180 másodperc) ...
+    *    ERDDAP™ most nagyobb megbocsátás az ISO-8601-formátus időadatok variációinak elkülönítésekor.
     * Sok más apró változás és hibajavítás volt.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    *    **Frissítenie kell a legújabb verziót, hogy biztonságos legyen.**   
-         ERDDAP™ biztonsági ellenőrzésen esett át. Voltak hibák és gyengeségek. Az 1.44-es verzió számos fontos biztonsági hibajavítást és a biztonság és a hozzáférhetőség növelését célzó változtatást tartalmaz (például látásromlás esetén) . Az 1.44-es verzió átment a biztonsági ellenőrzésen. Hála a jó embereknek a USGS-nél és az Acunetix-nél, akik ezt lehetővé tették. (Nem kellene. NOAA Ezt csinálod?) 
-    * Az új [EDDTableFrom WFS Fájlok](/docs/server-admin/datasets#eddtablefromwfsfiles) helyi másolatot készít az összes adatról ArcGIS MapServer WFS szerver és így az adatok lehet majd újra-kiszolgáló gyorsan ERDDAP™ felhasználók. Hála Christy Caudillnek.
-    * Az új [EDDTableFrom EDDGrid ](/docs/server-admin/datasets#eddtablefromeddgrid) lehetővé teszi, hogy hozzon létre egy EDDTable dataset EDDGrid Dataset. Ennek néhány közös oka:
-        * Ez lehetővé teszi az adatkészlet lekérdezését OPeNDAP kiválasztási korlátok (amelyet a felhasználó kérhetett) .
-        * Az adatkészlet eredendően egy táblázatos adatelem. Hála az OOICI-nak, Jim Potemrának, Roy Mendelssohn-nak.
-    * A változó név "mélység" most egy speciális alternatívája a "magasság". Az egységek a "méter" valamilyen változatai lehetnek. Az adatértékeknek pozitívnak kell lenniük = lefelé. ERDDAP™ már teljesen tisztában van a "mélység" jelentésével, és támogatja azt, ahol a magasságot támogatják. (például CF DSG cdm\\ _ data\\ _ type = profile dataset összetevőjeként) . Az adatkészlet nem tartalmazhat "mélységet" és "magasságot" egyaránt.
-    * Az Ön datasets.xml , kérjük távolítsa el a&lt;att name = "cdm\\ _ height\\ _ proxy" &gt; mélység&lt;/ att &gt; Mivel a mélység most már a magasság különleges alternatívája, ezért nem kell külön azonosítani.
-    * Az Ön datasets.xml , kérjük távolítsa el a&lt;ortitude MetersPerSourceUnit &gt;, az EDDTable kivételével From SOS .
-Ha az érték 1, csak törölje.
-Ha az érték -1, fontolja meg a változó név mélységre történő megváltoztatását.
-Más értékekhez hozzáadva&lt; addAttributes &gt;, például:
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    *    **Frissítse a legújabb verziót, hogy biztonságos legyen.**   
+         ERDDAP™ biztonsági audit alá került. Voltak néhány hibák és gyengeségek. Az 1.44. verzió számos fontos biztonsági hibajavaslatot tartalmaz, és számos változást tartalmaz a biztonság és a hozzáférhetőség növelésére (pl. látáskárosító felhasználók esetében) ... Az 1.44. verzió átadta a nyomonkövetési biztonsági auditot. Az összes jó embernek köszönhetően az USGS-nél és az Acunetixnél, aki ezt lehetővé tette. (Nem kellene NOAA Tedd ezt?) 
+    * Az új [EDDTableFrom WFS Fiók](/docs/server-admin/datasets#eddtablefromwfsfiles) helyi másolatot készít az összes adatról egy ArcGIS MapServer WFS szerver és így az adatok gyorsan továbbíthatók ERDDAP™ felhasználók. Christy Caudillnek köszönhetően.
+    * Az új [EDDTableFrom EDDGrid ](/docs/server-admin/datasets#eddtablefromeddgrid) lehetővé teszi, hogy létrehozzon egy EDDTable adatkészletet egy EDDGrid adatkészlet. Néhány gyakori oka ennek:
+        * Ez lehetővé teszi az adatkészlet lekérését OPeNDAP kiválasztási korlátozások (melyik felhasználó kérhette) ...
+        * Az adatkészlet eredetileg tabuláris adatkészlet. OOICI, Jim Potemra, Roy Mendelssohn.
+    * A "mélység" változó név most a "magasság" különleges alternatívája. Az egységeknek a "mérők" valamilyen változatának kell lenniük. Az adatértékeknek pozitívnak kell lenniük = lefelé. ERDDAP™ most teljesen tisztában van a "mélység" értelmével, és támogatja azt, ahol a magasságot támogatják (pl. a CF DSG cdm\\_data\\_type=profil adatkészlet összetevőjeként) ... Az adatkészletnek nem kell mind a "mély", mind a "magassági" változóknak lennie.
+    * A te datasets.xml Kérlek, távolítsa el minden használatát&lt;att name="cdm\\_altitude\\_proxy"&gt; mélység&lt;/att&gt; mivel a mélység most egy különleges alternatívája a magasságnak, így nem kell különösebben azonosítani.
+    * A te datasets.xml Kérlek, távolítsa el minden használatát&lt;altitudeMetersPerSourceUnit&gt;, kivéve az EDDTable-t Tőle SOS ...
+Amikor az érték 1, csak törli.
+Amikor az érték -1, fontolja meg a változó neve mélységét.
+Más értékek esetén add hozzá&lt; addAttributes Például:
 ```
         <att name="scale\\_factor" type="float">-1</att>
 ```
 
-    * Minden adatkészlet támogatja
+    * Az összes adatkészlet most támogatja
         
-        *   &lt;defaultDataQuery &gt; amely akkor használható, ha a .html-t lekérdezés nélkül kérjük.
-            * Valószínűleg ritkán lesz szükség erre.
-            * A griddap adatkészletek esetében a közös használatuk az, hogy eltérő alapértelmezett mélység- vagy magassági dimenzióértéket határoznak meg. (például: \\[ 0 \\] helyett \\[ utolsó \\] ) .
-Mindenesetre, mindig fel kell sorolni az összes változót, mindig ugyanazokat a dimenzióértékeket kell használni minden változóhoz, és szinte mindig \\[ 0 \\] , \\[ utolsó \\] vagy \\[ 0: utolsó \\] a dimenzióértékek esetében.
+        *   &lt;defaultDataQuery&gt;, amelyet akkor használnak, ha .html-t nem kérik.
+            * Valószínűleg ritkán kell használni ezt.
+            * A hálózati adatkészletek esetében ennek egy közös használata egy másik alapértelmezett mélység vagy magassági dimenzió érték meghatározása. (pl.: \\[ 0 0 \\] helyette \\[ utolsó \\] ) ...
+Mindenesetre mindig fel kell sorolnia az összes változót, mindig ugyanazt a dimenzió értéket használja minden változó számára, és szinte mindig használjon. \\[ 0 0 \\] , \\[ utolsó \\] vagy \\[ 0: utolsó \\] a dimenzió értékeiért.
 Például:
 ```
                 <defaultDataQuery>u\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\],v\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\]</defaultDataQuery>
 ```
 
-            * A tabledap datasets, a leggyakoribb használata ennek az, hogy egy másik alapértelmezett időtartomány (a jelenhez képest, pl., & idő & gt; = now- 1 nap) .
-Ne feledje, hogy nem kér adatokat változók ugyanaz, mint az összes adat változók, így általában csak meg kell adni az új időkorlát.
+            * Mert tabledap adatkészletek, ennek leggyakoribb használata, hogy meghatározza a különböző alapértelmezett időtartományt (a mostanihoz képest, pl.: &time & gt;= now- 1 nap) ...
+Ne feledje, hogy az adatok változóinak kérése ugyanaz, mint az összes adatváltozat meghatározása, így általában csak meghatározhatja az új időkorlátot.
 Például:
 ```
                 <defaultDataQuery>&amp;time&gt;=now-1day</defaultDataQuery>
 ```
 
-        *   &lt;defaultGraphQuery &gt;, amelyet akkor használnak, ha az .graph-ot kérés nélkül kérik.
-            * Valószínűleg ritkán lesz szükség erre.
-            * A griddap adatkészletek esetében a leggyakoribb, hogy az alapértelmezett mélység vagy a magasság dimenziójának értéke eltérő legyen. (például: \\[ 0 \\] helyett \\[ utolsó \\] ) és / vagy egy adott változó grafikonjának meghatározása.
-Minden esetben, akkor szinte mindig használni \\[ 0 \\] , \\[ utolsó \\] vagy \\[ 0: utolsó \\] a dimenzióértékek esetében.
+        *   &lt;alapértelmezettGraphQuery&gt;, amelyet akkor használnak, ha a .graphot nem kérik.
+            * Valószínűleg ritkán kell használni ezt.
+            * A hálózati adatkészletek esetében ennek a leggyakoribb használata egy másik alapértelmezett mélység vagy magassági dimenzió érték meghatározása. (pl.: \\[ 0 0 \\] helyette \\[ utolsó \\] ) és/vagy meg kell határozni, hogy egy adott változót grafikonozzák.
+Mindenesetre szinte mindig használni fog \\[ 0 0 \\] , \\[ utolsó \\] vagy \\[ 0: utolsó \\] a dimenzió értékeiért.
 Például:
 ```
                 <defaultGraphQuery>temp\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\]&amp;.draw=surface&amp;.vars=longitude|latitude|temp</defaultGraphQuery>
 ```
 
-            * A tabledap datasets, a leggyakoribb használata ennek a különböző grafikus változók, egy másik alapértelmezett időtartomány (a jelenhez képest, pl., & idő & gt; = now- 1 nap) és / vagy eltérő alapértelmezett grafikus beállítások (például jelölőtípus) .
+            * Mert tabledap adatkészletek, ennek a leggyakoribb felhasználása, hogy megjelölje a különböző változókat, egy másik alapértelmezett időtartományt (a mostanihoz képest, pl.: &time & gt;= now- 1 nap) és/vagy különböző alapértelmezett grafikai beállítások (pl.: marker típus) ...
 Például:
 ```
                 <defaultGraphQuery>longitude,latitude,seaTemperature&amp;time&gt;=now-1day&amp;.marker=1|5</defaultGraphQuery>
 ```
 
-Ne feledje, hogy XML- kódolnia kell, vagy (vagy egy, de nem mindkettő.) az alapértelmezett lekérdezések, mivel azok egy XML dokumentumban vannak. Például, & amp; amp;,&lt;& amp; lt;, és &gt; lesz & amp; gt;.
-És kérem, ellenőrizze a munkáját. Könnyű hibázni, és nem azt kapni, amit akarsz.
-Hála Charles Carletonnak, Kevin O 'Briennek, Luke Campbellnek és másoknak.
-    *    EDDGrid FromDap, EDDGrid FromErddap és EDDTableFrom EDDGrid új rendszerrel rendelkezik a gyakran változó adatkészletek kezelésére (olyan gyakran, mint durván minden 0,5 s) . Ellentétben ERDDAP a rendszeres, proaktív rendszer teljes újratöltése minden adatkészlet, ez a választható kiegészítő rendszer reaktív (a felhasználó kérésére) és növekményes (a frissítendő információk frissítése) . Például, ha a kérelem a EDDGrid FromDap dataset fordul elő több, mint a megadott számú milliszekundum óta az utolsó frissítés, ERDDAP™ Meglátjuk, van-e valami új érték a bal oldalon (általában "time" ) dimenzió és, ha igen, csak töltse le az új értékeket, mielőtt a felhasználó kérésének megfelel. Ez a rendszer nagyon jó abban, hogy a gyorsan változó adatkészlet naprakész legyen, minimális igényekkel az adatforrással szemben, de néhány felhasználói kérés feldolgozásának kis lelassulásával. Lásd [&lt;updateEveryNMillis &gt;] (/ docs / server- admin / datasets # updateevernmillis)   
-Hála Michael Barry-nek és OOICI-nak.
-    *    EDDGrid FromNcFiles, EDDTableFromNcFiles és EDDTableFromNcCFFiles [NcML .nc ml](/docs/server-admin/datasets#ncml-files) forrás fájlok helyett .nc fájlok. Hála Jose B Rodriguez Rueda-nak.
-    * A EDDGrid AggregateExisting Dimension, ERDDAP™ támogatja egy új szerverType = "dodsindex" opció a szerverType attribútum&lt; sourceUrl s &gt; tag. Ez működik a weboldalak, amelyek listája fájlok belül&lt;pre- &gt;&lt;/ pre&gt; és gyakran a OPeNDAP logó. Példa erre: [ https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html ](https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html) .
-    * Az EDDTableFrom esetében SOS Most egy opcionális címkét támogat
+Ne feledje, hogy XML-kódra vagy százalék-kódra van szüksége (vagy egy, de nem mindkettő) az alapértelmezett kérdések, mivel egy XML dokumentumban vannak. Például, és válik &amp; amp; ,&lt;apk;lt; és &gt; válik &amp;gt;
+És kérjük, ellenőrizze a munkáját. Könnyű hibát követni, és nem kapja meg azt, amit akar.
+Charles Carletonnak, Kevin O'Briennek, Luke Campbellnek és másoknak köszönhetően.
+    *    EDDGrid FromDap, EDDGrid FromErddap és EDDTableFrom EDDGrid van egy új rendszer, amely kezeli az adatkészleteket, amelyek gyakran változnak (olyan gyakran, mint minden 0,5 s) ... Ellentétben ERDDAP Rendszeres, proaktív rendszer minden adatkészlet teljes újratöltéséhez, ez az opcionális kiegészítő rendszer reaktív (egy felhasználói kérelem által kiváltott) Növekvő (frissíteni kell az információkat, amelyeket frissíteni kell) ... Például, ha egy kérés egy EDDGrid FromDap adatkészlet több, mint a megadott számú milliszekundum az utolsó frissítés óta, ERDDAP™ látni fogja, hogy vannak-e új értékek a baloldal számára (általában "time" ) dimenzió és ha igen, csak töltse le ezeket az új értékeket a felhasználó kérésének kezelése előtt. Ez a rendszer nagyon jó, ha egy gyorsan változó adatállományt naprakészen tartunk, minimális igényekkel az adatforráson, de egy kissé lassítja néhány felhasználói kérelmek feldolgozását. Lásd:&lt;frissítésEveryNMillis&gt; (/docs/server-admin/datasets#updateeverynmillis)   
+Michael Barrynek és OOICI-nak köszönhetően.
+    *    EDDGrid FromNcFiles, EDDTableFromNcFiles és EDDTableFromNcCFFiles most támogatást [NcML .nc ml ml](/docs/server-admin/datasets#ncml-files) forrásfájlok helyén .nc fájlok. Jose B Rodriguez Ruedának köszönhetően.
+    * Mert EDDGrid AggregateExistingDimension, ERDDAP™ támogatja az új szerverType="dodsindex" opciót a szerverType tulajdonságához&lt; sourceUrl s&gt; címke. Ez olyan webhelyekkel működik, amelyek a fájlok listáit tartalmazzák&lt;pre&gt;&lt;/pre&gt; és gyakran egy OPeNDAP logó. Egy példa [ https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html ](https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html) ...
+    * EDDTableFrom SOS most támogatja az opcionális címkét
 ```  
         <sosServerType>_serverType_</sosServerType>  
 ```
-így megadhatja a típusa SOS kiszolgáló (így ERDDAP™ Nem kell rájönnie.) . Érvényes értékek&lt;_ serverType _\\ & gt; are IOOS\\ _ NDBC, IOOS\\ _ NOS, OOSTethys és WHOI (újonnan támogatott kiszolgáló Típus) . Lásd [EDDTableFrom SOS ](/docs/server-admin/datasets#eddtablefromsos) . Hála Derrick Snowdennek és Janet Fredericks-nek.
-    * Valamennyi EDDGrid A... fájlokból, az EDDTableFrom... fájlokból, EDDGrid Másolás és EDDTable Másolás most támogatja egy opcionális tag
+így megadhatja a típusát SOS szerver (így ERDDAP™ nem kell kitalálnia) ... Érvényes értékek&lt;_serverType_\\&gt; IOOS\\_NDBC, IOOS\\_NOS, OOSTethys és WHOI (egy újonnan támogatott szerver típus) ... Lásd [EDDTableFrom SOS ](/docs/server-admin/datasets#eddtablefromsos) ... Derrick Snowdennek és Janet Fredericksnek köszönhetően.
+    * Minden EDDGrid Fájlok, EDDTableFrom... Files, EDDGrid Másolás és EDDTable Copy most támogat egy opcionális címke
 ```
         <fileTableInMemory>true</fileTableInMemory> (The default is false.)  
 ```
-amely meg tudja mondani ERDDAP™ a fájl megőrzése táblázat (az egyes forrásadatokkal kapcsolatos információkkal) memória helyett csak a lemezen (alapértelmezés) . A fájltábla memóriában tartása felgyorsítja az adatkérést (különösen, ha &gt; 1000 forrásadat-fájl van) De több emléket használ. Ha ezt igaznak állítod be bármilyen adathoz, tartsd szemmel az Memory-t: jelenleg a _ yourDomain _ sort használja /erddap/status.html annak biztosítása, hogy ERDDAP™ Még mindig rengeteg szabad memóriája van. Hála Fredrik Straynek.
-    * EDDTableFromASCIIFiles most támogatja&lt;Charset &gt;. A két leggyakoribb charset (Az ügy kényes&#33;) ISO- 8859- 1 (alapértelmezés) és UTF- 8.
-    * Ajánlott: in setup.xml, belül&lt;startHeadHtml &gt;, kérem, cserélje ki&lt;html &gt; be
-        &lt;html lang = "en- US" &gt; (vagy más [nyelvkód](https://www.w3schools.com/tags/ref_language_codes.asp) ha lefordítottad az üzeneteket.xml) .
-    * setup.xml új opcionális címkék letiltására részei ERDDAP :
-        *   &lt;konvertersActive &gt; false&lt;/ átalakító aktív &gt;&lt;&#33; -- az alapértelmezés igaz -- &gt;
-        *   &lt;slideSorterActive &gt; hamis&lt;/ slideSorterActive &gt;&lt;&#33; -- az alapértelmezés igaz -- &gt;
-        *   &lt;wmsActive &gt; hamis&lt;/ wmsActive &gt;&lt;&#33; -- az alapértelmezés igaz -- &gt; Általánosságban azt javasoljuk, hogy ne állítsuk ezeket hamisnak.
-    * GenerateDatasets Xml most ír eredményeket _ bigParentDirectory _ / log / generateDatasetsXmlLog.txt, nem log.txt. Hála Kristian Sebastian Blalidnak.
-    * GenerateDatasets Xml most tesz egy jó javaslatot a&lt;újratöltés Minden perc &gt;. Hála a NOAA UAF projekt.
-    * Sok kis fejlesztések GenerateDatasetsXml. Hála a NOAA UAF projekt.
+amit mondhat ERDDAP™ Tartsa a fájlt táblázat (minden forrásadatfájlról információkkal) memória helyett csak a lemezen (az alapértelmezett) ... A fájlTable memória sebessége felkéri az adatokat (különösen, ha vannak &gt;1000 forrásadat fájlok) De több memóriát használ. Ha ezt minden adatkészlethez igazítod, tartsd szemmel a Memory-t: jelenleg a _yourDomain_ vonalat használod /erddap/status.html annak biztosítása, hogy ERDDAP™ Még mindig rengeteg szabad memóriával rendelkezik. A Fredrik Straynak köszönhetően.
+    * Az EDDTableFromASCIIFiles most támogatja&lt;charset&gt;. A két leggyakoribb charset (érzékeny&#33;) ISO-8859-1 (az alapértelmezett) UTF-8.
+    * Ajánlott: setup.xml, belül&lt;startHeadHtml&gt;, kérjük, változtasson&lt;html&gt; a
+        &lt;html lang="en-US" (vagy más [nyelvkód](https://www.w3schools.com/tags/ref_language_codes.asp) ha lefordított üzeneteket.xml) ...
+    * A setup.xml új opcionális címkékkel rendelkezik, amelyek letiltják a részeket ERDDAP :
+        *   &lt;átalakítókActive&gt; hamis&lt;/konverterekActive&gt;&lt;- az alapértelmezés igaz -&gt;
+        *   &lt;SlideSorterActive&gt; Hamis&lt;/slideSorterActive&gt;&lt;- az alapértelmezés igaz -&gt;
+        *   &lt;wmsActive&gt; hamisság&lt;/wmsActive&gt;&lt;- az alapértelmezés igaz -&gt; Általában azt javasoljuk, hogy bármelyiket hamisítsuk.
+    * GenerateDatasets Az Xml most az eredményeket írja a _bigParentDirectory_/logs/generateDatasetsXmlLog.txt, nem log.txt. Kristian Sebastian Blalidnak köszönhetően.
+    * GenerateDatasets Az Xml most jó javaslatot tesz a&lt;újratöltés MindenNMinutes&gt;. Köszönöm a NOAA UAF projekt.
+    * Számos kis fejlesztés a GenerateDatasetsXml-hez. Köszönöm a NOAA UAF projekt.
 
-## változat{#version-142} 
- (released 2012-11-26) 
+## Verzió 1.42{#version-142} 
+ (2012-11-26) 
 
-*    **Új jellemzők:** 
-    *    (Nincsenek új funkciók.) 
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Ha Ön korszerűsíti ERDDAP™ 1.38 vagy 1.40, nem volt változás, ami szükségessé tette volna, hogy módosítsa a konfigurációs fájlokat (de az új üzenetet kell használni.xml fájl) .
-    *    ERDDAP™ újra futhat Java 1.6. ( ERDDAP™ v1.40 szükséges Java 1.7.) Továbbra is erősen javasoljuk a legújabb verziót a Java 1.7.
-    * új adatkészlet típusa, [EDDTableFrom AwsXmlFiles](/docs/server-admin/datasets#eddtablefromawsxmlfiles) , tud olvasni adatokat egy sor Automatikus Időjárás Állomás (AWS) XML adatfájlok. Hála Lynn Dewittnek és az Exploratoriumnak.
-*    **Kis változások / hibajelzés:** 
-    * Az NDBC módosításaihoz igazítva SOS forrásadat-szerverek.
-    * A NOS COOPS ASCII szolgáltatások módosításához igazítva.
-    * Számos apró változtatás és hibajavítás történt.
+*    **Új funkciók:** 
+    *    (Nincs jelentős új funkció.) 
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Ha frissülsz ERDDAP™ 1,38 vagy 1,40, nem voltak olyan változások, amelyek megkövetelik, hogy a konfigurációs fájlok módosítása (De használnia kell az új üzeneteket.xml fájlt) ...
+    *    ERDDAP™ ismét futhat együtt Java 1.6. ( ERDDAP™ v1.40 szükséges Java 1.7.) Még mindig erősen ajánljuk a legújabb verzió használatát Java 1.7.
+    * Új adatkészlettípus, [EDDTableFrom AwsXmlFiles](/docs/server-admin/datasets#eddtablefromawsxmlfiles) , olvashat adatokat egy sor automatikus időjárási állomásról (AWS) XML adatfájlok. Lynn Dewittnek és a Exploratoriumnak köszönhetően.
+*    **Kis változások/Bug javítások:** 
+    * Az NDBC változásaihoz igazodva SOS forrásadatkiszolgálók.
+    * Az NOS COOPS ASCII szolgáltatásainak változásaihoz igazodva.
+    * Készítsen több apró változtatást és bug fixeket.
 
-## változat{#version-140} 
- (released 2012- 10- 25) 
+## Verzió 1.40{#version-140} 
+ (2012-10-25) 
 
-*    **Új jellemzők:** 
-    * Van egy új kimeneti fájlformátum tabledap adatkészletek: .nc CFMA, amely a kért adatokat .nc a CF-nek megfelelő fájl [Diszkrét mintavételi geometria](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Többdimenziós tömblehetőségek, amelyek ezért megfelelnek a NODC sablonoknak \\[ 2021: most [NCII-sablonok](https://www.ncei.noaa.gov/netcdf-templates)  \\] az ilyen típusú adatok tárolására. Hála az NDC-nek.
-    *    tabledap A kérelmek időkorlátokat is tartalmazhatnak, mint például az & idő &gt; now- 5 nap. Lásd a [dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) . Hála James Goslingnak.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Ha Ön korszerűsíti ERDDAP™ 1.38, nem volt olyan változás, amely szükségessé tette volna, hogy módosítsa a konfigurációs fájlokat (de az új üzenetet kell használni.xml fájl) .
-    *    ERDDAP™ a közkiadások és a belső mérföldkövek elérhetők az alábbi címen: [ ERDDAP™ a GitHub-ról](https://github.com/ERDDAP) . További információkért lásd a [Wiki](https://github.com/ERDDAP/erddap/wiki) a következő szövegrész: ERDDAP™ projekt és általánosabb [ ERDDAP™ Programozó útmutató](/docs/contributing/programmer-guide) . (Ezt külön bejelentették néhány héttel a ERDDAP™ 1.38-as kiadás.) 
+*    **Új funkciók:** 
+    * Van egy új kimeneti fájl formátum tabledap adatkészletek: .nc CFMA, amely megmenti a kért adatokat egy .nc fájl, amely megfelel a CF [Discrete Sampling Geometries](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Multidimenzionális Array opciók, és ezért megfelel az NODC sablonoknak \\[ 2021: most a [NCEI sablonok](https://www.ncei.noaa.gov/netcdf-templates)  \\] az ilyen típusú adatok tárolására. NODC-nek köszönhetően.
+    *    tabledap a kérelmek most tartalmazhatnak időkorlátokat, például &time&gt; now- 5 nap. Lásd: [dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) ... James Goslingnek köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Ha frissülsz ERDDAP™ 1.38, nem voltak olyan változtatások, amelyek megkövetelik, hogy módosítsa a konfigurációs fájlokat (De használnia kell az új üzeneteket.xml fájlt) ...
+    *    ERDDAP™ nyilvános kiadások és belső mérföldkövek állnak rendelkezésre [ ERDDAP™ GitHub](https://github.com/ERDDAP) ... További információkért lásd: [Wiki](https://github.com/ERDDAP/erddap/wiki) Mert ERDDAP™ projekt, valamint az általánosabb [ ERDDAP™ Programozó útmutató](/docs/contributing/programmer-guide) ... (Ezt néhány héttel azután jelentették be, hogy ERDDAP™ 1.38 kiadás.) 
     * GenerateDatasets Az Xml javult.
-        * A szkriptet felülvizsgálták, így minden Linux számítógépen megfelelően kell működnie. (nem csak néhány) .
-        * Most már hozzáteszi: creator\\_name , creator\\_email , és creator\\_url ha lehetséges.
-        * Sok más kis fejlesztések.
-    * Hogyan finomított ERDDAP™ foglalkozik az idővel.
-        * Belül, ERDDAP™ Most milliszekundum pontossággal kezeli az időt (nem másodperc) .
-        * Most már opcionálisan megadhatja egy adott adatkészlet időpontosságát, lásd [ time\\_precision ](/docs/server-admin/datasets#time_precision) . Például beállíthat egy adatelemet, hogy az időértékeket dátumpontossággal jelenítse meg (Például, 1970- 01- 01) .
-        * Az aktuális adatkészletei az alapértelmezett beállításokat fogják használni, így ezeket nem érintik ezek a változások, és az időt másodpercpontossággal fogják megjeleníteni. Köszönet Cizmelinek és Philip Goldsteinnek.
-    *    [EDDTableFromNcCFFiles](/docs/server-admin/datasets#eddtablefromnccffiles) egy új dataset típus, amit használhat a datasets.xml akta. Elolvassa az adatokat a számos fájl formátumok által meghatározott [CF Diszkrét mintavételi geometria](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Konvenciók. Köszönet a NODC-nek, és külön köszönet Kyle Wilcox-nak, hogy mintafájlokat készített a nagy számú érvényes DSG fájlformátumhoz, és nyilvánosan hozzáférhetővé tette azokat.
-*    **Kis változások / hibajelzés:** 
-    * A [quickRestart](#quick-restart) rendszer minden releváns EDDGrid és EDDTable alosztályok.
-    * Javított dokumentáció, különösen a felhasználás módjával kapcsolatban [graddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType) és [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType) különböző ügyfélszoftverek.
-    * A minTime és / vagy a maxTime támogatása érdekében megváltozott a keresés epochondokban kifejezve. Lynn Dewitt-nek köszönhetően.
-    * Megváltozott .htmlTable kimeneten megjeleníteni urls és e-mail címek linkként.
-    * Hozzáadva a vonatkozó "rel =" és "rev =" értéket&lt;a href &gt; tags. Köszönet Pat Cappelaere-nek a OGC   REST projekt.
-    * Javított védelem a nem realisztikusan nagy adatkérésekkel szemben, különösen tabledap ahol ez egy nehezebb probléma.
-    * Több üzenetet küldött üzeneteknek.xml.
-    * Sebességjavítások.
-    * Rögzített EDDGrid FromFiles lehetővé teszi a csökkenő válogatott tengelyek. Hála Maricel Etchegaray-nak.
-    * Eltávolított hivatkozások az iGoogle-ra, mivel abba fogják hagyni.
-    * Számos apró változtatás és hibajavítás történt.
+        * A forgatókönyvet felülvizsgálták, így helyesen kell működnie minden Linux számítógépen (nem csak néhány) ...
+        * Most hozzáteszi creator\\_name , creator\\_email és creator\\_url bármikor lehetséges.
+        * Sok más kis fejlesztés.
+    * finomította, hogyan ERDDAP™ foglalkozik az idővel.
+        * Internally, ERDDAP™ most kezeli az időket a millisecond precision (nem másodpercek) ...
+        * Most opcionálisan meghatározhatja az adott adatkészlet időtartamát, lásd [ time\\_precision ](/docs/server-admin/datasets#time_precision) ... Például létrehozhat egy adathalmazt az időértékek megjelenítéséhez dátum pontossággal (pl.: 1970-01-01) ...
+        * A jelenlegi adatkészletek fogják használni az alapértelmezett beállításokat, így ezek nem érintik ezeket a változásokat, és továbbra is megjeleníti az időt a második pontossággal. Servet Cizmelinek és Philip Goldsteinnek köszönhetően.
+    *    [EDDTableFromNcCFFiles](/docs/server-admin/datasets#eddtablefromnccffiles) egy új adatkészlettípus, amelyet Ön használhat datasets.xml fájl. Elolvashatja az adatokat a számos fájlformátum közül, amelyet a [CF Discrete Sampling Geometries](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) egyezmények. A NODC-nek és különlegesnek köszönhetően a Kyle Wilcox-nak, hogy mintafájlokat készítsen a hatalmas számú érvényes DSG fájlformátumhoz, és nyilvánosan hozzáférhetővé tegye őket.
+*    **Kis változások/Bug javítások:** 
+    * Bővebben [GyorsRestart](#quick-restart) rendszer minden releváns EDDGrid EDDTable alosztályok.
+    * Javított dokumentáció, különösen azzal kapcsolatos, hogyan kell használni [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType) és [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType) különböző ügyfélszoftverekből.
+    * Változott fejlett keresés támogatására MinTime és / vagy maxTime kifejezett epochSeconds. Lynn Dewittnak köszönhetően.
+    * megváltozott .htmlTable output megjeleníteni urls és e-mail címek, mint linkek.
+    * Hozzáadott "rel=" és "rev=" a relevánshoz&lt;href&gt; címkék. Pat Cappelaere-nek köszönhetően OGC   REST projekt.
+    * Javított védelem az irreálisan nagy adatkérések ellen, különösen a tabledap , ahol ez egy nehezebb probléma.
+    * Több üzenetet küldött az üzenetekhez.xml.
+    * Made sebesség javítása.
+    * Fix EDDGrid FromFiles, hogy lehetővé tegye a felemelkedő rendezett tengelyek. Maricel Etchegaraynak köszönhetően.
+    * Távolított hivatkozások az iGoogle-ra, mivel megszűnik.
+    * Készítsen több apró változtatást és bug fixeket.
 
-## változat{#version-138} 
- (kiadás dátuma: 2012-04-21) 
+## Verzió 1.38{#version-138} 
+ (2012-04-21) 
 
-*    **Új jellemzők:** 
-    * ISO 19115 és FGDC -- ERDDAP™ automatikusan generálhat ISO 19115 és FGDC XML metaadatokat minden adatkészlethez. A fájlokra mutató linkek az adatkészletek minden listáján láthatók. (pl. a teljes szöveges keresésből) és a webes elérhető mappák (WAF)   (lásd a [FGDC WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/fgdc/xml/) és [ISO 19115 WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/iso19115/xml/) ) . Hála Ted Habermann-nek, Dave Neufeld-nek és még sok másnak.
-    * Teljes szöveges keresések az adatbázisokhoz most a\\ - _ excludedWord _ és\\ - "_ kizárt kifejezés _". Hála Rich Signell-nek.
-    * Az adatok keresése most egy oldalt ad vissza. Az alapértelmezett paraméter sztringet használja: page = 1 & itemsPerPage = 1000, de a kérés URL-jében megváltoztathatja az értékeket. Hála Steve Hankinnek és az UAF projektnek.
-    *    OpenSearch -- ERDDAP™ most támogatja a [ OpenSearch 1, 1](https://coastwatch.pfeg.noaa.gov/erddap/opensearch1.1/index.html) standard adatkészletek keresésére. Többek között, ez lehetővé teszi a katalógus aggregáció weboldalak csinálni megosztott keresések (a keresési kérelem továbbítása minden olyan katalógushoz, amelyről tud) .
-    * Elválasztott vessző Érték (CSV) Akták... ERDDAP™ most CSV fájlokat generál egy vesszővel az értékek között (amelyet Excel előnyben részesít) vessző helyett. Hála Jeff DeLaBeaujardere-nek.
-    * Millió Dataset... Számos változtatás történt a támogatás érdekében ERDDAP Rengeteg adatunk van, talán még egy millió is. Hála Steve Hankinnek és az UAF projektnek.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
+*    **Új funkciók:** 
+    * ISO 19115 és FGDC - ERDDAP™ automatikusan generálhat ISO 19115 és FGDC XML metaadat fájlokat minden adatkészlethez. A fájlokra való hivatkozások láthatóak az adatkészletek minden listáján (pl. a teljes szöveges keresésből) és a web hozzáférhető mappákban is (WAF)   (lásd: [FGDC WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/fgdc/xml/) és [ISO 19115 WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/iso19115/xml/) ) ... Ted Habermannnak, Dave Neufeldnek és sok másnak köszönhetően.
+    * A teljes szöveges keresések az adatkészletekhez most \\-_ excludedWord _ és \\- "kizárt phrase_" Rich Signellnek köszönhetően.
+    * Az adatkészletek keresése most egy időben visszaadja az oldalt. Az alapértelmezettség a paramétercsíkot használja: oldal=1 & itemsPerPage=1000, de a kérelem URL-jében megváltoztathatja az értékeket. Steve Hankinnak és az UAF projektnek köszönhetően.
+    *    OpenSearch - ERDDAP™ most támogatja [ OpenSearch 1.1.](https://coastwatch.pfeg.noaa.gov/erddap/opensearch1.1/index.html) szabvány az adatkészletek kereséséhez. Többek között ez lehetővé teszi a katalógus aggregációs weboldalak elosztott keresések (keresési kérelem átadása minden katalógushoz, amit tud) ...
+    * Comma különválasztva Érték (CSV) File - ERDDAP™ most CSV-fájlokat generál az értékek között (melyik Excel preferálja) a comma+space helyett. Jeff deLaBeaujardiere-nek köszönhetően.
+    * Millió adatkészletek - Több változtatást tettek a támogatás érdekében ERDDAP óriási számú adatkészlettel, talán még egy millióval. Steve Hankinnak és az UAF projektnek köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
 #### Gyors újraindítás{#quick-restart} 
-*    [A](#quick-restart) a gyors újraindítás lehetővé teszi ERDDAP™ hogy sokkal gyorsabban újraindítsuk.
-     **Ezt adja hozzá a setup.xml fájljához** rögtön utána.&lt;/ datasetsRegex &gt;:
+*    [A](#quick-restart) gyors újraindítási rendszer lehetővé teszi ERDDAP™ sokkal gyorsabb újraindítás.
+     **Kérjük, add hozzá ezt a beállításhoz.xml fájlt** utána&lt;/datasetsRegex&gt;:
 ```
               <!-- If true, when you start up ERDDAP™, some types of datasets (e.g., 
               EDDGridFromDap) will used cached information (.dds, .das, etc.) to reload
@@ -2146,8 +2163,8 @@ amely meg tudja mondani ERDDAP™ a fájl megőrzése táblázat (az egyes forr�
               <quickRestart>true</quickRestart>
 ```
 
-    * Az adatkészletek teljes szöveges keresése most már elvégezhető a Lucene keresőmotorral (bár javasoljuk az eredeti keresőmotor, ha kevesebb, mint 10 000 adatkészlet) vagy az eredeti keresőrendszer.
-         **Ezt adja hozzá a setup.xml fájljához** rögtön utána.&lt;/ DisplayDiagnosticInfo &gt;:
+    * Az adatkészletek teljes szöveges keresése most a Lucene keresőmotorral elvégezhető (Bár az eredeti keresőmotort ajánljuk, ha kevesebb mint 10 000 adatkészlete van) vagy az eredeti keresési rendszer.
+         **Kérjük, add hozzá ezt a beállításhoz.xml fájlt** utána&lt;/displayDiagnosticInfo&gt;:
 ```
               <!-- ERDDAP™ lets you choose between two search engines for full text searches:
               \\* original (the default) -- is the best choice if your ERDDAP™ has fewer 
@@ -2164,73 +2181,73 @@ amely meg tudja mondani ERDDAP™ a fájl megőrzése táblázat (az egyes forr�
               <searchEngine>original</searchEngine>
 ```
 
-    * A setup.xml, akkor / kell hozzáadni két új kategóriát a comma- elválasztott lista&lt; categoryAttributes &gt;:
-        * globális: kulcsszavak (Hozzáadás közvetlenül a globális után: intézmény) -- egy új különleges eset, amely elválasztja a kulcsszavak listáját a globális kulcsszavak attribútumától, hogy minden kulcsszó külön legyen.
-        * változó Név (Add hozzá a végén) -- egy új különleges eset, amely kategorizálja minden egyes dataVariable   destinationName c.
-    * Setup.xml, akkor (De miért?) Mondd ERDDAP™ nem lehet FGDC és / vagy ISO 19115 metaadatokat kínálni semmilyen adatkészlethez,
+    * A setup.xml-ben most két új kategóriát adhat hozzá a Comma-elválasztott listához&lt; categoryAttributes &gt;:
+        * globális: kulcsszavak (add hozzá közvetlenül a globális: intézmény) - egy új különleges eset, amely a globális kulcsszavakból származó komákkal elválasztott listát választja ki, amelynek célja, hogy minden kulcsszava külön beléphessen.
+        * változó név (add hozzá a végén) - egy új különleges eset, amely kategorizálja az egyeseket dataVariable   destinationName S.
+    * A beállításban.xml, akkor lehet (De miért?) mondja: ERDDAP™ nem kínál FGDC és / vagy ISO 19115 metaadat minden adatkészlet, beleértve
 ```
         <fgdcActive>false</fgdcActive>  
         <iso19115Active>false</iso19115Active>
 ```
 
-A beállítások alapértelmezett értékei igazak.
-    * In datasets.xml , kérem, fontolja meg a metaadatok javítását az adatkészletekhez. ERDDAP™ Most automatikusan létrehozza az ISO 19115 és az FGDC XML metaadatfájlokat minden adatkészlethez az adatkészlet metaadatai alapján.
-Szóval, **jó adatkészlet metaadatok vezet jó ERDDAP -generált ISO 19115 és FGDC metaadatok.**   
-         **Lásd a számos új AJÁNLOTT dokumentumot [Globális attribútumok](/docs/server-admin/datasets#global-attributes) .** 
-    * In datasets.xml , if you wanna tell ERDDAP™ egy előre gyártott FGDC és / vagy ISO 19115 fájl használata, amely valahol a szerver fájlrendszerén van ahelyett, hogy ERDDAP™ generálja ezeket a fájlokat, használja:
+Ezeknek a beállításoknak az alapértelmezett értékek igazak.
+    * Inkább datasets.xml Kérjük, vegye figyelembe a metaadatának javítását az adatkészleteihez. ERDDAP™ most automatikusan generál ISO 19115 és FGDC XML metaadat fájlokat minden adatkészlet alapján adatkészlet metaadata.
+Szóval, **a jó adatkészlet metaadata jóhoz vezet ERDDAP - generált ISO 19115 és FGDC metaadata.**   
+         **Lásd az új dokumentációt a sok új RECOMMENDED számára [Globális tulajdonságok](/docs/server-admin/datasets#global-attributes) ...** 
+    * Inkább datasets.xml Ha el akarod mondani ERDDAP™ egy előre elkészített FGDC és / vagy ISO 19115 fájl használata, amely valahol a szerver fájlrendszerén van, ahelyett, hogy ERDDAP™ generálja ezeket a fájlokat, használja:
 ```
         <fgdcFile>_fullFileName_</fgdcFile>  
         <iso19115File>_fullFileName_</iso19115File>
 ```
-Ha _ fullFileName _\\ = "vagy a fájl nem található, az adatkészletben nem lesz FGDC és / vagy ISO 19115 metaadat. Ez tehát akkor is hasznos, ha el akarjuk nyomni az FGDC és / vagy az ISO 19115 metaadatokat egy adott adatkészlethez.
-    * In datasets.xml , mindenkinek EDDGrid SideBySide és EDDGrid Összefoglaló Létrehozási Dimenzió adatkészletek, győződjön meg arról, hogy a gyermek adatkészletek különböző datasetID a szüleik adatain és a többi gyereken kívül. (Például követhetnéd George Foreman egyszerű, de hatékony rendszerét, hogy elnevezd a gyerekeit.) Ha egy családban egy név pontosan ugyanaz, az adatkészlet nem fog betölteni (a hibaüzenettel, hogy az összesített tengely értékei nincsenek rendezett sorrendben) .
-    * In datasets.xml , volt néhány változás a lista érvényes ioos\\_category metaadatok értékei:
-        * A "pCO2" -t "CO2" -ra változtatták.
-        * "Fizikai Oceanográfia" került beillesztésre.
-        * "Talaj" lett hozzáadva.
-    * In datasets.xml , ERDDAP™ már nem engedélyezi a "." -t datasetID . Megengedték, de elbátortalanították. (Sajnálom.) 
-    * In datasets.xml , a beállítás EDDTableFromThreddsFiles és EDDTableFron Hyrax A fájlok kissé megváltoztak, mert mindkét osztályt átírták, hogy hatékonyabbak legyenek. (Most mindkét osztály helyi másolatot készít az összes távoli adatfájlról) . Lásd ezen osztályok felállításának dokumentációját: [EDDTableFrom Hyrax Fájlok](/docs/server-admin/datasets#eddtablefromhyraxfiles) és [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Különösen az alábbiakra vonatkozó felülvizsgált észrevételek&lt;fileDir &gt; (Most már lényegtelen.) és&lt; sourceUrl &gt; (Most már létfontosságú.) . Továbbá, soha nem kellene becsomagolni ezt az osztályt az EDDTableCopy hatékonyság.
-    * In datasets.xml , ha az EDDTableFromDatabase-t a Oracle adatbázis, tartalmaznia kell egy kapcsolatot Tulajdonság, mint például
+Ha a _fullFileName_\\="" vagy a fájl nem található, az adatkészletnek nincs FGDC és / vagy ISO 19115 metaadata. Tehát ez akkor is hasznos, ha el akarja nyomni az FGDC-t és/vagy az ISO 19115 metaadatot egy adott adatkészlethez.
+    * Inkább datasets.xml Mindenért EDDGrid SideBySide és EDDGrid AggregateExistingDimension adatkészletek, hogy bizonyos, hogy a gyermek adatkészletek különböző datasetID a szülői adatkészleteknél és a többi gyermeknél. (Például követheti George Foreman egyszerű, de hatékony rendszerét a gyermekeinek megnevezésére.) Ha a család bármely neve pontosan ugyanaz, az adatkészlet nem terheli (a hibaüzenet, hogy az összesített tengely értékei nem rendezett rendben vannak) ...
+    * Inkább datasets.xml Volt néhány változás az érvényes listán ioos\\_category metadata értékek:
+        * "pCO2" változott a "CO2".
+        * "A fizikai óceánográfia" hozzáadódott.
+        * "A talajokat" hozzáadták.
+    * Inkább datasets.xml , ERDDAP™ már nem teszi lehetővé a "."-t egy datasetID ... Megengedték, de elriasztották. (Sorry) 
+    * Inkább datasets.xml , az EDDTableFromThreddsFiles és az EDDTableF Hyrax A fájlok kissé megváltoztak, mert mindkét osztályt csak újraírták, hogy hatékonyabbak legyenek (mindkét osztály mindig készít helyi másolatot az összes távoli adatfájlról) ... Lásd a dokumentációt ezen osztályok létrehozásához: [EDDTableFrom Hyrax Fiók](/docs/server-admin/datasets#eddtablefromhyraxfiles) és [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) ... Különösen lásd a felülvizsgált megjegyzéseket a&lt;fájlDir&gt; (most irreleváns) és&lt; sourceUrl &gt; &gt; &gt; &gt; (most lényeges) ... Továbbá, soha ne csomagolja ezt az osztályt az EDDTableCopy-ban a hatékonyság érdekében.
+    * Inkább datasets.xml Ha EDDTableFromDatabase-t használsz egy Oracle adatbázis, tartalmaznia kell egy kapcsolatot Tulajdon, mint például
 ```
         <connectionProperty name="defaultRowPrefetch">4096</connectionProperty>  
 ```
-meg kell határozni, hogy hány sort kell egyszerre beszerezni, mert az alapértelmezett 10, ami borzasztóan nem hatékony. Lásd a [ Oracle dokumentáció](https://docs.oracle.com/cd/B10501_01/java.920/a96654/basic.htm) . A MySql-nek és a PostgreSQL-nek ennél jobb alapértelmezései vannak. Hála Kevin O 'Briennek.
-    * Ha EDDTableFromDatabase-t használ, nézze meg a javított ["Sebesség" dokumentáció](/docs/server-admin/datasets#eddtablefromdatabase) a teljesítmény javítására irányuló további javaslatok. Hála Kevin O 'Briennek.
-    * In datasets.xml , minden EDDTable... adatkészletek, az egyezmények és Metadata\\_Conventions globális attribútumok, kérjük, olvassa el a CF- 1.6-ot (CF- 1, 0, 1, 1, 1, 1, 3, 1, 4 vagy 1, 5) , mivel a CF- 1.6 az első olyan változat, amely tartalmazza a diszkrét mintavételi geometriához kapcsolódó változásokat.
-    * Programozók, amelyek a ERDDAP™ kód kell hozzáadni lib / lucene- core.jar a listához a javac és java parancssorokat.
-    *    ERDDAP™ a [új szolgáltatás](https://coastwatch.pfeg.noaa.gov/erddap/convert/keywords.html) konvertálni egy CF standard név egy GCMD Science kulcsszó. Ezt akkor találhatja hasznosnak, ha globális kulcsszavakat hoz létre az adatkészletekhez az Ön ERDDAP .
-    * Bot-okkal üzletelni... Kérjük, olvassa el ezt a tanácsot: [megakadályozza, hogy a robotok a ERDDAP™ Egy hülye módon.](/docs/server-admin/additional-information#robotstxt) .
-    * Fordítás... A szöveg ERDDAP A weboldalak most többnyire az üzenetek.xml és így alkalmas a fordítás a különböző nyelvekre (pl. német, francia) . Az üzenetek most gyakran használja MessageFormat formázás, is segít a fordítások. Ha szeretne egy fordítást, kérjük, e-mailben erd dot data at noaa dot gov .
-    * Minta datasets.xml -- Számos apró, de jelentős hiba volt a mintában datasets.xml . Ha használja ezeket az adatokat, kérjük, hogy az újabb verziókat az új minta datasets.xml az új erddapContent-ban .zip akta. Hála James Wilkinsonnak.
-    * Git... I will try to make ERDDAP™ A GitHub projekt a kiadás után azonnal.
-*    **Kis változások / hibajelzés:** 
-    * Egy új paletta, OceanDepth, hasznos mélységi értékek (pozitív a csökkenés) például: 0 (sekély) 8000-től (mély) .
-    * A .kml kimenet tabledap jobb jelölőikont használ (Nem homályos.) . És most, hogy egy filctoll fölött lebeg, még nagyobb lesz.
-    * EDDTableFromFiles -- Az utolsó frissítés, az új netcdf- java könyvtár szigorúbb korlátozásokat változó nevek .nc fájlok. Ez okozott problémákat az EDDTableFromFiles, ha egy változó sourceName bizonyos írásjelek. EDDTableFromFiles most módosult, hogy elkerülje ezt a problémát. Thomas Holcomb-nak köszönhetően.
-    * A .subset oldal most támogatja 0 / 10 / 100 / 1000 / 10000 / 100000 a kapcsolódó adatokra vonatkozó ellenőrző doboz helyett. Az eszköztipp figyelmezteti, hogy 100000 okozhat a böngésző összeomlik. Hála Annette DesRochersnek, Richard (Abe.) Coughlin, és az IOOS Biological Project.
-    * ... / erddap / info / _ datasetID _ / index.html weboldalak most látható urls és e-mail címek kattintható linkek. Hála Richardnak. (Abe.) Coughlin és az IOOS Biological Project.
-    * hibajavítás: in tabledap magasságú adatkészletek esetében MetersPerSourceUnit&lt;0, a magassági korlátokkal rendelkező lekérdezéseket helytelenül kezelték. Kyle Wilcox-nak köszönhetően.
-    * A hibajavítás: EDDGrid AggregateFromExistingDimension most támogatja a változatosabb TDS URL. Hála?
+meg kell határozni, hogy hány sornyi adatot fetch egy időben, mert az alapértelmezés 10, ami szörnyen nem hatékony. Lásd: [ Oracle dokumentáció](https://docs.oracle.com/cd/B10501_01/java.920/a96654/basic.htm) ... A MySql és a PostgreSQL úgy tűnik, hogy jobb alapértelmezettséggel rendelkezik ehhez a beállításhoz. Kevin O'Briennek köszönhetően.
+    * Ha EDDTableFromDatabase-t használ, lásd a javított ["Speed" dokumentáció](/docs/server-admin/datasets#eddtablefromdatabase) további javaslatok a teljesítmény javítására. Kevin O'Briennek köszönhetően.
+    * Inkább datasets.xml , minden EDDTable... adatkészletek, az egyezményekben és Metadata\\_Conventions globális tulajdonságok, kérjük, utaljon a CF-1.6-ra (nem CF-1.0, 1.1, 1.2, 1.3, 1.4 vagy 1.5) Mivel a CF-1.6 az első verzió, amely tartalmazza a Discrete Sampling Geometryhez kapcsolódó változásokat.
+    * Programozók, amelyek összeállítják a ERDDAP™ A kódnak hozzá kell adnia a lib/lucene-core.jar-t a Jar fájlok listájához a javac és a java parancssori útjaikban.
+    *    ERDDAP™ Van egy [új szolgáltatás](https://coastwatch.pfeg.noaa.gov/erddap/convert/keywords.html) átalakítani egy CF Standard neve / a GCMD Science Keyword. Lehet, hogy ez hasznos, ha generál globális kulcsszavak metaadata az adatkészletek az Ön ERDDAP ...
+    * A botok kezelése - Kérjük, olvassa el ezt a tanácsot [megakadályozza a botokat az összeomlástól ERDDAP™ hülye módon](/docs/server-admin/additional-information#robotstxt) ...
+    * Fordítás - A szöveg ERDDAP A weboldalak többnyire üzenetekben vannak.xml és így alkalmasak a különböző nyelvekre való fordításra (pl. német, francia) ... Az üzenetek most gyakran használják MessageFormat formázásra, szintén segítenek fordítások készítésében. Ha érdekel a fordítás, kérjük e-mail erd dot data at noaa dot gov ...
+    * minta datasets.xml - Több kicsi, de jelentős hiba volt a mintában datasets.xml ... Ha ezeket az adatkészleteket használja, kérjük, szerezze be az új mintát datasets.xml az új erddapContent .zip fájl. James Wilkinsonnak köszönhetően.
+    * Git - Megpróbálok keményen csinálni ERDDAP™ GitHub projekt ASAP után ezt a kiadást.
+*    **Kis változások/Bug javítások:** 
+    * Egy új paletta, OceanDepth, hasznos a mélységi értékek számára (a pozitív) , pl. 0 (Súgó) 8000-ig (mély) ...
+    * A .kml kimenetből tabledap Használ egy jobb marker ikon (nem fuzzy) ... És egy marker fölötti elhelyezés most nagyobbá teszi.
+    * EDDTableFromFiles - Az utolsó frissítésben az új netcdf-java könyvtár szigorúbb korlátozásokkal rendelkezett a változó nevek tekintetében .nc fájlok. Ez problémákat okozott az EDDTableFromFiles számára, ha a változó sourceName volt bizonyos punctuációs karakterek. Az EDDTableFromFiles most módosított, hogy elkerülje ezt a problémát. Thomas Holcombnak köszönhetően.
+    * A .subset oldal most támogatja 0/10/100/1000/1000/10000/100000 a Kapcsolódó adatok ellenőrzési doboza helyett. A tooltip figyelmeztet, hogy 100000 okozhatja a böngészőjét, hogy összeomlik. Annette DesRochersnek köszönhetően Richard (Abe) Coughlin és az IOOS biológiai projekt.
+    * .../erddap/info/_ datasetID _/index.html weboldalak most késztetéseket és e-mail címeket mutatnak kattintható linkként. Richardnak köszönhetően (Abe) Coughlin és az IOOS biológiai projekt.
+    * Bug fix: In tabledap Adatkészletek magassággal MetersPerSourceUnit&lt;0, a magassági korlátozásokkal kapcsolatos kérdéseket helytelenül kezelték. Kyle Wilcoxnak köszönhetően.
+    * Bug fix: EDDGrid Az AggregateFromExistingDimension most több különböző TDS URL-t támogat. Köszönöm?
 
-## Változat 1.36{#version-136} 
- (kiadás dátuma: 2011-08-01) 
+## Verzió 1.36{#version-136} 
+ (2011-08-01) 
 
-*    **Új jellemzők:** 
-    * A felhasználó szempontjából nincs jelentős változás.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * A pmelTao adatkészlet, amelyet gyakran használtak mintaadatként a tabledap   
-a dokumentáció már nem áll rendelkezésre. ERDDAP™ Az adminisztrátoroknak a következő változtatásokat kell végrehajtaniuk:
-        * Az Ön datasets.xml , ha datasetID = "pmelTao" adatkészlet, add
-aktív = "hamis" közvetlenül a "&gt;" előtt a sor végén.
-        * Ha Ön&lt;EDDTableIdPélda &gt; pmelTao, majd:
-            * Ha datasets.xml nincs adatkészlete datasetID = "erdGlobecBottle", add
+*    **Új funkciók:** 
+    * Nincs jelentős változás a felhasználó álláspontjából.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * A pmelTao adatkészlet, amelyet gyakran használtak minta adatkészletként tabledap   
+A dokumentáció már nem elérhető. ERDDAP™ adminisztrátorok MUST ezeket a változásokat:
+        * A te datasets.xml Ha van egy datasetID ="pmelTao" adatkészlet, add hozzá
+aktív="hamis" közvetlenül a "&gt;" előtt a sor végén.
+        * A beállításban.xml, ha a&lt;EDDTableIdExample&gt; pmelTao, akkor:
+            * Ha a te datasets.xml nem rendelkezik adatkészlettel datasetID ="erdGlobecBottle", add hozzá
 ```
                 <dataset type="EDDTableFromErddap" datasetID="erdGlobecBottle" active="true">  
                   <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGlobecBottle</sourceUrl>  
                 </dataset>
 ```
-            * A setup.xml, cserélje ki az összes címkét&lt;EDDTableIdPélda &gt; keresztül
-                &lt;EDDTable Matlab Példa és
+            * A setup.xml, cserélje ki az összes címkét&lt;EDDTableIdExample&gt; keresztül
+                &lt;EDDTable Matlab PlotExample vele
 ```
                 <!-- Tabledap Examples
                 This group of settings is used to make examples for the tabledap documentation 
@@ -2275,68 +2292,68 @@ aktív = "hamis" közvetlenül a "&gt;" előtt a sor végén.
                 <EDDTableMatlabPlotExample>plot(erdGlobecBottle.bottle\\_posn, erdGlobecBottle.temperature1)</EDDTableMatlabPlotExample>
 ```
                 
-    * Az olyan adathalmazok esetében, ahol a típus az EDDTableFromFiles alosztálya, most már metaadatok készíthetők.
-Pontosabban, most már lehet, hogy egy változó az értékek egy attribútum az egyik eredeti változók.
-Például: datasets.xml a&lt; dataVariable &gt; címke, ha használja
+    * Az olyan adatkészletek esetében, ahol a típus az EDDTableFromFiles alosztálya, most adatokat készíthet a metaadatból.
+Pontosabban, most változhat az értékek egy tulajdonság az egyik eredeti változó.
+Például, datasets.xml Egyen belül&lt; dataVariable &gt; címke, ha használja
 ```
         <sourceName>variable:cruise:PI</sourceName>  
 ```
-         ERDDAP™ Készít egy változót a hajóút-változó PI-attribútumának értékeivel.
-Hála WOD-nak.
+         ERDDAP™ variálhatóvá válik a cruise változó PI tulajdonságának értékeivel.
+Hála a WOD-nak.
 *    **Változások:** 
     * Kis változások
 
-## változat{#version-134} 
- (kiadás dátuma: 2011- 06- 15) 
+## Verzió 1.34{#version-134} 
+ (2011-06-15) 
 
 *    **Változások:** 
-    * A hibajavítás: Rögzített egy memória szivárgás, hogy történt néhány 64 bites Java berendezések.
-    * A hibajavítás: ERDDAP™ most helyesen állítja be ezeket a globális attribútumokat, amikor a szélességi dimenzió értékei magastól alacsonyig terjednek: geosteral\\ _ lat\\ _ min, geosteral\\ _ lat\\ _ max, Southernmost\\ _ Northing, Northernmost\\ _ Northing.
+    * Bug fix: Rögzített egy memória szivárgás, amely néhány 64 bites Java telepítések.
+    * Bug fix: ERDDAP™ most helyesen állítja be ezeket a globális tulajdonságokat, amikor a szélességi dimenzió értékei magasról alacsonyra terjednek: geospatial\\_lat\\_min, geospatial\\_lat\\_lat\\_max, Southernmost\\_Northing, Northernmost\\_Northing.
         
-Megjegyzés: actual\\_range változatlan: alacsony, magas vagy magas, alacsony értékei lehetnek, mivel a tárolási tartomány és annak sorrendje feltüntetésére szolgál.
+Vegyük észre, hogy actual\\_range változatlan: lehet, hogy alacsony, magas értékek vagy magas, alacsony értékű értékek, mivel azt a célt, hogy jelezzék a tartományt és a tárolási rendet.
         
-    * Apró változások.
-    *    ERDDAP™ Az adminisztrátoroknak nem kell változtatniuk a setup.xml-en vagy datasets.xml .
+    * Kis változások.
+    *    ERDDAP™ Az adminisztrátoroknak nem kell változtatniuk a beállításukon.xml vagy datasets.xml ...
 
-## változat{#version-132} 
- (released 2011- 05- 20) 
+## Verzió 1.32{#version-132} 
+ (2011-05-20) 
 
 *    **Változások:** 
-    * Az újonnan ratifikált CF diszkrét mintavételi geometriák támogatása (ami sajnos még nem elérhető online) a javasolt CF Point Observation Conventions helyébe lép.
-         ERDDAP™ A felhasználók látni fogják, hogy a cdm\\ _ function\\ _ type = Station helyébe a TimeSeries lép, és kis változások vannak a fájlokat létrehozott .nc CF fájltípus (A lapos\\ _ dimenziót most minta\\ _ dimenziónak hívják) .
-         ERDDAP™ az adminisztrátoroknak el kell végezniük ezeket a változásokat datasets.xml :
-        * cdm\\ _ data\\ _ type = Station to be cdm\\ _ data\\ _ type = TimeSeries.
-        * cdm\\ _ data\\ _ type = StationProfile-t cdm\\ _ data\\ _ type = TimeSeriesProfile-ra kell módosítani.
-        * cdm\\ _ station\\ _ változókat cdm\\ _ timeseries\\ _ változókra kell változtatni.
-        * cf\\ _ role = station\\ _ id = cf\\ _ role = timeseries\\ _ id.
-    * Új ioos\\_category opciók: "Colored Dissolided Organic Matter", "pCO2", "Stream Flow", "Total Suspended Matter".
-    * Lehetséges megoldás a 64 bites memória szivárgására Java . \\[ Nem működött. \\] 
-    * Apró változások.
+    * Az újonnan ratifikált CF Discrete Sampling Geometries támogatása (amely sajnos még nem elérhető online) , amely helyettesíti a javasolt CF Point megfigyelési egyezményeket.
+         ERDDAP™ a felhasználók látni fogják, hogy a cdm\\_feature\\_type=Station helyettesíti a TimeSeries-t, és kis változások vannak a létrehozott fájlokban. .nc CF fájltípus (flat\\_dimenziót most minta\\_dimenziónak nevezik) ...
+         ERDDAP™ Az adminisztrátoroknak meg kell tenniük ezeket a változásokat datasets.xml :
+        * cdm\\_data\\_type=Station kell változtatni cdm\\_data\\_type=TimeSeries.
+        * cdm\\_data\\_type=StationProfilt módosítani kell a cdm\\_data\\_type=TimeSeriesProfile-re.
+        * cdm\\_station\\_variables kell változtatni a cdm\\_timeseries\\_variables.
+        * cf\\_role=station\\_id kell változtatni a cf\\_role=timeseries\\_id.
+    * Új ioos\\_category opciók: "Colored Dissolved Organic Matter", "pCO2", "Stream Flow", "Total Suspended Matter".
+    * Lehetséges megoldás egy lehetséges memóriaszivárgásra 64 bites Java ... \\[ Nem működött. \\] 
+    * Kis változások.
 
-## változat{#version-130} 
- (kiadás dátuma: 2011- 04- 29) 
+## Verzió 1.30{#version-130} 
+ (2011-04-29) 
 
-*    **Új jellemzők:** 
-    * Támogatás 64- bithez Java . 64 bites Java , ERDDAP™ Most már sokkal több halom memória és kezelni sok egyidejű kéréseket.
-    * Támogatás .nc fájlkérelmek 2GB-ig (64 bites nélkül is Java ) a ERDDAP az adatok kezelése darabokban.
-    * Sok 2X sebesség javítása a kód és 2X sebesség ups Java 1,6 ERDDAP™ 2X-től 4X-ig gyorsabb, mint korábban.
-    * A memóriamegtakarítás jelentősen alacsonyabb ERDDAP Az alapmemória használata.
-    * táblázat szerinti adatkészletek esetében: ERDDAP™ most már teljes mértékben tisztában van az adatkészlet cdm\\ _ data\\ _ type adataival, és azzal, hogy az adattérképek CDM-típusba kerülnek. Lásd a [CF Diszkrét mintavételi geometriák meghatározása](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Talán egy nap, hogy a Word fájl lesz konvertálni .html, és helyettesíti a jelenlegi "OBSOLETE" információkat a honlapon. Hála a NOAA UAF projekt.
-    * A legtöbb EDDTable adatkészlet esetében egy új kimeneti fájltípus opció, .nc CF, létrehozza a Raged Array-t .nc fájlok, amelyek megfelelnek a legújabb változata a [CF Diszkrét mintavételi geometria-egyezmények](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Ezek a fájlok az adatkészlet CDM adattípusát tükrözik. Mivel a javasolt egyezmények most változtak meg, a netcdf- java könyvtár még nem támogatja az általa létrehozott fájlformátumok olvasását. ERDDAP és CDM adatfájlként értelmezi őket. Valószínűleg hamarosan. Hála a NOAA UAF projekt.
-    * The View: Disclose Data option on the .subset web page is now a drop-down list that let users specified the maximum number of district data to be see (alapértelmezés = 1000) . Ez a változás, és mások, lehetővé teszi ERDDAP™ olyan adatkészletekkel dolgozni, amelyek nagyon sok különböző adatsorral rendelkeznek. (Az egyedi értékek száma egy változóhoz még mindig probléma, de elég magas lehet (20.000?) mielőtt a .subset és más weboldalak betölteni nagyon lassan.) Hála a NOAA UAF projekt.
-    * .subset weboldalak egy új lehetőség: Távolsági adatszámlálók megtekintése. Hála a GTOPP projektnek.
-    * A felhasználók megsegítése érdekében a különböző értékek (pl. az állomás neve) Jelenleg a Make- A- grafikonon és az adathozzáférési űrlapon látható. Hála a NOAA UAF projekt.
-    * .átlátszó A Png kérések most minden típusú grafikont és adatmegjelenítést támogatnak. Csak az adatokat rajzolja -- nincsenek tengelyek, legendák, földálarc, vagy bármi más. Ez lehetővé teszi, hogy a képek, mint réteg átlátszó Pngs. Ha & .méret = _ szélesség _ | _ magasság _ van megadva a lekérdezés (ajánlott) Megtiszteltetés. Az alapértelmezés 360x360 pixel. Az egyetlen kivétel: EDDGrid & .draw = felület, ahol az alapértelmezett (mint korábban) ~ 1 / pixel / adatpont képpel (legfeljebb 3000 x és y pixel) . Hála Fred Hochstaedternek.
-    * A WMS weboldalak most mutatja a színes sáv az adatkészlet változó (sz) . Hála Emilio Mayorgának és másoknak.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * Ez a kiadás sok változással jár. Mind fontos. Kérjük, legyen türelmes és dolgozza át az alább felsorolt változásokat.
-    * Ezt a verziót már korábban kitolták, mint azt tervezték, hogy néhány Java Biztonsági poloskák. Sajnos, több funkciók / javítások szánt erre ERDDAP™ A verzió nincs ebben a verzióban. Sajnálom. Remélhetőleg a következő verzió viszonylag hamar elkészül. (és sokkal könnyebb frissíteni) .
-    * Hogy elkerülje több biztonsági hibák Java 6 frissítés 23 és az alábbi, töltse le és telepítse a legújabb verzióját a Java   ( Java 6 frissítés 24 vagy magasabb) . Ha van egy 64 bites operációs rendszere, kérjük, szerezze meg a 64 bites verzióját Java .
-    * Ha Tomcat 5-öt használsz, fel kell frissítened Tomcat 6-ra vagy 7-re (előnyben részesített) . Ha Tomcat 6-ot használ, tekintse át a Tomcat 7-es verziójára.
-    * Kérjük, kövesse az összes utasítást [új ERDDAP™ ](/docs/server-admin/deploy-install) , de adott esetben, akkor másolja fájlokat a régi telepítés az új telepítés, különösen a \\[ Nincs magyar neve \\] / content / erddap könyvtár és fájlok. Ennek részeként, vegye figyelembe a [új Tomcat beállítási ajánlások](/docs/server-admin/deploy-install#tomcat) .
-    * Az alapértelmezett erddap.css már szerepel az erddap.war fájlban.
-        * Az alapértelmezett erddap.css használatához **Törlés** a régi \\[ Nincs magyar neve \\] / tartalom / erddap / képek / erddap.css.
-        * Ha módosítottad \\[ Nincs magyar neve \\] / content / erddap / images / erddap.css, and want to keep it: just leave it in place and place&lt;bemenet &gt; szakasz:
+*    **Új funkciók:** 
+    * 64 bites támogatás Java ... Amikor 64 bitet használnak Java , ERDDAP™ Most már sokkal több fegyveres memóriát használhat, és több egyidejű kérelmet kezelhet.
+    * Támogatás .nc fájlkérések legfeljebb 2GB (64 bites nélkül Java ) a jobb használat révén ERDDAP "Az adatok kezelése a zsákokban.
+    * Sok 2X sebesség javítása a kódban, és 2X sebesség felfelé Java 1.6 készítés ERDDAP™ 2X-4X gyorsabb, mint korábban.
+    * A memóriamegtakarítási javulás jelentősen alacsonyabb ERDDAP Alap memóriahasználat.
+    * mesés adatkészletek esetében, ERDDAP™ most teljesen tisztában van egy adatkészlet cdm\\_data\\_type-jával, és hogy az adatok hogyan térképeznek a CDM-típusra. Lásd: [CF Discrete Sampling Geometries specifikáció](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) ... Talán egy nap, hogy a Word fájl átalakul a .html-re, és felváltja a jelenlegi "OBSOLETE" információt ezen a weboldalon. Köszönöm a NOAA UAF projekt.
+    * A legtöbb EDDTable adatkészlethez egy új kimeneti fájltípus lehetőség, .nc CF, hozza létre a Contiguous Ragged Array .nc olyan fájlok, amelyek megfelelnek a legújabb verziójának [CF Discrete Sampling Geometries egyezmények](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) ... Ezek a fájlok strukturáltak a CDM adattípusának tükrözésére. Mivel a javasolt egyezmények csak változtak, mint ez az írás, a netcdf-java könyvtár még nem támogatja az általa létrehozott fájlformátumok olvasását ERDDAP és CDM adatfájlként értelmezve őket. Valószínűleg hamarosan. Köszönöm a NOAA UAF projekt.
+    * A View: Distinct Data opció a .subset weboldalon most egy ledobott lista, amely lehetővé teszi a felhasználók számára, hogy meghatározzák a különböző adatok számát, amelyeket megtekintenek (default = 1000) ... Ez a változás és mások megengedik ERDDAP™ olyan adatkészletekkel dolgozhat, amelyek nagyon sok különböző adatsorral rendelkeznek. (Az egyedülálló értékek száma minden egyes változó számára még mindig probléma, de nagyon magas lehet (20 000?) mielőtt a .subset és más weboldalak nagyon lassan töltenek be.) Köszönöm a NOAA UAF projekt.
+    * A weblapoknak új lehetőségük van: Nézd meg a Distinct Data Counts-t. A GTOPP projektnek köszönhetően.
+    * A felhasználók támogatása, a különböző értékek (pl. állomás nevek) A Make-A-Graph és az Adathozzáférési Formákon jelennek meg. Köszönöm a NOAA UAF projekt.
+    * .transzparens A Png kérelmek most mindenféle grafikont és adatképviseletet támogatnak. Csak az adatokat vonzza - nem tengelyek, legendák, hulladékok vagy bármi más. Ez lehetővé teszi, hogy a képek, mint rétegek TransparentPngs. Ha &.size=_width_ | _height_ van meghatározva a lekérdezésben (ajánlott) Megtiszteltetés. Az alapértelmezett 360x360 pixel. Az egyetlen kivétel EDDGrid &.draw=felület, ahol az alapértelmezés (mint korábban) egy kép ~1/pixel adatpontonként (akár 3000 x és y pixel) ... Fred Hochstaedternek köszönhetően.
+    * A WMS weboldalak most mutatják a színes bár az adatkészlet változó (s) ... Emilio Mayorgának és másoknak köszönhetően.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Ez a kiadás sok változást tartalmaz. Ezek mind fontosak. Kérjük, légy türelmes és dolgozzon az alábbi változásokon.
+    * Ezt a verziót korábban tömörítik, minthogy foglalkozni akarnak néhány Java Biztonsági hibák. Sajnos, több funkció / javítások tervezett erre ERDDAP™ A verzió nem szerepel ebben a verzióban. Sajnálom. Remélhetőleg a következő verzió viszonylag hamarosan (és sokkal könnyebb frissíteni, hogy) ...
+    * Több biztonsági hiba elkerülése érdekében Java 6 frissítés 23 és lent, töltse le és telepítse a legújabb verziót Java   ( Java 6 frissítés 24 vagy annál magasabb) ... Ha 64 bites operációs rendszere van, kérlek, szerezzen egy 64 bites verziót Java ...
+    * Ha a Tomcat 5-et használja, frissítse a Tomcat 6-ot vagy 7-et (preferált) ... Ha a Tomcat 6-ot használja, fontolja meg a Tomcat 7 verziójának frissítését.
+    * Kérjük, kövesse az összes utasítást [Új beállítás ERDDAP™ ](/docs/server-admin/deploy-install) , de ahol releváns, akkor másolja fájlokat a régi telepítés az új telepítés, különösen az \\[ Tomcat \\] /content/erddap könyvtár és fájlok. Ennek részeként vegye figyelembe a [új Tomcat beállítási ajánlások](/docs/server-admin/deploy-install#tomcat) ...
+    * Az alapértelmezett erddap.css most szerepel az erddap.war fájlban.
+        * Az alapértelmezett erddap.css használatához, **törlés** régi \\[ Tomcat \\] /content/erddap/images/erddap.css .
+        * Ha módosított \\[ Tomcat \\] /content/erddap/images/erddap.css, és szeretné használni: csak hagyja a helyére, és cserélje ki a helyére&lt;input&gt; rész:
 ```
             /\\* Small input items let more be shown on one screen  
             (esp. Chrome and Safari). Google Chrome and Safari have  
@@ -2352,8 +2369,8 @@ Megjegyzés: actual\\_range változatlan: alacsony, magas vagy magas, alacsony �
             input.skinny {padding:0px 1px; }
 ```
 
-    * Az Ön \\[ Nincs magyar neve \\] / tartalom / erddap / setup.xml:
-        * A megjegyzések és címkék cseréje&lt;részleges Rendszerkövetelmények &gt; és&lt;partialRequestMaxCells &gt; és
+    * A te \\[ Tomcat \\] /content/erddap/setup.xml:
+        * Cserélje ki a hozzászólásokat és címkéket kapcsolódó&lt;PartialRequestMaxBytes&gt; és&lt;PartialRequestMaxCells&gt; vele
 ```
             <!-- When possible (and it isn't always possible),  
             ERDDAP™ breaks source data requests into chunks to  
@@ -2366,7 +2383,7 @@ Megjegyzés: actual\\_range változatlan: alacsony, magas vagy magas, alacsony �
              <partialRequestMaxCells>100000</partialRequestMaxCells>  
             \\-->
 ```
-        * A következőkkel kapcsolatos észrevételek helyettesítése:&lt; categoryAttributes &gt; és fontolja meg a címke értékének módosítását:
+        * Cserélje ki a hozzászólásokat&lt; categoryAttributes &gt; és fontolja meg a címke értékének módosítását:
 ```
             <!-- This is the comma-separated list (recommended:  
             in alphabetical order) of the global attribute and  
@@ -2381,75 +2398,75 @@ Megjegyzés: actual\\_range változatlan: alacsony, magas vagy magas, alacsony �
             long\\_name, standard\\_name</categoryAttributes>  
 ```
 
-Egyéni&lt; categoryAttributes &gt; amelyek globális attribútumok most KELL azonosítani az előtag globális: (például globális: intézmény) . Az egyéb attribútumok változónak tekintendők. (például: standard\\_name ) . Az intézmények értékei is (Az egyetlen) Az eredeti esetben maradt. Most az összes kategóriaérték alacsonyra változik.
-    * Az Ön \\[ Nincs magyar neve \\] / tartalom / erddap / datasets.xml :
-        * JAVÍTOTT: ERDDAP™ új követelmények kapcsolódó táblázatos adatkészlet cdm\\ _ data\\ _ type. Konkrétan minden adatkészletnek rendelkeznie kell a cdm\\ _ data\\ _ type-hoz kapcsolódó megfelelő metaadatokkal és változókkal. Ha nem, az adatkészlet nem fog betölteni, és hibát fog elkövetni. Lásd a dokumentációt: [cdm\\ _ adat\\ _ type](/docs/server-admin/datasets#cdm_data_type) .
-        * FYI: Van egy új adatkészlet típus: EDDTableFromAsciiServiceNos.
-        * FYI: Három újonnan engedélyezett ioos\\_category opciók: Hidrológia, minőség (például minőségi lobogók esetében) és statisztikák (pl. átlag) .
-        * Az EDDTableFrom... Fájlok adatbázisok, távolítsa el bármelyik&lt;nDimensions &gt; tags. Már nincs rájuk szükség és nem is használják őket.
-        * A változók destinationName = magasság, ERDDAP™ már nem kényszeríti a long\\_name Magasságosnak lenni. Kérlek, menj át a... datasets.xml és ismételt keresés&lt; destinationName &gt; magasság és a változó hozzáadása&lt; addAttributes &gt;:
+Egyéni&lt; categoryAttributes &gt; amelyek globális tulajdonságok most MUST azonosítható az előtag globális: (Globális: intézmény) ... Más tulajdonságok várhatóan változó tulajdonságok. (pl.: standard\\_name ) ... Is, intézményi értékek (az egyetlenek) az eredeti esetben maradtak. Most az összes kategória értékek átalakulnak az alsógondozásra.
+    * A te \\[ Tomcat \\] /content/erddap/ datasets.xml :
+        * Big IMPROVED: ERDDAP™ új követelményeket tartalmaz egy tabuláris adatkészlet cdm\\_data\\_type. Nevezetesen minden adatkészlet MUST rendelkezik a megfelelő metaadatokkal és változókkal a cdm\\_data\\_type-hez kapcsolódóan. Ha nem, az adatkészlet nem terheli, és hibát fog dobni. Lásd a dokumentációt [cdm\\_data\\_type](/docs/server-admin/datasets#cdm_data_type) ...
+        * FYI: Van egy új adatkészlettípus: EDDTableFromAsciiServiceNOS.
+        * FYI: Három újonnan engedélyezett ioos\\_category opciók: Hidrológia, minőség (pl. minőségi zászlók esetében) és statisztika (pl.:) ...
+        * Az EDDTableFrom... Files adatkészletek, távolítsa el minden&lt;nDimensions&gt; címkék. Már nem szükségesek vagy használtak.
+        * A változók számára destinationName =altitude, ERDDAP™ többé nem kényszeríti a long\\_name Magasságosnak lenni. Kérlek, menj át a te datasets.xml és ismételten keress&lt; destinationName &gt;szélesség és hozzáadás a változóhoz&lt; addAttributes &gt;:
 ```
               <att name="long\\_name">Altitude</att>  
 ```
-             (vagy kissé más long\\_name különleges esetekben) .
-        * Opcionális: Minden EDDTableFromFile alosztály támogatási változó [ sourceName = globális:...](/docs/server-admin/datasets#global-sourcenames) a globális metaadatok konvertálása minden fájlból adatváltozóvá. Lynn DeWitt-nek köszönhetően.
-    * EDDTableFromDatabase felhasználók -- ERDDAP™ van egy új JDBC 4 meghajtó Postgres. Más adatbázisok esetén ellenőrizze az adatbázis legújabb JDBC .jar fájlját. Azóta ERDDAP™ most használja Java 1.6 +, JDBC 4 (nem 3) valószínűleg ajánlott.
+             (vagy valamivel más long\\_name különleges esetekben) ...
+        * Opcionális: Minden EDDTableFromFiles alosztály támogatja a változót [ sourceName =globális:...](/docs/server-admin/datasets#global-sourcenames) a globális metaadatok átalakítása minden fájlból egy adatváltozatba. Lynn DeWittnek köszönhetően.
+    * EDDTableFromDatabase felhasználók - ERDDAP™ jön egy új JDBC 4 pilóta a Postgres. Más adatbázisokhoz ellenőrizze az internetet a legújabb JDBC .jar fájlhoz az adatbázishoz. óta ERDDAP™ most használ Java 1.6+, JDBC 4 (nem 3) valószínűleg ajánlott.
     * FYI
-        *    EDDGrid A fájlok és az EDDTable A... A fájlok adatai most tárolják a fájltábla adatait
-             \\[ bigParentDirectory \\] / adatkészlet Info / \\[  datasetID  \\] /\\ * .nc fájlok.
-Az EDDTable adatkészletei is tárolják az alcsoport adatait
-             \\[ bigParentDirectory \\] / adatkészlet Info / \\[  datasetID  \\] /\\ * .nc fájlok. Ezek a fájlok régen
-             \\[ bigParentDirectory \\] / adatkészlet Info / \\[  datasetID  \\] .\\ * .json fájlok.
-A régi fájlok automatikusan törlődnek, ha ERDDAP™ Elindul. Vagy törölhetsz minden fájlt (de hagyja az üres alkönyvtárakat) in \\[ bigParentDirectory \\] / datasetInfo /.
-        * Egy új EDDTableFromNcCFFiles-en dolgoztam, amely a javasolt, új CF Point Observation Conventions segítségével helyi és távoli fájlokból származó adatokat olvasott. De nincs ebben a kiadásban. Problémák vannak a netcdf- java könyvtárakban, amelyek a fájlok olvasásához kapcsolódnak. És volt néhány nagyon friss változás a javasolt CF Point Observation Conventions. Amikor a netcdf- java könyvtárat rögzítik és frissítik a legutóbbi javaslathoz, folytatom a munkát.
-        * Futtatás ERDDAP™ A Windows lehet problémák: nevezetesen, akkor látni a \\[ bigParentDirectory / log / log.txt fájl ERDDAP™ néha képtelen gyorsan törölni és / vagy átnevezni a fájlokat. Ez az antivírus szoftvernek köszönhető. (például, a McAfee és Norton) ami a vírusokra vonatkozó fájlokat ellenőrzi. Ha belefutsz ebbe a problémába (amit a log.txt fájlban található hibaüzenetek is láthatnak, mint "Nem sikerült törölni"...) A vírus elleni szoftver beállításainak megváltoztatása részben enyhítheti a problémát.
-Ha ERDDAP™ A Windows csak egy teszt fut az asztalon, ez csak egy bosszantó.
-Ha ERDDAP™ a Windows a nyilvánosság ERDDAP™ , fontolja meg váltás Linux szerver.
-    * Lassú első állomás... Amikor először futsz ERDDAP™ korszerűsítés után, ERDDAP™ Az adatkészletek betöltése lassú lehet. Az út ERDDAP™ az összesített fájlokra vonatkozó információk megváltoztak, így ERDDAP™ újra kell olvasnia az összes fájlt. Az időbe telik.
-    * Hibák a Startupon... Tekintve a cdm\\ _ data\\ _ type változásait, valószínű, hogy néhány adatkészlet nem töltődik be, és hibákat dob. Gondosan olvassa el a Daily Report e-mail, hogy ERDDAP™ küld, amikor ERDDAP™ befejezte az indulást. Van egy listája az adatkészletekről, amik nem töltöttek be. (a tetején) És az ok, amiért nem töltöttek (közel az aljához) .
-    * Ha beragad, vagy más kérdése van, küldje el nekem a részleteket: erd.data at noaa.gov .
-    * Programozók -- Ha írsz Java a futó programok ERDDAP™ kód, meg kell változtatni néhány parancssor paraméter hivatkozások:
-        * Cseréljünk joda- time - 1.6.2.jar joda- time. üveg
-        * Változás a Postgres JDBC .jar hivatkozás posztgresql.jdbc.jar
-*    **Kis változások és hibajelzés:** 
+        *    EDDGrid Fájlok és EDDTable ... Files adatkészletek most tárolja a fájlTable információt
+             \\[ bigParentDirectory[szerkesztés] \\] /dataset Info/ \\[  datasetID  \\] /* .nc fájlok.
+Ezenkívül az EDDTable adatkészletek most tárolják az alapinformációkat
+             \\[ bigParentDirectory[szerkesztés] \\] /dataset Info/ \\[  datasetID  \\] /* .nc fájlok. Ezek a fájlok, amelyeket használtak
+             \\[ bigParentDirectory[szerkesztés] \\] /dataset Info/ \\[  datasetID  \\] ** .json fájlok.
+A régi fájlokat automatikusan töröljük, amikor ERDDAP™ kezdődik. Vagy törölheti az összes fájlt (de hagyja el az üres aláírókat) benne \\[ bigParentDirectory[szerkesztés] \\] /datasetInfo/.
+        * Egy új EDDTableFromNcCFFiles-en dolgoztam, amely a javasolt, új CF Point Megfigyelési Egyezményeket használó helyi és távoli fájlokból olvasható. De ez nem ebben a kiadásban van. Vannak problémák a netcdf-java könyvtárak kapcsolódó néhány módszerek olvasására ezeket a fájlokat. És voltak néhány nagyon közelmúltbeli változások a javasolt CF Point megfigyelési egyezmények. Amikor a netcdf-java könyvtárat a legújabb javaslatra rögzítik és frissítik, folytatom a munkát.
+        * Running ERDDAP™ A Windows-on problémák lehetnek: nevezetesen láthatja a \\[ bigParentDirectory/logs/log.txt fájl, amely ERDDAP™ Néha nem képes gyorsan törölni és/vagy újranevezni a fájlokat. Ennek oka a víruskereső szoftver (pl. McAfee és Norton) amely ellenőrzi a vírusok fájljait. Ha belefutsz erre a problémára (amelyet a log.txt fájlban hibaüzenetek láthatnak, mint például "Felhasználódnak törölni ...") A víruskereső szoftver beállításainak megváltoztatása részben enyhítheti a problémát.
+Ha ERDDAP™ A Windows csak egy teszt fut az asztalon, ez csak bosszú.
+Ha ERDDAP™ A Windows az Ön nyilvános ERDDAP™ fontolja meg a Linux szerverre való átállást.
+    * Lassú első indítás - Az első alkalom, hogy futsz ERDDAP™ frissítés után, ERDDAP™ lassú lehet az adatkészletek betöltéséhez. Az út ERDDAP™ az összesített fájlokra vonatkozó információ megváltozott, így ERDDAP™ újra kell olvasni néhány információt az összes ilyen fájlból. Ez időbe telik.
+    * Hiba a Startup-on - Tekintettel a cdm\\_data\\_type-hez kapcsolódó változásokra, valószínű, hogy néhány adatkészlet nem tölt be, és hibákat fog dobni. Óvatosan olvassa el a Daily Report e-mailt, amely ERDDAP™ küldjön, amikor ERDDAP™ befejeződött a kezdés. Lesz egy lista az adatkészletekről, amelyek nem töltöttek be (a csúcson) és az ok, amiért nem töltöttek be (közel az alsóhoz) ...
+    * Ha elakadsz vagy más kérdéseid vannak, e-mailt küldj nekem: erd.data at noaa.gov ...
+    * Programozók - Ha írsz Java programok futás ERDDAP™ kód, meg kell változtatni néhány parancssor paraméter referenciák:
+        * Változtassa meg a joda-time-1.6.2.jar-t a joda-time-ra. jar
+        * Változtassa meg a Postgres JDBC .jar referencia posztgresql.jdbc.jar
+*    **Kis változások és Bug javítások:** 
     
-    * Javított kapcsolat kezelése, hogy elkerülje az akasztott szálak.
-    * Javított konvalencia gyakorlatok a közel egyidejű azonos kérelmek hatékonyabb kezelésére.
-    *    ERDDAP™ most használ netcdfAll -4.2.jar (Átnevezve NetcdfAllra. üveg) . Ez a kapcsoló több belső változtatást tett szükségessé, és néhány kisebb külső változást okozott, például a grib fájlok olvasásának megváltoztatását és a .nc Feji kimenet.
-    * Új funkció: \\[ erddap \\] / konvertálni / fipscounty.html konvertálni FIPS megyei kódok / megyei nevek.
-    * A térképeken az államhatárok most már sötét ibolyák, így minden háttérszínen jobban kitűnnek.
-    * táblázat .kml a kimenet ismét egy kör alakú ikont használ a pontok jelöléséhez (nem a repülőgép ikon Google nemrég váltott) .
-    * Az erdCalcofi adatkészleteket átrendezték és most helyi fájlokból szolgálják fel (gyorsabb) .
-    * GenerateDatasets Xml Threds Katalógus most létrehoz egy eredményfájlt:
-         \\[ Nincs magyar neve \\] / Webalkalmazások / erddap / WEB- INF / hőmérséklet / EDDGrid FromThredds Catalog.xml. Hála Kevin O 'Briennek.
-    * GenerateDatasets Xml Threds Katalógus most próbálja eltávolítani a felesleges port számokat a forrás URLs (például: 8080 és: 8081 néha eltávolítható) . Köszönöm NOAA A központ biztonsági csapata.
-    * A .subset weboldalak, A térkép a Disclose Data most egy változó lat lon tartományban.
-    * Több lista ERDDAP™   (például az összes adatsort tartalmazó táblázat) úgy rendezték, hogy A.. Z rendezte a. .z . Most pedig az esetükben érzéketlenek.
-    * Kis módosítások a .subset weboldalak, beleértve: egységek most jelzik.
-    * GenerateDatasets Az Xml és a DasDds már nem tesz kivételt, ha nem tudja az eredményeket a vágólapra vagy a DisplayInBrowser-ra tenni. Hála Eric Bridgernek és Greg Williamsnek.
-    * A hibajavítás: Ha az adatok betöltve vannak, ERDDAP™ Most eltávolítja vagy módosítja a geosteral globális attribútumokat. Hála Charles Carletonnak.
-    * hibajavítás: sztring2.getClassPath () Most már megfelelően decides az osztály Útvonal (nevezetesen a Windows-on a fájlnév szóközök jelentek meg:% 20) . Ez a hatás ERDDAP™ EDStatic calling SSR.getContextDirectory () és a tartalom keresése / erddap. Abe Coughlinnak köszönhetően.
-    * Bugfix: az EDDTableFromFiles kapcsolódó getDataForDapQuery kezelése külön () kérések. Hála Eric Bridgernek.
-    * A hibajavítás: tabledap a kérések nem kezelték megfelelően a magassági korlátokat, amikor az adatkészlet magasságát A MetersPerSourceUnit -1 volt. Hála Eric Bridgernek.
-    * Bugfix: EDDTableFrom... A fájlok adatbázisai most már megfelelően kezelik a kérelmeket, amelyek tartalmazzák a = NaN és&#33; = NaN-t.
+    * Javított kapcsolatkezelés a ung szálak elkerülése érdekében.
+    * A közel egyidejű azonosító kérések hatékonyabb kezelése érdekében javított közbeszerzési gyakorlatok.
+    *    ERDDAP™ most használja a netcdfAll-4.2.jar (átnevezett netcdfAll-latest. jar) ... Ez a kapcsoló több belső változást igényelt, és néhány kisebb külső változtatást okozott, például a grib fájlok olvasásának és apró változásainak megváltoztatását. .nc Fejlesztő kimenet.
+    * Új funkció: \\[ erddap \\] /convert/fipscounty.html konvertál FIPS megyei kódok a megyei nevektől/számlálástól.
+    * A térképeken az állami határok most sötét ibolya, így jobban kiemelkednek minden háttérszínen.
+    * Tabular .kml a kimenet ismét egy körkörös ikont használ a pontok jelölésére (nem a repülőgép ikon A Google nemrég váltott) ...
+    * Az erdCalcofi-adatbázisokat átrendezték, és most szolgálnak a helyi fájlokból (Gyorsabb) ...
+    * GenerateDatasets Xml a Thredds A katalógus most létrehoz egy eredményfájlt:
+         \\[ Tomcat \\] /webapps/erddap/WEB-INF/temp/ EDDGrid FromThreddsCatalog.xml. Kevin O'Briennek köszönhetően.
+    * GenerateDatasets Xml a Thredds Katalógus most megpróbálja eltávolítani a felesleges portszámokat a forrás URL-ekből (pl.:8080 és :8081 néha eltávolítható) ... Köszönöm NOAA központi biztonsági csapata.
+    * A .subset weboldalak esetében a Distinct Data térképe most egy változó lat lon tartományt tartalmaz.
+    * Több lista a ERDDAP™   (pl. az asztal, amely az összes adatkészletet mutatja) úgy rendezték, hogy az A.Z rendezett. .z ... Most eset-érzékeny módon rendeznek.
+    * Kis változások a .subset weboldalak, beleértve: egységeket most jelezték.
+    * GenerateDatasets Az Xml és a DasDds már nem dob kivételt, ha képtelen az eredményeket a rendszer vágólapjára vagy az InBrowser megjelenítésére tenni. Eric Bridgernek és Greg Williamsnek köszönhetően.
+    * Bug fix: Amikor az adatkészleteket betöltik, ERDDAP™ most eltávolítja vagy kiigazítja a geotéri globális tulajdonságokat. Charles Carletonnak köszönhetően.
+    * Bug fix: String2.getClassPath () most megfelelően százalékos csökken az osztály Útvonal (nevezetesen a Windows-on a fájlnév űrei a %20-nak tűntek fel) ... Ez érintett ERDDAP™ EDStatic call SSR.getContextDirectory () tartalom/erddap megtalálása. Abe Coughlinnak köszönhetően.
+    * Bug fix: az EDDTableFromFiles-ben a GetDataForDapQuery-kezelés () kérések. Eric Bridgernek köszönhetően.
+    * Bug fix: tabledap a kérelmek nem kezelték megfelelően a magassági korlátozásokat, amikor az adatkészlet magassága MetersPerSourceUnit -1 volt. Eric Bridgernek köszönhetően.
+    * Bug fix: EDDTableFrom... Files adatkészletek most helyesen kezeli a kérelmeket, amelyek közé tartozik a =NaN és &#33;=NaN.
     
-## változat{#version-128} 
- (kiadás dátuma: 2010- 08- 27) 
+## Verzió 1.28{#version-128} 
+ (2010-08-27) 
 
-*    **Új jellemzők:** Semmi.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** Semmi.
-*    **A hibajavítás:** Programozási hiba (Csak az 1.26.) amit ERDDAP™ Nagyon lassan.
+*    **Új funkciók:** Nem.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** Nem.
+*    **Bug Fix:** Fix egy programozási hiba (csak az 1.26. versben) megtett ERDDAP™ nagyon lassú.
      
 
-## változat{#version-126} 
- (kiadás dátuma: 2010- 08- 25) 
+## Verzió 1.26{#version-126} 
+ (2010-08-25) 
 
-*    **Új jellemzők:** Semmi.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** 
-    * A te \\[ Nincs magyar neve \\] / tartalom / erddap / setup.xml,
-        * In&lt;jogi &gt;, egy új vonal alább \\[ szabvány Adatengedélyek \\] , \\[ standard kapcsolat \\] . \\[ standard kapcsolat \\] utal a&lt;Administre Email &gt; magasabb a setup.xml.
-        * Eltávolítás&lt;TabCommonBGColor &gt; és&lt;Table Highlight BGColor &gt;.
-        * Ajánlott: Változás&lt;endBodyHtml &gt;
+*    **Új funkciók:** Nem.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** 
+    * Tőled \\[ Tomcat \\] /content/erddap/setup.xml,
+        * Inkább&lt;jogi&gt; egy új vonalon \\[ szabvány DataLicenses \\] , betét \\[ StandardContact \\] ... \\[ StandardContact \\] hivatkozik a&lt;AdminEmail&gt; megjelölt magasabb a setup.xml-ben.
+        * Távolítás&lt;tableCommonBGColor&gt; és&lt;asztalHighlightBGColor&gt;.
+        * Ajánlott: Változás&lt;végBodyHtml&gt;
 ```
             <endBodyHtml><!\\[CDATA\\[  
             <br>&nbsp;  
@@ -2462,55 +2479,55 @@ Ha ERDDAP™ a Windows a nyilvánosság ERDDAP™ , fontolja meg váltás Linux 
             \\]\\]></endBodyHtml>
 ```
 
-    * Kötelező: Az Ön \\[ Nincs magyar neve \\] / content / erddap / images / erddap.css és erddaAlp.css, add az alján:
+    * Szükséges: A te \\[ Tomcat \\] /content/erddap/images/erddap.css és erddapAlt.css, add hozzá az alján:
 ```
         /\\* This is used on the /info/\\[datasetID\\]/index.html pages to highlight a row or cell. \\*/  
         tr.highlightBGColor {background-color:#cceecc; }  
         td.highlightBGColor {background-color:#cceecc; }
 ```
-*    **Hibák és apró változások:** 
+*    **Bug Fixes és kis változások:** 
     
-    * Hibajavítás: egyes helyzetekben az űrlapok nem működtek az Internet Explorer egyes változataiban. Nagyon köszönöm Greg Williamsnek.
-    * A hibajavítás: A Make A Graph gombok nem működött, ha az adatkészlet egy távoli ERDDAP .
-    * A hibajavítás: WMS Néha nem működött, ha az adatkészlet egy távirányítóról jött. ERDDAP .
-    * Sok apró változtatás és hibajavítás.
+    * Bug fix: egyes helyzetekben a formák nem működtek az Internet Explorer egyes verzióiban. Nagyon köszönöm Greg Williamsnek.
+    * Bug fix: A Make A Graph gombok nem működtek, ha az adatkészlet távolról érkezett ERDDAP ...
+    * Bug fix: WMS Néha nem működött, ha az adatkészlet távolról érkezett ERDDAP ...
+    * Sok apró változás és hibajavítás.
     
 
-## változat{#version-124} 
- (kiadás dátuma: 2010-08-06) 
+## Verzió 1.24{#version-124} 
+ (2010-08-06) 
 
-*    **Új jellemzők:** 
-    * Új [Aloldal](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/index.html) a táblázatos adatkészletek alcsoportjainak kiválasztásához fapelled keresési módot használjon. Hála a POST-nak.
-    * Új [Speciális keresés](https://coastwatch.pfeg.noaa.gov/erddap/search/advanced.html) egyesíti az összes többi keresési lehetőséget, és hozzáteszi a hosszúságot, szélességet, és az idő határoló dobozok. Hála Ellyn Montgomerynek. (Elnézést a késésért.) 
-    * Új [Átalakítás](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) weboldal és szolgáltatás lehetővé teszi, hogy átalakítsa numerikus időpontok / ISO sztring időpontok.
-    * Új [Átalakít egységek](https://coastwatch.pfeg.noaa.gov/erddap/convert/units.html) weboldal és szolgáltatás lehetővé teszi, hogy megtérítse UDUNITS UCUM-egységektől / -egységektől. Köszönöm NOAA JOOS SOS .
-    * Ha a tabledap A kérés tartalmazza az egységeket ("UCUM") , Az egységek neve lesz átalakítva az eredeti nevek (általában UDUNITS ) - [UCUM](https://unitsofmeasure.org/ucum.html) Az egységek neve. Ez csak az egységeket érinti.\\*nevek\\*Nem adatértékek. Köszönöm NOAA JOOS SOS .
-    * Javítások grafikonok és grafikonok elkészítéséhez:
-        * Ha a diagram egy térkép, vannak új Make A Graph gombok nagyítani / ki, és egy új lehetőség, hogy kattintson, hogy megváltoztassa a térkép középpontját. Hála a POST-nak.
-        * Szűrési beállítások az alsó közelében. Hála Greg Williamsnek.
-        * A beépített tengerparti adatállományokat frissítették GSHHS v2.0. Hála a POST-nak.
-        * A térképek közé tartoznak a tavak és a folyók. Hála a POST-nak. (Sajnálom, a Sacramento Delta folyó hiányzik, mert sem a parti adatok, sem a tó / folyó adatkészlet nem foglalkozik vele.) 
-        * A pscoast- responsible national / state fájlokat frissítették. Hála a POST-nak.
-        * A Topography.cpt-et kissé módosították. (Sajnálom, ha ez rossz hatással van rád.) Hála a POST-nak.
-        * A griddap Make A Graph, Ha a felhasználó megváltoztatja a változó, a forma automatikusan újra be, hogy a axisVariable s a show StartandStop mindig tükrözi a grafikonok változóit. Hála Joaquin Trinanesnek.
-        * Png és pdf képURLs esetén:
-            * Új & .land = _ value _, ahol _ value _ is "under" (show topográfia) vagy "vége" (Csak mutasd a fürdőt.) . Ha nincs megadva, az alapértelmezett értéke [ drawLandMask ](/docs/server-admin/datasets#global-drawlandmask) in datasets.xml vagy setup.xml. Hála a POST-nak.
-            * Új: a túl hosszú sorok automatikusan több sorra törnek. Hála a POST-nak.
-        * A png képURL- ek esetében:
-            * Új & .legenda = _ value _, ahol _ value _ lehet "Alul" (alapértelmezés) "Ki" vagy "Csak". Ez lehetővé teszi, hogy a legenda, kizárja a legenda, vagy csak a legenda. Hála Cara Wilsonnak.
-            * Új & .trim = _ n Pixels _ elhagyja a határ nPixels (például, 10) a kép alján. Az .Legenda = Off után alkalmazzák. Hála Cara Wilsonnak.
-            * Új & .méret = _ szélesség _ | _ height _ let you specified the width and height for the image, in pixels.
+*    **Új funkciók:** 
+    * Új [Subset weboldalak](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/index.html) használat szembesült keresés a mentő adatkészletek alkészleteinek kiválasztására. A POST-nak köszönhetően.
+    * Új [Fejlett keresés](https://coastwatch.pfeg.noaa.gov/erddap/search/advanced.html) ötvözi az összes többi keresési lehetőséget, és hozzáadja a hosszúságot, a szélességet és az időkorlátozó dobozokat. Ellyn Montgomerynek köszönhetően. (Sajnálom a késést.) 
+    * Új [Convert idő](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) weboldal és szolgáltatás lehetővé teszi számszerű idők átalakítását / az ISO-sztring időkből.
+    * Új [Konvert egységek](https://coastwatch.pfeg.noaa.gov/erddap/convert/units.html) weboldal és szolgáltatás lehetővé teszi, hogy átalakítsa UDUNITS az UCUM egységekről. Köszönöm NOAA IOOS SOS ...
+    * Ha egy tabledap kérelem tartalmazza &units ("UCUM") Az egységek neveit eredeti nevekből fogják átalakítani (általában UDUNITS ) a [UCUM](https://unitsofmeasure.org/ucum.html) egység nevek. Ez csak az egységeket érinti\\*nevek\\*nem adatértékek. Köszönöm NOAA IOOS SOS ...
+    * Javítások készíteni egy Graph weboldalak és grafikonok és térképek:
+        * Ha a grafikon egy térkép, van új Make A Graph gombok zoom in/out és egy új lehetőség, hogy kattintson a változás a térkép középpontjában. A POST-nak köszönhetően.
+        * Szűrő beállítások hozzáadott közel az alsó. Greg Williamsnek köszönhetően.
+        * A part menti adatfájlokban beépített adatokat a GSHHS v2.0-ra frissítették. A POST-nak köszönhetően.
+        * Térképek most tartalmazzák a tókat és a folyókat. A POST-nak köszönhetően. (Sajnálatos, hogy a Sacramento River Delta hiányzik, mert sem a partvonal adatai, sem a tó / folyó adatkészlet nem foglalkozik vele.) 
+        * A pscoast-derived nemzet/állami fájlokban épült. A POST-nak köszönhetően.
+        * Topography.cpt kissé módosított. (Sajnálja, hogy ez hátrányosan befolyásolja Önt.) A POST-nak köszönhetően.
+        * A griddap's Make A Graph, ha a felhasználó megváltoztatja a változót, a forma automatikusan lemond, hogy a axisVariable S' ShowStartAndStop mindig tükrözi a grafikus változókat. Joaquin Trinanesnak köszönhetően.
+        * Png és pdf kép URL:
+            * New &.land=_value_, ahol a _value_ „szükségtelen” lehet (show topográfia) vagy "túl" (Csak mutatjon fürdőmetriát) ... Ha nem meghatározott, az alapértelmezést az [ drawLandMask ](/docs/server-admin/datasets#global-drawlandmask) benne datasets.xml vagy setup.xml. A POST-nak köszönhetően.
+            * Új: a legenda olyan vonalak, amelyek túl hosszúak, automatikusan megszakadnak több sorba. A POST-nak köszönhetően.
+        * Png kép URL-ekhez:
+            * New &.legend=_value_, ahol a _value_ "Lottó" lehet (default) "Off" vagy "Only". Ez lehetővé teszi a legendát, kizárja a legendát, vagy csak a legendát kapja. Cara Wilsonnak köszönhetően.
+            * New &.trim=_n Pixels_ elhagyja az nPixels határát (pl. 10) a kép alján. Ezt követően .legend=Off. Cara Wilsonnak köszönhetően.
+            * New &.size=_width_ | _height_ lehetővé teszi a kép szélességét és magasságát, pixelekben.
     * Új kimeneti fájlformátumok:
-        * .csvp és .tsv p -- mint .csv és .tsv , de " (_ egységek _) "az első sor oszlopneveihez csatolva.
-        * .odvTxt -- készít egy .txt fájlt, amely leegyszerűsíti az adatok bevitelét [Tengeri adatok Nézet (ODV) ](https://odv.awi.de/) .
-        * .esriCSV -- teszi a .csv fájl alkalmas import ESRI ArcGIS . (kizárólag táblázatos adatkészletek) Hála Jan Masonnak, Jeff de La Beaujardere-nek, és NOAA JOOS SOS projekt.
-    * A GUI javítása a [Besorolás](https://coastwatch.pfeg.noaa.gov/erddap/categorize/index.html) weboldalak. Továbbá, a kategorizálási értékek (Nem intézmény) Most már mind alacsonyak. Nem kis értékű kérelmek elfogadva (átirányított) visszafelé kompatibilis. Hála Roy Mendelssohn-nak.
-    * A hibaüzenetek most még rövidebbek és a felhasználók felé orientáltabbak. Hála Greg Williamsnek.
-    * Belső változás, amely nagymértékben csökkenti ERDDAP Az alapmemória használata.
-    * Sok új funkció, amelyek csak a POST projekt szempontjából relevánsak.
-*    **Dolgok ERDDAP™ Administrators need to know and do:** Sok a változás. Sajnálom. De mindegyik hoz valami szép hasznot.
-    * Nagy változások GenerateDatasetXml -- ez most gyakran több kérdést (lásd a vonatkozó [dataset Típusok](/docs/server-admin/datasets#detailed-descriptions-of-dataset-types) információ) és most mindig generál lényegében readyto- use tartalom datasets.xml . Még mindig felelős a beállítás, így akkor is felül kell vizsgálni a datasets.xml tartalom használata előtt. Egy ember, aki erőfeszítéseket tesz a projektbe, mindig jobb lesz, mint egy számítógépes program. Hála az UAF projektnek.
-    * Szükséges: A szetup.xml, akkor felül kell vizsgálni a WMS szakasz. Most ezeket a címkéket kell tartalmaznia. (de nyugodtan változtasd meg az értékeket.) :
+        * .csvp és .tsv p - mint .csv és .tsv , de a " (_units_) "Az első sorban oszlop nevekre jutottak.
+        * .odvTxt - egy .txt fájlt készít, amely egyszerűsíti az adatok beszerzését [Ocean adatok Megtekintés (ODV) ](https://odv.awi.de/) ...
+        * .esriCsv - készít egy .csv fájlt, amely alkalmas az ESRI importjára ArcGIS ... (A tabuláris adatkészletek csak) Jan Masonnak, Jeff de La Beaujardierenek és NOAA IOOS SOS projekt.
+    * GUI fejlesztések a [Kategorizálás](https://coastwatch.pfeg.noaa.gov/erddap/categorize/index.html) weboldalak. Továbbá a kategorizáló értékek (más, mint intézmény) Most már minden alsóbb eset. A nem-alacsonyabb kérelmeket elfogadják (Átirányítás) visszafelé kompatibilitásra. Roy Mendelssohnnak köszönhetően.
+    * A hibaüzenetek még rövidebbek és orientáltabbak a felhasználók számára. Greg Williamsnek köszönhetően.
+    * Belső változás, amely nagymértékben csökkent ERDDAP Alap memóriahasználat.
+    * Számos új funkció, amelyek csak a POST projekt szempontjából relevánsak.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak tudniuk kell és meg kell tenniük:** Sok változás van. Sajnálom. De mindegyik szép előnyökkel jár.
+    * Nagy változások a GenerateDatasetXml - ez most gyakran több kérdést (lásd a relevánst [adatkészlet típusok](/docs/server-admin/datasets#detailed-descriptions-of-dataset-types) információ) és most mindig alapvetően kész tartalmat generál datasets.xml ... Még mindig felelős a beállításért, így még mindig felül kell vizsgálnia datasets.xml tartalom, mielőtt használja. A projektbe való emberi erőfeszítés mindig jobb, mint egy számítógépes program. Az UAF projektnek köszönhetően.
+    * KÉRDÉS: A setup.xml-ben felül kell vizsgálnia WMS rész. Most tartalmaznia kell ezeket a címkéket (de úgy érzi, szabad megváltoztatni az értékeket) :
 ```
         <!-- These default accessConstraints, fees, and keywords are used 
         by the SOS, WCS, and WMS services.
@@ -2557,7 +2574,7 @@ Ha ERDDAP™ a Windows a nyilvánosság ERDDAP™ , fontolja meg váltás Linux 
         <wmsSampleBBox>0,-75,360,75</wmsSampleBBox>
 ```
 
-    * KÖVETELVE: A setup.xml, másolja le és illessze be ezt az új javasolt&lt;startHeadHtml &gt; a régi verzió helyére. De nyugodtan változtass a preferenciáidon.
+    * REQUIRED: A setup.xml-ben, másolja és pazarolja ezt az új javasolt&lt;startHeadHtml&gt; a régi verzió helyettesítésére. De úgy érzi, szabad, hogy változtatásokat a preferenciák.
 ```
         <!-- startHeadHtml has the start of the HTML document and the 
         'head' tags (starting at "<!DOCTYPE>", but not including 
@@ -2617,9 +2634,9 @@ Ha ERDDAP™ a Windows a nyilvánosság ERDDAP™ , fontolja meg váltás Linux 
         <tableHighlightBGColor>#cceecc</tableHighlightBGColor>
 ```
 
-Hála a POST-nak, Hans Vedónak és Rick Blairnek.
-    * Szükséges: szetup.xml-ben,&lt;startBodyHtml &gt;, változtassa meg a&lt;test &gt; címke&lt;test &gt;, mivel a stílus már beállította erddap.css.
-    * Szükséges: A szetup.xml, a változás erre&lt;endBodyHtml &gt; (de változtassa meg az e-mail címet az e-mail címre, és nyugodtan, hogy más módosításokat) :
+Köszönhetően POST, Hans Vedo és Rick Blair.
+    * REQUIRED: A beállításban.xml,&lt;startBodyHtml&gt; megváltoztatja a&lt;test&gt; címke, hogy csak&lt;test&gt; mivel a stílust most az erddap.css határozza meg.
+    * REQUIRED: A beállításban.xml, változtassa meg ezt&lt;endBodyHtml&gt; (de változtassa meg az e-mail címét az e-mail címére, és szabadon érezze magát, hogy más változásokat hozzon létre) :
 ```
         <!-- The end of the body of the HTML code for all HTML web pages
           (with "</body>" at the end). 
@@ -2649,7 +2666,7 @@ Hála a POST-nak, Hans Vedónak és Rick Blairnek.
         \\]\\]></endBodyHtml>
 ```
 
-    * NAGYON AJÁNLOTT: Setup.xml-ben az ajánlott&lt;The ShortDescriptionHtml &gt; most
+    * HIGHLY RECOMMENDED: A setup.xml-ben az ajánlott&lt;AShortDescriptionHtml&gt; most
 ```
         <theShortDescriptionHtml><!\\[CDATA\\[ 
         <h1>ERDDAP</h1>
@@ -2664,30 +2681,30 @@ Hála a POST-nak, Hans Vedónak és Rick Blairnek.
         \\]\\]></theShortDescriptionHtml>
 ```
 
-Nyugodtan változtass ezen, különösen az első bekezdés utolsó mondatán.
-    * In setup.xml, emailEverything To and emailDailyReport Most lehet comma- elválasztott listák e-mail címek. Az első e-mail minden A speciális, például, előfizetés EDDXxxxFromErddap adatkészletek használja ezt az e-mail címet. Hála John Maurernek.
-    * E-mail hibák most bejelentkezik a \\[ bigParentDirectory \\] / log / emailLogyly- MM- DD.txt fájl.
-    * A setup.xml, van egy új, opcionális paraméter beállítani e-mail fiók tulajdonságait (általában közvetlenül után&lt;@ info: whatsthis
+Érezz szabadon megváltoztatni ezt, különösen az utolsó mondatot az első bekezdésben.
+    * A setup.xml, e-mailEverythingTo és e-mailDailyReport Ahhoz, hogy most összeomlott listák az e-mail címek. Az első e-mailMinden Ahhoz, hogy különleges, pl. az EDDXxxxFromErddap adatkészletek előfizetései ezt az e-mail címet használják. John Maurernek köszönhetően.
+    * Az e-mail hibák most bejelentkeznek \\[ bigParentDirectory[szerkesztés] \\] /logs/emailLogYYYY-MMM-D.txt fájl.
+    * A setup.xml-ben van egy új, opcionális paraméter az e-mail fiók tulajdonságainak beállításához (általában közvetlenül az után, hogy&lt;e-mail cím:
 ```
           <emailProperties>_propertyName1_|_propertyValue1_|_propertyName2_| _propertyValue2_|...</emailProperties>  
         For example, gmail accounts need  
           <emailProperties>mail.smtp.starttls.enable|true</emailProperties>  
 ```
 
-Az alapértelmezés semmi. Hála Rich Signell-nek.
-    * Szükséges: Ha EDDTableCopy vagy EDDGrid Vettem, el kell küldened mindent. \\[ bigParentDirectory \\] / másolás / könyvtárak és fájlok, amelyek "xh" a könyvtárban vagy fájlnevek leállítása után a régi ERDDAP™ és az új ERDDAP™ Szóval azokat a fájlokat újra lemásolják. Nagyon sajnálom, de fontos volt, hogy a változás, és remélhetőleg hatással van néhány tollak és fájlok.
-Linux-ban ezeket a fájlokat a, cd \\[ bigParentDirectory \\] / másolat
-Megtalálni.\\*xh\\*  
-A Windows, megtalálja ezeket a fájlokat, Start | Keresés
-Mit szeretne keresni: Dokumentumok
-A fájlnév részben vagy egészben: xh
-Keressen be: Böngészés - &gt; \\[ bigParentDirectory \\] / másolat
-Kattintson a 'Keresés' gombra
-^ A az összes kiválasztásához
-Del törölni őket
-    * Szükséges: datasets.xml , az EDDTableFromDatabase adatok, a dátum- és időbélyegző változók esetében változtassa meg az adatokat Gépeld a dupláig és az egységeket másodpercekig 1970-01T00: 00: 00Z óta. Kérjük, hogy tárolja az időbélyegző adatait az adatbázisban\\*és\\*időzóna. Időzóna információ nélkül, a kérdések, hogy ERDDAP™ elküldi az adatbázisba és az eredményeket, hogy ERDDAP™ Az adatbázisból JDBC-n keresztül érkezik, kétértelműek és valószínűleg tévednek. Megpróbáltuk, de nem találtunk megbízható módot az időbélyegző nélküli adatok kezelésére. Szerintünk ez jó gyakorlat. Végül is az "időbélyegző időzóna nélkül" adatok implicit időzónával rendelkeznek. Bár nagyszerű, hogy az időzóna nyilvánvaló az adatbázis admin, van értelme, hogy pontosan határozza meg, hogy más szoftver megfelelően kölcsönhatásba léphet az adatbázis. Köszönöm / sajnálom Michael Urzen.
-    * NAGYON AJÁNLOTT: datasets.xml , hogy lehetővé tegye .subset weboldalak facebook keresés a táblázatos adatok, meg kell adni [&lt; subsetVariables &gt;] (/ docs / server- admin / datasets # subsetvariers) az adatkészlet globális sajátosságaira.
-    * AJÁNLVA: In datasets.xml , ha az adatkészlet datasetID = "pmelGtsppp", kérlek változtasd meg
+Az alapértelmezés semmi. Rich Signellnek köszönhetően.
+    * KÉRDÉS: Ha EDDTableCopy-t használsz vagy EDDGrid Másolás, meg kell tennie mindent \\[ bigParentDirectory[szerkesztés] \\] /copy / könyvtárak és fájlok, amelyek "xh"-t tartalmaznak a könyvtárban vagy a fájlnévekben a régi megállítása után ERDDAP™ és az új kezdetek előtt ERDDAP™ így ezeket a fájlokat újra másolják. Nagyon sajnálom, de fontos volt a változás, és remélhetőleg kevés admint és néhány fájlt érint.
+A Linuxban megtalálhatja ezeket a fájlokat, cd \\[ bigParentDirectory[szerkesztés] \\] /copy
+találj&#33;\\*xh\\*  
+Windows-ban megtalálhatja ezeket a fájlokat, Start | Keresés
+Mit szeretne keresni: dokumentumok
+A fájlnév egésze vagy része: xh
+Nézd meg: Browse -&gt; \\[ bigParentDirectory[szerkesztés] \\] /copy
+Kattintson a „Search”-ra
+A kiválasztani őket minden
+Del törölni őket mind
+    * KÉRDÉS: In datasets.xml , az EDDTableFromDatabase adatkészletek esetében a dátum és az ütemezés változói módok megváltoztatják az adatokat Típus kettős és az egységek másodpercek óta 1970-01-01T00:00Z. Kérdezzük meg, hogy tárolja az időmérő adatokat az adatbázisban\\*vele\\*időzóna. Időzóna-információk nélkül a kérdések, amelyek ERDDAP™ elküldi az adatbázist és az eredményeket, amelyek ERDDAP™ A JDBC-n keresztül származó adatbázis kétértelmű, és valószínűleg téved. Megpróbáltuk, de nem találtunk megbízható módszert az „időjármű nélküli” adatok kezelésére. Úgy gondoljuk, hogy ez egyébként jó gyakorlat. Végtére is, a "timestamp időzóna nélküli" adatok egy implied timezone. Bár nagyszerű, hogy az időzóna nyilvánvaló az adatbázis admin számára, értelme van kifejezetten meghatározni, hogy más szoftverek megfelelően kölcsönhatásba léphessenek az adatbázisával. Köszönöm/sajnálom Michael Urzent.
+    * HIGHLY RECOMMENDED: In datasets.xml , hogy lehetővé tegye a .subset weboldalak számára, hogy szembenézzenek a tambuláris adatkészletek keresésével, hozzá kell adnia [&lt; subsetVariables &gt;&gt;&gt;&gt;&gt;&gt; (/docs/server-admin/adatbázisok#subsetvariables) az adatkészlet globális tulajdonságaihoz.
+    * JELENTÉS: datasets.xml Ha rendelkezik az adatkészlettel datasetID ="pmelGtsppp", kérjük, változtassa meg, hogy
 ```
           <dataset type="EDDTableFromDapSequence" datasetID="pmelGtsppp" active="false">  
         Whether or not you had that dataset, feel free to add this new GTSPP dataset:  
@@ -2695,45 +2712,45 @@ Del törölni őket
             <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGtsppBest</sourceUrl>  
           </dataset>
 ```
-    * AJÁNLVA: In datasets.xml , vannak új érvényes opciók a [&lt;cdm\\ _ data\\ _ type & gt;] (/ docs / server- admin / datasets # cdm _ data _ type) globális attribútum, így felül kell vizsgálni / változtatni az értéket az adatsorok.
-    * In datasets.xml , az új [&lt;sourceNeedsExpandedFP\\ _ EQ & gt;] (/ docs / server- admin / datasets # sourceneedsexplandedfp _ eq) hasznos, ha a forrás szerver nem kezeli következetesen a & _ változó _\\ = _ érték _ teszteket (mert [a lebegőpontos számok egyenlőségének vizsgálatának általános nehézsége](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/) ) . sourceNeedsExpandedFP\\ _ EQ alapértelmezésben igaznak (a legbiztonságosabb beállítás) Nem kell változtatnod.
-    * Új [EDDTableFromAsciiFiles](/docs/server-admin/datasets#eddtablefromasciifiles) . Hála Jerry Yun Pan-nak.
-    * Új [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Hála Roy Mendelssohn-nak.
-    * Változások [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) lehetővé teszi, hogy a fájlokat szélesebb körben használják.
-    * Az EDDTableFromBMDE nem működik. Már nincs aktív, megfelelő adatforrás.
-    * GenerateDatasetXml, az új EDDGrid FromThredek Katalógus betakarít egy teljes THREDDS katalógus (vagy alcsoport) és generál datasets.xml tartalom. Hála az UAF projektnek.
-    * GenerateDatasets Xml és DasDds most is az eredményeket \\[ bigParentDirectory \\] / naplók / log.txt. Hála Rich Signellnek és Charles Carletonnak.
-    * Sok javulás a bejelentkezési rendszer. Hála a POST-nak.
-*    **Dolgok ERDDAP™ Programozók Tudnia kell és meg kell tennie:** 
-    * Megváltozott a / WEB- INF / lib / könyvtár. Kérem, változtassa meg a Javac és Java classpath beállításokat.
-    * Van egy új \\[ Ön Url \\] / erddap / verzió szolgáltatás a verzió ERDDAP . A válasz a szöveg, például, ERDDAP \\ _ verzió = 1.24 Ha HTTP 404 Not- Found hibaüzenetet kap, kezelje a ERDDAP™ 1.22 vagy alacsonyabb változatként. Hála a POST-nak.
-*    **Kis változások és hibajelzés:** 
+    * JELENTÉS: datasets.xml , vannak új érvényes lehetőségek a [&lt;cdm\\_data\\_type & gt;] (/docs/server-admin/datasets#cdm_data_type) globális tulajdonság, így felül kell vizsgálnia / megváltoztatnia az adatkészletek értékét.
+    * Inkább datasets.xml Az új [&lt;forrásNeedsExpandedFP\\_EQ&gt;] (/docs/server-admin/datasets#sourceneedsexpandedfp_eq) hasznos, ha a forráskiszolgáló nem kezeli következetesen &_variable_\\=_value_ teszteket helyesen (mert [általános nehézség a lebegő pontszámok egyenlőségének vizsgálatára](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/) ) ... forrásNeedsExpandedFP\\_EQ az alapértelmezés szerint igaz (a legbiztonságosabb beállítás) Tehát nem kell változtatni.
+    * Új [EDDTableFromAsciiFiles](/docs/server-admin/datasets#eddtablefromasciifiles) ... Jerry Yun Pannak köszönhetően.
+    * Új [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) ... Roy Mendelssohnnak köszönhetően.
+    * Változások [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) lehetővé teszi, hogy szélesebb körű fájlokkal használják.
+    * Az EDDTableFromBMDE fogyatékkal élő. Nincs többé aktív, megfelelő, adatforrás.
+    * A GenerateDatasetXml, az új EDDGrid FromThredd Katalógus betakarítás egy teljes THREDDS katalógus (vagy alkatrész) és generál datasets.xml tartalom. Az UAF projektnek köszönhetően.
+    * GenerateDatasets Az Xml és a DasDds most az eredményeket is \\[ bigParentDirectory[szerkesztés] \\] /logs/log.txt. Rich Signellnek és Charles Carletonnak köszönhetően.
+    * Számos fejlesztés a login rendszerben. A POST-nak köszönhetően.
+*    **A dolgok ERDDAP™ Programozók Tudni és csinálni kell:** 
+    * Voltak változások a /WEB-INF/lib/ könyvtárban. Kérjük, változtassa meg a javac és a java osztályú beállításokat ennek megfelelően.
+    * Van egy új \\[ Te Url \\] /erddap/verziós szolgáltatás, hogy meghatározza a verzió egy ERDDAP ... A válasz szöveg, pl. ERDDAP \\_version=1.24 Ha kap egy HTTP 404 Not-Found hibaüzenetet, kezelje a ERDDAP™ mint 1.22 vagy alacsonyabb verzió. A POST-nak köszönhetően.
+*    **Kis változások és Bug javítások:** 
     
-    * EDDTableFrom Sos változások:
-        * Az IOOS olvasásához nyújtott támogatás eldobása SOS XML válaszok.
-        * Hozzáadott támogatás az IOOS olvasásához SOS szöveg / CSV. (Szóval... SOS A szervereket jelenleg nem támogatják.) 
-        * Sok változtatás történt az IOOS-szal kapcsolatban SOS A kiszolgáló adatai.
-        * Hozzáadott támogatás a BBOX lekérdezésekhez az IOOS-hoz SOS és OOSTethys   SOS szerverek. Ezek a változások nagy gyorsaságot eredményeznek a vonatkozó adatkérések tekintetében. Az IOOS-nak köszönhetően SOS .
-    * Szöveg .mat A táblázatos adatfájlok most már helyesek. Hála Roy Mendelssohn-nak.
+    * EDDTableFrom Változások:
+        * Csökkentett támogatás az IOOS olvasásához SOS XML válaszok.
+        * Hozzáadott támogatás az IOOS olvasásához SOS szöveg/csv. (NOS SOS a jelenleg nem támogatott szerverek.) 
+        * Sok változást hozott létre az IOOS-hoz SOS szerver részletek.
+        * Hozzáadott támogatás BBOX lekérdezések IOOS SOS és OOSTethys   SOS szerverek. Ezek a változások nagy sebességgel járnak a releváns adatkérésekhez. Köszönöm IOOS SOS ...
+    * Szöveg .mat A tabuláris adatfájlokat most helyesen mentik meg. Roy Mendelssohnnak köszönhetően.
     *    WMS 
-        *    OpenLayers jelenleg ERDDAP™ a WMS weboldalak. Ez javítja a problémát okozott, amikor OpenLayers néhány hónapja megváltozott, és megelőzte a jövőbeli problémákat.
-        * A WMS   GetCapabilities válasz, a&lt;OnlineResource &gt; érték most a URL WMS szolgáltatás. Hála Charlton Galvarinónak.
-        * Egy legenda jelenik meg a WMS a színes sáv megjelenítésére szolgáló weboldal. Hála Emilio Mayorgának.
-    *    EDDGrid AggregateExistingDimension Constructor volt probléma, ha a tengely 'forrás Az értékek nem voltak egyenlőek a céljukkal. Érték, például, ha a forrásidő volt valami más "seconds since 1970-01-01" . Köszönöm Todd Spindler.
-    * A TableWriterGeoJson, a felesleges "," után bbox \\[ ... \\] eltávolították. Hála Greg Williamsnek.
-    * Sok apró változtatás és hibajavítás.
+        *    OpenLayers most össze van kötve ERDDAP™ használatra a WMS weboldalak. Ez rögzíti az okozott problémát, ha OpenLayers néhány hónappal ezelőtt megváltozott, és megakadályozza a jövőbeli problémákat.
+        * A WMS   GetCapabilities válasz,&lt;OnlineResource&gt; Az érték most az URL WMS szolgáltatás. Charlton Galvarino-nak köszönhetően.
+        * Egy legenda jelenik meg WMS weboldal, hogy megmutassa a színesbar. Emilio Mayorgának köszönhetően.
+    *    EDDGrid AggregateExistingDimension konstruktornak problémái voltak, ha a tengely forrása Az értékek nem voltak egyenlőek a rendeltetési helyükkel Értékek, például, ha a forrásidő valami más volt, mint "seconds since 1970-01-01" ... Köszönöm Todd Spindler.
+    * A TableWriterGeoJson-ban a túlzott "," a bbox után \\[ ... \\] eltávolították. Greg Williamsnek köszönhetően.
+    * Sok apró változás és hibajavítás.
     
-## változat{#version-122} 
- (release 2009- 07- 05) 
+## Verzió 1.22{#version-122} 
+ (2009-07-05) 
 
-* Az 1.20-ban bemutatott SlideSorter hiba meg van javítva.
-* Az 1.20-ban bemutatott OBIS hiba meg van javítva.
-* A Jason adatkészletekre vonatkozó hivatkozásokat a képek / szerkentyűk / googleGadgets oldalon eltávolították.
+* Az 1,20-ban bevezetett SlideSorter bug rögzített.
+* Az OBIS bug bevezetett 1,20-ban rögzített.
+* A Jason adatkészletekre vonatkozó hivatkozásokat a képeken/gadgets/GoogleGadgets oldalon eltávolították.
      
-## változat{#version-120} 
- (released 2009- 07- 02) 
+## Verzió 1.20{#version-120} 
+ (2009-07-02) 
 
-*    ERDDAP™ adminisztrátorok, kérjük, hogy ezt adja hozzá a setup.xml fájlhoz:
+*    ERDDAP™ adminisztrátorok, kérjük, adja hozzá ezt a beállítás.xml fájl:
 ```
     <!-- If you want to restrict access to some datasets, you need to 
     specify the method used for logging on (authentication). See the info 
@@ -2775,75 +2792,75 @@ Del törölni őket
     <unusualActivity>10000</unusualActivity>
 ```
 
-* Új adatkészlet típusok [ EDDGrid Másolás](/docs/server-admin/datasets#eddgridcopy) és [EDDTableCopy](/docs/server-admin/datasets#eddtablecopy) egy másik helyi másolatának elkészítése és karbantartása EDDGrid vagy EDDTable dataset adatait, és szolgáljon adatokat a helyi másolat. Ezek nagyon könnyen használható és nagyon hatékony **megoldások a távoli adatforrásokból származó adatok kiszolgálásával kapcsolatos legnagyobb problémákra:** 
+* Új adatkészlettípusok [ EDDGrid Másolás](/docs/server-admin/datasets#eddgridcopy) és [EDDTableCopy](/docs/server-admin/datasets#eddtablecopy) készítsen és tartsa fenn a másik helyi másolatát EDDGrid vagy az EDDTable adatkészlet adatai, és szolgálja az adatokat a helyi másolatból. Ezek nagyon könnyen használhatók és nagyon hatékonyak **a távoli adatforrásokból származó adatok kiszolgálásával kapcsolatos legnagyobb problémák megoldása:** 
     
-    * A távoli adatforrástól való hozzáférés lassú lehet (különböző okokból) .
-    * A távoli adatkészlet néha nem elérhető (több okból) .
-    * Az adatok egyetlen forrásával való kapcsolat nem túl jó. (például, amikor sok felhasználó és sok ERDDAP s használja) .
+    * A távoli adatforrásból származó adatok lassúak lehetnek (különböző okok miatt) ...
+    * A távoli adatkészlet néha nem elérhető (ismét, különböző okok miatt) ...
+    * Az adatok egyik forrására való támaszkodás nem mérlegeli jól (pl. amikor sok felhasználó és sok ERDDAP Használja) ...
     
-Plusz, a helyi másolat az eredeti másolata, ami hasznos arra az esetre, ha valami történne az eredetivel.
+Plusz, a helyi másolat az eredeti mentés, amely hasznos abban az esetben, ha valami történik az eredeti.
     
-Semmi új nincs abban, ha helyi másolatot készítünk egy adatkészletről. Ami új itt, hogy ezek az órák teszik\\*könnyű\\*Létrehozni és\\*fenntartás\\*a\\*fajta\\*a távoli adatforrások típusai és\\*metaadatok hozzáadása\\*az adatok másolása közben.
+Nincs semmi új az adatkészlet helyi másolatának elkészítéséről. Mi az új itt, hogy ezek az osztályok teszik\\*könnyű\\*létrehozni és létrehozni\\*Fenntartás\\*az adatok helyi másolata egy\\*változat\\*távoli adatforrások és\\*Metaadat\\*az adatok másolása közben.
     
-Ezek az adatkészlet típusok egy sor olyan funkció részét képezik, amelyek egyszerűsítik a [Hálózatok / klaszterek / szövetségek ERDDAP sz](/docs/server-admin/scaling) nagyon nehéz teher kezelése (pl. adatközpontban) .
+Ezek az adatkészlet típusok egy teljes funkciók részét képezik, amelyek egyszerűsítik a létrehozását [hálók/klaszterek/szövetségek ERDDAP s](/docs/server-admin/scaling) nagyon nehéz terheket kezelni (pl. adatközpontban) ...
     
-* Új adatkészlet típusa [EDDTableFromDatabase](/docs/server-admin/datasets#eddtablefromdatabase) adatokat szerez egy helyi vagy távoli adatbázistáblából.
-*    ERDDAP™ Most van egy [biztonság](/docs/server-admin/additional-information#security) a hitelesítést támogató rendszer (a felhasználók belépésének engedélyezése) és engedély (bizonyos magánjellegű adatkészletekhez való hozzáférés biztosítása) .
-* Vannak [két, új, parancssori szerszám](/docs/server-admin/datasets#tools) Segíteni ERDDAP™ Az adminisztrátorok létrehozzák az XML-t egy új adathoz datasets.xml :
-    * GenerateDatasets Az Xml szinte bármilyen típusú adatkészlethez készítheti az XML adatállományt.
-    * A DasDds segít az XML- es adatkészlet ismételt tesztelésében és finomításában. ERDDAP GenerateDatasets Az Xml-es honlapokat eltávolították. Biztonsági okokból csak néhány adatkészlet típust támogattak. Az új parancssori eszközök jobb megoldást jelentenek.
-* Az új [állapot oldal](/docs/server-admin/additional-information#status-page) hagyja, hogy bárki (de különösen adminisztrátorok) a ERDDAP™ bármilyen böngésző segítségével \\[ baseUrl \\]  /erddap/status.html .
-* Tabledap most támogatja [szerver- side függvények](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#functions) :
-    * Elkülönítés () két sort távolít el a választáblából,
-    * & orderBy  (...) lehetővé teszi a választábla összeállításának módját,
-    * & orderByMax  (...) lehetővé teszi a választábla kiválasztásának módját, és eltávolítja az összes sort, kivéve az utolsó megadott oszlopban megadott maximális értékeket tartalmazó sorokat. Ez például arra használható, hogy az utolsó rendelkezésre álló adatokat az egyes állomásokra.
-* A táblázatos adatok most már tartalmazhatnak további datedTime változókat, amelyeket nem neveztek el "time" . Ezeket a változókat az "egységek" metaadatai ismerik el, amelyeknek tartalmazniuk kell " since "   (numerikus dátumnál Időpontok) vagy "yy" vagy "YY" (formázott String dateTimes) . De kérem, használja a destinationName   "time" a fő időpontra Időváltozó.
-*    ERDDAP™ most létrehoz egy [sitemap.xml](/docs/server-admin/additional-information#sitemapxml) file, amely megmondja keresőmotorok, hogy a ERDDAP Csak havonta kell kúszni. ERDDAP™ adminisztrátorok, kérem kövessék [Ezek az utasítások](/docs/server-admin/additional-information#sitemapxml) a keresőmotorok értesítése az új sitemap.xml fájlról.
-*    ERDDAP A hibaüzenetek most sokkal rövidebbek és az ügyfelekhez igazodnak (nem programozók) . Hála Greg Williamsnek.
-* [&lt;Kérelmező feketelista &gt;] (/ docs / server- admin / datasets # applicblist) most az IP-címeket is támogatja, ahol az utolsó szám helyébe\\ * lép.
-* Kérelem .json és .geoJson fájlok most tartalmazhatnak egy opcionális [jsonp](https://niryariv.wordpress.com/2009/05/05/jsonp-quickly/) kérés "& .json p = _ functionName _ "a lekérdezés végéig. Alapvetően, ez csak azt mondja, ERDDAP™ a "_ functionName _ ("a válasz kezdetéig és"...) "a válasz végéig. Ha eredetileg nem volt lekérdezés, hagyja ki a" & "a lekérdezés. Hála Greg Williamsnek.
-* A [Napi jelentés](/docs/server-admin/additional-information#daily-report) .
-* Az adatkészletek listáit tartalmazó weboldalakon az intézmény és az ID most a jobb szélen van. Ez mozgatja az előfizetést és más hasznos oszlopokat megtekinteni a keskeny képernyőkön.
-* Az összes oldalon, az oldal címe (alapján a&lt;cím &gt; a&lt;startHeadHtml &gt; amit setup.xml-ben definiálsz) módosul, hogy a weboldal jobb leírását tartalmazza (például a jelenlegi adatkészlet címével és intézményével) .
-* Xmx információk most tartalmazza a log.txt, a Daily Report, és a status.html. Hála Ellyn Montgomerynek.
-*    ERDDAP™ kiegészítő általános védelmet nyújt minden hibával szemben (pl., OutOfMemoryError) . Hála Charles Carletonnak.
-* A hibakezelés javítása, ha a válasz már megtörtént.
-* JAVÍTOTT: EDDTableFromFiles és EDDGrid FromFiles most csak lehetővé teszi&lt;metadata &gt; első vagy utolsó. Az utolsó előtti nem támogatott. És az elsők és utolsók az utolsó ModifiedTime fájlokon alapulnak.
-* hibajavítás: az EDDTableFrom-ban SOS , érvénytelen info egy állomás dobott egy kivételt, és okozta az egész adatkészlet elutasítását. Azokat az állomásokat figyelmen kívül hagyják. (és a hibaüzenet bejelentkezik a log.txt fájlba) . Hála Rick Blairnek.
+* Új adatkészlet típus [EDDTableFromDatabase](/docs/server-admin/datasets#eddtablefromdatabase) adatokat kap egy helyi vagy távoli adatbázis tábláról.
+*    ERDDAP™ most van egy [biztonság](/docs/server-admin/additional-information#security) rendszer, amely támogatja a hitelesítést (hagyja, hogy a felhasználók bejelentkezzenek) és engedélyezés (hozzáférést biztosítanak bizonyos magánadatbázisokhoz) ...
+* Vannak [kettő, új, parancssori eszközök](/docs/server-admin/datasets#tools) Segítség ERDDAP™ Az adminisztrátorok létrehozzák az XML-t egy új adatkészlethez datasets.xml :
+    * GenerateDatasets Az Xml az XML durva tervezetét generálhatja szinte bármilyen adatkészlethez.
+    * A DasDds segít ismételten tesztelni és finomítani az XML-t egy adatkészletre. ERDDAP GenerateDatasets Az Xml weboldalakat eltávolították. Biztonsági okokból csak néhány adatkészlettípust támogattak. Az új parancssori eszközök jobb megoldást jelentenek.
+* Az új [status oldal](/docs/server-admin/additional-information#status-page) Engedd, hogy bárki (de különösen adminisztrátorok) nézd meg egy státuszt ERDDAP™ bármilyen böngészőből, ha megy \\[ alapUrl \\]  /erddap/status.html ...
+* A Tabledap most támogatja [szerveroldali funkciók](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#functions) :
+    * Ésdistinct () eltávolítja a duplikált sorokat a válaszasztalról,
+    * és orderBy  (...) megadja, hogyan kell rendezni a választáblát,
+    * és orderByMax  (...) Lehetővé teszi, hogy megadja, hogyan kell rendezni a választáblát, és eltávolítja az összes sort, kivéve a sorokat az utolsó meghatározott oszlopban lévő maximális értékekkel. Ezt lehet használni, például, hogy az utolsó rendelkezésre álló adatokat minden állomásra.
+* A Tabular adatkészletek most tartalmazhatnak további dátumotTime változókat, amelyeket nem neveznek el "time" ... Ezeket a változókat "egyetlen" metaadata ismeri el, amelyet tartalmaznia kell " since "   (numerikus dátum Idők) vagy "yy" vagy "YYY" (formázott String dátumTimes) ... De kérlek még mindig használd a destinationName   "time" a fő dátumhoz Idő változó.
+*    ERDDAP™ most generál egy [webhelytérkép.xml](/docs/server-admin/additional-information#sitemapxml) fájl, amely azt mondja a keresőmotoroknak, hogy a ERDDAP csak havonta kell összetörni. ERDDAP™ adminisztrátorok, kérlek kövesse [Ezek az utasítások](/docs/server-admin/additional-information#sitemapxml) hogy értesítse a keresőmotorokat az új webhelytérkép.xml fájlról.
+*    ERDDAP "A hibaüzenetek most sokkal rövidebbek, és az ügyfelek számára készültek (nem programozók) ... Greg Williamsnek köszönhetően.
+* [[szerkesztés]]&lt;kérésBlacklist&gt; (/docs/server-admin/datasets#requestblacklist) most is támogatja az IP címeket, ahol az utolsó számot \\* váltotta fel.
+* Kérések .json és a .geoJson fájlok most tartalmazhatnak egy opcionális [jsonp](https://niryariv.wordpress.com/2009/05/05/jsonp-quickly/) kérés a "&#" hozzáadásával .json p=_functionName_” a lekérdezés végén. Alapvetően ez csak azt mondja ERDDAP™ "_funkciónév_ ("A válasz kezdetére és ") "A válasz végére. Ha eredetileg nem volt lekérdezés, hagyja ki a "&" a lekérdezésben. Greg Williamsnek köszönhetően.
+* Az új statisztikák helyét hozzáadták a [Napi jelentés](/docs/server-admin/additional-information#daily-report) ...
+* Az adatkészletek, az intézmény és az id listáival rendelkező weboldalakon jelenleg messze van. Ez az előfizetést és más hasznosabb oszlopokat érinti a szűk számítógép képernyőkön.
+* Az összes weboldalon az oldal címe (az oldalon található).&lt;cím&gt; a&lt;Az indulóHtml&gt;, amelyet a setup.xml-ben definiál, módosítva van, hogy a weboldal jobb leírását tartalmazza (például a jelenlegi adatkészlet címe és intézménye) ...
+* Az Xmx információ jelenleg szerepel a log.txt, a Daily Report és a status.html memóriainformációival. Ellyn Montgomerynek köszönhetően.
+*    ERDDAP™ további, általános célú védelem minden hiba ellen (pl.: OutOfMemoryError) ... Charles Carletonnak köszönhetően.
+* A hibakezelés javítása, ha a válasz már elkövetett.
+* IMPROVED: EDDTableFromFiles és EDDGrid FromFiles most csak lehetővé teszi&lt;metadataFrom&gt; először vagy utolsó. A félelmet már nem támogatják. És először és utoljára most a fájlok LastModifiedTime.
+* Bug fix: EDDTableFrom SOS Az egyik állomás érvénytelen információja kivételt váltott ki, és az egész adatkészletet elutasították. Most ezeket az állomásokat csak figyelmen kívül hagyják (és a hibaüzenet bejelentkezik a log.txt) ... Rick Blairnek köszönhetően.
      
 
-## változat{#version-118} 
- (kiadás dátuma: 2009- 04- 08) 
+## Verzió 1.18{#version-118} 
+ (2009-04-08) 
 
-* Hibajavítás: Az 1.14-től kezdve az EDDTable Data Access Form és a Make A Graph weboldal nem foglalkozott megfelelően az idézett megszorításokkal.
-* hibajavítás: 1,14-től kezdve az EDDTableFromDapSequence nem kezelte megfelelően az időkorlátokat, ha a forrásidő nem volt "másodperc 1970-01T00: 00 óta".
+* Bug fix: Kezdve 1,14-ben, az EDDTable Data Access Form és Make A Graph weboldal nem foglalkozik megfelelően idézett korlátozásokkal.
+* Bug fix: Kezdve 1,14, EDDTableFromDapSequence nem kezeli az időkorlátokat helyesen, ha a forrásidő egység nem volt "második 1970-01-01T00:00.
      
 
-## változat{#version-116} 
- (kiadás dátuma: 2009- 03- 26) 
+## Verzió 1.16{#version-116} 
+ (2009-03-26) 
 
 *    ERDDAP™ adminisztrátorok:
-    * Ez egy fontos kiadás, mert javítja a hibát, hogy hagyott egy ERDDAP™ szál fut, ha használt Tomcat Manager megállítani / Start vagy újratöltés ERDDAP . Tehát, amikor telepíted az 1.16-ot, ne csak Tomcat menedzsert használd, hogy eltávolítsd a régi ERDDAP™ és telepítse az új ERDDAP . Ehelyett: **unimplant the old ERDDAP™ , a Tomcat újraindítása (vagy a szerver) , majd telepítse az új ERDDAP .** Mindig jó ötlet egy új verzió telepítésekor.
-    * Kérjük, adja meg [&lt;Kérelmező feketelista &gt;&lt;/ Kérelmező feketelista &gt;] (/ docs / server- admin / datasets # applicblist) Önnek datasets.xml . Ez használható a blokkolandó kliens IP-címek listájának megadásához (például a Szolgáltatás megtagadása vagy egy túlságosan buzgó webrobot elhárítása) .
-* Van egy \\[ bigParentDirectory \\] / Naplózási könyvtár a ERDDAP™ naplófájlok. Amikor elkezded ERDDAP™ , készít egy archívum másolatot a log.txt és a log. tx.Korábbi fájlok időbélyegzővel. Ha baj volt az újrakezdés előtt, hasznos lehet ezeket a fájlokat elemezni.
-*    ERD s ERDDAP™ Most bekapcsolta az előfizetési rendszert.
-*    ERDDAP™ ismét megengedi (de még mindig nem ajánlott.) a "% 26" kódolása az URL- ben (lásd a [Kapcsolódó v1.14 változás](#percent26) ) .
-* Számos új kiegészítés a [Napi jelentés](/docs/server-admin/additional-information#daily-report) .
-* Kis hibajavítások generateDatasetsXml.
-* Néhány kis hiba.
+    * Ez egy fontos kiadás, mert egy hibát rögzít, amely elhagyta a ERDDAP™ szál fut, ha a Tomcat Managert a Stop / Start or Reload-ra használta ERDDAP ... Tehát amikor telepíti az 1.16-ot, ne csak a Tomcat menedzsert használja a régit ERDDAP™ és telepítse az újat ERDDAP ... Ehelyett: **A régi ERDDAP™ Indítsa újra Tomcat (vagy a szerver) Ezután telepítse az újat ERDDAP ...** Mindig jó ötlet, ha új verziót telepítünk.
+    * Kérlek, add hozzá (&lt;Blacklist&gt;&lt;/requestBlacklist&gt;] (/docs/server-admin/datasets#requestblacklist) a te datasets.xml ... Ezt lehet használni, hogy megadja az ügyfél IP címek listáját blokkolni (pl. a szolgáltatási támadás megtagadása vagy túlságosan nulla webes robot) ...
+* Van most egy \\[ bigParentDirectory[szerkesztés] \\] /log könyvtár, hogy tartsa a ERDDAP™ log fájlok. Amikor elkezded ERDDAP™ , ez teszi egy archív másolat a log.txt és a log. txt.previous fájlok egy időbélyeggel. Ha baj volt az újraindítás előtt, hasznos lehet ezeket a fájlokat elemezni.
+*    ERD A ERDDAP™ most az előfizetési rendszer megfordult.
+*    ERDDAP™ ismét lehetővé teszi (de még mindig nem ajánlom) a „%26” kódolása az URL-ek kérésére (lásd: [kapcsolódó v1.14 változás](#percent26) ) ...
+* Számos új kiegészítés a Tally részéhez [Napi jelentés](/docs/server-admin/additional-information#daily-report) ...
+* Kis hibajavítások a geneDatasetsXml-ben.
+* Néhány kis hibajavítás.
      
 
-## változat{#version-114} 
- (kiadás dátuma: 2009- 03- 17) 
+## Verzió 1.14{#version-114} 
+ (2009-03-17) 
 
 * Változások a felhasználók számára:
-    * A hálózati adatkérésekben, ERDDAP™ most támogatja: [last- n](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#last) ahol n az indexek egész száma, és [ (last- d) ](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#lastInParentheses) ahol d a numerikus érték (Az idő, ez a másodperc) .
-    * A táblázatos adatkérésekben a sztringkorlátozások megkövetelik [kétszeres idézetek](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#QuoteStrings) az érték körül, például, & id = "NDBC40121" Ez szükséges a DAP A protokoll.
-    * A táblázatos adatkérésekben, ERDDAP™ Most kell, hogy [minden korlátozás megfelelő százalékban kódolva](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#PercentEncode) . A böngészők ezt automatikusan csinálják, így ez leginkább a számítógépes programokat / szkripteket érinti, amelyek hozzáférnek ERDDAP .
-#### ↑ 26{#percent26} 
-*    [Korábban...](#percent26) a [grafikonoldal beágyazása](https://coastwatch.pfeg.noaa.gov/erddap/images/embed.html) és [ ERDDAP™ Google Gadget weboldal](https://coastwatch.pfeg.noaa.gov/erddap/images/gadgets/GoogleGadgets.html) azt mondta, hogy a kép URL-jének "&" -jét "% 26" -ra kell cserélni. Mostantól a kép URL-jének "& amp;" -jét kell helyettesítenie. Tehát a meglévő weboldalakon és a Google Gadgets-ben található "% 26" -t "& amp;" -ra kell cserélni. (Sajnálom.) 
-*    ERDDAP™ adminisztrátorok, kérem:
-    * A következő [szetup.xml](/docs/server-admin/deploy-install#setupxml) fájl (és a zászló megváltoztatása Kulcsfontosságú érték) :
+    * A hálózati adatkérésekben, ERDDAP™ most támogatja: [Utolsó](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#last) ahol az n egy integrált számú index és [ (utolsó) ](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#lastInParentheses) hol d egy numerikus érték (Idővel másodpercekben van) ...
+    * A tabuláris adatkérésekben a String Contraints most előírja [dupla idézetek](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#QuoteStrings) az érték körül, például &id="NDBC40121" Ezt a követelményt a DAP protokoll.
+    * Mesés adatok kéréseiben, ERDDAP™ most megköveteli, hogy [minden korlátozás megfelelő százalékban kódolt](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#PercentEncode) ... A böngészők ezt automatikusan teszik, így ez leginkább befolyásolja a számítógépes programokat / írásokat, amelyek hozzáférnek ERDDAP ...
+#### százalék26{#percent26} 
+*    [Korábban,](#percent26) a [beágyazott egy grafikus weboldalt](https://coastwatch.pfeg.noaa.gov/erddap/images/embed.html) és [ ERDDAP™ Google Gadget weboldal](https://coastwatch.pfeg.noaa.gov/erddap/images/gadgets/GoogleGadgets.html) Azt mondta, hogy cserélje ki a "&" a kép URL "%26". Mostantól ki kell cserélni a "&"-t a kép URL-jében a "&amp;". Tehát fel kell cserélnie a "%26" -ot a meglévő weboldalakon és a Google Gadgetsben a "&amp;". (Sorry) 
+*    ERDDAP™ adminisztrátorok, kérlek:
+    * Adja hozzá a következőt [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl (és változtassa meg a zászlót KeyKey érték) :
 ```
         <!-- ERDDAP™ has a service that lets remote users set a flag
         to notify ERDDAP™ to try to reload a dataset.
@@ -2873,12 +2890,12 @@ Ezek az adatkészlet típusok egy sor olyan funkció részét képezik, amelyek 
         <subscriptionSystemActive>true</subscriptionSystemActive>  
 ```
 
-    * A következő vonalon&lt;emailUserName &gt; az Ön [szetup.xml](/docs/server-admin/deploy-install#setupxml) fájl hozzáadása
+    * A sor után&lt;e-mailUserName&gt; az Ön [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl, add
 ```
         <emailPassword>_myPassword_</emailPassword> <!-- optional; if absent, emails can't be sent to non-local addresses -->  
 ```
-és adja meg az igazi jelszavát.
-    * Megváltozhatsz.&lt;wmsSampleBBox &gt; az Ön [szetup.xml](/docs/server-admin/deploy-install#setupxml) a legfeljebb 360 hosszúsági értéket tartalmazó fájl, például,
+és lépjen be az igazi jelszóba.
+    * Megváltozhat&lt;wmsSampleBox&gt; az Ön [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl, hogy tartalmazza a hosszúsági értékek akár 360, pl.,
 ```
         <!-- The bounding box values are 
            minLongitude,minLatitude,maxLongitude,maxLatitude.
@@ -2886,89 +2903,89 @@ Ezek az adatkészlet típusok egy sor olyan funkció részét képezik, amelyek 
         <wmsSampleBBox>0,-75,360,75</wmsSampleBBox>  
 ```
 
-    * Az Ön datasets.xml fájl, az adatkészlet típusa: EDDTableFromNc4DFiles to EDDTableFromNcFiles (amely most támogatja a fájlok száma a méretek) . Ha volt EDDTableFromNc4DFiles adata:
+    * A te datasets.xml fájl, nevezze át az EDDTableFromNc4DFiles adatkészletét az EDDTableFromNcFiles-re (amely jelenleg számos dimenzióval támogatja a fájlokat) ... Ha EDDTableFromNc4DFiles adatkészlete volt:
         
-        1. Meg kell változtatni, hogy a = "EDDTableFromNcFiles" a datasets. XML fájl.
-        2. A&lt;n Méretek &gt; 4&lt;/ nDimensions &gt; tag az adatkészlet XML.
-        3. Hozzáadhatja az új&lt;sortFilesBySourceNames &gt; tag a fájlok belső sorrendjének megadásához, amely meghatározza a visszaküldött adatok teljes sorrendjét.
+        1. Meg kell változtatni a Type="EDDTableFromNcFiles" az adatkészletekben. XML fájl.
+        2. Hozzá kell adnia egy&lt;nDimensions&gt; 4 4 4&lt;/nDimensions&gt; címke az adatkészlet XML.
+        3. Hozzáadhatja az újat&lt;rendezőFilesBySourceNames&gt; címke, hogy meghatározza a fájlok belső megrendelését, amely meghatározza a visszatért adatok általános rendjét.
         
-A részleteket lásd: [EDDTableFromFiles](/docs/server-admin/datasets#eddtablefromfiles) .
-    * A múltban, az EDDTableFromDapSequence, a OPeNDAP DRDS szerverek, in datasets.xml , mi használt&lt;sourceCanConstrainStringsRegex &gt; ~ =&lt;/ sourceCanConstrainStringRegex &gt;. De most azt látjuk, hogy a DRDS regex támogatás korlátozottabb, mint ERDDAP 's, így javasoljuk&lt;sourceCanConstrainStringsRegex &gt;&lt;/ sourceCanastrainStringRegex &gt; annak érdekében, hogy a regex-megkötéseket ne a forrásnak adják át, hanem a ERDDAP .
-    * Felújított kezelése sourceCanContrine... in datasets.xml a [EDDTableFromDapSequence](/docs/server-admin/datasets#eddtablefromdapsequence) és (Belső) minden EDDTable adatkészlet típusa. Az új rendszer egyszerűbb, és jobban tükrözi a különböző adatforrások változékonyságát. Lehet, hogy módosítani kell az XML az adatok datasets.xml .
-* Számos új funkciók, amelyek hasznosak maguk, de ha együtt, is megkönnyíti a létrehozását [Hálózatok / klaszterek / szövetségek ERDDAP sz](/docs/server-admin/additional-information#grids-clusters-and-federations) .
-    * Új adatkészlet típusok:
-        *    [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) és [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) amely lehetővé teszi ERDDAP™ adatkészlet felvétele egy másikból ERDDAP™ nagyon egyszerű és nagyon hatékony módon.
-        *    [ EDDGrid FromFiles](/docs/server-admin/datasets#eddgridfromfiles)   (és alosztálya, [ EDDGrid FromNcFiles](/docs/server-admin/datasets#eddgridfromncfiles) amely tud olvasni NetCDF   .nc , valamint HDF   .hdf fájlok) .
-        *    [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) amely tud olvasni NetCDF   .nc Amelyeknek asztalszerű szerkezetük van.
-    * A Run LoadDatasets és a LoadDatasets átalakult, így ERDDAP™ nagyon érzékeny az adatkészletek újratöltésére a [lobogó](/docs/server-admin/additional-information#flag) könyvtár (gyakran&lt;5 másodperc, ha a fő betöltési adatkészlet jelenleg kész).
-    * Új szolgáltatás engedélyezése [URL a zászló fájl létrehozásához](/docs/server-admin/additional-information#set-dataset-flag) adott adatkészlet esetében, például,
+Részletekért lásd [EDDTableFromFiles](/docs/server-admin/datasets#eddtablefromfiles) ...
+    * A múltban az EDDTableFromDapSequence esetében, OPeNDAP DRDS szerverek, datasets.xml használtunk&lt;forrásCanConstrainStringsRegex -=&lt;/sourceCanConstrainStringRegex&gt;. De most látjuk, hogy a DRDS regex támogatása korlátozottabb, mint ERDDAP "Szóval ajánljuk&lt;forrásCanConstrainStringsRegex&gt;&lt;/sourceCanConstrainStringRegex&gt;, hogy a regex korlátozások nem kerülnek át a forrásba, hanem inkább kezelik őket ERDDAP ...
+    * Revamped kezelése forrásCanConstrain ... benne datasets.xml által [EDDTableFromDapSequence](/docs/server-admin/datasets#eddtablefromdapsequence) és (belső) minden EDDTable adatkészlet típus. Az új rendszer egyszerűbb és jobban tükrözi a különböző adatforrások változóságát. Lehet, hogy módosítania kell az XML-t az adatkészleteihez datasets.xml ...
+* Számos új funkció van, amelyek önmagukban hasznosak, de ha kombináljuk, szintén elősegítik a létrehozást [hálók/klaszterek/szövetségek ERDDAP s](/docs/server-admin/additional-information#grids-clusters-and-federations) ...
+    * Új adatkészlettípusok:
+        *    [ EDDGrid FromErdap](/docs/server-admin/datasets#eddfromerddap) és [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) amely engedi ERDDAP™ tartalmaz egy másik adatkészletet ERDDAP™ nagyon egyszerű és nagyon hatékony módon.
+        *    [ EDDGrid Fájlok](/docs/server-admin/datasets#eddgridfromfiles)   (alosztálya, [ EDDGrid FromNcFiles](/docs/server-admin/datasets#eddgridfromncfiles) amely olvasható NetCDF   .nc GRIB .grb és HDF   .hdf fájlok) ...
+        *    [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) amely olvasható NetCDF   .nc amelynek asztali struktúrája van.
+    * A RunLoadDatasets és a LoadDatasets újratelepültek, hogy ERDDAP™ nagyon reagál az adatkészletek visszatöltésére a fájlok alapján [zászló](/docs/server-admin/additional-information#flag) rendező (gyakran&lt;5 másodperc, ha a fő terhelésDatasets jelenleg történik).
+    * Új szolgáltatás, amely lehetővé teszi [URL létrehozni egy zászló fájlt](/docs/server-admin/additional-information#set-dataset-flag) egy adott adatkészlet esetében, például
     ```
         https://coastwatch.pfeg.noaa.gov/erddap/setDatasetFlag.txt?datasetID=rPmelTao&flagKey=123456789  
     ```
-létrehoz egy zászló fájlt a zászló könyvtárában rPmelTao (Bár a zászló A kulcs itt rossz.) .
-    * Új [előfizetés](https://coastwatch.pfeg.noaa.gov/erddap/subscriptions) szolgáltatás annak érdekében, hogy az ügyfél meg tudja határozni egy adott adatkészlet létrehozásakor végrehajtandó műveletet (amikor ERDDAP™ újraindítása) és amikor az adatkészlet változik bármilyen módon. Ez a rendszer letiltható&lt;előfizetés Rendszeraktív &gt; az Ön [szetup.xml](/docs/server-admin/deploy-install#setupxml) akta. A ERDDAP™   [Napi jelentés](/docs/server-admin/additional-information#daily-report) Most felsorolja az összes előfizetés, és magában foglalja a URL szükséges, hogy törölje mindegyik, arra az esetre, ha úgy érzi, a rendszer visszaélnek. In datasets.xml , van egy új, opcionális [&lt;előfizetés EmailBlacklist &gt;] (/ docs / server- admin / datasets # subcomptionemailblacklist) Címke, hogy az adminisztrátorok meg tudják adni a comma- elválasztott listáját e-mail címek, amelyek azonnal feketelistára az előfizetési rendszer.
-    * Új [&lt;onChange &gt;] (/ docs / server- admin / datasets # on change) attribútum datasets.xml hagyja ERDDAP™ Az adminisztrátor határozza meg az adott adatkészlet létrehozásakor végrehajtandó műveletet (amikor ERDDAP™ újraindítása) és amikor az adatkészlet változik bármilyen módon.
-    * Javítások a teljes szöveges kereséshez: a keresési sztring tárolása minden adatkészlethez 1 / 2-re használja a memóriát. A keresési algoritmus (Boyer- Moore- szerű) Most már 3X gyorsabb.
-    * E-mailek ERDDAP™ most mindig előrehozza a téma és tartalma \\[ erddap Url \\] , hogy egyértelmű legyen melyik ERDDAP™ Ez jött (abban az esetben, ha Ön több adagot ad be ERDDAP sz) .
-    * Szélesebb körű statisztikai adatgyűjtés a [Napi jelentés](/docs/server-admin/additional-information#daily-report) e-mail.
-    * Új naplófájl \\[ bigParentDirectory \\] / emailLogYEAR- MM- DD.txt naplók minden e-mailt küldött ERDDAP™ minden nap. Ez különösen akkor hasznos, ha a szerver nem tud e-maileket küldeni -- legalább olvasd el őket a naplóban.
-    *    ERDDAP™ Most pedig... \\[ bigParentDirectory \\] / gyorsítótár / ( datasetID ) könyvtárak minden adatkészlethez, mivel sok fájl tárolható.
-* Új [ RSS 2, 01](https://coastwatch.pfeg.noaa.gov/erddap/information.html#subscriptions) takarmány minden adatkészlethez (Keresd a narancsot. RSS ikonok az adatkészletek, az adathozzáférési űrlapok és a grafikonok listáin) .
-*    EDDGrid   .kml A válaszok most csempézett képeket használnak ("szuperoverlays" -- dinamikusan generált quadtree képek) . A kezdeti kép sokkal gyorsabban érkezik a GoogleEarth-be, mint korábban. A térkép felbontása növekszik, ahogy ráközelítünk, egészen az adatkészlet teljes felbontásáig. Ajánlás: a felhasználók kérhetik .kml egyszer, de az adatkészlet teljes hosszúsága, szélességi tartománya. Sajnos az idősávok támogatása megszűnt. (Remélem, visszajön.) .
-*    ERDDAP™ Most adja hozzá [Expires and Cache- Control max- age fejlécek](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) a / images könyvtárból kért összes fájlra. Ez nagyban csökkenti a statikus fájlkérelmek számát ERDDAP és így jelentősen felgyorsul a legtöbb ERDDAP™ oldaltöltések. És sok Java A szkriptfájl hivatkozásai a HTML oldalak aljára kerülnek, ami szintén sok ERDDAP™ oldaltöltések. Köszönhetően a könyv "nagy teljesítményű weboldalak" Steve Souders és a ySlow hozzáadása a FireFox FireBug plugin.
-*    ERDDAP™ Átváltottak a netcdf- java 2.2.22-ről a netcdf- java 4.0-ra. Többek között, ez lehetővé teszi EDDGrid Elolvasandó FromNcFiles HDF   .hdf , valamint GRIB .grb és NetCDF   .nc fájlok.
-*    EDDGrid FromDap és EDDGrid FromNcFiles most is támogatja DARray (valamint DGrid)   dataVariable c. Ha egy dimenziónak nincs megfelelő koordináta-változója, ERDDAP™ tengelyváltozót hoz létre az indexértékekkel (pl. 0, 1, 2,..., 311, 312) . Tehát minden egyéb szempontból EDDGrid továbbra is ugyanaz:
-- Igen. Még mindig minden adatállományt Gridként szolgál, minden dimenzióhoz tengelyváltozóval.
-- Igen. A lekérdezések még mindig kérhetnek értékeket a tengelyváltozókból.
-Hála Charles Carletonnak, Thomas Im-nak, Dorian Raymernek és másoknak.
-* A WMS   OpenLayers Az oldalakon most egy alapértelmezett hosszúság, szélességi tartomány, amely egy kicsit nagyobb, mint az adatkészlet tartománya (nem a pontos tartomány, így a kontextus a kis adatkészletek nyilvánvalóbb) . Az alapértelmezett tartomány most is 0-tól 360-ig terjedhet, ami lehetővé teszi számos adatkészlet teljes skáláját. Köszönöm Todd Spindler.
-* Új csúszdák néhány Data Access Forms és Make A Graph weboldalak. Egyszerűsítik (nyers) a kívánt adatok specifikációja és jó vizuális visszajelzések.
-* Egy új lehetőség a&lt;adatkészlet &gt; címkék datasets.xml : [aktív = "hamis"](/docs/server-admin/datasets#active) .
-* Hivatkozás: ERD s ERDDAP™ megváltozott a parti őrségről.pfel (Még mindig működik a proxy) Part Watch.pfeg (előnyben részesített) .
-* Új támogatás [ data\\_min és data\\_max ](/docs/server-admin/datasets#data_min-and-data_max) változó metaadatok attribútumok.
-* A [Várakozás](/docs/server-admin/additional-information#waitthentryagain-exception) : Nos, néhány kérés, amely korábban nem sikerült, amikor az adatforrás változást észleltek, sikeres lesz, mert ERDDAP™ újra betölti az adatállományt, és automatikusan újra kéri az adatokat, mind az eredeti kéréssel összefüggésben.
-* hibajavítás: generálás Adatbázisok Az Xml-t letiltották ERDDAP™ változat Köszönöm Ellyn Montgomerynek, hogy rámutatott erre.
-* Kis változások a hibakezelésben.
-* Sok javítások elkerülése / kezelése lehetséges versenyfeltételek (azaz a többmenetes ERDDAP ) ami kis, ritka problémákat okozott.
-* Ha egy hibaüzenet egy képre van írva, a kép csak ~ 5- 10 percig marad a gyorsítótárban (nem 60) . Hála Cara Wilsonnak.
-* A standard üzenet, amikor nincs adat, most "A lekérdezés nem eredményezett egyező eredményeket"., ami rövidebb, pontosabb, és egyezik OPeNDAP szerverek.
-*    EDDGrid már nem teszi lehetővé a kötött tengely értékeit.
-* Kis változtatások .ver és .help kérések.
-* Sok apró változtatás és hibajavítás.
+létrehoz egy zászlófájlt az rPmelTao zászlós könyvtárában (Bár a zászló Key itt rossz) ...
+    * Új [előfizetés](https://coastwatch.pfeg.noaa.gov/erddap/subscriptions) szolgáltatás, hogy minden ügyfél megadja a műveletet, amely akkor történik, ha egy adott adatkészlet jön létre (mikor ERDDAP™ újraindítás) és amikor az adatkészlet bármilyen módon változik. Ez a rendszer letiltható&lt;ElőfizetésSystemActive&gt; az Ön [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl. A ERDDAP™   [Napi jelentés](/docs/server-admin/additional-information#daily-report) most felsorolja az összes előfizetést, és magában foglalja az URL-t, hogy törölje az egyeseket, ha úgy érzi, a rendszert visszaélnek. Inkább datasets.xml Van egy új, opcionális [&lt;előfizetés EmailBlacklist&gt;] (/docs/server-admin/datasets#subscriptionemailblacklist) címke, hogy az adminisztrátorok meg tudják határozni az előfizetési rendszerből azonnal feketelistát tartalmazó e-mail címek egy kiválasztott listáját.
+    * Új (új)&lt;onChange&gt;] (/docs/server-admin/datasets#onchange) attribútum datasets.xml hagyja, hogy ERDDAP™ adminisztrátor határozza meg a cselekvést, amely akkor történik, ha egy adott adatkészletet hoznak létre (mikor ERDDAP™ újraindítás) és amikor az adatkészlet bármilyen módon változik.
+    * A teljes szöveges keresés javítása: a keresési sztring tárolása minden adatkészlethez most 1/2 memóriát használ. A keresési algoritmus (Boyer-Moore-szerű) most 3X gyorsabb.
+    * E-mailek ERDDAP™ most mindig megelőzi a témát és a tartalmat \\[ erddap Url \\] , hogy világos legyen, melyik lesz ERDDAP™ ez jött (abban az esetben, ha többször is adminisztrál ERDDAP s) ...
+    * További kiterjedt statisztikai gyűjtés a [Napi jelentés](/docs/server-admin/additional-information#daily-report) e-mail.
+    * Új log fájl \\[ bigParentDirectory[szerkesztés] \\] /emailLogYEAR-MM-D.txt bejelenti az összes e-mailt küldött ERDDAP™ Minden nap. Ez különösen akkor hasznos, ha a szerver nem tudja küldeni az e-maileket - legalább a naplóban olvashatja őket.
+    *    ERDDAP™ Most teszi egy \\[ bigParentDirectory[szerkesztés] \\] /cache/ ( datasetID ) Az egyes adatkészletek könyvtára, mivel előfordulhat, hogy sok fájl csésze.
+* Új [ RSS 2.01](https://coastwatch.pfeg.noaa.gov/erddap/information.html#subscriptions) takarmány minden adatkészlethez (Keresse meg a narancsot RSS ikonok az adatkészletek listáján, az adathozzáférési formákon és a grafikus weboldalakon) ...
+*    EDDGrid   .kml válaszok most használnak csíkos képeket ("superoverlays" - dinamikusan generált quadtree képek) ... A kezdeti kép sokkal gyorsabban terheli a GoogleEarth-ot, mint korábban. A térkép állásfoglalása növekszik, ahogy zoom, az adatkészlet teljes állásfoglalásáig. Ajánlás: a felhasználóknak kérniük kell .kml egy alkalommal, de az adatkészlet teljes hosszúsága, szélességi tartománya. Sajnos az időtartományok támogatását eltávolították (Remélem, visszatér) ...
+*    ERDDAP™ most hozzáadódik [Lejár és Cache-Control max-age fejlécek](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) a /images könyvtárból kért összes fájlra. Ez nagymértékben csökkenti a kapott statikus fájlkérések számát ERDDAP és így nagyban felgyorsítja a legtöbbet ERDDAP™ oldal terhelések. Sokan Java Script fájl referenciák költözött az aljára a HTML oldalak, amely szintén felgyorsítja sok ERDDAP™ oldal terhelések. A "High Performance Web Sites" könyvnek köszönhetően Steve Souders és a FireBug plugin ySlow kiegészítése a FireFox-ban.
+*    ERDDAP™ Netcdf-java 2.2.22-ről a netcdf-java 4.0-ra váltott. Többek között ez lehetővé teszi EDDGrid FromNcFiles olvasni HDF   .hdf , valamint a GRIB .grb és NetCDF   .nc fájlok.
+*    EDDGrid FromDap és EDDGrid FromNcFiles most is támogatja a DArray (valamint a DGrid)   dataVariable S. Ha egy dimenziónak nincs megfelelő koordináta változója, ERDDAP™ axis változót hoz létre az index értékekkel (pl. 0, 1, 2, 311, 312) ... Tehát minden más aspektusa EDDGrid ugyanaz marad:
+\\* Még mindig szolgálja az összes adatkészletet, mint a Rácsok, a tengely változó minden dimenzióban.
+\\* A lekérdezések továbbra is értékeket kérhetnek a tengely változóitól.
+Charles Carletonnak, Thomas Imnek, Dorian Raymernek és másoknak köszönhetően.
+* A WMS   OpenLayers oldalak most van egy alapértelmezett hosszúságú, szélességi tartomány, amely egy kicsit nagyobb, mint az adatkészlet tartománya (nem a pontos tartomány, így a kis adatkészletek kontextusa nyilvánvalóbb) ... Az alapértelmezett tartomány is lehet 0-360, amely lehetővé teszi, hogy a teljes körű sok adatkészletek látható most. Köszönöm Todd Spindler.
+* Új csúszók néhány adathozzáférési formában, és készíts egy grafikus weboldalt. Egyszerűsítik (Súgó) a kívánt adatok specifikációja és jó vizuális visszajelzést nyújt.
+* Új lehetőség a&lt;adatkészlet&gt; címkék a datasets.xml : [aktív="false"](/docs/server-admin/datasets#active) ...
+* Referenciák ERD A ERDDAP™ megváltozott a partwatch.pfel (Még mindig működik a proxy segítségével) partwatch.pfeg (preferált) ...
+* Új támogatás [ data\\_min és data\\_max ](/docs/server-admin/datasets#data_min-and-data_max) változó metaadat tulajdonságok.
+* Részleges megoldás a [WaitThenTryAgain / Részleges eredmények kivétel](/docs/server-admin/additional-information#waitthentryagain-exception) : Most néhány olyan kérés, amely korábban kudarcot vallott, amikor egy adatforrás-változást észleltek, sikeres lesz, mert ERDDAP™ újratölti az adatkészletet, és automatikusan kéri az adatokat, az eredeti kérelem keretében.
+* Bug fix: generál Adatkészletek Az Xml-t letiltották ERDDAP™ 1.12 verzió. Köszönhetően Ellyn Montgomerynek, hogy rámutat erre.
+* Kis változások a hibakezeléshez.
+* Számos fejlesztés a lehetséges versenyfeltételekkel való elkerüléshez / étkezéshez (azaz lehetséges problémák merülnek fel a többlépcsős természetből ERDDAP ) ami kis, gyakori problémákat okozott.
+* Most, ha egy hibaüzenetet egy képen írnak, a kép csak a ~5-10 percig marad. (nem 60) ... Cara Wilsonnak köszönhetően.
+* A szabványos üzenet, amikor nincs adat, most "Az Ön lekérdezése nem eredményezett megfelelő eredményeket.", ami rövidebb, pontosabb, és megfelel OPeNDAP szerverek.
+*    EDDGrid már nem teszi lehetővé a kött tengelyértékeket.
+* Kis változások .ver és .help kérések.
+* Sok apró változás és hibajavítás.
      
 
-## változat{#version-112} 
- (released 2008- 10- 31) 
+## Verzió 1.12{#version-112} 
+ (2008-10-31) 
 
-* EDDTableFrom SOS újra működik az NDBC SOS és dolgozik az új NOS SOS .
-* EDDTableFromBMDE most megköveteli ERDDAP™ az admin meghatározása dataVariable c.
-*    EDDGrid már nem szükséges, hogy a lat és lon egyenletesen elosztva. átlátható Png vagy .kml . Köszönöm Todd Spindler.
+* EDDTableFrom SOS ismét működik az NDBC-vel SOS és működik az új NOS SOS ...
+* Az EDDTableFromBMDE most megköveteli ERDDAP™ Admin megadni dataVariable S.
+*    EDDGrid Már nem követeli, hogy a lat és a lon egyenletes legyen. Átlátszó Png vagy .kml ... Köszönöm Todd Spindler.
 * Néhány apró változás.
      
 
-## változat{#version-110} 
- (released 2008- 10- 14) 
+## Verzió 1.10{#version-110} 
+ (2008-10-14) 
 
-* Új "colorBar" metaadatok az adatváltozókhoz datasets.xml meghatározza az alapértelmezett színsáv beállításokat grafikonok és térképek. Lásd [További információk](/docs/server-admin/datasets#color-bar-attributes) . Ez azért fontos, mert nagyban javítja a Make A Graph által készített alapértelmezett grafikonok és térképek megjelenését, és mert az alapértelmezett grafikonok és térképek most már konzisztens színsávban vannak, még akkor is, ha az ügyfél megváltoztatja a kért időt vagy földrajzi tartományt. Továbbá, ez szükséges volt a WMS .
-*    ERDDAP™ most a legtöbb hálózati adatot a WMS szolgáltatás. Ez azért fontos, mert azt mutatja, hogy azon kívül, hogy számos típusú adatszervertől kap adatokat, ERDDAP™ az adatokat különböző protokollokon keresztül terjesztheti ( DAP , WMS ,... többet a jövőben) . Lásd a [ügyféldokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/wms/documentation.html) . Vagy a [a referenciamutató-kezelők dokumentációja](/docs/server-admin/datasets#wms) . vagy [Próbáld ki.](https://coastwatch.pfeg.noaa.gov/erddap/wms/index.html) .
-* Új támogatás a hosszúsági értékek &gt; 180 .kml fájlok.
-* Új CDM\\ _ data\\ _ type: Egyéb.
-*    ERDDAP™ most támogatja a "logikai" forrás adattípus. Lásd [További információk](/docs/server-admin/datasets#boolean-data) Ez hasznos lesz a jövőbeni EDDTableFromDatabase számára.
-* Az új EDDTableFromBMDE támogatja a DigIR / BMDE adatforrásokat.
-* EDVGridAxis most lehetővé teszi a csökkenő válogatott értékek. A PmelOscar adatkészleteknek erre volt szükségük.
-*    ERDDAP™ most visszatér HTTP hibák (például, "404 a forrás / oldal nem található") több helyzetben, helyett HTML oldalak hibaüzenetek.
-* Sok változás / kiegészítés a ERDDAP™ dokumentáció.
+* Új "colorBar" metaadata az adatok változóinak datasets.xml meghatározza a grafikonok és térképek alapértelmezett színsárga beállításait. Lásd [További információk](/docs/server-admin/datasets#color-bar-attributes) ... Ez azért fontos, mert jelentősen javítja a Make A Graph által gyártott alapértelmezett grafikonok és térképek megjelenését, és mivel az alapértelmezett grafikonok és térképek most következetes színvonalúak, még akkor is, ha az ügyfél megváltoztatja a kért időt vagy földrajzi tartományt. Ez is szükséges volt ahhoz, hogy WMS ...
+*    ERDDAP™ most a legtöbb hálózati adatot szolgálja egy WMS szolgáltatás. Ez azért fontos, mert azt mutatja, hogy számos adatkiszolgálótól származó adatok mellett, ERDDAP™ az adatokat különböző protokollokon keresztül terjesztheti ( DAP , WMS ... több a jövőben) ... Lásd: [ügyfél dokumentáció](https://coastwatch.pfeg.noaa.gov/erddap/wms/documentation.html) ... Vagy [dokumentáció az adminisztrátoroknak](/docs/server-admin/datasets#wms) ... Vagy [Próbáld ki](https://coastwatch.pfeg.noaa.gov/erddap/wms/index.html) ...
+* A hosszúsági értékek új támogatása &gt; 180 .kml fájlok.
+* Új cdm\\_data\\_type: Egyéb
+*    ERDDAP™ most támogatja a "boolean" forrásadattípust. Lásd [További információk](/docs/server-admin/datasets#boolean-data) Ez hasznos lesz a jövőbeli EDDTableFromDatabase számára.
+* Az új EDDTableFromBMDE támogatja a DiGIR / BMDE adatforrásokat.
+* Az EDVGridAxis most lehetővé teszi a rendezett értékek felemelkedését. A pmelOscar adatkészletek ehhez szükségesek.
+*    ERDDAP™ most visszatér a HTTP hibákhoz (pl.: "404 erőforrás/oldal nem talált") több helyzetben, ahelyett, hogy HTML oldalak hibaüzenetekkel.
+* Sok változás / kiadások a ERDDAP™ dokumentáció.
 * Sok apró változás.
-* Néhány hiba javít.
-*    **Dolgok ERDDAP™ Az adminisztrátoroknak ezt a verziót kell frissíteniük:** 
-    * In datasets.xml , bármilyen EDDTableFrom SOS datasets, change "observedProperty" metaadatok "sourceObservedProperty".
-    * A szabályok a axisVariable vagy dataVariable s destinationName most [szigorúbb](/docs/server-admin/datasets#datavariable-addattributes) . Ellenőriznie kell, hogy a változó nevek érvényesek-e. Vagy kézzel ellenőrzöd, vagy futsz. ERDDAP™ és nézd meg a jelentésben szereplő hibaüzeneteket, amelyeket az adminisztrátornak küldött e-mailben.
-    * In datasets.xml , ha azt szeretné, hogy egy rács adat változó legyen elérhető a WMS , meg kell hozzá ColorBar metaadatok. Legalább, például,&lt;att name = " colorBarMinimum "type =" double "&gt; 0&lt;/ att &gt;
+* Néhány hibajavítás.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak meg kell tenniük, hogy frissítsék ezt a verziót:** 
+    * Inkább datasets.xml , bármilyen EDDTableFrom SOS adatkészletek, változtassa meg a "megfigyelt terület" metaadatát a "sourceObservedProperty" -ra.
+    * A szabályok egy axisVariable vagy dataVariable A destinationName most vannak [szigorúbb](/docs/server-admin/datasets#datavariable-addattributes) ... Ellenőrizni kell, hogy a változó nevek érvényesek. Vagy ellenőrizze őket kézzel, vagy fut ERDDAP™ és nézze meg a hibaüzeneteket a jelentésben, amelyet az adminisztrátornak küldenek.
+    * Inkább datasets.xml , ha azt szeretné, hogy egy hálózati adatok változó, hogy hozzáférhető legyen keresztül WMS , hozzá kell adnia a színBar metaadatát. Legalább például,&lt;att name=" colorBarMinimum Type="double"&gt;0&lt;/att&gt;
 ```
           <att name="colorBarMaximum" type="double">32</att>  
 ```
-Lásd [További információk](/docs/server-admin/datasets#wms) .
-    * A következő [szetup.xml](/docs/server-admin/deploy-install#setupxml) fájl (de testreszabni az információt) :
+Lásd [További információk](/docs/server-admin/datasets#wms) ...
+    * Adja hozzá a következőt [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl (de testreszabja az információval) :
 
 ```
         <!-- drawLand specifies the default Make A Graph setting for 
@@ -3029,50 +3046,50 @@ Lásd [További információk](/docs/server-admin/datasets#wms) .
         <wmsSampleBBox>0,-75,180,75</wmsSampleBBox>
 ```
 
-## Változat 1.08{#version-108} 
- (released 2008- 07- 13) 
+## Verzió 1.08{#version-108} 
+ (2008-07-13) 
 
-* Új webszolgáltatás ERDDAP™ , generál Adatbázisok Xml, asszisztálás ERDDAP™ adminisztrátorok létrehozása durva vázlata XML szükséges leírására adatkészlet datasets.xml 
-* Néhány módosítás / hibajavítás, amely lehetővé teszi, hogy a griddap a netcdf- java által opendap szerverként jelenjen meg, beleértve: a globális metaadatok neve "NC\\ _ GLOBAL" (GLOBAL helyett) .
-* A EDDGrid és EDDTable Data Access Forms most használja lekérdezési információkat az URL. Így például, ha a felhasználó megy egy Make A Graph űrlap egy adathozzáférési űrlap, a korlátozások most megfelelően át.
-*    tabledap 'Make A Graph most lehetővé teszi a megszorításokat a sztring változók.
-* EDDTable 's Make A Graph most már lehetővé teszi a NaN megszorítások. Hála Steve Hankinnek.
-* Hibajavítás: EDDTable mentés AsImage nem ismerte fel megfelelően a .colorbar min és max értékeket. Hála Steve Hankinnak.
-* Sok fejlesztések setupDatasetsXml. Hála Ellyn Montgomerynek.
-* Griddap kérések most lehetővé teszik () -stílus kérések kissé kívül a tényleges tengely tartományban. Ez helyénvaló, mivel () -értékek kerekítve a legközelebbi tényleges érték. Cindy Bessey-nek köszönhetően
-* A FloatArray és a DoubleArray tesztet az Isevently Spaced kifinomultabbá tette. Mindig tökéletlen lesz. (mert a vizsgálatot minden adatkészlethez egyedileg kell elvégezni) De jobb lesz. Hála Ellyn Montgomerynek.
-* A setup.html-t és a setupDatasets-et áthelyeztem. Xml.html erddap / download directory and hard code all link to them. Most változtathatok, és azonnal frissíthetem a beállítási adatokat.
-* Sok apró változás. Néhány kis hiba.
-*    **Dolgok ERDDAP™ Az adminisztrátoroknak ezt a verziót kell frissíteniük:** 
-    * Mozgás&#33;&lt;A rövid leírás Html &gt; az üzenetektől.xml az Ön [szetup.xml](/docs/server-admin/deploy-install#setupxml) akta. Meghatározza azt a szöveget, amely a bal oldali ERDDAP™ kezdőlap. Továbbá, add&lt;h1 &gt; ERDDAP &lt;/ h1 &gt; (vagy más főcím) A tetejébe. **Vagy,** másolat&lt;ShortDescriptionHtml &gt; az új [szetup.xml](/docs/server-admin/deploy-install#setupxml) fájl (az új erddapContent .zip ) a szetup xml.
+* Új webszolgáltatás ERDDAP™ generál Adatkészletek Xml, segít ERDDAP™ adminisztrátorok az XML durva tervezetének létrehozásával egy adatkészlet leírásához szükséges datasets.xml 
+* Néhány változás / hibajavítás, amely lehetővé teszi a hálózati rést, amelyet a netcdf-java nyitott kiszolgálóként láthat, beleértve: a globális metaadatot most a "NC\\_GLOBAL" címkézi. ("GLOBAL" helyett) ...
+* A EDDGrid és az EDDTable Data Access Forms most használja lekérdezési információkat az URL-ben. Tehát például, ha egy felhasználó a Make A Graph formanyomtatványból egy Adathozzáférési Formába megy, a korlátozásokat most megfelelően továbbítják.
+*    tabledap Make A Graph most lehetővé teszi a korlátokat a String változókban.
+* Az EDDTable Make A Graph most lehetővé teszi a NaN korlátokat. Steve Hankinnak köszönhetően.
+* Bug fix: EDDTable mentés AsImage nem ismerte el megfelelően a .colorbar min és max értékeket. Steve Hankinnek köszönhetően
+* Számos fejlesztés a setupDatasetsXml-hez. Ellyn Montgomerynek köszönhetően.
+* A Griddap kérései most lehetővé teszik () - a stíluskérések kissé a tényleges tengely tartományon kívül vannak. Ez megfelelő azóta () - Az értékek a legközelebbi tényleges értékhez fordulnak. Cindy Besseynek köszönhetően
+* A FloatArray-t és a DoubleArray-t teszteltem, az EvenlySpaced-t kifinomultabbá tettem. Mindig tökéletes lesz (mert a tesztet minden adatkészletre testre kell szabni) De jobbnak kell lennie. Ellyn Montgomerynek köszönhetően.
+* A setup.html és a setupDatasets Xml.html erddap / letöltési könyvtára és kemény kódolt minden linket. Most azonnal módosíthatom és frissíthetem a beállítási információkat.
+* Sok apró változás. Néhány kis hibajavítás.
+*    **A dolgok ERDDAP™ Az adminisztrátoroknak meg kell tenniük, hogy frissítsék ezt a verziót:** 
+    * Mozgás&lt;AShortDescription Html&gt; az üzeneteiből.xml a [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl. Meghatározza a szöveget, amely a bal oldal közepén jelenik meg ERDDAP™ honlap. Továbbá, add hozzá&lt;h1&gt; ERDDAP &lt;/h1&gt; (vagy más címsor) a tetejére. **Vagy,** Másolás&lt;TheShortDescriptionHtml - az új [setup.xml](/docs/server-admin/deploy-install#setupxml) fájl (az új erddapContent .zip ) Beállítása.xml.
          
 
-## változat{#version-106} 
- (2008-06- 20) 
+## Verzió 1.06{#version-106} 
+ (2008-06-20) 
 
 * Új támogatás IOOS DIF SOS adatforrások.
-* Sok apró változás. Néhány kis hiba.
+* Sok apró változás. Néhány kis hibajavítás.
      
 
 ## Változat 1.04{#version-104} 
- (2008-06- 10) 
+ (2008-06-10) 
 
 * Új Slide Sorter funkció.
 * Új Google Gadgets oldal és példák.
-* Hibajavítás EDDGrid .saveAsNc a változó skála és addOffset.
+* Bug fix EDDGrid .saveAsNc a változó méretű és addOffset.
      
 
-## Változat 1.02{#version-102} 
- (2008-05- 26) 
+## Verzió 1.02{#version-102} 
+ (2008-05-26) 
 
-* Új EDDGrid SideBySide lehetővé teszi a különböző axisVariable sz \\[ 0 \\] forrás Értékek.
-* Az áramlatok és a szél összes adata egybeolvadt EDDGrid SideBySide adatok.
-* Images from image requestions are now cafed for 1 hour.
+* Új EDDGrid A SideBySide lehetővé teszi a különböző axisVariable s \\[ 0 0 \\] forrás Értékek.
+* Az összes áram és szél adatkészlet összeolvadt EDDGrid SideBySide adatkészletek.
+* A képkérelmekből származó képek immár 1 órán át sütődnek.
      
 
-## Változat 1.00{#version-100} 
- (release 2008- 05- 06) 
+## Verzió 1.00{#version-100} 
+ (2008-05-06) 
 
-* Készíts egy grafikus oldalakat és grafikus parancsokat URL-ben.
-* Támogatás zászlós fájlok kényszeríteni újratöltése adatkészlet.
-* Új adatkészlet típusa: EDDTableFrom4DFiles (az EDDTableFromFiles első alosztálya) .
+* Készítsen egy Graph weboldalakat és grafikus parancsokat az URL-ekben.
+* A zászlófájlok támogatása az adatkészlet újratöltésére.
+* Új adatkészlet típusa: EDDTableFrom4DFiles (Az EDDTableFromFiles első alosztálya) ...

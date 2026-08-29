@@ -5,14 +5,14 @@ sidebar_position: 2
 Bir Varan Güncelleme Nasıl Yapılır ERDDAP™ Your Server
 
 ## Değişiklikler Değişiklikler Değişiklikler{#changes} 
-1. listelenen değişiklikleri yapın [Değişiklikler Değişiklikler Değişiklikler](/changes) Bölümde "Things ERDDAP™ Yöneticilerin Bilme ve Yapması Gerekiyor ERDDAP™ Kullandığınız sürümden beri versiyonlar.
+1. listelenen değişiklikleri yapın [Değişiklikler Değişiklikler Değişiklikler](/changes) Bölümde "Things ERDDAP™ Yöneticilerin Bilmeniz ve Yapması Gerekiyor” ERDDAP™ Kullandığınız sürümden beri sürümler.
      
 ##  Java  {#java} 
 2. Eğer yükseltme yapıyorsanız ERDDAP™ 2.18 veya aşağıda, geçmek zorundasınız Java 25 (veya yeni) Ve ilgili Tomcat 10. Düzenli olarak bakınız ERDDAP™ yükleme talimatları için yükleme talimatları [ Java ](/docs/server-admin/deploy-install#java) ve [Tomcat](/docs/server-admin/deploy-install#tomcat) . Ayrıca kopyasını kopyalamanız gerekecek _tomcat_/content/erddap Eski Tomcat kurulumunuzdan yeni Tomcat kurulumuna dizin.
 
 ## Download Download Download Download Download{#download} 
-3. Download Download Download Download Download [Heddap.war](https://github.com/ERDDAP/erddap/releases/download/v2.30.0/ERDDAP-2.30.0.war) _tomcat_/webapps .
-     (Versiyon 2.30.0, 706,939,121 bytes, MD5=CDC4B3D82A20B33A6623B85312F6DC21, 2026-04-06) 
+3. Download Download Download Download Download [Heddap.war](https://github.com/ERDDAP/erddap/releases/download/v2.31.0/ERDDAP-2.31.0.war) _tomcat_/webapps .
+     (Versiyon 2.31.0, 719,567,541 bytes, MD5=DB0AFDE1F441CA9262CB66291A1110D7, 2026-08-28) 
      
 ## mesajlar.xml{#messagesxml} 
 4. 
@@ -38,8 +38,8 @@ WEB-INF/classes/gov/noaa/pfel/erddap/util/messajlar.xml) ve özel mesajlarınız
      
 ### Linux ve Macs{#linux-and-macs} 
 1. Shutdown Tomcat: Bir komut satırından: _tomcat_/bin/shutdown.sh
-Ve ps kullanın -ef | Grep tomcat, eğer / işlem durdurululduğunda görmek için. (Bir dakika veya iki sürebilir.) 
-2. Decomed ERDDAP™ Kurulum: _tomcat_/webapps, kullanım
+Ve ps kullanır -ef | Grep tomcat, eğer / işlem durdurululduğunda görmek için. (Bir dakika veya iki sürebilir.) 
+2. Decomed ERDDAP™ Kurulum: _tomcat_/webapps, use
 rm -rf erddap
 3. Eski erddapı delete. Savaş dosyası: _tomcat_/webapps içinde, rm erddap kullanın. Savaş savaşı
 4. Yeni hatayı kopyalayın. _tomcat_/webapps için geçici diziden savaş dosyası
@@ -49,7 +49,7 @@ rm -rf erddap
              
 ### Windows Windows Windows{#windows} 
 1. Shutdown Tomcat: Bir komut satırından, kullanın: _tomcat_bin 48 shutdown.bat 
-2. Decomed ERDDAP™ Kurulum: _tomcat_/webapps, kullanım
+2. Decomed ERDDAP™ Kurulum: _tomcat_/webapps, use
 del /S /Q erddap
 3. Eski erddapı delete. Savaş dosyası: _tomcat_Sanwebapps, del erddap kullanın. Savaş savaşı
 4. Yeni hatayı kopyalayın. _tomcat_webGapps için geçici diziden savaş dosyası

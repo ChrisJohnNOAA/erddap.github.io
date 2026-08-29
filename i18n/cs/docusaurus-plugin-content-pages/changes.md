@@ -3,131 +3,148 @@ title: "ERDDAP™ - Changes"
 ---
 #  ERDDAP™ Změny
 
- ERDDAP™ je skvělý příklad [User- Driven Innovation](https://en.wikipedia.org/wiki/User_innovation) , kde inovace výrobků často pocházejí od spotřebitelů ( ERDDAP™ uživatelé) , nejen výrobci ( ERDDAP™ vývojáři) . V průběhu let, většina myšlenek na nové funkce a změny v ERDDAP™ pocházejí od uživatelů. Tito uživatelé jsou připsány níže za své skvělé nápady. Díky&#33; Prosím, nechte ty skvělé návrhy přijít&#33;
+ ERDDAP™ je skvělý příklad [Uživatelská inovace](https://en.wikipedia.org/wiki/User_innovation) , kde inovace produktů často pocházejí od spotřebitelů ( ERDDAP™ uživatelé) , nejen výrobci ( ERDDAP™ Vývojáři) . V průběhu let, většina myšlenek na nové funkce a změny v ERDDAP™ pocházejí od uživatelů. Tito uživatelé jsou připsány níže za své skvělé nápady. Díky&#33; Prosím, pokračuj s těmi velkými návrhy&#33;
 
-Zde jsou změny spojené s každým ERDDAP™ uvolnění.
+Zde jsou změny spojené s každým ERDDAP™ Uvolnit.
+
+## Verze 2.31.0{#version-2310} 
+ (propuštěn 2026-08-28) 
+
+*    **Nové funkce a změny (pro uživatele) :** 
+      * Nový ncoJson jako informační výstupní formát dostupný jako soubor s názvem nco JsonHeader a na obou/erddap/info/dataset Id .nc oJson and /erddap/info/datasetId/index .nc OJsone.
+Díky @srstsavage
+      * Další vlastnosti metadat pro ISO19139_2007 a ISO19115_3_2016 výstup: klasifikace, téma_kategorie a údržba_frekvence
+Díky @SethChampagneNRL
+      * Nová JSON webservice pro návrhy proměnných atributů: /erddap/suggestVariableAttributes
+Díky @srstsavage
+      * Vylepšená dotazování sql zálohovaných souborů tak, aby požadavek, který neobsahuje žádné DB sloupce nyní uspěje.
+      * Vylepšená detekce odkazů a automatické propojení odkazů v info textu.
+
+*    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
+      * Vylepšená podpora komplexního regexu cesty včetně několika úrovní složek a více divokých karet.
+      * Aktualizované závislosti.
 
 ## Verze 2.30.0{#version-2300} 
- (propuštěn 2026- 04- 07) 
+ (propuštěn 2026-04-07) 
 
-Verze v2.30.0 se do značné míry zaměřuje na opravy chyb, aktualizace závislosti na stabilitě a bezpečnosti a testování výkonů.
+Verze v2.30.0 se do značné míry zaměřuje na opravy chyb, aktualizace závislosti pro stabilitu a bezpečnost a testování zlepšení výkonnosti.
 
 *    **Nové funkce a změny (pro uživatele) :** 
-      * Zvýšené [Croissant](https://mlcommons.org/working-groups/data/croissant/) kompatibilita metadat a zjevná podpora, včetně [mlcroissant](https://pypi.org/project/mlcroissant/) kompatibilita.
-      * Lepší podpora parketových booleů.
+      * Rozšířené [Croissant](https://mlcommons.org/working-groups/data/croissant/) kompatibility metadat a zjevné podpory, včetně [mlcroissant](https://pypi.org/project/mlcroissant/) kompatibilita.
+      * Lepší podpora pro parquet booleans.
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-      * Nepoužité příkazové řádky nástroje a související kód byly odstraněny z kódu ke snížení technického dluhu. Viz https://github.com/ERDDAP/erddap/pull/432.
+      * Nevyužité nástroje příkazové řádky a související kód byly odstraněny z databáze kódů, aby se snížil technický dluh. Viz https://github.com/ERDDAP/erddap/pull/432.
  
-      * Nová vlajka funkce `siceSynchronousLoading` byla přidána, aby překonala výchozí odložený přístup pro ukládání datových souborů. To by mělo být zřídka zapotřebí, a to pouze v případech, kdy odložené zatížení způsobuje problémy. Viz [flag stránka](/docs/server-admin/feature-flags#forcesynchronousloading) detaily.
+      * Nová vlajka funkcí `donutit SynchronousLoading` byla přidána k přepsání výchozího odloženého přístupu k zatížení dat. To by mělo být zřídka potřeba a pouze v případech, kdy odložení nakládky způsobuje problémy. Viz [strana vlajky](/docs/server-admin/feature-flags#forcesynchronousloading) pro detaily.
 
 ## Verze 2.29.0{#version-2290} 
- (propuštěn 2025- 12- 15) 
+ (uvolněno 2025-12-15) 
 
-Je třeba jednat.
+Akce nutná.
 
- ERDDAP™ verze 2.29.0 vyžaduje jdk 25 nebo novější. Aktualizujte prosím verzi jdk. Pokud je to problém, můžete postavit ERDDAP™ pro starší jdk (zpět k nejméně 17) změnou souboru pom.xml. JDK 25 je LTS vydání Java a zahrnuje mnoho zlepšení, zejména zlepšení výkonnosti.
+ ERDDAP™ verze 2.29.0 vyžaduje jdk 25 nebo novější. Prosím aktualizujte si verzi jdk. Pokud je to problém, můžete stavět ERDDAP™ pro starší jdk (nejméně 17) změnou souboru pom.xml. JDK 25 je LTS uvolnění Java a zahrnuje mnoho zlepšení, zejména zlepšení výkonnosti.
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * Verze ISO 19115: Informace o admin viz níže. Pro uživatele si nyní můžete vyžádat konkrétní verze metadat ISO 19115. Udělej to z griddapu / tabledap stránky pro datový soubor s typem souboru pokles. Tyto verze budou nezávislé na defaultu serveru.
+    * ISO 19115 verze: Viz níže pro admin info. Pro uživatele si nyní můžete vyžádat konkrétní verze ISO 19115 metadat. Udělejte to z mřížky/ tabledap stránky pro datový soubor s typem souboru klesá. Tyto verze budou nezávislé na výchozím nastavení serveru.
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Nová funkce, podpora MQTT. Podrobnosti doporučuji přečíst [Nová stránka.](/docs/server-admin/mqtt-integration) To zahrnuje možnost sestavit soubory dat ze zpráv MQTT a zveřejňování zpráv MQTT, pokud se datový soubor změní. Je vypnutý ve výchozím nastavení, takže pokud ho chcete použít, musíte ho povolit.
+    * Nová funkce, MQTT podpora. Pro podrobnosti doporučuji přečíst [Nová stránka.](/docs/server-admin/mqtt-integration) To zahrnuje možnost vytvářet soubory dat ze zpráv MQTT a zveřejňovat zprávy MQTT, když se soubor dat změní. Je vypnuta ve výchozím nastavení, takže pokud ji chcete použít, musíte ji povolit.
 
 Díky Ayush Singh za práci na MQTT&#33;
 
-    * Zlepšení S3: Přidání podpory pro S3 URI jako hodnota cacheFromUrl. To umožní ERDDAP na podporu soukromých kbelíků hostovaných off amazonaws.com Také řešil problém s únikem paměti S3.
+    * Zlepšení S3: Přidání podpory S3 URI jako cacheFromUrl hodnoty. To umožní ERDDAP na podporu soukromých kbelíků hosted off amazonaws.com Také řešil problém úniku paměti S3.
 
-Díky @ SethChampagneNRL za práci na S3&#33;
+Díky @SethChampagneNRL za práci na S3&#33;
 
-    * Verze ISO 19115: Nyní existuje podpora pro 3 různé verze metadat ISO 19115. Výchozí verze je ovládána nastavením v setup.xml. Pokud je USESiSO19115 nepravdivé, server ve výchozím nastavení poskytne NOAA modifikovaná ISO19115 _ 2. Pokud je USESiSO19115 pravda, pak server použije jinou verzi v závislosti na hodnotě USESiSO19139. Pokud je USESiSO19139 pravda, výchozí hodnota bude ISO19139 _ 2007, pokud je USESiSO19139 nepravdivá, výchozí hodnota bude ISO19115 _ 3 _ 2016. Doporučujeme použít USESiSO19115 = true a USESiSO19139 = false. Vaše organizace může vyžadovat různá nastavení.
+    * ISO 19115 verze: Nyní existuje podpora pro 3 různé verze metadat ISO 19115. Výchozí verze je řízena nastavením ve vašem nastavení.xml. Pokud je použitíSisISO19115 nepravdivé, server bude standardně poskytovat NOAA upravená ISO19115_2. Pokud je použitíSisISO19115 pravdivé, pak server použije jinou verzi v závislosti na hodnotě použitíSisISO19139. Pokud je použitíSisISO19139 pravdivé, bude výchozí hodnotou ISO19139_2007, pokud je použitíSisISO19139 nepravdivé, bude výchozí hodnotou ISO19115_3_2016. Doporučujeme používatSisISO19115=true a používatSisISO19139=false. Vaše organizace může vyžadovat různá nastavení.
 
-    * Migroval do Javy. Časová knihovna (místo Java.utility. GregorianKalendář) . To by mělo poskytnout zlepšení výkonnosti dotazů, které zahrnují sloupce data / času. Pro převážnou většinu souborů údajů by neměl být patrný dopad. Jeden známý případ, který způsobuje změnu je, pokud datový soubor používá `dny od 0000- 01- 01` nebo podobné. Pokud je to problém proměnné, můžete přidat ` <att name="legacy_time_adjust"> pravda </att> ` na addAttributes část buď a dataVariable nebo axisVariable .
+    * Migroval do javy. knihovna času (místo Java.util. GregorianKalendar) . To by mělo poskytnout zlepšení výkonnosti dotazů, které zahrnují sloupce datum/čas. Pro drtivou většinu souborů údajů by neměl existovat žádný zřetelný dopad. Jediný známý případ, který způsobí změnu, je, pokud soubor dat používá `dny od 0000-01-01` nebo podobné. Pokud je to problém proměnné, můžete přidat ` <att name="legacy_time_adjust"> pravda </att> ` do addAttributes a dataVariable nebo axisVariable .
     
-    *    datasets.xml je nyní zpracováván [StringSubstitutor](https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/StringSubstitutor.html) . To má mnoho použití včetně nastavení soukromých hodnot (jako hesla) používání proměnných prostředí. To lze vypnout nastavením envParsing na false v setup.xml.
+    *    datasets.xml nyní zpracovává [Stringsubstitutor](https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/StringSubstitutor.html) . To má mnoho využití včetně nastavení soukromých hodnot (jako hesla) pomocí proměnných prostředí. To může být vypnuto nastavením EnvParsing na false v setup.xml.
 
-    * Tlaková osa: Přidá speciální pouzdro pro zvýšení definované tlakem. To se používá především v Meteorologických souborech dat definujících vertikální zvýšení v isobarské úrovni. POZNÁMKA: Menší tlakové hodnoty znamenají vyšší zdvihy, takže osa běží naproti normálním zdvihům definovaným v metrech nebo stopách.
+    * Tlaková osa: Přidá speciální případ pro zvýšení definované tlakem. To se používá především v meteorologických souborech definujících vertikální zvýšení izobarických hladin. POZNÁMKA: Menší hodnoty tlaku znamenají vyšší nadmořská výška, takže osa běží proti normálnímu zvýšení definovanému v metrech nebo stopách.
 
 Díky [SethChampagneNRL](https://github.com/ERDDAP/erddap/pull/373) 
 
-    *    EDDGrid FromNcFiles s různými rozměry: Je tu (experimentální) podpora pro EDDGrid Soubory FromNcFiles mají proměnné, které nepoužívají stejnou sadu os. Prosím, nahlašte, jak to u vás funguje, nebo jestli se to chování nezdá být správné.
+    *    EDDGrid FromNcFiles s různými rozměry: Existuje. (experimentální) podpora EDDGrid Soubory souborů FromNcFiles mají proměnné, které nepoužívají stejnou sadu os. Prosím, informujte mě o tom, jak to pro vás funguje, nebo jestli se to chování nezdá správné.
 
-    * Existuje sbírka optimalizací, které by měly být bezpečné, ale mají vlajky, aby se vrátili ke starému chování, pokud je potřeba. Pokud zjistíte, že potřebujete nastavit některý z vlajek, prosím, zadejte chybu. Pokud uslyšíme o žádných problémech, většina z nich bude odstraněna s novým porušením chování v budoucnosti. Je tu [nová stránka o funkčních vlajkách](/docs/server-admin/feature-flags) kde si můžete přečíst o těchto a dalších vlajkách.
+    * Je tu sbírka optimizací, které by měly být bezpečné, ale mají vlajky, které se vrátí ke starému chování, pokud bude třeba. Pokud zjistíte, že je třeba nastavit některou z vlajek, vyplňte prosím chybu. Pokud se nedozvíme žádné problémy, většina z nich bude odstraněna s novým chováním v budoucnu. Je tu [nová stránka o vlajkách funkcí](/docs/server-admin/feature-flags) kde si můžete přečíst o těchto a dalších vlajek.
 
-      * dotyk Prošívané Pouze WhenItles: Jedná se o změnu, takže touchThread bude spuštěn pouze tehdy, když jsou položky ve frontě se dotknout. O jednu nit méně běží je menší optimalizace, ale stále užitečné. Chyby jsou pravdivé.
+      * dotek Nitě Pouze WhenItems: To je změna tak, že dotykThread bude běžet pouze tehdy, když jsou položky ve frontě se dotknout. O jedno vlákno méně běží je menší optimalizace, ale stále užitečné. Defaulty k pravdě.
 
-      * useNcMetadata ForFileTable: Tato změna umožňuje, aby interní tabulka souborů používala atributy nc, konkrétně atributy actual _ range, aby se zabránilo čtení celého souboru nc. To může drasticky urychlit počáteční načítání souborů dat na základě nc souborů, pokud je aktuální _ range pro každou proměnnou v každém souboru zahrnut jako atribut. Všimněte si, že to důvěřuje hodnotě, takže pokud je to špatně, vnitřní tabulka souborů bude mít nesprávné informace. Chyby jsou pravdivé.
+      * useNcMetadata Pro FileTable: Tato změna umožňuje interní tabulce souborů používat atributy nc, konkrétně atribut proměnné actual_range, aby se zabránilo čtení celého souboru nc. To může drasticky urychlit počáteční načítání souborů založených na souborech nc, pokud je skutečný_range pro každou proměnnou v každém souboru zahrnut jako atribut. Všimněte si, že toto má hodnotu, takže pokud je špatná, vnitřní tabulka souboru bude mít nesprávné informace. Defaulty k pravdě.
 
-      * ncHeader MakeFile: Tato změna umožňuje generovat soubory nc hlavičky bez prvního generování reprezentativního souboru nc. To je malá optimalizace pro EDDTable, ale obrovská optimalizace pro mnoho EDDGrid žádosti. Chyby na false (jako ve false je zamýšlené optimalizované chování) .
+      * ncheader MakeFile: Tato změna umožňuje generovat soubory nc header bez prvního generování reprezentativního souboru nc. To je malá optimalizace pro EDDTable, ale obrovská optimalizace pro mnohé EDDGrid žádosti. Výchozí hodnoty false (jako ve falešné je zamýšlené optimalizované chování) .
 
-      * pozadí CreateSubset Tabulky: Tato změna posune některé z počátečního zpracování souborů dat na pozadí. To by mělo zlepšit čas pro načítání souborů dat. Konkrétně odložená část je podmnožina tabulek, které jsou také generovány v případě potřeby, pokud se opožděné zpracování ještě nestalo. Chyby jsou pravdivé.
+      * pozadí VytvořitSubset Tabulky: Tato změna posune některé z počátečních zpracování souborů dat na zadní vlákno. To by mělo zlepšit dobu nakládání souborů údajů. Konkrétně opožděná část je podmnožina tabulek, které jsou také generovány v případě potřeby, pokud se zpoždění zpracování ještě nestalo. Defaulty k pravdě.
 
-    * Některé malé změny, opravy chyb (díky Italo Borrelli za opravu EDDTableFromAggregateRows, Díky. @ SethChampagneNRL pro umožnění délky delší než 360 v EDDGrid LonPM180 a několik dalších oprav chyb) a optimalizací.
+    * Některé malé změny, opravy chyb (děkuji Italo Borrelli za opravu pro EDDTableFromAgregateRows, Díky. @SethChampagneNRL pro umožnění délky větší než 360 v EDDGrid LonPM180 a několik dalších oprav chyb) a optimalizace.
 
 *    **Pro ERDDAP™ Vývojáři:** 
-    * Další optimalizace, včetně zkrácení doby zkoušky na polovinu.
+    * Dodatečné optimalizace, včetně doby řezu na polovinu.
 
-    * Nové testovací profily pro velmi ochablé (vnější) nebo extrémně pomalé (Zpomalte) testy.
+    * Nové zkušební profily pro velmi vločkovité (vnější) nebo extrémně pomalu (slowAWS) testy.
 
 ## Verze 2.28.1{#version-2281} 
  (propuštěn 2025-09-05) 
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Podpora přidána pro X-Forwarded -Prefix. To je zvláště zajímavé pro administrátory běží servery na podchodu. Přečtěte si prosím naši aktualizovanou dokumentaci pro [Apache](/docs/server-admin/deploy-install#apache) a [Nginx](/docs/server-admin/deploy-install#nginx) pro více informací.
+    * Podpora přidána pro X-Forward-Prefix. To je obzvláště zajímavé pro administrátory, kteří provozují servery na podpatku. Přečtěte si prosím naši aktualizovanou dokumentaci [Apač](/docs/server-admin/deploy-install#apache) a [Nginx](/docs/server-admin/deploy-install#nginx) pro více informací.
 
-Díky [@ srstsavage](https://github.com/srstsavage) 
+Díky [@srstsavage](https://github.com/srstsavage) 
 
 ## Verze 2.28.0{#version-2280} 
- (propuštěn 2025- 08- 29) 
+ (propuštěn 2025-08-29) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    *    [Croissant schema](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) je nyní k dispozici. Administrátoři mohou kontrolovat, zda výchozí metadata používají Croissant, ale počínaje 2.28.0 můžete požádat o definici Croissant s novým typem exportního souboru. "croissant" (který poskytuje jsonld soubor) .
+    *    [schéma Croissant](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) je nyní k dispozici. Admins mohou kontrolovat, zda výchozí metadata používají Croissant, ale počínaje 2.28.0 můžete požádat o definici Croissant pro nový typ exportního souboru ".croissant" (který poskytuje soubor jsonld) .
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Nový docker Obrázek vytvořený na každém sloučeném požadavku. Tohle jsou alfa stavby, nejsou to verze verze. Budou mít značku jako "20250814T034025", která ukazuje, kdy byla postavena. Pokud chcete vyzkoušet nejnovější funkce, můžete použít tyto. Pokud chcete něco stabilnějšího, použijte naše verze se sémantickou verzí (např. 2.28.0) . Vždycky se snažíme, aby alfa verze byla použitelná, ale je pro ně méně testů než pro naše verze. Vždy doporučujeme použít něco alespoň tak nového jako naše "nejnovější" verze, která bude nejnovější sémantické verze vydání.
+    * New Docker Obrázek vytvořený na každé sloučené žádosti o tah. Jsou to alfa stavby, nejsou to verze. Budou mít značku jako "20250814T034025," což naznačuje, kdy byla postavena. Chcete-li vyzkoušet nejnovější funkce, můžete použít tyto. Pokud chcete něco stabilnějšího, použijte naše verze se sémantickou verzí. (např. 2.28.0) . Vždycky chceme, aby se Alfa uvolnila, ale je pro ně méně testů než naše verze. Vždy doporučujeme použít něco alespoň tak nového, jako je naše "poslední" vydání, které bude nejnovější sémantická verze verze vydání.
 
     * Docker Obrázky nyní k dispozici na [GitHub](https://github.com/ERDDAP/erddap/pkgs/container/erddap) kromě [DockerHub](https://hub.docker.com/r/erddap/erddap) .
 
-Díky [@ ocefpaf](https://github.com/ocefpaf) , [@ abkfenris](https://github.com/abkfenris) , [@ srstsavage](https://github.com/srstsavage) a [MathewBiddle](https://github.com/MathewBiddle) na jejich příspěvky kolem Docker Images. To zahrnovalo první příspěvky od všech, kromě @ ststrawad&#33;
+Díky [@ocefpaf](https://github.com/ocefpaf) , [@abkfenris](https://github.com/abkfenris) , [@srstsavage](https://github.com/srstsavage) a [MathewBiddle](https://github.com/MathewBiddle) na jejich příspěvky kolem Docker Images. To zahrnovalo první příspěvky od všech kromě @ststsavage&#33;
     
-    * Nyní existuje podpora pro výrobu [Croissant schema](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) složky. Je to ve výchozím nastavení. Můžete vypnout Croissant schéma ve vašem setup.xml s (NEDOPORUČUJETE - Prosím kontaktujte GitHub, pokud to potřebujete udělat) :
+    * Nyní existuje podpora pro generování [schéma Croissant](https://docs.mlcommons.org/croissant/docs/croissant-spec.html) Složky. Je zapnutá ve výchozím nastavení. Můžete zakázat Croissant schéma ve vašem nastavení.xml s (NENÍ DOPORUČEN- Pokud to potřebujete udělat, kontaktujte prosím GitHuba nebo vyplňte soubor.) :
     ```
         <generateCroissantSchema>false</generateCroissantSchema>
     ```
 
-    * Některým nastavením se změnily výchozí hodnoty. USEHeadersForUrl a USEEddReflection nyní oba výchozí k true. Pokud způsobí problém a vy je musíte nastavit na falešný, prosím, vytvořte problém. Záměrem je odstranit je v budoucnu.
+    * Některá nastavení byla změněna. použijte hlavičkyForUrl a použijteEddReflection nyní obě výchozí na true. Pokud způsobí problém a vy je musíte nastavit na falešnou, prosím, vytvořte problém. Záměrem je odstranit je v příštím vydání.
 
-    * Některá nastavení byla odstraněna. USESharedWatchService a přesměrování dokumentace ToGitHublo byl nastaven na pravdivé ve výchozím nastavení pro více vydání a byl docela dobře testován v tomto bodě. Odstranění těchto povolených pro nějaké vyčištění kódu.
+    * Některá nastavení byla odstraněna. useSharedWatchService a přesměrováníDokumentace ToGitHublo byl nastaven na true ve výchozím nastavení pro více verzí a byl velmi dobře testován v tomto bodě. Odstraňování těchhle je povoleno pro vyčištění kódu.
 
     * Některé malé změny, opravy chyb a optimalizace.
 
 *    **Pro ERDDAP™ Vývojáři:** 
-    * Odstranili jsme spoustu mrtvých kódů. Mnoho varování bylo opraveno.
+    * Spousta mrtvých kódů odstraněna. Mnoho varování bylo spraveno.
 
 ## Verze 2.27.0{#version-2270} 
- (propuštěn 2025-06-11) 
+ (propuštěno 2025-06-11) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * Nová data pro konvertor barev na serverech na / erddap / convert / color.html
+    * Nová data do převodníku barev na serverech na /erddap/convert/color.html
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Výchozí chování je, že cache bude nyní vymazán nezávisle na hlavní úloze datových souborů zatížení. To umožní spolehlivější a pravidelnější čištění starých cache souborů. Tam je další práce na zlepšení chování serveru, když nízká na disku prostor (vrácení chyby pro žádosti, které by mohly způsobit, že server dojde k úniku prostoru, a čištění cache častěji za nízkých podmínek na disku, aby se pokusili zabránit chybám) . V datasets.xml   (nebo setup.xml) můžete přidat / nastavit novou cache Parametr ClearMinut pro kontrolu, jak často server kontroluje pro vyčištění cache. Poznámka, existující parametr cacheMint kontroluje věk souborů, které mají být uchovány, nový cache ClearMinut je pro to, jak často dělat cheche jasné.
+    * Výchozí chování spočívá v tom, že cache bude nyní vymazána nezávisle na úkolu hlavního souboru souborů zatížení. To umožní spolehlivější a pravidelné čištění starých cache souborů. K dispozici je další práce na zlepšení chování serveru při nízkém prostoru na disku (vrácení chyby pro žádosti, které mohou způsobit, že server vyprší z místa, a vyčištění cache častěji za nízkých okolností disku, aby se pokusil zabránit chybám) . In datasets.xml   (nebo nastavení.xml) můžete přidat/nastavit novou cache Parametr ClearMinutes pro kontrolu toho, jak často server kontroluje pro odstranění cache. Poznámka: stávající parametr cacheMinutes řídí věk souborů, které mají být uchovávány, novou cache ClearMinutes je pro to, jak často dělat Chache jasné.
     ```
         <cacheClearMinutes>15</cacheClearMinutes>
     ```
-Nový cache clear checks můžete vypnout nastavením taskCacheClear na false v setup.xml, i když to se nedoporučuje.
-cache ClearMinut je také v [dokumentace souborů údajů](/docs/server-admin/datasets#cacheclearminutes) .
+Můžete zakázat nové cache jasné kontroly nastavením úkoluCacheClear na false v setup.xml, i když to se nedoporučuje.
+cache ClearMinutes je také v [Dokumentace datových souborů](/docs/server-admin/datasets#cacheclearminutes) .
     
-    * Name Podporuje lokalizaci pro hodnoty v addAttributes sekce. Jednoduše přidejte atribut s doplňkovým xml: lang tag. Například přidat francouzský titul do datového souboru addAttributes Oddíl by zahrnoval:
+    * Podpora lokalizovaných dat. Podporuje lokalizaci hodnot v addAttributes sekce. Jednoduše přidejte atribut s dalším xml:lang tag. Například přidat francouzský titul do souboru vaše addAttributes oddíl zahrnuje:
     ```
         <att name="title">Data from a local source.</att>
         <att name="title" xml:lang="fr">Donn&#xE9;es provenant d'une source locale.</att>
     ```
 Další podrobnosti jsou k dispozici v [lokalizovaná dokumentace metadat](/docs/server-admin/localized-metadata) .
 
-    * Nový docker Sestavit soubor s možnostmi pro SSL a barebones Prometheus server. Díky Shane St. Savage za SSL a Jiahui Hu za Prometheus.
+    * New Docker Složte soubor s možnostmi pro SSL a server pro barebony Prometheus. Díky Shane St. Savage za SSL a Jiahui Hu za Prometheus.
 
-    * Podpora pro použití informací v hlavičkách k určení URL serveru namísto spoléhání se na konfigurační soubor. To umožní přístup k serveru pomocí více jmen a může zjednodušit některé konfigurace. Povolit a odeslat zpětnou vazbu.
+    * Podpora používání informací v hlavičkách k určení URL serveru namísto spoléhání na konfigurační soubor. To umožní přístup k serveru více jmény a může zjednodušit některé konfigurace. Prosím, povolte to a pošlete zpětnou vazbu.
     ```
         <useHeadersForUrl>true</useHeadersForUrl>
     ```
@@ -135,164 +152,164 @@ Další podrobnosti jsou k dispozici v [lokalizovaná dokumentace metadat](/docs
     * Některé malé změny, opravy chyb a optimalizace.
 
 *    **Pro ERDDAP™ Vývojáři:** 
-    * Refactor to how output file types are defined in code. To by mělo být tak, aby typy souborů mohou být přidány bez nutnosti dotknout mnoha kódových míst.
+    * Refaktor k tomu, jak jsou typy výstupních souborů definovány v kódu. To by mělo učinit tak, aby typy souborů mohou být přidány, aniž by bylo nutné se dotknout mnoha kódových míst.
 
 ## Verze 2.26{#version-226} 
- (propuštěn 2025- 03- 31) 
+ (propuštěno 2025-03-31) 
 
 *    **Pro všechny:** 
     * Velká aktualizace naší dokumentace: https://erddap.github.io/
  
-Kromě aktualizovaného vzhledu je lepší navigace, vyhledávání, překlad, a to by mělo být jednodušší udržet v budoucnu&#33;
+Kromě aktualizovaného vzhledu je lepší navigace, vyhledávání, překlad, a to by mělo být jednodušší udržet v pokroku&#33;
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * Předplatné a RSS aktualizace by měly být spolehlivější pro soubory dat, které se často aktualizují ze změn souborů.
+    * Předplatné a RSS aktualizace by se měly odehrávat spolehlivěji u souborů, které se často aktualizují ze změn souborů.
 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Výchozí verze vyžaduje / podporuje Java verze 21. Zpět v této verzi je schopnost snadno vytvořit Java 17 kompatibilní binárně.
+    * Výchozí uvolnění vyžaduje/podporuje Java verze 21. Zpět v této verzi je schopen snadno vytvořit Java 17 kompatibilní binární.
 
-    * Nová funkce pro přizpůsobení zobrazených informací o souborech dat v UI. Očekáváme, že to bude obzvláště užitečné pro doplnění věcí, jako jsou citace datových souborů. Pro více informací si můžete přečíst [nová dokumentace](/docs/server-admin/display-info) . Díky Ayush Singh za příspěvek&#33;
+    * Nová funkce pro přizpůsobení informací o datových souborech v UI. Očekáváme, že to bude obzvlášť užitečné, když přidáme věci jako citace souborů dat. Další podrobnosti si můžete přečíst [nová dokumentace](/docs/server-admin/display-info) . Díky Ayush Singh za příspěvek&#33;
 
-    * Další Prometheova metrika. Největší je ` http _ request _ laasing _ seconds` která zahrnuje doby odezvy požadavku v členění: "request _ type", "dataset _ id", "dataset _ type", "file _ type", "lang _ code", "status _ code"
-Tento strojově čitelný formát umožní lepší sběr metrik pro pochopení toho, jak uživatelé používají server.
+    * Další Prometheovy metriky. Největší je ` http _request_durace_sekundy` který zahrnuje doby odezvy na žádost v členění podle: "request_type," "dataset_id," "dataset_type," "file_type," "lang_code," "status_code"
+Tento stroj čitelný formát umožní lepší sběr metrik pochopit, jak uživatelé používají server.
 
-    * Nový způsob generování souborů ISO19115 XML. Používá Apache SIS a je novou volbou v této verzi. Povolit a odeslat zpětnou vazbu.
+    * Nový způsob generování souborů ISO19115 XML. Používá Apache SIS a je novou volbou v tomto vydání. Prosím, povolte to a pošlete zpětnou vazbu.
     ```
         <useSisISO19115>true</useSisISO19115>
     ```
 
-    * UI nyní vytvoří jednotlivé odkazy pro každý url v oblastech, jako je infoUrl a shrnutí.
+    * UI nyní vytvoří individuální odkazy pro každou urlu v polích jako infoUrl a shrnutí.
 
-    * Předplatné a RSS aktualizace by měly být spolehlivější pro soubory dat, které se často aktualizují ze změn souborů. Pokud to způsobí problémy, kontaktujte prosím GitHub a vypněte funkci přidáním níže uvedené vlajky do vašeho setup.xml.
-NEDOPORUČUJE
+    * Předplatné a RSS aktualizace by se měly odehrávat spolehlivěji u souborů, které se často aktualizují ze změn souborů. Pokud to způsobuje problémy, prosím, oslovte GitHub a zakázat funkčnost přidáním níže uvedené vlajky do nastavení.xml.
+NEDOPORUČENÉ
     ```
         <updateSubsRssOnFileChanges>false</updateSubsRssOnFileChanges>
     ```
 
-    * Proměnné Subset již nebudou automaticky generovány pro soubory typu EDDTableFromNcCFFiles. Pokud jste spoléhali na chování, můžete buď (preferovaný roztok) přidat subsetVariables k definici datového souboru ve Vašem datasets.xml , nebo přidat pod vlajku do vašeho setup.xml. Pokud máte pocit, že je třeba to zapnout, kontaktujte prosím GitHub, abychom mohli lépe podpořit vaše použití případu posun vpřed.
-NEDOPORUČUJE
+    * Subsetové proměnné již nebudou automaticky generovány pro datový typ EDDTableFromNcCFFiles. Pokud jste se spoléhal na chování, můžete buď (preferovaný roztok) přidat subsetVariables k definici datového souboru ve vašem datasets.xml , nebo přidat níže uvedenou vlajku do nastavení.xml. Pokud máte pocit, že je třeba to zapnout, prosím oslovte GitHub, abychom mohli lépe podpořit vaše použití pouzdro vpřed.
+NEDOPORUČENÉ
     ```
     <includeNcCFSubsetVariables>true</includeNcCFSubsetVariables>
     ```
 
-    * Server nyní přesměruje žádosti o dokumentaci (pod stahováním / což je dokumentace, která byla přemístěna) na nové místo dokumentace. V případě potřeby to můžete vypnout pomocí vlajky v setup.xml:
-NEDOPORUČUJE
+    * Server nyní přesměruje požadavky na dokumentaci (v rámci stažení / což je dokumentace, která byla migrována) na nové místo dokumentace. V případě potřeby to můžete vypnout s vlajkou v setup.xml:
+NEDOPORUČENÉ
     ```
         <redirectDocumentationToGitHubIo>false</redirectDocumentationToGitHubIo>
     ```
 
-    * Některé drobné změny a opravy chyb.
+    * Některé malé změny a opravy chyb.
 
 *    **Pro ERDDAP™ Vývojáři:** 
-    * Další zlepšení kvality kódu a odstranění kódu. To zahrnuje malé optimalizace, lepší nakládání s uzavíratelnými zdroji a migraci od dlouho zastaralých datových typů (Jako Vektor.) .
+    * Více vylepšení kvality kódu a vyčištění mrtvého kódu. Jedná se o drobné optimalizace, lepší manipulaci s ucpanými zdroji a migraci od zastaralých datových typů (jako Vektor) .
 
-    * Velké refaktoring na EDStatic vytáhnout většinu konfiguraci, zprávu, a metrický kód. To také lepší zapouzdření inicializace a manipulace adresářových cest (Tyhle poslední dva musí být ještě hotové.) 
+    * Velkou refaktoring na ED Static vytáhnout většinu z konfigu, zprávy, a metrické kód. Je také lepší zapouzdřit inicializaci a manipulaci adresářových cest (Tyto poslední 2 mají více co dělat.) 
 
-    * Spousta pokroku směrem k oficiálně podporovanému Docker Image. Plán je dokončit a uvolnit po ERDDAP™ 2.26 je k dispozici.
+    * Hodně pokroku směrem k oficiálně podporovanému Docker Image. Plán je dokončit a uvolnit po ERDDAP™ 2.26 uvolnění je k dispozici.
 
 ## Verze 2.25{#version-225} 
- (propuštěn 2024- 10- 31) 
+ (propuštěn 2024-10-31) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * EDDTableFromFiles nyní mohou podporovat dotazy pouze s odvozenými výstupy (globals, jexl script, nebo proměnné) .
+    * EDDTableFromFoles mohou nyní podporovat dotazy pouze s odvozenými výstupy (globální, jexl skript nebo proměnné) .
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Verze 2.25 vyžaduje Java 21 nebo novější. Toto je verze LTS a je k dispozici již více než rok.
+    * Verze 2.25 vyžaduje Java 21 nebo novější. Jedná se o verzi LTS a je k dispozici více než rok.
          
-    * SharedWatchService je nyní výchozí. Pokud to potřebujete vypnout, kontaktujte Chrise. John z Noaa.gov mi dá vědět, abych to mohl zlepšit v budoucích verzích a přidat:
-        &lt;user SharedWatchService &gt; false&lt;/ user SharedWatchService &gt; to your setup.xml.
+    * Služba SharedWatchService je nyní výchozí. Pokud ji potřebujete vypnout, kontaktujte prosím Chrise. John at noaa.gov to dejte mi vědět, abych to mohl vylepšit v budoucích verzích a přidat:
+        &lt;UseSharedWatchService&gt;false&lt;/useSharedWatchService&gt; to your setup.xml.
          
-    * U ERDDAP™ Server nyní začne startovat. Což znamená, že datové soubory začnou okamžitě nakládat místo čekání, až bude podána žádost.
+    * The ERDDAP™ servlet nyní začne od spuštění serveru. Což znamená, že data začnou okamžitě nakládat místo čekání, až bude podána žádost.
          
-    * Parametr removeMVRows v EDDTableFromMultidimNcFiles bude mít nyní efekt. Nastavení na false může podstatně urychlit některé dotazy, ale to nemusí být vhodné pro všechny soubory dat. Více informací viz [popis parametru](/docs/server-admin/datasets#removemvrows) .
+    * Parametr removeMVRows v EDDTableFromMultidimNcFiles bude mít nyní efekt. Nastavení na false může výrazně urychlit některé dotazy, ale to nemusí být vhodné pro všechny soubory dat. Více informací viz [popis parametru](/docs/server-admin/datasets#removemvrows) .
          
-    * Datové soubory (EDDTableFromNcFiles a EDDGrid FromNcFiles) pomocí zarr souborů jsou nyní podporovány. Musí obsahovat "zarr" v souboru NameRegex nebo path Regex. Viz [zarr sexion v dokumentaci datových souborů](/docs/server-admin/datasets#zarr) pro více detailů.
+    * Datové soubory (EDDTableFromNcFiles a EDDGrid FromNcFiles) Nyní jsou podporovány zarr soubory. Musí obsahovat "zarr" buď do souboruNameRegex nebo pathRegex. Viz [Zarr section v dokumentaci datových souborů](/docs/server-admin/datasets#zarr) pro více detailů.
          
-    * Nový typ datového souboru, EDDTableFromParquetFiles je nyní podporován. Viz [Sekce EDDTableFromParquetFiles v dokumentaci souborů](/docs/server-admin/datasets#eddtablefromparquetfiles) pro více detailů.
+    * Nový typ datového souboru, nyní je podporován EDDTableFromParquetFiles. Viz [EDDTableFromParquetFiles section v dokumentaci datových souborů](/docs/server-admin/datasets#eddtablefromparquetfiles) pro více detailů.
          
-    *    [Prometheus metrics](https://prometheus.io/) jsou nyní k dispozici na / erddap / metrics.
+    *    [Prometheovy metriky](https://prometheus.io/) jsou nyní k dispozici na /erddap/metrics.
          
-    * K dispozici je nová implementace XML parser. Tento nový parser umožňuje použití XInclude v datasets.xml . Díky Ayush Singh za tu hru.
+    * K dispozici je nová implementace XML parseru. Tento nový parser umožňuje použití XInclude v datasets.xml . Díky Ayush Singhovi za tu roli.
          
-    * Nový parametr v datasets.xml kontrolovat neobvyklé aktivity e-mailů. UnusualActivity Procento selhání na starou hodnotu 25%. Díky Ayush Singh za tu hru.
+    * Nový parametr v datasets.xml kontrolovat neobvyklé aktivity e-maily. neobvykláaktivita FailPercent defaults se starou hodnotou 25%. Díky Ayush Singhovi za tu roli.
          
-    * Nový parametr v setup.xml, který kontroluje, zda jsou na záložce status.html zobrazeny chyby při načítání datového souboru. To defaults to true, vypnout chyby dataset na stavové stránce, nastavit showLoadErrorsOnStatusPage na false:&lt;showLoadErrorsOnStatusPage &gt; false&lt;/ showLoadErrorsOnStatusPage &gt;
+    * Nový parametr v setup.xml, který řídí, pokud jsou na stránce status.html uvedeny chyby načítání souborů. It defaults to true, to disable data data errors on the status page, set showLoadErrorsOnStatusPage to false:&lt;showLoadErrorsOnStatusPage&gt;false&lt;/showLoadErrorsOnStatusPage&gt;
          
-    * Některé drobné změny a opravy chyb.
+    * Některé malé změny a opravy chyb.
          
 *    **Pro ERDDAP™ Vývojáři:** 
-    * Zkouška oddělená od jednotky a integrace (pomalu) testy. Také více zkoušek povoleno a testy byly vyrobeny méně vločky.
+    * Zkoušky oddělené od jednotky a integrace (pomalu) testy. Také více testů povoleno a testy byly provedeny méně neprůstřelné.
          
-    * Chyba Prone (některé kontroly jsou stále vypnuty) a Spot Bugs integrovaný přes Maven.
+    * Chyba (některé kontroly jsou stále vypnuté) a Spot Bugs integrovaný přes Maven.
          
-    * Plná kódová základna formátována tak, aby odpovídala Průvodci stylem Google.
+    * Plný kódová základna formátovaná tak, aby odpovídala Google Style Guide.
          
 
 ## Verze 2.24{#version-224} 
- (propuštěn 2024- 06- 07) 
+ (propuštěn 2024-06-07) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * Nová barevná paleta EK80 pro akustické soubory dat k dispozici. Díky Robu Cermakovi za tohle.
+    * Nová barevná paleta EK80 pro akustické soubory. Díky Robu Cermakovi za tohle.
          
-    * Vyřešit problém, kde EDDTableAggregateRows neukázala správné rozmezí od všech dětí. Díky Marcu Albovi za zprávu o opravách a chybě.
+    * Opravit problém, kde EDDTableAggregateRows neukázal správné rozsahy od všech dětí. Díky Marco Alba za zprávu o opravě a chybách.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * ZMĚNA BEZPEČNOSTI: Autentizace Google může vyžadovat změny vašeho CSP.
+    * DO: ZMĚNA BEZPEČNOSTI: Google Authentication může vyžadovat změny vašeho ověřovatele.
         
-Konkrétně, můžete také muset přidat https://accounts.google.com/gsi/style na stlye- src a https://accounts.google.com/gsi/ na Connect- src. Pro skript - src můžete nyní použít https://accounts.google.com/gsi/client.
+Konkrétně můžete také přidat https://accounts.google.com/gsi/style na stlye-src a https://accounts.google.com/gsi/ pro připojení-src. Pro skript-src můžete nyní použít https://accounts.google.com/gsi/client.
  
         
-Pro více informací můžete jít na [Google stránka](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid#content_security_policy) o konfiguraci CSP.
+Pro více informací můžete přejít na [Google stránka](https://developers.google.com/identity/gsi/web/guides/get-google-api-clientid#content_security_policy) o konfiguraci CSP.
          
         
-    * Nová služba společných hodinek. Toto je nová volba pro sledování adresářů pro aktualizace. Má jedno vlákno pro každý souborový systém místo jednoho vlákna na datový soubor. S největší pravděpodobností to drasticky sníží počet závitů použitých ke sledování změn. Znamená to, že všechny datové soubory se aktualizují společně místo každého datového souboru s vlastní aktualizační frekvencí. S největší pravděpodobností to bude znamenat častější aktualizace většiny souborů dat.
+    * New Shared Watch Service. Toto je nová možnost pro sledování adresářů pro aktualizace. Má jedno vlákno pro každý souborový systém místo jednoho vlákna na jeden soubor. Nejpravděpodobněji to drasticky sníží počet vláken používaných ke sledování změn. To znamená, že všechny soubory souborů se aktualizují společně namísto každého datového souboru, který má svou vlastní frekvenci aktualizací. Nejpravděpodobněji to bude znamenat častější aktualizace většiny souborů údajů.
         
-Povolit přidání&lt;user SharedWatchService &gt; true&lt;/ user SharedWatchService &gt; to your setup.xml.
+Pro povolení tohoto přidání&lt;UseSharedWatchService&gt; true&lt;/useSharedWatchService&gt; to your setup.xml.
         
           
-Prosím, zkus to a nahlaš Chrisovi, jak to funguje. John v Noaa.Gove.
+Prosím, zkuste tohle a ohlaste, jak to funguje pro Chrise. John v Noaa.gov.
          
-    * Oprava pro nesprávné názvy varů v protokolech. Díky Ayush Singh za opravu.
+    * Opravit chybná jména var v logech. Díky Ayush Singhovi za opravu.
          
-    * Některé drobné změny a opravy chyb.
+    * Některé malé změny a opravy chyb.
          
 *    **Zlepšení ERDDAP™ vývojáři:** 
-    * Podpora místního rozvoje pomocí Docker. Díky Mattu Hopsonovi a Roje.
+    * Podpora místního rozvoje pomocí Docker. Díky Matt Hopson a Roje.
          
-    * Podpora místního rozvoje pomocí Jetty a zlepšení dokumentace. Díky Micahu Wengrenovi.
+    * Podpora místního rozvoje pomocí vylepšení Jetty a dokumentace. Díky Micah Wengren.
          
-    * Změny v testech ke snížení problémů napříč platformami. Díky. Shane St. Savage.
+    * Změny testů ke snížení emisí křížovou platformou. Díky. Shane St. Savage.
          
 
 ## Verze 2.23{#version-223} 
- (propuštěn 2023- 02- 27) 
+ (uvolněno 2023-02-27) 
 
-Všimněte si, že toto vydání bylo provedeno Bob Simons, čímž ukazuje, že je stále kolem a aktivní během přechodu na Chris John, jeho nástupce. S tímto vydáním, všechny změny kódu jsou prováděny Chis John, není-li stanoveno jinak.
+Všimněte si, že toto propuštění učinil Bob Simons, a tím ukázal, že je stále kolem a aktivní během přechodu na Chris John, jeho nástupce. Statistiky s touto verzí, všechny změny kódu jsou prováděny Chis John, není-li uvedeno jinak.
 
 *    **Nové funkce a změny (pro uživatele) :** 
     *    (Žádné)   
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * ZMĚNA BEZPEČNOSTI: Autentizace Google je nyní prováděna prostřednictvím nové knihovny služeb identifikace Google, která je součástí "Přihlášení se k Googlu". Podpora Google pro starý systém "Přihlásit se" bude ukončena 2023-03-31. Takže pokud používáte Google Authentication ve vašem ERDDAP™ instalace, musíte aktualizovat ERDDAP™ v2.23 + do té doby. (Bob se omlouvá za to narychlo. Je to Bobova chyba.)   
+    * DO: ZMĚNA BEZPEČNOSTI: Google Authentication se nyní provádí prostřednictvím nové knihovny Google Identity Services, která je součástí "Sign In with Google." Podpora Google pro starý systém "Google Přihlásit se" bude ukončena 2023-03-31. Takže pokud používáte Google Authentication ve vašem ERDDAP™ instalace, musíte aktualizovat na ERDDAP™ V2.23+ do té doby. (Bob se omlouvá za to narychlo. Je to Bobova chyba.)   
          
-    * ZLEPŠENO: NCSV je nyní v1.2 Změna je, že soubory jsou nyní UTF-8-kódované soubory (byli ASCII) a tak může nyní zahrnovat jakýkoli Unicode znak, jak je, bez kódování jako\\ u _ hhhh _, i když to je stále povoleno.
-Při psaní NCSV souborů, ERDDAP™ Nyní píše v1.2 soubory.
-         ERDDAP™ budou stále číst soubory NCSV, které se řídí specifikací v1.0 a v1.1.
-Díky Pauline- Chauvet, n- a- t- e, a thogar- počítač pro navrhování a provádění testů pro zajištění různých tabulkových programů mohou importovat UTF-8 soubory. Díky Bobu Simonsovi za tuhle změnu kódu.
+    * NCCSV je nyní v1.2. Změna je, že soubory jsou nyní UTF-8-kódované soubory (byli ASCII) a tak může nyní zahrnovat jakýkoli Unicode znak, jak je, bez kódování jako \\u_hhhh_, i když to je stále povoleno.
+Při psaní NCCSV souborů, ERDDAP™ Nyní píše v1.2 soubory.
+         ERDDAP™ bude stále číst NCCSV soubory, které se řídí specifikací v1.0 a v1.1.
+Díky Pauline-Chauvet, n-a-t-e, a thogar-počítač za návrh, a dělá testy, aby se zajistilo, že různé tabulkové programy mohou import UTF-8 soubory. Díky Bobovi Simonsovi za změnu kódu.
          
-    * NEW: Webová stránka status.html má nyní řádek v blízkosti horního okraje, který označuje, který datový soubor načítá Datasets a související statistiky, nebo žádný, pokud není načítán žádný datový soubor. To může být velmi užitečné ERDDAP™ administrátoři se snaží přijít na to, proč nabít Datasety trvají tak dlouho. Také, nGridDatasets, nTableDatasets, a nTotalDatasets počítá níže, které jsou nyní okamžité (Předtím byli na konci poslední velké zátěže. Datové soubory) .
-Tato změna je pro Roye Mendelssohna. Díky Bobu Simonsovi za tuhle změnu kódu.
+    * NOVINKA: Webová stránka status.html má nyní řádek v blízkosti vrcholu, který označuje, který soubor dat načítáDatasety se v současné době načítá a související statistiky, nebo žádný, pokud není načítán soubor dat. To může být velmi užitečné ERDDAP™ Správci se snaží zjistit, proč načíst Datasety trvají tak dlouho. Také, nGridDatasets, nTableDatasets, a nTotalDatasets se počítá níže, které jsou nyní okamžité (dříve, byly jako konec poslední velké zatížení Datové soubory) .
+Tato změna je pro Roye Mendelssohna. Díky Bobovi Simonsovi za změnu kódu.
          
-    * ZLEPŠENO: GeneteData Xml nyní mění CF- 1, 10 (CF- 1, 6) v atributech "Konvence".
-Díky Bobu Simonsovi za tuhle změnu kódu.
+    * ZLEPŠIT: GenerovatNastavení dat Xml nyní mění CF-1.10 (bylo CF- 1, 6) v atributech "Úmluvy."
+Díky Bobovi Simonsovi za změnu kódu.
          
-    * Některé drobné změny a opravy chyb.
+    * Některé malé změny a opravy chyb.
          
 
 ## Verze 2.22{#version-222} 
- (propuštěn 2022- 12- 08) 
+ (propuštěn 2022-12-08) 
 
-Všimněte si, že toto vydání bylo provedeno Bob Simons, čímž ukazuje, že je stále kolem a aktivní během přechodu na jeho nástupce.
+Všimněte si, že toto propuštění udělal Bob Simons, a tím ukázal, že je stále kolem a aktivní během přechodu na jeho nástupce.
 
 *    **Nové funkce a změny (pro uživatele) :** 
     *    (Žádné)   
@@ -300,199 +317,199 @@ Všimněte si, že toto vydání bylo provedeno Bob Simons, čímž ukazuje, že
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
     * Nic.
          
-    * BEZPEČNOSTNÍ BUG FIX: Byla tam chyba související s Křížovými stránkami v kódu pro zrušení výběru jazyka. Díky NOAA Bezpečnostní skeny to zachytily. To ukazuje, že NOAA bezpečnost aktivně a rutinně hledá bezpečnostní nedostatky ERDDAP .
+    * ZABEZPEČENÍ: V kódu pro výběr jazyka byla chyba související s Cross Site Scripting. Díky NOAA Bezpečnostní skeny pro chytání. To ukazuje, že NOAA bezpečnost aktivně a pravidelně hledá bezpečnostní slabiny ERDDAP .
          
-    * BEZPEČNOSTNÍ FIX: Mnoho knihoven používaných ERDDAP™ byly aktualizovány, jako obvykle, jako součást tohoto vydání. Tentokrát to zahrnovalo aktualizaci ovladače PostgreSQL (který měl bezpečnostní chybu) na 42.5.1.
+    * BEZPEČNOST FIX: Mnoho knihoven používaných ERDDAP™ byly jako obvykle aktualizovány jako součást tohoto vydání. Tentokrát to zahrnovalo aktualizaci ovladače PostgreSQL (který měl bezpečnostní chybu) na 42,5.1.
          
-    * ZLEPŠOVÁNÍ: Více malých změn ERDDAP systém správy paměti by měl snížit šanci daného požadavku selhat z důvodu nedostatku dostupné paměti.
+    * ZLEPŠENÉ: Další drobné změny ERDDAP 'Systém správy paměti by měl snížit šanci na danou žádost kvůli nedostatku dostupné paměti.
          
-    * Některé drobné změny a opravy chyb.
+    * Některé malé změny a opravy chyb.
          
 
 ## Verze 2.21{#version-221} 
- (propuštěn 2022- 10- 09) 
+ (vydal 2022-10-09) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
     *    (Žádné)   
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO: PRO Java 17, neměli byste používat\\ -d64 v JAVA\\ _ OPTS v setenv.bat nebo setenv.sh. Takže jestli tam je, prosím odstraňte to. Myslím, že 64 bitový režim je nyní vybrán při stahování 64 bitové verze Java . Díky Samovi Woodmanovi.
+    * DO: Java 17, neměli byste používat \\-d64 v JAVA\\_OPTS v setenv.bat nebo setenv.sh. Takže pokud tam je, prosím, odstraňte ho. Myslím, že 64 bitový režim je nyní vybrán při stažení 64 bitové verze Java . Díky Samu Woodmanovi.
          
-    * BUG FIX: Někdy se nový e-mailový systém snažil přihlásit příliš často, což způsobilo, že Google Email servery odmítly všechny budoucí log v pokusech. Nyní, e-mailový systém se vyhýbá tomuto a souvisejícím problémům.
+    * BUG FIX: Někdy se nový e-mailový systém snažil přihlásit příliš často, což způsobilo, že servery Google Email odmítly všechny budoucí pokusy o přihlášení. Nyní, e-mailový systém se vyhýbá této a související problémy.
          
 
 ## Verze 2.20{#version-220} 
- (propuštěn 2022- 09- 30) 
+ (vydané 2022-09-30) 
 
-*    **Nepoužívejte v2.20. Je to vadné.** Administrátoři však při upgrade na v2.21 + musí provést níže uvedené položky TO DO.
+*    **Nepoužívejte v2.20. Je to vadné.** Správci však stále musí při modernizaci na v2.21+ provádět níže uvedené položky TO DO.
      
 *    **Nové funkce a změny (pro uživatele) :** 
     *    (Žádné)   
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * ZLEPŠENO: Povolili jsme starý systém správy paměti (Math2.ensurememory kdispozici) a upravil nový systém správy paměti (EDStatic.shedThisRequest) lépe s tím pracovat. Viz [Stav paměti](/docs/server-admin/additional-information#memory-status) detaily.
+    * Obnovili jsme starý systém správy paměti. (Matematika2.zajistitPaměťDostupné) a upravil nový systém správy paměti (ED Static.shedThisRequest) lépe s tím pracovat. Viz [Stav paměti](/docs/server-admin/additional-information#memory-status) pro detaily.
          
-    * ZMĚNA: Výchozí hodnota pro&lt;ipUrčení MaxŽádosti &gt; n datasets.xml zvýšení ze 7 na 15. Je jasné, že někteří legitimní WMS klienti mohou generovat více než 7 souběžných žádostí.
+    * ZMĚNĚNO: Výchozí pro&lt;ipAddressMaxRequests&gt; v datasets.xml zvýšení ze 7 na 15. Je jasné, že některé legitimní WMS klienti mohou generovat více než 7 simultánních žádostí.
          
 
 ## Verze 2.19{#version-219} 
- (propuštěn 2022- 09- 01) 
+ (vydal 2022-09-01) 
 
-*    **Nepoužívejte v2.19. Je to vadné.** Administrátoři však musí při upgrade na v2.20 + provést níže uvedené položky TO DO.
+*    **Nepoužívejte v2.19. Je to vadné.** Správci však stále musí při modernizaci na v2.20+ provádět níže uvedené položky TO DO.
      
 *    **Nové funkce a změny (pro uživatele) :** 
-    * NEW: Existuje nová serverside funkce, orderBy Sestupný, který funguje jako orderBy Ale v sestupném pořadí. Díky Adamu Leadbetterovi.
+    * NEW: Existuje nová funkce na straně serveru, orderBy Sestupně, což funguje jako orderBy , ale v sestupném pořadí. Díky Adamovi Leadbetterovi.
          
-    * ZLEPŠENO: Grafy (ale ne mapy) rozšíří se tak, aby vyplnil dostupný prostor na plátně, tj. prostor, který legenda nepoužívá. Můžete získat vysoké grafy, čtvercové grafy nebo široké grafy přidáním a manipulací s & .size = _ width _ | _ výška _ parametr (kde šířka a výška udávají velikost plátna v pixelech) na dotaz URL. (Toto není volba na webové stránce .graph. Musíte to přidat na URL ručně.) Pokud nechcete specifikovat parametr & .size, požadavky na .small Png, .png, .largePng, .small Pdf, .pdf, a .large.pdf mají předem definované velikosti plátna, takže váš graf bude expandovat vyplnit k dispozici prostor, ale bude obvykle zhruba čtvercový. Díky Bobu Flemingovi.
+    * Nyní grafy (ale ne mapy) expanduje k vyplnění volného prostoru na plátně, tj. prostoru, který legenda nepoužívá. Můžete získat vysoké grafy, čtvercové grafy, nebo široké grafy přidáním a manipulací &.size=_šířka_ | _výška_ parametr (kde šířka a výška určují velikost plátna v pixelech) na URL požadavku. (Toto není možnost na webové stránce .graf. Na URL ji musíte přidat ručně.) Pokud nespecifikujete parametr &.size, požadavky na .maléPng, .png, .largePng, .maléPdf, .pdf a .large.pdf mají předem definované velikosti plátna, takže váš graf se rozšíří k vyplnění volného prostoru, ale obvykle bude zhruba čtvercový. Díky Bobovi Flemingovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO: ERDDAP™ Vyžaduje Java 17 a související Tomcat 10. Musíte sledovat ERDDAP™ návod k montáži (nebo ekvivalent např., pro Docker) nainstalovat Java 17 a Tomcat 10 a zkopírujte \\[ tomcat \\] / Obsah adresáře z vaší instalace Tomcat 8 do nového \\[ tomcat \\] adresář. Neexistují žádné další změny, které byste měli provést ERDDAP instalace související s touto změnou. Jinými slovy, ERDDAP™ funguje jako předtím.
+    * DO: ERDDAP™ Teď to vyžaduje Java 17 a související Tomcat 10. Musíte následovat ERDDAP™ Návod k instalaci (nebo ekvivalentní např. pro Dockera) pro instalaci Java 17 a Tomcat 10 a kopie \\[ tomcat \\] /content adresář z instalace Tomcat 8 do nové \\[ tomcat \\] adresář. Nejsou žádné další změny, které byste měli udělat na své ERDDAP instalace související s touto změnou. Jinými slovy, ERDDAP™ funguje jako předtím.
         
-Nezapomeň udělat ERDDAP -související změny Tomcat server.xml a context.xml při upgrade Tomcat. Viz ERDDAP s [Pokyny pro instalaci tomcat](/docs/server-admin/deploy-install#tomcat) .
+Nezapomeňte udělat ERDDAP - související změny na serveru Tomcat.xml a context.xml při upgradu Tomcat. Viz ERDDAP 's [Návod k instalaci Tomcat](/docs/server-admin/deploy-install#tomcat) .
         
-Můj dojem Java 17 je, že preferuje větší výkon zpracování a paměť pro dlouhotrvající, větší aplikace jako ERDDAP™ , takže to funguje mírně pomaleji než Java 8 s nízkým výkonem počítačů (např. 2 jádra a minimální RAM) a pracuje o něco rychleji než Java 8 s vyšším výkonem počítačů (např. 4 + jádra a hojnost RAM) . Takže pokud vidíte špatný výkon, použijte programy jako Linux [nahoře](https://www.howtogeek.com/668986/how-to-use-the-linux-top-command-and-understand-its-output/) zkontrolovat využívání zdrojů a zvážit darování ERDDAP™ více zdrojů, zejména více paměti. Paměť je levná&#33; Většina telefonů má více procesorů a paměti než serverů, které někteří z vás používají k provozu ERDDAP &#33;
-Díky Erin Turnbull.
+Můj dojem Java 17 je to, že dává přednost více zpracovatelského výkonu a paměti pro dlouhodobé, větší aplikace jako ERDDAP™ , takže to funguje o něco pomaleji než Java 8 s nízkým výkonem počítačů (např. 2 jádra a minimální RAM) a pracuje o něco rychleji než Java 8 s vyšším výkonem počítačů (Například 4+ jádra a spousta RAM) . Takže pokud vidíte špatný výkon, použijte programy jako Linux [horní](https://www.howtogeek.com/668986/how-to-use-the-linux-top-command-and-understand-its-output/) kontrolovat využívání zdrojů a zvážit poskytnutí ERDDAP™ Více zdrojů, zejména více paměti. Paměť je levná&#33; Většina telefonů má více procesorů a paměti než servery, které někteří z vás používají ke spuštění ERDDAP &#33;
+Díky Erin Turnbullové.
          
         
-    * TO: Jestliže používáte ERDDAP™ k přístupu Cassandra, pro Cassandra, musíte pokračovat pomocí verze Java které jste používal pro řízení Cassandry. Prostě přepni na Java 17 pro běh Tomcat + ERDDAP .
+    * DO: pokud používáte ERDDAP™ pro přístup k Cassandra, pro Cassandra, musíte nadále používat verzi Java že používáte pro řízení Cassandry. Přepni na Java 17 pro spuštění Tomcat+ ERDDAP .
          
-    * TO: Doporučeno: Pokud má Váš server CPU 4 + jádra a 8 + GB RAM, zvažte změnu těchto nastavení ve vašem datasets.xml soubor:
+    * DO: Doporučeno: Pokud má CPU vašeho serveru 4+ jádra a 8+ GB RAM, zvažte změnu tohoto nastavení ve vašem datasets.xml soubor:
 ```
           <nGridThreads>3</nGridThreads>  
           <nTableThreads>3</nTableThreads>  
 ```
 
 Pokud má váš server méně zdrojů, držte se "1" pro obě tato nastavení.
-Systémy nThreads pro EDDGrid FromFiles a EDDTable FromFiles byly podstatně vylepšeny. Tyto změny vedly k obrovskému zlepšení rychlosti (např. 2X zrychlení při nastavení nThreads na 2 nebo více) pro nejnáročnější požadavky (když musí být zpracován velký počet souborů pro získání výsledků) . Některé související změny od Chris John bude také vést k obecnému zrychlení po celou ERDDAP . Kód pro tyto změny přispěl Chris John. Děkuji. Chrisi&#33;
+Systémy nThreads pro EDDGrid FromFiles a EDDTable ZFile se výrazně zlepšily. Tyto změny vedly k obrovskému zlepšení rychlosti (např. 2X speedup, pokud je nThraads nastaven na 2 nebo více) pro nejnáročnější žádosti (kdy je třeba zpracovat velký počet souborů pro shromažďování výsledků) . Některé související změny od Chris John bude také vést k obecné rychlosti v celém ERDDAP . Kód pro tyto změny přispěl Chris John. Děkuji. Chrisi&#33;
          
-    * POZOR: hyphens in datasetID jsou zaostalé a již nepodporované (i když technicky stále povoleno) . V příštím vydání budou pravděpodobně zakázáni. Pokud používáte hypheny, přepněte na podtržení nyní, aby se zabránilo problémům. Jestli to teď změníš, je to na tvou vlastní rychlost. Pokud počkáte do dalšího vydání, budete v panice a budete se s tím muset vypořádat ten den.
+    * UPOZORNĚNÍ: pomlčky datasetID 's jsou deprecovány a již nejsou podporovány (i když technicky stále povoleno) . V příštím vydání budou pravděpodobně zakázáni. Pokud používáte pomlčky, přepněte na podtržení nyní, aby se zabránilo problémům. Když to teď změníš, je to na tvou vlastní rychlost. Pokud počkáte do dalšího propuštění, budete panikařit a budete se s tím muset vypořádat ten den.
          
-    * NEW: Nyní, pro .htmlTable odpovědi na data, pokud data v buňce String obsahují data: image / png; base64, následovaný base64 kódovaným .png obrazem, ERDDAP™ zobrazí ikonu (takže uživatel může vidět obraz, pokud se vznáší nad ním) a tlačítka pro uložení textu nebo obrázku do schránky. Díky Marcu Albovi. (kdo přispěl kódem) a Bob Simons (který jej lehce upravil) .
+    * NEW: Nyní, pro .htmlTable odezvy na data, pokud data v buňce String obsahují data:obraz/png;base64, následované base64 zakódovaným .png obrazem, ERDDAP™ zobrazí ikonu (takže uživatel může vidět obrázek, pokud nad ním vznáší) a tlačítka pro uložení textu nebo obrázku do schránky. Díky Marco Alba (kdo kód přispěl) a Bob Simons (který ji mírně upravil) .
          
-    * NEW: -Not AddStandardName
-Pokud zahrnujete\\ -doNotAddStandardNames jako parametr příkazového řádku, když spustíte generovat Datové soubory Xml, generovat Datové soubory Xml nepřidá standard\\_name na addAttributes pro jakékoli jiné proměnné než proměnné nazvané zeměpisná šířka, délka, výška, hloubka nebo čas (které jsou zřejmé standard\\_name s) . To může být užitečné, pokud používáte výstup z generování Datové soubory Xml přímo v ERDDAP™ bez editace výstupu, protože generovat Datové soubory Xml často odhaduje standard\\_name s nesprávně. (Všimněte si, že vždy doporučujeme upravit výstup před použitím v ERDDAP .) Použití tohoto parametru bude mít další menší související účinky, protože uhodl standard\\_name je často používán k jiným účelům, např. k vytvoření nového long\\_name , a vytvořit nastavení barevného panelu. Díky Kevinu O 'Brienovi.
+    * Novinka: -nepřidatnástandardJména
+Pokud přidáte \\-donotAddStandardNames jako parametr příkazového řádku při spuštění generování Datové soubory Xml, generovat Datové soubory Xml nepřidá standard\\_name do addAttributes pro proměnné jiné než proměnné s názvem zeměpisná šířka, zeměpisná délka, výška, hloubka nebo čas (které mají očividné standard\\_name án) . To může být užitečné, pokud používáte výstup z generování Datové soubory Xml přímo v ERDDAP™ bez úpravy výstupu, protože generovat Datové soubory Xml často hádá standard\\_name špatně. (Všimněte si, že vždy doporučujeme upravit výstup před použitím v ERDDAP .) Použití tohoto parametru bude mít jiné menší související účinky, protože hádané standard\\_name se často používá k jiným účelům, např. k vytvoření nového long\\_name , a vytvořit nastavení barevBar. Díky Kevinu O'Brienovi.
          
-    * NEW: Nyní můžete dát&lt;updateMaxEvents &gt; 10&lt;/ UpdateMaxEvents &gt; n datasets.xml   (v s ostatními nastavení v blízkosti vrcholu) změnit maximální počet změn souboru (výchozí hodnota = 10) který bude zpracován systémem EveryNMillis. Větší číslo. (100?) může být užitečné, pokud je velmi důležité, aby byl datový soubor vždy aktualizován. Viz [updateMaxEvents dokumentace](/docs/server-admin/datasets#updatemaxevents) . Díky Johnu Maurerovi.
+    * NEW: Nyní můžete dát&lt;updateMaxEvents&gt;10&lt;/updateMaxEvents&gt; v datasets.xml   (s ostatními nastaveními v blízkosti horní části) změnit maximální počet změn souboru (výchozí=10) která bude zpracována systémem updateEveryNMillis. Větší číslo (100?) může být užitečné, pokud je velmi důležité, aby soubor údajů byl vždy aktualizován. Viz [aktualizace dokumentaceMaxEvents](/docs/server-admin/datasets#updatemaxevents) . Díky Johnu Maurerovi.
          
-    * NEW: Přidána podpora globálnímu " real\\_time = pravda | Falešný "atribut String.
-Pokud je to lež (výchozí) a pokud datový soubor nepoužívá aktualizaci EveryNMillis, ERDDAP™ bude cache odpovědi na žádosti o typy souborů, kde celý soubor musí být vytvořen před ERDDAP™ může začít posílat odpověď na uživatele a znovu je po dobu asi 15 minut (např. .nc ,. png) .
-Pokud je to nastaveno na true nebo pokud datový soubor používá aktualizaci EveryNMillis, ERDDAP™ nikdy cache soubory odezvy a vždy vrátí nově vytvořené soubory.
+    * NOVINKA: Přidaná podpora pro globální " real\\_time =pravda | false" String atribut.
+Jestli je to lež (výchozí) a pokud datový soubor nepoužívá aktualizaci EveryNMillis, ERDDAP™ bude cache odpovědi na žádosti o typy souborů, kde celý soubor musí být vytvořen před ERDDAP™ může začít odesílat odpověď uživateli a znovu je používat po dobu cca 15 minut (např. .nc , . png) .
+Pokud je to nastaveno na true nebo pokud soubor údajů používá aktualizaci EveryNMillis, ERDDAP™ nebude nikdy cache souborů odezvy a vždy vrátí nově vytvořené soubory.
 Díky Johnu Maurerovi.
          
-    * NEW: E-maily jsou nyní zasílány v samostatném emailThread. To dělá načítání souborů dat a dalších akcí, které generují e-maily rychleji, protože načítání Datasets nemusí čekat na odeslání e-mailu, což někdy trvá dlouho. Nový systém může posílat více e-mailů na emailovou relaci, což snižuje počet přihlašovacích záznamů e-mailových serverů a snižuje riziko selhání, protože jsou příliš časté. Existují statistiky emailThread na stránce status.html a diagnostické zprávy v log.txt -- podívejte se na "emailThread". Všimněte si, že součet nEmailsPerSession = 0, naznačuje potíže, tj. e-mailová relace nebyla schopna poslat žádné e-maily.
-Díky Bobu Simonsovi.
+    * Novinka: E-maily jsou nyní odesílány v samostatném e-mailuThread. Tím se načítá soubory dat a další akce, které generují e-maily rychleji, protože načítáníDatasets nemusí čekat na odeslání e-mailu, což někdy trvá dlouho. Nový systém může posílat více e-mailů na e-mailovou relaci, čímž se sníží počet přihlašovacích e-mailových serverů a sníží se riziko selhání, protože jsou příliš časté. K dispozici jsou statistiky pro emailThread na stránce status.html a diagnostické zprávy v log.txt -- hledat "emailThread." Všimněte si, že soubor nEmailsPerSession=0 naznačuje problémy, tj. e-mailová relace nebyla schopna odeslat žádné e-maily.
+Díky Bobovi Simonsovi.
          
-    * ZMĚNA: Emaily jsou nyní zasílány s mírně odlišným kódem (z důvodu Java 17 a změna emailThread) . Pokud máte potíže s posíláním emailů, prosím, e-mailem erd.data at noaa.gov .
+    * ZMĚNĚNO: Emaily jsou nyní odesílány s mírně odlišným kódem (kvůli Java 17 a změna na emailThread) . Pokud máte potíže se zasíláním e-mailů, prosím e-mail erd.data at noaa.gov .
          
-    * NEW: Předplatné akcí, které "dotek" vzdálené URL jsou nyní zpracovávány v samostatném touchThread. Tím se načítají datové soubory a další akce, které se dotknou URL rychleji, protože načítání Datasets nemusí čekat na dokončení dotyku, což někdy trvá dlouho. Existují statistiky pro touchThread na stránce status.html a diagnostické zprávy v log.txt -- podívejte se na "touchThread".
-Díky Bobu Simonsovi.
+    * NOVINKA: Akce předplatného, které "dotýkejte se" vzdálené URL, jsou nyní řešeny v samostatném dotykuThread. Tím se načítá soubory dat a další akce, které se dotýkají URL rychleji, protože načítáníDatasets nemusí čekat na dokončení dotyku, což někdy trvá dlouho. Pro touchThread na stránce status.html a diagnostické zprávy v log.txt -- hledejte "touchThread."
+Díky Bobovi Simonsovi.
          
-    * NEW: Na stránce status.html, v "Major LoadDatasets Time Series", je nový "kůlna" sloupec, který označuje počet žádostí, které byly uvolněny, protože aktuální ERDDAP™ Využití paměti bylo příliš vysoké. Vykládané požadavky vrátí HTTP status kód 503 "Service Available". Ty požadavky nebyly nutně problém. Právě dorazili v rušnou dobu. To bylo součástí přepracování toho, jak ERDDAP™ zabývá se vysokým využíváním paměti.
+    * NOVINKA: Na stránce status.html, v "Major LoadDatasets Time Series," je nový "hed" sloupec, který označuje počet žádostí, které byly vrhány, protože aktuální ERDDAP™ používání paměti bylo příliš vysoké. Žádosti, které jsou vrh vrátí HTTP status kód 503 "Service Available." Ty žádosti nebyly nutně problém. Právě dorazili v rušné době. Tohle bylo součástí přehlídky jak ERDDAP™ se zabývá vysokou paměti využití.
          
-    * NEW: Na počítačích Unix / Linux je nyní na webové stránce status.html řádek "OS Info" s aktuálními informacemi o operačním systému včetně použití CPU a paměti.
+    * NOVINKA: Na Unix/Linux počítačích je nyní na webové stránce status.html linka "OS Info" s aktuálními informacemi o operačním systému včetně zatížení procesoru a využití paměti.
          
-    * ZLEPŠENO: Nyní, kdy ERDDAP™ je restartován a quickRestart = true, soubory EDDTableFromFiles budou znovu používat podmnožinu .nc a odlišné .nc . Pro některé soubory dat, to výrazně snižuje čas načíst datový soubor (např. od 60 sekund do 0,3s) . Spolu s novým emailThread a úkol Thread (viz výše) , To by mělo značně urychlit restartování ERDDAP™ pro mnoho ERDDAP™ zařízení. Díky Benu Adamsovi a Johnu Kerfootovi.
+    * Teď, když ERDDAP™ je restartován a quickRestart=true, EDDTableFromFoles soubory budou znovu používat podmnožinu .nc a zřetelné .nc . U některých souborů dat to výrazně snižuje čas pro načtení datového souboru (např. od 60 sekund do 0,3s) . Spolu s novým emailemThread a úkolThread (viz výše) , To by mělo výrazně urychlit restartování ERDDAP™ pro mnohé ERDDAP™ zařízení. Díky Benu Adamsovi a Johnu Kerfootovi.
          
-    * V minulých dílech jste viděli... (Datové soubory, které jsou živé ERDDAP™ ale nejsou v datasets.xml ) byly jednoduše zaznamenány na stavu. html a v log.txt po každém významném načítání Dataset. Nyní jsou automaticky odstraněny z ERDDAP™ a uvedeno na status.html a v log.txt, a e-mailem na e-mail Všechno. Takže pokud chcete odstranit datový soubor z ERDDAP™ Teď stačí jen odstranit kus xml. datasets.xml a bude odstraněn v dalších hlavních nakladačů. Díky Bobu Simonsovi.
+    * ZMĚNĚNO: V předchozích dílech jste viděli (Data, která jsou živá ERDDAP™ ale nejsou v datasets.xml ) byly prostě zaznamenány ve stavu. html a v log.txt po každém velkém zatíženíDatasets. Nyní jsou automaticky odstraněny z ERDDAP™ a zaznamenal na status.html a v log.txt, a e-mailem na e-mail Všechno. Takže pokud chcete odstranit soubor z ERDDAP™ , Nyní vše, co musíte udělat, je odstranit jeho kus xml v datasets.xml a bude odstraněna v dalším velkém zatíženíDatasets. Díky Bobovi Simonsovi.
          
-    * ZNÁMÝ BUG v netcdf- java v5.5.2 a v5.5.3: U EDDGrid FromThredds Katalogová volba v GenetateDatasets Xml slouží k práci pro katalogy HISDDS, které zahrnují odkazy na soubory dat v katalozích vzdálených HISDDS. Teď už ne. Nahlásil jsem to vývojářům netcdf- java.
+    * KNOWN BUG v netcdf-java v5.5.2 a v5.5.3: The EDDGrid FromThredds Volba katalogu v GeneranteDatasets Xml pracoval pro katalogy THREDDS, které obsahují odkazy na soubory dat v vzdálených katalogech THREDDS. Teď už ne. Nahlásil jsem problém vývojářům netcdf-java.
          
-    * BUG FIX: Pro uživatele Docker nastavení setup.xml parametry přes ERDDAP \\ _ _ paramName _: pro int a boolean parametry (např. e-mail SmtpPort) , ERDDAP™ Nesprávně hledal jen _ paramName _. Teď to hledá _ ERDDAP \\ _ paramName _. Díky Alessandro De Donno.
+    * BUG FIX: Pro uživatele Docker nastavení parametrů setup.xml prostřednictvím ERDDAP \\__paramName_: pro int a boolean parametry (např. e-mail SmtpPort) , ERDDAP™ špatně hledal jen _paramName_. Teď to vypadá na _ ERDDAP \\_paramName_. Díky Alessandru De Donnovi.
          
-    * ZMĚNA: ERDDAP™ testovací systém nyní používá automatizovaný systém k ověření, že nově vytvořené testovací snímky jsou přesně tak, jak se očekávalo. Díky Chrisovi. John za návrh a Bob Simons za implementaci.
+    * Změna: ERDDAP™ testovací systém nyní používá automatizovaný systém k ověření, že nově vytvořené testovací snímky jsou přesně podle očekávání. Díky Chrisovi John pro návrh a Bob Simons pro realizaci.
          
 
 ## Verze 2.18{#version-218} 
- (propuštěn 2022- 02- 23) 
+ (vydané 2022-02-23) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * ŽÁDOST
+    * NE
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * BUG FIX: .nc Složky nebyly za určitých okolností uzavřeny. Teď jsou. Díky Marco Albě, Rolandu Schweitzerovi, Johnu Maurerovi a dalším.
+    * BUG FIX: .nc Za nějakých okolností nebyly spisy uzavřeny. Teď už ano. Díky Marcu Albovi, Rolandu Schweitzerovi, Johnu Maurerovi a dalším.
          
 
 ## Verze 2.17{#version-217} 
- (propuštěn 2022- 02- 16) 
+ (vydané 2022-02-16) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * BUG FIX: Po změnách orderBy systém před několika lety, Tabledap 's Make A Graph neměl správně zvládnout mnoho dotazů, které použili orderBy _ Xxx _. Teď už ano. Díky Maurici Libesovi.
+    * BUG FIX: Po změnách orderBy systém před několika lety, Tabledap je Make A Graph nebyl řádně zvládnout mnoho dotazů, které používají orderBy _Xxx_. Teď už ano. Díky Maurice Libesovi.
          
-    * V minulých dílech jste viděli... ERDDAP™ zamítnuté žádosti. transparentní Png, kdy byly hodnoty zeměpisné šířky a / nebo délky částečně nebo zcela mimo rozsah. ( ERDDAP™ GitHub Issues # 19, posted by Rob Fuller -- díky za vyslání, že Rob) Nyní vrací průhledné pixely pro libovolné oblasti mimo rozsah obrázku. To je užitečné pro mnoho klientských aplikací. Změny kódu, aby se tato změna byla provedena zcela Chris John. Díky moc, Chrisi&#33;
+    * ZMĚNA: ERDDAP™ zamítl žádosti o . transparentní Png je doba, kdy byly hodnoty zeměpisné šířky a/nebo délky částečně nebo zcela mimo rozsah. ( ERDDAP™ GitHub Issues #19, Poslal Rob Fuller -- díky za vysílání, že Rob) Nyní vrací průhledné pixely pro jakékoliv oblasti mimo dosah obrazu. To je užitečné pro mnoho klientských aplikací. Kód se mění, aby se tato změna byla provedena zcela Chris John. Díky moc, Chrisi&#33;
          
-    * V minulých dílech jste viděli... ERDDAP™ zamítnuté žádosti o griddap, pokud byly hodnoty indexu pro daný rozměr \\[ vysoká: nízká \\] . Nyní tyto požadavky platí výměnou nízkých a vysokých hodnot. To řeší dlouhodobý problém pro uživatele a pro externí programy, jako je xtracto, který musel sledovat několik souborů dat, které mají zeměpisné šířky hodnot, které se pohybují od vysoké k nízké, aby se žádost jako \\[  (50) : (20)  \\] tak, že žádost v indexovém prostoru byl \\[ nízká: vysoká \\] . Viz https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS3MonthV5.html Teď, žádost jako \\[  (20) : (50)  \\] pro jeden z těchto souborů dat je automaticky interpretován jako \\[  (50) : (20)  \\] .
+    * ZMĚNA: ERDDAP™ odmítnuté žádosti o Griddap, kde hodnoty indexu pro daný rozměr byly \\[ vysoká: nízká \\] . Nyní tyto požadavky platí výměnou nízkých a vysokých hodnot. To řeší dlouhodobý problém pro uživatele a pro externí programy, jako je xtracto, které museli sledovat několik souborů údajů, které mají hodnoty zeměpisné šířky, které se pohybují od vysoké k nízké, aby se žádost jako \\[  (50) : (20)  \\] takže žádost v indexovém prostoru byla \\[ nízká: vysoká \\] . Viz https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplAquariusSSS3MonthV5.html Takže, žádost jako \\[  (20) : (50)  \\] pro jeden z těchto souborů údajů se automaticky interpretuje jako \\[  (50) : (20)  \\] .
          
-    * ZMĚNA: .esriAscii požaduje nyní spustit dialogové okno "Soubor: Uložit jako" v prohlížeči uživatele. Díky Joel Van Noord.
+    * ZMĚNĚNO: .esriAscii požadavky nyní spouští dialogové okno "File : Uložit jako" v prohlížeči uživatele. Díky Joelovi Van Noordovi.
          
-    * BUG FIX: Nyní, pokud délka proměnné dětského souboru EDDGrid LonPM180 nebo EDDGrid Lon0360 datový soubor má valid\\_min a / nebo valid\\_max atribut, jsou odstraněny v EDDGrid LonPM180 nebo EDDGrid Lon0360 datový soubor. Díky Royi Mendelssohnovi.
+    * BUG FIX: Pokud je délka proměnné dětského datového souboru EDDGrid LonPM180 nebo EDDGrid Databáze Lon0360 má valid\\_min nebo valid\\_max atribut, jsou odstraněny v EDDGrid LonPM180 nebo EDDGrid Lon0360 data. Díky Royi Mendelssohnovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO: Pokud jste nastavili&lt;dataProviderFormActive &gt; na false, aby se dočasně vypořádal se zranitelností XSS, prosím nastavte jej zpět na true.
+    * DO: Pokud jste byli nastaveni&lt;dataProviderFormActive&gt; k false pro dočasné řešení zranitelnosti XSS, nastavte jej zpět na true.
          
-    * BEZPEČNOSTNÍ BUG FIX: Fixní zranitelnost XSS ve formuláři pro poskytovatele dat. Díky Genaru Contrerasovi Gutiérrezovi.
+    * SECURITY BUG FIX: Pevná zranitelnost XSS ve formuláři poskytovatele dat. Díky Genaro Contreras Gutiérrez.
          
-    * BUG FIX: Když AWS S3 dirctory měl více než 10000 souborů, ERDDAP™ "Vnitřní chyba". Teď je to napraveno. Díky Andymu Zieglerovi.
+    * BUG FIX: Když měl dirctory AWS S3 více než 10000 souborů, ERDDAP™ hodil "vnitřní chyba." Tohle je teď spravené. Díky Andymu Zieglerovi.
          
-    * BUG FIX: EDDGrid SideBySide nedovolila proměnnou sourceName s v různých dětských souborech dat, aby byly stejné. Teď už ano. Díky Joshuovi Stanfordovi.
+    * BUG FIX: EDDGrid SideBySide nedovolil proměnné sourceName s v různých souborech údajů o dětech, aby byly stejné. Teď už ano. Díky Joshuovi Stanfordovi.
          
 
 ## Verze 2.16{#version-216} 
- (propuštěn 2021- 12- 17) 
+ (uvolněno 2021-12-17) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * ZMĚNY / BUG FIXY: Četné drobné změny v překladovém systému díky návrhům editorů specifických pro jazyk. Díky Melanii Abecassis, Marcu Albě, Jessy Barrette, Filipe Fernandesové, Etienne Godinové, Jennifer Sevadjianové a Mikovi Smitovi.
+    * ZMĚNY/BUG FIXES: Četné drobné změny v překladatelském systému díky návrhům redaktorů specifických pro jazyk. Díky Melanie Abecassis, Marco Alba, Jessy Barrette, Filipe Fernandes, Etienne Godin, Jennifer Sevadjian a Mike Smit.
          
-    * Přidáno řádné odřeknutí zodpovědnosti a přiřazení pro Google Translate, jak vyžaduje podmínky Google Translate. Také,&lt;html &gt; tag v HTML pro každou webovou stránku nyní správně identifikuje non-anglické webové stránky jako byly stroje přeloženy. Díky Mikovi Smitovi.
+    * Přidáno správné prohlášení a přiřazení pro Google Translate, jak vyžaduje podmínky Google Translate. Také&lt;html&gt; tag v HTML pro každou webovou stránku nyní správně identifikuje non-anglické webové stránky jako byl stroj přeložen. Díky Mikeu Smitovi.
          
-    * BUG FIX: Přihlašovací webové stránky nyní fungují správně s různými jazykovými nastaveními. Díky Mikovi Smitovi.
+    * BUG FIX: Přihlašovací webové stránky nyní fungují správně s různými nastaveními jazyka. Díky Mikeu Smitovi.
          
-    * NOVÝ orderBy Suma filtru. A nové Check All and Uncheck Všechna tlačítka zapnuta EDDGrid Datový přístupový formulář. Díky příspěvku Marco Alba.
+    * NOVÉ orderBy Filtr součtu. A nové Zaškrtněte vše a odškrtněte všechna tlačítka EDDGrid Webová stránka Data Access Form. Díky příspěvku Marca Alby.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO: Jestliže máte
-        &lt;Question MarkImageFile &gt; Dotazník Mark.jpg&lt;/ Question MarkImageFile &gt;
-ve Vašem setup.xml souboru musíte buď odstranit celou značku (doporučeno, takže je použit výchozí soubor) nebo změnit na:
-        &lt;Question MarkImageFile &gt; Dotazník Mark.png&lt;/ Question MarkImageFile &gt;
+    * DO: Pokud máte
+        &lt;questionMarkImageFile&gt; QuestionMark.jpg&lt;/dotazMarkImageFile&gt;
+ve vašem setup.xml souboru, musíte buď odstranit celý štítek (doporučujeme, aby byl použit výchozí soubor) nebo jej změnit na:
+        &lt;questionMarkImageFile&gt; QuestionMark.png&lt;/dotazMarkImageFile&gt;
          
-    * Jen abys věděl, [Adoptium](https://adoptium.net/?variant=openjdk8) nahradil AdoptOpenJDK jako hlavní / doporučený zdroj Java   (OpenJDK) .
+    * ZMĚNA: Jen abyste věděli, [Adoptium](https://adoptium.net/?variant=openjdk8) nahradila AdopOpenJDK jako hlavní/doporučený zdroj Java   (OpenJDK) .
          
-    * ZMĚNA: Soubory záznamu z ERDDAP™ , GenetateDatasets Xml a DasDds jsou nyní UTF-8, ne výchozí znaková sada počítače. Hodně jsem to kontroloval a udělal pár změn, abych zajistil, že ERDDAP™ vždy určuje správnou sadu znaků při čtení nebo zápisu všech druhů souborů, a již ne (v několika případech) spoléhá na výchozí znakovou sadu počítače. To opraveno několik chyb a pohyboval se tak blízko, jak jsem mohl k cíli použití UTF-8 pro co nejvíce typů souborů, jak je to možné (např. .log, .xml, .html, .json , .json l, .nc Hlavička) . Všimněte si, že k použití ISO-8859-1 je potřeba mnoho starších typů souborů (např. OPeNDAP .das, .dds, .csv, .tsv , .nc 3, .nccsv , .cpt) . Předtím jsem se snažil pracovat se skupinou CF a Unidata přidat podporu UTF-8 v .nc 3 soubory; obě byly odolné.
+    * ZMĚNA: Soubory protokolu z ERDDAP™ , GenerátorDatasets Xml, a DasDds jsou nyní UTF-8, ne výchozí znaková sada počítače. Hodně jsem kontroloval a udělal pár změn, abych zajistil, že ERDDAP™ vždy určuje správný znak nastavený při čtení nebo psaní všech druhů souborů, a již (v několika případech) spoléhá na výchozí soubor znaků počítače. To opravilo několik chyb a posunulo tak blízko, jak jsem mohl k cíli použití UTF-8 pro co nejvíce typů souborů, jak je to možné (např. .log, .xml, .html, .json , .json Já, .nc Hlavička) . Všimněte si, že mnoho starších typů souborů je nutné používat ISO-8859-1 (např. OPeNDAP .das, .dds, .csv, .tsv , .nc 3, .nccsv , .cpt) . Dříve jsem se snažil pracovat se skupinou CF a s Unidata přidat podporu pro UTF-8 v .nc 3 soubory; oba byly odolné.
          
-    * NEW: Při stahování souborů z AWS S3, ERDDAP cache Systém FromUrl in EDDGrid FromFiles a EDDTable FromFiles nyní využívá nového AWS Transfer Manager ke stažení souborů přes paralelní části (tak velmi rychle.) . Cílová propustnost je nastavena na 20 Gbps, každý soubor, takže to funguje dobře se všemi typy AWS instance, ale zejména ty, které mají vynikající "Networking Performance". S touto změnou ERDDAP cache FromUrl systém nyní nabízí srovnatelné rychlosti, aby xarray přístup paralelizované stahování předčmáraných souborů, ale bez nutnosti převést zdrojové soubory z .nc a .hdf do začarovaných souborů xarray. Vlastně, ERDDAP systém je lepší, pokud je následující žádost číst ze stejného souboru, protože ERDDAP™ Nyní má místní kopii souboru. Naše komunita strávila roky standardizováním .nc a .hdf složky. Nemusíme to všechno vyhazovat, jen abychom získali dobrý výkon při ukládání dat v AWS S3. Díky Richovi Signellovi.
+    * NEW: Při stahování souborů z AWS S3, ERDDAP 's cache Systém FromUrl v EDDGrid FromFiles a EDDTable FromFiles nyní používá nový AWS Transfer Manager ke stažení souborů prostřednictvím paralelních bloků (takže velmi rychle) . Cílová propustnost je nastavena na 20 Gbps na jeden soubor, takže to funguje dobře se všemi typy AWS instance, ale zejména těmi, které mají vynikající "Networking Performance." S touto změnou ERDDAP 's cache FromUrl systém nyní nabízí srovnatelné rychlosti k xarray přístupu paralelizované stahování pre-cunked souborů, ale bez nutnosti převést zdrojové soubory z .nc a .hdf do rozcuchaných rentgenových souborů. Ve skutečnosti, ERDDAP 's systém je lepší, pokud existuje následná žádost o čtení ze stejného souboru, protože ERDDAP™ Teď má místní kopii té složky. Naše komunita strávila roky standardizací na .nc a .hdf Složky. Nemusíme to všechno vyhodit, abychom získali dobrý výkon při ukládání dat v AWS S3. Díky Richi Signellovi.
          
-    * ZMĚNA: SearchEngine = Lucen je, prozatím, deprimovaný. Jedná se o komplexní systém, který často přináší výsledky, které jsou mírně odlišné od žádoucího chování searchEngine = originální. Pro téměř všechny ERDDAP™ instalace, časové úspory Lucene nevyrovnávají rozdíly ve výsledcích. Použijte prosím SearchEngine = originál, pokud je to možné. Pokud to způsobí problémy, napište Bobovi.
+    * ZMĚNA: searchEngine=Lucene je prozatím deprecován. Jedná se o komplexní systém, který často přináší výsledky, které jsou mírně odlišné od žádoucího chování vyhledáváníEngine=original. Pro téměř všechny ERDDAP™ instalace, úspory času Lucene nevyrovnávají rozdíly ve výsledcích. Prosím použijte vyhledáváníMotor=originální místo, pokud je to možné. Pokud to způsobuje problémy, prosím, email Bob.
          
-    * Lucenův hledač se teď chová víc jako původní hledač. Už neexistují případy, kdy si Lucy myslí, že datový soubor odpovídá a originál ne. Také, Luceniny žebříčky jsou teď stejné jako původní. (protože originál je nyní vždy používán k výpočtu hodnocení) .
+    * ZMĚNA: Lucene vyhledáváníMotor se nyní chová spíše jako původní vyhledáváníMotor. Už neexistují žádné případy, kdy si lucene myslí, že se soubor shoduje a originál ne. Také, Lucene je žebříček nyní rovná původní žebříčku (protože originál je nyní vždy používán k výpočtu pořadí) .
          
-    * BUG FIX: Od nedávného vydání, ERDDAP™ přestal vidět více než prvních 1000 objektů v daném AWS S3 kbelíku. Teď, ERDDAP™ opět vidí všechny objekty. Díky Andymu Zieglerovi.
+    * BUG FIX: Od nedávného vydání, ERDDAP™ přestal vidět více než prvních 1000 objektů v daném kbelíku AWS S3. Teď, ERDDAP™ znovu vidí všechny objekty. Díky Andymu Zieglerovi.
          
-    * BUG FIX: Nyní EDDTableAggregate Řádky odstraňují actual\\_range atribut vždy, když jeden nebo více dětských souborů údajů nezná své proměnné ' actual\\_range   (např. EDDTableFromDatabase) . Díky Erikovi Gelettimu.
+    * BUG FIX: Nyní EddtableAggregate Řádky odstraní actual\\_range atribut pokaždé, když jeden nebo více dětských souborů nezná své proměnné ' actual\\_range   (např. EDDTableFromDatabase) . Díky Eriku Gelettimu.
          
 
 ## verze 2.15{#version-215} 
- (propuštěn 2021- 11- 19) 
+ (propuštěn 2021-11-19) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    *    ERDDAP™ má nový systém umožňující uživateli určit jazyk, který má být použit pro všechny webové stránky. Jestliže ERDDAP™ instalace je nastavena tak, aby ji používala, seznam jazyků se objeví v pravém horním rohu každé webové stránky. ERDDAP™ URL je před touto verzí pokračovat v práci a vždy vrátit anglický obsah, jako předtím.
+    *    ERDDAP™ má nový systém umožňující uživateli zadat jazyk, který má být použit pro všechny webové stránky. Pokud ERDDAP™ instalace je nastavena pro její použití, seznam jazyků se objeví v pravém horním rohu každé webové stránky. ERDDAP™ URL je z doby před touto verzí pokračovat v práci a vždy vrátit anglický obsah, jako dříve.
         
-Ne všechny texty nebo všechny webové stránky byly přeloženy. Na tomto projektu byla časová omezení, která zabránila Qi a Bobovi dostat se na 100%.
+Ne všechny texty nebo všechny webové stránky byly přeloženy. Na tomto projektu byla časová omezení, která Qi a Bobovi zabránila dostat se na 100%.
         
-Zřejmá otázka zní: proč jsme do toho vložili tolik úsilí, když Chrome bude překládat webové stránky na mouše? Odpověď zní: takto získáme mnohem větší kontrolu nad tím, jak je překlad prováděn. Zejména existuje mnoho slov, která by neměla být přeložena na webových stránkách, např. názvy a souhrny souborů dat, názvy proměnných, parametrů, jednotek a organizací. Velká část překladatelského úsilí byla identifikace slov a frází, které by neměly být přeloženy. Strojní překlady také měly tendenci spojovat určité typy HTML markup. Správa překladu nám umožnila minimalizovat tento problém.
+Očividně otázka zní: proč jsme do toho vložili tolik úsilí, když Chrome přeloží webové stránky na letu? Odpověď zní: tak získáme mnohem větší kontrolu nad tím, jak se překlad provádí. Je zde především mnoho slov, která by neměla být přeložena na webových stránkách, např. názvy a souhrny souborů údajů, názvy proměnných, parametrů, jednotek a organizací. Hodně z překladatelské úsilí bylo identifikovat slova a fráze, které by neměly být přeloženy. Také, Stroj překlady tendenci k zamíchání určité typy HTML značky. Správa překladu nám umožnila minimalizovat tento problém.
         
-Překlad projektu byl proveden Qi Zeng (Google Summer of Code internista) a Bob Simons pomocí webové služby Google Translation. Byl to obrovský projekt. Díky. Qi&#33;
+Překlad projektu bylo provedeno Qi Zeng (Google Summer of Code internist) a Bob Simons pomocí Google překladu webové služby. Byl to obrovský projekt. Díky. Qi&#33;
         
-    * BUG FIX: ERDDAP™ Nyní umožňuje ID ORCID mít X jako poslední číslice. Díky Maurici Libesovi.
+    * BUG FIX: ERDDAP™ Nyní umožňuje ORCID ID 's mít X jako poslední číslice. Díky Maurice Libesovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO:
+    * DO:
         
-        * Musíte udělat několik změn souvisejících s ERDDAP nový systém umožňující uživatelům určit jazyk pro webové stránky.
-            * Na prvním řádku setup.xml a datasets.xml soubory, změnit na: enkódování = "UTF-8" a změnit kódování dokumentu ve vašem textovém editoru, takže je uloženo jako soubor UTF-8. GeneteDatasets Xml nyní předpokládá, že datasets.xml je soubor UTF-8.
-            * Programátoři, kteří sestavují ERDDAP : Všechny ERDDAP™ .java soubory by měly být považovány za UTF-8 soubory ve výchozím nastavení. Do příkazové řádky javac můžete přidat "-enkódování UTF-8". (Ano.) 
-            * Povolit tento systém (důrazně doporučeno) ,&lt;startBodyHtml5 &gt; tag, který zadáte datasets.xml , změnit "& amp&#33; loginInfo;" na "& amp&#33; loginInfo; | & amp&#33; jazyk; "tak, že seznam jazyků se objeví v pravém horním rohu každého ERDDAP™ webová stránka.
-            *    ERDDAP™ pouze používá&lt;startBodyHtml5 &gt; tag, který zadáte datasets.xml zadat HTML obsah pro banner v horní části každého ERDDAP™ webové stránky, bez ohledu na to, jaký jazyk uživatel vybere. Pokud změníte značku na použití
-" &EasierAccessToScientificData; "místo" snadnější přístup k vědeckým údajům "a
-" &BroughtToYouBy; "místo" Přineseno k tobě, " ERDDAP™ bude používat přeložené verze těchto frází v banneru.
-            * Podobně, nový výchozí&lt;ShortDescriptionHtml &gt; in datasets.xml vá
+        * Musíte udělat několik změn souvisejících s ERDDAP 's novým systémem umožňujícím uživatelům určit jazyk pro webové stránky.
+            * Na první linii nastavení.xml a datasets.xml Soubory, změna na: kódování="UTF-8" a změna kódování dokumentu ve vašem textovém editoru tak, aby byl uložen jako UTF-8 soubor. Generovat soubory dat Xml nyní předpokládá, že datasets.xml je soubor UTF-8.
+            * Programátoři, kteří sestavují ERDDAP : Všechny ERDDAP™ .java soubory by měly být považovány za UTF-8 soubory ve výchozím nastavení. Možná budete muset přidat "kódování UTF-8" na příkazovou řádku Javac. (Ano.) 
+            * Pro umožnění tohoto systému (důrazně doporučeno) , v&lt;startBodyHtml5&gt; tag, který zadáte v datasets.xml , změnit "&amp&#33;loginInfo;" na "&amp&#33;loginInfo; | &amp&#33;jazyk; "tak, že seznam jazyků se objeví v pravém horním rohu každého ERDDAP™ webové stránky.
+            *    ERDDAP™ pouze&lt;startBodyHtml5&gt; tag, který zadáte v datasets.xml zadat HTML obsah pro banner v horní části každého ERDDAP™ webová stránka, bez ohledu na jazyk, který uživatel vybere. Pokud změníte tuto značku k použití
+" &EasierAccessToScientificData; "místo "jednoduššího přístupu k vědeckým údajům" a
+" &BroughtToYouBy; "místo "Přivedl jsem tě," ERDDAP™ budou používat přeložené verze těchto frází v banneru.
+            * Podobně i nová výchozí hodnota&lt;theShortDescriptionHtml&gt; in datasets.xml je
                 
 ```
                 <theShortDescriptionHtml><!\\[CDATA\\[ 
@@ -502,186 +519,186 @@ Překlad projektu byl proveden Qi Zeng (Google Summer of Code internista) a Bob 
                 \\[standardShortDescriptionHtml\\]
                 \\]\\]></theShortDescriptionHtml>
 ```
-Poslední 3 řádky obsahu jsou věci, které budou nahrazeny přeložený text. Pokud některý z nich převedete (zejména a to částice Erddap;) nebo všechny z nich explicitní text v datasets.xml   (která má přednost, je-li přítomna) nebo messages.xml, že text se objeví bez ohledu na to, jaký jazyk uživatel vybere. Tohle není perfektní, ale došlo mi, že pár administrátorů bude chtít upravit&lt;ShortDescriptionHtml &gt; v 35 různých souborech poskytnout 35 různých přeložených verzí této značky.
+Poslední 3 řádky obsahu jsou věci, které budou nahrazeny přeloženým textem. Pokud některého z nich konvertujete (zejména & To Zvláštní Erddap;) nebo všichni na výslovné znění datasets.xml   (který má přednost, pokud je přítomen) nebo zprávy.xml, že text se objeví bez ohledu na jazyk, který uživatel vybere. Není to perfektní, ale došlo mi, že jen málo správců by chtělo upravit&lt;ShortDescriptionHtml&gt; v 35 různých souborech poskytnout 35 různých přeložených verzí této značky.
         
           
          
-    * ZMĚNA: Některé chyby jsou nyní zpracovávány mírně jinak, a tak může být přidána do součtu "Neúspěšné žádosti" na status.html a v Daily Report Email. Takže tato čísla mohou být o něco větší než předtím.
+    * ZMĚNĚNO: Některé chyby jsou nyní řešeny trochu jinak a tak mohou být přidány do souboru "Failed Requests" na status.html a v Daily Report Email. Takže tato čísla mohou být o něco větší než předtím.
          
-    * BUG FIX: GeneteDatasets Xml pro EDDGrid Lon0360 a EDDGrid LonPM180 nyní vylučuje zdrojové datové soubory s datasetID = ~. "\\*\\ _ LonPM180 "a datasetID = ~. "\\*\\ _ Lon0360, "resp.
+    * BUG FIX: GenerovatNastavení dat Xml pro EDDGrid Lon0360 a EDDGrid LonPM180 nyní vylučuje zdrojové soubory se datasetID =~"\\*\\_LonPM180" a datasetID =~"\\*\\_Lon0360," resp.
          
 
 ## Verze 2.14{#version-214} 
- (propuštěn 2021- 07- 02) 
+ (propuštěn 2021-07-02) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
     *    (žádný)   
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * NEW: EDDGrid Lon0360, který dělá gridded datový soubor s hodnotami délky & gt; = 0 a&lt;= 360 z mřížkovaného datového souboru s hodnotami délky & gt; = -180 a&lt;= 180. Viz [ EDDGrid Dokumentace Lon0360](/docs/server-admin/datasets#eddgridlon0360) . Díky Daleovi Robinsonovi.
+    * NEW: EDDGrid Lon0360, který vytváří mřížkovaný datový soubor s hodnotami délky &gt; =0 a&lt;=360 z mřížkovaného datového souboru s hodnotami délky &gt;=-180 a&lt;=180. Viz [ EDDGrid Lon0360 dokumentace](/docs/server-admin/datasets#eddgridlon0360) . Díky Dale Robinsonovi.
          
-    * NEW: ERDDAP™ Administrátoři nyní mohou přepsat jakoukoli hodnotu v setup.xml pomocí proměnné prostředí s názvem ERDDAP \\ _ _ value Název _ před spuštěním ERDDAP . Například použít ERDDAP \\ _ baseUrl překoná&lt;baseUrl &gt; hodnota. To může být užitečné při nasazení ERDDAP™ s kontejnerem, jak můžete dát standardní nastavení v setup.xml a pak dodávat speciální nastavení přes proměnné prostředí. Pokud dodáte tajné informace ERDDAP™ Pomocí této metody se ujistěte, že informace zůstanou tajné. ERDDAP™ Čte proměnné prostředí pouze jednou za spuštění, v první sekundě spuštění, takže jeden způsob, jak použít to je: nastavit proměnné prostředí, start ERDDAP™ Počkej. ERDDAP™ je spuštěn, poté odstartuje proměnné prostředí. Díky Marcu Portierovi.
+    * NEW: ERDDAP™ Správci nyní mohou přepsat jakoukoli hodnotu v setup.xml přes proměnnou prostředí pojmenovanou ERDDAP \\__ hodnotaNázev_ před spuštěním ERDDAP . Například použití ERDDAP \\_baseUrl ovládá&lt;baseUrl &gt; hodnota. To může být užitečné při nasazení ERDDAP™ s kontejnerem, jak můžete dát standardní nastavení do setup.xml a pak dodat speciální nastavení přes proměnné prostředí. Pokud poskytnete tajné informace ERDDAP™ prostřednictvím této metody se ujistěte, že informace zůstanou tajné. ERDDAP™ Pouze čte proměnné prostředí jednou za spuštění, v první sekundě startu, takže jedním ze způsobů, jak to použít, je: nastavení proměnných prostředí, spuštění ERDDAP™ Počkej. ERDDAP™ je spuštěn, pak odnastavit proměnné prostředí. Díky Marcu Portierovi.
          
-    * ZLEPŠENO: Pokud nějaké soubory v EDDTableFrom... Soubor dataset s mnoha soubory mají některé velmi dlouhé String hodnoty, dataset bude načítat mnohem rychleji a reagovat na požadavky mnohem rychleji. V minulých dílech... ERDDAP™ by alokovat hodně prostoru pro min a max String hodnoty v souborech, které jsou uloženy s informacemi souboru pro tyto soubory. Výsledný soubor byl obrovský, což způsobilo, že byl napsán a četl pomalu. Díky OBIS.
+    * Jestli nějaké soubory v EDDTableFrom... Soubory souborů s mnoha soubory mají velmi dlouhé String hodnoty, soubor se načte mnohem rychleji a odpoví na požadavky mnohem rychleji. V minulých dílech... ERDDAP™ vyčlení mnoho místa pro min a max String hodnoty v souborech, které jsou uloženy s informacemi o souborech pro tyto soubory. Výsledný soubor byl obrovský, což způsobilo jeho psaní a čtení pomalu. Díky OBIS.
          
-    * ZLEPŠENO: ERDDAP™ lépe interpretuje neobvyklé a neplatné sekvence znaků v CSV souborech. Díky OBIS.
+    * Teď, ERDDAP™ lépe interpretuje neobvyklé a neplatné sekvence znaků v CSV souborech. Díky OBIS.
          
-    * Po roce potíží s Cassandrou jsem konečně úspěšně nainstaloval Cassandru. (v2) a tak se podařilo znovu provést testy s Cassandrou V2. Takže teď mohu s jistotou prohlásit, že ERDDAP™ pracuje s Cassandrou v2 a v3. Díky ONC.
+    * FIX: Po roce problémů s Cassandrou jsem konečně úspěšně nainstaloval Cassandru (v2) znovu a tak byl schopen znovu provést testy s Cassandra v2. Takže teď mohu více sebevědomě říci, že ERDDAP™ spolupracuje s Cassandra v2 a v3. Díky Onc.
          
 
 ## Verze 2.12{#version-212} 
  (propuštěn 2021-05-14) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * BUG FIX: Pokud jste na černé listině předplatného, nemůžete si vyžádat seznam předplatného.
+    * BUG FIX: Pokud jste na černé listině předplatného, nemůžete si nyní vyžádat seznam předplatného.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * TO: NOVÝ: systém, který automaticky omezuje schopnost škodlivých uživatelů a příliš agresivních legitimních uživatelů podávat velké množství souběžných žádostí, které by snížily výkon systému pro ostatní uživatele. Existují 3 nové volitelné značky v datasets.xml které můžete / měli byste přidat hned po&lt;GrapBackgroundColor &gt;:
+    * TO DO: NEW: systém, který automaticky omezuje schopnost škodlivých uživatelů a příliš agresivních legitimních uživatelů podávat velký počet simultánních žádostí, které by degradovaly výkon systému pro ostatní uživatele. Existují 3 nové volitelné značky v datasets.xml které můžete/měli byste přidat hned po&lt;grafBackgroundColor&gt; :
 ```
         <ipAddressMaxRequests></ipAddressMaxRequests>  <!-- current default=7 -->
         <ipAddressMaxRequestsActive></ipAddressMaxRequestsActive>  <!-- current default=2 -->
         <ipAddressUnlimited></ipAddressUnlimited>  <!-- default=empty -->  
 ```
 
-Další informace viz [ipUrčení MaxŽádosti](/docs/server-admin/datasets#ipaddressmaxrequests) . ERDDAP™ také nyní tiskne "Počet unikátních uživatelů (od spuštění) "na stránce status.html.
-Díky osobě v Číně útočící na mou ERDDAP™ instalace.
+Další informace viz [ipAddressMaxRequests](/docs/server-admin/datasets#ipaddressmaxrequests) . ERDDAP™ také nyní tiskne "Počet unikátních uživatelů (od spuštění) " na stránce status.html.
+Díky osobě v Číně, která útočí na mou ERDDAP™ instalace.
          
-    * Změna chování řidiče Postgresql: Když jsem aktualizoval ovladač Postgresql, názvy sloupců v seznamu tabulek generovaných Postgresql a GenetateDatasetsXml se vrátily všechny nahoru, namísto všech malých, jako předtím. Nevím, jestli to ovlivní jiné věci, protože databáze často považují tato jména za necitlivá. Můj testovací soubor stále funguje správně. Ale pokud váš datový soubor přestane pracovat s tímto ERDDAP™ Aktualizace, toto je možná příčina k pronásledování jako první.
+    * Změna chování řidiče Postgresql: Když jsem aktualizoval ovladač Postgresql, názvy sloupců v seznamu tabulky generované Postgresql a GenerateDatasetsXml vrátil všechny velké, místo všech malých případů, jako dříve. Nevím, jestli to ovlivní jiné věci, protože databáze často považují tato jména za necitlivá. Můj testovací soubor stále funguje správně. Ale pokud váš datový soubor přestane pracovat s tímto ERDDAP™ Aktualizace, to je možná příčina k pronásledování první.
          
-    * BUG FIX: ERDDAP™ Nyní také správně zpracovává soukromé AWS S3 soubory. K dispozici byly další související zlepšení v manipulaci AWS S3 soubory. Díky Michaelu Ganglovi a Dylanu Pughovi.
+    * BUG FIX: ERDDAP™ nyní také správně zpracovává soukromé soubory AWS S3. Došlo k dalším souvisejícím zlepšením při zpracování souborů AWS S3. Díky Michaelu Ganglovi a Dylan Pughovi.
          
-    * NEW: EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybalené nyní můžete číst data z "struktur" v .nc 4 a .hdf 4 soubory. Pro identifikaci proměnné, která je ze struktury,&lt; sourceName &gt; musí používat formát: _ fullStructureName _ | _ memberName _, např. group1 / myStruct | Můj Člen. Díky NRL.
+    * NEW: EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybalený může nyní číst data z "struktur" v .nc 4 a .hdf 4 soubory. Pro identifikaci proměnné, která je ze struktury,&lt; sourceName &gt; musí používat formát: _fullStructureName_ | _memberName_, např. skupina1/myStruct | Můj pane. Díky NRL.
          
-    * ZMĚNA: Nyní, pokud je současné využití paměti plus tento požadavek ještě mírně vysoký, Griddap sady nThreads pro tuto žádost na 1. Proto ERDDAP™ Šetří paměť, když je vzpomínka vzácná. Díky osobě v Číně útočící na mou ERDDAP™ instalace.
+    * ZMĚNĚNO: Nyní, pokud je současné využití paměti plus tento požadavek je dokonce mírně vysoký, sady griddap nThreads pro tuto žádost na 1. Takže, ERDDAP™ Uchovává paměť, když je paměť vzácná. Díky osobě v Číně, která útočí na mou ERDDAP™ instalace.
          
-    * NOVÝ systém pro sledování počtu otevřených souborů (která zahrnuje zásuvky a některé další věci, nejen soubory) v Tomcat na počítačích Linux. Pokud se některé soubory omylem nikdy nezavřou, počet otevřených souborů se může zvýšit, dokud nepřesáhne maximální povolenou hodnotu a nestane se mnoho opravdu špatných věcí. Takže teď, na Linuxových počítačích (Informace nejsou k dispozici pro Windows) :
+    * Nový systém pro sledování počtu otevřených souborů (která zahrnuje zásuvky a některé další věci, nejen soubory) v počítačích Tomcat. Pokud se některé soubory mylně nikdy nezavřou, počet otevřených souborů se může zvýšit, dokud nepřevýší maximum povolené a mnoho opravdu špatných věcí se stane. Takže teď na Linuxových počítačích. (informace nejsou k dispozici pro Windows) :
         
-        * Na pravé straně webové stránky status.html se nachází nový sloupec "Otevřené soubory", který ukazuje procento otevřených souborů max. Na Windows je jen "?".
-        * Kdy ERDDAP™ vygeneruje tyto informace na konci každého hlavního datového souboru, vytiskne se do záznamu. txt soubor:
-openFileCount = _ current _ of max = _ max _% = _% _
-        * Pokud je procento &gt; 50%, e-mail je zaslán na ERDDAP™ správce a e-mail Všechno Na e-mailové adresy.
+        * Zde je nový sloupec "Otevřené soubory" na krajní pravici status.html webové stránky zobrazující procento z max souborů otevřených. Na Windows to jen ukazuje "?"
+        * Kdy? ERDDAP™ generuje tyto informace na konci každého hlavního opětovného načtení souboru dat, bude tisknout do logu. txt soubor:
+openFileCount=_current_ of max=_max_ %=_procent_
+        * Pokud je procento vyšší než 50%, zašle se e-mail ERDDAP™ správce a e-mail Všechno Na e-mailové adresy.
         
-Chcete-li zjistit více, nebo pokud vidíte tento problém na své ERDDAP™ , viz [Příliš mnoho otevřených souborů](/docs/server-admin/additional-information#too-many-open-files) .
-Díky osobě v Číně útočící na mou ERDDAP™ instalace.
+Chcete-li zjistit více, nebo pokud vidíte tento problém na vašem ERDDAP™ , viz [Příliš mnoho otevřených souborů](/docs/server-admin/additional-information#too-many-open-files) .
+Díky osobě v Číně, která útočí na mou ERDDAP™ instalace.
          
-    * NEW: Přidal jsem hodně kontroly a manipulace "Příliš mnoho otevřených souborů", takže úkol prostě zastaví a uživatel vidí chybovou zprávu. Datové soubory již nebudou označeny jako špatné, pokud jejich čtení vyústí v chybu "Příliš mnoho otevřených souborů".
+    * NOVINKA: Přidal jsem hodně kontroly a zpracování "Příliš mnoho otevřených souborů," takže úkol se prostě zastaví a uživatel vidí chybovou zprávu. Datové soubory již nebudou označeny jako špatné, pokud jejich čtení vede k chybě "příliš mnoho otevřených souborů."
          
-    * NOVÝ \\[ bigParentDirectory \\] / BadFilesFlag adresář:
-Pokud vložíte soubor do tohoto adresáře s datasetID jako název souboru (na obsahu souboru nezáleží) , ERDDAP™ smaže badFiles .nc soubor pro tento datový soubor (pokud existuje) a reload data set ASAP. To způsobuje ERDDAP™ zkusit znovu pracovat se soubory dříve (Špatně?) označený jako špatný. Díky Marcu Albovi.
+    * NOVÉ \\[ velkýRodič rodičů \\] /badFilesDarník vlajky:
+Pokud vložíte soubor do tohoto adresáře s datasetID jako název souboru (Na obsahu souboru nezáleží.) , ERDDAP™ smaže špatné svorky .nc soubor pro tento datový soubor (pokud existuje) a co nejdříve znovu načíst data. To způsobuje ERDDAP™ zkusit znovu pracovat se soubory dříve (Špatně?) Označeno jako špatné. Díky Marcovi Albovi.
          
-    * Při startu, pokud EDDGrid Z... souborů nebo EDDTableFrom... Soubor dataset má zpočátku 0 souborů ve svém seznamu známých platných souborů (např., je to nový datový soubor) , pak ERDDAP™ odloží načítání a nastaví vlajku tak, aby byla načtena co nejdříve po dokončení hlavních nakladačů. To zrychluje počáteční spuštění, když jsou nové soubory dat.
+    * ZMĚNĚNO: Při spuštění, pokud EDDGrid Z...Files nebo EDDTableFrom... Soubory souborů má původně 0 souborů ve svém seznamu známých platných souborů (Například je to nový datový soubor.) , pak ERDDAP™ odloží načítání a nastaví vlajku tak, aby byla co nejdříve načtena po dokončení hlavního zatíženíDatasets. To urychluje počáteční spuštění, když jsou nové soubory dat.
          
-    * ZMĚNA: FileVisitorDNLS.testAWSS3 () a FileVisitorSubdir.testAWSS3 () ; nyní použijte AWS v2 (ne v1) SDK. Takže teď Git. ERDDAP™ distribuce nyní zahrnuje všechny potřebné soubory a již nemusíte ručně přidávat masivní soubor v1 AWS SDK jar.
+    * ZMĚNĚNO: FileVisitorDNLS.testAWSS3 () a FileVisitorSubdir.testAWSS3 () ; nyní použijte AWS v2 (není v1) SDK. Takže teď Git ERDDAP™ distribuce nyní zahrnuje všechny potřebné soubory a již nemusíte ručně přidávat masivní v1 AWS SDK jar soubor.
          
-    * ZMĚNA: Přešel jsem na používání Maven odhalit / shromažďovat závislosti (.jar soubory v / lib) . Změna v2 AWS SDK to vyžadovala. V budoucnu bude zapotřebí pro jiné dovážené kódy. Obrovské díky Kylovi Wilcoxovi, který poskytl pom.xml, který vytvořil a používá, který pro mě vyřešil několik problémů.
+    * ZMĚNĚNO: Přešel jsem na použití Maven k detekci/sbírání závislostí (.jar soubory v /lib) . Změna na V2 AWS SDK to vyžadovala. Bude potřeba pro další dovážený kód v budoucnu. Obrovský díky Kyle Wilcox, který poskytl pom.xml vytvořil a používá, který vyřešil několik problémů pro mě.
          
-    * ZMĚNA: Parametr classpath (-cp) používá v GenetateDatasetXml, DasDds a dalších malých programů, které přicházejí s ERDDAP™ , a v poradenství programátorům je nyní mnohem jednodušší a neměl by nikdy změnit znovu, protože odkazuje na adresář, ne jednotlivé soubory:
-\\ -cp tříd; C:\\\ programy\\ _ tomcat\\ lib\\ servlet-api.jar; lib\\\ *
-         (nebo ':' místo ';' pro Linux a Mac) .
-         (Měl jsem to udělat už před lety, když se z toho stala možnost.)   
+    * ZMĚNA: Parametr třídy (-Cp) používané v GenerateDatasetXml, DasDds a další malé programy, které přicházejí s ERDDAP™ , a v radě programátorů je nyní mnohem jednodušší a nikdy by se neměl měnit, protože odkazuje na adresář, ne jednotlivé soubory:
+\\-cp třídy;C:\\programy\\\_tomcat\\lib\\servlet-api.jar;lib\\\*
+         (nebo ':' místo ';' pro Linux a Macs) .
+         (Měl jsem to udělat už před lety, když se to stalo možností.)   
          
-    * NEW: GenerateDatasets Name .nc   (a související) soubory pro nalezení souborů s duplicitními časovými hodnotami. Viz [findDuplicate Čas](/docs/server-admin/datasets#findduplicatetime)   
+    * Novinka: GenerovatDatasety Xml má novou možnost utility: najítDuplicateTime, která bude hledat přes sbírku mřížkovaných .nc   (a související) soubory k nalezení souborů s duplikovanými hodnotami času. Viz [najítDuplicate Čas](/docs/server-admin/datasets#findduplicatetime)   
          
-    * NEW: datasets.xml může nyní zahrnovat&lt;palety &gt; tag, který převáží&lt;palety &gt; hodnota značky z messages.xml (nebo se vrátí na messages.xml hodnotu, pokud je prázdná) . To vám umožní změnit seznam dostupných palet, zatímco ERDDAP™ Běží. Také, pokud máte cptfiles v podadresáři ERDDAP™ adresář obsahu, ERDDAP™ zkopíruje všechny soubory\\ * .cpt v tomto adresáři do \\[ tomcat \\] / webové aplikace / erddap / WEB-INF / cptfiles adresář pokaždé ERDDAP™ začíná. Tyto změny společně umožňují přidat palety a mít změny přetrvávají při instalaci nové verze ERDDAP . Viz [dokumentace palet](/docs/server-admin/datasets#palettes)   
-Díky Jennifer Sevadjianové, Melanii Abecassisové a možná dalším lidem z Pobřežní hlídky.
+    * NEW: datasets.xml může nyní zahrnovat&lt;palety&gt; značka, která přepíše&lt;palety &gt; hodnota značky ze zpráv.xml (nebo vrátí na hodnotu zpráv.xml, pokud je prázdná) . To vám umožní změnit seznam dostupných palet, zatímco ERDDAP™ Utíká. Také, pokud máte podadresář cptfiles v ERDDAP™ adresář obsahu, ERDDAP™ zkopíruje všechny soubory \\*.cpt v tomto adresáři do \\[ tomcat \\] /webapps/erddap/WEB-INF/cptfiles adresář pokaždé ERDDAP™ Začneme. Společně vám tyto změny umožní přidat palety a mít změny přetrvávají, když nainstalujete novou verzi ERDDAP . Viz [dokumentace palet](/docs/server-admin/datasets#palettes)   
+Díky Jennifer Sevadjianové, Melanie Abecassisové a možná dalším lidem z pobřežní hlídky.
          
-    * ZMĚNA: [&lt;slowDownTroubleMillis &gt;] (/ docs / server- admin / datasets # slowdowntroublemillis) je nyní používán pro všechny neúspěšné žádosti, ne jen několik typů.
+    * ZMĚNĚNO: [&lt;slowDownTroubleMillis&gt;] (/docs/server-admin/datasets#slowdowntroublemillis) se nyní používá pro všechny neúspěšné žádosti, nejen pro několik typů.
          
-    * ZMĚNA: vlákno RunLoadDatasets nyní přerušuje vlákno LoadDatasets na 3 / 4 LoadDatasets MaxMinut tak je více času pro LoadDatasets všimnout přerušení a odchod elegantně. Také existuje více a lepší diagnostické zprávy pro to.
+    * ZMĚNĚNO: Vlákno RunLoadDatasets nyní přeruší vlákno LoadDatasets na 3/4 LoadDatasets MaxMinutes takže je více času pro LoadDatasets, aby si všiml přerušení a elegantně výstupu. Také pro to existuje více a lepší diagnostické zprávy.
          
     * Změněno ze staré verze Lucene na v8.7.0.
          
-    * ZMĚNA: Emaily odeslané ERDDAP™ Nyní se objeví s fixní šířkou písma.
+    * ZMĚNA: Emaily zaslané ERDDAP™ Nyní se objeví s pevným písmem šířky.
          
-    * ZMĚNA: EDDGrid FromFiles nyní dostává hodnoty osy stejně jako atributy z PRVNÍ | Poslední soubor podle specifikace v&lt;metadataFrom &gt;. Díky. (ne) Ken Casey, et al.
+    * Změna: EDDGrid FromFiles nyní získává hodnoty os a atributy od FIRST | LAST soubor, jak je uvedeno v&lt;metadataze&gt;. Díky. (ne) Ken Casey, et al.
          
-    * ADDED podpora pro neplatné jednotky "stupeň\\ _ North" a "stupeň\\ _ East", které jsou omylem použity v posledních souborech (od 2020- 10- 01) ve verzi AVHRR Pathfinder 5.3 L3-Collated (L3C) SST soubory dat (nceiPH53 sst d1den a nceiPH53 sst n1den) . ERDDAP™ Nyní je lze standardizovat na platné jednotky. Díky. (ne) Ken Casey, et al.
+    * Podpora pro neplatné jednotky "stupeň\\_sever" a "stupeň\\_východ," které jsou chybně používány nedávnými soubory (od roku 2020-10-01) ve verzi AVHRR Pathfinder 5.3 L3-Collated (L3C) SST soubory dat (ceiPH53 sst d1day anceiPH53 sst n1den) . ERDDAP™ nyní je může standardizovat na platné jednotky. Díky. (ne) Ken Casey, et al.
          
 
 ## Verze 2.11{#version-211} 
- (propuštěn 2020-12-04) 
+ (vydané 2020-12-04) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * BUG FIX: OrderByMean hodil NullPointerException, pokud proměnná měla jen jeden z\\ _ FillValue nebo chybí\\ _ Definovaná hodnota. Teď to zvládá správně. Díky Marcu Albovi.
+    * BUG FIX: OrderByMean hodil NullPointerException, pokud proměnná měla jen jednu z \\_FillValue nebo chybí\\_ Hodnota definovaná. Nyní situaci řeší správně. Díky Marcovi Albovi.
          
-    * BUG FIX: Byly problémy s ODV textovými soubory vytvořenými ERDDAP™ v v2.10. Ty problémy jsou vyřešené. Díky Shaunu Bellovi.
+    * BUG FIX: Byly problémy s textovými soubory ODV vytvořenými ERDDAP™ ve v2.10. Tyto problémy jsou vyřešeny. Díky Shaun Bell.
          
-    * BUG FIX: Just in ERDDAP™ v2.10: Pokud v URL byly specifikovány hranice lonu, ohraničující pole nebylo vykresleno na mapě světa. Už zase. Díky Johnu Maurerovi.
+    * BUG FIX: Právě jsem přišel. ERDDAP™ v2.10: Pokud byly hranice lat lon specifikovány v URL, nebylo na mapě světa vykresleno ohraničení. Teď už zase. Díky Johnu Maurerovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * BUG FIX: Just in ERDDAP™ v2.10: Skriptové soubory pro ArchiveADAtaset, GenerateDatasets Xml a DasDds nefungovaly, protože neměly změny v claspath, které byly přidány s ERDDAP™ V2.10. Teď už ano. Díky Marcu Albovi.
+    * BUG FIX: Právě jsem přišel. ERDDAP™ v2.10: Soubory skriptů pro ArchiveADataset, GenerateDatasets Xml a DasDds nefungovali, protože neměli změny na třídní stezce, které byly přidány s ERDDAP™ V2.10. Teď ano. Díky Marcovi Albovi.
          
-    * NOVÝ: datasets.xml Nyní můžete mít značku:
+    * NEW: datasets.xml , Nyní můžete mít značku:
 ```
         <emailDiagnosticsToErdData></emailDiagnosticsToErdData> <!-- true (the default) or false -->  
 ```
 
-V současné době, pokud je to pravda (nebo je-li tag prázdný, nebo není-li tag v souboru) , Pokud žádost uživatele vede k NullPointerException, ERDDAP™ bude email stohu sledovat na erd.data at noaa.gov   (s ERDDAP™ vývojový tým) . To by mělo být bezpečné a bezpečné, protože žádné důvěrné informace (např. žádost) je součástí e-mailu. To by mělo umožnit zachytit jakékoli nejasné, zcela neočekávané chyby, které vedou k NullPointerExceptions. V opačném případě uživatel vidí výjimky, ale ERDDAP™ Vývojáři ne, takže nevíme, jestli je problém, který je třeba napravit.
+V současné době, pokud je to pravda (nebo pokud je značka prázdná, nebo pokud značka není v souboru) , pokud žádost uživatele vede k NullPointerException, ERDDAP™ bude e-mail stoh stopy na erd.data at noaa.gov   (vá ERDDAP™ vývojový tým) . To by mělo být bezpečné a bezpečné, protože žádné důvěrné informace (např. žádostUrl) je součástí e-mailu. To by mělo umožnit chytit všechny obskurní, zcela neočekávané chyby, které vedou k NullPointerExceptions. V opačném případě uživatel vidí výjimky, ale ERDDAP™ Vývojáři ne, takže nevíme, jestli je problém, který je třeba vyřešit.
         
-Je možné, že tato značka povede k jiným, podobné diagnostické informace e-mailem erd.data at noaa.gov v budoucnosti. Obsah e-mailu bude vždy minimální a souvisí s chybami, a ne, například, informace o použití. Díky Marcu Albovi.
+Je možné, že tato značka povede k další, podobné diagnostické informace jsou e-mailem erd.data at noaa.gov v budoucnosti. Obsah e-mailu bude vždy minimální a souvisí s chybami, a ne například s informacemi o používání. Díky Marcovi Albovi.
          
         
-    * ZMĚNA: Nyní, běžné typy komprimovaných souborů ( .bz2 , .gz , .gzip , .tar , .tgz , .z , .zip ) jsou také zakázány pro požadavky na byte rozsah. To je zadáno pomocí&lt;extensionsNoRangeApplications &gt; in messages.xml.
+    * ZMĚNA: Nyní běžné typy komprimovaných souborů ( .bz2 , .gz , .gzip , .tar , .tgz , .z , .zip ) jsou také zakázány pro byte range žádosti. To je zadáno přes&lt;extensionsNoRangeRequests&gt; in messages.xml.
          
-    * ZNÁMÝ PROBLEM: Stejně jako u ERDDAP™ 2.10 .nc ml souborů, které se snaží změnit atribut, neměňte atribut. Jedná se o známou chybu v netcdf-java, kterou jsem nahlásil a říkají, že bude opravena v příštím vydání netcdf-java.
+    * Znalý problém: Jako u ERDDAP™ 2.10, .nc ml soubory, které se snaží změnit atribut, neměňte atribut. Jedná se o známou chybu v netcdf-java, kterou jsem nahlásil a říkají, že bude stanovena v příštím vydání netcdf-java.
          
 
 ## Verze 2.10{#version-210} 
- (propuštěn 2020- 11- 05) 
+ (propuštěn 2020-11-05) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * NOVÝ: Nový [Interpolát](https://coastwatch.pfeg.noaa.gov/erddap/convert/interpolate.html) konvertor efektivně interpoluje hodnoty z hodnot souboru dat. Jako takový je obzvláště užitečný pro výzkumné pracovníky, kteří pracují s údaji o stopách zvířat. Tento převodník bere v tabulce s zeměpisnou šířkou, zeměpisnou délkou, a časové sloupce (a možná další sloupce) a vrací tabulku s dalšími sloupy s interpolovanými hodnotami. Tak, to je podobné populární [Xtractophythm](https://coastwatch.pfeg.noaa.gov/xtracto) skript původně vytvořil Dave Foley, ale nabízí výhodu zpracování až 100 bodů na vyžádání. Díky Davu Foleymu a Jordanovi Watsonovi ( NMFS ) .
+    * NEW: Nový [Interpolát](https://coastwatch.pfeg.noaa.gov/erddap/convert/interpolate.html) převodník efektivně interpoluje hodnoty z hodnot mřížkovaného datového souboru. Jako taková je zvláště užitečná pro výzkumné pracovníky, kteří pracují s údaji o stopách zvířat. Tento převodník bere v tabulce s zeměpisnou šířkou, délkou a časovými sloupce (a snad i jiné sloupce) a vrací tabulku s dalšími sloupci s interpolovanými hodnotami. Tak, to je podobné populární [Xtraktomatické](https://coastwatch.pfeg.noaa.gov/xtracto) skript původně vytvořil Dave Foley, ale nabízí výhodu zpracování až 100 bodů na žádost. Díky Dave Foley a Jordan Watson ( NMFS ) .
          
-    * ZLEPŠENO: Pokročilé vyhledávání je nyní přísné pro non-.html požadavky. Nyní bude házet výjimky pro žádosti, které mají trvalé chyby (např. žádosti, kde minLat &gt; maxLat) nebo dočasné chyby (např. žádosti o standard\\_name který neexistuje) . Pro .html požadavky, Advanced Search se nemění: stejně jako při vyhledávání Google, dělá své nejlepší a tiché opravy nebo ignoruje chyby. Díky Richovi Signellovi.
+    * IMPROVED: Pokročilé vyhledávání je nyní přísné pro non-.html požadavky. Nyní bude házet výjimky pro žádosti, které mají trvalé chyby (např. žádosti o minLat &gt; maxLat) nebo dočasné chyby (např. žádosti o standard\\_name který neexistuje) . Pro .html požadavky, Pokročilé vyhledávání se nemění: stejně jako u Google vyhledávání, dělá to nejlepší a tiše opraví nebo ignoruje chyby. Díky Richi Signellovi.
          
-    * ZLEPŠENO: Mapa na stránce Pokročilé vyhledávání je nyní větší (Pořád musíš šimrat, ale míň.) a podstatně přesnější (ale stále není perfektní) . Díky Johnu Maurerovi.
+    * IMPROVED: Mapa na stránce Pokročilé vyhledávání je nyní větší (Pořád musíš šilhat, ale méně) a výrazně přesnější (ale stále není perfektní) . Díky Johnu Maurerovi.
          
-    * ZLEPŠENO: Maska "Draw land" na webových stránkách Make A Graph a nastavení & .land =... v URL, která nyní požaduje mapu podporuje další dvě možnosti:
-"obrys" jen nakreslí obrys, politické hranice, jezera a řeky.
-"off" nic nenakreslí.
-Viz [& .land =... dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) .
+    * IMPROVED: "Draw land mask" nastavení na Make A Graph webové stránky a &.land=... nastavení v URL, které vyžadují mapu nyní podporuje další dvě možnosti:
+"Outline" jen kreslí krajinný obrys, politické hranice, jezera a řeky.
+"vypnout" nic nenakreslí.
+Viz [&.land=... dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) .
 Díky Johnu Maurerovi.
          
-    * ZLEPŠENÉ: Grafy a mapy vytvořené ERDDAP™ nyní mohou používat tři nové typy značek: Náměstí bez hranic, kruh bez hranic, Trojúhelník bez hranic. Kód k tomu přispěl Marco Alba z ETT / EMODnet fyziky. Díky Marcu Albovi.
+    * ZLEPŠENÍ: Grafy a mapy vytvořené ERDDAP™ nyní lze použít tři nové typy značek: Bezmezně naplněné náměstí, bez hranic naplněný kruh, bez hranic naplněný trojúhelníkem. Kód k tomu přispěl Marco Alba z ETT / EMODnet Physics. Díky Marcovi Albovi.
          
-    * NEW: "files" systém nyní podporuje prostý Odpovědi typu souboru (.csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv nebo .xhtml .) např.: [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv) .
-Díky Kylovi Wilcoxovi.
+    * NEW: "files" systém nyní podporuje prostý Odpovědi typu souboru (.csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv nebo .xhtml .) např. [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv) .
+Díky Kyleu Wilcoxovi.
          
-    * ZLEPŠENO: URL generované, když uživatel používá formulář pro přístup k datům (.html) nebo Make-A-Graph (.graf) webová stránka nyní správně zakódovat znaky \\[ a \\] . To dělá URL trochu těžší pro lidi číst, ale je lepší z web- bezpečnostní hlediska. Administrátoři mají nyní možnost nastavit relaxedQueryChars = ' \\[  \\]  | 'v souboru Tomcat server.xml (méně zabezpečené) nebo ne (bezpečnější) .
-Díky Antoine Quericovi, Dominicu Fuller- Rowellovi a dalším.
+    * IMPROVED: URL generované při použití formuláře pro přístup k datům (.html) nebo Make-A-Graf (.graph) webová stránka nyní správně procent-kódovat znaky \\[ a \\] . To dělá URL trochu těžší pro lidi číst, ale je lepší z hlediska webové bezpečnosti. Administrátoři nyní mají možnost nastavení uvolněnéQueryChars= ' \\[  \\]  | ' v souboru Tomcat server.xml (méně bezpečné) nebo ne (bezpečnější) .
+Díky Antoine Quericovi, Dominicu Fuller-Rowellovi a dalším.
          
-    * NEW: Pokud žádost o soubory dat EDDTable obsahuje & add Proměnné Kde (_ atribut Název, atribut Hodnota _) , ERDDAP™ přidat všechny proměnné, které mají _ atribut Název = atribut Hodnota _ do seznamu požadovaných proměnných.
-Viz [Přidat Proměnné V případě dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#addVariablesWhere) . Díky Aurelie Briand, et al.
+    * NOVINKA: Pokud žádost o datové souboryEDDTable obsahuje &add Proměnné kde (_atribut Název, atribut Hodnota_) , ERDDAP™ přidá všechny proměnné, které mají _atribute Název=attribut Hodnota_ do seznamu požadovaných proměnných.
+Viz [& Přidat Proměnné V případě dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#addVariablesWhere) . Díky Aurelie Briand, et al.
          
-    * ZMĚNA: ERDDAP™ nyní odmítá žádosti o rozsah byte do / souborů / .nc nebo .hdf složky. Nesnažte se připojit ke vzdálenému .nc nebo .hdf jako by to byly místní soubory. Je příšerně neefektivní a často způsobuje i jiné problémy. Místo toho:
-        * Použití(OPeN)DAPklientský software pro připojení k ERDDAP s DAP služby pro tento datový soubor (které mají / griddap / nebo / tabledap / v URL) . To je to DAP je pro.
-        * Pro požadavek na podmnožinu dat použijte formulář datového přístupu.
-        * Pokud potřebujete celý soubor nebo opakovaný přístup po dlouhou dobu, použijte curl , wget , nebo váš prohlížeč stáhnout celý soubor, pak přístup k datům z místní kopie souboru.
+    * ZMĚNĚNO: ERDDAP™ nyní odmítá podat žádost o rozsah /files/ .nc nebo .hdf Složky. Nesnažte se připojit ke vzdálenému .nc nebo .hdf Jako by to byly místní soubory. Je strašně neefektivní a často způsobuje i jiné problémy. Místo toho:
+        * Použití(OPeN)DAPklientský software pro připojení k ERDDAP 's DAP služby pro tento datový soubor (které mají /griddap/ nebo / tabledap / v URL) . To je ono. DAP je pro.
+        * Pro žádost o podmnožinu dat použijte formulář datového přístupu datového souboru.
+        * Pokud potřebujete celý soubor nebo opakovaný přístup po dlouhou dobu, použijte curl , wget , nebo váš prohlížeč ke stažení celého souboru, pak přístup k datům z místní kopie souboru.
              
-    * ZLEPŠENÉ: Txt výstupní volba byla přepsána na podporu nové verze ODV .txt soubory a na podporu řádného znázornění trajektorií, časových úseků a profilových dat.
+    * ZLEPŠENÍ: .odv Možnost Txt výstupu byla přepsána na podporu nové verze ODV .txt soubory a na podporu řádného znázornění trajektorie, časových řad a profilových dat.
          
-    * ZLEPŠENO: Vyhledávací výrazy ve dvojitých uvozovkách jsou interpretovány jako řetězec json, takže mohou mít\\ kódované znaky. Mimo jiné, to vám umožní hledat přesnou shodu pro atribut, např. "instituce = NOAA  \\n "nebude odpovídat souboru dat s institucí = NOAA   NMFS . Díky Danu Nowackimu.
+    * IMPROVED: Nyní, hledané výrazy ve dvou citacích jsou interpretovány jako json řetězec, takže mohou mít \\ enkódované znaky. Mimo jiné, to vám umožní hledat přesnou shodu atributu, např. "instituce= NOAA  \\n "nebude odpovídat datovému souboru s institucí= NOAA   NMFS . Díky Danu Nowackimu.
          
-    * ZLEPŠENO: Na dalších místech čísla plovoucích bodů (zejména plováky přeměněné na dvojité) nyní se objeví jako mírně zaoblenější verze čísla na dalších místech, např. plovák, který byl dříve zobrazen jako dvojitý jako 32.27998779296875, by se nyní mohl objevit jako 32.28. Díky Kylovi Wilcoxovi.
+    * ZLEPŠENÉ: Na dalších místech čísla plovoucích bodů (zejména plováky přeměněné na dvojité) Nyní se jeví jako o něco zaoblenější verze čísla na dalších místech, např. plovák dříve zobrazený jako dvojitý jako 32.27998779296875, může nyní vypadat jako 32.28. Díky Kyleu Wilcoxovi.
          
-    * BUG FIX: nesignováno celé číslo audio soubory byly čteny mírně nesprávně. Teď jsou správně čteny.
+    * BUG FIX: nepodepsané celočíselné zvukové soubory byly přečteny mírně nesprávně. Teď jsou správně přečtené.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * POZOR: Poprvé utečeš ERDDAP™ v2.10, některé soubory dat založené na místních datových souborech se načtou **velmi** pomalu, protože ERDDAP™ potřebuje znovu vytvořit databázi informací o souboru. Po pomalém počátečním přetížení, budou načíst rychle, jako předtím. Prosím, buďte trpěliví.
+    * UPOZORNĚNÍ: Poprvé utíkáš ERDDAP™ v2.10, některé datové soubory založené na místních datových souborech budou načítat **velmi** pomalu, protože ERDDAP™ musí znovu vytvořit databázi informací o souboru. Po pomalé počáteční reload, budou nabíjet rychle, jako předtím. Prosím, buď trpělivý.
          
     * Věci, které musíte udělat:
-        * Při prvním spuštění v2.10, některé soubory dat nemusí načíst, protože ERDDAP™ je nyní přísnější ohledně některých metadat. Jako předtím, ERDDAP™ bude e-mailem Daily Report, když se poprvé načte. To bude zahrnovat chybové zprávy pro každý soubor dat, který nenahrál. Přečtěte si chybové zprávy pro zjištění problémů. Ve většině případů stačí udělat malou změnu metadat datového souboru, abyste vyřešili problém.
+        * Když poprvé spustíte v2.10, některé soubory souborů se nemusí načíst, protože ERDDAP™ je nyní přísnější ohledně některých metadat. Jako předtím, ERDDAP™ Vám e-mailem Daily Report, když se poprvé načte nahoru. To bude zahrnovat chybové zprávy pro každý soubor, který nebyl načten. Přečtěte si chybové zprávy, abyste vyřešili problémy. Ve většině případů stačí provést malou změnu metadat datového souboru, abyste problém vyřešili.
              
-        * V datasets.xml , hledání&lt; sourceName & gt; (Poznámka '=' označení, které označuje [fined-value sourceName ](/docs/server-admin/datasets#fixed-value-sourcenames) ) . Pro většinu ERDDAP™ Tyhle jsou vzácné. Pokud některá z hodnot po '=' jsou struny (ne čísla) Nyní musíte přiložit řetězec do dvojitých uvozovek. Například,
-Před:&lt; sourceName & gt; = KZ401&lt;/ sourceName &gt;
-Po:&lt; sourceName = "KZ401"&lt;/ sourceName &gt;
+        * In datasets.xml , hledání&lt; sourceName &gt;= (Poznámka: '=' Znak, který označuje [pevná hodnota sourceName ](/docs/server-admin/datasets#fixed-value-sourcenames) ) . Pro většinu ERDDAP™ Jsou vzácné. Pokud některá z hodnot po '=' jsou řetězce (nejsou čísla) , Musíte nyní uzavřít řetězec ve dvou citacích. Například,
+Předtím:&lt; sourceName &gt;=KZ401&lt;/ sourceName &gt;
+Poté:&lt; sourceName &gt;="KZ401"&lt;/ sourceName &gt;
              
-        * NEW: V setup.xml je nové volitelné nastavení,&lt;defaultAccessibleViaFiles &gt;, který nastavuje výchozí&lt;accessibleViaFiles &gt; pro každý soubor dat. Výchozí hodnota této nové značky je false, která napodobuje předchozí ERDDAP™ Chování. Toto nastavení nižší úrovně může být potlačeno daným datovým souborem&lt;accessibleViaFiles &gt; nastavení.
+        * NOVINKA: V setup.xml je nové volitelné nastavení,&lt;výchozíAccessibleViaFiles&gt;, který nastavuje výchozí&lt;dostupnéViaFiles &gt; pro každý soubor dat. Výchozí hodnota pro tuto novou značku je falešná, což napodobuje předchozí ERDDAP™ chování. Toto nastavení nižší úrovně může být zrušeno daným datovým souborem&lt;přístupnéViaFiles&gt; nastavení.
             
-DOPORUČENO (Protože existují uživatelé, kteří to chtějí) :
-Jestli chceš dělat všechny EDD... Soubory FromFiles soubory přístupné přes souborový systém, pak
+DOPORUČENÉ (Protože existují uživatelé, kteří to chtějí) :
+Jestli chceš udělat všechny EDD... FromFiles datové soubory přístupné prostřednictvím souborového systému, pak
             
-            1. Přidejte tuto značku do souboru setup.xml:
+            1. Přidat tento tag do souboru setup.xml:
 ```
                 <defaultAccessibleViaFiles>true</defaultAccessibleViaFiles>
 ```
@@ -689,189 +706,189 @@ Jestli chceš dělat všechny EDD... Soubory FromFiles soubory přístupné pře
 ```
                 <accessibleViaFiles>true</accessibleViaFiles>
 ```
-n datasets.xml protože výchozí hodnota je nyní pravdivá.
+v datasets.xml protože výchozí hodnota je nyní pravdivá.
                  
-        * Přidat atributy\\ _ FillValue:
-             ERDDAP™ má výchozí hodnotu\\ _ FillValue pro všechny celočíselné proměnné: maximální hodnota datového typu (např. 127 pro proměnné byte) . Teď už ne. Aby se zabránilo zobrazení těchto hodnot jako datových hodnot (ne chybějící hodnoty) , je třeba výslovně uvést tyto atributy\\ _ FillValue. Od teď, pokaždé, když začneš ERDDAP™ , to pošle administrátorovi e-mail s .csv tabulky se seznamem celočíselných zdrojových proměnných, které nemají\\ _ FillValue nebo missing\\_value atributy a navrhované nové atributy\\ _ FillValue. Viz [Přidat\\ _ Vyplňte Atributy s hodnotou](/docs/server-admin/datasets#add-_fillvalue-attributes) pro více informací a pokynů.
+        * Přidat atributy \\_FillValue:
+             ERDDAP™ která má výchozí hodnotu \\_FillValue pro všechny celočíselné proměnné: maximální hodnota datového typu (např. 127 pro proměnné byte) . Teď už ne. Aby se zabránilo zobrazení těchto hodnot jako hodnot údajů (chybějící hodnoty) , musíte je výslovně uvést pomocí atributů \\_FillValue. Od teď, pokaždé, když začneš ERDDAP™ Pošle správci e-mail s tabulkou .csv se seznamem celočíselných zdrojových proměnných, které nemají \\_FillValue nebo missing\\_value atributy a navrhované nové atributy \\_FillValue. Viz [Přidat \\_Fill Hodnota Atributy](/docs/server-admin/datasets#add-_fillvalue-attributes) pro více informací a pokynů.
              
-        * Pokud sestavujete ERDDAP™ , je třeba upravit parametr classpath na příkazových řádcích javac přidat odkaz na tyto nové jar 's: lib / communs-jexl.jar; lib / aws-java-sdk.jar; lib / jackson- anytations.jar; lib / jackson- core.jar; lib / jackson- dataind.jar.
+        * Když sestavíte ERDDAP™ , musíte upravit parametr třídy path na příkazových řádkách javac přidat odkaz na tyto nové jar's: lib/commons-jexl.jar;lib/aws-java-sdk.jar;lib/jackson-anotace.jar;lib/jackson-core.jar;lib/jackson-databind.jar .
              
-    * ZMĚNA: Tomcat 9 je nyní doporučená verze Tomcat pro ERDDAP . Nejnovější verze Tomcat 8.5 + je nyní také v pořádku. Uklízeli jsme. ERDDAP s [Pokyny pro instalaci tomcat](/docs/server-admin/deploy-install#tomcat) .
+    * ZMĚNA: Tomcat 9 je nyní doporučená verze Tomcat pro ERDDAP . Poslední verze Tomcat 8.5+ je v pořádku. Uklidili jsme. ERDDAP 's [Návod k instalaci Tomcat](/docs/server-admin/deploy-install#tomcat) .
         
-Poslední verze Java 8 (ne Java 9, 10, 11,...) od [AdoptOpenJDK](https://adoptopenjdk.net/) zůstává doporučenou verzí Java místo ERDDAP . Java 8 má Long Term Support od AdoptOpenJDK, takže zůstává bezpečné použití, ale nezapomeňte získat nejnovější verzi z bezpečnostních důvodů.
+Poslední verze Java 8 (ne Java 9, 10, 11, ...) od [PřijmoutOpenJDK](https://adoptopenjdk.net/) zůstává doporučená verze Java místo ERDDAP . Java 8 má dlouhodobou podporu od AdopOpenJDK, takže zůstává bezpečné použití, ale nezapomeňte získat nejnovější verzi z bezpečnostních důvodů.
         
-    * NEW: Script SourceNames / Odvozené proměnné v tabulkových datových souborech
-EDDTableFromFiles, EDDTableFromDatabase, a EDDTableFromFileName soubory mohou nyní obsahovat výrazy a skripty sourceName . To vám umožní vytvořit nové proměnné na základě existujících proměnných ve zdrojových souborech. Výpočet pro danou novou proměnnou se provádí v rámci jednoho řádku výsledků, opakovaně pro všechny řádky. Například, aby se zeměpisná délka proměnné s hodnotami v rozmezí -180 - 180 ° od proměnné s hodnotami v rozmezí 0 - 360 °:
-        &lt; sourceName & gt; = Math2.anglePM180 (row.columnDouble ("re") ) &lt;/ sourceName &gt;
-Podrobnosti viz [Skript SourceName](/docs/server-admin/datasets#script-sourcenamesderived-variables)   
-Díky Bobu Simonsovi. (Kdo to předtím plánoval? ERDDAP™ v1.0 a konečně jsem našel způsob, jak to provést) , Kevin O 'Brien, Roland Schweitzer, John Maurer, a Apache JEXL knihovna za to, že dělá opravdu těžké části (a dělá to dobře) .
+    * NOVINKA: Script sourceNames / Odvozené proměnné v Tabulkových datových sadách
+EDDTableFromFoles, EDDTableFromDatabase a EDDTableFromFileNames mohou nyní obsahovat výrazy a skripty v souboru sourceName . To vám umožní vytvářet nové proměnné na základě existujících proměnných ve zdrojových souborech. Výpočet pro danou novou proměnnou se provádí v rámci jednoho řádku výsledků, opakovaně pro všechny řádky. Například vytvořit proměnnou délky s hodnotami v rozsahu -180 - 180° z proměnné s hodnotami v rozsahu 0 - 360°:
+        &lt; sourceName &gt;=Math2.anglePM180 (Řádek. SloupecDvoumístný ("lon") ) &lt;/ sourceName &gt;
+Podrobnosti viz [Název zdroje skriptu](/docs/server-admin/datasets#script-sourcenamesderived-variables)   
+Díky Bobovi Simonsovi (který to plánoval předtím ERDDAP™ v1.0 a nakonec našel způsob, jak ho implementovat) , Kevin O'Brien, Roland Schweitzer, John Maurer, a Apache JEXL knihovna pro dělá opravdu těžké části (a dělá to dobře) .
          
-    * NEW: Nepodepsané celé datové typy (ubyte, ushort, uint, ulong) jsou nyní podporovány. Všimněte si, že mnoho typů souborů (např. .das, .dds, .nc 3) Nepodporujte všechny tyto nové datové typy. Viz [Údaje Typová dokumentace](/docs/server-admin/datasets#data-types) podrobnosti o tom, jak ERDDAP™ řeší tyto rozdíly. Zejména, protože(OPeN)DAP, zejména odpověď .dds, nepodporuje podepsané bytes, longs, nebo ulings, možná budete chtít použít ERDDAP je tabulková reprezentace .das a .das, jak je vidět v http ... / erddap / **informace** / _ datasetID Webová stránka _ .html (například: [ https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html)  ) které můžete také získat v jiných typů souborů nebo .nccsv Odezva na metadata (například: [ https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata)  ) , z nichž oba podporují všechny typy dat ve všech situacích.
+    * NEW: Podepsané celé datové typy (ubyte, uhort, uint, ulong) jsou nyní podporovány. Všimněte si, že mnoho typů souborů (např. .das, .dds, .nc 3) Nepodporují všechny tyto nové datové typy. Viz [Údaje Typová dokumentace](/docs/server-admin/datasets#data-types) pro podrobnosti o tom, jak ERDDAP™ řeší tyto rozdíly. Vzhledem k tomu,(OPeN)DAP, zejména .dds odpověď, nepodporuje podepsané bajty, dlouho, nebo ulongs, možná budete chtít použít ERDDAP 's tabular reprezentation of .das and .das as seen in the http .../erddap/ **Informace** /_ datasetID _.html webová stránka (například: [ https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/info/cwwcNDBCMet/index.html)  ) které můžete také získat v jiných typech souborů nebo .nccsv Odpověď na metadata (například: [ https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/cwwcNDBCMet.nccsvMetadata)  ) , z nichž oba podporuje všechny datové typy ve všech situacích.
         
-UPOZORNĚNÍ: U souborů dat, které jsou touto změnou ovlivněny, je možné, že uvidíte problémy s datovým souborem, protože údaje, které ERDDAP™ údaje ze zdroje mohou být odlišné (např., proměnné dříve čteny jako podepsaná celá čísla mohou být nyní čteny jako nepodepsaná celá čísla) . Výslednými problémy jsou: nové soubory, které nejsou přidány do datového souboru, a / nebo chyby při pokusu o přístup k datům. Pokud má datový soubor problémy, první věc, kterou je třeba zkusit, je [Nastavit tvrdý Vlajka](/docs/server-admin/additional-information#hard-flag) pro datový soubor. Pokud to ten problém nevyřeší, musíte se podívat do deníku. txt vidět chybové zprávy, ponořit do datasets.xml pro datový soubor, a / nebo možná rerun generateDatasets.xml pro datový soubor.
-Díky netcdf- java 5.x (které vyvolaly problém) a nadcházející CF 1.9.
+UPOZORNĚNÍ: Pro soubory, které jsou touto změnou ovlivněny, je možné, že uvidíte problémy s datovým souborem, protože údaje, které ERDDAP™ čtení ze zdroje může být odlišné (Například proměnné, které byly dříve čteny jako podepsaná celá čísla, lze nyní číst jako nepodepsaná celá čísla) . Výsledné problémy zahrnují: nové soubory nejsou přidávány do datového souboru, a/nebo chyby, když se snažíte získat přístup k datům. Pokud má datový soubor problémy, první věc, která se snaží, je [nastavit tvrdý Označení](/docs/server-admin/additional-information#hard-flag) pro datový soubor. Pokud to problém nevyřeší, pak se musíte podívat na log. txt vidět chybové zprávy, ponořit se do datasets.xml pro datový soubor a/nebo pro datový soubor znovu spustit generováníDatasets.xml.
+Díky netcdf-java 5.x (která donutila k problému) a nadcházející CF 1.9.
         
-    * ZLEPŠENO: Nyní existuje [lepší dokumentace / poradenství](/docs/server-admin/datasets#s3-buckets) jak vytvořit datový soubor ze souborů v AWS S3 kýblech. Díky Micahu Wengrenovi.
+    * Teď už ano. [lepší dokumentace/poradenství](/docs/server-admin/datasets#s3-buckets) jak vytvořit soubor ze souborů v kbelících AWS S3. Díky Micahovi Wengrenovi.
          
     * ZMĚNA: Existuje několik změn souvisejících s "files" systém.
-        * Kód k tomu byl přepsán na více tříd.
+        * Kód k tomu byl přepsán tak, aby byl použitelný více tříd.
              
-        * NEW: Uživatelské požadavky na výpisy adresářů mohou nyní požadovat, aby odpověď byla jedním ze standardních typů prostých tabulek, a to tak, že se přihlásí požadované rozšíření souboru: .csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv nebo .xhtml ). Například,
+        * NOVINKA: Uživatelské požadavky na výpisy adresářů mohou nyní požadovat, aby odpověď byla jedním ze standardních jednoduchých typů tabulek tím, že doplní požadované přípony souboru: .csv, .htmlTable , .itx , .json , .jsonlCSV1 , .jsonlCSV , .jsonlKVP , .mat , .nc , .nccsv , .tsv nebo .xhtml ). Například,
              [ https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv ](https://coastwatch.pfeg.noaa.gov/erddap/files/jplMURSST41/.csv)   
-Díky Kylovi Wilcoxovi a Shane St. Savageovi.
+Díky Kyle Wilcoxovi a Shane St Savage.
              
-        * ZLEPŠENO: Nyní, Generovat Datové soubory Xml neobsahuje&lt;accessibleViaFiles &gt; tag ve výstupu. Předpokládá se, že datový soubor bude spoléhat na hodnotu nového&lt;defaultAccessibleViaFiles &gt; Tag in setup.xml. Viz [přístupné Soubory](/docs/server-admin/datasets#accessibleviafiles) .
+        * ZLEPŠIT: Nyní, Generovat Datové soubory Xml nebude zahrnovat&lt;accessibleViaFiles&gt; tag in the output. Předpokladem je, že datový soubor bude spoléhat na hodnotu nového&lt;defaultAccessibleViaFiles&gt; tag in setup.xml. Viz [přístupný ViaFiles](/docs/server-admin/datasets#accessibleviafiles) .
              
-        * ZLEPŠENO: Další typy souborů nyní podporují přístupnost ViaFiles: EDDGrid SideBySide, EDDGrid AgregateExistingDimension, EDDGrid FromErddap, EDDTableFromErddap, EDDGrid Fromeddtable, EDDTableFrom EDDGrid a EDDGrid FromEtopo. Pro tyto účely budou soubory z daného datového souboru vzdáleného / dětského souboru přístupné pouze tehdy, mají-li přístup jak rodič, tak vzdálený / dětský datový soubor ViaFiles nastaven na true (možná prostřednictvím&lt;defaultAccessibleViaFiles &gt;). Díky Damian Smyth a Robu Fullerovi.
+        * ZLEPŠENÉ: Další typy souborů nyní podporují přístupné ViaFiles: EDDGrid SidebySide, EDDGrid AgregátExising Dimension, EDDGrid FromErddap, EDDTableFromErddap, EDDGrid OdEDDTable, EDDTableFrom EDDGrid a EDDGrid Od Etopa. Pro tyto soubory budou dostupné soubory z daného vzdáleného/dítěte data, pouze pokud mají přístup jak rodič, tak i vzdálený/dětský soubor. ViaFiles nastavena na true (možná prostřednictvím&lt;výchozíAccessibleViaFiles&gt;). Díky Damianovi Smythovi a Robu Fullerovi.
              
-        * DOPORUČENÍ: Doporučujeme zpřístupnit všechny příslušné soubory pomocí systému souborů&lt;defaultAccessibleViaFiles &gt; to true in setup.xml, protože existuje skupina uživatelů, pro které je to preferovaný způsob, jak získat data. Mimo jiné "files" systém usnadňuje uživatelům zjistit, které soubory jsou k dispozici a kdy se naposledy změnily, a tak usnadňuje uživateli udržovat si vlastní kopii celého souboru dat. Pokud obecně nechcete zpřístupnit soubory prostřednictvím systému souborů, nastavte&lt;defaultAccessibleViaFiles &gt; na false. V každém případě stačí použít&lt;accessibleViaFiles &gt; pro několik souborů dat, které jsou výjimkou z obecné politiky stanovené&lt;defaultAccessibleViaFiles &gt; (například při použití datového souboru .nc ml soubory, které nejsou pro uživatele opravdu užitečné) .
+        * DO / DOPORUČENÍ: Doporučujeme zpřístupnit všechny příslušné soubory prostřednictvím systému souborů nastavením&lt;defaultAccessibleViaFiles&gt; to true in setup.xml, protože existuje skupina uživatelů, pro které je to preferovaný způsob, jak získat data. Kromě jiných důvodů "files" systém usnadňuje uživatelům sledovat, které soubory jsou k dispozici a kdy se naposledy změnily, a tak umožňuje uživateli udržovat si vlastní kopii celého datového souboru. Pokud obecně nechcete zpřístupnit soubory prostřednictvím systému souborů, nastavit&lt;defaultAccessibleViaFiles &gt; to false. V obou případech stačí použít&lt;přístupnéViaFiles&gt; pro několik souborů údajů, které jsou výjimkami z obecné politiky stanovené&lt;defaultAccessibleViaFiles&gt; (například při použití datového souboru .nc ml soubory, které nejsou opravdu užitečné pro uživatele) .
              
-    * ZLEPŠENO: Pokud má zdrojový soubor informace o CF mřížce\\ _ mapování, generujte Datové soubory Xml pro gridded soubory dat přidají informace na globální&lt;addAtts &gt;, a informace budou přidány do globální&lt;sourceAtts &gt; vždy jsou data čtena ze souboru. Informace se objeví v globálních atributech datového souboru jako soubor atributů s předponou mřížky\\ _ mapování\\ _.
+    * IMPROVED: Nyní, pokud zdrojový soubor má CF Grid\\_Mapping informace, generovat Datové soubory Xml pro mřížkované soubory dat přidá informace do globálních&lt;addAtts&gt; a informace budou přidány do globálního&lt;sourceAtts&gt; everytime data se čtou ze souboru. Informace se objeví v globálních atributech datového souboru jako soubor atributů s předfixovou mřížkou\\_mapping\\_ .
          
-    * ZLEPŠENO: Podpora skupin při čtení .nc 4 (a do určité míry .hdf 5) složky. Obecně platí, že ERDDAP™ Dataset bude vytvořen z proměnných v jedné ze skupin souboru. Také, GenerateDatasets Xml pro EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybaleno nyní žádá o "skupinu" (např. "," pro všechny skupiny "," someGroup "," someGroup / someSubGroup ", nebo" \\[ kořen \\] "jen pro kořenovou skupinu) . Díky Charlesovi Carletonovi a Jessice Hausmanové.
+    * ZLEPŠENÉ: Podpora pro skupiny při čtení .nc 4 (a do určité míry v .hdf 5) Složky. Obecně ERDDAP™ Databáze bude vytvořena z proměnných v jedné ze skupin souborů. Také generovatDatasety Xml pro EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybalené nyní žádá o "skupina" (např. "" pro všechny skupiny, "některé skupiny," "některé skupiny/některé skupiny" nebo " \\[ kořen \\] "pro jen kořenovou skupinu) . Díky Charlesi Carletonovi a Jessice Hausmanové.
          
-    * ZLEPŠENO: GeneteData Xml pro EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybalený nyní podporuje volitelný parametr "DimensionsCSV", který vám umožní zadat zdrojové názvy rozměrů, které chcete, aby tento datový soubor používal. Použijte "" k získání proměnných, které používají nejvíce rozměrů, jako předtím. Také, související malá chyba, která nastala s tímto typem souboru je nyní opravena. Díky Sujal Manandharovi.
+    * ZLEPŠIT: GenerovatNastavení dat Xml pro EDDGrid FromNcFiles a EDDGrid FromNcFiles Vybalený nyní podporuje volitelný parametr "RozměryCSV," který umožňuje zadat zdrojové názvy rozměrů, které chcete, aby tento datový soubor použil. Použijte "" získat proměnné, které používají nejvíce rozměrů, jako předtím. Také, související malá chyba, která nastala s tímto typem souboru je nyní stanovena. Díky Sujalu Manandharovi.
          
-    * BUG FIX: GeneteDatasets Xml nyní správně uvádí "EDDTableFromJsonlCSVFiles" (ne "EDDTableFromJsonlCSV") jako jedna z možností EDDType. Díky Andymu Zieglerovi.
+    * BUG FIX: GenerovatNastavení dat Xml nyní správně uvádí "EDDTableFromJsonlCSVFiles" (ne "EDDTableFromJsoniCSV") jako jedna z možností EDDType. Díky Andymu Zieglerovi.
          
-    * ZLEPŠENO: EDDGrid FromNcFiles Vybalené nyní standardizuje "jednotky" atributy pro standardní / "kanonické" udjednotky (stejná metoda jako převodník jednotek) . Například, "meter per second" , "meters/second" , "m.s^-1" a "m s-1" Všichni se stanou "m s-1" . Díky Andymu Zieglerovi.
+    * ZLEPŠENÍ: EDDGrid FromNcFiles Odbalené nyní standardizuje atributy "jednotky" na standardní/"kanonické" ud units (stejnou metodu jako převodník jednotek) . Například, "meter per second" , "meters/second" , "m.s^-1" a "m s-1" všichni se stanou "m s-1" . Díky Andymu Zieglerovi.
         
-UPOZORNĚNÍ: Je možné, že to způsobí problémy pro některé existující soubory dat (např. způsobit, že nové soubory budou označeny jako "špatné") . Pokud ano, [Nastavit tvrdý Vlajka](/docs/server-admin/additional-information#hard-flag) pro datový soubor tak, aby všechny zdrojové soubory byly přesměrovány s novým systémem.
+UPOZORNĚNÍ: Je možné, že to způsobí problémy pro některé existující soubory dat (např. způsobit, že nové soubory budou označeny jako "špatné") . Pokud ano, [nastavit tvrdý Označení](/docs/server-admin/additional-information#hard-flag) pro datový soubor tak, aby všechny zdrojové soubory byly znovu přečteny s novým systémem.
         
-    * ZLEPŠENO: Nyní je proměnné&lt; sourceName &gt; může určit pevnou hodnotu = NaN a proměnná může mít actual\\_range atribut, který určuje konečný rozsah. To je někdy užitečné, takže datový soubor (zejména EDDTableFromFileName dataset) může mít falešnou proměnnou (s)   (např. zeměpisná šířka, délka, čas) s pevnými hodnotami NaN, ale s platným actual\\_range   (nastaven atributem) . V Advanced Search pak může uživatel hledat soubory dat, které mají údaje v konkrétní zeměpisné šířce, délce, časovém rozsahu a tento datový soubor bude moci říci, že má relevantní údaje (i když všechny aktuální řádky dat zobrazí NaN) . Viz [dokumentace s pevnou hodnotou](/docs/server-admin/datasets#fixed-value-sourcenames) .
+    * Nyní, proměnná je&lt; sourceName &gt; může určit pevnou hodnotu =NaN a proměnná může mít actual\\_range atribut, který určuje konečný rozsah. To je někdy užitečné, aby soubor údajů (a zejména soubor údajů EDDTableFromFileNames) může mít proměnnou figuríny (án)   (např. zeměpisná šířka, zeměpisná délka, čas) s pevnými hodnotami NaN, avšak s platnými actual\\_range   (podle atributu) . V pokročilém vyhledávání pak může uživatel vyhledávat soubory údajů, které mají údaje v určité zeměpisné šířce, délce, časovém rozsahu a tento soubor údajů bude moci říci, že má relevantní údaje. (i když všechny aktuální řádky dat zobrazí NaN) . Viz [dokumentace pevné hodnoty](/docs/server-admin/datasets#fixed-value-sourcenames) .
 Díky Mathew Biddle.
          
-    * NEW: Nyní, datasets.xml cunk pro EDDTableFromAsciiFiles nebo EDDTableFromColumnaAsciiFiles může obsahovat tag, který říká ERDDAP™ ignorovat všechny řádky v horní části souboru až do a včetně řádku, který odpovídá zadanému pravidelnému výrazu. Například,
-        &lt;SkipHeaderToRegex &gt;\\\*\\\*\\\*Konec hlavy.\\*&lt;/ skipHeaderToRegex &gt;
-bude ignorovat všechny řádky až a včetně řádku, který začíná s "\\*\\*\\ * Konec hlavy. "Viz [&lt;skipHeaderToRegex &gt; dokumentace] (/ docs / server- admin / datasets # skipheadertoregex) .
-Díky Elimu Hunterovi.
+    * NEW: datasets.xml Soupis pro EDDTableFromAsciiFiles nebo EDDTableFromColumnarAsciiFiles může obsahovat tag, který říká ERDDAP™ ignorovat všechny řádky v horní části souboru až do řádku, který odpovídá zadanému regulárnímu výrazu. Například,
+        &lt;skipheaderToRegex&gt;\\\*\\\*\\\*Konec hlavy.\\*&lt;/skipheaderToRegex&gt;
+bude ignorovat všechny řádky až do a včetně řádku, který začíná na "\\*\\*Konec hlavy. Viz [&lt;skipheaderToRegex&gt; dokumentace] (/docs/server-admin/datasets#skipheadertoregex) .
+Díky Eli Hunterovi
          
-    * NEW: Nyní, datasets.xml skunk pro EDDTableFromAsciiFiles nebo EDDTableFromColumnaAsciiFilesdataset může obsahovat značku, která říká ERDDAP™ ignorovat všechny řádky v souboru, které odpovídají zadanému regulérnímu výrazu. Například,
+    * NEW: datasets.xml chunk pro EDDTableFromAsciiFiles nebo EDDTableFromColumnarAsciiFilesdataset může obsahovat tag, který říká ERDDAP™ ignorovat všechny řádky v souboru, které odpovídají zadanému regulárnímu výrazu. Například,
 ```
         <skipLinesRegex>#.\\*</skipLinesRegex>  
 ```
 
-Přeskočí všechny řádky, které začínají na "#". Viz [&lt;skipLinesRegix &gt; dokumentace] (/ docs / server- admin / datasets # skiplinesregex) .
-Díky Elimu Hunterovi.
+přeskočí všechny řádky, které začínají na "#." Viz [&lt;skipLinesRegex&gt; dokumentace] (/docs/server-admin/datasets#skiplinesregex) .
+Díky Eli Hunterovi.
          
-    * NEW: datasets.xml chunk pro každý soubor EDDTable může nyní obsahovat & add Proměnné Kde (_ BAR _ NamesCSV _) . Pokud ano, ERDDAP™ přidá widget pro každý ze zadaných atributů Názvy do formuláře datového přístupu datového souboru (.html webová stránka) aby bylo pro uživatele snadné přidat & přidat Proměnné Kde (_ atribut Název, atribut Hodnota _) na žádost.
-Viz [Přidat Proměnné V případě dokumentace](/docs/server-admin/datasets#addvariableswhere) .
+    * NEW: datasets.xml chunk pro libovolný datový soubor EDDTable nyní může obsahovat &add Proměnné kde (_attributeNázevsCSV_) . Pokud ano, ERDDAP™ přidá widget pro každý zadaný atribut Název datového formuláře datového přístupu datového souboru (.html webová stránka) pro snadné přidávání &add Proměnné kde (_atribut Název, atribut Hodnota_) na žádost.
+Viz [& Přidat Proměnné V případě dokumentace](/docs/server-admin/datasets#addvariableswhere) .
 Díky Aurelie Briand, et al.
          
-    * NOVÝ Third- Party nástroj: ERDDAP -Lint
-         ERDDAP -Lint je program od Roba Fullera a Adama Leadbettera z Irského námořního institutu, který můžete použít ke zlepšení metadat ERDDAP™ Datové soubory. ERDDAP -lint "obsahuje pravidla a jednoduchou statickou webovou aplikaci pro provedení některých ověřovacích testů proti Vašemu ERDDAP™ Server. Všechny testy se provádějí v webovém prohlížeči. "Jako [Unix / Linux Lint nástroj](https://en.wikipedia.org/wiki/Lint_(software) ), můžete upravit stávající pravidla nebo přidat nová pravidla. Viz [ ERDDAP -Lint](https://github.com/IrishMarineInstitute/erddap-lint) pro více informací.
+    * NOVÉ Nástroj třetí strany: ERDDAP - Lint
+         ERDDAP -Lint je program od Roba Fullera a Adama Leadbettera z Irish Marine Institute, který můžete použít ke zlepšení metadat vašeho ERDDAP™ Data. ERDDAP -lint "obsahuje pravidla a jednoduchou statické webové aplikace pro provádění některých ověřovacích testů proti vašemu ERDDAP™ server. Všechny testy jsou spuštěny ve webovém prohlížeči." Jako [Nástroj Unix/Linux lint](https://en.wikipedia.org/wiki/Lint_(software) ), můžete upravit stávající pravidla nebo přidat nová pravidla. Viz [ ERDDAP - Lint](https://github.com/IrishMarineInstitute/erddap-lint) pro více informací.
         
-Tento nástroj je obzvláště užitečný pro soubory dat, které jste vytvořili před nějakou dobou a nyní chcete přinést -to-date s vašimi aktuálními preferencemi metadat. Například rané verze GenetateDatasets Xml se nesnažil vytvořit globální creator\\_name , creator\\_email , creator\\ _ type, or creator\\_url metadata. Hodil by se ti. ERDDAP -Lint identifikovat soubory dat, které chybí tyto atributy metadat.
+Tento nástroj je zvláště užitečný pro soubory dat, které jste vytvořili před nějakou dobou a nyní chcete aktualizovat s vašimi aktuálními preferencemi metadat. Například rané verze GenerateDatasets Xml se nesnažil vytvořit globální creator\\_name , creator\\_email , creator\\_type nebo creator\\_url metadata. Hodilo by se ti. ERDDAP -lt identifikovat soubory, které nemají atributy metadat.
         
-Díky Robovi a Adamovi za vytvoření tohoto nástroje a jeho zpřístupnění ERDDAP™ komunita.
+Díky Rob a Adam za vytvoření tohoto nástroje a zpřístupnění ERDDAP™ komunita.
         
-    * NEW: Nyní je v pořádku, pokud některé ze souborů v EDDGrid Soubor FromFiles nemá všechny proměnné. Soubory budou zahrnuty, jako kdyby měly proměnné (se všemi chybějícími hodnotami) .
+    * NEW: Nyní je v pořádku, pokud některé soubory v EDDGrid Databáze FromFiles nemá všechny proměnné datového souboru. Soubory budou zahrnuty jako kdyby měly proměnné (se všemi chybějícími hodnotami) .
 Díky Dale Robinsonovi a Dougovi Latornellovi.
          
-    * NEW: V logovém souboru a Daily Report jsou nové statistiky využití, které pomáhají administrátorům identifikovat uživatele, kteří způsobují problémy s pamětí. Statistiky se nazývají "OutOfMemory (Velikost pole) , "" OutOfMemory (Příliš velký) , "a" OutOfMemory (Příliš velký) . "Ukazují IP adresy uživatelů, kteří v těchto kategoriích podávali žádosti, a počet jejich žádostí. Pokud nebyly žádné problémové požadavky, tyto statistiky se neobjeví." OverPaměť (Velikost pole) "a" OutOfMemory (Příliš velký) "žádosti obvykle nejsou problém, protože žádosti byly tak velké, ERDDAP™ Chytil je rychle a vrátil chybovou zprávu. The "OutOfPaměť (Příliš velký) "žádosti jsou nebezpečnější, protože ERDDAP™ vynaložil nějaké úsilí, než si uvědomil, že není dostatek paměti v současné době k dispozici pro řešení požadavku (i když problém může být další požadavky přímo před těmito požadavky) .
+    * NOVINKA: V logovém souboru jsou nové statistiky využití a Daily Report pomáhají administrátorům identifikovat uživatele, kteří způsobují problémy s pamětí. Statistiky jsou pojmenovány "OutOfMemory (Velikost pole) ", "OutOfMemory (Příliš velká.) "a "OutOfMemory" (Příliš velká) ". Ukazují IP adresy uživatelů, kteří podali žádosti v těchto kategoriích, a počet žádostí, které podali. Pokud nebudou žádné nepříjemné požadavky, tyto statistiky se neobjeví. "OutOfMemory (Velikost pole) "a "Z paměti (Příliš velká) " žádosti obvykle nejsou problém, protože žádosti byly tak velké, že ERDDAP™ chytil je rychle a vrátil chybovou zprávu. "Vzpomínka (Příliš velká.) " požadavky jsou nebezpečnější, protože ERDDAP™ vyvinul nějaké úsilí, než si uvědomil, že není dostatek paměti v současné době k dispozici zvládnout žádost (i když problémem mohou být jiné žádosti těsně před těmito žádostmi) .
         
-Existují také nové statistiky s názvem "Velká žádost, IP adresa", které ukazují IP adresy uživatelů, kteří se velké požadavky (v současné době gridován .nc soubory &gt; 1GB) .
+Existují také nové statistiky s názvem "Velká žádost, IP adresa," které ukazují IP adresy uživatelů, kteří podali velké žádosti (v současné době, roštovaný .nc Soubory &gt; 1GB) .
         
-Také, tabulka časové řady na stránce status.html nyní obsahuje sloupec "memFail", který ukazuje počet žádostí, které selhaly s "OutOfMemory (Příliš velký) "chyby od posledních hlavních datových souborů. Jakékoliv jiné číslo než 0 je přinejmenším důvodem k obavám.
-Díky Bobu Simonsovi.
+Také tabulka časových řad na stránce status.html nyní obsahuje sloupec "memFail" zobrazující počet žádostí, které selhaly s "OutOfMemory" (Příliš velká.) " chyby od posledních velkých načíst Datasety. Jakékoliv jiné číslo než 0 je alespoň důvod k obavám.
+Díky Bobovi Simonsovi.
         
-    * NEW: Nová verze Hyrax zobrazuje seznamy adresářů jinak než předtím. ERDDAP™ Nyní si můžete přečíst staré a nové seznamy adresářů.
+    * NEW: Nová verze Hyrax zobrazí seznamy adresářů jinak než předtím. ERDDAP™ nyní můžete přečíst staré a nové seznamy adresářů.
          
-    * NEW: Dataset se načte a uživatelské odpovědi, které do dokončení &gt; 10 sekund (úspěšně nebo neúspěšně) jsou označeny " (&gt; 10&#33;) . "Proto můžete vyhledat log.txt soubor pro tuto frázi najít soubory dat, které byly pomalu k načtení, nebo číslo žádosti, které byly pomalu k dokončení. V souboru log.txt se pak můžete podívat výš, abyste zjistili, jaký byl problém s datovým souborem nebo jaký byl požadavek uživatele a od koho byl. Tyto pomalé zatížení datových souborů a uživatelské požadavky jsou někdy zdanění na ERDDAP . Takže vědět více o těchto požadavků vám může pomoci identifikovat a řešit problémy.
-    * ZLEPŠENO: Při validaci souboru údajů CF DSG ERDDAP™ Nyní zajišťuje, že proměnné s atributy cf\\ _ role jsou v příslušném seznamu cdm\\ _...\\ _ proměnných a nejsou v jiných seznamech cdm\\ _...\\ _ proměnných. Pokud má například datový soubor timeseriesProfile proměnnou "station\\ _ id", která má cf\\ _ role = timeseries\\ _ id atribut, pak "station\\ _ id" musí být v seznamu cf\\ _ timeseries\\ _ proměnných, ale nesmí být v seznamu cf\\ _ profile\\ _ proměnných.
-Díky Micahu Wengrenovi.
+    * NOVINKA: Dataset reloads a uživatelská odpověď, která trvá déle než 10 sekund do konce (úspěšně nebo neúspěšně) jsou označeny " (&gt;10&#33;) ". Proto můžete prohledat soubor log.txt, aby tato fráze našla soubory, které byly pomalé k opětovnému načtení nebo číslo požadavku na žádosti, které byly pomalé k dokončení. Pak se můžete podívat výš v log.txt souboru, abyste zjistili, jaký byl problém s datovým souborem nebo jaký byl požadavek uživatele a od koho byl. Tyto pomalé zatížení souborů a požadavky uživatelů jsou někdy zdaňování na ERDDAP . Takže vědět více o těchto požadavcích vám může pomoci identifikovat a řešit problémy.
+    * IMPROVED: Při validaci CF DSG souboru, ERDDAP™ nyní zajišťuje, že proměnné s atributy cf\\_role jsou v příslušném cdm\\_...\\_proměnný seznam a nejsou v jiných seznamech cdm\\_...\\_variables. Například pokud má soubor timeseriesProfile proměnnou "station\\_id," která má atribut cf\\_role=timeseries\\_id, pak "station\\_id" musí být v seznamu cf\\_timeseries\\_variables, ale nesmí být v seznamu cf\\_profile\\_variables.
+Díky Micahovi Wengrenovi.
          
-    * ZLEPŠENO: 'Zjednodušení' je nyní rychlejší, používá méně paměti, a může vrátit LongArray. Díky Unidata .
+    * IMPROVED: 'Simplify' je nyní rychlejší, používá méně paměti, a může vrátit LongArray. Díky Unidata .
          
-    * ZLEPŠENO: QuickRestart je nyní výrazně rychlejší pro EDDTableFrom (nc- related) Soubory (s výjimkou EDDTableFromNcCFFiles a EDDTableFromInvalidCRAFiles) Protože udělat Očekávané (a jiné místo) Nyní jen čte metadata výběrového souboru místo čtení všech dat. Díky Jessice Austinové.
+    * IMPROVED: rychlýRestart je nyní výrazně rychlejší pro EDDTableFrom (nc související) Soubory (kromě EDDTableFromNcCFFiles a EDDTableFromInvalidCRAFiles) protože Předpokládané (a jiné místo) Nyní jen čte metadata souboru vzorku namísto čtení všech dat. Díky Jessice Austinové.
          
-    * ZLEPŠENO: Existuje nyní podpora pro časové řetězce s přesností větší než -the-millisecond, pokud další číslice jsou všechny 0 's, např. "2020-05-22T01: 02: 03.4560000Z". Díky Yibo Jiang.
+    * IMPROVED: Nyní existuje podpora pro časové řetězce s přesností větší než do-milisekundy, pokud jsou všechny další číslice 0's, např. "2020-05-22T01:02:03.45 6000000Z." Díky Yibo Jiangovi.
          
-    * ZLEPŠENO: GenerateDatasetsXml EDD.supposeDestinationName použitý k odstranění '(' a všeho po. Teď se odstraňuje.\\*) pouze pokud je to konec sourceName . Nyní také odstraňuje \\[ .\\* \\] pouze pokud je to konec sourceName . Díky Julienovi Paulovi.
+    * IMPROVED: GenerateDatasetsXml's EDD.suggestDestinationName used to remove '(' and everything after. Nyní se odstraní (.\\*) pouze tehdy, je- li to konec sourceName . Nyní také odstraní \\[ .\\* \\] Pouze pokud je to konec sourceName . Díky Julienovi Paulovi.
          
-    * ZLEPŠENO: GeneteData Xml nyní dělá proměnnou destinationName s unikátní přidáním\\ _ 2,\\ _ 3,..., podle potřeby. Díky Julienovi Paulovi.
+    * ZLEPŠIT: GenerovatNastavení dat Xml nyní dělá proměnnou destinationName s unikátní přidáním \\_2, \\_3, ... podle potřeby. Díky Julienovi Paulovi.
          
-    * ZLEPŠENO: Když Calendar2.parseDateTime parses dd, hh, nebo HH, první 'číslice' může být nyní prostor.
-    * ZNÁMÝ PROBLEM: Počínaje ERDDAP™ 2.10 .nc ml souborů, které se snaží změnit atribut, neměňte atribut. Jedná se o známou chybu v netcdf-java, kterou jsem nahlásil a říkají, že bude opravena v příštím vydání netcdf-java.
+    * IMPROVED: Když Kalendář2.parseDateTime parses dd, hh, nebo HH, první "cifra" může být nyní prostor.
+    * Znalý problém: Začneme s ERDDAP™ 2.10, .nc ml soubory, které se snaží změnit atribut, neměňte atribut. Jedná se o známou chybu v netcdf-java, kterou jsem nahlásil a říkají, že bude stanovena v příštím vydání netcdf-java.
          
-    * BROKEN LINKS FIX: Vytvořil jsem vhodný systém pro testování na rozbité odkazy v ERDDAP™ webové stránky, takže by nyní mělo být velmi málo rozbité odkazy (alespoň od každého data vydání - často vznikají nové přerušené odkazy) .
+    * BROKEN LINKS FIX: Udělal jsem správný systém pro testování rozbitých odkazů v ERDDAP™ webové stránky, takže by mělo být velmi málo rozbitých odkazů (alespoň od každého data vydání -- často vznikají nové přerušené odkazy) .
          
-    * BUG FIX: EDDTableFromHttpGet selhala s určitými typy žádostí. Teď už ne. Díky Emmě z BODC.
+    * BUG FIX: EDDTableFromHttpGet failed with certain types of requests. Teď už ne. Díky Emmě v BODC.
          
-    * BUG FIX: Pro vyřizování některých požadavků, EDDTable udělal dočasný soubor pro každou požadovanou proměnnou, s názvem souboru končí v názvu proměnné. Pokud název proměnné byl také typem komprese (např. .Z) , ERDDAP zkusit (a selhává) k dekompresi dočasného souboru. Dočasné názvy souborů končí. Díky Mathew Biddle.
+    * BUG FIX: Pro vyřízení některých požadavků udělal EDDTable dočasný soubor pro každou požadovanou proměnnou, s názvem souboru končícím v názvu proměnné. Pokud název proměnné byl také typ komprese (např. .Z) , ERDDAP Pokusí se. (a selhala) dekomprimovat dočasný soubor. Dočasná jména souborů končí v ".. temp." Díky Mathew Biddle.
          
-    * BUG FIX: GenerateDatasetsXml a Calendar2.convertTo Java DateTime Formát je nyní mnohem méně pravděpodobné, že se špatně změní, když se snaží opravit možná neplatný formát data. Naznačuje to, že nebude změněn žádný automaticky navrhovaný formát dateTime. Díky Mathew Biddle.
+    * BUG FIX: GenerateDatasetsXml a Calendar2. convertTo Java Datum Formát jsou nyní mnohem méně pravděpodobné, že udělat nesprávnou změnu, když se snaží opravit možná neplatné datum formátu času. V neposlední řadě nebude upraven žádný auto-navrhovaný formát dataTime. Díky Mathew Biddle.
          
-    * BUG FIX: Pokud došlo k chybě při získávání obsahu ze vzdáleného URL, a pokud je obsah errorStream stlačen, ERDDAP™ Nyní správně rozkládá chybovou zprávu. Díky Bobu Simonsovi.
+    * BUG FIX: Pokud došlo k chybě při získávání obsahu ze vzdálené URL, a pokud je obsah chybStream komprimován, ERDDAP™ nyní správně rozkládá chybovou zprávu. Díky Bobovi Simonsovi.
          
-    * BUG FIX:&lt;předplatitToRemoteErdapDataset &gt; nebyl použit, když EDD... FromErddap dataset byl dětský dataset. Teď už ano. Díky Chrisovi Romsosovi.
+    * BUG FIX:&lt;appliedToRemoteErddapDataset&gt; wasn't been applied when the EDD... FromErddap soubor byl dětský soubor. Teď je. Díky Chrisi Romsovi.
          
-    * BUG FIX: GeneteDatasets Xml už si nemyslí, že zdrojový proměnný název začínající "latinou" může být zeměpisná šířka. Díky Vincentu Luzzovi.
+    * BUG FIX: GenerovatNastavení dat Xml si už nemyslí, že zdroj proměnné jméno začínající na "latin" může být zeměpisná šířka. Díky Vincentu Luzzovi.
          
-    * BUG FIX: Nyní, OutOfMemoryError při čtení datového souboru při zpracování žádosti uživatele není důvod přidat soubor do seznamu BadFiles. Díky Bobu Simonsovi.
+    * BUG FIX: Nyní, OutOfMemoryPříjezd při čtení datového souboru při zpracování požadavku uživatele není důvod přidat soubor do seznamu BadFiles. Díky Bobovi Simonsovi.
          
 
 ## Verze 2.02{#version-202} 
- (propuštěn 2019-08-21) 
+ (vydal 2019-08-21) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
-    * NEW: Existují dva způsoby, jak hledat soubory dat na více ERDDAP "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a. Pracují trochu jinak a mají různá rozhraní a možnosti.
+    * Novinka: Existují dva způsoby, jak hledat data na více ERDDAP s. Pracují trochu jinak a mají různá rozhraní a možnosti.
         
-        *    [Name ERDDAP s.html](/SearchMultipleERDDAPs.html) od Boba Simonse / NOAA   NMFS   SWFSC   ERD .
-        *    [ http://erddap.com ](http://erddap.com) z Rob Fuller / The Marine Institute of Ireland.
+        *    [HledatMultiple ERDDAP s.html](/SearchMultipleERDDAPs.html) od Boba Simonse/ NOAA   NMFS   SWFSC   ERD .
+        *    [ http://erddap.com ](http://erddap.com) od Roba Fullera/Mořského institutu Irska.
         
-Díky Tylar Murray za původní žádost.
+Díky Tylaru Murrayovi za původní žádost.
          
-    * ZLEPŠOVÁNÍ: žádost "files" systém ke stažení souboru, který je ve skutečnosti na vzdáleném místě (např. AWS S3) Nyní vede k přesměrování, takže uživatel bude skutečně stahovat data ze zdroje, namísto použití ERDDAP™ jako prostředník. Díky Andymu Zieglerovi a NOAA .
+    * ZLEPŠENÍ: žádost na "files" systém ke stažení souboru, který je ve skutečnosti na vzdáleném místě (např. AWS S3) Nyní vede k přesměrování, takže uživatel bude skutečně stáhnout data ze zdroje, místo použití ERDDAP™ jako prostředník. Díky Andymu Zieglerovi a NOAA .
          
-    * NEW: Jako příklad nových funkcí souvisejících s AWS S3-a pro usnadnění prohlížení a stahování souborů z veřejných AWS S3 kbelíků jsme vytvořili
-         [~ 110 souborů vzorků](https://registry.opendata.aws/) které umožňují komukoliv procházet obsah téměř všech
-         [AWS S3 Otevřené datové koše](https://registry.opendata.aws/) . Pokud kliknete na "files" odkaz pro některý z těchto výběrových souborů dat, můžete procházet adresář strom a soubory v tomto S3 kbelíku. Vzhledem k tomu, jak tyto soubory dat fungují, tyto seznamy adresářů jsou vždy dokonale up- to- date, protože ERDDAP™ dostane je na let. Pokud kliknete na strom adresáře na skutečné jméno souboru a kliknete na název souboru, ERDDAP™ přesměruje váš požadavek na AWS S3, takže si můžete stáhnout soubor přímo z AWS. ERDDAP™ Administrátoři mohou
-         [přečíst návod, jak to udělat pro ostatní S3 kbelíky](/docs/server-admin/datasets#working-with-aws-s3-files) . Díky Andymu Zieglerovi a NOAA .
+    * NOVINKA: Jako příklad nových funkcí souvisejících s AWS S3 a pro usnadnění prohlížení a stahování souborů z veřejných kbelíků AWS S3 jsme vytvořili
+         [~110 souborů vzorků](https://registry.opendata.aws/) který umožňuje každému procházet obsah téměř všech
+         [AWS S3 Otevřít datové vědro](https://registry.opendata.aws/) . Pokud kliknete na "files" odkaz na některý z těchto souborů, můžete procházet adresář strom a soubory v tomto S3 kbelíku. Vzhledem k tomu, jak tyto soubory dat fungují, tyto seznamy adresářů jsou vždy dokonale aktuální, protože ERDDAP™ Dostane je do letadla. Pokud kliknete na strom adresáře na aktuální název souboru a kliknete na název souboru, ERDDAP™ přesměruje váš požadavek na AWS S3 tak, abyste mohli soubor stáhnout přímo z AWS. ERDDAP™ Správci mohou
+         [Přečtěte si návod, jak to udělat pro ostatní S3 kbelíky](/docs/server-admin/datasets#working-with-aws-s3-files) . Díky Andymu Zieglerovi a NOAA .
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
     * Věci, které musíte udělat: žádné
          
-    * ZLEPŠENO: ERDDAP metoda ukládání polí strun (StringArray) je nyní mnohem efektivnější paměť. Řetězec Pole se používají po celou dobu ERDDAP™ , zejména při čtení tabulkových souborů ASCII. Také, další změny, aby čtení CSV / TSV / SSV ASCII, columnar ASCII, a jsonlCSV tabulky datových souborů rychlejší a mnohem účinnější paměti. Výsledkem je: pro soubor 764 MB ASCII pro testování dat (ale stlačený na 52MB .gz soubor) s 3,503,266 řádky a 33 sloupce, maximální využití paměti šel z 10GB dolů na 0,6GB (na vrcholu) . Čas na čtení šel od ~ 7 minut (ale velmi se liší v tom, kolik fyzické paměti je v počítači) dolů na ~ 36 sekund (včetně 10 s pro zjednodušení () který je používán pouze GenetateDatasets Xml) . Mnoho dalších míst v ERDDAP™ bude mít prospěch z této zvýšené účinnosti paměti. Díky Tylar Murray a Mathew Biddle.
+    * ZLEPŠENÍ: ERDDAP 's metodou ukládání polí řetězců (StringArray) je nyní mnohem efektivnější paměť. String Array se používají po celou dobu ERDDAP™ , zejména při čtení tabulek ASCII datových souborů. Také další změny dělají čtení CSV/TSV/SSV ASCII, sloupcové ASCII a jsonlCSV tabulární datové soubory rychlejší a mnohem efektivnější paměť. Výsledkem je: pro soubor s datovým testem 764 MB ASCII (ale komprimované na 52MB .gz soubor) s 3,503,266 řádků a 33 sloupců, maximální využití paměti šlo z 10GB dolů na 0.6GB (na vrcholu) . Čas číst to šlo z ~7 minut (ale velmi se liší s tím, kolik fyzické paměti je v počítači) až na ~36 sekund (včetně desetin pro zjednodušení () který používá pouze GenerateDatasets Xml) . Mnoho dalších míst v ERDDAP™ bude mít z této zvýšené účinnosti paměti prospěch. Díky Tylaru Murrayovi a Mathewovi Biddleovi.
         
-Prozkoumal jsem jiné řešení. (ukládání strun do StringArray jako UTF-8-kódovaných bytových polí) . To snižuje využití paměti o ~ 33%, ale za cenu ~ 33% zpomalení. Ve srovnání se systémem, který je nyní používán, se to zdálo jako špatný obchod. Je jednodušší dát počítači více paměti. (koupit více paměti ~ $200) než to udělat rychleji. (koupit celý nový počítač) .
+Prozkoumal jsem jiné řešení. (ukládání řetězců v StringArray jako UTF-8-kódovaná pole byte) . To snižuje využití paměti dalších ~33%, ale za cenu zpomalení ~33%. Ve srovnání se systémem, který se nyní používá, to vypadalo jako špatný obchod. Je jednodušší dát počítači více paměti (koupit více paměti za $200) než aby to bylo rychlejší (koupit úplně nový počítač) .
         
-Pokud je to vhodné, je stále dobrý nápad rozdělit obrovské tabulky datových souborů do několika menších souborů na základě některých kritérií, jako je stationID nebo čas. ERDDAP™ bude muset často otevřít pouze jeden z malých souborů v reakci na požadavek uživatele, a tak být schopen reagovat mnohem rychleji.
+Pokud je to pohodlné, je stále dobrý nápad rozdělit obrovské tabulkové datové soubory do několika menších souborů na základě některých kritérií, jako je stationID a/nebo čas. ERDDAP™ často bude muset otevřít pouze jeden z malých souborů v reakci na žádost uživatele, a tak být schopen reagovat mnohem rychleji.
         
-    * ZLEPŠENO: Nyní existuje [ ERDDAP™ Dokumentace AWS S3](/docs/server-admin/datasets#working-with-aws-s3-files) , který popisuje, jak se dostat ERDDAP™ pracovat s datovými soubory v AWS S3 kýblech.
+    * Teď už ano. [ ERDDAP™ AWS S3 dokumentace](/docs/server-admin/datasets#working-with-aws-s3-files) , Který popisuje, jak se dostat ERDDAP™ pracovat s datovými soubory v kbelících AWS S3.
 Také, ERDDAP™ nyní používá nové funkce v AWS S3 Java API.
-Také, ERDDAP™ nyní umožňuje AWS S3 URL zahrnout další znaky (období, pomlčka, podtržení) ve jménech kbelíků.
-Také, ERDDAP™ nyní vyžaduje, aby AWS S3 kbelík URL být identifikován zvláštním způsobem:
+Také, ERDDAP™ nyní umožňuje AWS S3 URL obsahovat další znaky (perioda, pomlčka, podtržení) v kýblových jménech.
+Také, ERDDAP™ nyní vyžaduje, aby AWS S3 kbelík URL byly identifikovány určitým způsobem:
            https://_bucketName_.s3._aws-region._amazonaws.com/_prefix_/   
-kde prefix je volitelný.
+kde je předpona nepovinná.
 Díky Andymu Zieglerovi a NOAA .
          
-    * ZLEPŠENO: GeneteData Xml nyní léčí další časté missing\\_value s stand- iny jako chybějící hodnoty, a proto je pravděpodobnější převést sloupec na numerický datový typ. Také, PrimentiveArray.simply () Nyní protokoly, které konkrétní hodnota dat způsobil, že se k danému sloupci jako sloupec řetězců. Díky Mathew Biddle.
+    * ZLEPŠIT: GenerovatNastavení dat Xml nyní léčí další časté missing\\_value s stand-ins jako chybějící hodnoty, a tak je pravděpodobnější převést sloupec na numerický datový typ. Také PrimitiveArray.simplify () Nyní loguje, která konkrétní hodnota dat způsobila, že ji považoval za sloupec řetězců. Díky Mathew Biddle.
          
-    * ZLEPŠENO:&lt;requestBlacklist &gt; nyní podporuje.\\*.\\*  (nebo\\*:\\*pro IPv6) na konci IP adres tak, abyste mohli čerpat větší kus IP adres, např. 110.52.\\*.\\*  (Čína Unicom Tianjin) . Viz dokumentace pro [&lt;requestBlacklist &gt;] (/ docs / server- admin / datasets # requestblacklist) Díky China Unicom a China Telecom.
+    * ZLEPŠENÍ:&lt;requestBlacklist&gt; nyní podporuje .\\*.\\*  (nebo:\\*:\\*pro IPv6) na konci IP adres, abyste mohli vymazat větší část IP adres, např. 110.52.\\*.\\*  (Čína Unicom Tianjin) . Viz dokumentace pro [&lt;requestBlacklist&gt;] (/docs/server-admin/datasets#requestblacklist) Díky China Unicom a China Telecom.
          
-    * ZLEPŠENO: Pokud zdroj datového souboru neuvádí "institution" atribut, GeneteDatasets Xml a načítání Dataset nyní získat z atributu "creator\\ _ institution" (je-li k dispozici) . Díky Micahu Wengrenovi.
+    * ZLEPŠENÉ: Pokud zdroj datového souboru nespecifikuje "institution" atribut, GenerateDatasets Xml a loadDataset nyní získat z atributu "creator\\_institution" (je-li k dispozici) . Díky Micahovi Wengrenovi.
          
-    * BUG FIX: standardizovat Co nebylo vždy aplikováno na soubory ASCII.
-EDDTable také správně neodpovídal omezením časových hodnot, když zdroj měl časové hodnoty String a standardizoval Co bylo použito.
-Díky Palomě de la Vallee.
+    * BUG FIX: standardizovat Co nebylo vždy aplikováno na datové soubory ASCII.
+Také, EDDTable správně neřešil omezení časových hodnot, když zdroj měl String časové hodnoty a standardizovat Co bylo použito.
+Díky Paloma de la Vallee.
         
-Předtím jsem jasně neřekl, že byste měli použít standardizaci. Jaké funkce, když je skutečně potřebujete (např., když různé zdrojové soubory ukládají hodnoty času různými způsoby) , protože některé požadavky na soubory dat, které používají standardizovat Co bude zpracováno trochu pomaleji.
+Neřekl jsem to jasně předtím: měl bys použít standardizaci. Jaké funkce, když je skutečně potřebujete (např. když různé zdrojové soubory ukládají hodnoty času různými způsoby) , protože některé žádosti o soubory údajů, které používají standardizaci Co bude zpracováno trochu pomaleji.
         
-    * BUG FIX: Chyba v kódu používaném EDDGrid FromNcFiles způsobil selhání s .nc 4 a .hdf 5 souborů, které mají "dlouhý" (int64) proměnné. Teď je to napraveno. Díky Friedlemannu Wobusovi.
+    * BUG FIX: Chyba v kódu použitém EDDGrid FromNcFiles způsobil, že selhal s .nc 4 a .hdf 5 souborů, které mají "dlouhé" (int64) proměnné. Tohle je teď spravené. Díky Friedemann Wobus.
          
-    * BUG FIX: Malé změny souborů ISO 19115, aby byl jiný validátor šťastný. Díky Chrisovi MacDermaidovi a Anně Milanové.
+    * BUG FIX: Malé změny souborů ISO 19115, aby byl jiný validátor spokojen. Díky Chrisi MacDermaidovi a Anně Milanové.
          
 
 ## Verze 2.01{#version-201} 
- (propuštěn 2019-07-02) 
+ (vydal 2019-07-02) 
 
 *    **Nové funkce a změny (pro uživatele) :** 
     * Žádné.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * BUG FIX: Chyba v kódu, který generuje formulář pro přístup k datům tabledap datové soubory způsobily, že webová stránka byla prázdná pro některé datové soubory. Také jsem vylepšil manipulaci s neočekávanými chybami na všech HTML stránkách, takže budou (obvykle) zobrazit chybovou zprávu. Díky Marcu Albovi.
-    * ZLEPŠENO: GeneteData Xml už netiskne dlouhé varování na vrcholu výstupu. Místo toho, prosím viz [Name Datové soubory Xml výstup](/docs/server-admin/datasets#you-need-to-edit-the-output-from-generatedatasetsxml-to-make-it-better) . Díky Stevenu Baumovi.
-    * ZLEPŠENO: GeneteData Xml nyní činí mírně odlišná doporučení v různých situacích pro&lt;updateEveryNMillis &gt; pro EDD... Ze souborů datových souborů. Také, GenerateDatasets Xml nyní odrazuje původní "extrakt" systém pro soubory EDDTableFromFiles.
+    * BUG FIX: Chyba v kódu, který generuje formulář pro přístup k datům tabledap Soubory dat způsobily, že webová stránka byla pro některé soubory dat prázdná. Také jsem zlepšil manipulaci s neočekávanými chybami na všech HTML stránkách, takže budou (obvykle) zobrazí chybovou zprávu. Díky Marcovi Albovi.
+    * ZLEPŠIT: GenerovatNastavení dat Xml již nevytiskne zdlouhavé varování na vrcholu výstupu. Místo toho, prosím, podívejte se [Editace generování Datové soubory Xml výstup](/docs/server-admin/datasets#you-need-to-edit-the-output-from-generatedatasetsxml-to-make-it-better) . Díky Stevenu Baumovi.
+    * ZLEPŠIT: GenerovatNastavení dat Xml nyní poskytuje mírně odlišná doporučení v různých situacích pro&lt;updatEveryNMillis&gt; pro EDD...From...Files datacases. Také generovatDatasety Xml nyní odrazuje původní "extrahovací" systém pro datové soubory EDDTableFromFoles.
 
 ## Verze 2.00{#version-200} 
  (propuštěn 2019-06-26) 
@@ -881,88 +898,88 @@ Předtím jsem jasně neřekl, že byste měli použít standardizaci. Jaké fun
     * Omlouváme se za dlouhé zpoždění potřebné k dokončení této verze.
 Díky za trpělivost.
          
-    * Dobrou zprávou je, že čas navíc byl použit k doplnění více funkcí, které uživatelé požadovali. Špatná zpráva je, že ani se zpožděním nebyly přidány všechny požadované funkce. Je nám líto, ale zdálo se, že je důležitější, aby se toto propuštění ven, než se zdržovat více (navždy?) neustále přidávat nové funkce. Slibujeme, že se v budoucnu vrátíme k častějším únikům.
+    * Dobrá zpráva je, že čas navíc byl použit k přidání více funkcí, které uživatelé požadovali. Špatnou zprávou je, že i přes zpoždění, ne všechny požadované funkce byly přidány. Omlouváme se, ale zdálo se mi důležitější dostat tohle propuštění ven, než oddálit víc. (Navždy?) neustále přidávat nové funkce. Slibujeme, že se v budoucnu vrátíme k častějším verzím.
          
-    * "Verze 2? Jsou zde velké změny a neslučitelnost?"
-Velké nové funkce? Ano.
-Velké inkompatibilní nebo změny pro administrátory nebo uživatele? Ne.
-Přeskočili jsme z v1.82 na v2.00:
-        * částečně na oslavu 10 let (Nyní 11) od prvního veřejného vydání ERDDAP™   (v1.00 na 2008-05-06, což navenek vypadalo pozoruhodně jako v2.00) . V té době, ERDDAP™ přešla z jednoho zařízení na téměř 100 zařízení v nejméně 12 zemích (Austrálie, Belgie, Kanada, Francie, Indie, Irsko, Itálie, Jihoafrická republika, Španělsko, Thajsko, Velká Británie, USA) .
-        * částečně označit významný doplněk zcela novým směrem: ERDDAP™ nyní má datový ingest systém pro zpracování stávajících služeb datového serveru (viz [EDDTableFromHttpGet](#eddtablefromhttpget) ) ,
-        * a částečně proto, že to nebyl velký skok z 1,82 na 2,00 číselně, takže to vypadalo jako správný čas.
+    * "Verze 2?&#33; Existují velké změny a inkompatibility?"
+Velké nové rysy? Ano.
+Velké inkompatibility nebo změny pro administrátory nebo uživatele? Ne.
+Skočili jsme z v1.82 na v2.00:
+        * částečně oslavit 10 let (Nyní 11) od prvního zveřejnění ERDDAP™   (v1.00 dne 2008-05-06, který navenek vypadal pozoruhodně jako v2.00) . V té době, ERDDAP™ přešla z jednoho zařízení na téměř 100 zařízení ve 12 zemích (Austrálie, Belgie, Kanada, Francie, Indie, Irsko, Itálie, Jihoafrická republika, Španělsko, Thajsko, Spojené království, USA) .
+        * částečně označovat hlavní doplněk zcela novým směrem: ERDDAP™ nyní má data ingest systém, který se bude hodit ke stávajícím službám datového serveru (viz [EDDTableFromHttpGet](#eddtablefromhttpget) ) ,
+        * A částečně proto, že to nebyl velký skok z 1.82 na 2.00 číselně, takže tohle vypadalo jako správný čas.
              
-    * Další dobrou zprávou je, že nyní existují dvě další skupiny přispívající kód ERDDAP™   (v této verzi a s indikacemi budou pokračovat) Rob Fuller a Adam Leadbetter z Irského námořního institutu a Roland Schweitzer z PMEL a Weathertop Consulting. Děkuji mnohokrát. Je pravda, že pracují na projektech, které si sami vyberou, ale to je klasický model rozvoje open-source -- skupiny přispívají kódem pro funkce, které by nejvíce rádi viděli přidány. Přidaná výhoda pro přispěvatele: dostanou se k použití nových funkcí, jakmile jsou dokončeny; nemusí čekat na další vydání ERDDAP . Vaše skupina také může přispět&#33; Viz [ ERDDAP™ Průvodce programátorem](/docs/contributing/programmer-guide) .
+    * Další dobrou zprávou je, že nyní existují dvě další skupiny přispívající kód ERDDAP™   (v této verzi a s indikacemi budou pokračovat) : Rob Fuller a Adam Leadbetter z irského námořního institutu a Roland Schweitzer z PMEL a Weathertop Consulting. Děkuji mnohokrát. Je pravda, že pracují na projektech podle vlastního výběru, ale to je klasický vývojový model open-source - skupiny přispívají kód pro funkce, které by nejvíce chtěli vidět přidány. Přidaná výhoda pro přispěvatele: začnou používat nové funkce, jakmile skončí; nemusí čekat na další vydání ERDDAP . Vaše skupina je také vítána, aby přispěla&#33; Viz [ ERDDAP™ Průvodce programátorem](/docs/contributing/programmer-guide) .
          
-    * Doufáme, že se vám bude líbit. ERDDAP™ v2.00. Těšíme se na dalších 10 let ERDDAP™ vývoj a stále větší využití po celém světě.
+    * Doufáme, že se vám bude líbit. ERDDAP™ V2.00. Těšíme se na dalších 10 let ERDDAP™ rozvoj a stále větší využití po celém světě.
          
 *    **Nové funkce a změny (pro uživatele) :**   
      
     * NEW: orderByMean filtr
-místo tabledap soubory dat vypočítají prostředky pro určené skupiny. Také, všechny orderBy Volby nyní podporují další způsob definování skupin: _ numicVariable \\[ / číslo \\[ časové jednotky \\]  \\[ : ofset \\]  \\] _ např. čas / 1den nebo hloubka / 10: 5. Například, stationID , time, waterTemp & orderByMean  (" stationID , čas / 1 den ") by třídit výsledky podle stationID a čas, pak vypočítat a vrátit průměr WaterTemp pro každého stationID Každý den. To jsou pozoruhodně užitečné a výkonné nové funkce. Nový kód pro tyto funkce a změny starého kódu přispěli Rob Fuller a Adam Leadbetter z irského námořního institutu a předložili jej prostřednictvím Git. Děkuji. Rob a Adam&#33;
+místo tabledap Datové soubory vypočítají prostředky pro určené skupiny. Také, všechny orderBy Možnosti nyní podporují další způsob definování skupin: _numerickýVariable \\[ /číslo \\[ timeUnits \\]  \\[ :offset \\]  \\] - např. čas/1 den nebo hloubka/10:5. Například, stationID , čas, vodaTemp& orderByMean  (" stationID , čas/1 den") seřadit výsledky podle stationID a čas, pak vypočítat a vrátit průměr vodyTemp pro každý stationID za každý den. To jsou pozoruhodně užitečné a silné nové rysy. Nový kód pro tyto funkce a změny starého kódu přispěl Rob Fuller a Adam Leadbetter z irského námořního institutu a předložil prostřednictvím Git. Děkuji. Rob a Adam&#33;
          
-    * NOVÝ: typ výstupního souboru pro tabulky souborů dat: [.data Tabulka](https://developers.google.com/chart/interactive/docs/reference#dataparam) ,
-soubor JSON formátovaný pro použití s Google Visualization klientská knihovna ( Google Charts ) . Kód k tomu přispěl Roland Schweitzer a předložil prostřednictvím Git. Děkuji. Rolande&#33;
+    * NOVINKA: typ výstupního souboru pro soubor tabulky: [.data Tabulka](https://developers.google.com/chart/interactive/docs/reference#dataparam) ,
+JSON soubor formátovaný pro použití s Google Visualization knihovna klientů ( Google Charts ) . Kód k tomu přispěl Rolandem Schweitzerem a předložil jej prostřednictvím Gitu. Děkuji. Rolande&#33;
          
-    * NOVÝ: typ výstupního souboru pro tabulky souborů dat: [ .jsonlCSV1 ](https://jsonlines.org/examples/) ,
-který je jako stávající .jsonlCSV možnost, ale s názvy sloupců na prvním řádku. Díky Eugene Burgerovi.
+    * NOVINKA: typ výstupního souboru pro soubor tabulky: [ .jsonlCSV1 ](https://jsonlines.org/examples/) ,
+který je jako existující .jsonlCSV možnost, ale s názvy sloupců na prvním řádku. Díky Eugenovi Burgerovi.
          
-    * NEW: Pokud to administrátor umožňuje, uživatelé se nyní mohou přihlásit s jejich [ORCID](https://orcid.org) Účet.
-Jedná se o OAuth 2.0 autentizační systém, stejně jako Google autentizace. ORCID je ve velké míře využíván výzkumníky k jedinečné identifikaci. Účty ORCID jsou zdarma a nemají problémy s soukromí, které mají účty Google. Viz ERDDAP s [Pokyny pro ověřování pravosti orcidu](/docs/server-admin/additional-information#orcid) . Díky BCO-DMO (Adam Shepard, Danie Kinkade, atd.) .
+    * NOVINKA: Pokud to administrátor dovolí, uživatelé se nyní mohou přihlásit svým [ORCID](https://orcid.org) Účet.
+Jedná se o ověřovací systém OAuth 2.0, podobně jako autentizace Google. ORCID je široce používán výzkumníky k jedinečné identifikaci. Účty ORCID jsou zdarma a nemají problémy s soukromím, které Google účty mají. Viz ERDDAP 's [Pokyny pro ověřování orcid](/docs/server-admin/additional-information#orcid) . Díky BCO-DMO (Adam Shepard, Danie Kinkade atd.) .
          
-    * NEW: Nový URL konvertor konvertuje out- of- date URL do up- to -date URL.
-Viz... / erddap / convert / urls.html na libovolné ERDDAP™ instalace, např.
-         [tento odkaz na převodník v ERD   ERDDAP ](https://coastwatch.pfeg.noaa.gov/erddap/convert/urls.html) . To by mělo být užitečné pro správce dat. Používá se také interně pomocí GenetateDatasetsXml. Díky Bobu Simonsovi a Sharon Mesickové.
+    * NOVINKA: Nový URL převodník přeměňuje mimoaktuální URL adresy na aktuální URL adresy.
+Viz .../erddap/convert/urls.html na všech ERDDAP™ instalace, např.
+         [Tento odkaz na převodník v ERD   ERDDAP ](https://coastwatch.pfeg.noaa.gov/erddap/convert/urls.html) . To by mělo být užitečné pro správce dat. Používá se také interně pomocí GenerateDatasetsXml. Díky Bobovi Simonsovi a Sharon Mesickové.
          
-    * ZLEPŠENÉ: [Převodník času](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) Nyní má možnosti převést jakýkoliv společný řetězec čas do ISO8601 řetězec čas, nebo převést UDUNITS -jako časová jednotka řetězec do správné UDUNITS řetězec časových jednotek. To by také mělo být užitečné pro ERDDAP™ administrátoři, kteří potřebují vědět, jaký formát specifikovat pro atribut "jednotky" pro proměnné času řetězce. To je také interně využíváno také GenerateDatasetsXml a standardizeJaké funkce EDDTableFromFiles. Díky Bobu Simonsovi.
+    * ZLEPŠENÉ: [Časový převodník](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) Nyní má možnosti převést libovolný společný čas řetězce na ISO8601 string čas, nebo převést UDUNITS -jako časové jednotky navléknout do správné UDUNITS Časové jednotky řetězec. To by také mělo být užitečné ERDDAP™ Správci, kteří potřebují vědět, jaký formát zadat pro atribut "jednotky" pro proměnné času řetězce. To se také používá interně prostřednictvím GenerateDatasetsXml a standardizovatCo funkce EdDtableFromFoles. Díky Bobovi Simonsovi.
          
-    * NEW: [Převodník jednotek](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) má novou možnost "Standardizovat UDUnits".
-Například, "deg\\ _ C / m" a "stupňů\\ _ C meters-1" jsou oba převedeny na
-"titul\\ _ C m-1." Tato funkce je také používána normou Jaké funkce EDDTableFromFiles. Díky Bobu Simonsovi.
+    * NEW: [Převodník jednotek](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) má novou možnost "Standardizace UDUnits."
+Například "deg\\_C/m" a "degrees\\_C metres-1" jsou obě převedeny na
+"stupeň\\_C m-1." Tato funkce je také využívána standardizouCo funkce EDDTableFromFoFoles. Díky Bobovi Simonsovi.
          
-    * NOVÉ: Pro grafy (jiné než povrchové grafy) na griddapu a tabledap 's Make A Graph webové stránky, kdy osa x není časová osa, pokud je viditelná pouze podmnožina rozsahu proměnné x osy, jsou nyní tlačítka nad grafem pro posunutí levicové nebo pravé vlny X Axis. Díky Carrie Wall Bell / projektu Hydrophone.
+    * Novinka: Pro grafy (jiné než povrchové grafy) na Griddapu a tabledap 's Make A Graph webové stránky, když osa x není časová osa, pokud je viditelná pouze podmnožina rozsahu proměnné osy x, jsou nyní tlačítka nad grafem pro posun osy X doleva nebo doprava. Díky Carrie Wall Bell / Hydrophone projekt.
          
-    * NEW: Pro grafy může nyní osa X a / nebo Y použít stupnici log.
-Uživatelé mohou ovládat měřítko osy Y pomocí nového widgetu na mřížce a tabledap Vytvořte si grafické stránky. Viz [.xRange a. yRange dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#xRange) . Díky Carrie Wall Bell / projektu Hydrophone.
+    * Novinka: Pro grafy může nyní osa X a/nebo Y použít stupnici záznamu.
+Uživatelé mohou Měřítko Y Axis ovládat pomocí nového pad-down widgetu na griddap a tabledap Vytvořit grafické webové stránky. Viz [.xRange a . yRange dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#xRange) . Díky Carrie Wall Bell / Hydrophone projekt.
          
-    * ZLEPŠENO: ERDDAP™ nyní lépe využívá různých HTTP chybových kódů a nyní vrací(OPeN)DAPv2.0-formátované hlášení o chybě. Viz [podrobnosti](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#Errors) . Díky Antoine Quericovi a Aurelie Briandové.
+    * ZLEPŠENÍ: ERDDAP™ Nyní lépe využívá různých chybových kódů HTTP a nyní vrací(OPeN)DAPv2.0-formátovaná chybová zpráva užitečné. Viz [podrobnosti](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#Errors) . Díky Antoine Quericovi a Aurelii Briandové.
          
-    * ZLEPŠENO: Nepoužívat Netcdf-java / c nebo jiné softwarové nástroje pro připojení k .nc nebo .hdf spisy doručené ERDDAP / soubory / systém jako by to byly místní soubory. ERDDAP™ Nyní tyto požadavky odmítá. Je příšerně neefektivní a často způsobuje i jiné problémy. Místo toho:
+    * IMPROVED: Nepoužívejte Netcdf-java/c nebo jiné softwarové nástroje pro připojení k .nc nebo .hdf soubory podávané ERDDAP 's /soubory/ systém, jako by to byly místní soubory. ERDDAP™ Nyní tyto žádosti odmítá. Je strašně neefektivní a často způsobuje i jiné problémy. Místo toho:
         
-        * Použití(OPeN)DAPklientský software pro připojení k ERDDAP s DAP služby pro datový soubor (které mají / griddap / nebo / tabledap / v URL) . To je to DAP je pro a dělá tak dobře.
-        * Nebo použijte formulář datového přístupu datového souboru k žádosti o podmnožinu dat.
-        * Nebo, pokud potřebujete celý soubor nebo opakovaný přístup po dlouhou dobu, použijte curl , wget , nebo váš prohlížeč stáhnout celý soubor, pak přístup k datům z místní kopie souboru.
+        * Použití(OPeN)DAPklientský software pro připojení k ERDDAP 's DAP služby pro datový soubor (které mají /griddap/ nebo / tabledap / v URL) . To je ono. DAP je pro a dělá tak dobře.
+        * Nebo použijte formulář pro přístup k datům datového souboru k žádosti o podmnožinu dat.
+        * Nebo, pokud potřebujete celý soubor nebo opakovaný přístup po dlouhou dobu, použijte curl , wget , nebo váš prohlížeč ke stažení celého souboru, pak přístup k datům z místní kopie souboru.
         
           
          
-    * ZLEPŠENÉ: ERDDAP™ homepage, Full Text Search je nyní nad "Zobrazit seznam všech datových souborů", protože je to nejlepší výchozí bod pro většinu uživatelů. Díky Didieru Mallarinovi a Maurici Libesovi.
+    * ZLEPŠENÉ: ERDDAP™ homepage, Full Text Search is now above "View a List of All Datasets," protože to je nejlepší výchozí bod pro většinu uživatelů. Díky Didier Mallarino a Maurice Libes.
          
-    * ZLEPŠENO: Na DataProviderForm3.html tam jsou nyní dropdown seznamy společných standard\\_name "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a. Díky někomu na setkání IOOS DMAC.
+    * ZLEPŠENÍ: Na DataProviderForm3.html Teď jsou tady seznamy společných míst. standard\\_name s. Díky někomu na schůzi IOOS DMAC.
          
-    * ZLEPŠENO: Na / soubory / webové stránky je nyní odkaz na novou sekci "Co s těmito soubory mohu udělat?" v sekci / soubory / dokumentace. Tato část popisuje různé typy souborů a navrhuje, jak s nimi pracovat. Díky Maurici Libesovi.
+    * IMPROVED: Na webových stránkách /files/ je nyní odkaz na nový "Co mohu dělat s těmito soubory?" oddíl /files/ dokumentace. Tato sekce popisuje různé typy souborů a dává návrhy, jak s nimi pracovat. Díky Maurice Libesovi.
          
-    * ZLEPŠENÉ: Téměř každý požadavek ERDDAP™ Měl by být alespoň trochu rychlejší, a někdy mnohem rychlejší.
+    * Téměř každý požadavek na ERDDAP™ Měl by být alespoň trochu rychlejší a někdy mnohem rychlejší.
          
-    * BUG FIX: Za určitých okolností, kdy soubor údajů EDDTable uložil data v některých typech .nc soubory, globální atribut "id" byl nastaven na navrhovaný název souboru, který obsahuje hash, aby byl jedinečný pro tento požadavek. Nyní je "id" správně ponecháno beze změny. (pokud je uvedeno) nebo nastaven na datový soubor datasetID   (není-li uvedeno) . Díky Johnu Maurerovi.
+    * BUG FIX: Za určitých okolností, když soubor údajů EDDTable ukládá data v některých typech .nc soubory, globální atribut "id" byl nastaven na navrhovaný název souboru, který zahrnuje hash, aby byl jedinečný pro tuto žádost. Nyní je "id" správně ponecháno beze změny (je-li uvedeno) nebo nastaven na soubor údajů datasetID   (není-li uvedeno) . Díky Johnu Maurerovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    * TO: Toto vydání bude nějakou dobu trvat a pracovat od vás. Buďte prosím trpěliví a plánujte několik hodin na provedení požadovaných změn a několik hodin na experiment s novými funkcemi.
+    * TO DO: Toto vydání bude chvíli trvat a pracovat od vás. Buďte prosím trpěliví a plánujte několik hodin na provedení požadovaných změn a několik hodin na experimentování s novými funkcemi.
          
-    * Chcete-li: Pro bezpečnost, udělejte záložní kopii vašeho aktuálního setup.xml a datasets.xml soubory, takže se můžete vrátit k nim v nepravděpodobném případě, kdy je třeba vrátit ERDDAP™ v1.86.
+    * TO DO: Pro bezpečnost udělejte záložní kopii aktuálního nastavení.xml a datasets.xml Soubory, abyste se k nim mohli vrátit v nepravděpodobném případě, kdy potřebujete vrátit ERDDAP™ v1.82.
          
-    * TO: Doporučené Java je nyní AdoptOpenJDK je OpenJDK 8 (LTS) + HotSpot.
-Toto je varianta open source Java která nemá žádná omezení pro své použití (na rozdíl od Oracle s Java distribuce) . Je odvozen od Oracle s Java v on-going způsobem, Oracle požehnání. Z bezpečnostních důvodů je důležité zachovat Java verze up- to- date. Viz ERDDAP s [ Java návod k montáži](/docs/server-admin/deploy-install#java) .
+    * DO: Doporučené Java je nyní AdopOpenJDK OpenJDK 8 (LTS) + HotSpot.
+Jedná se o open source variantu Java které nemá žádná omezení pro jeho použití (na rozdíl Oracle 's Java distribuce) . Je odvozena z Oracle 's Java probíhajícím způsobem, Oracle 's požehnáním. Z bezpečnostních důvodů je důležité, aby vaše Java aktuální verze. Viz ERDDAP 's [ Java Návod k instalaci](/docs/server-admin/deploy-install#java) .
          
-    * TO DO: AdoptOpenJDK 's Java potřebuje malý doplněk k instalaci Tomcat: viz [Pokyny k úschově zdrojů](/docs/server-admin/deploy-install#contentxml) . Myslím, že to je náhrada za nastavení -XX: MaxPermSize, které (Přijmout) OpenJDK už nepodporuje.
+    * DO: APPOpenJDK Java potřebuje malý doplněk k instalaci Tomcat: viz [Zdroje Cache pokyny](/docs/server-admin/deploy-install#contentxml) . Myslím, že je to náhrada za nastavení -XX:MaxPermSize, které (Přijmout) OpenJDK již nepodporuje.
          
-    * TO: Nový výchozí a doporučuje&lt;fontFamily &gt; nastavení v setup.xml je
+    * DO: Nové výchozí a doporučit&lt;fontFamily&gt; nastavení v setup.xml je
 DejaVu Sans, které jsou zabudovány do AdoptOpenJDK Java . Viz
-         [upravené pokyny pro instalaci písma](/docs/server-admin/deploy-install#fonts) .
+         [revidované pokyny pro instalaci písma](/docs/server-admin/deploy-install#fonts) .
          
-    * TO DO: Mnoho značek se pohybuje od setup.xml do datasets.xml . Výhodou je, že můžete změnit jejich hodnoty, zatímco ERDDAP™ je spuštěn, bez restartování ERDDAP . Především se můžete snadno změnit.&lt;startBodyHtml5 &gt; pro zobrazení dočasné zprávy na webu ERDDAP™ úvodní strana (např. "Podívejte se na nový datový soubor JPL MUR SST v4.1"... nebo "This ERDDAP™ bude offline pro údržbu 2019-05-08T17: 00: 00 PDT až 2019-05-08T20: 00: 00 PDT. ") . Pokud / když změníte tyto značky datasets.xml , Změny nabudou účinnosti příště ERDDAP™ má být datasets.xml .
+    * DO: Mnoho značek se pohybuje od nastavení.xml do datasets.xml . Výhodou je, že můžete změnit jejich hodnoty, zatímco ERDDAP™ běží, bez restartu ERDDAP . Jednoduše se můžete změnit.&lt;spustitBodyHtml5&gt; pro zobrazení dočasné zprávy na ERDDAP™ domovská stránka (např. "Podívejte se na nový soubor dat JPL MUR SST v4.1 ..." nebo "Toto ERDDAP™ bude offline pro údržbu 2019-05-08T17:00:00 PDT až 2019-05-08T20:00:00 PDT.") . Pokud změníte tyto značky v datasets.xml , změny nabudou účinku příště ERDDAP™ čte datasets.xml .
          
         
-        1. Kopírovat tento obsah do vašeho datasets.xml soubor (kdekoli v blízkosti spuštění souboru, po&lt;erddapDatasets &gt;):
+        1. Zkopírujte tento obsah do svého datasets.xml soubor (kdekoliv v blízkosti začátku souboru, po&lt;erddapDatasets&gt;:
 ```
             <!-- The tags below are described in setupDatasetsXml.html.
                  The defaults listed below are as of ERDDAP™ v2.00. -->
@@ -994,157 +1011,157 @@ DejaVu Sans, které jsou zabudovány do AdoptOpenJDK Java . Viz
             <standardPrivacyPolicy></standardPrivacyPolicy>
 ```
 
-        2. One- by- one, zkopírujte hodnotu (pokud existuje) pro každou z těchto značek z vašeho setup.xml souboru do nového tagu, který jste právě vložili (výše) n datasets.xml . Například, pokud jste použili hodnotu 30 pro&lt;cacheMinut &gt; v setup.xml, měli byste zkopírovat tuto hodnotu do nového&lt;cacheMinut &gt; tag in datasets.xml   (i když je-li hodnota stejná jako nová výchozí hodnota, je nejlepší nechat značku v datasets.xml prázdný) .
+        2. Jeden po druhém, zkopírujte hodnotu (pokud existuje) pro každý z těchto značek ze souboru setup.xml do nové značky, kterou jste právě vložili (nad) v datasets.xml . Například, pokud jste použili hodnotu 30 pro&lt;cacheMinutes&gt; v setup.xml, měli byste zkopírovat tuto hodnotu do nového&lt;cacheMinutes&gt; tag in datasets.xml   (I když je hodnota stejná jako nová výchozí hodnota, je nejlepší nechat tag v datasets.xml prázdný) .
             
-Pokud se vaše hodnota liší od nové navrhované výchozí (jiné než pro&lt;startBodyHtml5 &gt; a&lt;ShortDescriptionHtml &gt;, které jsou užitečné pro přizpůsobení vašeho ERDDAP™ instalace), prosím zvažte přechod na nové výchozí hodnoty. To platí zejména pro&lt;partialRequestMaxBytes &gt; a&lt;partialRequestMaxCells &gt;, kde se v průběhu let významně změnila výchozí / navrhovaná hodnota.
+Pokud se vaše hodnota liší od nového navrhovaného výchozího (jiného než pro&lt;startBodyHtml5&gt; a&lt;ShortDescriptionHtml&gt;, které jsou užitečné pro přizpůsobení ERDDAP™ instalace), prosím zvažte přechod na nové výchozí hodnoty. To platí zejména o&lt;parciálníRequestMaxBytes&gt; a&lt;particularRequestMaxCells&gt;, kde se v průběhu let výrazně změnila výchozí/souvislá hodnota.
             
-Po zkopírování každé hodnoty odstraňte značku a její popis ze setup.xml. Je lepší mít tyto značky v datasets.xml . A nyní jsou lepší popisy v [setupDatasetsXml.html](/docs/server-admin/datasets#the-basic-structure-of-the-datasetsxml-file) .
+Poté, co zkopírujete každou hodnotu, smažte značku a její popis z setup.xml. Je lepší mít tyto značky v datasets.xml . A teď jsou lepší popisy v [setupDatasetsXml.html](/docs/server-admin/datasets#the-basic-structure-of-the-datasetsxml-file) .
             
         
-Záležitost nového systému je, že úplně první webové stránky, když začnete ERDDAP bude výchozí ERDDAP™ webová stránka. Každá další webová stránka bude používat... Html obsah, který zadáte v datasets.xml .
+Vtip nového systému je, že úplně první webová stránka při spuštění ERDDAP bude výchozí ERDDAP™ webové stránky. Každá následující webová stránka bude používat ... Html obsah, ve kterém zadáte datasets.xml .
         
-    * POZOR: Poprvé utečeš ERDDAP™ v2.0, datové soubory založené na místních datových souborech se načítají **velmi** pomalu, protože ERDDAP™ potřebuje obnovit svou databázi souborů v mírně odlišném formátu. Po pomalém počátečním přetížení, budou načíst rychle, jako předtím. Prosím, buďte trpěliví.
+    * UPOZORNĚNÍ: Poprvé utíkáš ERDDAP™ v2.0, datové soubory založené na místních datových souborech se načítají **velmi** pomalu, protože ERDDAP™ potřebuje obnovit svou databázi souborů v trochu jiném formátu. Po pomalé počáteční reload, budou nabíjet rychle, jako předtím. Prosím, buď trpělivý.
          
 #### EDDTableFromHttpGet{#eddtablefromhttpget} 
-    *    [Big New Feature: EDDTableFromHttpGet](#eddtablefromhttpget)   
-Až do teď, ERDDAP™ jen číst data a zpřístupnit je uživatelům. Teď, ERDDAP™ má jednoduchý a účinný systém pro příjem dat v reálném čase ze senzorů. Kromě dalších funkcí nabízí tento datový soubor finifined-grained versioning: pamatuje si každou změnu datového souboru, kdy byl proveden, a kým. Obvykle budou uživatelé chtít jen nejnovější verzi datového souboru se všemi použitými změnami. Ale je tu možnost, aby si uživatelé vyžádali data z datového souboru, jak to bylo v každém okamžiku. To usnadňuje reprodukovatelnou vědu. Na rozdíl od většiny jiných souborů údajů v reálném čase jsou tedy tyto soubory údajů způsobilé pro [ DOI s](https://en.wikipedia.org/wiki/Digital_object_identifier) . protože se setkají s DOI požadavek, aby se datový soubor neměnil, s výjimkou agregace. Viz [EDDTableFromHttpGet](/docs/server-admin/datasets#eddtablefromhttpget) . Díky OOI (Už dávno a teď.) že jsme mluvili o potřebě tohoto a Eugena Burgera pro připomenutí toho, co je důležité.
+    *    [BIG NEW FEATURE: EDDTableFromHttpGet](#eddtablefromhttpget)   
+Až do teď, ERDDAP™ stačí číst data a zpřístupnit je uživatelům. Teď, ERDDAP™ má jednoduchý, efektivní systém pro požití dat v reálném čase ze senzorů. Tento datový soubor mimo jiné nabízí jemné zpracování verzí: pamatuje si každou změnu datového souboru, kdy byl proveden a kým. Obvykle budou uživatelé chtít jen nejnovější verzi datového souboru, se všemi použitými změnami. Ale existuje možnost, aby uživatelé požadovali data z datového souboru tak, jak tomu bylo kdykoli. To usnadňuje opakovatelnost vědy. Na rozdíl od většiny jiných datových souborů v reálném čase jsou tedy tyto datové soubory způsobilé pro [ DOI án](https://en.wikipedia.org/wiki/Digital_object_identifier) . Protože se scházejí DOI požadavek, že soubor údajů se nemění, s výjimkou agregací. Viz [EDDTableFromHttpGet](/docs/server-admin/datasets#eddtablefromhttpget) . Díky OOI (dávno a teď) promluvit o potřebě tohoto a Eugene Burger pro připomenutí o práci na tom, co je důležité.
          
-    * Big New Feature: ERDDAP™ nyní mohou sloužit data přímo z externě komprimovaných datových souborů, včetně .tgz , .tar  .gz , .tar  .gzip , .gz , .gzip , .zip , .bz2 , nebo .Z. Data mohou obsahovat směs externě komprimovaných souborů (Možná starší datové soubory?) a non-externě komprimované soubory, a můžete komprimovat / dekomprese souboru kdykoliv.
+    * Big New Fature: ERDDAP™ nyní mohou sloužit data přímo z externě komprimovaných datových souborů, včetně .tgz , .tar  .gz , .tar  .gzip , .gz , .gzip , .zip , .bz2 Datasety mohou zahrnovat kombinaci externě komprimovaných souborů (Možná starší datové soubory?) a neexterně komprimované soubory, a můžete komprimovat / dekompresovat soubor kdykoliv.
         
-Funguje to skvěle&#33;
-Ve většině případů je zpomalení související s dekompresí souborů menší. Důrazně vás vyzýváme, abyste to vyzkoušeli, zejména pokud jde o soubory dat a / nebo soubory, které jsou zřídka používány.
+Tohle funguje skvěle&#33;
+Ve většině případů je zpomalení spojené s dekompresí souborů menší. Důrazně vás vybízíme, abyste to zkusili, zejména pokud jde o soubory dat a/nebo datové soubory, které jsou často používány.
         
-Tohle ti možná ušetří 30 000 dolarů.
-Tohle je jeden z mála ERDDAP™ funkce, které vám mohou ušetřit spoustu peněz - pokud stlačíte spoustu datových souborů, budete potřebovat mnohem méně RAID / pevné disky pro uložení dat, nebo naopak, můžete sloužit mnohem více dat (až 10x) S RAID, které už máte. Pokud vás tato funkce ušetří od nákupu dalšího RAID, ušetří vás asi 30 000 dolarů.
+To vám může ušetřit $30,000 a více&#33;
+Tohle je jeden z mála. ERDDAP™ funkce, které vám mohou ušetřit spoustu peněz - pokud komprimujete mnoho datových souborů, budete potřebovat mnohem méně RAID/hard disků pro uložení dat, nebo naopak, můžete sloužit mnohem více dat (až do 10x) s RAID, které už máte. Pokud vás tato funkce ušetří před nákupem jiného RAIDu, ušetřila vám asi 30 000 dolarů.
         
-Viz [Externě komprimovaná dokumentace souborů](/docs/server-admin/datasets#externally-compressed-files) . Díky Benoitovi Perrimondovi a Palomě de la Vallee.
+Viz [Vnější dokumentace komprimovaných souborů](/docs/server-admin/datasets#externally-compressed-files) . Díky Benoit Perrimond a Paloma de la Vallee.
         
-    * Big New Feature: Všechny EDDGrid FromFiles a všechny soubory EDDTableFromFiles podporují&lt;cacheFromUrl &gt; tag a a&lt;cacheSizeGB &gt; tag. Pokud není cacheSizeGB specifikována, stáhne se a uchová kompletní kopii vzdálených souborů datového souboru. Pokud je cacheSizeGB specifikována a je &gt; 0, stáhne se soubory ze vzdáleného datového souboru podle potřeby do lokální cache s omezenou velikostí, která je užitečná při práci s cloud- based (např. S3) datové soubory. Viz [cache Dokumentace FromUrl](/docs/server-admin/datasets#cachefromurl) detaily. Díky Bobu Simonsovi a Royovi Mendelssohnovi. (kteří již léta píší skripty pro zpracování místních kopií vzdálených souborů datových souborů) , Lloyd Cotten, Eugene Burger, Conor Delaney (když byl v Amazon Web Services) , a Google Cloud Platform.
+    * Big New Fature: Všechny EDDGrid FromFiles a všechny soubory EDDTableFromFoles podporují a&lt;cacheFromUrl&gt; tag a&lt;cacheSizeGB&gt; tag. Pokud cacheSizeGB není zadána, bude to stahovat a udržovat úplnou kopii souborů vzdáleného datového souboru. Pokud je cacheSizeGB zadána a je &gt;0, stáhne se soubory ze vzdáleného souboru podle potřeby do místní cache s omezenou velikostí, která je užitečná při práci s cloudem (např. S3) datové soubory. Viz [cache FromUrl dokumentace](/docs/server-admin/datasets#cachefromurl) pro detaily. Díky Bob Simons a Roy Mendelssohn (kteří po léta psali skripty, aby zvládli vytváření místních kopií souborů se vzdálenými soubory dat) Lloyd Cotten, Eugene Burger, Conor Delaney (když byl na Amazon Web Services) , a Google Cloud Platform.
          
-    * NEW: Nový EDDTableFromJsonlCSV třída může číst tabulky data z
-         [JSON Lines CSV soubory](https://jsonlines.org/examples/)   ("Lepší než CSV") . Díky lidem na Marine Institute of Ireland za to, že mi o tomto formátu a Eugene Burger a PMEL za žádost o podporu jako vstupní typ.
+    * Novinka: Nový EDDTableFromJsoniCSV třída může číst tabulární data z
+         [JSON Řádky CSV souborů](https://jsonlines.org/examples/)   ("Lepší než CSV") . Díky lidem z Mořského institutu Irska za to, že mi řekli o tomto formátu a Eugene Burger a PMEL za žádost o podporu jako vstupní typ.
          
-    * NEW: Všechny EDDGrid a všechny soubory EDDTableFromFiles podporují&lt;nThreads &gt; nastavení, které ukazuje ERDDAP™ kolik závitů lze použít při odpovědi na žádost. Viz [nThreads dokumentace](/docs/server-admin/datasets#nthreads) detaily. Díky Robu Bochenekovi z Axiom Data Science, Eugene Burger, Conor Delaney (když byl v Amazon Web Services) , a Google Cloud Platform.
+    * NEW: EDDGrid a všechny datové soubory EDDTableFromFoles podporují&lt;nThreads&gt; nastavení, které říká ERDDAP™ kolik vláken použít při reakci na žádost. Viz [dokumentace nThreads](/docs/server-admin/datasets#nthreads) pro detaily. Díky Robu Bochenkovi z Axiom Data Science, Eugene Burger, Conor Delaney (když byl na Amazon Web Services) , a Google Cloud Platform.
          
-    * Nová standardizace Co pro všechny podtřídy EDDTableFromFiles -
-Dříve, pokud pro danou proměnnou, hodnoty důležitých atributů (např. scale\\_factor , add\\_offset , missing\\_value ,\\ _ FillValue, jednotky) nebyly konzistentní, EDDTableFromFiles by vybrat jednu hodnotu pro každý atribut být "platné" a označit soubory s jinými atributy hodnot jako "Bad Files". Existuje systém pro standardizaci souborů, jakmile EDDTableFromFiles přečte soubory. Viz [Standardizace EDDTableFromFile Co?](/docs/server-admin/datasets#standardizewhat) . Jeden z ERDDAP Jeho hlavním cílem je zpřístupnit soubory dat a soubory dat konzistentním způsobem. standardizace Co je důležitým novým nástrojem k tomu, aby se to stalo skutečností. Díky Marcu Albě, Margaret O 'Brienové. (a ostatní uživatelé EML) , BCO-DMO, a InPort uživatelé.
+    * Nový standard Co pro všechny podtřídy EDDTableFromFoles -
+Dříve, pokud pro danou proměnnou, hodnoty důležitých atributů (např. scale\\_factor , add\\_offset , missing\\_value , \\_FillValue, jednotky) nebyly konzistentní, EDDTableFromFoles by vybrat jednu hodnotu pro každý atribut být "platný" a označit soubory s jinými atributy hodnoty jako "Špatné soubory." Nyní existuje systém pro standardizaci souborů, jakmile EDDTableFromFoles přečte soubory. Viz [EDDTableFromFile standardizuje Co?](/docs/server-admin/datasets#standardizewhat) . Jeden z ERDDAP 'je hlavním cílem je zpřístupnit datové soubory a datové soubory důsledně. standardizovat Co je důležitý nový nástroj, aby se to stalo skutečností. Díky Marco Alba, Margaret O'Brien (a další uživatelé EML) , BCO-DMO a InPort uživatelé.
          
-    * NOVÉ EDDTableFromInvalidCRAFiles vám umožní vytvořit datový soubor ze sbírky NetCDF   (v3 nebo v4)   .nc soubory, které používají specifickou, neplatnou variantu FS Contiguous Ragged Array (CRA) složky. Ukázkové soubory pro tento typ datového souboru naleznete na adrese https://data.nodc.noaa.gov/thredds/catalog/ncei/wod/   \\[ 2020- 10- 21 Tento server není nyní spolehlivě dostupný \\] . I když ERDDAP™ podporuje tento typ souboru, je to neplatný typ souboru, který by nikdo neměl začít používat. Skupiny, které v současnosti používají tento typ souboru, jsou silně vybízeny k použití ERDDAP™ generovat platné soubory CF DSG CRA a přestat tyto soubory používat. Díky Ajay Krishnanovi a Timovi Boyerovi.
+    * NEW EDDTableFromNeplatnéCRAFile vám umožní vytvořit soubor dat ze sbírky NetCDF   (V3 nebo v4)   .nc soubory, které používají specifický, neplatný, varianta CF DSG Contiguous Ragged Array (CRA) Složky. Ukázky souborů pro tento typ souboru lze nalézt na https://data.nodc.noaa.gov/thredds/catalog/ncei/wod/   \\[ 2020-10-21 Tento server není nyní spolehlivě dostupný \\] . I když ERDDAP™ podporuje tento typ souboru, je to neplatný typ souboru, který by nikdo neměl používat. Skupiny, které v současné době používají tento typ souboru, jsou důrazně vybízeny k používání ERDDAP™ generovat platné soubory CF DSG CRA a přestat používat tyto soubory. Díky Ajayi Krishnanovi a Timu Boyerovi.
          
-    * EDDTableFromThreddsFiles a EDDTableFrom Hyrax Soubory jsou nyní znesvěcené. Přepněte prosím na EDDTableFromNcFiles (nebo varianta) plus&lt;cacheFromUrl &gt;. Pokud to nebude z nějakého důvodu fungovat, e-mail erd.data at noaa.gov . Pokud do roku 2020 neexistují žádné stížnosti, mohou být tyto typy souborů údajů odstraněny.
+    * EDDTableFromThrreddsFiles and EDDTableFrom Hyrax Soubory jsou nyní deprekovány. Přepněte na EDDTableFromNcFiles (nebo varianta) plus&lt;cacheFromUrl&gt;. Pokud to z nějakého důvodu nefunguje, email erd.data at noaa.gov . Pokud před rokem 2020 neexistují žádné stížnosti, mohou být tyto typy souborů údajů odstraněny.
          
-    * ZLEPŠENO -- Systém pro automatickou přeměnu non-ISO 8601 krát na ISO 8601 krát (zavedeno v bodě v1.82) byl značně rozšířen, aby se zabýval velkým počtem dalších formátů. To ovlivňuje GenetateDatasetsXml a ERDDAP zpracovává zdrojová metadata.
+    * ZLEPŠENÉ... Systém pro automatický převod non-ISO 8601 krát na ISO 8601 krát (zavedeno v bodě v1.82) byl značně rozšířen, aby se zabýval velkým počtem dalších formátů. To ovlivňuje GenerateDatasetsXml a ERDDAP 's nakládáním se zdrojovými metadaty.
          
-    * ZLEPŠENO -- Se svou třetí velkou revizí systému časové analýzy String (a doufejme, že poslední) , ERDDAP™ nepoužívat Java DateTimeFormatbecause of bugs which sometimes affect extreme times (years&lt;= 0000). ERDDAP™ Nyní používá svůj vlastní systém pro rozdělení časových řetězců.
+    * ZLEPŠENÉ... Se svou třetí zásadní revizí systému pro analýzu času stringu (a doufám, že poslední) , ERDDAP™ používání Java 's DateTimeForhmota kvůli chybám, které někdy ovlivňují extrémní časy (roky&lt;=0000). ERDDAP™ Nyní používá svůj vlastní systém pro analýzu časových řetězců.
          
-    * POZOR: Nový systém parsing String time je poněkud přísnější. Pokud má jeden z vašich souborů najednou pouze chybějící hodnoty pro časové hodnoty, je příčinou téměř jistě, že řetězec časového formátu je mírně nesprávný. V záznamu by měly být chybové zprávy. txt souvisí s časovými hodnotami, které se neshodují s časovým formátem -- to by vám mělo pomoci opravit řetězec časového formátu tohoto datového souboru. Pokud potřebujete pomoc, použijte možnost ERDDAP Časový konvertor, který "Převést \\[ s \\] jakýkoliv společný čas řetězce do řetězce ISO 8601 "-- označuje formát, který konvertor použil k rozdělení zdrojového řetězce.
+    * UPOZORNĚNÍ: Nový systém pro analýzu času strun je poněkud přísnější. Pokud má jeden z vašich souborů najednou pouze chybějící hodnoty pro časové hodnoty, příčina je téměř jistě, že řetězec časového formátu je mírně špatně. V logu by měly být chybové zprávy. txt související s hodnotami času, které se neshodovaly s časovým formátem -- to by vám mělo pomoci opravit řetězec časového formátu pro tento datový soubor. Pokud potřebujete pomoc, použijte možnost ERDDAP 's Time Converter, který "Convert \\[ án \\] jakýkoli společný čas řetězce do doby řetězce ISO 8601 -- označuje formát, který převodník použil k analýze zdrojového řetězce.
          
-    * DOPORUČENÍ: Nejrychlejší, nejjednodušší a nejlevnější způsob, jak urychlit ERDDAP přístup k tabulkovým datům je vložení datových souborů na Solid State Drive (SSD) . Většina tabulkových souborů je relativně malá, takže 1 nebo 2 TB SSD je pravděpodobně dostačující k držení všech datových souborů pro všechny soubory tabulek. SSD nakonec vyprchá, když zapíšete data do buňky, smažete je, a zapíšete nová data do této buňky příliš mnohokrát. Místo toho doporučuji, aby (co nejvíce) Stačí použít SSD pro zápis dat jednou a číst je mnohokrát. Pak by dokonce i konzumní SSD mělo trvat velmi dlouho, pravděpodobně mnohem déle než jakýkoli Hard Disk Drive (HDD) . SSD třídy spotřebitelů jsou nyní levné (v 2018, ~ 200 dolarů za 1 TB nebo ~ 400 dolarů za 2 TB) a ceny stále rychle klesají. Kdy ERDDAP™ přístup k datovému souboru, SSD nabízí obojí
+    * DOPORUČENÍ: nejrychlejší, nejjednodušší a nejlevnější způsob, jak urychlit ERDDAP 's přístupem k tabulkovým datům je vložení datových souborů na Solid State Drive (SSD) . Většina tabulkových souborů je relativně malá, takže 1 nebo 2 TB SSD pravděpodobně stačí k držení všech datových souborů pro všechny vaše tabulární soubory. SSD se nakonec opotřebuje, pokud zapíšete data do buňky, smažete je a napíšete nová data do této buňky příliš mnohokrát. Místo toho doporučuji (co nejvíce) stačí použít svůj SSD pro zápis dat jednou a přečíst mnohokrát. Pak by i SSD třídy spotřebitelů mělo vydržet velmi dlouho, pravděpodobně mnohem déle než jakýkoli diskový disk. (HDD) . SSD třídy spotřebitelů jsou nyní levné (v roce 2018, ~200 dolarů za 1 TB nebo ~400 dolarů za 2 TB) a ceny stále rychle klesají. Kdy? ERDDAP™ přístup k datovému souboru, SSD nabízí oba
         
-        * kratší zpoždění (~ 0.1ms, versus ~ 3ms pro HDD, versus ~ 10 (?) V případě, že se jedná o nehmotný majetek, musí být v souladu s čl.) a
-        * vyšší propustnost (~ 500 MB / S, versus ~ 75 MB / s pro HDD versus ~ 500 MB / s pro RAID) .
+        * kratší latence (~0.1ms, versus ~3ms pro HDD, versus ~10 (?) ms pro RAID, versus ~55ms pro Amazon S3) a
+        * vyšší propustnost (~500 MB/S, versus 75 MB/s pro HDD versus 500 MB/s pro RAID) .
         
-Takže můžete dostat do ~ 10X výkon zvýšení (vs HDD) Za 200 dolarů&#33; Ve srovnání s většinou dalších možných změn vašeho systému (Nový server za $10,000? Nový RAID za 35 000 dolarů? Nový síťový spínač za $5,000? atd.) , To je zdaleka nejlepší návratnost investic (ROI) . Pokud váš server není nabitý pamětí, další paměť pro váš server je také skvělý a relativně levný způsob, jak urychlit všechny aspekty ERDDAP .
-         \\[ SSD by bylo skvělé i pro gridded data, ale většina gridded soubory dat jsou mnohem větší, takže SSD velmi drahé. \\]   
+Takže se můžete dostat až na zvýšení výkonu ~10X (vs a HDD) za 200 dolarů&#33; Ve srovnání s většinou dalších možných změn vašeho systému (Nový server za 10 000 dolarů? Nový RAID za 35 000 dolarů? nový síťový spínač za 5000 dolarů? atd.) , To je zdaleka nejlepší návratnost investic (ROI) . Pokud váš server není nabit pamětí, další paměť pro váš server je také skvělý a relativně levný způsob, jak urychlit všechny aspekty ERDDAP .
+         \\[ SSD by byla skvělá i pro roštovaná data, ale většina dat je mnohem větší, takže SSD je velmi drahé. \\]   
          
-    * NEW: Každý, kdo je přihlášen dostane roli = \\[ každý zaznamenaný V \\] , i když neexistuje&lt;Uživatel &gt; tag pro ně v datasets.xml . Pokud nastavíte datový soubor&lt;AccessibleTo &gt; \\[ každý zaznamenaný V \\] , pak každý, kdo se přihlásil ERDDAP™   (např. přes jejich Gmail nebo Orcid účet) bude mít oprávnění k přístupu do datového souboru, i když jste neurčili&lt;Uživatel &gt; tag pro ně v datasets.xml . Díky Maurici Libesovi.
+    * NEW: Každý, kdo je přihlášen, dostane roli= \\[ Kdokoliv Přidán In \\] , i když není&lt;tag pro uživatele _BAR_ datasets.xml . Pokud nastavíte soubor dat&lt;accessedTo&gt; to \\[ Kdokoliv Přidán In \\] , pak každý, kdo se přihlásil ERDDAP™   (např. prostřednictvím svého Gmailu nebo účtu Orcid) bude oprávněn přístup k datovému souboru, i když jste nespecifikovali&lt;tag pro uživatele _BAR_ datasets.xml . Díky Maurice Libesovi.
          
-    * ZLEPŠENÉ: UDUNITS Převodník jednotek UCUM byl značně vylepšen.
-Ovládá neplatné jednotky lépe řetězce (začínající s důrazem na zachování informací, nikoli prosazování platnosti) . Také, výsledky nyní mají standardizovanou syntaxi.
+    * ZLEPŠENÉ: UDUNITS /UCUM převodník jednotek byl značně vylepšen.
+Zvládá neplatné jednotky lepší řetězce (začínající s důrazem na zachování informací, namísto prosazování platnosti) . Výsledky mají také standardizovanou syntaxi.
          
-    * NEW: UDUNITS / UCUM jednotky převodník má novou možnost standardizovat UDUNITS struna.
-To funguje dobře pro platné UDUNITS struny a přiměřeně dobře pro nestandardní / neplatné UDUNITS struny. Například: UDUNITS = "metry za sekundu", "metr za sekundu", "m.s^-1" a "m s-1" Všichni se vrátí "m.s-1." To bylo potřeba pro novou standardizaci Jaký systém je popsán výše. Díky Marcu Albě, Margaret O 'Brienové. (a ostatní uživatelé EML) , BCO-DMO, a InPort uživatelé.
+    * NEW: UDUNITS /UCUM jednotky převodník má novou možnost standardizovat a UDUNITS Provaz.
+To funguje dobře pro platné UDUNITS řetězce a přiměřeně dobře pro nestandardní / neplatné UDUNITS Struny. Například: UDUNITS = "metry za sekundu," "metr za sekundu," "m.s^-1" a "m s-1" všichni vrátí "m.s-1." To bylo potřeba pro novou standardizaci Jaký systém je popsán výše. Díky Marco Alba, Margaret O'Brien (a další uživatelé EML) , BCO-DMO a InPort uživatelé.
          
-    * NEW: EDDTableFromMultidimNcFiles má nyní [Rozměry](/docs/server-admin/datasets#treatdimensionsas) možnost, která ukazuje ERDDAP™ k ošetření určitých rozměrů (např. LAT a LON) Jako kdyby to byly jiné rozměry. (např. ČAS) . To je užitečné pro některé nesprávné soubory, které používají různé rozměry pro různé proměnné, když by měly použít pouze jeden rozměr (např. ČAS) . Díky Marcu Albě a Maurici Libesovi.
+    * Novinka: EDDTableFromMultidimNcFiles má nyní [léčbaRozměryAs](/docs/server-admin/datasets#treatdimensionsas) možnost, která říká ERDDAP™ k léčbě určitých rozměrů (např. LAT a LON) jako by byly jiné dimenze (např. čas) . To je užitečné pro některé nesprávné soubory, které používají různé rozměry pro různé proměnné, když měly použít pouze jeden rozměr (např. čas) . Díky Marco Alba a Maurice Libes.
          
-    * NEW: Nyní všichni EDDGrid Od... Soubory soubory soubory soubory podporují novou speciální osu sourceName který ukazuje ERDDAP™ extrahovat informace z souboru Název (jen filename.ext) a použít hodnotu **nahradit** stávající hodnota osy vlevo. Formát je
-        \\*\\*\\ * substitueFromFileName, _ dataType _, _ extractRegex _, _ captureGroupNumber _
-Viz [Tato dokumentace](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Díky NOAA Daily agregation dataset Pathfinder.
+    * NEW: EDDGrid Z...Filové soubory podporují novou speciální osu sourceName který říká ERDDAP™ extrahovat informace ze souboruName (jen filename.ext) a použít hodnotu k **nahradit** stávající hodnota levé osy. Formát je
+        \\*\\*\\*replaceFromFileName,_dataType_,_extractRegex_,_captureGroupNumber_
+Viz [Tato dokumentace](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Díky NOAA Databáze denní agregace Pathfinder.
          
-    * NEW: Nyní všichni EDDGrid Od... Soubory soubory soubory soubory podporují novou speciální osu sourceName který ukazuje ERDDAP™ extrahovat informace z pathName souboru (adresáře + filename.ext)   
-        \\*\\*\\ * patName, _ dataType _, _ extractRegex _, _ captureGroupNumber _
-K tomu, jméno cesty vždy používá '/' jako znak oddělovače adresářů, nikdy '\\'.
-Viz [Tato dokumentace](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Díky Palomě de la Vallee.
+    * NEW: EDDGrid Z...Filové soubory podporují novou speciální osu sourceName který říká ERDDAP™ k získání informací z cesty souboruName (Adresáře + filename.ext)   
+        \\*\\*\\*pathName,_dataType_,_extractRegex_,_captureGroupNumber_
+Pro to, název cesty vždy používá '/' jako znak oddělovače adresáře, nikdy '\\'.
+Viz [Tato dokumentace](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) . Díky Paloma de la Vallee.
          
-    * Nyní, všichni z EddTableFrom... Soubory datových souborů podporují další pseudo proměnnou sourceName s, které získávají informace ze souboru (jen filename.ext)   (viz [\\*\\*\\ * FileName](/docs/server-admin/datasets#filename-sourcenames) ) nebo z celého souboru pathName (/ dir1 / dir2 / filename.ext)   (viz [\\*\\*\\ * path Name](/docs/server-admin/datasets#pathname-sourcenames) ) . Díky Palomě de la Vallee.
+    * A teď, všechny EDDTableFrom... Soubory souborů podporují další pseudo proměnnou sourceName s, který extrahuje informace ze souboru (jen filename.ext)   (viz [\\*\\*\\* název souboru](/docs/server-admin/datasets#filename-sourcenames) ) nebo z celého jména souboru (/dir1/dir2/filename.ext)   (viz [\\*\\*Jméno cesty](/docs/server-admin/datasets#pathname-sourcenames) ) . Díky Paloma de la Vallee.
          
-    * NOVÝ: Pokud EDDGrid Dataset má jeden nebo více velmi velkých rozměrů (např. miliony hodnot) které zabírají spoustu paměti, můžete nastavit nový [&lt;dimensionValuesInMemory &gt;] (/ docs / server- admin / soubory dat # dimensionvaluesinmemory) nastavení na false (default je true) , což způsobí, že datový soubor uloží hodnoty na disk a v případě potřeby je získá. Díky Davidu Rodriguezovi a Richovi Signellovi (re: EDDGrid FromAudioFiles) .
+    * NEW: EDDGrid Soubor dat má jeden nebo více velmi velkých rozměrů (Například miliony hodnot) který zabere hodně paměti, můžete nastavit nový [&lt;dimensionValuesInMemory&gt;] (/docs/server-admin/datasets#dimensionvalueinmemory) nastavení na false (výchozí hodnota je pravdivá) , což způsobí, že datový soubor uloží hodnoty na disk a v případě potřeby je získá. Díky Davidu Rodriguezovi a Richi Signellovi (re: EDDGrid FromAudioFiles) .
          
-    * V minulých dílech jste viděli... dataVariable s pro EDDTableFromFiles dataset a znovu načíst dataset, EDDTableFromFiles by přečetla všechny soubory dat. Může se vypořádat s přeobjednáním bez přesměrování všech datových souborů. Díky Rolandu Schweitzerovi.
+    * V minulých dílech jste viděli... dataVariable s pro datový soubor EDDTableFromFoles a znovu načíst datový soubor, EDDTableFromFoles by znovu přečíst všechny datové soubory. Nyní se může vypořádat s přeobjednáním bez přečtení všech datových souborů. Díky Rolandu Schweitzerovi.
          
-    * ZLEPŠENO: Nyní, kdy ERDDAP™ čtení ASCII, NCCSV, a JSON Lines CSV tabulky datových souborů, pokud najde chybu na daném řádku (např. nesprávný počet položek) , zaznamenává varovnou zprávu ("VAROVÁNÍ: Přeskakující linka #..." neočekávaný počet položek... ") na [log.txt soubor](/docs/server-admin/additional-information#log) a pak pokračuje ve čtení zbytku datového souboru. Je tedy vaší povinností pravidelně hledat (nebo napsat skript tak učinit) za tu zprávu v deníku. txt, takže můžete opravit problémy v datových souborech. ERDDAP™ je nastaveno tak, aby uživatelé mohli i nadále číst všechna dostupná platná data, i když některé řádky souboru mají nedostatky. V minulých dílech... ERDDAP™ označil soubor jako "špatný" a odstranil ho z datového souboru.
+    * Teď, když ERDDAP™ čte ASCII, NCCSV a JSON Lines CSV tabulkové datové soubory, pokud zjistí chybu na daném řádku (např. nesprávný počet položek) , zaznamenává varovný signál ("Přeskočit čáru, nečekaný počet položek...") do [log.txt soubor](/docs/server-admin/additional-information#log) a dále čte zbytek datového souboru. Je tedy vaší povinností pravidelně se dívat (nebo k tomu napsat scénář) pro tuto zprávu v deníku. txt tak, že můžete opravit problémy v datových souborech. ERDDAP™ je nastaven tak, aby uživatelé mohli i nadále číst všechny dostupné platné údaje, i když některé řádky souboru mají nedostatky. V minulých dílech... ERDDAP™ soubor označil jako "špatný" a odstranil jej z datového souboru.
          
-    * ZLEPŠENO: Přesné časy (např. na nejbližší druhou nebo milisekundu) jsou uloženy u zdroje jako "minuty od..." (nebo větší jednotky) , ERDDAP™ Nyní je zaokrouhluje na nejbližší milisekundu při čtení hodnot do ERDDAP . V opačném případě jsou čísla plovoucích bodů poškrábaná a požadavky na údaje v konkrétních časech (např. čas = 2018-06-15T01: 30: 00) selže. V minulých dílech jste viděli... (a stále dělá, pokud jednotky jsou např., "sekund od..." nebo "milisekundy od...") . Nejlepší je vyhnout se tomuto problému tím, že nepoužívá velké jednotky (např. minuty nebo hodiny) ukládat přesné časové hodnoty (např. mikrosekundy) -- počítače dělají špatnou práci při manipulaci s desetinnými čísly. Díky Marcu Albovi.
+    * V přesných časech (např. na nejbližší sekundu nebo milisekundu) jsou uloženy u zdroje jako "minuty od ..." (nebo větší jednotky) , ERDDAP™ Nyní je zaokrouhlí na nejbližší milisekundu při čtení hodnot do ERDDAP . V opačném případě jsou čísla plovoucích bodů modřina a požadavky na data v určitých časech (např., &time=2018-06-15T01:30:00) selže. Dříve je vypočítal co nejpřesněji. (a stále to dělá, pokud jsou jednotky např. "druhé od ..." nebo "milisekundy od ...") . Nejlepší je vyhnout se tomuto problému pomocí velkých jednotek (např. minuty nebo hodiny) uložit přesné časové hodnoty (např. mikrosekundy) -- počítače dělají špatnou práci při zpracování desetinných čísel. Díky Marcovi Albovi.
          
-    * ZMĚNY EDDTableFrom EDDGrid což je mnohem lepší. EDDTableFrom EDDGrid umožňuje uživatelům dotazovat se na gridded soubory dat, jako by to byly tabulky soubory dat ("dotaz podle hodnoty") .
+    * ZMĚNY NA EDDTableFrom EDDGrid což je mnohem lepší. EDDTableFrom EDDGrid Umožňuje uživatelům dotazovat se mřížkované soubory dat, jako by to byly tabulární soubory dat ("Query by value") .
         
-        * Nyní podporuje&lt;maxAxis0 &gt; tag (výchozí hodnota = 10) která určuje maximální počet os \\[ 0 \\]   (obvykle "time" ) hodnoty, které mohou být dotazovány najednou. To zabraňuje naivní žádosti od získání EDDTableFrom EDDGrid prohledávat celý gridded dataset (který by selhal s timeout chybu) .
-        * GeneteDatasets Xml má nyní možnost generovat EDDTableFrom EDDGrid soubory dat pro všechny soubory dat v dané oblasti ERDDAP™ které odpovídají specifikovanému regexu (použít.\\ * pro porovnání všech souborů dat) . Soubory dat, které vytvoří, mají v souhrnném atributu další informace, které naznačují, že se jedná o tabulkovou verzi souboru dat. A jejich datasetID je datasetID z gridded dataset, plus "\\ _ Asatable".
-        * K dispozici je velká rychlost nahoru pro nejčastější nastavení: když gridded dataset je EDDGrid Name ERDDAP .
+        * Nyní podporuje&lt;maxAxis0&gt; tag (výchozí=10) který určuje maximální počet os \\[ 0 \\]   (obvykle "time" ) hodnoty, které mohou být dotazovány najednou. To brání naivním požadavkům získat z EDDTableFrom EDDGrid prohledat celý datový soubor sítě (která by selhala s chybou timeout) .
+        * Generovat soubory dat Xml má nyní možnost generovat EDDTableFrom EDDGrid Soubory údajů pro všechny datové soubory v dané síti ERDDAP™ který odpovídá stanovenému regexu (použít .\\* pro porovnání všech souborů dat) . Soubory údajů, které vytváří, mají další informace v souhrnném atributu, které naznačují, že se jedná o tabulární verzi mřížkovaného datového souboru. A jejich datasetID je datasetID z mřížkovaného souboru, plus "\\_AsATable."
+        * K dispozici je velká rychlost pro nejčastější nastavení: když mřížkovaný datový soubor je EDDGrid FromErddap soubor, který je ve stejném ERDDAP .
         
-Díky Jamesu Gallagherovi a Edu Armstrongovi.
+Díky Jamesi Gallagherovi a Edu Armstrongovi.
          
-    * NOVÝ: generovat Datové soubory Xml pro všechny typy souborů dat je nyní mnohem pravděpodobnější přidat\\ _ FillValue nebo missing\\_value atribut numerické proměnné addAttributes . K tomu například dochází, když řetězec chybí hodnotové značky (např. ",". ","? "," NA "," nd "," NaN ") pro tuto proměnnou v souboru vzorků se převádí na ERDDAP rodné chybějící hodnoty (127 ve sloupcích byte, 32767 v krátkých sloupcích, 2147483647 ve sloupcích int, 9223372036854775807 v dlouhých sloupcích, a NaN v plovoucí a dvojité proměnné) . Vyskytuje se také pro hodnoty NaN v plovoucích a dvojitých proměnných. Také "nd" byl přidán do seznamu společných markerů chybějící hodnoty v číselných datových sloupcích, které ERDDAP™ Měl bych ho hledat. Díky Mattu Biddleovi z BCODMO.
+    * NEW: generovat Datové soubory Xml pro všechny typy souborů dat je nyní mnohem pravděpodobnější přidat \\_FillValue nebo missing\\_value atribut numerické proměnné addAttributes . K tomu například dochází, když řetězec chybí hodnoty markerů (Například, "," "," "?" "NA," "nd," "NaN") pro tuto proměnnou ve výběrovém souboru jsou převedeny na ERDDAP 's nativní chybějící hodnoty (127 ve sloupcích bajtů, 32767 v krátkých sloupcích, 2147483647 ve sloupcích 9223372036854775807 v dlouhých sloupcích a NaN v float a double proměnných) . Nastává také pro hodnoty NaN v float a dvojitých proměnných. Také "nd" bylo přidáno do seznamu společných chybějících hodnot markerů v číselných datových sloupcích, které ERDDAP™ Měli bychom hledat. Díky Matt Biddle z BCO-DMO.
          
-    * ZLEPŠENO: možnost ncdump ve generování Datové soubory Xml je nyní více jako ncdump (ale stále používá netcdf-java verzi ncdump) . Vytiskne nový seznam možností. Nyní, pro .nc ml souborů, tiskne výstup ncdump pro výsledek .nc ml změny souboru aplikované na podkladový soubor .nc nebo .hdf Složka.
+    * IMPROVED: možnost ncdump v generování Datové soubory Xml je teď spíš ncdump. (ale stále používá netcdf-java verzi ncdump) . Vytiskne nový seznam možností. Teď... .nc ml soubory, tiskne výstup ncdump pro výsledek .nc Změny souborů v ml použité na podklad .nc nebo .hdf Složka.
          
-    * BUG FIX: Došlo k úniku rukojeti. (nakonec způsobuje ERDDAP™ zmrazit) způsobené při vytváření některých typů výstupních souborů, např. .geotif, zejména pokud došlo k chybám během tvorby. Myslím, že / doufám, že je to všechno opraveno. Pokud stále vidíte problémy, řekněte mi prosím typ datového souboru (mřížka nebo tabulka) a typ souboru, který je příčinou problému. Díky Stevenu Bealeovi, Lynn DeWittové, Jibei Zhaovi a dalším.
+    * BUG FIX: Byla tam úniková karta. (nakonec způsobit ERDDAP™ zmrazit) způsobené při vytváření některých typů výstupních souborů, např. .geotif, zejména když došlo k chybám během tvorby. Doufám, že už je všechno v pořádku. Pokud stále vidíte problémy, prosím, řekněte mi typ datového souboru (mřížka nebo tabulka) a typ souboru, který způsobuje problém. Díky Stevenu Bealeovi, Lynn DeWitt, Jibei Zhao a dalším.
          
-    * BUG FIX: U WMS   Leaflet Demo úplně / správně nepřevedlo "hloubku" na "výšku". Teď to tak je a požadavky na rozbitou legendu jsou opraveny. Také, všechny možnosti osy v rozbalovacích seznamech jsou vždy ve vzestupném pořadí. Díky Antoine Quericovi a Aurelie Briandové.
+    * BUG FIX: The WMS   Leaflet Demo úplně/vhodně nepřevedlo "hloubkovou" osu na "výstup." Teď už ano, a rozbité žádosti o legendu jsou vyřešeny. Také všechny možnosti os v seznamech drop-down jsou vždy ve vzestupném pořadí. Díky Antoine Quericovi a Aurelii Briandové.
          
-    * BUG FIX: EDDTableFromFiles nyní správně podporuje omezení na proměnné String, které byly vytvořeny z proměnných char v datových souborech. Díky Antoine Quericovi a Aurelie Briandové.
+    * BUG FIX: EDDTableFromFuls nyní správně podporuje omezení na String proměnné, které byly vytvořeny z znakových proměnných v datových souborech. Díky Antoine Quericovi a Aurelii Briandové.
          
-    * BUG FIX: Když je soubor nedostupný, datový soubor se snaží informovat (se zprávou "Tento datový soubor je momentálně nedostupný".) jeho předplatitelé, uvedené akce, rss, a lonPM180 soubory dat, které se na něj spoléhají. Díky Roy Mendelssohn a Bob Simons.
+    * BUG FIX: Nyní, když se soubor dat stane nedostupným, se soubor údajů snaží oznámit (se zprávou "Tento datový soubor je momentálně nedostupný.") její předplatitelé, uvedené akce, rss a lonPM180 datové soubory, které na ně spoléhají. Díky Royi Mendelssohnovi a Bobovi Simonsovi.
          
-    * BUG FIX: Dva chyby související s EDDTableCopy. Díky Samovi McClatchiemu.
+    * BUG FIX: Dvě chyby související s EdDtableCopy. Díky Samu McClatchiemu.
          
-    * ZLEPŠENO: Počet neúspěšných žádostí uvedených na stránce status.html se zvýší, protože více věcí se počítá jako selhání než předtím.
+    * IMPROVED: Počet neúspěšných žádostí uvedených na stránce status.html se zvýší, protože více věcí se počítá jako selhání než dříve.
          
-    * ZLEPŠENO: ERDDAP Status.html nyní ukazuje "Žádosti (střední doba v ms) "v časové sérii. V minulých dílech jste viděli medián krát zkrácený na celé sekundy.
+    * ZLEPŠENÍ: ERDDAP 's status.html nyní ukazuje "Žádosti (střední doba v ms) "v časové řadě. Dříve to ukázalo medián krát zkrácený na celé sekundy.
          
-    * ZLEPŠENO: V jsonldově výstupu, jsonld "name" nyní pochází z datového souboru "title" n ERDDAP , a jsonld "titulek" nyní pochází z datového souboru " datasetID "v ERDDAP . Předtím to bylo obrácené. Zdá se mi to špatné, protože při běžném používání angličtiny je "jméno" obvykle krátké, (ideálně) Jedinečný identifikátor, který se zřídka / nikdy nezmění (např. Robert Middlename Simons) , Ne popis, který není jedinečný a který může snadno a často změnit (např., "Člověk, který píše software pro NOAA "vs." Vysoký chlap, který píše software pro NOAA ") . Páni, bylo by skvělé, kdyby schéma. [Název](https://schema.org/name) , v kontextu Dataset, byly konkrétnější. Vývojáři softwaru by měli mít možnost napsat implementaci specifikace založené pouze na specifikaci, bez pokynů odborníků. Ale já se oddávám Googlu. (zejména Natasha Noy) , NCEI (zejména John Relph) A Rob Fuller.
+    * IMPROVED: V jsonld výstupu, jsonld "jméno" nyní pochází z souboru "title" v ERDDAP , a jsonld "headline" nyní pochází z datového souboru " datasetID "v ERDDAP . Dříve to bylo obráceně. To se mi zdá špatné, protože při běžném používání angličtiny je "jméno" obvykle krátké, (ideálně) jedinečný identifikátor, který se zřídka / nikdy nemění (např. Robert Middlename Simons) , není popis, který není jedinečný a který může snadno a často změnit (např. "Chlap, který píše software pro NOAA "Vs. "Vysoký chlap, který píše software pro NOAA ") . Páni, bylo by skvělé, kdyby schema.org definice [Název](https://schema.org/name) , v souvislosti s Dataset, byly konkrétnější. Vývojáři softwaru by měli mít možnost napsat implementaci specifikace založené pouze na specifikaci bez pokynů odborníků. Ale já se vzdám Google (zejména Natasha Noy) , NCEI (zejména John Relph) , a Rob Fuller.
          
-    * ZLEPŠENO: V jsonldově výstupu jsou čtyři hodnoty "spatialCoverall GeoShape box" nyní minLat minLon maxLat maxLon. V předchozích dílech Lat a Lon pozice byly obráceny. Páni, bylo by skvělé, kdyby schema.org definice [GeoShape](https://schema.org/GeoShape) specifikované správné pořadí. Vývojáři softwaru by měli mít možnost napsat implementaci specifikace založené pouze na specifikaci, bez pokynů odborníků. Díky Natasha Noy a Robu Fullerovi.
+    * IMPROVED: V jsonld výstupu, čtyři "spatialCoverage GeoShape box" hodnoty jsou nyní minLat minLon maxLat maxLon. V minulých dílech jste viděli: Páni, bylo by skvělé, kdyby schema.org definice [GeoShape](https://schema.org/GeoShape) zadáno správné pořadí. Vývojáři softwaru by měli mít možnost napsat implementaci specifikace založené pouze na specifikaci bez pokynů odborníků. Díky Natasha Noyové a Robu Fullerovi.
 
 ## Verze 1.82{#version-182} 
- (propuštěn 2018-01-26) 
+ (propuštěno 2018-01-26) 
 
 *    **Nové funkce (pro uživatele) :**   
      
-    * Četné jemné změny vzhled-and- pocit ERDDAP™ webové stránky.
-        * ZLEPŠENO: ERDDAP™ nyní používá HTML 5 a lépe využívá CSS.
-        * ZLEPŠENÉ: Webové stránky byly mírně upraveny tak, aby byly čistší a méně "rušné". (Jsou stále husté a stále jsou věci, na které by si člověk mohl stěžovat, ale doufejme mnohem méně než předtím.) Díky Johnu Kerfootovi za pár komentářů.
-        * ZLEPŠENÉ: Webové stránky nyní vypadají mnohem lépe na mobilních telefonech a jiných malých zařízeních, zejména pokud je používáte při orientaci krajiny. Ve velmi malých a velmi velkých oknech ve stolních prohlížečích také vypadají lépe.
-        * ZLEPŠENO: Pro zlepšení bezpečnosti a dalších důvodů použití zastaralé verze Openlays pro WMS demonstrace stránky byly nahrazeny Leaflet .
-        * NEW: Podpora pro zobrazení obrázků, audio a video souborů "files" systém (například: [Tento soubor údajů o zkoušce](https://coastwatch.pfeg.noaa.gov/erddap/files/testMediaFiles/ShouldWork/) ) a v .htmlTable odpovědi, pokud má buňka URL souboru obrazu, zvuku nebo videa (například: [Tato žádost](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/testMediaFiles.htmlTable?url%2Cname%2ClastModified%2Csize%2CfileType%26url=~%22.*ShouldWork.*%22) ) . Pokud se vznášíte nad ikonou '?', měli byste vidět obrázek, audio nebo náhled video souboru. Můžete také kliknout na odkaz souboru pro zobrazení celé obrazovky souboru ve vašem prohlížeči. Viz [Dokumentace mediálních souborů](/docs/server-admin/datasets#media-files) . Všimněte si, že různé prohlížeče podporují různé typy souborů, takže příklady nemusí fungovat ve vašem prohlížeči.
-Díky těmto lidem / odkazy na nápady a výběrový kód pro tipy pouze pro obrázky CSS- (byl v https://codepen.io/electricalbah/pen/eJRLVd ) a odložené zatížení obrazu (byl v https://varvy.com/pagespeed/defer-images.html )   (i když před použitím byl kód změněn. ERDDAP ) .
-Díky Cara Wilson, Matthew Austin, a Adam Shepherd / BCO-DMO pro žádosti o podporu obrazu.
-Díky Jim Potemra, Rich Sigdell, OOI, a Carrie Wall Bell pro žádosti o audio / hydrophone podporu souborů.
-Díky OOI za zobrazení potřeby podpory videa.
-        * NEW: Podmnožina dat ERDDAP™ datový soubor (ale obvykle datový soubor z audio souborů) Nyní lze uložit do .wav audio souboru. ( [dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#wav) ) Díky Jim Potemra, Rich Sigdell, OOI, a Carrie Wall Bell pro žádosti o audio / hydrophone podporu souborů.
-        * ZLEPŠENO: Formát pro Web Accessible složky (WAF)   (např. / soubory / složky) byla aktualizována pro použití HTML tabulky. Nový formát napodobuje novější verzi adresáře se seznamem webových stránek vytvořených novějšími verzemi Apache. Lidé zjistí, že změny usnadňují čtení informací. Software, který rozebírá tyto dokumenty (např., software, který sklízí dokumenty ISO 19115 z ERDDAP ) bude třeba revidovat, ale nový formát bude jednodušší rozebrat než předchozí formát. (Pozor, Anno Milanová.) 
-        * NOVÝ outOfDateDatasets.html strana. ( [příklad](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) ) Tato webová stránka zobrazuje tabulku se všemi datovými soubory blízko- real-time, které mají&lt; testOutOfDate &gt; tag (viz níže) , seřazené podle toho, jak jsou data zastaralá. Tato palubní deska by měla být užitečná pro ERDDAP™ administrátoři a koncoví uživatelé, pokud chtějí vědět, které soubory dat jsou zastaralé. Pro soubory dat s externím datem je pravděpodobně problém se zdrojem dat, takže ERDDAP™ není schopen vidět / získat data z nejnovějších časových bodů.
-Administrátoři: Pokud nechcete webové stránky Out- Of- Date Datasets, přidejte to do vašeho setup.xml:
-            &lt;outOfDateDateDatasetsActive &gt; false&lt;/ outOfDateDateDatasetsActive &gt;
-Teď jsou. testOutOfDate a ven Příloha V část 2 odst. allDatasets Dataset.
-Díky Bobu Simonsovi, který to celé roky chtěl, a chytrým lidem Irského námořního institutu, kteří mi dali inspiraci prostřednictvím svého oddaného Malina Pi a monitoru, který vždy ukazuje obrazovku jako je tato v jejich kanceláři.
-        * ZLEPŠENO: .htmlTable a .xhtml odezva je nyní lépe formátována, kompaktnější, a tím rychleji nabít. Díky HTML5 a CSS.
-    * Nový typ výstupního souboru pro soubory dat Griddap: .timeGaps. Name Ukazuje seznam mezer v časových hodnotách, které jsou větší než střední mezera. ( [příklad](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMHchla8day.timeGaps) ) To je užitečné pro ERDDAP™ administrátoři a koncoví uživatelé, pokud chtějí vědět, zda existují neočekávané mezery v časových hodnotách pro datový soubor, u nichž se očekává, že budou pravidelně rozlišovat časové hodnoty. Díky Bob Simons a Roy Mendelssohn kteří potřebovali tuto funkci.
-    * ZLEPŠENO: Výchozí graf allDatasets Dataset je nyní mapa s x = maxLon a y = maxLat. Díky Johnu Kerfootovi, Richovi Signellovi a OOI-CI.
-    * NEW: [erdapy](https://github.com/ioos/erddapy) -- není ERDDAP™ funkce, ale bude zajímat mnoho ERDDAP™ uživatelé. Erdapy ( ERDDAP™ + Python ) je Python knihovna vytvořená Filipem Fernandesem, která "využívá ERDDAP s RESTful webové služby a vytváří ERDDAP™ URL pro jakýkoli požadavek, jako je vyhledávání souborů dat, získávání metadat, stahování dat atd. "Díky Filipe Fernandesové.
-    * Měl jsem se zmínit předtím: K dispozici je třetí strana R balíček navržen tak, aby bylo jednodušší pracovat s ERDDAP™ uvnitř R: [readdap](https://github.com/ropensci/rerddap#rerddap) . Díky [rOpenSci](https://ropensci.org/) a Roy Mendelssohn.
+    * Četné jemné změny vzhledu a pocitu ERDDAP™ webové stránky.
+        * ZLEPŠENÍ: ERDDAP™ nyní používá HTML 5 a lépe využívá CSS.
+        * IMPROVED: Webové stránky byly mírně upraveny tak, aby byly čistší a méně "vytížené." (Jsou stále husté a stále existují věci, na které by si člověk mohl stěžovat, ale doufejme, že mnohem méně než předtím.) Díky Johnu Kerfootovi za nějaké komentáře.
+        * IMPROVED: Webové stránky nyní vypadají mnohem lépe na mobilních telefonech a dalších malých zařízeních, zejména pokud je používáte v krajinné orientaci. Vypadají také lépe ve velmi malých a velmi velkých oknech v stolních prohlížečích.
+        * IMPROVED: Pro zlepšení bezpečnosti a dalších důvodů použití zastaralé verze Openlayers pro WMS stránky byly nahrazeny Leaflet .
+        * NOVINKA: podpora náhledů obrázků, audio a video souborů v "files" systém (například: [Tento soubor údajů o zkoušce](https://coastwatch.pfeg.noaa.gov/erddap/files/testMediaFiles/ShouldWork/) ) a .htmlTable odpovědi, pokud má buňka URL obrazu, zvuku nebo video souboru (například: [tato žádost](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/testMediaFiles.htmlTable?url%2Cname%2ClastModified%2Csize%2CfileType%26url=~%22.*ShouldWork.*%22) ) . Pokud se vznášíte nad ikonou '?', měli byste vidět obrázek, audio, nebo video soubor náhled. Můžete také kliknout na odkaz souboru pro zobrazení celého souboru ve vašem prohlížeči. Viz [Dokumentace mediálních souborů](/docs/server-admin/datasets#media-files) . Všimněte si, že různé prohlížeče podporují různé typy souborů, takže příklady nemusí fungovat ve vašem prohlížeči.
+Díky těmto lidem / odkazy pro nápady a vzorový kód pro CSS-pouze obrazové tipy (v https://codepen.io/electricalbah/pen/eJRLVd ) a odložené načítání obrazu (v https://varvy.com/pagespeed/defer-images.html )   (i když kód byl před použitím upraven ERDDAP ) .
+Díky Cara Wilson, Matthew Austin, a Adam Shepherd / BCO-DMO za žádosti o podporu obrazu.
+Díky Jim Potemra, Rich Signell, OOI, a Carrie Wall Bell za žádosti o podporu souborů audio/hydrofon.
+Díky OOI za ukázku potřeby video podpory.
+        * NEW: Podmnožina dat z jakéhokoliv ERDDAP™ Soubor údajů (ale obvykle soubor z audio souborů) lze nyní uložit do .wav audio souboru. ( [Dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#wav) ) Díky Jim Potemra, Rich Signell, OOI, a Carrie Wall Bell za žádosti o podporu souborů audio/hydrofon.
+        * ZLEPŠIT: Formát pro webové přístupné složky (WAF)   (např. soubory/složky) byla aktualizována pro použití HTML tabulky. Nový formát imituje novější verzi adresáře, v němž jsou uvedeny webové stránky vytvořené novějšími verzemi Apache. Lidé zjistí, že díky změnám se informace snadněji čtou. Software, který rozebírá tyto dokumenty (např. software, který sklízí dokumenty ISO 19115 z ERDDAP ) bude muset být revidován, ale nový formát bude jednodušší analyzovat než předchozí formát. (Pozor, Anno Milanová.) 
+        * NOVÉ outOfDateDatasets.html Strana. ( [příklad](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) ) Tato webová stránka zobrazuje tabulku se všemi daty v reálném čase, které mají&lt; testOutOfDate &gt; značka (viz níže) , které jsou řazeny podle toho, jak jsou datové soubory zastaralé. Tato palubní deska by měla být užitečná pro ERDDAP™ Správci a koncoví uživatelé, když chtějí vědět, které datové soubory jsou zastaralé. U zastaralých datových souborů je pravděpodobně problém se zdrojem dat, takže ERDDAP™ není schopen vidět/získat data z novějších časových bodů.
+Administrátoři: Pokud nechcete webovou stránku Out-Of-Date Datasets, přidejte ji do nastavení.xml:
+            &lt;OutOfDateDatasetsActive&gt;false&lt;/outOfDatasetsActive&gt;
+Teď už ano. testOutOfDate a ven OfDate sloupce ve sloupci allDatasets Soubor dat.
+Díky Bobovi Simonsovi, který to chtěl už léta, a chytrým lidem z irského námořního institutu, kteří mi dali inspiraci prostřednictvím svého obětavého Malinového Pi a monitoru, který vždy zobrazuje obrazovku jako je tato ve své kanceláři.
+        * ZLEPŠENÍ: .htmlTable a .xhtml Odezva je nyní lépe formátovaná, kompaktnější a tím rychlejší. Díky HTML5 a CSS.
+    * NOVÝ typ výstupního souboru pro griddap soubory: .timeGaps. Ukazuje seznam mezer v časových hodnotách, které jsou větší než střední mezera. ( [příklad](https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdMHchla8day.timeGaps) ) To je užitečné pro ERDDAP™ Správci a koncoví uživatelé, kteří chtějí vědět, zda existují neočekávané mezery v časových hodnotách datového souboru, u něhož se očekává, že budou mít pravidelně rozložené časové hodnoty. Díky Bob Simons a Roy Mendelssohn, který potřeboval tuto funkci.
+    * IMPROVED: Výchozí graf pro allDatasets Soubor dat je nyní mapou s x=maxLon a y=maxLat. Díky Johnu Kerfootovi, Richi Signellovi a OOI-CI.
+    * NEW: [erddapy](https://github.com/ioos/erddapy) -- není ERDDAP™ rys, ale bude zajímat mnoho ERDDAP™ uživatelé. Erddapy ( ERDDAP™ + Python ) je Python knihovna vytvořená Filipem Fernandesem, která "využívá ERDDAP 's RESTful webové služby a vytváří ERDDAP™ URL pro jakýkoli požadavek, jako je hledání souborů dat, získávání metadat, stahování dat, atd.." Díky Filipovi Fernandesovi.
+    * Měl jsem se zmínit předtím: Existuje balíček třetí strany R navržený tak, aby bylo snazší pracovat s ERDDAP™ zevnitř R: [rerddap](https://github.com/ropensci/rerddap#rerddap) . Díky [rOpenSci](https://ropensci.org/) a Roy Mendelssohn.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    * TO DO: V setup.xml, přímo pod&lt;Administrátor &gt;, prosím přidejte&lt;AdmintionUrl &gt; tag, který určuje URL pro vaši instituci (nebo skupina) .
-    * TO: Tyto 3 značky v setup.xml se již nepoužívají:
-        &lt;start HeadHtml &gt;,&lt;startBodyHtml &gt; a&lt;endBodyHtml &gt;. Jsou nahrazeny
-        &lt;startHeadHtml5 &gt;,&lt;startBodyHtml5 &gt; a&lt;endBodyHtml5 &gt;, které mají výchozí hodnoty uvedené v messages.xml (a znázorněno níže) .
+    * DO: V setup.xml, přímo pod&lt;adminInstitution &gt;, prosím, přidejte a&lt;adminInstitutionUrl&gt; tag, který určuje URL pro vaši instituci (nebo skupina) .
+    * DO: Tyto 3 značky v setup.xml se již nepoužívají:
+        &lt;start HeadHtml&gt;,&lt;startBodyHtml&gt; a&lt;endBodyHtml&gt;. Nahrazují se
+        &lt;startHeadHtml5&gt;,&lt;startBodyHtml5&gt; a&lt;endBodyHtml5&gt;, které mají výchozí hodnoty uvedené ve zprávách.xml (a zobrazeno níže) .
         
-Doporučujeme použít výchozí&lt;startHeadHtml5 &gt; a&lt;endBodyHtml5 &gt;.
-Doporučujeme: Pokud jste provedli změny originálu&lt;startBodyHtml &gt; a / nebo chcete přizpůsobit ERDDAP™ Nyní, prosím zkopírujte nový&lt;startBodyHtml5 &gt; tag (zespodu) do setup.xml a upravit jej přizpůsobit ERDDAP™ tak, že ERDDAP webové stránky odrážejí vaši organizaci, ne NOAA   ERD . Především, prosím, změňte "Přineseno k vám" do vaší organizace (s) . Pokud potřebujete pomoc, prosím, e-mail erd.data at noaa.gov . (Pokud nechcete přizpůsobit svůj ERDDAP™ Nyní použijte výchozí&lt;startBodyHtml5 &gt;.)
+Doporučujeme použít výchozí&lt;startHeadHtml5&gt; a&lt;endBodyHtml5&gt;.
+Doporučujeme: Pokud jste provedli změny originálu&lt;startBodyHtml&gt; a/nebo chcete přizpůsobit ERDDAP™ Nyní, prosím, zkopírujte novou&lt;startBodyHtml5&gt; tag (zdola) do nastavení.xml a upravit jej přizpůsobit ERDDAP™ takže ERDDAP 's webovými stránkami odráží vaši organizaci, ne NOAA   ERD . Hlavně, prosím, změňte "Přinesl vám" na vaši organizaci (án) . Pokud potřebujete pomoc, prosím e-mail erd.data at noaa.gov . (Pokud nechcete přizpůsobit svůj ERDDAP™ Nyní použijte výchozí&lt;startBodyHtml5&gt;.)
         
-Pak smažte 3 staré značky ve vašem setup.xml, které již nejsou používány.
+Pak smažte 3 staré značky ve vašem nastavení.xml, které již nejsou používány.
 
 ```
         <startBodyHtml5><!\\[CDATA\\[ 
@@ -1178,14 +1195,14 @@ Pak smažte 3 staré značky ve vašem setup.xml, které již nejsou používán
         \\]\\]></startBodyHtml5>
 ```
 
-Existují další způsoby, jak můžete [přizpůsobit ERDDAP™ ](/docs/server-admin/deploy-install#customize) Takže ERDDAP webové stránky odrážejí vaši organizaci místo NOAA   ERD .
+Existují další způsoby, jak můžete [přizpůsobit ERDDAP™ ](/docs/server-admin/deploy-install#customize) tak ERDDAP 's webovými stránkami odráží vaši organizaci místo NOAA   ERD .
         
-    * TO:&lt; EDDGrid ... Příklad & gt; tagy (začínající&lt; EDDGrid IdExample & gt;) a&lt;EDDTable... Příklad & gt; tagy (začínající&lt;EDDTableIdExample & gt;) ve Vašem souboru setup.xml se používá k vytvoření příkladů v griddapu a tabledap dokumentaci. html webové stránky ve vašem ERDDAP .
+    * DO:&lt; EDDGrid ...Příklad &gt; značky (začíná se&lt; EDDGrid IdExample&gt;)&lt;EDDTable... Příklad &gt; značky (začíná se&lt;EDDTableIdExample&gt;) ve vašem setup.xml souboru jsou použity k vytvoření příkladů v roštu a tabledap dokumentace. html webové stránky ve vašem ERDDAP .
         
-Pokud jste tyto značky neupravovali, vymažte je prosím ze svého setup.xml souboru. Nyní mají všechny chyby v messages.xml, které se vztahují na soubory dat v Bobově ERDDAP™ v https://coastwatch.pfeg.noaa.gov/erddap/index.html . Takže už nemusíte mít specifické soubory dat ve svém ERDDAP . Pokud chcete přepsat chyby, zkopírujte některé nebo všechny tyto značky do setup.xml a změňte jejich hodnoty.
-Pokud chcete, aby příklady ukazovaly na váš ERDDAP™ , Nejjednodušší metoda je:
+Pokud jste si tyto značky nepřizpůsobili, smažte je prosím ze souboru setup.xml. Nyní mají všechny výchozí hodnoty ve zprávách.xml, které odkazují na datové soubory v Bob's ERDDAP™ v https://coastwatch.pfeg.noaa.gov/erddap/index.html . Takže již nemusíte mít konkrétní data ve svém ERDDAP . Pokud chcete přepsat výchozí hodnoty, zkopírujte některé nebo všechny tyto značky do nastavení.xml a změňte jejich hodnoty.
+Pokud chcete, aby příklady ukazují na vaše ERDDAP™ Nejjednodušší metoda je:
         
-        1. Zahrňte tyto dva soubory dat do svého ERDDAP™ Přidáním tohoto k vašemu datasets.xml :
+        1. Zahrňte tyto dva soubory do svého ERDDAP™ přidáním tohoto do vašeho datasets.xml :
 ```
             <dataset type="EDDGridFromErddap" datasetID="jplMURSST41" active="true">
                 <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41</sourceUrl>
@@ -1195,168 +1212,168 @@ Pokud chcete, aby příklady ukazovaly na váš ERDDAP™ , Nejjednodušší met
             </dataset>
 ```
 
-        2. Přidat tuto značku do setup.xml, ale změnit URL na váš ERDDAP s ( https ?) URL:
+        2. Přidat tento tag do nastavení.xml, ale změnit URL na vaše ERDDAP 's ( https ?) URL:
 ```
             <EDDGridErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDGridErddapUrlExample>
             <EDDTableErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDTableErddapUrlExample>
 ```
         
-Pokud jste udělali přizpůsobit tyto značky, nechte je tak, jak je a prosím přidejte tyto 2 nové značky do vašeho setup.xml pro určení ERDDAP™ URL pro tyto soubory dat, ale změnit URL na vaše ERDDAP s ( https ?) URL:
+Pokud jste udělali přizpůsobení těchto značek, nechte je tak, jak je a přidejte prosím tyto 2 nové značky do nastavení.xml zadat ERDDAP™ URL pro tyto soubory souborů, ale změnit URL na vaše ERDDAP 's ( https ?) URL:
 ```
         <EDDGridErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDGridErddapUrlExample>
         <EDDTableErddapUrlExample>https://coastwatch.pfeg.noaa.gov/erddap/</EDDTableErddapUrlExample>
 ```
 
-    * TO: ERDDAP™ nyní používá css soubor s názvem erddap2.cs. Pokud jste provedli (a) změny \\[ tomcat \\] / webové aplikace / erddap / images / erddap.css, zvažte podobné změny na erddap2.css (ve stejném adresáři) .
-    * NEW: ERDDAP Webové stránky nyní mají velký počet téměř neviditelných vnitřních odkazů (text je černý a není podtržen) . Pokud se vznášíte nad jedním z těchto odkazů (obvykle prvních pár slov čísel a odstavců) , kurzor se stane rukou. Pokud kliknete na odkaz, URL je vnitřní odkaz na tuto část dokumentu. To usnadňuje odkazování na konkrétní části dokumentace. Díky Bobu Simonsovi, který to celé roky chtěl.
-    * NEW: ERDDAP™ nyní podporuje [Rozsah bajtů / Acept- ranges](https://en.wikipedia.org/wiki/Byte_serving) žádosti o porce / souborů / souborů. To bylo potřeba pro podporu audio a video diváků v prohlížečích.
-    * Chcete-li: Nyní, pro zlepšení bezpečnosti, pokud jste zadali&lt;baseHttpsUrl &gt; in setup.xml (a tím podpora https ) , doporučená vlajka Url je https URL s bezpečnější flagKey. Pokud ano, všechny předchozí flagrurls / flagKeys budou neplatné. Podání: Pokud se tyto změny vztahují na ERDDAP™ a pokud váš ERDDAP™ má EDDGrid FromErddap a EDDTable FromErddap 's, který se přihlásí na dálku ERDDAP s poté, co aktualizujete ERDDAP , ERDDAP™ automaticky se pokusí přihlásit s novým flagUrl, takže byste měli smazat staré předplatné a validovat nové předplatné, když dostanete nové potvrzení předplatného e-maily.
-    * TO: Jestliže ERDDAP™ má EDDGrid Soubory dat FromErddap pro soubory dat erdVH3 na Bobově pobřežní hlídce ERDDAP™ , Prosím, změnit je odkazovat na nové soubory dat erdVH2018.
-    * TO: Pokud do svého souboru zahrnujete některý ze vzorků jplAquariusSSS ERDDAP™ , prosím, změnit "V4" v datasetID Na V5.
-    * TO: actual\\_range je nyní standardní atribut CF (od CF- 1.7) a jasně říká, že pokud proměnná používá add\\_offset a / nebo scale\\_factor pro balení hodnot dat, pak actual\\_range hodnoty by měly používat nebalený datový typ a měly by být vybaleny. Bohužel to je v rozporu s naší předchozí radou. GeneteDatasets Xml nyní vybaleno actual\\_range hodnoty, ale to neopraví existující soubory dat ve vašem datasets.xml Složka.
+    * DO: ERDDAP™ Nyní používá soubor css nazvaný erddap2.css. Pokud jste provedli změny \\[ tomcat \\] /webapps/erddap/images/erddap.css, zvažte provedení podobných změn erddap2.css (ve stejném adresáři) .
+    * NEW: ERDDAP 's webovými stránkami nyní mají velký počet téměř neviditelných vnitřních odkazů (text je černý a není zdůrazněn) . Pokud se vznášíte nad jedním z těchto odkazů (obvykle prvních pár slov kapitol a odstavců) Kurzor se stává rukou. Pokud kliknete na odkaz, URL je interní odkaz na tuto část dokumentu. Díky tomu lze snadno odkazovat na konkrétní části dokumentace. Díky Bobovi Simonsovi, který tohle chtěl už roky.
+    * NEW: ERDDAP™ nyní podporuje [Byte Range / Accept-Ranges](https://en.wikipedia.org/wiki/Byte_serving) žádosti o části /souborů/ souborů. To bylo potřeba k podpoře audio a video prohlížečů v prohlížečích.
+    * TO DO: Chcete-li zlepšit bezpečnost, pokud jste uvedli&lt;baseHttpsUrl&gt; in setup.xml (a tím i podporu https ) , doporučená vlajka Url je https URL s bezpečnějším klíčem. Pokud ano, jakákoliv předchozí vlajkaUrls/flagKeys se stane neplatnou. Administrátoři: Pokud se tyto změny vztahují na Váš ERDDAP™ a pokud ERDDAP™ má EDDGrid OdErddap a EDDTable FromErddap's, která se hlásí ke vzdálenému ERDDAP s, pak, po aktualizaci ERDDAP , vaše ERDDAP™ automaticky se pokusí přihlásit se s novou flagUrl, takže byste měli smazat staré předplatné a potvrdit nové předplatné, když dostanete nové předplatné validační e-maily.
+    * DO: ERDDAP™ má EDDGrid Soubory dat FromErddap pro soubory ErdVH3 na Bobově pobřežní stráži ERDDAP™ , prosím, změňte je tak, aby odkazovaly na nové soubory ErdVH2018.
+    * DO: Pokud do svého souboru přidáte některý ze vzorků jplAquariusSSS ERDDAP™ , prosím změňte "V4" v datasetID "V5."
+    * DO: actual\\_range je nyní standardní atribut CF (od CF-1.7) a jasně říká, že pokud proměnná používá add\\_offset nebo scale\\_factor zabalit hodnoty dat, pak actual\\_range hodnoty by měly používat rozbalený datový typ a vybalit hodnoty. Bohužel je to v rozporu s předchozí radou. Generovat soubory dat Xml nyní vybalí zabalené actual\\_range hodnoty, ale to nespraví existující datové soubory ve vašem datasets.xml Složka.
         
-Takže, prosím zkontrolujte své soubory dat: pokud jsou hodnoty proměnné zabaleny a pokud actual\\_range je specifikováno jako balené hodnoty dat, prosím přidejte&lt; addAttributes &gt; actual\\_range hodnota pro určení hodnot nezabalených. Jinak se datový soubor nenačte ERDDAP . Jednoduchý a téměř dokonalý způsob, jak to udělat, je prohledat datasets.xml pro zdroj Atributy, které mají
+Prohlédněte si prosím soubory souborů: pokud jsou hodnoty proměnné zabaleny a pokud actual\\_range je specifikován jako balené hodnoty dat, prosím přidejte&lt; addAttributes &gt; actual\\_range hodnota pro určení vybalených hodnot. V opačném případě nebude soubor údajů zadávat ERDDAP . Jednoduchý a téměř dokonalý způsob, jak to udělat, je prohledat datasets.xml pro zdroj Atributy
 ```
         <att name="actual\\_range" type="shortList">  
         or <att name="actual\\_range" type="intList">  
 ```
-a scale\\_factor jiné než 1.0. To jsou actual\\_range atributy, které možná budete muset napravit.
+a scale\\_factor jiné než 1. 0. To jsou actual\\_range atributy, které budete muset opravit.
         
-Pro proměnné osy v EDDGrid soubory dat, ERDDAP™ vždy nastavuje actual\\_range atribut je skutečný rozsah hodnot, protože tyto hodnoty zná.
+Pro proměnné osy v EDDGrid datové soubory, ERDDAP™ vždy nastaví actual\\_range atribut je skutečný rozsah hodnot, protože tyto hodnoty zná.
         
-Pro proměnné osy se sestupnými hodnotami (např. některé proměnné zeměpisné šířky) , ERDDAP™ vytvořeno actual\\_range s \\[ 0 \\] ... \\[ poslední \\] hodnoty, které byly vysoké... nízké. Vždy používá nízké... vysoké hodnoty k vytvoření nové CF definice.
+Pro proměnné osy se sestupnými hodnotami (Například některé proměnné zeměpisné šířky) , ERDDAP™ vytvořen actual\\_range s \\[ 0 \\] ... \\[ poslední \\] hodnoty, které byly vysoké... nízké. Nyní vždy používá nízké... vysoké hodnoty k vytvoření nové definice CF.
         
-Správnost actual\\_range hodnoty jsou důležité zejména pro soubory údajů EDDTable, protože ERDDAP™ rychle zamítne žádosti uživatelů o údaje, které jsou nižší než actual\\_range minimální hodnota nebo která jsou větší než actual\\_range maximální hodnota.
+Správnost actual\\_range hodnoty jsou zvláště důležité pro soubory údajů v tabulce EDDTable, protože ERDDAP™ rychle odmítne uživatelské požadavky na hodnoty údajů, které jsou nižší než actual\\_range minimální hodnota nebo vyšší než actual\\_range maximální hodnota.
         
-Související: skutečný\\ _ min, skutečný\\ _ max, data\\_min a data\\_max atributy jsou nyní zaostalé. Prosím, převést své soubory dat k použití actual\\_range místo toho.
+Související: aktuální\\_min, aktuální\\_max, data\\_min a data\\_max atributy jsou nyní deprecovány. Převeďte prosím vaše datové soubory k použití actual\\_range Místo toho.
         
-    * UDĚLAT (volitelné, ale doporučené) : Pro každý blížící-real-time a předpověď datového souboru ve vašem ERDDAP™ , prosím přidejte [&lt; testOutOfDate &gt;] (/ docs / server- admin / datový soubor # testoutofdate) tag s hodnotou ve formuláři now- _ nUnits _, např. now- 2 dny. Je-li maximální časová hodnota datového souboru starší než tato hodnota, je datový soubor považován za zastaralý a bude jako takový označen [ outOfDateDatasets.html ](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) webová stránka. To poskytuje snadný způsob, jak můžete vidět, když je něco špatně se zdrojem datového souboru.
-    *    [NEW: Semantické označení datových souborů s json- ld (JSON Propojená data) ](/docs/server-admin/additional-information#json-ld)   
-         ERDDAP™ nyní používá [json- ld (JSON Propojená data) ](https://json-ld.org) aby Váš katalog dat a soubory dat součástí [sémantický web](https://en.wikipedia.org/wiki/Semantic_Web) , což je nápad Tima Berners- Leeho udělat obsah webu strojově čitelnější a stroj "pochopitelný". Vyhledávače ( [Zejména Google](https://developers.google.com/search/docs/data-types/datasets) ) a další sémantické nástroje mohou použít tuto strukturovanou markup pro usnadnění objevování a indexování. Json- ld strukturovaná markup se jeví jako neviditelné-to-lidé&lt;script &gt; Kód http://.../erddap/info/index.html webová stránka (což je sémantický web [DataCatalog](https://schema.org/DataCatalog) ) a na každém http://.../erddap/info/_datasetID_/index.html webová stránka (což je sémantický web [Dataset](https://schema.org/Dataset) ) . (Zvláštní poděkování Adam Leadbetter a Rob Fuller z Marine Institute v Irsku za to, že dělají těžké části práce, aby se tato část ERDDAP .) 
-    * NEW: Existují nové typy datových souborů, které mohou číst data z audio souborů:
-         [ EDDGrid FromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , který považuje zvuková data za Gridded data.
-         [EDDTableFromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , který zachází s audio daty jako s daty tabulek. Díky Jim Potemra, Rich Sigdell, OOI, a Carrie Wall Bell pro žádosti o audio / hydrophone podporu souborů.
-    * Změny generateDatasets Xml (a související změny) :
-        * NEW: ERDDAP™ nyní má systém k automatickému [update out- of- date URL](/docs/server-admin/additional-information#out-of-date-urls) jak v GeneteDatasets Xml a při nahrávání souborů dat. Pokud máte návrhy na další URL, které by měly být zachyceny a aktualizovány, nebo pokud si myslíte, že by měly být přeměněny na službu (jako Converters) , prosím e-mail erd.data at noaa.gov .
-        * NEW: Pokud GenerateDatasets Xml vidí CF standard\\_name   (které by měly být všechny malé případy) se zvýšeným charakterem, přidává všechny malé verze&lt; addAttributes &gt;. Také, když datový soubor načte, pokud ERDDAP™ viz CF standard\\_name s horní znak, to tiše mění na standard\\_name . Díky Richovi Signellovi.
-        * NEW: Pokud GenerateDatasets Xml vidí atribut s časem, který není ve formátu ISO 8601, přidává čas formátovaný ISO 8601&lt; addAttributes &gt;. Pokud ERDDAP™ nerozeznává formát, zanechává hodnotu času beze změny. Pokud vidíte formát, který ERDDAP™ nepoznává a opravuje, prosím, e-mail to erd.data at noaa.gov .
-        * ZLEPŠENÉ: Kód nízké úrovně EDDGrid FromThredds Katalogová volba v GenetateDatasets Xml nyní závisí na Unidata netcdf-java katalog crawler kód (Tři. katalogové třídy) aby to zvládlo všechny katalogy HISDDS (které mohou být překvapivě složité) . Díky Roland Schweitzer za návrh této změny a díky Unidata pro kód.
-        * NEW: GenerateDatasets Xml pro EDDGrid FromDap nyní přidává, "startYeart- EndYear" ke konci titulu na základě skutečných hodnot časové osy. EndYear = "současnost", pokud za posledních 150 dní existují údaje.
-        * NEW: GenerateDatasets Xml pro EDDGrid FromDap nyní dodává, " \\[ řešení \\] ° "k názvu, pokud je datový soubor rovnoměrně rozložen a stejný pro lat a lon.
-        * ZLEPŠENO: Časový převodník má nyní další funkce, zejména schopnost převést řetězec časy v široké škále společných formátů do ISO 8601 řetězce nebo do UDUnits- kompatibilní číslo. Všechny dříve podporované funkce nadále fungují, nezměněny.
-        * BUG FIX: GeneteDatasets Xml a konvertor Klíčová slova nyní obsahují "Earth Science &gt;" na začátku GCMD Science Klíčová slova. Když je datový soubor nastaven ERDDAP™ , ERDDAP™ Nyní opravuje všechna GCMD klíčová slova v atributu klíčová slova, která nezačínají s "Earth Science &gt;" nebo která používají něco jiného než titulní případ (kde první písmeno každého slova je kapitalizováno) .
-        * ZLEPŠENO: Při navrhování&lt; destinationName &gt; 's, GenetateDatasets Xml pro EDDTableFromAsciiFiles právě použil zadní konec sourceName s '/'   (Někteří byli film- jako) . Teď používá celý sourceName (např. "blahblahblah (m / s)". Tato změna bude dobrá pro některé soubory dat a ne pro jiné, ale je to bezpečnější chování. Díky Maurici Libesovi.
-        * BUG FIX: GeneteDatasets Xml a konstruktéři datového souboru nyní zajišťují, že neexistují žádné duplicitní názvy sloupců. Díky Maurici Libesovi.
-        * BUG FIX: GeneteDatasets Xml pro EDDTableFromAsciiFiles nepsal&lt;kolonSeparator &gt; na výstup. Teď už ano. Díky Maurici Libesovi.
-    * NEW: Nástroj DasDds nyní vytiskne informace o časové mezery (s [.timeGaps informace](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#timeGaps) ) je-li datový soubor gridded datový soubor.
-    * NEW: Advanced Search nyní přijímá "now _\\ -nUnits _" časové hodnoty. Díky Richovi Signellovi.
-    * ZLEPŠENO: Pro zlepšení bezpečnosti se při zapsání e-mailové adresy v metadatech nebo datech datového souboru na html webovou stránku nahrazuje "@" na ". To zachycuje pouze e-mailové adresy, které jsou celá metadata nebo hodnota dat, nikoli e-mailové adresy zabudované v delších hodnotách.
-    * ZLEPŠENO: Pro zvýšení bezpečnosti RSS informace pro soukromé soubory dat jsou nyní k dispozici pouze uživatelům (a RSS čtenáři) kteří jsou přihlášeni a oprávněni používat tento datový soubor.
-    * NEW: Když se načte datový soubor, pokud date\\_created , date\\_issued , date\\_modified nebo datum\\ _ metadata\\ _ modifikovaný atribut má časovou hodnotu, která není ve formátu ISO8601, ERDDAP™ změní ji na formát ISO 8601. Pokud ERDDAP™ nerozeznává formát, zanechává hodnotu času beze změny. Pokud vidíte formát, který ERDDAP™ nepoznává a opravuje, prosím, e-mail to erd.data at noaa.gov .
-    * ZLEPŠENO: EDDGrid Datové soubory by nyní měly být podstatně rychlejší. Díky Richovi Signellovi.
-    * Změny související s ERDDAP vytvoření dokumentů ISO 19115:
-        * BUG FIX: při vytváření dokumentů ISO19115, dataVariable jednotky nebyly HTML Atributy kódované a procenta kódované. Teď jsou. Díky validátoru ISO 19115 NGDC.
-        * BUG FIX: při vytváření dokumentů ISO19115, date\\_created byl používán tak, jak je, tak často byl špatný formát. Nyní je převeden na řetězec ISO 8601 Z. Díky validátoru ISO 19115 NGDC.
-        * BUG FIX: při vytváření dokumentů ISO19115, ERDDAP™ Nyní delší píše data s rokem = 0000 (jako u souborů dat klimatologie) , protože schéma ISO 19115 neumožňuje data s rokem = 0000. Díky validátoru ISO 19115 NGDC.
-    * NEW: Jako před žádostí http ... / erddap / verze vrátí pouze číslo verze (jako text) např. " ERDDAP \\ _ version = 1.82. "
-Nyní, žádost o http ... / erddap / version\\ _ string vrátí číslo a volitelný soubor '\\ _' plus ASCII text (žádné mezery nebo kontrolní znaky) např. " ERDDAP \\ _ version\\ _ string = 1.82\\ _ JohnsFork. "Lidé na vidličce to specifikují změnou EDStatic.erddapVersion. Tento způsob, jak to dělá nezpůsobuje problémy pro předchozí verze ERDDAP . Díky Axiomu. (zejména Kyle Wilcox) a Irský námořní institut (zejména, Rob Fuller) .
-    * BUG FIX: Pro wms verze = 1.3.0, žádost = GetMap , cr = EPSG: 4326 (ne CRS: 84) požadavky: bbox order musí být minLat, minLon, maxLat, maxLon. Pro CRS: 84 požadavků, stejně jako dříve, bbox objednávky musí být minLon, minLat, maxLon, maxLat. To může být stanoveno pomocí ERDDAP s WMS 1.3.0 služba v ArcGIS   (díky Paola Arce) . Díky. (ne) do OGC že jsi to tak zkomplikoval. Díky Leaflet za to, že to správně zvládám a za to, že mi dal způsob, jak to otestovat.
-    * ZLEPŠENO: Předchozí, navrhovaný odkaz pro RSS a e-mailové předplatné má http URL pro váš ERDDAP . Teď je to https URL, pokud je aktivní.
-    * NEW: EDDGrid Kopírovat nyní podporuje volitelnou značku&lt;pouze od &gt; _ someValue _&lt;/ onlySince &gt;, kde hodnota je specifický ISO-8601-formátovaný čas nebo now- nUnits (např. now- 2 roky) čas. Viz [pouze Od dokumentace](/docs/server-admin/datasets#onlysince) . Díky Drewovi P.
-    * ZLEPŠENO: Je-li k dispozici, ERDDAP™ ukáže https URL (od&lt;baseHttpsUrl &gt;, je-li k dispozici) místo http URL když řekne uživatelům URL přidat / validovat / odstranit / seznam předplatného.
-    * BUG FIX: ERDDAP™ nyní umožňuje předplatné akce začít s " https://" . (Bob si plácne po čele.) Díky Jennifer Sevadjianové.
-    * BUG FIX: .jsonlKVP nyní používá ':' mezi každým klíčem a hodnotou, místo '=' . (Bob si plácne po čele.) Díky Alexandru Barthovi.
-    * BUG FIX: V minulých dílech jste viděli... ERDDAP™ s quickRestart = true, a pokud, před načtením datového souboru normálně, jste zavolaly na EDDTableFromFiles dataset, který použil updateEveryNMillis, a pokud datový soubor byl právě změněn, požadavek by selhal s null ukazatel chyby. Nyní žádost uspěje. Díky Johnu Kerfootovi.
-    * NEW: Když je datový soubor vložen ERDDAP™ , Klíčová slova jsou nyní přeřazeny do tříděného pořadí a všechny nové řádky znaky jsou odstraněny.
-    * ZLEPŠENÝ: .json nebo .nc oJson žádost má .json p parametr, typ odezvy mime je aplikace / javascript. Všimněte si, že .json p není podporován pro .jsonlCSV nebo .jsonlKVP Protože by to nefungovalo. Díky Robu Fullerovi.
-    * ZLEPŠENO: Typ mime pro volby souboru json řádků Type je nyní "application / x-jsonlines". Byla to aplikace / jsonl. V současné době neexistuje definitivní správná volba.
-    * ZLEPŠENO: Počet neúspěšných žádostí uvedených na stránce status.html se zvýší, protože více věcí se započítává jako selhání než dříve, např. ClientAbortException.
-    * ZLEPŠENO: Nyní, pokud odpověď od ERDDAP™ není komprimován, pak hlavička odpovědi bude obsahovat "Content-Encoding" = "identita".
-    * ZLEPŠENO: Atribut "licence" nebyl vyžadován. Pokud to není specifikováno, standardní licence z messages.xml (nebo ze setup.xml, pokud je přítomen) používá se jako výchozí.
-    * NEW: Nyní je volitelný [atribut filecompliance Suffix](/docs/server-admin/datasets#fileaccessbaseurl) . které mohou být použity se stávající [atribut souboru BaseUrl](/docs/server-admin/datasets#fileaccessbaseurl) .
-    * ZLEPŠENO: Pro zvýšení bezpečnosti byla tato verze sestavena s nejnovějšími Java JDK v8u162.
-    * NEW: Chcete-li zvýšit bezpečnost, několik společných domén, které nabízejí dočasné e-mailové adresy (např. @ mailinator.com) jsou nyní na trvalé e-mailové černé listině pro předplatné systému.
-    * NEW: Pro zvýšení bezpečnosti, součty v Daily Report nyní zahrnují:
-SetDataset IP adresa vlajky selhala (od poslední denní zprávy)   
-SetDataset IP adresa vlajky selhala (od spuštění)   
-SetDataset Name (od poslední denní zprávy)   
-SetDataset Name (od spuštění)   
-The "Failed" tallies let you see who (Hacker?) snaží se nastavit vlajku, ale selhává.
-    * ZLEPŠENÉ: Chcete-li zvýšit bezpečnost, e-mailové adresy v&lt;Předplatné EmailBlacklist &gt; ve Vašem datasets.xml jsou nyní považovány za případy-necitlivé.
+    * TO DO (volitelné, ale doporučené) : Pro každý databázový soubor v blízkém čase a prognóze ERDDAP™ , prosím přidejte [&lt; testOutOfDate &gt;] (/docs/server-admin/datasets#testoutofdate) tag s hodnotou ve formuláři now- _nUnits_, např. now- 2 dny. Je-li maximální časová hodnota datového souboru starší než tato hodnota, považuje se datový soubor za zastaralý a bude jako takový označen na [ outOfDateDatasets.html ](https://coastwatch.pfeg.noaa.gov/erddap/outOfDateDatasets.html) webové stránky. To vám umožňuje snadnou představu, kdy je něco špatně se zdrojem datového souboru.
+    *    [NEW: Sémantický markup datových sad s json-ld (JSON Propojené údaje) ](/docs/server-admin/additional-information#json-ld)   
+         ERDDAP™ použití [Json- Id (JSON Propojené údaje) ](https://json-ld.org) aby byl Váš katalog dat a datové soubory součástí [sémantická síť](https://en.wikipedia.org/wiki/Semantic_Web) , což je Tim Berners-Lee nápad, aby web obsah více stroj čitelný a stroj "pochopitelný." Vyhledávací stroje ( [Zejména Google](https://developers.google.com/search/docs/data-types/datasets) ) a další sémantické nástroje mohou použít tuto strukturovanou značku k usnadnění objevu a indexování. Struktura json-ld se jeví jako neviditelní lidé&lt;skript &gt; kód http://.../erddap/info/index.html webová stránka (což je sémantická síť [DataCatalog](https://schema.org/DataCatalog) ) a na každém http://.../erddap/info/_datasetID_/index.html webová stránka (což je sémantická síť [Soubor dat](https://schema.org/Dataset) ) . (Zvláštní poděkování Adam Leadbetter a Rob Fuller z Mořského institutu v Irsku za to, že dělají těžké části práce, aby se tato část ERDDAP .) 
+    * NOVINKA: Existují nové typy souborů, které mohou číst data z audio souborů:
+         [ EDDGrid FromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , který považuje audio data za mřížkovaná data.
+         [EDDTableFromAudioFiles](/docs/server-admin/datasets#eddfromaudiofiles) , který považuje audio data za tabulární data. Díky Jim Potemra, Rich Signell, OOI, a Carrie Wall Bell za žádosti o podporu souborů audio/hydrofon.
+    * Změny ve generování dat Xml (a související změny) :
+        * NEW: ERDDAP™ Nyní má systém automaticky [aktualizace zastaralých URL](/docs/server-admin/additional-information#out-of-date-urls) oba v GenerateDatasets Xml a při načítání dat. Pokud máte návrhy na další URL adresy, které by měly být zachyceny a aktualizovány, nebo pokud si myslíte, že by to mělo být změněno na službu (Jako konvertory) , prosím e-mail erd.data at noaa.gov .
+        * NEW: Nyní, pokud GenerateDatasets Xml vidí CF standard\\_name   (které by měly být všechny malé) s velkou postavou, přidává všechny malé verze&lt; addAttributes &gt;. Také při zatížení souboru, pokud ERDDAP™ viz CF standard\\_name s velkou postavou, tiše ji mění na standard\\_name . Díky Richi Signellovi.
+        * NEW: Nyní, pokud GenerateDatasets Xml vidí atribut s časem, který není ve formátu ISO 8601, přidá formát ISO 8601&lt; addAttributes &gt;. Pokud ERDDAP™ neuznává formát, nechává časovou hodnotu nezměněnou. Pokud vidíte formát, který ERDDAP™ nepoznává a neopravuje, prosím e-mailem na erd.data at noaa.gov .
+        * ZLEPŠENÉ: Nízkoúrovňové kód pro EDDGrid FromThredds Volba katalogu v GeneranteDatasets Xml nyní spoléhá na Unidata katalogový kód netcdf-java (Thredds. Katalogové třídy) takže může zvládnout všechny katalogy THREDDS (což může být překvapivě složité.) . Díky Rolandu Schweitzerovi za návrh této změny a díky Unidata pro kód.
+        * Novinka: GenerovatDatasety Xml pro EDDGrid FromDap nyní přidává ", startRok-EndRok" na konec titulu na základě aktuálních hodnot časové osy. EndRok="present" pokud data existují za posledních 150 dnů.
+        * Novinka: GenerovatDatasety Xml pro EDDGrid FromDap nyní dodává " \\[ rozlišení \\] °" k názvu, pokud je datový soubor rovnoměrně rozložen a stejný pro lat a lo.
+        * IMPROVED: Převodník času má nyní další vlastnosti, zejména schopnost převést časy strun v široké škále běžných formátů do ISO 8601 řetězce nebo na UDUnits kompatibilní číslo. Všechny dříve podporované funkce nadále fungují, beze změny.
+        * BUG FIX: GenerovatNastavení dat Xml a klíčových slov převodník nyní patří "Země věda &gt; " na začátku GCMD věda Klíčová slova. Při načtení datového souboru ERDDAP™ , ERDDAP™ Nyní opravit všechna klíčová slova GCMD v atributu klíčových slov, která nezačínají na "Země věda &gt; " nebo které používají cokoli jiného než titulní případ (kde je první písmeno každého slova kapitalizováno) .
+        * Při navrhování&lt; destinationName &gt;'s, GeneratorDatasets Xml pro EDDTableFromAsciiFiles právě použil konec ocasu sourceName s '/'   (některé byly jako název souboru) . Teď používá celý. sourceName (např. "blahblahblah (m/s)." Tato změna bude dobrá pro některé soubory dat a ne pro ostatní, ale je to bezpečnější chování. Díky Maurice Libesovi.
+        * BUG FIX: GenerovatNastavení dat Xml a konstruktéři souborů nyní zajišťují, že neexistují žádné dvojí názvy sloupců. Díky Maurice Libesovi.
+        * BUG FIX: GenerovatNastavení dat XML pro EDDTableFromAsciiFiles nenapsal&lt;sloupecSeparator &gt; na výstup. Teď už ano. Díky Maurice Libesovi.
+    * NOVINKA: Nástroj DasDds nyní vytiskne informace o časové mezery (vá [.timeGaps informace](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#timeGaps) ) je-li datový soubor datový soubor mřížkou.
+    * NOVINKA: Pokročilé vyhledávání nyní přijímá časové hodnoty "now_\\-nUnits_." Díky Richi Signellovi.
+    * IMPROVED: Pro zlepšení bezpečnosti, když je e-mailová adresa v metadatech nebo datech datového souboru zapsána na webové stránce html, "@" se nahrazuje " na ". To zachytí pouze e-mailové adresy, které jsou celá metadata nebo hodnota dat, ne e-mailové adresy vložené do delších hodnot.
+    * Pro zvýšení bezpečnosti RSS Informace o soukromých datových souborech jsou nyní dostupné pouze uživatelům (a RSS čtenáři) kteří jsou přihlášeni a oprávněni používat tento datový soubor.
+    * NEW: Nyní, když je soubor dat načten, pokud date\\_created , date\\_issued , date\\_modified , nebo date\\_metadata\\_modifikovaný atribut má časovou hodnotu, která není ve formátu ISO 8601, ERDDAP™ změní ji na formátovaný čas ISO 8601. Pokud ERDDAP™ neuznává formát, nechává časovou hodnotu nezměněnou. Pokud vidíte formát, který ERDDAP™ nepoznává a neopravuje, prosím e-mailem na erd.data at noaa.gov .
+    * ZLEPŠENÉ: .dods odpovědi od EDDGrid Data by teď měla být podstatně rychlejší. Díky Richi Signellovi.
+    * Změny týkající se ERDDAP 's vytvořením dokumentů ISO 19115:
+        * BUG FIX: při vytváření dokumentů ISO 19115 dataVariable jednotky nebyly HTML Atribute zakódovány a zakódovány. Teď už ano. Díky validátoru ISO 19115 NGDC.
+        * BUG FIX: při vytváření dokumentů ISO 19115 date\\_created byl použit tak, jak je, tak často byl špatný formát. Nyní je převeden na řetězec ISO 8601 Z. Díky validátoru ISO 19115 NGDC.
+        * BUG FIX: při vytváření dokumentů ISO 19115 ERDDAP™ nyní delší píše data s rokem=0000 (jako s klimatologickými soubory) , protože schéma ISO 19115 neumožňuje data s rokem=0000. Díky validátoru ISO 19115 NGDC.
+    * NEW: Jako před žádostí o http .../erddap/version vrátí pouze číslo verze (jako text) , např. " ERDDAP \\_version=1.82."
+Takže, žádost o http .../erddap/version\\_string vrátí číslo a volitelnou příponu '\\_' plus ASCII text (žádné mezery nebo kontrolní znaky) , např. " ERDDAP \\_version\\_string=1.82\\_JohnsFork" Lidé dělající vidličku to určí změnou ED Static.erddapVersion. Tímto způsobem to nezpůsobuje problémy pro předchozí verze ERDDAP . Díky Axiomu (zejména Kyle Wilcox) Irsko (zejména Rob Fuller) .
+    * BUG FIX: Pro wms verzi=1.3.0, request= GetMap , CS=EPSG:4326 (není CRS:84) žádosti: bbox objednávka musí být minLat,minLon,maxLat,maxLon. Pro CRS: 84 požadavků, jako dříve, bbox objednávka musí být minLon,minLat,maxLon,maxLat. To může napravit použití ERDDAP 's WMS 1.3.0 služba ArcGIS   (díky Paole Arceové.) . Díky. (ne) až OGC za to, že to tak komplikuješ. Díky Leaflet za správné zacházení a za to, že jste mi dali způsob, jak to otestovat.
+    * IMPROVED: Předchozí, navrhovaný odkaz pro RSS a e-mailové předplatné má http URL pro vaši ERDDAP . Teď je to https URL, pokud je aktivní.
+    * NEW: EDDGrid Kopírovat nyní podporuje volitelnou značku&lt;pouzeOd&gt;_someValue_&lt;/pouzeOd &gt;, je-li hodnota specifická pro ISO-8601-formátovaný čas nebo now- nJednotky (např. now- 2 roky) Čas. Viz [pouze Od dokumentace](/docs/server-admin/datasets#onlysince) . Díky Drew P.
+    * ZLEPŠENÉ: Je-li k dispozici, ERDDAP™ ukáže https URL (od&lt;baseHttpsUrl &gt;, je-li k dispozici) místo http URL, když řekne uživatelům URL přidat / validovat / odstranit / seznam předplatného.
+    * BUG FIX: ERDDAP™ Nyní umožňuje předplatné akce začít s " https://" . (Bob si fackuje čelo.) Díky Jennifer Sevadjianové.
+    * BUG FIX: .jsonlKVP nyní používá ':' mezi každým klíčem a hodnotou namísto '=' . (Bob si fackuje čelo.) Díky Alexandru Barthovi.
+    * BUG FIX: V předchozích dílech... ERDDAP™ s quickRestart=true, a pokud jste předtím, než byl datový soubor přeobnoven normálně, zavolali do souboru EDDTableFromFoles, který použil aktualizaciEveryNMillis, a pokud by byl datový soubor právě změněn, požadavek by selhal s chybou nulového ukazatele. Nyní žádost uspěje. Díky Johnu Kerfootovi.
+    * NEW: Při načtení datového souboru ERDDAP™ , klíčová slova jsou nyní přeřazena do seřazeného pořadí a všechny nové znaky jsou odstraněny.
+    * Teď, když je to .geoJson, .json nebo .nc oJson žádost má .json P parametr, typ mime odezvy je aplikace/javascript. Všimněte si, že .json p není podporováno .jsonlCSV nebo .jsonlKVP Protože by to nefungovalo. Díky Robu Fullerovi.
+    * IMPROVED: Typ mimu pro soubor json linesType je nyní "application/x-jsonlines." Byla to žádost/jsonl. V současné době neexistuje žádná definitivní správná volba.
+    * IMPROVED: Počet neúspěšných žádostí uvedených na stránce status.html se zvýší, protože více věcí se počítá jako selhání než dříve, např. ClientAbortException.
+    * ZLEPŠENÍ: Nyní, pokud odpověď z ERDDAP™ není komprimován, pak hlavička odpovědi bude obsahovat "Content-Encoding"="identity."
+    * Příznak "licence" nebyl nutný. Teď, pokud to není uvedeno, standardLicence ze zpráv.xml (nebo ze setup.xml, pokud je přítomen) je použita jako výchozí hodnota.
+    * NEW: Nyní je volitelný [souborAccessSuffix atribut](/docs/server-admin/datasets#fileaccessbaseurl) . které lze použít s existující [atribut souboruAccessBaseUrl](/docs/server-admin/datasets#fileaccessbaseurl) .
+    * IMPROVED: Pro zvýšení bezpečnosti byla tato verze sestavena s nejnovějšími Java JDK v8u162.
+    * NEW: Chcete-li zvýšit bezpečnost, několik společných domén, které nabízejí dočasné e-mailové adresy (např. @mailinator.com) jsou nyní na trvalém e-mailu blacklist pro systém předplatného.
+    * NOVINKA: Pro zvýšení bezpečnosti jsou nyní v Daily Report uvedeny tyto údaje:
+SetDataset Vlajka IP adresa selhala (od poslední denní zprávy)   
+SetDataset Vlajka IP adresa selhala (od spuštění)   
+SetDataset Vlajka IP adresa uspěla (od poslední denní zprávy)   
+SetDataset Vlajka IP adresa uspěla (od spuštění)   
+"Failed" hities vám ukázat, kdo (Hacker?) Snaží se nastavit vlajku, ale selhává.
+    * IMPROVED: Pro zvýšení bezpečnosti, e-mailové adresy v&lt;předplatnéEmailBlacklist &gt; ve Vašem datasets.xml jsou nyní považovány za případy necitlivé.
          
 
 ## Verze 1.80{#version-180} 
- (propuštěn 2017- 08- 04) 
+ (vydání 2017-08-04) 
 
 *    **Nové funkce (pro uživatele) :**   
      
-    * NOVÝ orderByCount  () filtr umožňuje určit, jak bude tabulka výsledků seřazena (nebo ne) a jen vrátí jeden řádek pro každou skupinu, s počtem počtu non-missing- hodnoty pro každou proměnnou.
-Například, orderByCount  (" stationID ") bude třídit podle stationID a vrátit jednu řadu pro každého stationID , s počtem počtu non-missing- hodnoty pro každou proměnnou.
-Pokud jen zadáte orderByCount  ("") , odpověď bude jen jeden řádek s počtem non-missing- hodnot pro každou datovou proměnnou.
+    * NOVÉ orderByCount  () filtr umožňuje určit, jak bude tabulka výsledků seřazena (nebo ne) a vrátí pouze jeden řádek pro každou skupinu tříd, s počtem nechybějících hodnot pro každou proměnnou.
+Například, orderByCount  (" stationID ") bude třídit podle stationID a vrátí jeden řádek pro každý stationID , s počtem chybějících hodnot pro každou proměnnou.
+Pokud zadáte orderByCount  ("") , odpověď bude pouze jeden řádek s počtem chybějících hodnot pro každou datovou proměnnou.
 Viz [ orderBy ... dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#orderBy) Díky Benu Adamsovi.
-    * NOVÝ .nc soubor oJson Typová volba pro mřížky a tabulky souborů dat. Tato volba dělá NCO lvl = 2 "pedantický" soubor JSON se všemi informacemi, které se obvykle nacházejí v .nc Složka. Viz [ http://nco.sourceforge.net/nco.html#json ](https://nco.sourceforge.net/nco.html#json) Díky Charliemu Zenderovi.
-    * BUG FIX: U orderBy ... () možnosti na webové stránce Make A Graph jsou nyní zpracovány správně.
-    * BUG FIX: .geoJson výstup nyní netiskne řádky, kde chybí hodnoty lat nebo lon. Také hodnoty nadmořské výšky (je-li k dispozici) jsou nyní zahrnuty v souřadnicích, nikoli jako hodnoty dat. Díky Jonathanovi Wilkinsovi.
+    * NOVÉ .nc soubor oJson Typová volba pro mřížkované a tabulární datové soubory. Tato volba NCO lvl=2 "pedantic" JSON soubor se všemi informacemi obvykle nalezenými v .nc Složka. Viz [ http://nco.sourceforge.net/nco.html#json ](https://nco.sourceforge.net/nco.html#json) Díky Charliemu Zenderovi.
+    * BUG FIX: The orderBy ... () Možnosti na webové stránce Make A Graph jsou nyní řešeny správně.
+    * BUG FIX: .geoJson výstup nyní netiskne řádky, kde lat nebo lon hodnoty chybí. Také hodnoty nadmořské výšky (je-li k dispozici) jsou nyní zahrnuty do souřadnic, nikoli jako hodnoty dat. Díky Jonathanu Wilkinsovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    * BEZPEČNOST: Knihovna protocols.js používaná pro OpenLayers Demo na demo WMS stránky v ERDDAP™ je zastaralá a má chybu, která umožňuje její zneužití. (Bohužel, aktualizace OpenLayers a protokoly. Js není snadné.) Tím se otevírá možnost, že knihovna by mohla být zřízena, aby umožnila zranitelnost na kříži. Nicméně, protože ERDDAP™ pouze použití OpenLayers v konkrétním přednastavovacím způsobem a pouze se specifickým ERDDAP - založené zdroje dat, jsme přesvědčeni, že neexistuje mezilokalitní zranitelnost ERDDAP použití OpenLayers a protokols.j. Nicméně, pokud tomu nevěříte, můžete nyní zakázat používání OpenLayers Demo na demo WMS Vaše stránky ERDDAP™ přidáním
+    * BEZPEČNOST: Protokoly.js knihovna použita pro OpenLayers demo na WMS stránky ERDDAP™ je zastaralý a má chybu, která potenciálně umožňuje její zneužití. (Bohužel, aktualizace OpenLayers a protokoly. Není to snadné.) Tím se otevírá možnost, že by knihovna mohla být nastavena tak, aby umožňovala přeshraniční zranitelnost. Nicméně od ERDDAP™ pouze použití OpenLayers zvláštním způsobem a pouze se specifickými ERDDAP -na základě zdrojů dat, věříme, že není žádné přeshraniční zranitelnost v ERDDAP 's použitím OpenLayers a protokoly.js. Nicméně, pokud tomu nevěříte, můžete nyní zakázat použití OpenLayers demo na WMS Vaše stránky ERDDAP™ přidáním
 ```
         <openLayersActive>false</openLayersActive>  
 ```
-k vašemu setup.xml souboru. Výchozí je "pravda". Díky Charlesovi Carletonovi a NCEI.
-    * BEZPEČNOSTNÍ ZMĚNY: Nepoužité .jar soubory a duplicitní .jar soubory (protože jsou také v netcdfAll.jar) byly odstraněny z ERDDAP™ distribuce. Složky Out- of-date .jar byly aktualizovány. Díky Charlesovi Carletonovi a NCEI.
-    * Bezpečnostní změny: Soubor netcdfAll.jar distribuován ERDDAP™ je nejnovější verze (v současnosti 4. 6. 10) , ale stále obsahuje interní soubory jackson .jar, které jsou známé jako out- of-date a mají bezpečnostní slabiny, zejména Jacksonovy knihovny, které se používají pouze při přístupu k datovým zdrojům Amazon S3. Pokud nemáte přístup k datům přes Amazon S3 (Věděl bys to, kdybys byl) , Tyto slabiny nejsou relevantní.
+na váš soubor.xml. Výchozí je "pravda." Díky Charlesi Carletonovi a NCEI.
+    * BEZPEČNOST ZMĚNY: Nevyužité .jar soubory a duplikát .jar soubory (protože jsou také v netcdfAll.jar) byly odstraněny z ERDDAP™ distribuce. Zastaralé .jar soubory byly aktualizovány. Díky Charlesi Carletonovi a NCEI.
+    * ZMĚNY BEZPEČNOSTI: NetcdfAll.jar soubor distribuovaný s ERDDAP™ je nejnovější verze (v současné době 4.6.10) , ale stále obsahuje interní jackson .jar soubory, které jsou známé jako zastaralé a mají bezpečnostní slabiny, zejména Jackson knihovny, které jsou použity pouze při přístupu k Amazon S3 datové zdroje. Pokud nemáte přístup k datům přes Amazon S3 (Kdybys byl, věděl bys to.) Tyto zranitelnosti nejsou relevantní.
         
-Společnost Amazon uvedla, že společnost LuxOpCo je v souladu se zásadou tržně jednajícího hospodářského subjektu. Viz [ https://github.com/Unidata/thredds/issues/866 ](https://github.com/Unidata/thredds/issues/866) . Věřím jim. Pokud máte stále obavy, kontaktujte vývojáře netcdf-java. (Všimněte si, že pokud nevěříte vývojáři netcdf-java a uvažují, že nepoužívají ERDDAP™ Proto byste také neměli používat HISDDS, protože HISDDS používá netcdf- java více zásadně a rozsáhleji než ERDDAP .) 
+Vývojáři netcdf-java tvrdí, že tato zranitelnost není relevantní kvůli tomu, že kód netcdf používá tyto knihovny a v každém případě by byl relevantní pouze při přístupu k Amazon S3. Viz [ https://github.com/Unidata/thredds/issues/866 ](https://github.com/Unidata/thredds/issues/866) . Věřím jim. Pokud máte stále obavy, kontaktujte prosím vývojáře netcdf-java. (Všimněte si, že pokud nevěříte vývojářům netcdf-java a uvažujete o nepoužívání ERDDAP™ kvůli tomu byste neměli používat THREDDS ani proto, že THREDDS používá netcdf-java podstatně více než ERDDAP .) 
         
-Podrobnosti: Problémový kód a varování o zranitelnosti jsou:
-netcdfAll-latest.jar / META-INF / maven / com.fasterxml.jackson.core / jackson- dataind / pom.xml
+Podrobnosti: Problémový kód a upozornění na zranitelnost jsou:
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-databind/pom.xml
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Vysoká
-netcdfAll-latest.jar / META-INF / maven / com.fasterxml.jackson.dataformat / jackson- dataformat-cbor / pom.xml
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.dataformat/jackson-dataformat-cbor/pom.xml
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Vysoká
-netcdfAll-latest.jar / META-INF / maven / com.fasterxml.jackson.core / jackson- anotations / pom.xml
+netcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-anotace/pom.xml
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Vysoká
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-3720 -- Kritický
-netcdfAll-latest.jar / META-INF / maven / com.fasterxml.jackson.core / jackson-core / pom.xml
+NetcdfAll-latest.jar/META-INF/maven/com.fasterxml.jackson.core/jackson-core/pom.xml
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-7051 -- Vysoká
 Viz https://nvd.nist.gov/vuln/detail/CVE-2016-3720 -- Kritický
-"Pro verzi 4.6.10, aws-java-sdk-core tahá ve verzi 2.6.6 Jackson-\\ * artefaktů." (email od lidí netcdf-java) .
-Díky Charlesovi Carletonovi a NCEI.
+"Pro verzi 4.6.10, aws-java-sdk-core táhne ve verzi 2.6.6 artefaktů Jackson-\\*." (email od netcdf-java lidí) .
+Díky Charlesi Carletonovi a NCEI.
         
-    * ZMĚNY KOMPILER: If you pencile ERDDAP™ , Všimněte si, že parametr -cp classpath potřebný pro příkazový řádek je nyní mnohem kratší než předtím. Viz nové nastavení -cp [Tato dokumentace](/docs/contributing/programmer-guide#development-environment) . Díky Charlesovi Carletonovi a NCEI.
-    * Nová volba v generateDatasetech Xml: EDDTableFromBcodmo, který je určen pouze pro interní použití v BCO-DMO.
+    * ZMĚNÍ SE KOMILNÍK: Pokud se vrátíte ERDDAP™ , všimněte si, že parametr -cp classpath potřebný pro příkazový řádek je nyní mnohem kratší než dříve. Viz nové nastavení -cp v [Tato dokumentace](/docs/contributing/programmer-guide#development-environment) . Díky Charlesi Carletonovi a NCEI.
+    * NOVÉ OPTIONY V GeneranteDatasets Xml: EDDTableFromBcodmo, který je jen pro interní použití v BCO-DMO.
 Díky Adamu Shepherdovi a BCODMO.
-    * NOVÝ ATRIBUT A PÉČE: Pokud má sloupec EDDTable názvy webových přístupných souborů (např. obrazové, video nebo audio soubory) , můžete přidat
+    * NOVÉ ATRIBUTE A FEATURE: Pokud má EDDTable sloupec názvy souborů přístupných k webu (např. obraz, video nebo audio soubory) , můžete přidat
 ```
         <att name="fileAccessBaseUrl">_someBaseURL_</a>  
 ```
-pro určení základní URL (končící /) potřebné k tomu, aby názvy souborů byly kompletní URL. Pak pro .htmlTable odpovědi, ERDDAP™ zobrazí název souboru jako odkaz na kombinovanou URL (základna Url plus název souboru) .
-Jestli chceš ERDDAP™ sloužit souvisejícím souborům, vytvořit samostatný EDDTableFromFileName dataset pro tyto soubory (to může být soukromý datový soubor) .
+zadat základní URL (končí s /) potřeba, aby jména souborů byla kompletní URL. Pak pro .htmlTable odpovědi, ERDDAP™ zobrazí název souboru jako odkaz na kombinované URL (základ Url plus název souboru) .
+Jestli chceš ERDDAP™ slouží související soubory, aby samostatný EDDTableFromFileNames soubor pro tyto soubory (může se jednat o soukromý soubor údajů) .
 Díky Adamu Shepherdovi a BCODMO.
-    * NOVÉ DOPORUČENÍ ATTRIBUTE: Pokud má sloupec EDDTable názvy souborů webových přístupných souborů (např. obrazové, video nebo audio soubory) které jsou přístupné prostřednictvím archivu (např. .zip soubor) přístupné přes URL, použití
+    * NEW ATTRIBUTE DOPORUČENÍ: Pokud má sloupec EDDTable názvy souborů přístupných na webu (např. obraz, video nebo audio soubory) které jsou přístupné prostřednictvím archivu (např. .zip soubor) přístupná přes URL, použití
 ```
         <att name="fileAccessArchiveUrl">_theURL_</att>  
 ```
 zadat URL pro archiv.
-Jestli chceš ERDDAP™ sloužit archivnímu souboru, vytvořit samostatný EDDTableFromFileName dataset pro tento soubor (to může být soukromý datový soubor) .
+Jestli chceš ERDDAP™ slouží archivní soubor, vytvořit samostatný EDDTableFromFileNames soubor pro tento soubor (může se jednat o soukromý soubor údajů) .
 Díky Adamu Shepherdovi a BCODMO.
-    * ZLEPŠOVÁNÍ PRO GenerateDatasets Xml odstranit příčiny neplatné / špatné&lt; subsetVariables &gt; návrhy a duplicitní / špatná navrhovaná jména proměnných atd. Díky Richovi Signellovi, Adamu Shepherdovi a BCODMO.
-    * Nová volba: Informace o politických hranicích rozdělené s ERDDAP je od třetí strany a poněkud mimo datum. Také existují sporné hranice na několika místech na světě, kde různí lidé budou mít různé představy o tom, co je správné. Nevysvětlujeme si korektnost politických boundarických údajů, které přicházejí s ERDDAP . Pokud se vám nelíbí politické hraniční informace, které přicházejí s ERDDAP™ , můžete nyní říct ERDDAP™ nikdy nečerpat politické hranice přidáním
+    * ZLEPŠENÍ Generovat soubory dat Xml pro odstranění příčin neplatných/špatných&lt; subsetVariables &gt; návrhy a duplikát/špatné navrhované názvy proměnných atd. Díky Richi Signellovi, Adamovi Shepherdovi a BCO-DMO.
+    * Nová možnost: Informace o politických hranicích šířené s ERDDAP je od třetí strany a je poněkud zastaralá. Také existují sporné hranice na několika místech světa, kde budou mít různí lidé různé představy o tom, co je správné. Netvrdíme, že je správná politická nadace, která obsahuje ERDDAP . Pokud se vám nelíbí politické hraniční informace, které přicházejí s ERDDAP™ Teď už to poznáš. ERDDAP™ Nikdy nekreslit politické hranice přidáním
 ```
         <politicalBoundariesActive>false</politicalBoundariesActive>  
 ```
-k vašemu setup.xml souboru. Výchozí je "pravda". Díky Raju Devenderovi.
-    * NEW METADATA TAG: Ve datasets.xml pro datový soubor, můžete nyní zadat výchozí počet barev Profily ve tvaru tyčí a dataVariable na grafy a mapy s
+na váš soubor.xml. Výchozí je "pravda." Díky Raju Devenderovi.
+    * NOVÁ METADATA TAG: V datasets.xml pro datový soubor můžete nyní zadat výchozí počet barev Barové profily pro a dataVariable na grafech a mapách s
 ```
         <att name="colorBarNSections">_anInteger_</att>  
 ```
-         (výchozí = -1, který říká, aby let ERDDAP™ rozhodnout) . Viz [barva Nastavení lišty](/docs/server-admin/datasets#color-bar-attributes) .
-    * ZLEPŠENO: barva hranice státu na mapách byla fialová (Deep Purple pro vás Baby Boomers) . Teď je šedá. (mezi národní hranice šedá a země šedá) .
-    * BUG FIX:&lt;iso19115Soubor &gt; a&lt;fgdcFile &gt; in datasets.xml ne vždy s nimi bylo zacházeno správně. Teď jsou. Díky BCODMO.
+         (default=-1, který říká nechat ERDDAP™ rozhodnout) . Viz [barva Nastavení lišty](/docs/server-admin/datasets#color-bar-attributes) .
+    * ZLEPŠENÍ: barva hranice státu na mapách byla fialová (Deep Purple pro vás Baby Boomers) . Teď je šedá. (mezi státní hranicí šedá a země šedá) .
+    * BUG FIX:&lt;iso19115File&gt; a&lt;fgdcFile &gt; v datasets.xml nebylo vždy zacházeno správně. Teď už ano. Díky BCO-DMO.
 
 ## Verze 1.78{#version-178} 
- (propuštěn 2017- 05- 27) 
+ (propuštěn 2017-05-27) 
 
 *    **Nové funkce (pro uživatele) :**   
      
@@ -1364,160 +1381,160 @@ k vašemu setup.xml souboru. Výchozí je "pravda". Díky Raju Devenderovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    * ZLEPŠENO: Pořadí řádků v "Major LoadDatasets Time Series" na stránce status.html je nyní nejnovější na vrcholu až nejstarší v dolní části.
-    * BUG FIX: ERDDAP™ nyní píše .nccsv soubory s časovou proměnnou actual\\_range jako ISO-8601 String time. Tím se opravuje chyba pomocí EDDTableFromErddap paragování informací ze vzdáleného datového souboru a ze souboru QuickRestart pro všechny soubory EDDTableFrom.... (Čas actual\\_range bude chybná, když se datový soubor poprvé načte v v1.78, ale opraví po jeho opětovném načtení, např., pokud označíte datový soubor.) 
+    * IMPROVED: Řád řádků v "Major LoadDatasets Time Series" v záložce status.html je nyní nejnovější na vrcholu nejstarší na konci.
+    * BUG FIX: ERDDAP™ Nyní píše .nccsv soubory s časovou proměnnou actual\\_range jako čas ISO-8601 String. To opraví chybu pomocí EDDTableFromErddap parsing info ze vzdáleného datového souboru a z quickRestart souboru pro všechny soubory EDDTableFrom...Files. (Čas actual\\_range bude chyba při prvním zatížení datového souboru v1.78, ale po jeho opětovném načtení správné, např. pokud označíte datový soubor.) 
 
 ## Verze 1.76{#version-176} 
  (propuštěn 2017-05-12) 
 
 *    **Nové funkce (pro uživatele) :**   
      
-    * Změna v Tomcat: Pro žádosti o ERDDAP™ pocházející z jiného softwaru než z webových prohlížečů (např. curl , R, Matlab , Python , Java ) :
-Stejně jako u předchozích změn verzí Tomcat (software nižší úrovně, který běží ERDDAP ) od začátku roku 2016, stále více znaků v dotazu části URL požadavku musí být [ **Procento zakódováno** ](/docs/server-admin/datasets#infourl) z bezpečnostních důvodů. Prohlížeče se starají o procento kódování pro vás. použití ERDDAP™ v prohlížeči není ovlivněn, pokud žádost není přesměrována na jiný ERDDAP .
-    * ZLEPŠENÝ: ERDDAP™ ošetřeno **Char proměnné** spíš jako nesignalizovaná krátká celá čísla než znaky. Teď s nimi zachází spíše jako s 1- charakteristickou - dlouhou UCS-2 (Unicode) Šrouby. Viz [Char dokumentace](/docs/server-admin/datasets#char) . Díky Aurelie Briand a projektu Argo.
-    * ZLEPŠENÝ: ERDDAP™ nabídl malou podporu pro **Unicode znaky** nad znak # 255 v Strings. Nyní, interně, ERDDAP™ plně podporuje 2-byte UCS-2 znaky (znaky s čísly 0 až 65535) v Strings. Když jsou data String zapsána do různých typů souborů, ERDDAP™ dělá to nejlepší, co může na podporu 2-byte chars. Dalším příkladem jsou .csv soubory, které ERDDAP™ píše se znakovou sadou ISO-8859-1 (a 1-byte charset) , ERDDAP™ píše jakékoli znaky nad znak # 255 s JSON- jako\\ u _ hhhh _ syntax. Viz [Data řetězců](/docs/server-admin/datasets#string) .
-    * ZLEPŠENÉ: .nc soubory napsané ERDDAP™ , Char proměnné, které mají být interpretovány jako Strings bude mít atribut
-         **\\ _ Kódování = ISO-8859-1**   
-V .nc soubory čteny podle ERDDAP™ , Char proměnné s "\\ _ Encoding" budou interpretovány jako Strings se zadaným znaménkem.
-    * Vzpomeňte si: ERDDAP™ podložky **JSON- jako backslash- enkódování** Speciální znaky, když specifikujete omezení proměnných char a String. Takže můžete požadovat něco jako & myString = "\\ u20ac", když chcete řádky dat, kde myString = €od 20ac je hexadecimální verze kódového bodu pro Euro symbol. Několik zdrojů na webu ukazuje čísla kódových bodů pro symboly Unicode, např. [ https://en.wikipedia.org/wiki/Unicode ](https://en.wikipedia.org/wiki/Unicode) .
-    * ZLEPŠENÝ: ERDDAP™ nabídl omezenou podporu pro **dlouhé celé číslo** proměnné. Teď. ERDDAP™ plně podporuje vnitřní délky a dělá to nejlepší při zápisu dlouhých dat do různých typů souborů. Viz [dlouhá dokumentace](/docs/server-admin/datasets#long) . Díky Irskému námořnímu institutu Craig Risien, Rich Sigdell, Christopher Wingard a OOI.
-    * NEW: výstupní typ souboru pro griddap a tabledap : ** .nccsv ** , což je NetCDF -jako, ASCII, CSV soubor, který také obsahuje všechny metadata, které by byly ve srovnatelné .nc Složka. Viz [NCSV Specifikace](/docs/user/nccsv-1.00) . Díky Stevu Hankinovi.
-    * NEW: ** orderByClosest filtr** umožňuje určit, jak bude tabulka výsledků tříděna a interval (např. 2 hodiny) . V každé skupině se uchovají pouze řádky nejbližší intervalu. Například, orderByClosest  (" stationID , čas, 2 hodiny ") bude třídit podle stationID a čas, ale pouze vrátit řádky pro každého stationID kde poslední orderBy sloupec (čas) je nejblíže 2 hodinové intervaly. Tohle je nejbližší věc v tabledap k posunu hodnot v požadavku griddap. Tuto volbu lze zadat pomocí libovolného tabledap Dataset .html webové stránky, .graf webové stránky, a jakékoli URL, které si sami generovat. Díky Irskému námořnímu institutu a Ocean Networks Canada.
-    * NEW: ** orderByLimit filtr** umožňuje určit, jak bude tabulka výsledků tříděna a limitní číslo (např. 100) . V rámci každé skupiny se uchovají pouze první "limitní" řádky. Například, orderByMax  (" stationID , 100 ") bude třídit podle stationID , ale vrátit pouze prvních 100 řad pro každého stationID . Je to podobné SQL doložce LIMIT. Tuto volbu lze zadat pomocí libovolného tabledap Dataset .html webové stránky, .graf webové stránky, a jakékoli URL, které si sami generovat. Díky Irskému námořnímu institutu a Ocean Networks Canada.
-    * NEW: Dva nové typy souborů odezvy, ** .jsonlCSV a .jsonlKVP ** jsou k dispozici pro žádosti o gridded soubory dat, tabulky souborů dat a mnoho dalších míst v ERDDAP   (např. žádosti o informace o souborech dat) . Soubory jsou soubory JSON Lines ( [ https://jsonlines.org/ ](https://jsonlines.org/) ) kde každý řádek má samostatný JSON objekt. .jsonlCSV má pouze hodnoty ve formátu CSV. .jsonlKVP má klíč: Hodnota párů. Každý řádek stojí na vlastní pěst. Řádky nejsou uzavřeny ve větším JSON poli nebo objektu. Například, viz [žádost o vzorek](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.jsonlKVP?longitude%2Clatitude%2Ctime%2Cstation%2Cwmo_platform_code%2CT_25%26time%3E=2015-05-23T12:00:00Z%26time%3C=2015-05-31T12:00:00Z) . Díky Damian Smyth, Rob Fuller, Adam Leadbetter a Irský námořní institut.
-    * NEW: Je zde nová dokumentace popisující [ **Jak získat přístup k soukromým datům v ERDDAP™ pomocí Písma** ](/docs/user/AccessToPrivateDatasets) . Díky Lynn DeWittové.
-    * ZLEPŠENÉ: Minimální rozsah ** OpenLayers ** mapa byla 2 stupně a nyní je 4 datové pixely. Díky Rustymu Hollemanovi.
-    * ZLEPŠENÉ: V některých společných případech žádosti, které zahrnují **regulární výraz** Omezení bude zpracováváno mnohem rychleji.
+    * Změna v Tomcatu: Pro žádosti o ERDDAP™ Pocházející z jiného softwaru než webových prohlížečů (např. curl , R Matlab , Python , Java ) :
+Stejně jako u předchozích změn ve verzích Tomcat (software nižší úrovně, který běží ERDDAP ) od počátku roku 2016, stále více znaků v dotazové části požadavku URL musí být [ **Procento zakódováno** ](/docs/server-admin/datasets#infourl) z bezpečnostních důvodů. Prohlížeče se starají o procento kódování pro vás. použití ERDDAP™ v prohlížeči není ovlivněna, pokud žádost není přesměrována na jiný ERDDAP .
+    * V minulých dílech... ERDDAP™ léčeno **proměnné znaku** spíš jako nepodepsané krátké celá čísla než znaky. Nyní se k nim chová spíš jako k UCS-2 dlouhému 1 znaku. (Unicode) Struny. Viz [Char dokumentace](/docs/server-admin/datasets#char) . Díky Aurelie Briandové a projektu Argo.
+    * V minulých dílech... ERDDAP™ nabídl málo podpory pro **Unicode znaky** nad znakem #255 v Strings. Teď, uvnitř, ERDDAP™ plně podporuje 2-bajt UCS-2 chary (znaky číslované 0 až 65535) v Strings. Při zápisu String dat do různých typů souborů, ERDDAP™ Dělá, co může, aby podpořil 2-bajtové chary. Dalším příkladem jsou .csv soubory, které ERDDAP™ píše pomocí znakové sady ISO-8859-1 (1-bajtový znak) Takže ERDDAP™ píše všechny znaky nad znakem #255 s JSON-like \\\u_hhhh_ syntax. Viz [String data](/docs/server-admin/datasets#string) .
+    * ZLEPŠENÍ: .nc soubory napsané ERDDAP™ , Char proměnné, které mají být interpretovány jako Strings budou mít atribut
+         **\\_ Kódování=ISO-8859-1**   
+In .nc soubory přečtené ERDDAP™ , proměnné znaku s "\\_Encoding" budou interpretovány jako řetězce se zadanou znakovou sadou.
+    * REMINDER: ERDDAP™ Podpora **JSON-jako backslash-kódování** speciálních znaků, když zadáte omezení znaků a String proměnných. Tak si můžete vyžádat něco jako &myString="\\u20ac" když chcete řádky dat, kde myString=€ od 20ac je hexadecimální verze kódového bodu pro symbol Euro. Několik zdrojů na webu ukazuje kódová čísla pro symboly Unicode, např. [ https://en.wikipedia.org/wiki/Unicode ](https://en.wikipedia.org/wiki/Unicode) .
+    * V minulých dílech... ERDDAP™ nabídnuta omezená podpora **dlouhé celé číslo** proměnné. Teď ERDDAP™ plně podporuje interně dlouhé a dělá to nejlepší při psaní dlouhých dat do různých typů souborů. . Viz [dlouhá dokumentace](/docs/server-admin/datasets#long) . Díky irskému námořnímu institutu Craig Risien, Rich Signell, Christopheru Wingardovi a OOI.
+    * NEW: typ výstupního souboru pro griddap a tabledap : ** .nccsv ** , což dělá NetCDF - jako ASCII, CSV soubor, který také obsahuje všechna metadata, která by byla srovnatelná .nc Složka. Viz [NCCSV Specifikace](/docs/user/nccsv-1.00) . Díky Stevu Hankinovi.
+    * NEW: ** orderByClosest filtr** umožňuje určit, jak bude tabulka výsledků seřazena a interval (např. 2 hodiny) . V každé skupině tříd se uchovávají pouze řádky nejbližší intervalu. Například, orderByClosest  (" stationID , čas, 2 hodiny") bude třídit podle stationID a čas, ale pouze vrátit řádky pro každý stationID kde poslední orderBy sloupec (čas) je nejblíže 2 hodinovým intervalům. Tohle je nejblíž. tabledap pro krok s hodnotami v požadavku griddap. Tuto možnost lze zadat prostřednictvím libovolného tabledap Webová stránka souboru .html, webová stránka .graph a každá URL, kterou si vytvoříte sami. Díky Irsku je Mořský institut a Ocean Networks Kanada.
+    * NEW: ** orderByLimit filtr** umožňuje určit, jak bude tabulka výsledků seřazena a mezní číslo (např. 100) . V rámci každé skupiny tříd budou zachovány pouze první "limitní" řádky. Například, orderByMax  (" stationID , 100") bude třídit podle stationID , ale vrátit pouze prvních 100 řad za každý stationID . To je podobné klauzule SQL. Tuto možnost lze zadat prostřednictvím libovolného tabledap Webová stránka souboru .html, webová stránka .graph a každá URL, kterou si vytvoříte sami. Díky Irsku je Mořský institut a Ocean Networks Kanada.
+    * NEW: Dva nové typy souborů odezvy, ** .jsonlCSV a .jsonlKVP ** jsou k dispozici pro žádosti o síťované datové soubory, tabulární datové soubory a mnoho dalších míst v ERDDAP   (Například žádosti o informace o souborech údajů) . Soubory jsou soubory JSON Lines ( [ https://jsonlines.org/ ](https://jsonlines.org/) ) kde každá linie má samostatný objekt JSON. .jsonlCSV má hodnoty ve formátu CSV. .jsonlKVP má klíč: Hodnota párů. Každá linie stojí sama za sebou. Řádky nejsou uzavřeny ve větším JSON poli nebo objektu. Například, viz [žádost o vzorek](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/pmelTaoDySst.jsonlKVP?longitude%2Clatitude%2Ctime%2Cstation%2Cwmo_platform_code%2CT_25%26time%3E=2015-05-23T12:00:00Z%26time%3C=2015-05-31T12:00:00Z) . Díky Damianu Smythovi, Robu Fullerovi, Adamu Leadbetterovi a irskému námořnímu institutu.
+    * NOVINKA: Je zde nová dokumentace popisující [ **Jak získat přístup k soukromým datům v ERDDAP™ přes skripty** ](/docs/user/AccessToPrivateDatasets) . Díky Lynn DeWittové.
+    * ZLEPŠENÉ: Minimální rozsah ** OpenLayers ** mapa byla 2 stupně a nyní je 4 datové pixely. Díky Rusty Hollemanovi.
+    * ZLEPŠENÉ: V některých běžných případech, žádosti, které zahrnují **regulární výraz** Omezení bude zpracováno mnohem rychleji.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    *    **SLOW PRVNÍ ZAHÁJENÍ:** Při prvním spuštění této nové verze, to bude trvat dlouho ERDDAP™ načíst všechny soubory dat, protože je třeba přečíst všechny zdrojové soubory (i když jen hlavička pro archivované datové soubory) . Pokud se podíváte na protokoly, můžete vidět chybové zprávy s nápisem "stará / nepodporovaná verze" některých interních souborů -- to je v pořádku -- ERDDAP™ vytvoří nové verze interních souborů. Prosím, buďte trpěliví.
-    * AKCE: ERDDAP™ Nyní používá nový **java.time** třídy (také známý jako JSR 310) místo Joda parse String times do numerických časů. Poznámky:
-        * Pokud ERDDAP™ najednou má problémy s parsing String times pro daný datový soubor a tak jen převádí většinu nebo všechny časy na NaN (chybějící hodnoty) , Problém je téměř vždy s datem Řetězec s časovým formátem, který jste zadali jako "jednotky" proměnné. Nový systém někdy potřebuje trochu jiný řetězec formátu dateTime.
-        * Pokud číselné měsíce a dny v dateTime řetězce nejsou 0-paddited (např. "3 / 7 / 2016") , Ujistěte se, že formát má jen jeden M a d (např. "M / d / rrrr", ne "MM / dd / rrrr") .
-        * Změna jakékoli specifikace zlomových sekund, která používá malá písmena s (např. .sss in yyyy-MM-dd Ne.) , do kapitálu S. (např. yyyy-MM-dd Ne.) .
-        *    ERDDAP™ již nepodporuje datum řetězce Časové formáty s dvoumístnými roky (rrrr) s implicitním stoletím (např. 1900 nebo 2000) . Podniky utratily miliardy dolarů na nápravu tohoto problému koncem 90. let. Vědci by neměli používat dvouciferné roky. Prosím, opravte zdrojový soubor (s) Přepočtením na 4místný rok, poté použijte rrrr v den Formát času.
-        * Můžete použít rrrr nebo RRRR (které ERDDAP™ konvertuje na uuu) na straně 4 číslicové roky, včetně záporných let, např. -4712 (což je 4713 př.n.l.) . Díky SeaDataNet, Thomas Gardner a BODC.
-        * Prosím, pokračujte v používání Z ve formátu dateTime pro získání ERDDAP k rozdělení časového posunu (např., Z, + 0200, -08, -0800, -08: 30) .
-        *    **Ujistěte se, že používáte Java verze 1.8.0\\ _ 21 nebo vyšší.** 
-        * Programátoři -- Pokud píšete Java programy, které běží ERDDAP™ Kód, musíte odstranit odkaz na joda- time. sklenice v parametru cesty třídy.
-    * NEW: ERDDAP s [ArchiveA Name](/docs/server-admin/additional-information#archiveadataset) může nyní vytvořit [ **Soubory Bagitu** ](https://en.wikipedia.org/wiki/BagIt) . NCEI může standardizovat tento formát. Díky Scottu Crossovi a Johnu Relphovi.
-    * ZLEPŠENO: Odkazy ke stažení erddap. válka proti ERDDAP™ webové stránky nyní ukazují na **GitHub** . (Jsou to veřejné odkazy, takže se nemusíš přidat k GitHubu.) To znamená mnohem rychlejší stahování (do 12Mb / s proti 1Mb / s) a málo problémů se stahováním. Díky Damian Smyth, Rob Fuller, Adam Leadbetter, Conor Delaney a Irský námořní institut.
-    * ZLEPŠENÉ: **status.html stránka a denní Status Report email** Nyní obsahuje sekci "Major LoadDatasets Time Series", která ukazuje statistiky o ERDDAP™ od konce každé hlavní nakladače Dataset pro posledních 100 hlavních nakladačů Dataset. Díky našemu problémovému RAID.
-    * NEW: nový, volitelný (doporučená) parametr pro soubory dat EDDTableFromCassandra: [ ** &lt;partitionKeyCSV &gt; ** ] (/ docs / server- admin / datasets # partitionkeycsv) . Díky Ocean Networks Canada.
-    * NEW: EDDTableFromAsciiFiles nyní podporuje ** &lt;ColumnSeparator &gt; ** parametr. Pokud null nebo "," třída bude hádat, jako předtím, Jinak, první znak bude použit jako oddělovač sloupce při čtení souborů. Díky Sky Bristol a Abigail Bensonové.
-    * Novinka: nový typ datového souboru, [ **EDDTableFromNcsvFiles** ](/docs/server-admin/datasets#eddtablefromnccsvfiles) , může vytvořit datový soubor agregací [Soubory NCSV. csv](/docs/user/nccsv-1.00) . Díky Stevu Hankinovi.
-    * ZLEPŠENO: **EDDTableFromErddap** nyní používá .nccsv získat informace ze vzdáleného zařízení ERDDAP s a pro lokální archiv informací o metadatech. To umožňuje plnou podporu pro různé typy dat a pro Unicode (UCS-2) Charset pro Chars a Strings. Díky Robu Fullerovi a Irskému námořnímu institutu.
-    * ZLEPŠENO: EDDTableFromErddap a EDDGrid FromErddap nyní podporuje ** &lt;přesměrovat &gt; false&lt;/ přesměrovat &gt; ** který ukazuje ERDDAP™ nikdy přesměrovat žádost na ovladač ERDDAP . Výchozí hodnota je pravdivá. To je užitečné, když ovladač ERDDAP™ je soukromý ERDDAP . Díky Damianu Smythovi, Robovi Fullerovi a Irskému námořnímu institutu.
-    * ZLEPŠENO: ERDDAP™ nyní úlovky **zrušené uživatelské požadavky** dříve. A ERDDAP™ Nyní se vypne rychleji, protože nízké úrovně závitů vypne rychleji. Díky našemu problémovému RAID.
-    *    **GeneteDatasets Xml:** 
-        * NEW: Nový speciální EDDType "ncdump" tiskne [ncdump](https://linux.die.net/man/1/ncdump) \\ - jako výtisk z hlavičky .nc Složka. Můžete také vytisknout hodnoty dat pro zadané proměnné (nebo zadejte "nic", abyste nevytiskli žádné hodnoty dat) . To je užitečné, protože bez ncdump je těžké vědět, co je v souboru, a tedy, který EDDType byste měli specifikovat pro GenetateDatasetsXml. Díky Craig Risien, Rich Sigdell, Christopher Wingard a OOI.
-        * NEW: Pro SeaData Čisté údaje:
-V případě potřeby GenetateDatasets Xml nyní provádí specifickou sémantickou konverzi pomocí vzdáleného dotazu SPARQL: pokud metadata zdroje proměnné obsahují sdn\\ _ parametr\\ _ urn, např., sdn\\ _ parametr\\ _ urn = "SDN: P01:: PSLTZZ01", GenerateDatasets Xml přidá odpovídající atribut P02, např. sdn\\ _ P02\\ _ urn = "SDN: P02:: PSAL". Pokud máte soubory dat, které používají tyto atributy, a pokud vaše ERDDAP s&lt; categoryAttributes &gt; v setup.xml obsahuje sdn\\ _ parametr\\ _ urn a sdn\\ _ P02\\ _ urn, uživatelé budou moci používat ERDDAP™ Systém vyhledávání kategorií pro vyhledávání souborů dat se specifickými hodnotami těchto atributů. Díky BODC a Alexandře Kokkinaki.
-        * ZLEPŠENO: GeneteData Xml nyní mění mnoho http:// odkazy v metadatech na https:// případně.
-        * ZLEPŠENO: GeneteData Xml se nyní snaží hádat tvůrce\\ _ type a vydavatel\\ _ type.
-        * ZLEPŠENO: Datové typy proměnné navržené GenetateDatasets Xml bude teď trochu lepší. Díky Margaret O 'Brienové, LTER a EML.
-        * ZLEPŠENO: GeneteData Xml je lepší při stanovení&lt;cdm\\ _ data\\ _ type & gt; a přidání souvisejících, požadovaných atributů (např.,&lt;cdm\\ _ timeseries\\ _ variables & gt;, takže můžete poskytnout tyto informace. Díky Richovi Signellovi.
-        * ZLEPŠENO: V generateData Xml, pro soubory dat EDDTable, návrh pro&lt; subsetVariables &gt; je nyní mnohem konzervativnější. Díky Johnu Kerfootovi.
-        * ZLEPŠENÉ: Pokud datasets.xml pro soubory dat specifikuje featureType ale ne cdm\\ _ data\\ _ type, featureType bude použito jako cdm\\ _ data\\ _ type. Díky Richovi Signellovi.
-        * BUG FIX: generovat Datové soubory Xml nyní naznačuje správnou&lt;dataType &gt; pro datové proměnné, které mají scale\\_factor , add\\_offset a / nebo\\ _ Nepodepsané atributy.
-    * ZLEPŠENO: ERDDAP™ otevře .nc soubor, který je **kratší** než to má být (Například se to úplně neokopírovalo.) , ERDDAP™ Teď se k té složce chová špatně. V minulých dílech... ERDDAP™ vrácené chybějící hodnoty pro chybějící část souboru, protože to je výchozí chování pro netcdf-java. ERDDAP™ nyní používá ucar .nc 2.iosp.netcdf3.N3header.disallow FileTruncation = true; Díky naší problémové RAID a Christian Ward-Garrison.
-    * ZLEPŠENO: Autor ISO 19115 nyní využívá **Tvůrce\\ _ type** , pokud je přítomen.
-    * ZLEPŠENO: ERDDAP™ nyní používá nejnovější netcdf-java v4.6.9, který může číst další typy **netcdf-4 soubory** . Díky Craig Risien, Rich Sigdell, Christopher Wingard a OOI.
-    * BUG FIX: vyhnout se problémům, pokud různé zdrojové soubory mají různé typy dat pro danou proměnnou. Díky Roy Mendelssohn a Eugene Burger.
-    * BUG FIX: **Převody ve formátu času** jsou nyní lépe chráněny proti špatným časovým hodnotám. Díky NDBC.
-    * BUG FIX: EDDGrid FromNcFiles Vybaleno nyní zpracovává časové hodnoty **"měsíce od..." a "roky od..."** správně (navýšením měsíce nebo roku, ne hrubým přidáním např. 30denní opakovaně) . Díky Soda3.3.1
-    * BUG FIX: jen v v1.74, **Předplatné** požadovaný postup (např. http:// ...) , která byla a měla by být nepovinná.
-    * BUG FIX: EDDGrid FromMergeIRFiles.low GetSourceMetadata () Nepřidal žádné globální atributy. Teď už ano.
+    *    **Pomalu první hvězda:** Když poprvé spustíte tuto novou verzi, bude to trvat dlouho. ERDDAP™ načíst všechny datové soubory, protože je třeba znovu přečíst všechny zdrojové datové soubory (i když jen hlavička pro mřížkované datové soubory) . Pokud se podíváte na záznamy, můžete vidět chybové zprávy s nápisem "stará/nepodporovaná vylepšenáVerze" některých interních souborů -- to je v pořádku -- ERDDAP™ vytvoří nové verze interních souborů. Prosím, buď trpělivý.
+    * AKCE ERDDAP™ nyní používá nový **java.time** třídy (také známé jako JSR 310) místo Jody k analýze Stringových časů do numerických časů. Poznámky:
+        * Pokud ERDDAP™ Najednou má problémy s analýzem String Times pro daný datový soubor a tak se většinou nebo celou dobu konvertuje k NaN's (chybějící hodnoty) , Problém je téměř vždy s datem Časový formát řetězec, který jste zadali jako "jednotky" proměnné. Nový systém někdy potřebuje trochu jiný řetězec formátu dateTime.
+        * Pokud numerické měsíce a dny v dateTime řetězce nejsou 0-polstrován (např. "3/7/2016") , ujistěte se, že formát má jen jeden M a d (např. "M/d/rrrr" ne "MM/dd/rrrr") .
+        * Změnit jakoukoliv frakční sekundu specifikace, která používá malé s's (Např. přihrávka yyyy-MM-dd T'HH:mm:ss.ss) , do kapitálu S. (např. yyyy-MM-dd T'HH:mm:ss.SSS) .
+        *    ERDDAP™ již nepodporuje datum řetězce Časové formáty s dvoumístnými roky (Yy) s implikovaným stoletím (např. 1900 nebo 2000) . Podniky utratily miliardy dolarů, když tento problém na konci 90. let řešily. Vědci by neměli používat dvě číslice let. Opravte prosím zdrojový soubor (án) přeměnou na čtyřmístné roky, poté použijte rrrr v den Časový formát.
+        * Můžete použít rrrr nebo RRRR (která ERDDAP™ konvertuje na uuuu) k analýze čtyřmístných let včetně záporných let, např. -4712 (což je 4713 př. nl) . Díky SeaDataNet, Thomasi Gardnerovi a BODC.
+        * Prosím pokračujte v používání Z ve formátu dateTime pro získání ERDDAP k analýze časové kompenzace (např. Z, +0200, -08, -0800, -08:30) .
+        *    **Ujistěte se, že používáte Java verze 1,8.0\\_21 nebo vyšší.** 
+        * Programátoři -- Když píšeš Java programy, které běží ERDDAP™ kód, musíte odstranit odkaz na joda-time. sklenice v parametru třídy.
+    * NEW: ERDDAP 's [ArchivA Nástroj datové sady](/docs/server-admin/additional-information#archiveadataset) nyní může vytvořit [ **Soubory BagIt** ](https://en.wikipedia.org/wiki/BagIt) . NCEI může standardizovat tento formát. Díky Scottu Crossovi a Johnu Relphovi.
+    * Odkazy ke stažení erddap. Válka proti ERDDAP™ webové stránky nyní ukazují na **GitHub** . (Jsou to veřejné odkazy, takže se nemusíš připojit k GitHubu.) To znamená mnohem rychlejší stahování (až 12Mb/s versus 1Mb/s) a několik problémů se stahováním. Díky Damianu Smythovi, Robu Fullerovi, Adamu Leadbetterovi, Conoru Delaneymu a irskému námořnímu institutu.
+    * ZLEPŠENÉ: **status.html stránka a denní Status Report email** nyní zahrnuje část "Major LoadDatasets Time Series," která zobrazuje statistiky o ERDDAP™ od konce každého hlavního zatíženíDatasety pro posledních 100 hlavních zatíženíDatasety. Díky našemu nepříjemnému RAIDu.
+    * NEW: nový, volitelný (ale doporučuje se) parametr pro EDDTableFromCassandra soubory dat: [ ** &lt;oddílKeyCSV&gt; ** ] (/docs/server-admin/datasets#partitionkeysv) . Díky Ocean Networks Canada.
+    * Novinka: EDDTableFromAsciiFiles nyní podporuje ** &lt;sloupecSeparator &gt; ** parametr. Pokud null nebo "", třída bude hádat, jako předtím, Jinak, první znak bude použit jako sloupec oddělovač při čtení souborů. Díky Sky Bristol a Abigail Bensonové.
+    * Novinka: nový typ souboru dat, [ **EDDTableFromNccsvFiles** ](/docs/server-admin/datasets#eddtablefromnccsvfiles) , může vytvořit soubor dat agregací [NCCSV .csv soubory](/docs/user/nccsv-1.00) . Díky Stevu Hankinovi.
+    * ZLEPŠENÍ: **EDDTableFromErddap** použití .nccsv získat informace ze vzdáleného ERDDAP s a pro místní archiv těchto metadat info. To umožňuje plnou podporu pro znakové a dlouhé datové typy a pro Unicode (UCS-2) Charset pro Chars a Strings. Díky Robu Fullerovi a irskému námořnímu institutu.
+    * ZLEPŠENÉ: EDDTableFromErddap a EDDGrid FromErddap nyní podporu ** &lt;přesměrování&gt;false&lt;/redirect&gt; ** který říká ERDDAP™ nikdy nepřesměrovat požadavek na ovladač ERDDAP . Default je pravdivý. To je užitečné, když ovladač ERDDAP™ je soukromý ERDDAP . Díky Damianu Smythovi, Robu Fullerovi a irskému námořnímu institutu.
+    * ZLEPŠENÍ: ERDDAP™ nyní úlovky **zrušené žádosti o uživatele** dříve. A ERDDAP™ Nyní se vypne rychleji, protože nízkoúrovňové nitě se vypnou rychleji. Díky našemu nepříjemnému RAIDu.
+    *    **Generovat soubory dat Xml:** 
+        * NOVINKA: Nový speciální tisk EDDType "ncdump" [ncdump](https://linux.die.net/man/1/ncdump) \\-jako tisk hlavičky .nc Složka. Můžete také tisknout hodnoty dat pro zadané proměnné (nebo zadejte "nic," abyste nevytiskli žádné hodnoty dat) . To je užitečné, protože bez ncdump je těžké vědět, co je v souboru a tím, který EDDType byste měli zadat pro GenerateDatasetsXml. Díky Craig Risien, Rich Signell, Christopher Wingard a OOI.
+        * NEW: For SeaData Čisté údaje:
+Pokud je to vhodné, GenerovatNastavení dat Xml nyní provádí specifickou sémantickou konverzi pomocí vzdáleného dotazu SPARQL: pokud zdrojová metadata proměnné obsahuje sdn\\_parametr\\_urn, např. sdn\\_parametr\\_urn = "SDN:P01::PSLTZZ01," GeneratorDatasets Xml přidá odpovídající atribut P02, např. sdn\\_P02\\_urn = "SDN:P02::PSAL." Pokud máte soubory, které používají tyto atributy, a pokud ERDDAP 's&lt; categoryAttributes &gt; v setup.xml zahrnuje sdn\\_parameter\\_turn a sdn\\_P02\\_urn, uživatelé budou moci používat ERDDAP™ Kategorie vyhledávací systém pro vyhledávání souborů dat se specifickými hodnotami těchto atributů. Díky BODC a Alexandrě Kokkinaki.
+        * ZLEPŠIT: GenerovatNastavení dat Xml nyní mění mnoho http:// odkazy v metadatech na https:// v případě potřeby.
+        * ZLEPŠIT: GenerovatNastavení dat Xml se nyní snaží hádat tvůrce\\_type a vydavatele\\_type.
+        * IMPROVED: DataTypes proměnné navrhuje GenerateDatasets Xml bude teď trochu lepší. Díky Margaret O'Brienové, LTER a EML.
+        * ZLEPŠIT: GenerovatNastavení dat Xml je lepší v určení&lt;cdm\\_data\\_type&gt; a přidávání souvisejících, požadovaných atributů (např.&lt;cdm\\_timeseries\\_variables&gt;), takže můžete poskytnout tuto informaci. Díky Richi Signellovi.
+        * ZLEPŠIT: Ve generováníDatasad Xml, pro datové soubory EDDTable, návrh pro&lt; subsetVariables &gt; je nyní mnohem konzervativnější. Díky Johnu Kerfootovi.
+        * ZLEPŠENÍ: pokud datasets.xml pro datové soubory určuje featureType ale ne cdm\\_data\\_type, featureType bude použito jako cdm\\_data\\_type. Díky Richi Signellovi.
+        * BUG FIX: generovat Datové soubory Xml nyní navrhuje správné&lt;dataType&gt; pro datové proměnné, které mají scale\\_factor , add\\_offset a/nebo \\_Nepodepsané atributy.
+    * Kdy? ERDDAP™ otevře .nc soubor, který je **kratší** než to má být (např. nebyla zcela zkopírována na místo) , ERDDAP™ Teď bere složku jako špatnou. V minulých dílech... ERDDAP™ vrací chybějící hodnoty pro jakoukoli chybějící část souboru, protože to je výchozí chování pro netcdf-java. ERDDAP™ Nyní používá Ucar .nc 2.iosp.netcdf3.N3header.dislowFileTruncation = true; Díky naší nepříjemné RAID a Christian Ward-Garrison.
+    * ZLEPŠENÉ: autor ISO 19115 nyní využívá **tvůrce\\_type** , pokud je přítomen.
+    * ZLEPŠENÍ: ERDDAP™ Nyní používá nejnovější netcdf-java v4.6.9, který může číst další typy **netcdf-4 soubory** . Díky Craig Risien, Rich Signell, Christopher Wingard a OOI.
+    * BUG FIX: Vyhněte se problémům, pokud mají různé zdrojové soubory různé datové typy pro danou proměnnou. Díky Royi Mendelssohnovi a Eugenovi Burgerovi.
+    * BUG FIX: **Převody časových formátů** jsou nyní lépe chráněni před špatnými hodnotami času. Díky NDBC.
+    * BUG FIX: EDDGrid FromNcFiles Odbalené nyní zpracovává časové hodnoty s **"Měsíce od... a roky od...** správně (zvyšováním měsíce nebo roku, a nikoli hrubou přidáním např. 30 dní opakovaně) . Díky Soda3.3.1.
+    * BUG FIX: právě ve V1.74, **předplatné** požadovat opatření (např. http:// ...) , který byl a měl by být nepovinný.
+    * BUG FIX: EDDGrid OdMergeIRFiles.lowZískatZdrojMetadata () nepřidal žádné globální atributy. Teď už ano.
          
 
 ## Verze 1.74{#version-174} 
- (propuštěn 2016- 10- 07) 
+ (propuštěn 2016-10-07) 
 
 *    **Nové funkce (pro uživatele) :**   
      
-    * Nyní, když seznam datových souborů (Všechny, nebo z hledání) je zobrazen na webové stránce, dlouhé tituly jsou zobrazeny na více řádcích. Dříve, střed dlouhého názvu byl nahrazen "...". Díky Margaret O 'Brienové, LTER a EML.
+    * Nyní, když seznam datových souborů (Všechny, nebo z hledání) je zobrazena na webové stránce, dlouhé tituly jsou zobrazeny na více řádcích. Dříve, uprostřed dlouhého názvu byl nahrazen " ... ." Díky Margaret O'Brienové, LTER a EML.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   
      
-    * Chcete-li: Na počítačích Linux, změnit nastavení Apache timeout tak, aby časově náročné uživatelské požadavky nemají timeout (s tím, co se často jeví jako "Proxy" nebo "Bad Gateway" chyba) . Jako kořenový uživatel:
+    * TO DO: Na Linux počítačích, změnit nastavení timeout Apache tak, aby časově náročné požadavky uživatelů don't timeout (s tím, co často vypadá jako chyba "Proxy" nebo "Bad Gateway") . Jako uživatel kořene:
         
-        1. Změnit Apache http d.conf soubor (obvykle v / etc / http d / conf /) :
-Změnit existující&lt;Timeout &gt; nastavení (nebo přidat jeden na konci souboru) až 3600 (sekund) , místo výchozího 60 nebo 120 sekund.
-Změnit existující&lt;ProxyTimeout &gt; nastavení (nebo přidat jeden na konci souboru) až 3600 (sekund) , místo výchozího 60 nebo 120 sekund.
-        2. Restartovat Apache: / usr / sbin / apachectl -K půvabný (ale někdy je v jiném adresáři.) .
+        1. Upravit Apače http d.conf soubor (obvykle v /etc/ http d/conf/) :
+Změnit existující&lt;Timeout &gt; nastavení (nebo přidat jeden na konci souboru) do 3600 (sekund) , místo výchozí 60 nebo 120 sekund.
+Změnit existující&lt;ProxyTimeout &gt; nastavení (nebo přidat jeden na konci souboru) do 3600 (sekund) , místo výchozí 60 nebo 120 sekund.
+        2. Restartujte Apache: /usr/sbin/apachectl - K elegantní. (ale někdy je v jiném adresáři) .
         
-Díky Thomasu Oliverovi.
+Díky Thomasi Oliverovi.
          
-    * NEW: \\[ bigParentDirectory / hard Adresář vlajky
-To funguje jako adresář vlajky, ale verze hardFlag také smaže všechny informace o cached dataset. Nejsou žádné URL pro nastavení hard Flag. To lze použít pouze vložením souboru do tohoto adresáře.
-tvrdé Vlajky jsou velmi užitečné, když děláte něco, co způsobuje změnu v tom, jak ERDDAP™ čte a interpretuje zdrojová data, například při instalaci nové verze ERDDAP™ nebo pokud jste provedli určité typy změn v definici datového souboru v datasets.xml . Viz [Tato dokumentace](/docs/server-admin/additional-information#hard-flag) . Díky Johnu Kerfootovi a všem Argovým skupinám.
+    * NEW: \\[ velkýRodič/tvrdý Adresář vlajky
+To funguje jako adresář vlajky, ale verze hardFlag také smaže všechny cachované informace datového souboru. Nejsou žádné URL pro nastavení pevné vlajky. To lze použít pouze vložením souboru do tohoto adresáře.
+tvrdá Vlajky jsou velmi užitečné, když uděláte něco, co způsobí změnu v tom, jak ERDDAP™ čte a interpretuje zdrojová data, například při instalaci nové verze ERDDAP™ nebo pokud jste provedli určité typy změn definice datového souboru v datasets.xml . Viz [Tato dokumentace](/docs/server-admin/additional-information#hard-flag) . Díky Johnu Kerfootovi a všem skupinám Argo.
          
-    * NEW: GenerateDatasets Xml má nyní možnost EDDTableFromEML
-který čte popis datového souboru v jazyce ekologických metadat (EML) soubor, stahuje související datový soubor, a generuje kus datasets.xml tak, aby datový soubor mohl být přidán do ERDDAP . K dispozici je také EDDTableFromEMLBatt, který dělá totéž pro všechny EML soubory v adresáři. To funguje velmi dobře, protože EML odvádí vynikající práci při popisu datového souboru a protože KNB a LTER zpřístupňují aktuální datové soubory.
-EML plus ERDDAP™ by mohla být skvělá kombinace, protože ERDDAP™ by mohly uživatelům poskytnout přímější přístup k bohatství dat KNB a LTER a pomoci těmto projektům splnit vládní požadavky [Veřejný přístup k výsledkům výzkumu (PARR) požadavky](https://nosc.noaa.gov/EDMC/PD.DSP.php) zpřístupněním dat prostřednictvím webové služby.
-Viz [Tato dokumentace](/docs/server-admin/EDDTableFromEML) . Díky Margaret O 'Brienové, LTER a EML.
+    * Novinka: GenerovatDatasety Xml má nyní možnost eddtableFromEML
+který čte popis souboru údajů v ekologickém jazyce metadat (EML) soubor, stáhne související datový soubor a vytvoří část datasets.xml tak, aby soubor údajů mohl být přidán ERDDAP . Tam je také EDDTableFromEMLBatch, který dělá totéž pro všechny EML soubory v adresáři. To funguje velmi dobře, protože EML dělá vynikající práci při popisu datového souboru a protože KNB a LTER, aby skutečné datové soubory k dispozici.
+EML plus ERDDAP™ Mohla by to být skvělá kombinace, protože ERDDAP™ mohou uživatelům poskytnout přímější přístup k bohatství dat KNB a LTER a pomoci těmto projektům splnit americkou vládu [Přístup veřejnosti k výsledkům výzkumu (PARR) požadavky](https://nosc.noaa.gov/EDMC/PD.DSP.php) zpřístupněním údajů prostřednictvím webové služby.
+Viz [Tato dokumentace](/docs/server-admin/EDDTableFromEML) . Díky Margaret O'Brienové, LTER a EML.
          
-    * NEW: GenerateDatasets Xml má nyní možnost EDDTableFromInPort
-který čte popis datového souboru v InPort XML souboru a snaží se vytvořit kus datasets.xml tak, aby datový soubor mohl být přidán do ERDDAP . To zřídka vytváří ready- to- použití kus XML pro datasets.xml , ale vytvoří dobrý hrubý návrh, který je dobrým výchozím bodem pro editaci člověkem.
-Bylo by skvělé, kdyby lidé, kteří využívají InPort k dokumentování svých souborů dat, také použili ERDDAP™ zpřístupnit skutečné údaje prostřednictvím ERDDAP Webové služby, a tím se setkávají s vládou USA a NOAA s [Veřejný přístup k výsledkům výzkumu (PARR) požadavky](https://www.whitehouse.gov/blog/2013/02/22/expanding-public-access-results-federally-funded-research) zpřístupněním dat prostřednictvím webové služby. Toto je řešení, které může být použito právě teď. ( erd.data at noaa.gov rád pomůže.)   
-Viz [Tato dokumentace](/docs/server-admin/datasets#eddtablefrominport) . Díky Evanu Howellovi a Melanii Abecassisové.
+    * Novinka: GenerovatDatasety Xml má nyní možnost eddtableFromInPort
+který čte popis souboru v souboru InPort XML a snaží se vytvořit část datasets.xml tak, aby soubor údajů mohl být přidán ERDDAP . To zřídka vytváří připravený kus XML pro datasets.xml , ale to vytvoří dobrý hrubý návrh, který je dobrým výchozím bodem pro editaci člověkem.
+Bylo by skvělé, kdyby lidé, kteří používají InPort k dokumentování svých souborů, také používali ERDDAP™ zpřístupnit skutečné údaje prostřednictvím ERDDAP 's webovými službami, a tím splnit americkou vládu's a NOAA 's [Přístup veřejnosti k výsledkům výzkumu (PARR) požadavky](https://www.whitehouse.gov/blog/2013/02/22/expanding-public-access-results-federally-funded-research) zpřístupněním údajů prostřednictvím webové služby. Tohle je řešení, které by se teď dalo použít. ( erd.data at noaa.gov Rád vám pomůže.)   
+Viz [Tato dokumentace](/docs/server-admin/datasets#eddtablefrominport) . Díky Evanu Howellovi a Melanie Abecassisové.
          
-    * ZLEPŠENO: ERDDAP™ nyní používá netcdf- java 4.6.6.
-S dřívějšími verzemi, netcdf-java číst některé hodnoty vyplnění (možná, jen v netcdf-4 souborech) jako 0. Nyní se některé z nich čte jako netcdf standardní hodnota vyplnění: -127 pro bytes, -32767 pro kraťasy, -2147483647 pro ints. Unidata Říká, že nové chování je správné chování. Pokud proměnná v datovém souboru začne zobrazovat jednu z těchto hodnot, kde se zobrazují 0, můžete např. přidat:
+    * ZLEPŠENÍ: ERDDAP™ Nyní používá netcdf-java 4.6.6.
+S dřívějšími verzemi, netcdf-java číst některé hodnoty vyplnit (Možná jen v netcdf-4 souborech) jako 0. Nyní se některé z nich čte jako standardní hodnota netcdf fill: -127 pro bajty, -32767 pro šortky, -2147483647 pro ints. Unidata Říká, že nové chování je správné chování. Pokud proměnná v datovém souboru začne zobrazovat jednu z těchto hodnot, kde se zobrazují 0, můžete přidat např.:
 ```
         <att name="\\_FillValue" type="short">-32767</att>  
 ```
-k proměnné addAttributes říct ERDDAP™ považovat tuto hodnotu za missing\\_value /\\ _ Vyplňte Hodnota. Nicméně, v mnoha případech, že nebude přinášet požadovaný výsledek: 0. Pokud ano, zvažte změnu souborů s NCO nebo přepisuje soubory. Stížnosti? Prosím kontaktujte Unidata ; -)
+k proměnné addAttributes říct ERDDAP™ považovat tuto hodnotu za missing\\_value /\\_Fill Hodnota. Nicméně, v mnoha případech, že nebude mít požadovaný výsledek: 0. Pokud ano, zvažte změnu souborů s NCO nebo přepsat soubory. Stížnosti? Prosím kontaktujte Unidata ;-)
          
-    * TO DO: Nová paleta TopographyDepth
-Doporučuji vám přepnout všechny soubory dat, které používají paletu OceanDepth k použití nové palety TopographyDepth, která je jako Topografie s výjimkou převrácených barev, takže je vhodná pro hloubkové hodnoty (pozitivní = dolů) , místo hodnot nadmořské výšky (pozitivní = nahoru) . Doporučené nastavení této palety je:
+    * DO: Nová topografická paleta
+Doporučuji vám přepnout všechny soubory, které používají paletu OceanDepth k použití nové palety TopographyDepth, která je jako Topography s výjimkou barev převrátil, takže je vhodná pro hodnoty hloubky (position=down) , místo nadmořské výšky (plus=up) . Doporučená nastavení pro tuto paletu jsou:
 ```
             <att name="colorBarMaximum" type="double">8000.0</att>
             <att name="colorBarMinimum" type="double">-8000.0</att>
             <att name="colorBarPalette">TopographyDepth</att> 
 ```
 
-    * Nová feature: Řetězec missing\\_value a / nebo\\ _ FillValue
-Pokud proměnná String definuje missing\\_value a / nebo\\ _ FillValue, ERDDAP™ Nyní odstraní tyto hodnoty z dat a nahradí je prázdným řetězcem, takže chybějící hodnoty se objeví jako prázdné řetězce, stejně jako s ostatními soubory dat v ERDDAP . Díky Margaret O 'Brienové, LTER a EML.
+    * NOVÁ FEATURE: String missing\\_value a/nebo \\_FillValue
+Pokud proměnná String definuje a missing\\_value a/nebo \\_FillValue, ERDDAP™ nyní odstraní tyto hodnoty z dat a nahradí je prázdným řetězcem, takže chybějící hodnoty se objeví jako prázdné řetězce, stejně jako jiné soubory souborů v ERDDAP . Díky Margaret O'Brienové, LTER a EML.
          
-    * Nová feature: Podpora místních časů
-Proměnné timestamp se zdrojovými daty ze Strings nyní mohou specifikovat časové pásmo přes " time\\_zone "atribut, který vede ERDDAP™ převést local- time- zone zdrojové časy (některé ve standardním čase, některé v denním světle) do Zulu krát. Seznam platných názvů časových pásem je pravděpodobně identický se seznamem ve sloupci TZ v [Tento stůl](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) . Výchozí je " Zulu . "Běžná časová pásma USA jsou: US / Hawaii, US / Aljaška, US / Pacific, US / Mountain, US / Arizona, US / Central, US / Eastern. Pro proměnné časového razítka s numerickými zdrojovými daty můžete zadat" time\\_zone "atribut, ale hodnota musí být" Zulu "nebo" UTC. "Díky Margaret O 'Brienové, LTER a EML.
+    * NOVÁ FEATURE: Podpora místních časů
+proměnné časového razítka se zdrojovými daty ze Strings nyní mohou určit časové pásmo přes " time\\_zone " atribut, který vede ERDDAP™ převést na místní čas-zóna zdrojové časy (někteří ve standardním čase, někteří v denním světle šetří čas) do Zulu krát. Seznam platných názvů časových pásem je pravděpodobně totožný se seznamem ve sloupci TZ [Tato tabulka](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) . Výchozí je " Zulu ". Společná americká časová pásma jsou: USA/Hawaii, USA/Alaska, USA/Pacific, USA/Mountain, USA/Arizona, USA/Central, USA/Východ. Pro proměnné časového razítka s číselnými zdrojovými daty můžete zadat " time\\_zone " atribut, ale hodnota musí být " Zulu "nebo "UTC." Díky Margaret O'Brienové, LTER a EML.
          
-    * NEW Feature: EDDTableFromAsciiFiles nyní podporuje soubory oddělené středníkem
-a je chytřejší při hledání oddělovače. Díky Margaret O 'Brienové, LTER a EML.
+    * NOVÁ FEATURE: EDDTableFromAsciiFiles nyní podporuje středníky oddělené soubory
+a je chytřejší na zjištění oddělovače. Díky Margaret O'Brienové, LTER a EML.
          
-    * Nová feature: Pokud existuje významná chyba v načítání Datasets (hlavní nebo menší, např. chybějící nebo neplatná datasets.xml dokument) , ERDDAP™ nyní indikují ve status.html, přímo pod "n Datasets Selhal Nahrát" jako ERROR: při zpracování datasets.xml : podrobnosti viz log.txt.
+    * NOVÁ FEATURE: Pokud dojde k významné chybě v loadDatasets (hlavní nebo menší, např. chybějící nebo neplatný datasets.xml doklad) , ERDDAP™ bude nyní uvádět v status.html, přímo pod "n Datasets Failed To Load" jako ERROR: při zpracování datasets.xml : Podrobnosti viz log.txt.
          
-    * Nová feature: ERDDAP™ hledá sirotky.
-Kdy ERDDAP™ má velké zatížení Datasety, teď hledá sirotky. (Datové soubory, které jsou v ERDDAP™ ale ne v datasets.xml ) . Jsou-li nalezeny, jsou uvedeny ve status.html, přímo pod "n Datasets Selhal Načíst" jako Error: n Orphan Datasets (Datové soubory v ERDDAP™ ale ne v datasets.xml ) =....
-Pokud chcete odstranit (Vyložit) sirotek od ERDDAP™ , musíte přidat
-        &lt;Typ datového souboru = "_ anyValidType _" datasetID = "_ theDatasetID _" active = "false" / &gt;
-do datasets.xml až do uvolnění datového souboru během dalších hlavních datových souborů.
+    * NOVÁ FEATURE: ERDDAP™ Hledá sirotky.
+Kdy? ERDDAP™ Dělá velké zatížení Datasety, teď hledá osiřelé soubory. (Soubory údajů, které jsou v ERDDAP™ ale ne v datasets.xml ) . Jsou-li nalezeny, jsou uvedeny v status.html, přímo pod "n Datasets selhalo načíst" jako ERROR: n Orphan Datasets (Soubory údajů v ERDDAP™ ale ne v datasets.xml ) = ....
+Pokud chcete odstranit (vyložit) sirotka z ERDDAP™ , musíte přidat
+        &lt;Typ datového souboru="" datasetID ="_theDatasetID_" active="false" /&gt;
+až datasets.xml dokud nebude soubor údajů vyložen během dalšího velkého zatíženíDatasets.
          
-    * BUG FIX: Pokud měl datový soubor numerickou časovou proměnnou s jednotkami jinými než "seconds since 1970-01-01T00:00:00Z" a s&lt;updateEveNMillis &gt; systém aktivní, rozsah proměnné timestamp byl nastaven nesprávně při aktualizaci datového souboru. Díky Johnu Kerfootovi.
+    * BUG FIX: Pokud má datový soubor numerickou proměnnou časového razítka s jinými jednotkami než "seconds since 1970-01-01T00:00:00Z" a s&lt;updateEveryNMillis&gt; system active, the timemark's range was closed when the database was update. Díky Johnu Kerfootovi.
          
-    * BUG FIX: Pokud&lt;quickRestart &gt; byl pravdivý v setup.xml a vy jste požadovali data z EDDTableFrom... Name&lt;updateEveryNMillis &gt;, první požadavek na datový soubor by selhal, ale následující požadavky by uspěly. Teď první žádost nezklame. Díky Johnu Kerfootovi.
+    * FIX: pokud&lt;quickRestart&gt; byl true in setup.xml a vy jste si vyžádali data z EDDTableFrom... Soubory, které používají&lt;updateEveryNMillis&gt;, první požadavek na datový soubor by selhal, ale následné žádosti by uspěly. První žádost nezklame. Díky Johnu Kerfootovi.
          
-    * BUG FIX: GenerateDatasetsXml.sh a .bat nefungovaly s &gt; 9 parametry na příkazovém řádku. Teď už ano. Díky Johnu Kerfootovi.
+    * BUG FIX: GenerateDatasetsXml.sh a .bat nefungovaly s parametry &gt; 9 na příkazovém řádku. Teď už ano. Díky Johnu Kerfootovi.
          
-    * BUG FIX: Nové soubory EDDTableFromMultidimNcFiles neodstranily průchozí prostory z řetězců. Teď už ano. Hlavně to ovlivnilo soubory ARGO. Díky Kevinu O 'Brienovi a Rolandu Schweitzerovi.
+    * BUG FIX: Nový EDDTableFromMultidimNcFiles důsledně neodstranil stezkové prostory ze strun. Teď už ano. To ovlivnilo především soubory ARGO. Díky Kevinu O'Brienovi a Rolandu Schweitzerovi.
          
-    * BUG FIX: Veškerý přístup na dálku DAP Služby jsou nyní iniciovány modernějším kódem. Tím se při přístupu k některým datovým setům EDDTableFromErddap nastaví chyba "uzavření spojení". Díky Kevinu O 'Brienovi.
+    * BUG FIX: Všechny přístupy vzdálené DAP Služby jsou nyní iniciovány moderním kódem. Tím se spraví chyba "připojení uzavřeno" při přístupu k některým datům EDDTableFromErddap. Díky Kevinu O'Brienovi.
          
-    * BUG FIX: Manipulace s orderBy ... () a odlišné () jsou nyní zpět k tomu, jak byly před nedávnými změnami: daný požadavek může mít více orderBy ... () a / nebo odlišné () filtr; ERDDAP™ se o ně postará v pořadí, v jakém jsou specifikovány. Díky Davidu Karugovi.
+    * BUG FIX: Léčba orderBy ... () a zřetelné () jsou nyní zpět k tomu, jak byly před nedávnými změnami: daná žádost může mít více orderBy ... () a/nebo odlišné () filtr; ERDDAP™ budou jednat v pořadí, které jsou uvedeny. Díky Davidovi Karugovi.
          
-    * BUG FIX: Pokud je datový soubor EDDTableFromDatabase a dotaz má [SourceCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) a / nebo [sourceCanDoDiscript](/docs/server-admin/datasets#sourcecandodistinct) , pak databáze může (v závislosti na nastavení v datasets.xml ) částečně nebo zcela uchopit **pouze první**   orderBy .. () nebo odlišné () . Díky Davidu Karugovi.
+    * BUG FIX: Pokud je datový soubor EdDtableFromDatabase a dotaz má [zdrojCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) nebo [zdrojCanDoDistinct](/docs/server-admin/datasets#sourcecandodistinct) , pak databáze může (v závislosti na nastavení datasets.xml ) částečně nebo zcela rukojeť **pouze první**   orderBy .. () nebo odlišné () . Díky Davidovi Karugovi.
          
-    * BUG FIX: Nedávné další enkódování způsobilo problémy s některými dotazy pro .nc Soubory CF, např. "HTTP Status 500 - Chyba dotazu: proměnná = stanice je uvedena dvakrát v seznamu proměnných výsledků." Díky Kevinu O 'Brienovi.
+    * BUG FIX: Nedávné extra procento kódování způsobilo problémy s některými dotazy na .nc CF soubory, např. "HTTP status 500 - Chyba dotazu: proměnná=station je uvedena dvakrát v seznamu proměnných výsledků." Díky Kevinu O'Brienovi.
          
-    * BUG FIX: EDDTableFromFiles měl potíže s nahráním datového souboru, když jeden z sloupců byl skutečný sloupec. Díky Rolandu Schweitzerovi.
+    * BUG FIX: EDDTableFromFoles měl problém načíst soubor, když jeden ze sloupců byl skutečný sloupec char. Díky Rolandu Schweitzerovi.
          
-    * BUG FIX: EDDGrid FromNcFiles Vybaleno nyní také konvertuje missing\\_value a\\ _ FillValue na standardní hodnoty, takže soubory s různými hodnotami lze agregovat. Díky této změně, po instalaci této nové verze ERDDAP™ , prosím nastavte [tvrdé Vlajka](/docs/server-admin/additional-information#hard-flag) pro každý EDDGrid FromNcFiles Vybalený datový soubor ve Vašem ERDDAP .
+    * BUG FIX: EDDGrid FromNcFiles Vybalené nyní také konvertuje missing\\_value a \\_FillValue ke standardním hodnotám, takže soubory s různými hodnotami lze shrnout. Kvůli této změně, po instalaci této nové verze ERDDAP™ , prosím nastavte [tvrdá Označení](/docs/server-admin/additional-information#hard-flag) pro každý EDDGrid FromNcFiles Vybalený soubor dat ve Vašem ERDDAP .
          
-    * ZLEPŠENO: Soubory EDDTableFromNcCFF mohou nyní zpracovávat soubory, které mají více vzorků\\ _ dimension. Zadaný datový soubor musí používat pouze proměnné, které používají jeden ze vzorků\\ _ dimensions. Díky Ajay Krishnanovi.
+    * IMPROVED: EDDTableFromNcCFFiles nyní může zvládnout soubory, které mají více vzorků\\_dimension's. Zadaný datový soubor musí používat pouze proměnné, které používají jednu ze vzorků\\_rozměrů. Díky Ajayi Krishnanovi.
          
-    * ZLEPŠENO: Pro EDDTableFrom... soubory,&lt;SortFilesBySourceName &gt; nyní umožňuje comma- oddělené (doporučeno) nebo prostorově oddělené seznamy jmen proměnných zdrojů. V obou případech mohou být jednotlivé názvy proměnných obklopeny dvojitými uvozovkami, např. pokud má název vnitřní prostor.
+    * ZLEPŠENÉ: Pro EDDTableFrom...&lt;seřazenoFilesBySourceNames&gt; nyní umožňuje čárku oddělenou (doporučené) nebo mezerou oddělené seznamy jmen proměnných zdrojů. V každém případě mohou být jednotlivé názvy proměnných obklopeny dvojími uvozovkami, např. pokud má název vnitřní prostor.
 
 ## Verze 1.72{#version-172} 
  (propuštěn 2016-05-12) 
@@ -1525,15 +1542,15 @@ do datasets.xml až do uvolnění datového souboru během dalších hlavních d
 *    **Nové funkce (pro uživatele) :** Žádné.
      
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * NOVÉ EDDTableFromMultidimNcFiles [EDDTableFromMultidimNcFiles](/docs/server-admin/datasets#eddtablefrommultidimncfiles) je novou alternativou k EDDTableFromNcFiles. Je určen k řešení skupin souborů s několika proměnnými se sdílenými rozměry, např. var1 \\[ a \\]  \\[ b \\] , var2 \\[ a \\] , var3 \\[ b \\] ScalarVar. Díky projektu Argo, Aurélie Briand a Rolandu Schweitzerovi.
-    * BUG FIX: ERDDAP™   (prostřednictvím tříd FileVisitorDNLS a FileVistor Subdir) nyní následuje symbolické odkazy na Linux. ERDDAP™ Pořád to nesleduje. Ink je na Windows.
-    * BUG FIX chyby zavedena v 1.70: odlišné + orderBy nebyly povoleny společně v jedné žádosti. Teď už zase. Nejsou vzájemně výlučné / nadbytečné. Díky Davidu Karugovi.
-    * Změna datasets.xml blacklist of IP adres:
-IP v4 adresy se objeví ERDDAP™ jako 4 periodicky oddělená hex čísla.
-Myslím, že IP v6 adresy se zdají být 8 koloniálně oddělených hex čísel.
-Takže ERDDAP™ Nyní podporuje kolony v IP adresách v tomto seznamu a:\\ * na konci seznamu blokovat rozsah adres.
-    * ZLEPŠENO: ERDDAP™ nyní používá NetcdfFileWriter k zápisu .nc soubory namísto deprimovaných NetcdfFileWritable. V výsledných souborech by neměly být žádné zřetelné změny. To otevírá možnost zvětšení .nc soubory, které používají .nc 3 64bitové prodloužení. Pokud to chcete / potřebujete, zašlete prosím žádost erd.data at noaa.gov .
-    * ZLEPŠENO: Mnoho odkazů na vzdálené webové stránky bylo zastaralé. Nyní jsou up- to- date and use https: místo http : pokud možno.
+    * NOVÉ EDDTableFromMultidimNcFiles [EDDTablefromMultidimNcFiles](/docs/server-admin/datasets#eddtablefrommultidimncfiles) je nová alternativa k EDDTableFromNcFiles. Je navržen tak, aby se zabýval skupinami souborů s několika proměnnými se sdílenými rozměry, např. var1 \\[ a \\]  \\[ b \\] , var2 \\[ a \\] , var3 \\[ b \\] , skalárVar. Díky projektu Argo, Aurélie Briand a Rolandu Schweitzerovi.
+    * BUG FIX: ERDDAP™   (přes třídy FileVisitorDNLS a FileVistorSubdir) Nyní následuje symbolické odkazy na Linux. ERDDAP™ Pořád to nechápu.
+    * BUG FIX chyby zavedené v 1.70: odlišné + orderBy nebyly povoleny společně v jedné žádosti. Teď jsou zase. Nejsou vzájemně exkluzivní/redundantní. Díky Davidovi Karugovi.
+    * Změna na datasets.xml černý seznam IP adres:
+Zdá se, že IP v4 adresy ERDDAP™ jako 4 perioda oddělená čísla hex.
+Myslím, že IP v6 adresy se zobrazují jako 8 dvojtečí oddělovaná čísla.
+Takže... ERDDAP™ nyní podporuje dvojtečky v IP adresách v tomto seznamu a :\\* na konci seznamu blokovat řadu adres.
+    * ZLEPŠENÍ: ERDDAP™ nyní používá NetcdfFileWriter psát .nc soubory místo deprecovaných NetcdfFileWriteable. V výsledných souborech by neměla dojít k žádné zřetelné změně. Tím se otevírá možnost velkého .nc Soubory, které používají .nc 3 64bitová rozšíření. Pokud to chcete/potřebujete, zašlete prosím žádost erd.data at noaa.gov .
+    * Mnoho odkazů na vzdálené webové stránky bylo zastaralých. Nyní jsou aktuální a používají https: místo http : pokud možno.
     * Mnoho malých změn.
 
 ## Verze 1.70{#version-170} 
@@ -1541,36 +1558,36 @@ Takže ERDDAP™ Nyní podporuje kolony v IP adresách v tomto seznamu a:\\ * na
 
 *    **Nové funkce (pro uživatele) :** Žádné.
      
-*    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** Níže je uvedeno několik doporučených změn v dokumentaci ve vašem setup.xml souboru.
-Prosím, udělejte tyto změny hned.
-30 minut práce vám může ušetřit hodiny zmatku v budoucnosti.
-    * Oprava chyb: Problém byl, že žádosti, které byly přesměrovány na vzdálený ERDDAP selhalo s neplatným znakem " | chybová zpráva. K tomu došlo pouze s nedávnými verzemi Tomcat. Díky Rustymu Hollemanovi, Conorovi Delaneymu a Royovi Mendelssohnovi.
-    * Oprava chyb: ERDDAP™ nyní používá up- to- date verzi netcdf- java (To je dlouhý příběh.) který zahrnuje up- to- date podporu pro NcML, který řeší problém s NcML LogicalReduce nepracuje tak, jak se očekává. Může dojít k několika malým změnám metadat, které ERDDAP™ čte prostřednictvím netcdf-java od .nc , .hdf , .grib, a .bufr soubory. Díky Faviovi Medranovi.
-    * Nový [EDDTableAggregateRows](/docs/server-admin/datasets#eddtableaggregaterows) umožňuje vytvořit sloučený soubor dat EDDTable ze dvou nebo více souborů dat EDDTable, které mají stejné datové proměnné za použití stejných jednotek. Díky Kevinu O 'Brienovi.
-    * Nové možnosti pro EDDTableFromDatabase ( [SourceCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) a [sourceCanDoDiscript](/docs/server-admin/datasets#sourcecandodistinct) ) Upřesněte, zda ERDDAP™ , databáze, nebo obojí, zvládnout odlišné a orderBy   (a všechny varianty) omezení. Díky Davidu Karugovi.
-    * Nyní můžete prostřednictvím nového [&lt;GrapsAccessibleTo &gt; public&lt;/ gramsAccessibleTo &gt;] (/ docs / server-admin / datasets # grapsaccessibleto) Tag. Díky Emanuele Lombardiové.
-    * Nyní, pokud řetězec předán GenetateDatasets Xml nebo DasDds je obklopen dvojitou citace, je necitovaný (jako by to byl řetězec JSON) . Díky Johnu Kerfootovi a Melanii Abecassisové.
-    * GeneteDatasets Xml nyní podporuje "výchozí" získat výchozí a "nic" získat prázdný řetězec (pracují s uvozovkami nebo bez nich) . To řeší některé problémy spojené s předáním prázdných strun.
-    * Nyní, v GenetateDatasets Xml pro všechny EDDGrid FromFiles a EDDTable Soubory FromFiles, pokud je vzorek Název souboru, který zadáte, je "" (prázdný řetězec) , použije poslední odpovídající soubor Název z adresáře + regex + rekurzivní = true.
-    * Aktualizováno: DisplayInBrowser kód, který se používá k zobrazení výsledků GenetateDatasetsXml a DasDds na počítačích Linux byl zastaralý a dal zvláštní zprávu o Netscape. Toto používá moderní Linux nástroj: xdg- open. Díky Melanii Abecassisové.
-    * U allDatasets Dataset má nyní "files" sloupec, který označuje základní URL odkazu / souborů (pokud existuje) pro datový soubor.
-    * Zvýšit všeobecnou bezpečnost ERDDAP™ změnou oprávnění spojených s adresářem tomcat a bigParentDirectory:
-         (Skutečné příkazy níže jsou pro Linux. Pro ostatní OS, dělat analogické změny.) 
-        * Změňte "skupinu" na tomcat, vaše uživatelské jméno, nebo jméno malé skupiny, která obsahuje tomcat a všechny administrátory Tomcat / ERDDAP např.:
-chgrp -R _ yourUserName _ apache-tomcat- _ 8.0.23 _
-chgrp-R _ your UserName bigParentDirectory _
-        * Změna oprávnění tak, že tomcat a skupina mají číst, psát, vykonávat práva, např.
-chmod-R ug + rwx apache- tomcat- _ 8.0.23 _
-chmod-R ug + rwx _ bigParentDirectory _
-        * Odstranit oprávnění "jiného" uživatele pro čtení, zápis nebo provedení:
-chmod-R o- rwx apache- tomcat- _ 8.0.23 _
-chmod-R o-rwx _ bigParentDirectory _
-To je důležité, protože to brání jiným uživatelům číst možná citlivé informace v ERDDAP™ nastavené soubory, logové soubory a soubory s informacemi o soukromých souborech dat.
-    * Autorizační / přihlašovací systém byl přepracován. Díky Thomasu Gardnerovi, Emanuele Lombardiové a nové vládě USA [Pouze standard HTTPS-](https://home.dotgov.gov/management/preloading/dotgovhttps/) .
-        * Byla odstraněna autentizace = openid option. Bylo to zastaralé.
-        * Nový, doporučený, [autentizace = Google](/docs/server-admin/additional-information#google) možnost použití Google Sign- In (založeno na OAuth 2.0) umožnit každému s e-mailovým účtem Google (včetně Google spravované účty jako @noaa.gov ) Přihlásit se.
-        * Nový, [ověření = e-mail](/docs/server-admin/additional-information#email) option is a back up for autentication = Google. Umožňuje uživatelům&lt;uživatel &gt; tag in datasets.xml k přihlášení zasláním e-mailu se zvláštním odkazem.
-        * Ve Vašem setup.xml, prosím, změňte popis&lt;ověření &gt; bude
+*    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** Níže je několik doporučených změn dokumentace ve vašem setup.xml souboru.
+Prosím, udělejte teď ty změny.
+30 minut práce vám může v budoucnu ušetřit hodiny zmatení.
+    * Oprava chyb: Problém byl, že žádosti, které byly přesměrovány na vzdálený ERDDAP selhal s neplatným znakem ' | ' chybová zpráva. K tomu došlo pouze s nedávnou verzí Tomcat. Díky Rusty Hollemanovi, Conoru Delaneymu a Royi Mendelssohnovi.
+    * Oprava chyb: ERDDAP™ nyní používá aktuální verzi netcdf-java (To je dlouhý příběh.) který zahrnuje aktuální podporu pro NcML, která řeší problém s NcML LogicalReduce nefunguje podle očekávání. Může dojít k několika drobným změnám metadat, která ERDDAP™ čte přes netcdf-java .nc , .hdf , .grib, a .bufr soubory. Díky Faviovi Medranovi.
+    * Nový [EDDTableAggregateRows](/docs/server-admin/datasets#eddtableaggregaterows) umožňuje vytvořit sloučený soubor EDDTable ze dvou nebo více souborů EDDTable, které mají stejné datové proměnné za použití stejných jednotek. Díky Kevinu O'Brienovi.
+    * Nové možnosti pro EdDtableFromDatabase ( [zdrojCanOrderBy](/docs/server-admin/datasets#sourcecanorderby) a [zdrojCanDoDistinct](/docs/server-admin/datasets#sourcecandodistinct) ) Upřesněte, zda ERDDAP™ , databáze, nebo obojí, zvládnout odlišné a orderBy   (a všechny varianty) omezení. Díky Davidovi Karugovi.
+    * Nyní můžete zpřístupnit grafy a metadata soukromého datového souboru veřejnosti prostřednictvím nového [&lt;grafyPřístupnéTo&gt;veřejná&lt;/grafyPřístupnéTo&gt;] (/docs/server-admin/datasets#graphsaccessibleto) Tagu. Díky Emanuele Lombardimu.
+    * Nyní, pokud řetězec přešel na GenerateDatasets Xml nebo DasDds je obklopen dvojitými citacemi, to je nequoted (jako by to byl JSON řetězec) . Díky Johnu Kerfootovi a Melanie Abecassisové.
+    * Generovat soubory dat Xml nyní podporuje "výchozí" získat výchozí a "nic" získat prázdný řetězec (pracují s citacemi nebo bez nich) . Tím se řeší některé problémy související s průchodem prázdných řetězců.
+    * Nyní, v GenerateDatasets Xml, pro všechny EDDGrid FromFiles a EDDTable Soubory údajů ze souborů, pokud vzorek Název souboru, který zadáte je "" (prázdný řetězec) , použije poslední odpovídající souborJméno z adresáře + regex + rekursive=true.
+    * Updated: DisplayInBrowser kód, který se používá k zobrazení výsledků GenerateDatasetsXml a DasDds na Linux počítačích byl zastaralý a dal zvláštní zprávu o Netscape. Tohle používá moderní nástroj Linux: xdg-open. Díky Melanie Abecassisové.
+    * The allDatasets Databáze má nyní "files" sloupec, který označuje základní URL odkazu /files (pokud nějaký existuje) pro datový soubor.
+    * Zvýšit obecnou bezpečnost ERDDAP™ změnou oprávnění spojených s adresářem tomcat a bigParentDirectory:
+         (Aktuální příkazy níže jsou pro Linux. U ostatních OS udělejte obdobné změny.) 
+        * Změňte "skupina" být tomcat, vaše uživatelské jméno, nebo název malé skupiny, která zahrnuje tomcat a všechny správce Tomcat/ ERDDAP např.
+chgrp -R _yourUserName_ apache-tomcat-_8.0.23_
+chgrp -R _your UserName bigParentDirectory_
+        * Změnit oprávnění tak, aby Tomcat a skupina četli, psali, prováděli práva, např.
+Chmod -R ug+rwx apache-tomcat-_8.0.23_
+Chmod -R ug+rwx _bigParentDirectory_
+        * Odstranit "ostatní" uživatelská oprávnění ke čtení, zápisu nebo spuštění:
+chmod -R o-rwx apache-tomcat-_8.0.23_
+Chmod -R o-rwx _bigParentAdresar_
+To je důležité, protože to brání ostatním uživatelům číst možná citlivé informace v ERDDAP™ nastavit soubory, log soubory a soubory s informacemi o soukromých datových souborech.
+    * Autentizační/loginový systém byl přestavěn. Díky Thomasi Gardnerovi, Emanuele Lombardimu a nové vládě USA [Pouze HTTPS standard](https://home.dotgov.gov/management/preloading/dotgovhttps/) .
+        * Autentizace=openie byla odstraněna. Bylo to zastaralé.
+        * Nový, doporučený, [autentizace=google](/docs/server-admin/additional-information#google) možnost použití Přihlášení do Google (na základě OAuth 2.0) umožnit komukoliv s e-mailovým účtem Google (včetně Google spravuje účty jako @noaa.gov ) k přihlášení.
+        * Nový, [autentizace=email](/docs/server-admin/additional-information#email) volba je záloha pro autentizaci=google. Umožňuje uživatelům s&lt;tag uživatele &gt; datasets.xml k přihlášení zasláním e-mailu se speciálním odkazem.
+        * Ve vašem nastavení.xml, prosím změňte popis pro&lt;autentizace&gt; má být
 ```
             <!-- If you want to restrict access to some datasets, 
             you need to specify the method used for logging on (authentication).
@@ -1582,7 +1599,7 @@ To je důležité, protože to brání jiným uživatelům číst možná citliv
             -->
 ```
 
-        * Do setup.xml, prosím přidejte toto přímo pod&lt;ověření &gt; značka
+        * V nastavení.xml, prosím, přidejte to přímo pod&lt;ověření _BAR_ Značka
 ```
             <!-- If authentication=google, you must supply your Google Client ID. 
             See
@@ -1598,10 +1615,10 @@ To je důležité, protože to brání jiným uživatelům číst možná citliv
             <googleClientID></googleClientID>
 ```
 
-        * Uživatelé, kteří nejsou přihlášeni, mohou použít http nebo https URL (pokud jste nastavili&lt;baseHttpsUrl &gt; ve Vašem setup.xml). Díky nové vládě USA [Pouze standard HTTPS-](https://https.cio.gov/) .
-        * Nyní můžete povzbudit všechny uživatele k použití https   (ne http ) nastavením&lt;baseUrl &gt; být https URL. Nutit uživatele používat pouze https , musíte také provést změny nastavení Apache / Tomcat blokovat non - https přístup. Díky nové vládě USA [Pouze standard HTTPS-](https://https.cio.gov/) .
+        * Uživatelé, kteří nejsou přihlášeni, mohou použít http nebo https URL (pokud jste nastavili&lt;baseHttpsUrl&gt; ve vašem setup.xml). Díky nové vládě USA [Pouze HTTPS standard](https://https.cio.gov/) .
+        * Nyní můžete povzbudit všechny uživatele k použití https   (ne http ) nastavením&lt;baseUrl &gt; to be an https URL. Donutit uživatele používat pouze https , musíte také provést změny v nastavení Apache/Tomcat blok non- https přístup. Díky nové vládě USA [Pouze HTTPS standard](https://https.cio.gov/) .
             
-Ve Vašem setup.xml, prosím, změňte popis&lt;baseUrl &gt; bude
+Ve vašem nastavení.xml, prosím změňte popis pro&lt;baseUrl &gt; to be
 ```
             <!-- baseUrl is the start of the public URL, to which "/erddap" 
             is appended. For example:
@@ -1617,7 +1634,7 @@ Ve Vašem setup.xml, prosím, změňte popis&lt;baseUrl &gt; bude
             -->
 ```
 
-        * Možnosti&lt;kódování hesla &gt; Změna. Ve Vašem setup.xml, prosím, změňte popis&lt;hesla Kódování &gt; bude
+        * Možnosti&lt;Heslo Kódování&gt; změnil. Ve vašem nastavení.xml, prosím změňte popis pro&lt;Heslo Kódování&gt; má být
 ```
             <!-- For "custom" authentication, this specifies how you have 
             stored passwords in the roles tags in datasets.xml.
@@ -1633,7 +1650,7 @@ Ve Vašem setup.xml, prosím, změňte popis&lt;baseUrl &gt; bude
             --> 
 ```
 
-        * Ve Vašem setup.xml, prosím, změňte popis&lt;baseHttpsUrl &gt; bude
+        * Ve vašem nastavení.xml, prosím změňte popis pro&lt;baseHttpsUrl &gt; má být
 ```
             <!-- This is a variant of <baseUrl> which is used when 
             authentication is active and the user is logged in.
@@ -1654,9 +1671,9 @@ Ve Vašem setup.xml, prosím, změňte popis&lt;baseUrl &gt; bude
             --> 
 ```
 
-        * Nyní, pokud listPrivateDatasets = pravda v setup.xml, ještě méně informací bude zobrazeno o datových souborů, ke kterým uživatel nemá přístup.
-    * Nyní, zejména pokud jste původně nastavení ERDDAP , můžete nyní říct ERDDAP™ nezkusit se přihlásit na vzdálený ERDDAP™ Datové soubory. Díky Filipe Roche Freire.
-Ve Vašem setup.xml, těsně před&lt;fontFamily &gt;, prosím přidejte
+        * Nyní, pokud listPrivateDatasets=true v setup.xml, ještě méně informací bude zobrazeno o souborech dat, ke kterým uživatel nemá přístup.
+    * Obzvlášť, když jste si původně nastavili ERDDAP Teď už to poznáš. ERDDAP™ nezkoušet se přihlásit ke vzdálenému ERDDAP™ Data. Díky Filipe Rocha Freire.
+Ve vašem nastavení.xml, těsně před&lt;písmoRodina&gt;, prosím, přidejte
 ```
         <!-- Normally, if you have a EDDGridFromErddap or EDDTableFromErddap 
         dataset in your datasets.xml, it will try to subscribe to the remote 
@@ -1674,23 +1691,23 @@ Ve Vašem setup.xml, těsně před&lt;fontFamily &gt;, prosím přidejte
         <subscribeToRemoteErddapDataset>true</subscribeToRemoteErddapDataset>
 ```
 
-    * Ve Vašem setup.xml, ve výše uvedených pokynech&lt;emailFromAddress &gt;, prosím vložte:
-Pokud je to možné, nastavte to pro použití bezpečného spojení (SSL / TLS) na emailový server.
-Pokud vaše nastavení nepoužívá zabezpečené připojení k emailovému serveru, proveďte prosím změny.
-    * Ve vaší datasets.xml , prosím přidejte tento řádek k popisu&lt;Předplatné EmailBlacklist &gt; ve Vašem datasets.xml :
-Můžete použít jméno "\\*"k černé listině celé domény, např.,\\*@ example.com.
-    * Od změny systému logování v v1.66, log soubor není nikdy up- to- date. Tam jsou vždy zprávy nebo části zpráv čekající na zápis do souboru záznamu. Teď to můžeš dát do pořádku. (na okamžik) Tím, že si prohlížíte ERDDAP stav webové stránky na http://_your.domain.org_/erddap/status.html .
-    * Hashdigest...
-    * Malá změna (na String2.kanonický) To by mělo pomoci udržet věci v pohybu rychle, když ERDDAP™ je velmi zaneprázdněn a také lépe vypořádat s velmi velkým počtem souborů dat.
-    * Silně Doporučeno: přestaňte používat&lt;konvertToPublic SourceUrl &gt; n datasets.xml převést IP číslo v datovém souboru&lt; sourceUrl &gt; (např. http://192.168.#.#/ ) do názvu domény (např. http : my.domain.org /) . Od teď, nové předplatné http://localhost , http://127.0.0.1 a http://192.168.#.# URLS nebudou povoleny z bezpečnostních důvodů. Takže prosím vždy používejte název domény na veřejnosti&lt; sourceUrl &gt; tag (v případě potřeby kvůli DNS problémy) , můžete použít [/ etc / hosts table na vašem serveru](https://linux.die.net/man/5/hosts) vyřešit problém převáděním místních doménových jmen na IP čísla bez použití DNS serveru. Můžete otestovat, zda je dané jméno domény správně vyřešeno použitím
-Ping _ some.domain.name _
-    * V generateDatasets.xml, pro vzdálené soubory dat (např. ze serveru HISDDS) , automaticky generované datasetID s jsou nezměněny pro většinu domén. Pro několik oblastí, první část (Tj. název) automaticky generované datasetID Bude to trochu jiné. Zejména jména, která měla jednu část, mají nyní větší pravděpodobnost, že budou mít dvě části. Například datové soubory od http://oos.soest.hawaii.edu dříve vedlo k datasetID To začalo s havajským _, ale nyní vést k datasetID s, které začínají s havai\\ _ soest\\ _. Pokud vám to způsobí problémy, pošlete mi e-mail. Možná tu bude nějaká práce.
-    * Řidič Cassandra byl aktualizován na Cassandra- driver- core- 3.0.0.jar a tak pro Cassandra v3. EDDTableFromCassandra nevyužívá žádné nové funkce v Cassandra v3. Indexy v Cassandře mohou být složitější, ale ERDDAP™ stále používá model Cassandra v2 index, který předpokládá, že indexovaný sloupec může být přímo dotazován '=' omezení. GeneteDatasets Xml pro EDDTableFromCassandra již detekuje sloupce s indexy; je-li index jednoduchý, je třeba zadat v datasets.xml ručně. Pokud potřebujete podporu pro složitější indexy nebo jiné nové funkce, prosím, e-mail erd.data at noaa.gov .
-&#33; Pokud stále používáte Cassandra 2 x, pokračujte v používání ERDDAP™ v1.68 až do upgradu na použití Cassandra 3.x.
-    * Džbány a Classpath -- Téměř všechny soubory třetích stran .jar byly aktualizovány na jejich nejnovější verze.
-        * slf4j.jar byl přidán do / lib a classpath.
-        * Joide. Sklenice a tsik. Sklenice byla vyjmuta z / lib a classpath.
-        * Pokud dostanete chybové zprávy o hodinách, které nebyly nalezeny při sestavování nebo spuštění ERDDAP™ nebo jeden z jeho nástrojů, porovnat váš příkazový řádek je claspath ERDDAP s [nynější claspath](/docs/contributing/programmer-guide#development-environment) zjistit, které sklenice chybí ve vašem classpathu.
+    * V nastavení.xml, v návodu výše&lt;EmailFromAddress&gt;, vložte prosím:
+Pokud je to možné, nastavte to pro použití zabezpečeného spojení (SSL / TLS) na e-mailový server.
+Pokud vaše nastavení nepoužívá bezpečné připojení k e-mailovému serveru, prosím, udělejte změny, aby tomu tak bylo.
+    * Ve vašem datasets.xml , prosím přidejte tento řádek k popisu&lt;předplatnéEmailBlacklist &gt; ve Vašem datasets.xml :
+Můžete použít jméno "\\*"na černou listinu celé oblasti, např.\\*@example.com .
+    * Vzhledem k tomu, že změna systému záznamu v v1.66, není soubor záznamu nikdy aktualizován. Do souboru s logem vždy čekají zprávy nebo části zpráv. Teď to můžete aktualizovat. (na okamžik) sledováním vašeho ERDDAP 's status webová stránka na http://_your.domain.org_/erddap/status.html .
+    * HashDigest .......
+    * Malá změna. (na String2.canonical) To by mělo pomoci udržet věci v pohybu rychle, když ERDDAP™ je velmi zaneprázdněný a také lepší řešení s velmi velkým počtem souborů dat.
+    * Silně. Doporučeno: přestaňte používat&lt;convertToPublicSourceUrl&gt; v datasets.xml převést číslo IP v datovém souboru&lt; sourceUrl &gt; (např. http://192.168.#.#/ ) do jména domény (např. http : my. domain.org/) . Od této chvíle, nové předplatné http://localhost , http://127.0.0.1 a http://192.168.#.# URLS nebudou povoleny z bezpečnostních důvodů. Takže prosím vždy použijte název veřejné domény v&lt; sourceUrl &gt; značka (v případě potřeby kvůli problémům DNS) , můžete použít [/etc/hosts tabulka na vašem serveru](https://linux.die.net/man/5/hosts) vyřešit problém převodem místních doménových jmen na IP čísla bez použití DNS serveru. Můžete otestovat, zda se dané jméno domény správně vyřeší pomocí
+ping _some.domain.name_
+    * V generováníDatasets.xml, pro vzdálené soubory dat (např. ze serveru THREDDS) , automaticky generované datasetID s se nemění pro většinu domén. Pro několik oblastí, první část (tj. jméno) automaticky generované datasetID bude to trochu jiné. Jména, která měla jednu část, mají nyní spíš dvě části. Například datové soubory z http://oos.soest.hawaii.edu dříve datasetID s, která začala s hawaii\\_, ale nyní vede k datasetID s, které začínají s hawaii\\_soest\\_ . Pokud vám to způsobí problémy, pošlete mi e-mail. Možná je tu nějaká práce.
+    * Cassandra řidič byl aktualizován na cassandra-driver-core-3.0.0.0.jar a tedy pro Cassandra v3. EddtableFromCassandra nevyužívá žádné nové funkce v Cassandra v3. Indexy v Cassandra může být nyní složitější, ale ERDDAP™ stále používá Cassandra v2 index model, který předpokládá, že indexovaný sloupec může být přímo dotazován s '=' omezení. Generovat soubory dat Xml pro EDDTableFromCassandra již detekuje sloupce s indexy; je-li index jednoduchý, musíte jej zadat v datasets.xml ručně. Pokud potřebujete podporu pro složitější indexy nebo jiné nové funkce, prosím e-mail erd.data at noaa.gov .
+&#33;&#33; Jestliže stále používáte Cassandru 2.x, pokračujte v používání ERDDAP™ v1.68 dokud neupgrade na použití Cassandra 3.x.
+    * Jars a Classpath -- Téměř všechny zahrnuté třetí strany .jar soubory byly aktualizovány na jejich nejnovější verze.
+        * slf4j.jar byl přidán do /lib a třídní stezky.
+        * Joid. Jar a Tsik. sklenice byla odstraněna z /lib a třídní stezky.
+        * Pokud dostanete chybové zprávy o třídách nenalezen při kompilaci nebo spuštění ERDDAP™ nebo jeden z jeho nástrojů, porovnejte třídu vaší velitelské linie s ERDDAP 's [současná třídní stezka](/docs/contributing/programmer-guide#development-environment) Zjistit, které .jars chybí z vaší třídy.
 
 ## Verze 1.68{#version-168} 
  (propuštěn 2016-02-08) 
@@ -1698,444 +1715,444 @@ Ping _ some.domain.name _
 *    **Nové funkce (pro uživatele) :** Žádné.
      
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    *    [ EDDGrid Agregace FromFiles pomocí jmen souborů nebo globálních metadat](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) --
-Všechny varianty EDDGrid FromFiles nyní může agregovat skupinu souborů přidáním nového nejlevějšího rozměru, obvykle času, na základě hodnoty získané z každého názvu souboru nebo z hodnoty globálního atributu, který je v každém souboru.
-    * ZLEPŠENO: Dříve jsme navrhli, že byste chtěli vytvořit EDDGrid Name datasets.xml který odkazoval a znovu sloužil jplMU RSS T datový soubor v našem ERDDAP . Vzhledem k tomu, že je nyní novější verze tohoto datového souboru, je tento datový soubor nyní deprimován. Takže pokud máte ten datový soubor ve vašem ERDDAP™ , prosím přidejte tento nový datový soubor
+    *    [ EDDGrid FromFiles Agregace přes názvy souborů nebo globální metadata](/docs/server-admin/datasets#aggregation-via-file-names-or-global-metadata) --
+Všechny varianty EDDGrid FromFiles nyní může agregovat skupinu souborů přidáním nového levicového rozměru, obvykle času, na základě hodnoty odvozené z každého názvu souboru nebo z hodnoty globálního atributu, který je v každém souboru.
+    * Dřív jsme navrhli, že byste mohli chtít vytvořit EDDGrid FromErddap soubor ve vašem datasets.xml která odkazuje na a re-served jplMU RSS Databáze T v našem ERDDAP . Vzhledem k tomu, že nyní existuje novější verze tohoto datového souboru, je tento datový soubor nyní deprecován. Takže pokud máte tento soubor ve svém ERDDAP™ , prosím přidejte tento nový datový soubor
 ```
         <dataset type="EDDGridFromErddap" datasetID="jplMURSST41" active="true">  
           <!-- Multi-scale Ultra-high Resolution (MUR) SST analysis fv04.1, Global, 0.011 Degree, Daily -->  
           <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/griddap/jplMURSST41</sourceUrl>  
         </dataset>  
 ```
-Pokud chcete odstranit starou jplMU RSS T datový soubor z vašeho ERDDAP™   (Je to na tobě.) , změnit jeho aktivní nastavení z "pravda" na "lež".
-    * Oprava chyb: Zkontrolujte prosím bigParentDirectory, které jste specifikovali ve vašem setup.xml. Pokud jste nedal lomítko na konci&lt;bigParentDirectory &gt; název ERDDAP™ vytvoří několik adresářů tím, že nastaví slova přímo na jméno, které jste zadali, namísto vytvoření podadresářů. Počínaje verzí 1.68, ERDDAP™ přidává lomítko na konec názvu adresáře, pokud jste žádný neurčili. Takže pokud jste předtím neurčili lomítko na konci, pak při instalaci ERDDAP™ v1.68 musíte přesunout a přejmenovat tyto adresáře **po** Vypněte staré. ERDDAP™ a **před** Spusťte nový ERDDAP . Například, pokud jste omylem specifikovali bigParentDirectory jako / home / erdapBPD (žádné vlečení lomítko) a ERDDAP™ omylem vytvořil adresáře jako
-/ home / erddapBPDcache
-/ home / erddapBPDcopy
-/ home / erddapBPDdataset
-/ home / erddapBPDflag
-/ home / erddapBPDlog
-/ home / erddapBPDlucen
-a soubor s názvem / home / erddapBPDsubscriptionsV1.txt,
-Pak se musíte přesunout a přejmenovat je, aby byly
-/ home / erddapBPD / cache
-/ home / erddapBPD / copy
-/ home / erddapBPD / dataset
-/ home / erddapBPD / flag
-/ home / erddapBPD / log
-/ home / erddapBPD / lucen
-a / home / erddapBPD / předplatné V1.txt
-    * Oprava chyb: Byli tam brouci. EDDGrid LonPM180 in ERDDAP™ v1.66, ke kterému došlo, když je dětský datový soubor EDDGrid FromErddap.
-    * Oprava chyb: Byl tam brouk. EDDGrid FromFiles a EDDTable FromFiles in ERDDAP™ v1.66, které způsobily&lt;updateEveryNMillis &gt; bude ignorován při prvním načtení datového souboru po restartu.
-    * Oprava chyb / Nová funkce: Pokud je dětský datový soubor v rámci EDDGrid AgregateExistingDimension, EDDGrid Rozumím. EDDGrid FromEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy, nebo EDDTableFrom EDDGrid je... FromErddap dataset, že mateřský dataset nyní připisuje na základní ERDDAP™ Dataset. Pokud podkladový nástroj ERDDAP™ Dataset je ve stejném souboru ERDDAP™ , předplatné a jeho potvrzení jsou prováděny přímo; nebudete dostávat e-mail s žádostí o potvrzení předplatného. Jinak, pokud je systém předplatného pro vaše ERDDAP™ je vypnut, nastavit&lt;reloadEveryNMinut &gt; nastavení rodičovského souboru dat na malé číslo (60?) tak, aby to zůstalo na rande.
-    * Oprava chyb / Nová funkce: Pokud je dětský datový soubor v rámci EDDGrid AgregateExistingDimension, EDDGrid Rozumím. EDDGrid FromEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EDDTableCopy, nebo EDDTableFrom EDDGrid má aktivní = "false", že dětský datový soubor je nyní přeskočen.
+Pokud chcete odstranit starý jplMU RSS Soubor T z vašeho souboru ERDDAP™   (Je to na tobě.) , změnit jeho aktivní nastavení z "true" na "false."
+    * Oprava chyb: Prosím, zkontrolujte velkýDirectory Parent, které jste uvedli v nastavení.xml. Pokud jste nedali lomítko na konci&lt;bigParentDirectory&gt; name, then ERDDAP™ vytvoří několik adresářů tím, že připojí slova přímo k názvu, který jste zadali, namísto vytváření podadresářů. Od verze 1.68, ERDDAP™ přidat lomítko na konec názvu adresáře, pokud jste nespecifikovali jeden. Takže pokud jste předtím nespecifikovali lomítko na konci, pak když nainstalujete ERDDAP™ v1.68 musíte přesunout a přejmenovat tyto adresáře **po** Zastavíš staré ERDDAP™ a **předtím** spustíš nový ERDDAP . Například, pokud jste mylně určili bigParentDirectory jako /home/erddapBPD (žádná stopa) a ERDDAP™ špatně vytvořil adresáře jako
+/home/erddapBPDcache
+/home/erddapBPDcopy
+/home/erddapBPDdataset
+/home/erddapBPDflag
+/home/erddapBPDlogs
+/home/erddapBPDlucen
+a soubor s názvem /home/erddapBPDsubscriptionsV1.txt,
+pak se musíte přestěhovat a přejmenovat je tak, aby byly
+/home/erddapBPD/cache
+/home/erddapBPD/copy
+/home/erddapBPD/dataset
+/home/erddapBPD/flag
+/home/erddapBPD/logs
+/home/erddapBPD/lucen
+a /home/erddapBPD/předplatnéV1.txt
+    * Oprava chyb: Byli tam brouci. EDDGrid LonPM180 in ERDDAP™ v1.66, k němuž došlo, když je dětský soubor údajů EDDGrid Z Erddapu.
+    * Oprava chyb: Byla tam chyba. EDDGrid FromFiles a EDDTable FromFiles in ERDDAP™ v1.66, který způsobil&lt;updateEveryNMillis &gt; ignorovat poprvé soubor dat byl načten po restartu.
+    * Oprava chyb/Nová funkce: Pokud je soubor údajů o dítěti uvnitř EDDGrid AgregátExising Dimension, EDDGrid Rozumím. EDDGrid OdEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EddtableCopy nebo EddtableFrom EDDGrid je ...FromErddap soubor, který mateřský datový soubor nyní připisuje k podkladovému ERDDAP™ Soubor dat. V případě podkladového nástroje ERDDAP™ Databáze je stejná ERDDAP™ , předplatné a jeho validace se provádí přímo; nedostanete e-mail, který vás žádá o potvrzení předplatného. V opačném případě, pokud systém předplatného pro vaše ERDDAP™ je vypnutý, nastavte&lt;reloadEveryNMinutes&gt; nastavení rodičovského datového souboru na malé číslo (60?) takže zůstane aktuální.
+    * Oprava chyb/Nová funkce: Pokud je soubor údajů o dítěti uvnitř EDDGrid AgregátExising Dimension, EDDGrid Rozumím. EDDGrid OdEDDTable, EDDGrid LonPM180, EDDGrid SideBySide, EddtableCopy nebo EddtableFrom EDDGrid má aktivní="false," že dětský datový soubor je nyní přeskočen.
 
 ## Verze 1.66{#version-166} 
  (propuštěn 2016-01-19) 
 
 *    **Nové funkce (pro uživatele) :** 
-    * Grafy (ne mapy) nyní mohou mít sestupné hodnoty na ose. Chcete-li to získat při použití webové stránky Make A Graph, změňte novou osu Y: vzestupné nastavení (výchozí) Na sestup. Nebo, v URL, která požaduje graf, použijte nový volitelný 3. ' | "parametr pro [& .x Rozsah a / nebo &. yRange přepínače](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) To nemůže být nic. (výchozí) , true, or t to get vzestupný hodnoty, or use false or f to get sestupný hodnoty. Pravda | falešné hodnoty jsou případy necitlivé. Díky Chrisovi Fullilove, Johnu Kerfootovi, Lukovi Campbellovi a Carě Wilsonové.
-    * Uživatelé nyní mohou zadat barvu pozadí grafů přidáním & .bgColor = 0x _ AARRGGBB _ přepnout na URL, která požaduje graf. Viz .bgColor v Graphics Příkazy sekce [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) a [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#GraphicsCommands) dokumentaci. Díky Johnu Kerfootovi a Lukovi Campbellovi.
-    * Pro tabulky souborů dat, omezení mohou nyní odkazovat na min (_ someVariableName _) nebo max (_ someVariableName _) . Viz [min () a max () ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#min) . Díky Johnu Kerfootovi.
-    * U tabulkových souborů údajů časová omezení, která používají [Teď](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) nyní mohou určit časové jednotky milisekund nebo milisekund.
-    * Žádost o obrázek tablular dataset nyní dělá mapu (není graf) pokud proměnné x a y jsou dlouhodobé a latitudové proměnné (kompatibilní jednotky) . Díky Richovi Signellovi.
-    * Oprava chyb: Štítky a klíšťata v časové ose někdy měly zvláštní nesrovnalosti při požadavku na více grafů současně (např. na webové stránce) . Problém byl chyba v grafické knihovně SGT, že ERDDAP™ použití (jedna proměnná byla "statická", která neměla být) . Díky Bradfordovi Butmanovi.
+    * Grafy (ne mapy) nyní mohou mít na osách sestupné hodnoty. Chcete-li to získat při použití webové stránky Make A Graph, změnit novou Y Axis : vzestupné nastavení (výchozí) na klesání. Nebo v URL, která požaduje graf, použijte nový volitelný 3. ' | ' parametr pro [&.x Rozsah a/nebo &. Přepínače yRange](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) , Který nemůže být nic (výchozí) , true, nebo t získat vzestupné hodnoty, nebo použít falešné nebo f získat sestupné hodnoty. Pravda. | falešná hodnota je necitlivá. Díky Chrisi Fulliloveovi, Johnu Kerfootovi, Lukovi Campbellovi a Care Wilsonové.
+    * Uživatelé nyní mohou určit barvu pozadí pro grafy přidáním &.bgColor=0x_ AARRGGBB_ přepnout na URL, které požaduje graf. Viz .bgColor v části Příkazy grafiky [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#GraphicsCommands) a [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#GraphicsCommands) dokumentace. Díky Johnu Kerfootovi a Lukovi Campbellovi.
+    * U tabulkových datových souborů mohou omezení nyní odkazovat na min. (_someVariableName_) nebo max (_someVariableName_) . Viz [min () a max () ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#min) . Díky Johnu Kerfootovi.
+    * Pro soubor tabulkových dat, časová omezení, která používají [Teď](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) může nyní určit časové jednotky milisekund nebo milisekund.
+    * Žádost o obrázek tabulkového datového souboru nyní vytváří mapu (není graf) pokud proměnné x a y jsou proměnné délky a zeměpisné šířky jako proměnné (kompatibilní jednotky) . Díky Richi Signellovi.
+    * Oprava chyb: Etikety časové osy a klíšťata někdy měly podivné nesrovnalosti při žádosti o více grafů současně (např. na webové stránce) . Problémem byla chyba v knihovně grafiky SGT, která ERDDAP™ použití (jedna proměnná byla "statická," která neměla být) . Díky Bradfordu Butmanovi.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Je to bezpečnostní riziko dát své e-mailové heslo do prostého textového souboru, jako je setup.xml. Abychom tento problém zmírnili, důrazně doporučujeme:
-        1. Nastavit e-mailový účet jen pro ERDDAP použití, např. erddap @ yourInstitution.org. To má i jiné výhody; zejména více než jeden ERDDAP™ Správce pak může mít přístup k tomuto emailovému účtu.
-        2. Udělat oprávnění souboru setup.xml rw (číst + psát) pro uživatele, který bude provozovat Tomcat a ERDDAP™   (User = tomcat?) a žádná oprávnění (Nečíst ani psát) pro skupinu a ostatní uživatele. Díky Filipe Roche Freire.
-    * Nový [ArchiveADAtaset](/docs/server-admin/additional-information#archiveadataset) nástroj zjednodušuje tvorbu .tar  .gz archiv s podmnožinou datového souboru ve formátu, který je vhodný pro archivaci (zejména v NOAA NCEI) . To by mělo být užitečné pro mnoho ERDDAP™ administrátoři v mnoha situacích, ale zejména pro skupiny v rámci NOAA .
-    * Nový typ datového souboru [ EDDGrid FromNcFilesVybaleno](/docs/server-admin/datasets#eddgridfromncfilesunpacked) je varianta EDDGrid FromNcFiles. Rozdíl je v tom, že tato třída rozbalí každý datový soubor před EDDGrid FromFiles se dívá na soubory:
+    * Je to bezpečnostní riziko dát své e-mailové heslo do textového souboru, jako je setup.xml. Abychom tento problém zmírnili, důrazně doporučujeme:
+        1. Nastavit e-mailový účet jen pro ERDDAP "s použitím, např., erddap@yourInstitution.org . To má i jiné výhody; zejména více než jeden ERDDAP™ Správce pak může mít přístup k tomuto e-mailovému účtu.
+        2. Udělejte oprávnění souboru setup.xml rw (read+write) pro uživatele, který spustí Tomcat a ERDDAP™   (user=tomcat?) a žádná povolení (nečtete ani nepíšete) pro skupinu a ostatní uživatele. Díky Filipe Rocha Freire.
+    * Nový [ArchiveADataset](/docs/server-admin/additional-information#archiveadataset) nástroj zjednodušuje tvorbu .tar  .gz archiv s podmnožinou datového souboru ve formátu vhodném pro archivaci (zejména při NOAA 's NCEI) . To by mělo být užitečné pro mnohé ERDDAP™ Správci v mnoha situacích, ale zejména pro skupiny uvnitř NOAA .
+    * Nový typ datového souboru [ EDDGrid FromNcFilesUnpacked](/docs/server-admin/datasets#eddgridfromncfilesunpacked) je varianta EDDGrid Z NcFiles. Rozdíl je v tom, že tato třída vybalí každý datový soubor před EDDGrid FromFiles se dívá na soubory:
         
-        * Vybaluje balené proměnné, které používají scale\\_factor a / nebo add\\_offset .
-        * Podporuje celočíselné proměnné, které mají\\ _ Unsigned = skutečné atributy pro větší celočíselný datový typ tak, aby se hodnoty objevily jako nesignované hodnoty. Například,\\ _ Unsigned = true byte (8 bitů) proměnná se stává podepsaným krátkým (16 bit) proměnná.
-        * Převádí\\ _ FillValue a missing\\_value hodnoty, které mají být NaN (nebo MAX\\ _ VALUE pro celé datové typy) .
+        * Vybaluje zabalené proměnné, které používají scale\\_factor nebo add\\_offset .
+        * Propaguje celočíselné proměnné, které mají \\_Unsigned=true atributy většího integer datového typu, aby se hodnoty objevovaly jako nepodepsané hodnoty. Například \\_Unsigned=true byte (8 bitů) proměnná se stává podepsaná krátká (16 bit) proměnná.
+        * Převádí \\_FillValue a missing\\_value hodnoty, které mají být NaN (nebo MAX\\_VALUE pro celé datové typy) .
         
-Velkou výhodou této třídy je, že poskytuje způsob, jak se vypořádat s různými hodnotami scale\\_factor , add\\_offset ,\\ _ FillValue, nebo missing\\_value v různých souborech ve sbírce. Jinak byste museli použít nástroj jako [NcML](/docs/server-admin/datasets#ncml-files) nebo [ NCO ](/docs/server-admin/datasets#netcdf-operators-nco) upravit každý soubor odstranit rozdíly tak, aby soubory mohly být řešeny EDDGrid FromNcFiles. Aby tato třída řádně fungovala, musí soubory dodržovat normy CF pro související atributy. Díky Philippu Makowskému.
-    * Nový typ datového souboru [ EDDGrid LonPM180](/docs/server-admin/datasets#eddgridlonpm180) umožňuje měnit soubory dat, které mají některé hodnoty délky větší než 180 (např. rozsah 0 až 360) do souborů dat s hodnotami délky v rozmezí -180 až 180 (Zeměpisná délka plus nebo minus 180, proto název) . Velkou výhodou nabídky datových souborů s hodnotami délky v rozmezí -180 až 180 je, že OGC služby (např. WMS ) požadovat hodnoty délky v tomto rozsahu. Díky Lynne Tablewski, Fabien Guichard, Philippe Makowski a Martin Spel.
-Viz poznámka pod čarou 1. Eeek&#33; To má chybu, která nastane, když dítě dataset je EDDGrid FromErddap, který odkazuje na datový soubor ve stejném ERDDAP . Tato chyba je opravena ERDDAP™ v1.68.
-    * V [GeneteDatasetsXml](/docs/server-admin/datasets#generatedatasetsxml) , nový speciální typ datového souboru, EDDGrid LonPM180FromErdapCatalog, umožňuje generovat datasets.xml místo EDDGrid LonPM180 souborů dat ze všech EDDGrid soubory dat ERDDAP které mají jakékoli hodnoty délky větší než180.
-    * Pro všechny EDDGrid Datové soubory, v datasets.xml Nyní můžete použít volitelný
-[&lt;přístupné Via WMS &gt; pravda | false&lt;/ přístupný Via WMS &gt;] (/ docs / server- admin / datasets # accessibleviawms)   (výchozí = true) . Nastavením tohoto falešně zakazuje WMS služba pro tento datový soubor. Pokud je to pravda, datový soubor nemusí být stále přístupný prostřednictvím WMS z jiných důvodů (např. žádné latové nebo lonové osy) . To je zvláště užitečné pro soubory údajů, které existují samy o sobě a zabalené EDDGrid LonPM180, takže pouze verze LonPM180 je přístupná prostřednictvím WMS .
-    * V setup.xml můžete zadat jinou výchozí barvu pozadí grafů. Barva je specifikována jako osmimístná hexadecimální hodnota ve tvaru 0x _ AARRGGBB _, kde AA, RR, GG a BB jsou opacita, červená, zelená a modrá, specifikovaná jako 2místná hexadecimální čísla. Všimněte si, že plátno je vždy neprůhledná bílá, takže (semi -) transparentní barva pozadí grafu se promíchá do bílého plátna. Výchozí je světle modrá:
+Velkou výhodou této třídy je, že poskytuje způsob, jak se vypořádat s různými hodnotami scale\\_factor , add\\_offset , \\_FillValue nebo missing\\_value v různých souborech ve sbírce. Jinak byste museli použít nástroj jako [NcML](/docs/server-admin/datasets#ncml-files) nebo [ NCO ](/docs/server-admin/datasets#netcdf-operators-nco) upravit každý soubor k odstranění rozdílů tak, aby soubory mohly být řešeny EDDGrid Z NcFiles. Aby tato třída správně fungovala, musí soubory dodržovat standardy CF pro související atributy. Díky Philippu Makowskimu.
+    * Nový typ datového souboru [ EDDGrid LonPM180](/docs/server-admin/datasets#eddgridlonpm180) umožňuje měnit soubory dat, které mají některé hodnoty délky větší než 180 (např. rozsah 0 až 360) do souborů s hodnotami délky v rozmezí -180 až 180 (Zeměpisná délka Plus nebo Minus 180, proto název) . Velkou výhodou pro nabízení souborů dat s hodnotami délky v rozsahu -180 až 180 je, že OGC Služby (např. WMS ) vyžadují hodnoty délky v tomto rozsahu. Díky Lynne Tablewski, Fabien Guichard, Philippe Makowski a Martin Spel.
+2016-01-26 Aktualizace: Eeek&#33; To má chybu, která nastane, když dětský datový soubor je EDDGrid FromErddap, který odkazuje na datový soubor ve stejném ERDDAP . Tato chyba je opravena ERDDAP™ v1.68.
+    * In [GenerovatDatasetsXml](/docs/server-admin/datasets#generatedatasetsxml) , nový speciální typ datového souboru, EDDGrid LonPM180FromErddapCatalog, umožňuje generovat datasets.xml místo EDDGrid LonPM180 datové soubory ze všech EDDGrid data v souboru ERDDAP jejichž délka je větší než 180.
+    * Pro všechny EDDGrid datové soubory, v datasets.xml Nyní můžete použít volitelné
+[&lt;přístupný Via WMS &gt; true | false&lt;/přístupný Via WMS &gt;] (/docs/server-admin/datasets#accessibleviawms)   (default= true) . Nastavení tohoto na falešně násilně vyřadí WMS služba pro tento datový soubor. Pokud je to pravda, soubor údajů nemusí být stále přístupný prostřednictvím WMS z jiných důvodů (např. bez lat nebo lonových os) . To je zvláště užitečné pro soubory, které existují na vlastní pěst a zabalené EDDGrid LonPM180, takže pouze verze LonPM180 je přístupná přes WMS .
+    * V setup.xml můžete zadat jinou výchozí barvu pro pozadí grafů. Barva je specifikována jako osmimístný hexadecimální hodnota ve formě 0x_AARRGGBB_, kde AA, RR, GG a BB jsou opacita, červené, zelené a modré složky, uvedené jako 2-místný hexadecimální čísla. Všimněte si, že plátno je vždy neprůhledné bílé, takže (polo -) transparentní barva pozadí grafu se mísí do bílé plátno. Výchozí hodnota je světle modrá:
 ```
         <graphBackgroundColor>0xffccccff</graphBackgroundColor>  
 ```
 Díky Johnu Kerfootovi a Lukovi Campbellovi.
-    * V setup.xml, můžete nyní určit maximální velikost pro [soubor záznamu](/docs/server-admin/additional-information#log)   (když je přejmenována na log. TXT. předchozí a nový deník. Txt je vytvořen) , v MegaBytes. Minimální povolená hodnota je 1. Maximální povolená je 2000. Výchozí hodnota je 20 (MB) . Například:
+    * V setup.xml, můžete nyní určit maximální velikost pro [soubor záznamu](/docs/server-admin/additional-information#log)   (při přejmenování na log. Txt. předchozí a nový deník. txt je vytvořen) V MegaBytech. Minimální povoleno je 1. Maximální povoleno je 2000. Výchozí hodnota je 20 (MB) . Například:
 ```
         <logMaxSizeMB>20</logMaxSizeMB>
 ```
-    * V datasets.xml , [&lt;fgdcFile &gt;] (/ docs / server-admin / datasets # fgdcfile) nebo [&lt;iso19115Soubor &gt;] (/ docs / server-admin / datasets # iso19115file) nyní může být lokální soubor (jako předtím) nebo URL (které budou staženy tak, že je místní kopie) . Pokud ERDDAP™ není schopen stáhnout soubor, načtení datového souboru bude pokračovat, ale datový soubor nebude mít soubor fgdc nebo iso19115.
-    *    EDDGrid FromFiles a EDDTable FromFiles soubory dat mohou nyní udělat QuickRestart (systém, který ERDDAP™ se pokusí použít při prvním načtení souborů dat ERDDAP™ je znovu spuštěn) . To zrychluje restart ERDDAP .
-Viz poznámka pod čarou 1. Eeek&#33; To má chybu, která způsobuje&lt;updateEveryNMillis &gt; bude ignorován při prvním načtení datového souboru po restartu. Tato chyba je opravena ERDDAP™ v1.68.
-    * Obecné zlepšení systému QuickRestart umožňuje ERDDAP™ načíst soubory dat rychleji, když ERDDAP™ je restartován.
-    * Všechny EDDGrid FromFiles a EDDTable FromFiles podtřídy nyní přijmout nový&lt;pathRegex &gt; tag, obvykle specifikovaný níže&lt;rekurzivní &gt;. Pokud je rekurzivní "true", pouze plné podadresářové cesty, které odpovídají pathRegex (default =. "\\ *") bude přijato. Podobně, a&lt; sourceUrl s &gt; tag in an EDDGrid AggregateExistingDimension může nyní obsahovat atribut path Regex (default =. "\\ *") .
-    * Výchozí hodnota pro&lt;partialRequestMaxBytes &gt; v setup.xml je nyní 490000000 (~ 490 MB) . To se vyhýbá některým problémům / časům souvisejícím s získáváním dat z datových serverů HISDDS. Díky Leslie Thorneové.
-    * Malá změna systému záznamu by měla umožnit ERDDAP™ více reagovat, když je velmi, velmi zaneprázdněn. Informace jsou nyní zapsány do souboru záznamu na disku v poměrně velkých kusech. Výhodou je, že je to velmi efektivní -- ERDDAP™ nebude blokovat čekání na zapsání informací do souboru záznamu. Nevýhodou je, že záznam téměř vždy skončí částečnou zprávou, která nebude dokončena, dokud nebude napsán další kus.
-    * Oprava chyb související s inodifikací a [&lt;updateEveryNMillis &gt;] (/ docs / server-admin / datasets # updateeverynmillis) systém pro EDDGrid FromFiles a EDDTable Datové soubory FromFiles: Není již nutné uvádět velké fs.inotify.max\\ _ user\\ _ watches nebo fs.inotify.max\\ _ user\\ _ instance. Je tam štěnice. Java která způsobuje některé části Java systém inodifikace / WatchDirectory, který nemá být shromažďován odpadky, když jsou dokončeny; případně počet zombíků inodifikovaných hodinek nebo instancí by překročil stanovený maximální počet. ERDDAP™ Teď to funguje. Java brouku.
-Také počet inodifikovaných nití je uveden na webové stránce status.html, takže si můžete dávat pozor na jeho používání. Obvykle existuje 1 inodifikační nit na EDDGrid FromFiles a EDDTable Datový soubor FromFiles.
-    * Oprava chyb: na mnoha místech, místo aby byla chyba přehozena, byla vytvořena nová chyba, která obsahovala pouze krátkou verzi původní chybové zprávy a bez stopy stacku. Nyní, když je nová chyba generována, správně obsahuje celou původní výjimku např. hodit novou výjimku ("nějaká nová zpráva," e) ;
+    * In datasets.xml , [&lt;fgdcFile&gt;] (/docs/server-admin/datasets#fgdcfile) nebo [&lt;iso19115File&gt;] (/docs/server-admin/datasets#iso19115file) nyní může být místní soubor (jako dříve) nebo URL (která bude stažena, takže je místní kopie) . Pokud ERDDAP™ není schopen soubor stáhnout, načítání datového souboru bude pokračovat, ale datový soubor nebude mít fgdc nebo iso19115 soubor.
+    *    EDDGrid FromFiles a EDDTable Soubory dat zFiles nyní mohou udělat rychlýRestart (systém, který ERDDAP™ se snaží použít při prvním načtení souborů dat ERDDAP™ restartováno) . Toto urychluje restartování ERDDAP .
+2016-01-26 Aktualizace: Eeek&#33; To má chybu, která způsobuje&lt;updateEveryNMillis &gt; ignorovat poprvé soubor dat je načten po restartu. Tato chyba je opravena v ERDDAP™ v1.68.
+    * Obecné zlepšení systému quickRestart umožňuje ERDDAP™ načíst soubory dat rychleji, když ERDDAP™ restartováno.
+    * Všechny EDDGrid FromFiles a EDDTable FromFiles subclasses nyní přijmout nový&lt;pathRegex&gt; značka, obvykle uvedená přímo pod&lt;rekursive&gt;. Pokud rekurzivní je "true," pouze plné podadresové cesty, které odpovídají cestěRegex (default=".\\*") budou přijaty. Podobně, a&lt; sourceUrl s&gt; značka v EDDGrid AgregátExisingDimension může nyní obsahovat atribut pathRegex (default=".\\*") .
+    * Výchozí pro&lt;particularRequestMaxBytes&gt; in setup.xml je nyní 490000000 (~490 MB) . Tím se zabrání některým problémům/timeoutům souvisejícím s získáváním dat z datových serverů THREDDS. Díky Leslie Thorneové.
+    * Malá změna systému záznamů by měla umožnit ERDDAP™ být citlivější, když je velmi, velmi zaneprázdněný. Informace jsou nyní napsány do souboru protokolu na disku ve poměrně velkých částech. Výhodou je, že je to velmi efektivní... ERDDAP™ nebude nikdy blokovat čekání na informace, které mají být zapsány do souboru protokolu. Nevýhodou je, že deník téměř vždy skončí částečnou zprávou, která nebude dokončena, dokud nebude napsán další kus.
+    * Oprava chyb týkající se inotify a [&lt;updateEveryNMillis&gt;] (/docs/server-admin/datasets#update everynmillis) systém EDDGrid FromFiles a EDDTable Databáze souborů: Už není nutné specifikovat velké množství fs.inotify.max\\_user\\_watters nebo fs.inotify.max\\_user\\_instances. Je tam brouk. Java která způsobuje některé části Java 's inotify/WatchAdresarory system, aby nebyly shromažďovány odpadky, když jsou dokončeny; nakonec, počet zombie inotifikovat hodinky nebo instance by překročil maximální uvedené číslo. ERDDAP™ Nyní pracuje kolem tohoto Java Brouku.
+Také počet inotify vláken je uveden na stav.html webové stránce, takže můžete sledovat jeho používání. Obvykle je tu 1 iotify vlákno na EDDGrid FromFiles a EDDTable Z Files data.
+    * Oprava chyb: na mnoha místech, místo toho, aby byla chyba přehozena, byla vytvořena nová chyba, která obsahovala pouze krátkou verzi původní chybové zprávy a beze stopy zásobníku. Nyní, když je generována nová chyba, správně obsahuje celou původní výjimku např. házet novou výjimku ("nějaká nová zpráva," e) ;
 Díky Susan Perkinsové.
-    * Oprava chyb: donedávna (V1.64?) , pokud... / datasetID Byla požadována URL, ERDDAP™ by přidal .html na URL. V v1.64 to selhalo. (byla vytvořena nesprávně formátovaná URL a pak selhala) . Teď to funguje znovu. Díky Chrisovi Fullilove.
+    * Oprava chyb: donedávna (V1.64?) , pokud a .../ datasetID URL bylo požadováno, ERDDAP™ přidá do URL .html. V 1.64 to selhalo. (byla vytvořena nesprávně formátovaná URL a poté selhala) . Teď to zase funguje. Díky Chrisi Fulliloveovi.
 
 ## Verze 1.64{#version-164} 
  (propuštěn 2015-08-19) 
 
 *    **Nové funkce (pro uživatele) :** 
-    * Nyní je zde návod pro přístup k hesla-chráněné soukromé ERDDAP™ Datové soubory ( https:// ) prostřednictvím curl a Python . Viz [ curl ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#curl) a [ Python ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#Python) pokyny.
+    * Nyní existují pokyny pro přístup k hesla chráněné soukromé ERDDAP™ Soubory údajů ( https:// ) přes curl a Python . Viz [ curl ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#curl) a [ Python ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#Python) pokyny.
 Díky Emiliovi Mayorgovi z NANOOS a Paulu Janeckovi ze Spyglass Technologies.
          
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    *    ERDDAP™ Vyžaduje Java 1,8 +.
-         Java 1.7 dosáhl svého [konec života](https://www.oracle.com/technetwork/java/eol-135779.html)   (žádné další bezpečnostní aktualizace) V dubnu 2015. Tato verze ERDDAP™ nebude pracovat s verzemi Java nižší než 1, 8. Pokud aktualizujete Java 1, 7x (nebo dříve) Měl bys také informovat Tomcata. Viz [ ERDDAP™ Nastavit instrukce](/docs/server-admin/deploy-install) ke stažení odkazy a rady.
-    * Nový formulář pro poskytovatele dat.
-Když k vám přijde poskytovatel dat a doufá, že k vám přidá nějaká data ERDDAP™ , To může být obtížné a časově náročné shromáždit všechny metadata potřebné pro přidání datového souboru do ERDDAP . Mnoho zdrojů dat (například soubory .csv, Excel soubory, databáze) nemají interní metadata, takže ERDDAP™ má nový formulář pro poskytovatele údajů, který shromažďuje metadata od poskytovatele dat a poskytuje poskytovateli údajů některé další pokyny, včetně rozsáhlých pokynů pro datové databáze. Předložené informace se převádějí na datasets.xml formát a pak e-mailem na ERDDAP™ správce (Ty.) a psáno (připojeno) na bigParentDirectory / logs / dataProviderForm.log. Proto formulář semi- automatizuje proces získání datového souboru do ERDDAP™ , ale ERDDAP™ Správce stále musí dokončit datasets.xml chunk a vypořádat se s získání datového souboru (s) od poskytovatele nebo napojení na databázi. Pro více informací, viz [Poskytovatel dat Popis formuláře](/docs/server-admin/datasets#data-provider-form) .
-    * Nový&lt;matchAxisNDigits &gt;
-může být použit EDDGrid FromFiles (a tedy z NcFiles a z MergeIRFiles) , EDDGrid AgregateExistingDimension, EDDGrid Kopírovat a EDDGrid Soubory dat SideBySide pro upřesnění, jak přesně se musí rovnat osovým hodnotám v různých souborech (kolik číslic) : 0 = žádná kontrola (Nepoužívej to&#33;) , 1-18 pro zvýšení přesnosti, nebo 20 (výchozí) pro přesnou rovnost. Pro n = 1-18, ERDDAP™ zajišťuje, že první n číslice dvojité hodnoty (nebo (n + 1) div 2 pro plavené hodnoty) jsou si rovni.
-        &lt;matchAxisNDigits &gt; nahrazuje&lt;ensureAxisValuesAreEqual &gt;, který je nyní deprimován. Hodnota 'true' se převede na matchAxisNDigits = 20. Hodnota "nevyhovující" (Nedělej to&#33;) bude převeden na zápas AxisNDigits =0.
-    *    EDDGrid FromFiles a EDDTable FromFiles se načte velmi pomalu při prvním použití této verze ERDDAP .
-         ERDDAP™ Nyní ukládá interní informace o souboru trochu jinak, takže vnitřní tabulka souborů pro každý z těchto souborů musí být přestavěn. Takže se neboj. Nic se neděje. Je to jednorázovka.
+    *    ERDDAP™ Teď to vyžaduje Java 1.8+.
+         Java 1. 7 dosáhla [konec života](https://www.oracle.com/technetwork/java/eol-135779.html)   (žádné další aktualizace zabezpečení) v dubnu 2015. Tato verze ERDDAP™ nebude pracovat s verzemi Java pod 1. 8. Pokud budete aktualizovat z Java 1, 7x (nebo dříve) , měli byste také aktualizovat Tomcat. Viz [ ERDDAP™ Nastavit návod](/docs/server-admin/deploy-install) pro stahování odkazů a poradenství.
+    * Nový formulář poskytovatele dat.
+Když k vám přijde poskytovatel údajů a doufá, že vám přidá nějaké údaje ERDDAP™ , může být obtížné a časově náročné shromažďovat všechna metadata potřebná pro přidání datového souboru do ERDDAP . Mnoho zdrojů údajů (například .csv soubory, Soubory Excelu, databáze) nemají žádná interní metadata, takže ERDDAP™ má nový formulář poskytovatele dat, který shromažďuje metadata od poskytovatele dat a poskytuje poskytovateli údajů další pokyny, včetně rozsáhlých pokynů pro Data v databázích. Předložené informace jsou převedeny na datasets.xml formát a pak e-mailem na ERDDAP™ Správce (Ty) a psáno (Přiložené) na bigParentDirectory/logs/dataProviderForm.log . Forma tak částečně automatizuje proces získání datového souboru do ERDDAP™ , ale ERDDAP™ Správce musí ještě dokončit datasets.xml střih a vypořádat se s získáním datového souboru (án) od poskytovatele nebo připojení k databázi. Více informací viz [Poskytovatel údajů Popis formuláře](/docs/server-admin/datasets#data-provider-form) .
+    * Nový&lt;zápasAxisNDigits&gt;
+může být použit EDDGrid FromFiles (a tedy odNcFiles a zMergeIRFiles) , EDDGrid AgregátExising Dimension, EDDGrid Kopírovat a EDDGrid SideBySide soubory k určení, jak přesně rovné hodnoty osy v různých souborech musí být (kolik číslic) : 0=bez kontroly (Nepoužívej to&#33;) , 1-18 pro zvýšení přesnosti nebo 20 (výchozí) pro přesnou rovnost. Pro n=1-18, ERDDAP™ zajistí, aby první n číslice dvou hodnot (nebo (n + 1) oddíl 2 pro hodnoty plováku) jsou si rovni.
+        &lt;matchAxisNDigits&gt; nahrazuje&lt;zajistitAxisValuesAreEqual&gt;, který je nyní deprecován. Hodnota "true" bude převedena na zápasAxisNDigits=20. Hodnota "falešného" (Nedělej to&#33;) bude převeden na zápas AxisNDigits=0.
+    *    EDDGrid FromFiles a EDDTable FromFiles se velmi pomalu načte při prvním použití této verze ERDDAP .
+         ERDDAP™ nyní ukládá interní informace o souborech trochu jinak, takže interní tabulka souborů pro každý z těchto souborů musí být přestavěna. Tak se neboj. Nic se neděje. Je to jen jednou.
     * Soubory vzdáleného zdroje
-         EDDGrid FromNcFiles, EDDTableFromNcFiles, EDDTableFromNcCFSoubory nyní umožňují, aby soubory byly vzdálenými soubory v adresáři přístupném http://   (a pravděpodobně https:// a ftp: / /, ale nejsou testovány) pokud vzdálený server podporuje [Požadavky na rozsah](https://en.wikipedia.org/wiki/Byte_serving) v hlavičce žádosti. Viz poznámka pod čarou č.1. Hyrax Ne. Tento systém umožňuje přístup k datům ve vzdálených souborech bez stahování souborů (což je užitečné, pokud jsou vzdálené soubory příliš objemné) , ale přístup k těmto souborům bude mnohem pomalejší než přístup k místním souborům nebo dokonce ke vzdálenému OPeNDAP zdroj.
-To zahrnuje "files" v Amazon S3 kbelík, protože jsou přístupné prostřednictvím http:// . Pokud jsou názvy objektů S3 podobné jménům souborů (s vnitřním / 's jako Linux adresář strom) , ERDDAP™ může také zpřístupnit soubory prostřednictvím ERDDAP s "files" systém. Aby to fungovalo, vaše S3 pověření musí být v ~ / .aws / pověření (na Linux, OS X, nebo Unix) nebo C:\\ Users\\ USERNAME\\ .aws\\ pověření (na Windows) na serveru s ERDDAP . Viz [Dokumentace Amazon SDK](https://docs.aws.amazon.com/sdk-for-java/?id=docs_gateway#aws-sdk-for-java,-version-1) .
-    * GeneteDatasets Xml má novou, neobvyklou volbu: EDDsFromFiles.
-Tohle projde souborovým systémem. (i vzdálený systém jako Amazon S3, pokud objekty mají soubory-jako jména) a vytvořit datasets.xml kousky pro řadu souborů dat. Vaše kilometry se mohou lišit. To funguje dobře, pokud jsou soubory organizovány tak, aby všechny datové soubory v daném adresáři (a jeho podadresáře) jsou vhodné pro jeden datový soubor (např. všechny SST 1denní kompozity) . Jinak (např., pokud adresář obsahuje některé SST soubory a některé chlorofyll- a soubory) , To funguje špatně, ale může být stále užitečné.
-    * Programátoři: nové / libové .jar soubory.
-Pokud sestavujete ERDDAP™ , Vezměte prosím na vědomí nové .jar soubory v parametru classpath -cp uvedené v parametru ERDDAP™   [Průvodce programátorem](/docs/contributing/programmer-guide) .
-    * moře\\ _ voda\\ _ praktická\\ _ slanost
-Pokud používáte standardní název CF moře\\ _ water\\ _ salinity pro jakoukoli proměnnou, doporučuji vám přejít na moře\\ _ water\\ _ praktický\\ _ salinity, který je k dispozici v [verze 29 standardní tabulky CF](https://cfconventions.org/Data/cf-standard-names/29/build/cf-standard-name-table.html)   (a některé předchozí verze -- nevěděl jsem, že) . Tento název označuje, že se jedná skutečně o praktickou hodnotu salinity Practical Salinity Units   ( PSU ) , na rozdíl od starší hodnoty g / kg. Kanonické jednotky jsou jiné, ale stále neuvěřitelně nepomáhají: 1 (pravděpodobně naznačující PSU / PSS-78) , na rozdíl od 1e-3 (pravděpodobně naznačující g / kg) pro moře\\ _ water\\ _ salinity. \\[ Hej, Unidata a CF: Identifikujeme hodnoty, které používají jiné váhy, například Fahrenheit nebo Celsia, pomocí řetězce jednotek, který je název stupnice nebo nějaké variace. Proč nemůžeme identifikovat jednotky salinity pomocí jejich měřítka, např. PSS-78? Já vím: hodnoty PSS- 78 jsou "bezcenné", ale existuje implicitní měřítko, že? Pokud vymyslím novou praktickou stupnici slanosti, kde hodnoty jsou 0,875 krát hodnoty PSS-78, měly by být kanonické jednotky stále "1"? Jak by je mohl uživatel rozeznat? Jednotky 1e-3 a 1 nejsou ani popisné, ani užitečné pro uživatele, kteří se snaží přijít na to, co čísla naznačují. \\] 
+         EDDGrid FromNcFiles, EDDTableFromNcFiles, EDDTableFromNcCFFiles nyní umožňují soubory být vzdálené soubory v adresáři přístupném http://   (a pravděpodobně https:// a ftp://, ale nejsou testovány) pokud vzdálený server podporuje [Žádosti o rozsah](https://en.wikipedia.org/wiki/Byte_serving) v záhlaví žádosti. THREDDS a Amazon S3 podporují požadavky na rozsah, Hyrax ne. Tento systém umožňuje přístup k datům ve vzdálených souborech bez stahování souborů (což je užitečné, pokud jsou vzdálené soubory příliš objemné) , ale přístup k těmto souborům bude mnohem pomalejší než přístup k místním souborům nebo dokonce ke vzdálenému OPeNDAP Zdroj.
+To zahrnuje "files" v kbelíku Amazon S3, protože jsou přístupné přes http:// . Pokud jsou názvy objektů S3 jako názvy souborů (s interním / je jako Linux adresář strom) , ERDDAP™ může také zpřístupnit soubory prostřednictvím ERDDAP 's "files" systém. Aby to fungovalo, vaše S3 pověření musí být v ~/.aws/credentials (na Linuxu, OS X nebo Unixu) , nebo C:\\Uživatelé\\USERNAME\\.aws\\ credentials (na Windows) na serveru s ERDDAP . Viz [Amazon SDK dokumentace](https://docs.aws.amazon.com/sdk-for-java/?id=docs_gateway#aws-sdk-for-java,-version-1) .
+    * Generovat soubory dat Xml má novou, neobvyklou možnost: EDDsFromFoles.
+Tohle projde souborovým systémem (i vzdálený systém jako Amazon S3, pokud mají objekty názvy podobné souborům) a vytvořit datasets.xml kousky pro řadu souborů dat. Vaše kilometry se mohou lišit. To funguje dobře, pokud jsou soubory organizovány tak, aby všechny datové soubory v daném adresáři (a jeho podadresáře) jsou vhodné pro jeden datový soubor (např. všechny SST jednodenní kompozity) . Jinak (např. pokud adresář obsahuje některé SST soubory a některé Chlorofyll-a soubory) , To funguje špatně, ale stále může být užitečné.
+    * Programátoři: nové /lib .jar soubory.
+Když sestavíte ERDDAP™ , Zaznamenejte prosím nové soubory .jar v parametru classpath -cp uvedeném v ERDDAP™   [Průvodce programátorem](/docs/contributing/programmer-guide) .
+    * Sea\\_water\\_practical\\_salinity
+Pokud používáte standardní název CF sea\\_water\\_salinity pro jakoukoliv proměnnou, doporučuji vám přejít na mořskou\\_water\\_practical\\_salinity, která je k dispozici v [Verze 29 standardní tabulky názvu CF](https://cfconventions.org/Data/cf-standard-names/29/build/cf-standard-name-table.html)   (a některé předchozí verze -- Nevěděl jsem, že) . Tento název ukazuje, že se jedná o praktickou hodnotu slanosti, Practical Salinity Units   ( PSU ) , na rozdíl od starší hodnoty g/kg. Kanonické jednotky jsou jiné, ale stále neuvěřitelně neužitečné: 1 (pravděpodobně naznačuje PSU /PSS-78) , na rozdíl od 1e-3 (pravděpodobně to znamená g/kg) pro mořskou_vodu\\_salinity. \\[ Hej, Unidata a CF: Identifikujeme hodnoty, které používají jiné váhy, například Fahrenheita nebo Celsia, pomocí řetězce jednotek, který je název stupnice nebo nějaké odchylky. Proč nemůžeme identifikovat jednotky salinity pomocí jejich stupnice, např. PSS-78? Já vím: PSS-78 hodnoty jsou "jednotné," ale existuje implikované měřítko, že? Pokud vymyslím novou praktickou stupnici salinity, kde jsou hodnoty 0,875 krát PSS-78, měly by být kanonické jednotky stále "1"? Jak je mohl uživatel rozeznat? Jednotky 1e-3 a 1 nejsou ani popisné ani užitečné pro uživatele, kteří se snaží zjistit, co čísla ukazují. \\] 
 
 ## Verze 1.62{#version-162} 
  (propuštěn 2015-06-08) 
 
 *    **Nové funkce (pro uživatele) :** 
-    * Pro EDDGrid Datasety, uživatelé mohou nyní dělat Graph Type: Povrchové grafy s libovolnou kombinací numerických os, nejen zeměpisná délka versus zeměpisná šířka. To vám umožní udělat x versus y (projektované) grafy a různé [Hovmöller diagramy](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram) Například rýsování délky proti hloubce, nebo času proti hloubce. \\[ Poznámka: je-li hloubka na ose Y, bude pravděpodobně převrácena od toho, co chcete. Promiň, odklonit to ještě není možnost. \\] Díky Carě Wilsonové a Lynn DeWittové.
-    * Je tu nový [Převodník oceánských / atmosférických zkratek](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericAcronyms.html) což vám umožní převést společné oceánské / atmosférické zkratky na / z celého jména.
-    * Je tu nový [Oceanický / atmosférický Převodník proměnných názvů](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericVariableNames.html) která vám umožní převést společný oceánský / atmosférický název proměnné na / z celého jména.
+    * Pro EDDGrid Databáze, uživatelé mohou nyní graf Typ: Povrchové grafy s jakoukoli kombinací numerických os, nejen zeměpisná délka versus zeměpisná šířka. To vám umožní udělat x versus y (projekt) grafy a různé [Hovmöllerovy diagramy](https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram) , například draftovací délka versus hloubka, nebo čas versus hloubka. \\[ Poznámka: je-li hloubka na ose Y, bude pravděpodobně převrácena z toho, co chcete. Promiňte, odletět to ještě není možnost. \\] Díky Care Wilsonové a Lynn DeWittové.
+    * Je tu nový. [Převodník Oceanic/Atmosférický Acronym](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericAcronyms.html) což vám umožní převést společnou akronymu oceánské/atmosférické na/z celého jména.
+    * Je tu nový. [Oceánie/Atmosféra Převodník proměnných názvů](https://coastwatch.pfeg.noaa.gov/erddap/convert/oceanicAtmosphericVariableNames.html) což vám umožní převést společný název proměnné oceánika/atmosféry na celé jméno.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    *    Java 7 / 8
-         Oracle již nepodporuje (poskytuje opravy bezpečnostních chyb pro)   Java 7. ERDDAP™ stále podporuje Java 7, ale prosím přesuňte se na Java 8. Další vydání ERDDAP™ bude pravděpodobně vyžadovat Java 8.
-    *    valid\\_min / max / rozsah
-V minulých dílech jste viděli... dataVariable měl scale\\_factor a add\\_offset metadata, ERDDAP™ vybaluje hodnoty dat a odstraňuje metadata. V minulých dílech... ERDDAP™ nemodifikoval / nevybaloval žádné valid\\_range , valid\\_min , valid\\_max metadata (které obvykle / by měly obsahovat hodnoty balení) podle scale\\_factor a add\\_offset . Teď už ano. Prosím, prohledejte své ERDDAP™ pro "valid\\ _" a ujistěte se, že všechny proměnné, které mají valid\\_range , valid\\_min nebo valid\\_max mít správné hodnoty, pokud se soubory dat objeví v nové verzi ERDDAP . Viz [ valid\\_range / min / max dokumentace](/docs/server-admin/datasets#valid_range) .
-    * ACDDD- 1, 3
-V minulých dílech... ERDDAP™   (zejména GenerateDatasets Xml) použitý / doporučil originál (1, 0) verze [ NetCDF Atribut Convention for Dataset Discovery](https://wiki.esipfed.org/ArchivalCopyOfVersion1) který byl označován jako " Unidata Dataset Discovery v1.0 "v globálních konvencích a Metadata\\_Conventions atributy. Nyní doporučujeme [ACDD verze 1.3](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3) který byl ratifikován na začátku roku 2015 a je označován jako "ACDD-1.3" Naštěstí je ACDDD- 1.3 vysoce zpětně kompatibilní s verzí 1.0. DOPORUČUJME, že [Přepnout na ACDD- 1.3](/docs/server-admin/datasets#switch-to-acdd-13) . Není to těžké.
-    * GeneteDatasets Atributy Xml
-Došlo k velkému počtu změn ke zlepšení&lt; addAttributes &gt; hodnoty navržené GenetateDatasets Xml pro globální konvence, creator\\_name / e-mail / url, klíčová slova, shrnutí a atributy titulů a pro proměnnou long\\_name atribut. Některé změny souvisí s novým použitím přípravku ACDD- 1.3.
-    * EDDTableFrom SOS Datové soubory
-S příležitostným přidáním nových typů SOS servery a změny starých serverů, to je stále těžší pro ERDDAP™ automaticky zjistit typ serveru z odpovědí serveru. Použití [&lt;sosServerType &gt;] (/ docs / server-admin / datasets # eddtableFrom sos- skelet -xml)   (s hodnotou IOOS\\ _ NDBC, IOOS\\ _ NOS, OOSTethys nebo WHOI) je nyní důrazně schválen. Pokud některý z vašich souborů dat tohoto typu má problémy v nové verzi ERDDAP , zkuste znovu spustit GenetateDatasets Xml pro SOS server generovat nový kus datasets.xml pro tento datový soubor. GeneteDatasets Xml vám umožní vyzkoušet různé&lt;sosServerType &gt; volby, dokud nenajdete tu správnou pro daný server. Pokud máte stále problémy, dejte mi prosím vědět, jaký problém vidíte a URL serveru a já se pokusím pomoci.
-    * EDDTableFromFileName
-Některé atributy, které byly doporučeno addAttributes jsou nyní sourceAtributs. Pravděpodobně nemusíte měnit nic pro existující soubory dat ve vašem datasets.xml .
-    * Oprava chyb související s určitými požadavky na soubory souborů EDDTableFromNcFF.
-Také jsem přidal velký počet jednotkových testů k existujícímu velkému počtu jednotkových testů základních metod (Jsou tu stovky scénářů.) . Díky Elimu Hunterovi.
-    * Oprava chyb / drobné změny EDDGrid FromMergeIr.
-Díky Jonathan Lafite a Philippe Makowski
-    * Oprava chyb: EDDGrid FromErddap nyní funguje i když vzdálený datový soubor nemá ioos\\_category proměnné atributy.
-Díky Kevinu O 'Brienovi.
-    * Oprava chyb v .graf webové stránce pro EDDGrid soubory dat, pokud existuje pouze jedna osová proměnná s více než jednou hodnotou.
-Díky Charlesovi Carletonovi.
-    * Došlo k dalším malým zlepšením, změnám a opravám chyb.
+    *    Java 7/8
+         Oracle již nepodporují (poskytuje bezpečnostní opravy chyb pro)   Java 7. ERDDAP™ Stále podporuje Java 7, ale prosím přestěhujte se Java 8. Další vydání ERDDAP™ bude pravděpodobně vyžadovat Java 8.
+    *    valid\\_min /max/rozsah
+Dříve a teď, pokud a dataVariable měl scale\\_factor a add\\_offset metadata, ERDDAP™ rozbalí hodnoty dat a odstraní tato metadata. V minulých dílech... ERDDAP™ žádná změna/odbalení valid\\_range , valid\\_min , valid\\_max metadata (které obvykle / by měly obsahovat balené hodnoty) od scale\\_factor a add\\_offset . Teď už ano. Prosím, hledejte ERDDAP™ pro "platný\\_" a ujistěte se, že všechny proměnné, které mají valid\\_range , valid\\_min nebo valid\\_max mají správné hodnoty, když se datové soubory objeví v nové verzi ERDDAP . Viz [ valid\\_range /min/max dokumentace](/docs/server-admin/datasets#valid_range) .
+    * ACDD-1, 3
+V předchozích dílech... ERDDAP™   (GenerovatDatasety Xml) použitý/doporučený originál (1. 0) verze [ NetCDF Atributová úmluva pro Discovery datových souborů](https://wiki.esipfed.org/ArchivalCopyOfVersion1) který byl označován jako " Unidata Dataset Discovery v1.0" v globálních úmluvách a Metadata\\_Conventions atributy. Nyní doporučujeme [ACDD verze 1.3](https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3) která byla ratifikována na počátku roku 2015 a je označována jako "ACDD-1.3." Naštěstí je ACDD-1.3 vysoce zpětně kompatibilní s verzí 1.0. DOPORUČUJEME, že jste [přepnout na ACDD-1.3](/docs/server-admin/datasets#switch-to-acdd-13) . Není to těžké.
+    * Generovat soubory dat Xml Atributy
+Došlo k velkému počtu změn ke zlepšení&lt; addAttributes &gt; hodnoty navržené GeneratoremDatasets XML pro globální úmluvy, creator\\_name /email/url, klíčová slova, shrnutí a atributy názvu a proměnné long\\_name atribut. Některé změny souvisí s novým používáním ACDD-1.3.
+    * EDDTableFrom SOS Soubory údajů
+S příležitostným přidáním nových typů SOS servery a změny starých serverů, je stále těžší pro ERDDAP™ automaticky detekovat typ serveru z odpovědí serveru. Použití [&lt;sosServerType&gt;] (/docs/server-admin/datasets#eddtablefromsos-skeleton-xml)   (s hodnotou IOOS\\_NDBC, IOOS\\_NOS, OOSTethys , nebo KDO) je nyní STRONGLIE DOPORUČUJE. Pokud některý z vašich souborů tohoto typu má problémy v nové verzi ERDDAP , Zkuste re-running GenerateDatasets Xml pro SOS server generovat nový kus datasets.xml pro tento datový soubor. Generovat soubory dat Xml vám umožní vyzkoušet různé&lt;sosServerType&gt; možnosti, dokud nenajdete tu správnou pro daný server. Pokud máte stále problémy, dejte mi prosím vědět, problém vidíte a URL serveru a já se pokusím pomoci.
+    * EDDTableFromFileNames soubory dat
+Některé atributy, které byly doporučeny addAttributes jsou nyní zdrojemAttributy. Pravděpodobně nemusíte měnit nic pro existující soubory dat ve vašem datasets.xml .
+    * Oprava chyb týkající se některých požadavků na datové soubory EDDTableFromNcCFFiles.
+Přidal jsem také velký počet jednotkových testů ke stávajícímu velkému počtu jednotkových testů základních metod (Je jich 100.) . Díky Eli Hunterovi.
+    * Oprava chyb/malé změny EDDGrid Od Mergeira.
+Díky Jonathanu Lafitemu a Philippu Makowskimu
+    * Oprava chyb: EDDGrid FromErddap nyní funguje, i když vzdálený datový soubor nemá ioos\\_category proměnné atributy.
+Díky Kevinu O'Brienovi.
+    * Oprava chyb v .graf webové stránky pro EDDGrid datové soubory, pokud existuje pouze jedna proměnná osy s více než jednou hodnotou.
+Díky Charlesi Carletonovi.
+    * Došlo k dalším malým vylepšením, změnám a opravám chyb.
 
 ## Verze 1.60{#version-160} 
  (propuštěn 2015-03-12) 
 
 *    **Nové funkce (pro uživatele) :** žádný
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * STRONGLY DOPORUČENO: Aktualizace serveru [robots.txt](/docs/server-admin/additional-information#robotstxt) soubor, který obsahuje:
-Zakázat: / erddap / soubory /
-    * Inotifikovat problém a řešení:
-Na počítačích Linux, pokud používáte&lt;updateEveryNMillis &gt; s datovými soubory s typem = EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Kopírovat, EDDTableCopy, nebo jejich podtřídy, můžete vidět problém, kdy se datový soubor nenačte (příležitostně nebo důsledně) s chybovou zprávou: "IOException: Uživatelský limit inodifikovaných instancí dosažen nebo příliš mnoho otevřených souborů". Pokud ano, můžete tento problém napravit voláním (jako kořen) :
-echo fs.inotify.max\\ _ user\\ _ watches = 65536 | tee -a / etc / sysctl.conf
-echo fs.inotify.max\\ _ user\\ _ instance = 1024 | tee -a / etc / sysctl.conf
+    * STRONGLY DOPORUČUJE: Aktualizovat servery [roboti.txt](/docs/server-admin/additional-information#robotstxt) soubor obsahující:
+Nepovolit: /erddap/files/
+    * Oznamte problém a řešení:
+Na Linuxových počítačích, pokud používáte&lt;updateEveryNMillis&gt; s datovými soubory s typem= EDDGrid FromFiles, EDDTableFromFoles, EDDGrid Kopírovat, EDDTableCopy, nebo jejich podtřídy, můžete vidět problém, kde datový soubor selže načíst (příležitostně nebo důsledně) s chybovou zprávou: "IOException: Uživatelský limit inotify instancí dosaženo nebo příliš mnoho otevřených souborů." Pokud ano, můžete tento problém napravit voláním (jako kořen) :
+echo fs.inotify.max\\_user\\_wakes=65536 | tee -a /etc/sysctl.conf
+echo fs.inotify.max\\_user\\_instances=1024 | tee -a /etc/sysctl.conf
 sysctl - p
-Nebo použijte vyšší čísla, pokud problém přetrvává. Výchozí hodnota pro hodinky je8192. Výchozí pro instance je128. \\[ UPDATE: Je tam chyba v Java což způsobuje, že inodifikované případy nejsou sbírány odpadky. Tento problém je třeba vyvarovat ERDDAP™ V1.66 a vyšší. Lepší řešení je přepnout na nejnovější verzi ERDDAP . \\] 
+Nebo použijte vyšší čísla, pokud problém přetrvává. Výchozí hodnota hodinek je 8192. Výchozí hodnota pro případy je 128. \\[ UPDATE: Tam je chyba v Java což způsobuje, že případy nejsou shromažďovány odpadky. Tento problém se vyhnout v ERDDAP™ V1.66 a vyšší. Takže lepším řešením je přejít na nejnovější verzi ERDDAP . \\] 
     * NoSuchFileException Oprava chyb:
-Byla tam chyba, která mohla způsobit soubory dat typu = EDDGrid FromFiles, EDDTableFromFiles, EDDGrid Kopírovat, EDDTableCopy, nebo jejich podtřídy, aby se příležitostně nenahrávaly s chybou "NoSuchFileException: _ someFileName _". Chyba souvisí s použitím FileVisitor a byl zaveden v ERDDAP™ v1.56. Problém je vzácný a s největší pravděpodobností ovlivní soubory dat s velkým počtem často se měnících datových souborů.
-    * Došlo k několika drobným zlepšením, změnám a opravám chyb.
+Byla tam chyba, která mohla způsobit soubory typu= EDDGrid FromFiles, EDDTableFromFoles, EDDGrid Kopírovat, EdDtableCopy, nebo jejich podtřídy, aby se občas nenačíst chybou "NoSuchFileException: _someFileName_." Chyba souvisí s použitím FileVisitor a byl zaveden v ERDDAP™ v1.56. Problém je vzácný a s největší pravděpodobností ovlivní soubory dat s velkým počtem často se měnících datových souborů.
+    * Došlo k malým vylepšením, změnám a opravám chyb.
 
 ## Verze 1.58{#version-158} 
  (propuštěn 2015-02-25) 
 
 *    **Nové funkce (pro uživatele) :** 
-    * Nový [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) systém umožňuje procházet virtuální souborový systém a stahovat zdrojové datové soubory z mnoha ERDDAP™ Datové soubory. U "files" systém je ve výchozím nastavení aktivní, ale ERDDAP™ Administrátoři mohou vypnout tím, že
+    * Nový [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) systém umožňuje procházet virtuální souborový systém a stahovat zdrojové datové soubory z mnoha ERDDAP™ Data. The "files" systém je ve výchozím nastavení aktivní, ale ERDDAP™ Správci to mohou vypnout vložením
 ```
         <filesActive>false</filesActive>  
 ```
-ve ERDDAP™ setup.xml soubor. Zvláštní poděkování Philippe Makowski, který pokračoval, když jsem byl pomalý ocenit krásu této myšlenky.
-    * čas určení Maxi... V minulosti měla časová proměnná souborů dat EDDTable s daty téměř v reálném čase cíl Max NaN, což znamenalo, že maximální časová hodnota datového souboru je nedávná, ale není přesně známa a často se mění. Takže, osudová Max má skutečnou hodnotu, která ukazuje, co je známo posledně. Mnoho souborů údajů průběžně aktualizovalo data. ERDDAP™ podporuje přístup k nejnovějším datům, a to i v případě, že je to po aktuálně známé poslední době. Všimněte si, že nový [&lt;updateEveryNMillis &gt;] (/ docs / server-admin / datasets # updateeverynmillis) podpora EDDGrid FromFiles a EDDTable Datové soubory FromFiles aktualizují určení časové proměnné Max. Dalším důsledkem této změny je, že datasetID = allDatasets Datový soubor nyní obsahuje aktuálně známý poslední čas ve sloupcích maxTime. Díky Johnu Kerfootovi.
+v ERDDAP™ setup.xml soubor. Zvláštní poděkování Philippe Makowskimu, který trval, když jsem byl pomalý, abych ocenil krásu této myšlenky.
+    * čas určení Maxi... Dříve měla časová proměnná datových souborů EDDTable s daty téměř v reálném čase cílMax NaN, což znamenalo, že maximální časová hodnota datového souboru je aktuální, ale není přesně známa a často se mění. DestinationMax má skutečnou hodnotu, což naznačuje, že je to naposledy známé. Mnoho datových souborů průběžně aktualizuje data. ERDDAP™ podporuje přístup k nejnovějším údajům, i když jde o aktuálně známé naposledy. Všimněte si, že nový [&lt;updateEveryNMillis&gt;] (/docs/server-admin/datasets#update everynmillis) podpora EDDGrid FromFiles a EDDTable Databáze souborů FromFiles aktualizuje cíl časové proměnnéMax. Dalším důsledkem této změny je, že datasetID = allDatasets Databáze nyní zahrnuje aktuálně známé naposledy ve sloupcích maxTime. Díky Johnu Kerfootovi.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * STRONGLY DOPORUČENO: Aktualizace serveru [robots.txt](/docs/server-admin/additional-information#robotstxt) soubor, který obsahuje:
-Zakázat: / soubory /
-Zakázat: / erddap / soubory /
-    * Vzorek datasets.xml -- Minulý rok jsme doporučili několik vynikajících datových souborů v pobřežní hlídce. ERDDAP™ že byste mohli přidat do svého ERDDAP™ jen přidáním několika řádků do vašeho datasets.xml . Pokud jste přidali soubory dat erdVH, přepněte prosím na nové soubory dat erdVH2:
-        * Vytvořit kopii všech souborů dat erdVH a změnit kopírování datasetID je z erdVH... na erdVH2... a změnit odkazované sourceUrl od erdVH... po erdVH2....
-        * Nastavte erdVH... datové soubory na aktivní = "false".
-    * Všechny EDDGrid FromFiles a EDDTable Podtřídy FromFiles nyní podporují [&lt;AccessibleViaFiles &gt;] (/ docs / server- admin / datasets # accessibleviafiles) zpřístupnit zdrojové datové soubory prostřednictvím "files" systémy. Ve výchozím nastavení je tento systém vypnut pro každý datový soubor. Musíte přidat značku, aby se to umožnilo. Díky Philippu Makowskému.
-    * Všechny EDDGrid FromFiles a EDDTable Podtřídy FromFiles nyní podporují [&lt;updateEveryNMillis &gt;] (/ docs / server-admin / datasets # updateeverynmillis) . Ve výchozím nastavení je tento systém vypnut pro každý datový soubor. Musíte přidat značku, aby se to umožnilo. Díky Dominicu Fullerovi-Rowellovi a NGDC.
-    * Nový [EDDTableFromFileName](/docs/server-admin/datasets#eddtablefromfilenames) vytvoří datový soubor z informací o skupině souborů v souborovém systému serveru, ale neslouží datům uvnitř souborů. To je například užitečné pro distribuci souborů obrázků, audio souborů, video souborů, word- processing souborů a tabulkových souborů. Tohle funguje ruku v ruce s novým [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) systém, takže uživatelé mohou stahovat soubory. Zvláštní poděkování Philippe Makowski, který pokračoval, když jsem byl pomalý ocenit krásu této myšlenky.
-    * Nový [ EDDGrid FromEDDTable](/docs/server-admin/datasets#eddgridfromeddtable) umožňuje převést tabulkový datový soubor na gridded datový soubor. Díky Ocean Networks Canada.
-    * Nový [ EDDGrid Soubory FromMergeIRName](/docs/server-admin/datasets#eddgridfrommergeirfiles) Údaje agregátů ze skupiny místních podniků .gz složky. EDDGrid FromMergeIRFiles má rozlišení jako první kus kódu přispěl k ERDDAP . Bylo to úplně bez naší pomoci. Třikrát díky Jonathanovi Lafitovi a Philippovi Makowskému z R.Tech Engineering.
-    * K dispozici je nový, volitelný setup.xml tag,&lt;unitTestDataDir &gt;, který specifikuje adresář s jednotkovými testovacími datovými soubory, které jsou dostupné prostřednictvím nového úložiště GitHub: [ https://github.com/ERDDAP/erddapTest ](https://github.com/ERDDAP/erddapTest) . Například:
+    * STRONGLY DOPORUČUJE: Aktualizovat servery [roboti.txt](/docs/server-admin/additional-information#robotstxt) soubor obsahující:
+Nepovolit: /files/
+Nepovolit: /erddap/files/
+    * Vzorek datasets.xml -- Minulý rok jsme doporučili několik vynikajících souborů v pobřežní hlídkě ERDDAP™ že můžete přidat do svého ERDDAP™ jen přidáním pár řádků do vašeho datasets.xml . Pokud jste přidali erdVH soubory, přepněte prosím na novější erdVH2 soubory:
+        * Udělat kopii všech erdVH souborů a změnit kopie datasetID 's od ErdVH... na ErdVH2... a změnit odkazované sourceUrl od ErdVH... k ErdVH2...
+        * Nastavte erdVH... soubory na active="false."
+    * Všechny EDDGrid FromFiles a EDDTable Podtřídy FromFiles nyní podporují [&lt;dostupnéViaFiles&gt;] (/docs/server-admin/datasets#accessibleviafiles) zpřístupnit zdrojové datové soubory prostřednictvím "files" systémy. Ve výchozím nastavení je tento systém vypnut pro každý soubor dat. Abyste to umožnili, musíte přidat tag. Díky Philippu Makowskimu.
+    * Všechny EDDGrid FromFiles a EDDTable Podtřídy FromFiles nyní podporují [&lt;updateEveryNMillis&gt;] (/docs/server-admin/datasets#update everynmillis) . Ve výchozím nastavení je tento systém vypnut pro každý soubor dat. Abyste to umožnili, musíte přidat tag. Díky Dominicu Fuller-Rowellovi a NGDC.
+    * Nový [EDDTableFromFileNames](/docs/server-admin/datasets#eddtablefromfilenames) vytváří soubor dat z informací o skupině souborů v systému souborů serveru, ale nepodává data zevnitř souborů. To je například užitečné pro distribuci sbírek obrazových souborů, audio souborů, video souborů, souborů zpracování slov a tabulkových souborů. To funguje ruku v ruce s novým [ "files" ](https://coastwatch.pfeg.noaa.gov/erddap/files/documentation.html) systém, aby uživatelé mohli stáhnout soubory. Zvláštní poděkování Philippe Makowskimu, který trval, když jsem byl pomalý, abych ocenil krásu této myšlenky.
+    * Nový [ EDDGrid OdEDDTable](/docs/server-admin/datasets#eddgridfromeddtable) umožňuje převést tabulkový soubor do mřížkového souboru. Díky Ocean Networks Canada.
+    * Nový [ EDDGrid Z MergeIRFiles](/docs/server-admin/datasets#eddgridfrommergeirfiles) Sčítání údajů ze skupiny místních MergeIR .gz Složky. EDDGrid OdMergeIRFiles má rozdíl být první kus kódu přispěl k ERDDAP . Bylo to provedeno bez naší pomoci. Třikrát hurá a zvlášť děkuji Jonathanu Lafiteovi a Philippu Makowskimu z R.Tech Engineeringu.
+    * K dispozici je nové, volitelné nastavení.xml tag,&lt;unitTestDataDir&gt;, který určuje adresář s datovými soubory jednotky test, které jsou k dispozici prostřednictvím nového úložiště GitHub: [ https://github.com/ERDDAP/erddapTest ](https://github.com/ERDDAP/erddapTest) . Například:
 ```
         <unitTestDataDir>/erddapTest/</unitTestDataDir>  
 ```
-To ještě není užitečné, ale je součástí kroku směrem k tomu, aby se co nejvíce jednotkových testů spustitelné jinými lidmi, jak je to možné. Díky Terrymu Rankinovi.
-    * Tam bylo mnoho malých vylepšení, změny a opravy chyb.
+Zatím to není užitečné, ale je to součást postupu směrem k provedení co největšího počtu testů, které mohou provádět ostatní lidé. Díky Terry Rankinovi.
+    * Bylo tam mnoho malých vylepšení, změn a oprav chyb.
 
 ## Verze 1.56{#version-156} 
  (propuštěn 2014-12-16) 
 
 *    **Nové funkce (pro uživatele) :**   (Žádné) 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Pravděpodobně už víte o [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) a [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) které vám umožní odkaz na soubory dat v jiných ERDDAP a ať se objeví ve vašem ERDDAP . Uživatelské žádosti o aktuální data z těchto souborů dat jsou směrovány neviditelně ke zdroji ERDDAP™ Takže data neprocházejí vaším systémem nebo nepoužívají vaši šířku pásma. Ve vzorku je nyní velký seznam doporučených souborů dat datasets.xml v erddapContent .zip . Zahrnout je do vašeho ERDDAP™ , vše, co musíte udělat, je zkopírovat a vložit ty, které chcete do svého datasets.xml . Díky Conorovi Delaneymu.
-    * Pokud sestavujete ERDDAP™ Musíš přidat něco nového. Sklenice soubory do vašeho [switch classpath -cp](/docs/contributing/programmer-guide#development-environment) pro javac a javu.
-    * Nový [EDDTableFromCassandra](/docs/server-admin/datasets#eddtablefromcassandra) zpracovává získávání dat z [Cassandra](https://cassandra.apache.org/) . Díky Ocean Networks Canada.
-    * Nový [EDDTableFromColumnaAsciiFiles](/docs/server-admin/datasets#eddtablefromcolumnarasciifiles) zpracovává získávání dat z datových souborů ASCII s fixní šířkou sloupců. Díky Philippu Makowskému.
-    * Všechny EDDGrid FromFiles a EDDTable Podtřídy FromFiles nyní používají novou metodu, FileVisitor (přidáno Java v 1, 7) shromažďovat informace o složkách. To může mít žádný přínos pro první shromažďování informací o souboru pro daný datový soubor, ale zdá se, že má obrovský přínos pro následující shromáždění, pokud se uskuteční brzy, zatímco OS stále má informace cached. Díky NGDC.
+    * Pravděpodobně už víte o [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) a [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) které vám umožní napojit na soubory dat v jiných ERDDAP a ať se objeví ve vašich ERDDAP . Uživatelské žádosti o aktuální údaje z těchto souborů se neviditelně převedou ke zdroji ERDDAP™ , Takže data netečou přes váš systém nebo používat šířku pásma. Ve vzorku je nyní velký seznam doporučených souborů údajů datasets.xml v erddapContent .zip . Zahrnout je do vašeho ERDDAP™ , vše, co musíte udělat, je zkopírovat a vložit ty, které chcete do svého datasets.xml . Díky Conoru Delaneymu.
+    * Když sestavíte ERDDAP™ , musíte přidat nějaké nové . sklenice soubory do vašeho [třídní spínač - cp](/docs/contributing/programmer-guide#development-environment) pro Javac a Java.
+    * Nový [EDDTableFromCassandra](/docs/server-admin/datasets#eddtablefromcassandra) kliky získávání dat od [Cassandra](https://cassandra.apache.org/) . Díky Ocean Networks Canada.
+    * Nový [EDDTableFromColumnarAsciiFiles](/docs/server-admin/datasets#eddtablefromcolumnarasciifiles) zpracovává získávání dat z datových souborů ASCII s kolonami s pevnou šířkou. Díky Philippu Makowskimu.
+    * Všechny EDDGrid FromFiles a EDDTable FromFiles podtřídy nyní používají novou metodu, FileVisitor (přidáno do Java v 1.7) Sbírat informace o souborech. To nemusí mít žádný prospěch pro první shromažďování souborových informací pro daný datový soubor, ale zdá se, že má obrovský přínos pro následná shromáždění, pokud bude provedeno brzy, zatímco OS má stále informace cache. Díky NGDC.
         
-Stále doporučujeme: Pokud má datový soubor velký počet souborů (např. &gt; 1000) , operační systém (a tak EDDGrid FromFiles a EDDTableFromFiles) bude fungovat mnohem efektivněji, pokud uložíte soubory do řady podadresářů (jeden za rok, nebo jeden za měsíc pro soubory s velmi častými soubory) , takže nikdy není velký počet souborů v daném adresáři.
+Stále doporučujeme: Pokud má datový soubor velký počet souborů (&gt; 1 000) , operační systém (a tak EDDGrid FromFiles and EDDTableFromFoles) bude fungovat mnohem efektivněji, pokud uložíte soubory do řady podadresářů (jeden za rok nebo jeden za měsíc pro soubory údajů s velmi častými soubory) , tak, že nikdy neexistuje obrovské množství souborů v daném adresáři.
         
-    * Několik malých vylepšení EDDTableFromAsciiFiles.
-    * Některá zlepšení EDDTableFromAsciiServiceNOS, zejména získat některé další sloupce informací od zdroje. Díky Lynn DeWittové.
-    * Některé malé chyby opravy související s ISO 19115, že ERDDAP™ generuje. Díky Anně Milanové.
+    * Několik drobných vylepšení EDDTableFromAsciiFiles.
+    * Některá vylepšení EDDTableFromAsciiServiceNOS, zejména získat některé další sloupce informací ze zdroje. Díky Lynn DeWittové.
+    * Některé malé opravy chyb týkající se ISO 19115, že ERDDAP™ generuje. Díky Anně Milanové.
 
 ## Verze 1.54{#version-154} 
  (propuštěn 2014-10-24) 
 
 *    **Nové funkce (pro uživatele) :** 
-    * Některé proměnné nyní pracují s časem na milisekundách přesnosti, např., 2014-10-24T16: 41: 22.485Z. Díky Dominicu Fullerovi-Rowellovi.
-*    **Malé změny / Fixy chyb:** 
-    * Oprava chyb: s určitou kombinací okolností, EDDGrid Soubory souborů FromNcFile vrátily data se sníženou přesností (např., plave místo doubles) . To by mohlo ovlivnit pouze hodnoty dat s &gt; 8 významnými číslicemi. Omlouvám se. (A byla to klasická chyba programování počítače: jeden špatný charakter.) Díky Dominicu Fullerovi-Rowellovi.
+    * Některé proměnné nyní pracují s časem s přesností milisekund, např. 2014-10-24T16:41:22.485Z. Díky Dominicu Fuller-Rowellovi.
+*    **Malé změny/Opravy chyb:** 
+    * Oprava chyb: s určitou kombinací okolností, EDDGrid Soubory dat zNcFile vracel data se sníženou přesností (např. plováky místo dvojníků) . To by mohlo ovlivnit hodnoty údajů pouze s &gt; 8 významnými údaji. Omlouvám se. (A byla to klasická počítačová programovací chyba: jedna špatná postava.) Díky Dominicu Fuller-Rowellovi.
     * Mnoho malých změn.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Soubory dat Griddap nyní podporují proměnné osy časové razítko a datové proměnné (tj. proměnné s časovými hodnotami, ale destinationName jiné než "time" ) . Díky Dominicu Fullerovi-Rowellovi.
-    *    ERDDAP™ Nyní správně podporuje milisekundy time\\_precision "1970- 01- 01T00: 00: 000Z." Jeden záměrný problém: při psaní času do lidských souborů (např. .csv, .tsv , .json , .xhtml ) , ERDDAP™ používá specifikovaný time\\_precision pokud zahrnuje sekundy a / nebo desetinné sekundy; jinak používá sekundy time\\_precision "1970- 01- 01T00: 00: 00Z" (pro soudržnost a zpětnou kompatibilitu) . Díky Dominicu Fullerovi-Rowellovi.
-    *    EDDGrid FromNcFiles nyní podporuje čtení String dataVariable "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a.
-    *    .nc soubory napsané Griddapem mohou mít String dataVariable "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a.
-    * GeneteDatasets Xml nyní obsahuje více flush () volá, aby se zabránilo problému informací, které nejsou zapsány do souborů. Díky Thierrymu Valerovi.
-    * Dokumentace pro GenetateDatasetsXml byla vylepšena, zejména poukázat na to, že přepínač -i funguje pouze, pokud specifikujete všechny odpovědi na příkazovém řádku (např. skriptový režim) . A skriptový režim je vysvětlen. Díky Thierrymu Valerovi.
-    *    ERDDAP™ již neumožňuje dvě proměnné v souboru dat mít stejné sourceName . (Pokud to někdo udělal předtím, pravděpodobně to vedlo k chybám.) Jako předtím, ERDDAP™ neumožňuje dvě proměnné v souboru dat mít stejné destinationName .
+    * Griddap soubory nyní podporují proměnné a datové proměnné časové osy (tj. proměnné s hodnotami času, ale destinationName jiné než "time" ) . Díky Dominicu Fuller-Rowellovi.
+    *    ERDDAP™ nyní správně podporuje milisekundy time\\_precision "1970-01-01T00:00:0000Z." Jeden záměrný výstřednost: při psaní časů do lidských-orientovaných souborů (např. .csv, .tsv , .json , .xhtml ) , ERDDAP™ použije určenou time\\_precision pokud zahrnuje sekundy a/nebo desetinné sekundy; jinak používá sekundy time\\_precision "1970-01-01T00:00:00Z" (pro soulad a zpětnou kompatibilitu) . Díky Dominicu Fuller-Rowellovi.
+    *    EDDGrid FromNcFiles nyní podporuje čtení String dataVariable s.
+    *    .nc soubory psané griddap nyní mohou mít String dataVariable s.
+    * Generovat soubory dat Xml nyní obsahuje více flush () volá, aby se zabránilo problému informací, které nejsou zapsány do souborů. Díky Thierrymu Valerovi.
+    * Dokumentace pro GenerateDatasetsXml byla vylepšena, zejména aby poukázala na to, že přepínač -i funguje pouze v případě, že určíte všechny odpovědi na příkazovém řádku (např. režim skriptu) . A režim skriptu je vysvětlen. Díky Thierrymu Valerovi.
+    *    ERDDAP™ již nedovolují, aby dvě proměnné v datovém souboru byly stejné sourceName . (Pokud to někdo udělal předtím, pravděpodobně to vedlo k chybovým zprávám.) Jako předtím, ERDDAP™ nedovoluje, aby dvě proměnné v datovém souboru měly stejné destinationName .
 
 ## Verze 1.52{#version-152} 
- (vydání 2014-10-03) 
+ (propuštěn 2014-10-03) 
 
 *    **Nové funkce:**   (žádný) 
-*    **Malé změny / Fixy chyb:** 
+*    **Malé změny/Opravy chyb:** 
     * Další (menší) změna ERDDAP™ Rychleji.
-    * Zlepšení souborů ISO 19115 generovaných ERDDAP : přidáno nově doporučeno&lt;gmd: protokol & gt; hodnoty (informace, vyhledávání, OPeNDAP : OPeNDAP , ERDDAP : griddap, a ERDDAP : tabledap ) uvnitř&lt;gmd: CI\\ _ OnlineResource & gt;. Díky Derrickovi Snowdenovi a Johnu Maurerovi.
+    * Zlepšení ISO 19115 souborů generovaných ERDDAP : přidána nově doporučená&lt;gmd: protocol&gt; hodnoty (informace, vyhledávání, OPeNDAP : OPeNDAP , ERDDAP :griddap a ERDDAP : tabledap ) uvnitř&lt;gmd:CI\\_OnlineResource&gt;. Díky Derricku Snowdenovi a Johnu Maurerovi.
     * Mnoho malých změn.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Oprava chyb: GenerateDatasetsXml.sh a DasDds.sh nebyly v erddap.war pro 1.48 a 1.50. Teď jsou. Díky Thierrymu Valerovi.
-    * Malé změny některých rychlostních testů v TestAll, aby je méně náchylné k náhodě. Díky Terrymu Rankinovi.
+    * Oprava chyb: GenerateDatasetsXml.sh a DasDds.sh nebyly v erddap.war pro 1.48 a 1.50. Teď už ano. Díky Thierrymu Valerovi.
+    * Malé změny některých rychlostních testů v TestAll, aby byly méně náchylné k náhodě. Díky Terry Rankinovi.
 
 ## Verze 1.50{#version-150} 
  (propuštěn 2014-09-06) 
 
 *    **Nové funkce:**   (žádný) 
-*    **Malé změny / Fixy chyb:** 
-    * Tohle. ERDDAP™ by měly být mnohem rychlejší než nedávné verze.
+*    **Malé změny/Opravy chyb:** 
+    * Tohle ERDDAP™ by měly být mnohem rychlejší než nedávné verze.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:**   (Nic.) 
 
 ## Verze 1.48{#version-148} 
- (vydání 2014-09-04) 
+ (propuštěn 2014-09-04) 
 
 *    **Nové funkce:** 
-    *    ERDDAP™ Nyní vždy vytvoří datový soubor tabulky, datasetID = allDatasets , který má tabulku informací o všech souborů dat v tomto ERDDAP . Může se ptát jako každý jiný datový soubor. To je užitečná alternativa k současnému systému pro získání informací o souborech dat programově.
-    * Existují dva nové typy výstupních souborů pro EDDTable a EDDGrid , .csv0 a .tsv 0. Jsou to komma- a tab- separated- value soubory, které nemají řádky s názvy sloupců nebo jednotek. Data začínají na prvním řádku. Jsou užitečné zejména pro skripty, které chtějí jen jeden kus informací od ERDDAP .
-*    **Malé změny / Fixy chyb:** 
-    * Mapy lze nyní provádět na délku v rozmezí -720 až720.
-    * Nový .nc Odpověď ml Typ souboru je k dispozici pro všechny EDDGrid Datové soubory. Vrací [NCML](https://docs.unidata.ucar.edu/netcdf-java/current/userguide/ncml_overview.html) \\ -formátovaný popis souboru dat (podobné kombinované .dds + .das) .
-    * Oprava chyb: Uložení tabulkových dat do .nc soubor byl omezen na 100 000 hodnot na proměnnou. Nyní je omezena na 2 GB celková velikost souboru. Díky Kevinu O 'Brienovi.
-    * Oprava chyb: SaveAs Matlab metody nyní zajistí, že datasetID s jsou převedeny na bezpečné Matlab variabilní názvy. Ale stále důrazně doporučuji, abyste vytvořili datasetID s, které jsou platné proměnné názvy: počínaje písmenem a pak jen pomocí A-Z, a-z, 0-9, a\\ _. Viz [ datasetID ](/docs/server-admin/datasets#datasetid) . Díky Lukovi Campbellovi.
-    * Oprava chyb v EDDTableFromDatabase: S některými typy databází, a NO\\ _ Odezva dat z databáze vedla k zbytečnému 30 sekundovému zpoždění ERDDAP . Díky Gregovi Williamsovi.
-    * Oprava chyb: EDDGrid Vytvořit graf s typem grafu = řádky (nebo značky nebo značky a čáry) nucené proměnné osy x být časem. Teď to může být jakákoliv osa. Díky Lynn DeWittové.
+    *    ERDDAP™ Nyní vždy vytvoří soubor tabulek, datasetID = allDatasets , která má tabulku informací o všech datových souborech v tomto ERDDAP . Může být dotazován jako každý jiný soubor. Jedná se o užitečnou alternativu k současnému systému pro získání informací o datech programově.
+    * Existují dva nové typy výstupních souborů pro EDDTable a EDDGrid , .csv0 a .tsv 0. Jsou to čárky- a záložky oddělené-hodnota soubory, které nemají řádky s názvy sloupců nebo jednotek. Data začínají na prvním řádku. Jsou zvláště užitečné pro skripty, které chtějí jen jeden kus informace od ERDDAP .
+*    **Malé změny/Opravy chyb:** 
+    * Mapy lze nyní provést na délky v rozmezí -720 až 720.
+    * Nový .nc ml odpověď Typ souboru je k dispozici pro všechny EDDGrid Data. Vrací [NCML](https://docs.unidata.ucar.edu/netcdf-java/current/userguide/ncml_overview.html) \\-formátovaný popis datového souboru (podobné kombinovanému .dds + .das) .
+    * Oprava chyb: Uložení tabulkových dat na .nc soubor byl omezen na 100 000 hodnot na jednu proměnnou. Nyní je pouze omezena na 2 GB celkové velikosti souboru. Díky Kevinu O'Brienovi.
+    * Oprava chyb: saveAs Matlab metody nyní zajišťují, že datasetID s jsou převedeny na bezpečné Matlab názvy proměnných. Ale přesto důrazně doporučuji vytvořit datasetID s, které jsou platné názvy proměnných: počínaje písmenem a pak pomocí A-Z, a-z, 0-9 a \\_. Viz [ datasetID ](/docs/server-admin/datasets#datasetid) . Díky Luku Campbellovi.
+    * Oprava chyb v EDDTableFromDatabase: S některými typy databází, NO\\_ Reakce na údaje z databáze vedla k zbytečnému 30 sekundovému zpoždění ERDDAP . Díky Gregovi Williamsovi.
+    * Oprava chyb: EDDGrid Vytvořit graf s typem grafu = řádky (nebo značky nebo značky a řádky) vynucená proměnná osy x je čas. Teď to může být jakákoliv osa. Díky Lynn DeWittové.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * STRONGLY DOPORUČENO: Aktualizace Java   
-Tato verze ERDDAP™ vyžaduje Java 7 nebo vyšší, ale Java 7 dosáhne konce svého života v dubnu 2015 (Brzy&#33;) , Takže teď je správný čas přejít na Java 8. Java 8 je silně doporučeno. Testuji s Java 8. Všimněte si, že Java 6 dosáhla konce svého života v únoru 2013 (Už žádné opravy bezpečnostních chyb&#33;) .
-    * STRONGLY DOPORUČENO: Aktualizace Tomcat
+    * DOPORUČUJE: Aktualizace Java   
+Tato verze ERDDAP™ vyžaduje Java 7 nebo vyšší, ale Java 7 dosáhne svého konce života v dubnu 2015 (Brzy&#33;) Takže teď je vhodná doba přejít na Java 8. Java 8. I test with Java 8. Všimněte si, že Java V únoru 2013 dosáhlo svého konce života 6 (Žádné další opravy bezpečnostních chyb&#33;) .
+    * DOPORUČUJEME: Aktualizace Tomcat
 Pokud používáte Tomcat, přepněte prosím na nejnovější verzi Tomcat. Tomcat 8 je určen pro práci s Java 8.
-    * " ERDDAP "už není zkratkou. Teď je to jen jméno. Nechci, aby to jméno zvýraznilo ERD . Chci ERDDAP™ zvýraznit vaši instituci a data.
-    * Prosím. [přizpůsobit vzhled vašeho ERDDAP™ instalace pro zvýraznění vaší instituce a Vašich dat](/docs/server-admin/deploy-install#customize) . S hodinovou prací, můžete udělat pěkné zlepšení, které bude trvat navždy.
-    * V setup.xml&lt;displayDiagnosticInfo &gt; volba je nyní vždy ignorována a zacházeno jako by hodnota byla falešná.
-DOPORUČENÉ:&lt;DiagnosticInfo &gt; tag a související informace z vašeho setup.xml.
-    * V setup.xml, výchozí pro&lt; drawLandMask &gt; byl "over", ale teď je "under", což je lepší obecný výchozí (funguje dobře se všemi soubory dat) .
-    * Scénáře GenetateDatasetsXml.sh a Daddds.sh Linux nyní používají bash místo csh, a mají rozšíření .sh. Díky Emiliovi Mayorgovi.
-    * GeneteDatasets Xml a DasDds nyní vytvoří vlastní logové soubory (GenerateDatasetsXml.log a DasDds.log) a výstupní soubory (GenerateDatasetsXml.out a DadDds.out) in _ bigParentDirectory _ / logs /, a nikdy dát své výsledky na schránky.
-    * GeneteDatasets Xml nyní podporuje parametr -i příkazového řádku, který vloží výstup do zadaného souboru na určené místo. Viz [dokumentace](/docs/server-admin/datasets#generatedatasetsxml) . Díky Terrymu Rankinovi.
-    * EDDTableFromDatabase nyní podporuje&lt;columnNameQuotes &gt;&lt;/ columnNameQuotes &gt;, s platnými hodnotami " (výchozí) Nebo nic. Tento znak (pokud existuje) budou použity před a po názvy sloupců v dotazech SQL. Různé typy databází, sestavené různými způsoby, budou potřebovat různé uvozovky názvu sloupce.
-    * Tabulární zeměpisná šířka a délka proměnných může nyní přizpůsobit long\\_name Profil zeměpisné šířky. Dříve to mohla být jen zeměpisná šířka a délka.
-    * Od nynějška uveďte "defaultDataQuery" a "defaultGraphQuery" jako atributy v globálních metadatech datového souboru (tj.&lt;AddAtts &gt;), ne jako samostatné&lt;defaultDataQuery &gt; a&lt;defaultGraphQuery &gt; tagy. (I když, pokud je stále specifikovat pomocí značek, ERDDAP™ automaticky vytvoří globální atributy s informacemi.) 
+    * " ERDDAP "už není zkratka. Teď je to jen jméno. Nechci zvýraznit jméno. ERD . Chci ERDDAP™ upozornit na vaši instituci a data.
+    * Prosím. [přizpůsobit vzhled vašeho ERDDAP™ instalace pro zdůraznění Vaší instituce a Vašich údajů](/docs/server-admin/deploy-install#customize) . S hodinovou prací, můžete udělat pěkné vylepšení, které bude trvat věčně.
+    * V nastavení.xml,&lt;displayDiagnosticInfo&gt; volba je nyní vždy ignorována a zacházeno, jako by hodnota byla falešná.
+DOPORUČUJE: Odstranit&lt;displayDiagnosticInfo&gt; tag a související informace ze setup.xml.
+    * V nastavení.xml, výchozí pro&lt; drawLandMask &gt; bylo "nad," ale nyní je "pod," což je lepší obecný standard (funguje dobře se všemi soubory dat) .
+    * GenerateDatasetsXml.sh a DadDds.sh Linux skripty nyní používají bash místo csh, a mají rozšíření .sh. Díky Emilio Mayorga
+    * Generovat soubory dat Xml a DasDds nyní vytvořit své vlastní log soubory (GenerateDatasetsXml.log a DasDds.log) a výstupní soubory (GenerovatDatasetsXml.out a DadDds.out) v _bigParentDirectory_/logs/, a nikdy dát své výsledky do schránky.
+    * Generovat soubory dat Xml nyní podporuje parametr příkazového řádku -i, který vloží výstup do zadaného souboru na určené místo. Viz [Dokumentace](/docs/server-admin/datasets#generatedatasetsxml) . Díky Terry Rankinovi.
+    * EDDTableFromDatabase nyní podporuje&lt;sloupecNázevQuotes&gt;&lt;/sloupecNázevQuotes&gt;, s platnými hodnotami " (výchozí) Nebo nic. Tento znak (pokud existuje) budou použity před a po názvy sloupců v dotazech SQL. Různé typy databází, založené různými způsoby, budou potřebovat různé názvy sloupců uvozovek.
+    * Tabulková zeměpisná šířka a délka proměnné nyní mohou mít přizpůsobené long\\_name 's, např., Profilová šířka. Dříve to mohla být jen délka a délka.
+    * Od nynějška zadejte "defaultDataQuery" a "defaultGraphQuery" jako atributy v globálních metadatech datového souboru (tj.&lt;addAtts&gt;), ne jako samostatné&lt;defaultDataQuery&gt; a&lt;výchozíGraphQuery&gt; značky. (I když, pokud je stále určujete prostřednictvím značek, ERDDAP™ automaticky vytvoří globální atributy s informacemi.) 
 
 ## Verze 1.46{#version-146} 
  (propuštěn 2013-07-09) 
 
 *    **Nové funkce:** 
     *    (Žádné) 
-*    **Malé změny / Fixy chyb:** 
-    * Oprava chyb: pouze ve verzi 1.44 v EDDTableFromDatabase, ERDDAP™ špatně citoval název tabulky databáze v SQL prohlášeních. To je teď napraveno. Díky Kevinu O 'Brienovi.
+*    **Malé změny/Opravy chyb:** 
+    * Oprava chyb: V EdDtableFromDatabase, pouze ve verzi 1.44, ERDDAP™ Špatně citoval název tabulky v SQL příkazech. To už je napravené. Díky Kevinu O'Brienovi.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    *    ** Pokud neupravujete standardní zprávy v messages.xml,
-smazat \\[ tomcat \\] / obsah / erddap / messages.xml. **   
-Výchozí messages.xml soubor je nyní v Erddap. válečný soubor, ne erddapContent .zip . Takže už nemusíte ručně aktualizovat zprávy.
-    * Pokud změníte zprávy v messages.xml, od nynějška pokaždé, když aktualizujete ERDDAP™ buď:
-        * Udělat stejné změny, které jste udělali před na nové
-             \\[ tomcat \\] / webové aplikace / erddap / WEB-INF / classes / gov / noaa / pfel / erddap / util / messages.xml.
-A tentokrát: smazat \\[ tomcat \\] / obsah / erddap / messages.xml.
-        * Nebo, zjistit, co se změnilo v nových messages.xml (via diff) , a upravit
-             \\[ tomcat \\] / content / erddap / messages.xml soubor odpovídajícím způsobem.
+    *    ** Pokud nezměníte standardní zprávy ve zprávách.xml,
+smazat \\[ tomcat \\] /content/erddap/ messages.xml . **   
+Výchozí soubor zpráv.xml je nyní v erddap. válečný soubor, ne erddapContent .zip . Takže už nemusíte ručně aktualizovat zprávy.xml .
+    * Pokud změníte zprávy ve zprávách.xml, od této chvíle, pokaždé, když aktualizujete ERDDAP™ buď:
+        * Proveďte stejné změny, které jste udělali před novým
+             \\[ tomcat \\] /webapps/erddap/WEB-INF/classes/gov/noaa/pfel/erddap/util/ messages.xml.
+A tentokrát: smazat \\[ tomcat \\] /content/erddap/ messages.xml .
+        * Nebo zjistit, co se změnilo v nových zprávách.xml (přes rozdíl) , a upravit svůj
+             \\[ tomcat \\] /content/erddap/ messages.xml souboru.
 
 ## Verze 1.44{#version-144} 
- (uvolněno 2013-05-30) 
+ (propuštěno 2013-05-30) 
 
 *    **Nové funkce:** 
-    * Dotazy na soubory dat EDDTable nyní podporují & orderBy Min (...) a & orderByMinMax  (...)   (která vrací dvě řady v každé skupině s minimálním a maximálním počtem posledních orderBy hodnota) . Díky Lynn DeWittové.
-    * Jsou tu dva nové. tabledap typy souborů: .nc CFHeader a .nc CFMAHeader (které vrací hlavičku ncdrop- like odpovídající .nc CF a .nc Typ souboru CFMA) . Díky Stevu Hankinovi.
-*    **Malé změny / Fixy chyb:** 
-    * Oprava chyb: načítání webových stránek .graf a .html pro soubory dat se spoustou časových hodnot bylo pomalé, protože ERDDAP™ byl pomalý při generování možností posuvníku času. Teď je to vždycky rychlé. Díky Michaelu Barrymu, OOICI a Kristianovi Sebastianovi Blalidovi.
-    * Oprava chyb: U některých typů datových souborů EDDTable nebyla časová omezení vždy řešena správně. Teď jsou. Díky Johnu Maurerovi a Kevinu O 'Brienovi.
-    * Oprava chyb: soubory dat by se nenahrály, když všechny subsetVariables byly proměnné s pevnou hodnotou. Teď budou. Díky Lynn DeWittové a Johnu Petersonovi.
-    * ZLEPŠENO: nyní všechny dotazy pro jen podmnožiny proměnných fungují jako kdyby & odlišné () je součástí dotazu.
-    * ZLEPŠENO: nyní, pro dotazy, které zahrnují & .json p = _ functionName _, _ function Název _ Musí být nyní řada 1 nebo více (období - oddělené) slova. Každé slovo musí začínat písmenem ISO 8859 nebo "\\ _" a musí být doplněno 0 nebo více písmeny ISO 8859, číslicemi nebo "\\ _". Ano, tohle je více omezující než Java Požadavky skriptu na názvy funkcí.
-    * Časová osa grafů nyní funguje dobře pro delší časové rozmezí (80 - 10000 let) a kratší časové rozmezí (0,003 - 180 sekund) .
-    *    ERDDAP™ je nyní více shovívavý při analýze variant dat ve formátu ISO-8601-.
-    * Tam bylo mnoho dalších malých změn a opravy chyb.
+    * Dotazy na soubory EDDTable nyní podporují & orderBy Min (...) a & orderByMinMax  (...)   (který vrací dva řádky v každé skupině, s minimální a maximální z posledních orderBy hodnota) . Díky Lynn DeWittové.
+    * Jsou dva noví. tabledap Typy souborů: .nc CFHeader a .nc CFMAHeader (které vrací hlavičku odpovídající ncdump-like .nc CF a .nc Typy souborů CFMA) . Díky Stevu Hankinovi.
+*    **Malé změny/Opravy chyb:** 
+    * Oprava chyb: načítání webových stránek .graf a .html pro soubory dat se spoustou časových hodnot bylo pomalé, protože ERDDAP™ byl pomalý při generování možností jezdce času. Teď je to vždy rychlé. Díky Michaelu Barrymu, OOICI a Kristianu Sebastianovi Blalidovi.
+    * Oprava chyb: V některých typech údajů z databáze EDDTable nebyla časová omezení vždy řešena správně. Teď už ano. Díky Johnu Maurerovi a Kevinu O'Brienovi.
+    * Oprava chyb: soubory souborů by se nenačítají, když všechny subsetVariables byly proměnné s pevnou hodnotou. Teď budou. Díky Lynn DeWittové a Johnu Petersonovi.
+    * IMPROVED: nyní, všechny dotazy pro jen podmnožiny proměnných působit, jako by & Distinct () je součástí dotazu.
+    * ZLEPŠENÍ: nyní, pro dotazy, které zahrnují & .json p=_funkceName_, _funkce Jméno_ MUSÍ být série 1 a více (období oddělené) slova. Každé slovo musí začít písmenem ISO 8859 nebo "\\_" a následuje 0 nebo více písmen ISO 8859, číslic nebo "\\_." Ano, tohle je více omezující než Java Požadavky skriptu na názvy funkcí.
+    * Časová osa na grafech nyní funguje dobře pro delší časové rozpětí (80 - 10000 let) a kratší časové rozmezí (0,003 - 180 sekund) .
+    *    ERDDAP™ je nyní více shovívavý při analýze změn dat formátu ISO-8601.
+    * Došlo k mnoha dalším drobným změnám a opravám chyb.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    *    **Musíte aktualizovat nejnovější verzi pro zabezpečení.**   
-         ERDDAP™ podstoupil bezpečnostní audit. Byly tam nějaké chyby a slabiny. Verze 1.44 obsahuje několik důležitých oprav bezpečnostních chyb a několik změn pro zvýšení bezpečnosti a přístupnosti (např. pro uživatele s poruchou zraku) . Verze 1.44 prošla následným bezpečnostním auditem. Díky všem dobrým lidem v USGS a Acunetixu, kteří to umožnili. (Neměl bych NOAA dělat tohle?) 
-    * Nový [EDDTableFrom WFS Soubory](/docs/server-admin/datasets#eddtablefromwfsfiles) dělá místní kopii všech dat z ArcGIS MapServer WFS server a tak lze data rychle předávat ERDDAP™ uživatelé. Díky Christy Caudillové.
-    * Nový [EDDTableFrom EDDGrid ](/docs/server-admin/datasets#eddtablefromeddgrid) umožňuje vytvořit EDDTable soubor dat z EDDGrid Dataset. Některé společné důvody k tomu jsou:
-        * Tím lze datový soubor dotazovat OPeNDAP omezení výběru (které si uživatel mohl vyžádat) .
-        * Datový soubor je v podstatě tabulkový datový soubor. Díky OOICI, Jim Potemra, Roy Mendelssohn.
-    * Název proměnné "hloubka" je nyní speciální alternativou k "nadmořské výšce". Jednotky musí být nějakou variantou "metrů". Hodnoty dat musí být kladné = dole. ERDDAP™ je nyní plně vědom významu "hloubky" a podporuje ji tam, kde je podporována nadmořská výška (např. jako součást CF DSG cdm\\ _ data\\ _ type = profilový datový soubor) . Datový soubor nesmí mít proměnné "hloubka" ani "nadmořská výška".
-    * Ve vaší datasets.xml , prosím, odstraňte všechna použití&lt;att name = "cdm\\ _ altitude\\ _ proxy" &gt; hloubka&lt;/ att &gt; protože hloubka je nyní zvláštní alternativou k nadmořské výšce, a proto není třeba specificky identifikovat.
-    * Ve vaší datasets.xml , prosím, odstraňte všechna použití&lt;altitudeMetersPerSourceUnit &gt;, s výjimkou EDDtable Od SOS .
-Pokud je hodnota 1, smažte ji.
-Pokud je hodnota -1, zvažte změnu názvu proměnné do hloubky.
-Pro jiné hodnoty přidejte&lt; addAttributes &gt; například:
+    *    **Musíte aktualizovat nejnovější verzi, aby byla zajištěna.**   
+         ERDDAP™ Prošel bezpečnostním auditem. Byly tam brouci a slabiny. Verze 1.44 obsahuje několik důležitých bezpečnostních oprav chyb a několik změn pro zvýšení bezpečnosti a dostupnosti (např. pro uživatele s poruchou zraku) . Verze 1.44 prošla následným bezpečnostním auditem. Díky všem dobrým lidem na USGS a Acunetix, kteří to umožnili. (Nemělo by. NOAA Dělat tohle?) 
+    * Nový [EDDTableFrom WFS Soubory](/docs/server-admin/datasets#eddtablefromwfsfiles) vytvoří místní kopii všech údajů z ArcGIS MapServer WFS server a tak lze data rychle přeobnovit na ERDDAP™ uživatelé. Díky Christy Caudillové.
+    * Nový [EDDTableFrom EDDGrid ](/docs/server-admin/datasets#eddtablefromeddgrid) umožňuje vytvořit soubor EDDTable z EDDGrid Soubor dat. Některé společné důvody k tomu jsou:
+        * To umožňuje, aby soubor údajů byl dotazován s OPeNDAP omezení výběru (který mohl uživatel požádat) .
+        * Soubor údajů je ze své podstaty souborem tabulek. Díky OOICI, Jimu Potemrovi, Royi Mendelssohnovi.
+    * Název proměnné "hloubka" je nyní speciální alternativou k "výšce." Jednotky musí být nějaká varianta "metrů." Hodnoty dat musí být kladné=down. ERDDAP™ je si plně vědom významu "hloubky" a podporuje ji tam, kde je podporována výška (např. jako součást souboru CF DSG cdm\\_data\\_type=profile) . Soubor údajů nesmí mít proměnné "hloubka" ani "nadmořská výška."
+    * Ve vašem datasets.xml , prosím odstraňte jakékoli použití&lt;att name="cdm\\_altitude\\_proxy'depleth&lt;/att&gt;, protože hloubka je nyní speciální alternativou k nadmořské výšce, a tak nemusí být zvlášť identifikována.
+    * Ve vašem datasets.xml , prosím odstraňte jakékoli použití&lt;nadmořská výškaMatersPerSourceUnit&gt;, kromě EDDTable Od SOS .
+Když je hodnota 1, smažte ji.
+Pokud je hodnota -1, zvažte změnu názvu proměnné na hloubku.
+Pro další hodnoty přidejte k&lt; addAttributes &gt; například:
 ```
         <att name="scale\\_factor" type="float">-1</att>
 ```
 
-    * Všechny soubory dat nyní podporují
+    * Všechny soubory souborů nyní podporují
         
-        *   &lt;defaultDataQuery &gt;, který se používá, pokud je .html požadován bez dotazu.
-            * Pravděpodobně to budete muset jen zřídka použít.
-            * Pro soubory dat Griddap se běžně používá k určení jiné výchozí hodnoty hloubky nebo rozměru nadmořské výšky. (např. \\[ 0 \\] místo \\[ poslední \\] ) .
-V každém případě byste měli vždy vyjmenovat všechny proměnné, vždy použít stejné hodnoty rozměrů pro všechny proměnné a téměř vždy použít \\[ 0 \\] , \\[ poslední \\] nebo \\[ 0: poslední \\] pro hodnoty rozměrů.
+        *   &lt;defaultDataQuery&gt;, který se používá, pokud se požaduje .html bez dotazu.
+            * Tohle budete pravděpodobně potřebovat jen zřídka.
+            * Pro soubory dat o souřadnicích je společným použitím tato hodnota určena pro jinou hodnotu výchozí hloubky nebo nadmořské výšky. (např. \\[ 0 \\] místo \\[ poslední \\] ) .
+V každém případě byste měli vždy uvést všechny proměnné, vždy použít stejné hodnoty rozměrů pro všechny proměnné a téměř vždy použít \\[ 0 \\] , \\[ poslední \\] nebo \\[ 0: poslední \\] pro hodnoty rozměrů.
 Například:
 ```
                 <defaultDataQuery>u\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\],v\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\]</defaultDataQuery>
 ```
 
-            * Pro tabledap soubory dat, nejběžnějším použitím tohoto je určit jiný výchozí časový rozsah (v poměru k současnosti, např., & time & gt; = now- 1 den) .
-Pamatujte si, že požadavek na žádné datové proměnné je stejný jako určení všech datových proměnných, takže obvykle můžete jen zadat nové časové omezení.
+            * Pro tabledap Nejběžnějším použitím těchto údajů je určit jiný výchozí časový rozsah (v porovnání s teď, např., &time&gt;= now- 1 den) .
+Nezapomeňte, že požadavek na žádné datové proměnné je stejný jako určení všech datových proměnných, takže obvykle můžete jen zadat nové časové omezení.
 Například:
 ```
                 <defaultDataQuery>&amp;time&gt;=now-1day</defaultDataQuery>
 ```
 
-        *   &lt;defaultGraphQuery &gt;, který se používá v případě, že .graf je požadován bez dotazu.
-            * Pravděpodobně to budete muset jen zřídka použít.
-            * U souborů dat Griddap se nejčastěji používá k určení jiné výchozí hodnoty hloubky nebo rozměru nadmořské výšky. (např. \\[ 0 \\] místo \\[ poslední \\] ) a / nebo specifikovat, že konkrétní proměnná je grafizována.
-V každém případě, budete téměř vždy používat \\[ 0 \\] , \\[ poslední \\] nebo \\[ 0: poslední \\] pro hodnoty rozměrů.
+        *   &lt;defaultGraphQuery&gt;, který se používá, pokud se požaduje .graph bez dotazu.
+            * Tohle budete pravděpodobně potřebovat jen zřídka.
+            * U datových souborů mřížky je nejčastějším použitím těchto údajů určit jinou hodnotu výchozí hloubky nebo rozměr výšky. (např. \\[ 0 \\] místo \\[ poslední \\] ) a/nebo upřesnit, že konkrétní proměnná je grafizována.
+V každém případě budete téměř vždy používat \\[ 0 \\] , \\[ poslední \\] nebo \\[ 0: poslední \\] pro hodnoty rozměrů.
 Například:
 ```
                 <defaultGraphQuery>temp\\[last\\]\\[0\\]\\[0:last\\]\\[0:last\\]&amp;.draw=surface&amp;.vars=longitude|latitude|temp</defaultGraphQuery>
 ```
 
-            * Pro tabledap Datové soubory, nejběžnější použití tohoto jsou specifikovat různé proměnné, které mají být zobrazeny, jiný výchozí časový rozsah (v poměru k současnosti, např., & time & gt; = now- 1 den) a / nebo jiná výchozí grafická nastavení (např. typ značky) .
+            * Pro tabledap Databáze, nejčastější použití tohoto souboru jsou pro upřesnění různých proměnných, které mají být grafizovány, jiný výchozí časový rozsah (v porovnání s teď, např., &time&gt;= now- 1 den) a/nebo různá výchozí nastavení grafiky (např. typ značky) .
 Například:
 ```
                 <defaultGraphQuery>longitude,latitude,seaTemperature&amp;time&gt;=now-1day&amp;.marker=1|5</defaultGraphQuery>
 ```
 
-Nezapomeňte, že potřebujete XML-encode nebo examinátor-encode (buď jeden, ale ne oba) výchozí dotazy, protože jsou v XML dokumentu. Například se stává&lt;se stává & amp; lt;, a &gt; stává & amp; gt;.
-A prosím zkontrolujte si práci. Je snadné udělat chybu a nedostat to, co chceš.
-Díky Charlesovi Carletonovi, Kevinu O 'Brienovi, Lukovi Campbellovi a dalším.
-    *    EDDGrid FromDap, EDDGrid FromErddap a EDDTableFrom EDDGrid mít nový systém pro řešení souborů dat, které se často mění (stejně často jako zhruba každých 0,5 s) . Na rozdíl od ERDDAP je pravidelný, proaktivní systém pro úplné načítání každého datového souboru, tento volitelný doplňkový systém je reaktivní (spuštěno uživatelskou žádostí) a přírůstkové (pouze aktualizace informací, které je třeba aktualizovat) . Například, pokud žádost EDDGrid FromDap datový soubor se vyskytuje více než stanovený počet milisekund od poslední aktualizace, ERDDAP™ uvidíme, jestli jsou nějaké nové hodnoty pro levý most (obvykle "time" ) dimenze, a pokud ano, stačí stáhnout tyto nové hodnoty před vyřizením požadavku uživatele. Tento systém je velmi dobrý v udržení rychle se měnícího datového souboru až do data s minimálními nároky na zdroj dat, ale za cenu mírně zpomalit zpracování některých uživatelských požadavků. Viz [&lt;updateEveryNMillis &gt;] (/ docs / server-admin / datasets # updateeverynmillis)   
+Nezapomeňte, že potřebujete XML kód nebo procento kód (buď jeden, ale ne oba) výchozí dotazy, protože jsou v XML dokumentu. Například se stane &amp; &amp; ,&lt;se stává &amp;lt; , a &gt; stává &amp;gt; .
+A prosím, zkontrolujte si práci. Je snadné udělat chybu a nedostat to, co chcete.
+Díky Charlesi Carletonovi, Kevinu O'Brienovi, Lukovi Campbellovi a dalším.
+    *    EDDGrid FromDap, EDDGrid FromErddap a EDDTableFrom EDDGrid mají nový systém pro řešení souborů dat, které se často mění (tak často zhruba každých 0,5 s) . Na rozdíl od ERDDAP 's pravidelným, proaktivním systémem pro úplné opětovné načtení každého datového souboru, tento volitelný doplňkový systém je reaktivní (spuštěno žádostí uživatele) a přírůstkové (pouze aktualizovat informace, které je třeba aktualizovat) . Například, pokud žádost o EDDGrid Soubor dat FromDap se vyskytuje více než stanovený počet milisekund od poslední aktualizace, ERDDAP™ uvidíme, jestli jsou nějaké nové hodnoty pro ty nejlevější. (obvykle "time" ) rozměr a pokud ano, stáhněte si tyto nové hodnoty dříve, než se postaráte o požadavek uživatele. Tento systém je velmi dobrý v udržování rychle se měnícího souboru aktuálního s minimálními nároky na zdroj dat, ale za cenu mírného zpomalení zpracování některých žádostí uživatelů. Viz [&lt;updateEveryNMillis&gt;] (/docs/server-admin/datasets#update everynmillis)   
 Díky Michaelu Barrymu a OOICI.
-    *    EDDGrid FromNcFiles, EDDTableFromNcFiles a EDDTableFromNcCFSoubory nyní podporují [NcML .nc ml](/docs/server-admin/datasets#ncml-files) zdrojové soubory namísto .nc složky. Díky Jose B. Rodriguezovi Ruedovi.
-    * Pro EDDGrid AgregateExistingDimension, ERDDAP™ podporuje novou volbu serverType = "dodsindex" pro atribut serverType&lt; sourceUrl s &gt; tag. To funguje s webovými stránkami, které mají seznamy souborů v rámci&lt;p&lt;/ pre &gt; a často pod OPeNDAP logo. Příkladem je [ https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html ](https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html) .
-    * Pro EDDTableFrom SOS nyní podporuje volitelnou značku
+    *    EDDGrid FromNcFiles, EDDTableFromNcFiles a EDDTableFromNcCFFiles nyní podporují [NcML .nc ml](/docs/server-admin/datasets#ncml-files) zdrojové soubory místo .nc Složky. Díky Jose B Rodriguez Rueda.
+    * Pro EDDGrid AgregátExising Dimension, ERDDAP™ podporuje novou volbu serverType="dodsindex" pro atribut serverType&lt; sourceUrl s&gt; tag. To funguje s webovými stránkami, které mají seznamy souborů uvnitř&lt;pre&gt;&lt;/pre&gt; a často pod OPeNDAP logo. Příkladem je [ https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html ](https://opendap.jpl.nasa.gov/opendap/GeodeticsGravity/tellus/L3/mascon/RL06/JPL/v02/CRI/netcdf/contents.html) .
+    * Pro EDDTableFrom SOS Nyní podporuje volitelnou značku
 ```  
         <sosServerType>_serverType_</sosServerType>  
 ```
-takže můžete určit typ SOS server (Takže ERDDAP™ nemusí na to přijít.) . Platné hodnoty&lt;_ serverType _\\ & gt; are IOOS\\ _ NDBC, IOOS\\ _ NOS, OOSTethys a WHOI (nově podporovaný server Typ) . Viz [EDDTableFrom SOS ](/docs/server-admin/datasets#eddtablefromsos) . Díky Derrickovi Snowdenovi a Janet Fredericksové.
-    * Všechny EDDGrid Z... souborů, EDDTableFrom... souborů, EDDGrid Kopírovat, a EDDTable Kopírovat nyní podporu volitelné značky
+takže můžete zadat typ SOS server (tak ERDDAP™ Nemusí na to přijít.) . Platné hodnoty&lt;_serverType_\\&gt; jsou IOOS\\_NDBC, IOOS\\_NOS, OOSTethys , a KDO (nově podporovaný server Typ) . Viz [EDDTableFrom SOS ](/docs/server-admin/datasets#eddtablefromsos) . Díky Derricku Snowdenovi a Janet Fredericksové.
+    * Všechny EDDGrid Z...Files, EDDTableFrom...Files, EDDGrid Kopírovat a EDDTable Kopírovat nyní podporu volitelné značky
 ```
         <fileTableInMemory>true</fileTableInMemory> (The default is false.)  
 ```
-což může říct ERDDAP™ k uchování souboru Tabulka (s informacemi o každém zdrojovém datovém souboru) v paměti místo jen na disku (výchozí) . Udržení tabulky souborů v paměti urychluje žádosti o data (zvláště pokud existuje &gt; 1000 zdrojových souborů) , ale používá více paměti. Pokud to nastavíte tak, aby to bylo pravdivé pro jakýkoliv datový soubor, sledujte Paměť: v současné době používáte řádek na _ yourDomain _ /erddap/status.html zajistit, aby ERDDAP™ Pořád má spoustu volné paměti. Díky Fredrikovi Strayovi.
-    * EDDTableFromasciIFiles nyní podporuje&lt;charset &gt;. Dva nejčastější znaky (Citlivý případ&#33;) jsou ISO-8859-1 (výchozí) a UTF-8.
-    * Doporučeno: v setup.xml, uvnitř&lt;startHeadHtml &gt;, prosím, změnit&lt;html &gt; do
-        &lt;html lang = "en- US" &gt; (nebo jiný [Kód jazyka](https://www.w3schools.com/tags/ref_language_codes.asp) pokud jste přeložili messages.xml) .
-    * setup.xml má nové volitelné značky pro vyřazení částí ERDDAP :
-        *   &lt;convertersActive &gt; false&lt;/ convertersActive &gt;&lt;&#33; -- výchozí hodnota je pravdivá -- &gt;
-        *   &lt;slideSorterActive &gt; false&lt;/ slideSorterActive &gt;&lt;&#33; -- výchozí hodnota je pravdivá -- &gt;
-        *   &lt;wmsActive &gt; false&lt;/ wmsActive &gt;&lt;&#33; -- výchozí hodnota je pravdivá -- &gt; Obecně doporučujeme, aby se některé z nich neklamaly.
-    * GeneteDatasets Xml nyní píše výsledky _ bigParentDirectory _ / logs / generateDatasetsXmlLog.txt, ne log.txt Díky Kristianu Sebastianu Blalidovi.
-    * GeneteDatasets Xml nyní dělá dobrý návrh pro&lt;načíst EveryMinut &gt;. Díky NOAA Projekt UAF.
-    * Mnoho malých vylepšení na GenetateDatasetsXml. Díky NOAA Projekt UAF.
+který může říct ERDDAP™ vést soubor Tabulka (s informacemi o každém zdrojovém datovém souboru) v paměti místo jen na disku (výchozí) . Udržení souboruTable v paměti zrychluje požadavky na data (zejména pokud existuje &gt;1000 zdrojových datových souborů) Ale používá více paměti. Pokud to nastavíte na true pro jakýkoli datový soubor, sledujte paměť: momentálně používáte řádek na _yourDomain_ /erddap/status.html zajistit, aby ERDDAP™ Pořád má spoustu volné paměti. Díky Fredriku Strayovi.
+    * EDDTableFromASCIIFiles nyní podporuje&lt;charset&gt;. Dva nejčastější charsety. (Vnímavý případ&#33;) jsou ISO-8859-1 (výchozí) a UTF-8.
+    * Doporučeno: v setup.xml, uvnitř&lt;startHeadHtml&gt;, prosím změňte&lt;html&gt; do
+        &lt;html lang="en-US] (nebo jiný [kód jazyka](https://www.w3schools.com/tags/ref_language_codes.asp) pokud jste přeložili zprávy.xml) .
+    * setup.xml má nové volitelné značky zakázat části ERDDAP :
+        *   &lt;měničeActive&gt;false&lt;/konvertoryActive&gt;&lt;&#33;--- výchozí hodnota je pravdivá --&gt;
+        *   &lt;slideSorterActive&gt;false&lt;/selideSorterActive &gt;&lt;&#33;--- výchozí hodnota je pravdivá --&gt;
+        *   &lt;wmsActive&gt;false&lt;/wmsActive&gt;&lt;&#33;--- výchozí hodnota je pravdivá --&gt; Obecně doporučujeme, aby se žádné z nich nedalo nastavit false.
+    * Generovat soubory dat Xml nyní píše výsledky _bigParentDirectory_/logs/generateDatasetsXmlLog.txt, ne log.txt. Díky Kristianu Sebastianu Blalidovi.
+    * Generovat soubory dat Xml nyní dělá dobrý návrh pro&lt;reload EveryNMinutes&gt;. Díky NOAA Projekt UAF.
+    * Mnoho malých vylepšení GenerateDatasetsXml. Díky NOAA Projekt UAF.
 
 ## Verze 1.42{#version-142} 
  (propuštěn 2012-11-26) 
 
 *    **Nové funkce:** 
-    *    (Žádné důležité nové funkce.) 
+    *    (Žádné významné nové rysy.) 
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Pokud jste upgrade z ERDDAP™ 1.38 nebo 1.40, nebyly žádné změny, které vyžadují, abyste provedli změny ve svých konfiguračních souborech (ale musíte použít nový messages.xml soubor) .
-    *    ERDDAP™ opět může běžet s Java 1.6. ( ERDDAP™ v1.40 požadováno Java 1.7.) Stále důrazně doporučujeme použití nejnovější verze Java 1.7.
-    * Nový typ datového souboru, [EDDTableFrom AwsXmlFiles](/docs/server-admin/datasets#eddtablefromawsxmlfiles) , lze číst data ze sady Automatic Weather Station (AWS) XML datové soubory. Díky Lynn Dewittové a Exploratoriu.
-*    **Malé změny / Fixy chyb:** 
-    * Upraveno na změny NDBC SOS zdrojové datové servery.
-    * Upraveno na změny služeb NOS COOPS ASCII.
-    * Udělal několik drobných změn a oprav chyb.
+    * Pokud upgrade z ERDDAP™ 1.38 nebo 1.40 nebyly provedeny žádné změny, které by vyžadovaly, abyste provedli změny ve svých konfiguračních souborech (ale musíte použít nové zprávy.xml soubor) .
+    *    ERDDAP™ opět může běžet s Java 1.6. ( ERDDAP™ v1.40 Java 1.7.) Stále důrazně doporučujeme použít nejnovější verzi Java 1.7.
+    * Nový typ datového souboru, [EDDTableFrom AwsXmlFiles](/docs/server-admin/datasets#eddtablefromawsxmlfiles) , lze číst data ze sady automatického počasí stanice (AWS) XML datové soubory. Díky Lynn Dewittové a průzkumu.
+*    **Malé změny/Opravy chyb:** 
+    * Přizpůsobeno změnám NDBC SOS zdrojové datové servery.
+    * Přizpůsobeno změnám služeb NOS COOPS ASCII.
+    * Udělal několik malých změn a oprav chyb.
 
 ## Verze 1.40{#version-140} 
  (propuštěn 2012-10-25) 
 
 *    **Nové funkce:** 
-    * Existuje nový formát výstupního souboru pro tabledap Datové soubory: .nc CFMA, který ukládá požadované údaje v .nc soubor, který odpovídá CF [Geometrie odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Multidimenzionální možnosti pole, a které proto odpovídají šablonám NODC \\[ 2021: nyní [Šablona NCEI](https://www.ncei.noaa.gov/netcdf-templates)  \\] pro uchovávání tohoto druhu údajů. Díky NODC.
-    *    tabledap požadavky mohou nyní zahrnovat časová omezení, jako je & time &gt; now- 5 dní. Viz [dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) . Díky Jamesu Goslingovi.
+    * K dispozici je nový výstupní formát souboru pro tabledap Soubory údajů: .nc CFMA, která ukládá požadované údaje v .nc soubor, který odpovídá CF [Geometrie diskrétního odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Multidimenzionální možnosti Array, a které proto odpovídají šablonám NODC \\[ 2021: nyní [Šablony NCEI](https://www.ncei.noaa.gov/netcdf-templates)  \\] pro ukládání tohoto typu dat. Díky NODC.
+    *    tabledap Žádosti mohou nyní zahrnovat časová omezení, jako je &time&gt; now- 5 dní. Viz [Dokumentace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#now) . Díky Jamesi Goslingovi.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Pokud jste upgrade z ERDDAP™ 1.38, nebyly žádné změny, které vyžadují, abyste dělali změny ve svých konfiguračních souborech (ale musíte použít nový messages.xml soubor) .
-    *    ERDDAP™ veřejné zprávy a vnitřní milníky jsou k dispozici prostřednictvím [ ERDDAP™ na GitHub](https://github.com/ERDDAP) . Pro více informací, viz [Wiki](https://github.com/ERDDAP/erddap/wiki) pro ERDDAP™ projekt i obecnější [ ERDDAP™ Průvodce programátorem](/docs/contributing/programmer-guide) . (To bylo oznámeno samostatně několik týdnů po ERDDAP™ 1.38 uvolnění.) 
-    * GeneteDatasets Xml byl zlepšen.
-        * Scénář byl revidován, takže by měl správně fungovat na všech počítačích Linux (Ne jen pár.) .
-        * Nyní přidává creator\\_name , creator\\_email a creator\\_url kdykoliv je to možné.
-        * Mnoho dalších malých zlepšení.
-    * Rafinované ERDDAP™ obchoduje s časem.
-        * Vnitřní, ERDDAP™ Nyní zpracovává časy při milisekundové přesnosti (ne sekundy) .
-        * Nyní můžete volitelně určit časovou přesnost daného souboru dat, viz [ time\\_precision ](/docs/server-admin/datasets#time_precision) . Například můžete nastavit datový soubor pro zobrazení časových hodnot s přesností data (Například 1970- 01- 01) .
-        * Vaše současné soubory dat budou používat výchozí nastavení, takže nejsou těmito změnami ovlivněny a budou nadále zobrazovat čas s přesností sekund. Díky Servetovi Cizmelimu a Philipovi Goldsteinovi.
-    *    [Soubory EDDTableFromNcCFName](/docs/server-admin/datasets#eddtablefromnccffiles) je nový typ datového souboru, který můžete použít ve svém datasets.xml Složka. Může číst data z některého z mnoha formátů souborů definovaných [CF Geometrie odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Konvence. Díky NODC a speciální díky Kyle Wilcox za vytváření výběrových souborů pro obrovský počet platných formátů DSG souborů a za jejich zpřístupnění veřejnosti.
-*    **Malé změny / Fixy chyb:** 
-    * Rozšířený [quickRestart](#quick-restart) systém pro všechny příslušné EDDGrid a podtřídy EDDTable.
-    * Lepší dokumentace, zejména související s použitím [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType) a [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType) z různých klientských programů.
-    * Změněno pokročilé vyhledávání na podporu minTime a / nebo maxTime vyjádřené jako epochSeconds. Díky Lynn Dewittové.
-    * Změněno .htmlTable výstup zobrazovat URL a e-mailové adresy jako odkazy.
-    * Přidáno "rel =" a "rev =" k relevantnímu&lt;a href &gt; tagy. Díky Pat Cappelaere z OGC   REST Projekt.
-    * Lepší ochrana před nerealisticky velkými žádostmi o údaje, zejména v rámci tabledap , kde je to těžší problém.
-    * Přesunul jsem další zprávy do zpráv.
-    * Zlepšil rychlost.
-    * Pevné EDDGrid FromFiles umožní sestupné tříděné osy. Díky Maricel Etchegaray.
-    * Odstraněny odkazy na iGoogle, protože to bude přerušeno.
-    * Udělal několik drobných změn a oprav chyb.
+    * Pokud upgrade z ERDDAP™ 1.38 nebyly žádné změny, které by vyžadovaly, abyste změnili své konfigurační soubory (ale musíte použít nové zprávy.xml soubor) .
+    *    ERDDAP™ veřejné zprávy a vnitřní milníky jsou k dispozici prostřednictvím [ ERDDAP™ na GitHubu](https://github.com/ERDDAP) . Více informací viz [Wiki](https://github.com/ERDDAP/erddap/wiki) pro ERDDAP™ projekt a obecnější [ ERDDAP™ Průvodce programátorem](/docs/contributing/programmer-guide) . (To bylo oznámeno zvlášť několik týdnů po ERDDAP™ 1.38 uvolnění.) 
+    * Generovat soubory dat Xml byl vylepšen.
+        * Skript byl revidován tak, aby fungoval správně na všech Linuxových počítačích (nejen pár) .
+        * Nyní dodává creator\\_name , creator\\_email a creator\\_url Kdykoliv to bude možné.
+        * Mnoho dalších malých vylepšení.
+    * Rafinované, jak ERDDAP™ dohodne se s časem.
+        * Vnitřní, ERDDAP™ Nyní zvládá čas milisekundovou přesností (ne sekund) .
+        * Nyní můžete volitelně určit časovou přesnost daného datového souboru, viz [ time\\_precision ](/docs/server-admin/datasets#time_precision) . Například můžete nastavit datový soubor pro zobrazení časových hodnot s přesností data (např. 1970-01-01) .
+        * Vaše aktuální soubory budou používat výchozí nastavení, takže jsou těmito změnami ovlivněny a budou i nadále zobrazovat čas s přesností sekund. Díky Servet Cizmeli a Philipu Goldsteinovi.
+    *    [EDDTableFromNcCFFiles](/docs/server-admin/datasets#eddtablefromnccffiles) je nový typ datového souboru, který můžete použít ve svém datasets.xml Složka. Může číst data z některého z mnoha formátů souborů definovaných [CF Geometrie diskrétního odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) Konvence. Díky NODC a speciální díky Kyle Wilcox za vytvoření vzorových souborů pro obrovský počet platných DSG formátů souborů a za jejich zpřístupnění.
+*    **Malé změny/Opravy chyb:** 
+    * Rozšířil [rychleRestartovat](#quick-restart) systém pro všechny relevantní EDDGrid a podtřídy EDDTable.
+    * Vylepšená dokumentace, zejména související s používáním [griddap](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#fileType) a [ tabledap ](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#fileType) z různých klientských programů.
+    * Změněno pokročilé vyhledávání na podporu minTime a/nebo maxTime vyjádřené jako epochSecond. Díky Lynn Dewittové.
+    * Změněno .htmlTable výstup pro zobrazení URL a e-mailových adres jako odkazů.
+    * Přidáno "rel=" a "rev=" k příslušnému&lt;značky href&gt;. Díky Pat Cappelaere z OGC   REST projekt.
+    * Zlepšená ochrana před nereálně velkými žádostmi o údaje, zejména uvnitř tabledap , kde je to těžší problém.
+    * Přesunul více zpráv do zpráv.xml.
+    * Vylepšil rychlost.
+    * Pevné EDDGrid OdFile umožňují sestupné seřazené osy. Díky Maricel Etchegaray.
+    * Odstranit odkazy na iGoogle, protože to bude přerušeno.
+    * Udělal několik malých změn a oprav chyb.
 
 ## Verze 1.38{#version-138} 
  (propuštěn 2012-04-21) 
 
 *    **Nové funkce:** 
-    * ISO 19115 a FGDC -- ERDDAP™ může automaticky generovat soubory metadat ISO 19115 a FGDC XML pro každý datový soubor. Odkazy na soubory jsou viditelné v každém seznamu souborů (např. z celotextového vyhledávání) a také v Web přístupných složkách (WAF)   (viz [FGDC WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/fgdc/xml/) a [ISO 19115 WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/iso19115/xml/) ) . Díky Tedu Habermannovi, Daveovi Neufeldovi a mnoha dalším.
-    * Full Text Hledá pro Datasety nyní podporu\\ - _ excludedWord _ a\\ - "_ vyloučená fráze _". Díky Richovi Signellovi.
-    * Vyhledávání datových souborů nyní vrací výsledky stránku po stránce. Výchozí používá parametr řetězec: stránka = 1 & itemsPerPage = 1000, ale můžete změnit hodnoty v URL vašeho požadavku. Díky Stevu Hankinovi a projektu UAF.
-    *    OpenSearch -- ERDDAP™ Nyní podporuje [ OpenSearch 1. 1](https://coastwatch.pfeg.noaa.gov/erddap/opensearch1.1/index.html) standard pro vyhledávání souborů dat. Mimo jiné, to umožňuje katalog agregace webové stránky dělat distribuované vyhledávání (předání žádosti o vyhledávání do každého katalogu, o kterém ví) .
-    * Oddělené čárky Hodnota (CSV) Soubory -- ERDDAP™ nyní generuje CSV soubory jen s čárkou mezi hodnotami (které Excel preferuje) místo čárky + prostor. Díky Jeffovi de LaBeaujardiere.
-    * Miliony datových souborů... Na podporu bylo provedeno několik změn ERDDAP Má obrovské množství souborů dat, možná i milion. Díky Stevu Hankinovi a projektu UAF.
+    * ISO 19115 a FGDC -- ERDDAP™ může automaticky generovat soubory ISO 19115 a FGDC XML metadata pro každý datový soubor. Odkazy na soubory jsou viditelné na každém seznamu souborů (např. z úplného vyhledávání textu) a také v webových přístupných složkách (WAF)   (viz [FGDC WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/fgdc/xml/) a [ISO 19115 WAF](https://coastwatch.pfeg.noaa.gov/erddap/metadata/iso19115/xml/) ) . Díky Tedovi Habermannovi, Davovi Neufeldovi a mnoha dalším.
+    * Celý text Hledá datasety nyní podporuje \\-_ excludedWord _ a \\-"_exclude fraction_" . Díky Richi Signellovi.
+    * Hledá data, která vrací výsledky najednou. Výchozí používá řetězec parametrů: stránka=1&položekPerPage=1000, ale můžete změnit hodnoty v URL vaší žádosti. Díky Stevu Hankinovi a projektu UAF.
+    *    OpenSearch -- ERDDAP™ Nyní podporuje [ OpenSearch 1. 1](https://coastwatch.pfeg.noaa.gov/erddap/opensearch1.1/index.html) standard pro vyhledávání souborů dat. To mimo jiné umožňuje katalogové agregace webových stránek dělat distribuované vyhledávání (předat žádost o vyhledávání každému katalogu, o kterém ví) .
+    * Čárka oddělená Hodnota (CSV) Soubory... ERDDAP™ nyní generuje CSV soubory pouze čárkou mezi hodnotami (který dává přednost Excelu) , místo čárky + prostor. Díky Jeffovi deLaBeaujardierovi.
+    * Milion dat -- Bylo provedeno několik změn na podporu ERDDAP má obrovské množství dat, možná dokonce milion. Díky Stevu Hankinovi a projektu UAF.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
 #### Rychlý restart{#quick-restart} 
-*    [A](#quick-restart) rychlý restart systém umožňuje ERDDAP™ Restartovat mnohem rychleji.
-     **Přidejte prosím toto do souboru setup.xml** hned po&lt;/ datasetsRegex &gt;:
+*    [A](#quick-restart) systém rychlého restartu umožňuje ERDDAP™ restartovat mnohem rychleji.
+     **Prosím přidejte toto do souboru setup.xml** hned po&lt;/datasetsRegex&gt;:
 ```
               <!-- If true, when you start up ERDDAP™, some types of datasets (e.g., 
               EDDGridFromDap) will used cached information (.dds, .das, etc.) to reload
@@ -2146,8 +2163,8 @@ což může říct ERDDAP™ k uchování souboru Tabulka (s informacemi o každ
               <quickRestart>true</quickRestart>
 ```
 
-    * Kompletní vyhledávání textů pro soubory dat lze nyní provést pomocí vyhledávače Lucene (i když doporučujeme původní vyhledávač, pokud máte méně než 10 000 souborů dat) nebo původní vyhledávací systém.
-         **Přidejte prosím toto do souboru setup.xml** hned po&lt;/ displayDiagnosticInfo &gt;:
+    * Celý text vyhledávání souborů dat lze nyní provést pomocí vyhledávače Lucene (i když doporučujeme původní vyhledávač, pokud máte méně než 10 000 souborů dat) nebo původní vyhledávací systém.
+         **Prosím přidejte toto do souboru setup.xml** hned po&lt;/displayDiagnosticInfo&gt;:
 ```
               <!-- ERDDAP™ lets you choose between two search engines for full text searches:
               \\* original (the default) -- is the best choice if your ERDDAP™ has fewer 
@@ -2164,73 +2181,73 @@ což může říct ERDDAP™ k uchování souboru Tabulka (s informacemi o každ
               <searchEngine>original</searchEngine>
 ```
 
-    * V setup.xml, můžete / měli byste nyní přidat dvě nové kategorie do comma- oddělený seznam&lt; categoryAttributes &gt;:
-        * globální: klíčová slova (Přidejte to hned po celém světě: instituce) -- nový speciální případ, který rozebírá komma- oddělený seznam klíčových slov z atributu globálních klíčových slov, aby se samostatná položka pro každé klíčové slovo.
-        * proměnná Název (přidat na konci) -- nový speciální případ, který kategorizuje každý z dataVariable   destinationName "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a.
-    * V setup.xml, můžete (Ale proč?) tell ERDDAP™ nenabízet FGDC a / nebo ISO 19115 metadata pro žádný datový soubor
+    * V setup.xml, můžete / měli by nyní přidat dvě nové kategorie do čárky oddělené seznamu&lt; categoryAttributes &gt;:
+        * globální:klíčová slova (přidat hned po globální:instituce) -- nový speciální případ, který parsuje čárka-oddělený seznam klíčových slov z globálních klíčových slov atribut, aby se samostatný záznam pro každé klíčové slovo.
+        * proměnná Název (přidat na konci) -- nový speciální případ, který kategorizuje každý z dataVariable   destinationName s.
+    * V setup.xml, můžete (Ale proč?) Řekni ERDDAP™ neposkytnout FGDC a/nebo ISO 19115 metadata pro jakýkoli datový soubor, a to včetně
 ```
         <fgdcActive>false</fgdcActive>  
         <iso19115Active>false</iso19115Active>
 ```
 
 Výchozí hodnoty pro tato nastavení jsou pravdivé.
-    * V datasets.xml , prosím zvažte zlepšení metadat pro vaše soubory dat. ERDDAP™ nyní automaticky generuje soubory metadat ISO 19115 a FGDC XML pro každý datový soubor na základě metadat datového souboru.
-Takže... **dobrá metadata datového souboru vedou k dobrému ERDDAP -generované ISO 19115 a FGDC metadata.**   
-         **Viz nová dokumentace pro řadu nových DOPORUČENÝCH [Globální atributy](/docs/server-admin/datasets#global-attributes) .** 
-    * V datasets.xml , pokud chceš říct ERDDAP™ použít předvyrobený soubor FGDC a / nebo ISO 19115, který je někde v systému souborů serveru namísto toho, aby ERDDAP™ generovat tyto soubory, použít:
+    * In datasets.xml , prosím, zvažte zlepšení metadat pro vaše soubory dat. ERDDAP™ Nyní automaticky generuje soubory ISO 19115 a FGDC XML metadata pro každý datový soubor založený na metadatech datového souboru.
+Takže, **dobrá metadata datového souboru vede k dobrému ERDDAP -vygenerovala metadata ISO 19115 a FGDC.**   
+         **Podívejte se na novou dokumentaci pro mnohé nové DOPORUČENÉ [Globální Atributy](/docs/server-admin/datasets#global-attributes) .** 
+    * In datasets.xml , Pokud chcete říct ERDDAP™ použít předvyrobený soubor FGDC a/nebo ISO 19115, který je někde na serverovém systému, místo aby měl ERDDAP™ generovat tyto soubory, použijte:
 ```
         <fgdcFile>_fullFileName_</fgdcFile>  
         <iso19115File>_fullFileName_</iso19115File>
 ```
-Pokud _ fullFileName _\\ = "" nebo soubor není nalezen, datový soubor nebude mít žádná metadata FGDC a / nebo ISO 19115. To je také užitečné, pokud chcete potlačit metadata FGDC a / nebo ISO 19115 pro konkrétní datový soubor.
-    * V datasets.xml , pro všechny EDDGrid Boční strana a EDDGrid Agregates ExistingDimension soubory, ujistěte se, že dětské soubory mají různé datasetID s než jejich rodičovské soubory údajů a jiné děti. (Například můžete sledovat jednoduchý, ale efektivní systém George Foremana pro pojmenování jeho dětí.) Pokud jsou nějaká jména v rodině stejná, datový soubor se nenačte. (s chybovou zprávou, že hodnoty agregované osy nejsou v tříděném pořadí) .
-    * V datasets.xml , tam byly některé změny v seznamu platných ioos\\_category hodnoty metadat:
-        * "pCO2" byl změněn na "CO2".
-        * Byla přidána "Fyzická Oceanografie".
-        * Byla přidána "půda".
-    * V datasets.xml , ERDDAP™ již neumožňuje "." v datasetID . Bylo to dovoleno, ale odrazeno. (Promiň.) 
-    * V datasets.xml , nastavení EDDTableFromThreddsFiles a EDDTableFrom Hyrax Soubory se mírně změnily, protože obě třídy byly přepsány na účinnější (obě třídy nyní vždy místní kopii všech vzdálených datových souborů) . Viz dokumentace pro nastavení těchto tříd: [EDDTableFrom Hyrax Soubory](/docs/server-admin/datasets#eddtablefromhyraxfiles) a [Soubory EDDTableFromThreddsName](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Viz zejména revidované připomínky&lt;fileDir &gt; (Teď je to irelevantní.) a&lt; sourceUrl &gt; (Nyní zásadní) . Také byste nikdy neměli zabalit tuto třídu v EDDTableCopy pro účinnost.
-    * V datasets.xml , pokud používáte EDDTableFromDatabase s Oracle databáze, měli byste obsahovat připojení Vlastnost jako
+Pokud _fullFileName_\\="" nebo soubor není nalezen, nebude mít datový soubor žádná FGDC a/nebo ISO 19115 metadata. To je také užitečné, pokud chcete potlačit metadata FGDC a/nebo ISO 19115 pro konkrétní datový soubor.
+    * In datasets.xml , pro všechny EDDGrid SideBySide a EDDGrid AgregátExisingDimension datas, ujistěte se, že dětské soubory mají odlišné datasetID s než jejich rodičovské soubory údajů a než ostatní děti. (Například byste mohl následovat jednoduchý, ale účinný systém George Foremana pro pojmenování jeho dětí.) Pokud jsou jména v rodině úplně stejná, soubor údajů selže při načtení (s chybovou zprávou, že hodnoty souhrnné osy nejsou v seřazeném pořadí) .
+    * In datasets.xml , tam byly některé změny v seznamu platných ioos\\_category Hodnoty metadat:
+        * "pCO2" bylo změněno na "CO2.
+        * Byla přidána "fyzická oceánografie."
+        * "Soils" bylo přidáno.
+    * In datasets.xml , ERDDAP™ již nedovoluje '.' v datasetID . Bylo to dovoleno, ale sklíčené. (Promiň.) 
+    * In datasets.xml , nastavení pro EDDTableFromThreddsFiles a EDDTableFrom Hyrax Soubory se mírně změnily, protože obě třídy byly přepsány tak, aby byly efektivnější (obě třídy nyní vždy tvoří místní kopii všech vzdálených datových souborů) . Viz dokumentace pro založení těchto tříd: [EDDTableFrom Hyrax Soubory](/docs/server-admin/datasets#eddtablefromhyraxfiles) a [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Viz zejména revidované připomínky k&lt;souborDir&gt; (Teď je to irelevantní.) a&lt; sourceUrl &gt; (Teď je to nezbytné.) . Také byste nikdy neměli zabalit tuto třídu do EDDTableCopy pro účinnost.
+    * In datasets.xml , pokud používáte EDDTableFromDatabase s Oracle Databáze, měli byste zahrnout spojení Majetek jako například
 ```
         <connectionProperty name="defaultRowPrefetch">4096</connectionProperty>  
 ```
-pro určení, kolik řádků dat lze najednou načíst, protože výchozí hodnota je 10, což je příšerně neefektivní. Viz [ Oracle dokumentace](https://docs.oracle.com/cd/B10501_01/java.920/a96654/basic.htm) . MySql a PostgreSQL zřejmě mají pro toto nastavení lepší chyby. Díky Kevinu O 'Brienovi.
-    * Pokud používáte EDDTableFromDatabase, podívejte se na vylepšené [Dokumentace "Rychlost"](/docs/server-admin/datasets#eddtablefromdatabase) další návrhy na zlepšení výkonnosti. Díky Kevinu O 'Brienovi.
-    * V datasets.xml , pro všechny EDDTable... datové soubory, v úmluvách a Metadata\\_Conventions globální atributy, viz CF-1.6 (CF- 1, 0, 1, 1, 1, 2, 1, 3, 1, 4 nebo 1, 5) , Protože CF-1.6 je první verze, která zahrnuje změny týkající se geometrie odběru vzorků.
-    * Programátoři, kteří sestavují ERDDAP™ kód musí přidat lib / lucene-core.jar do seznamu jar souborů v jejich javac a java příkazové řádky cesty.
-    *    ERDDAP™ má [nová služba](https://coastwatch.pfeg.noaa.gov/erddap/convert/keywords.html) převést standardní název CF do / z GCMD Science Keyword. To můžete považovat za užitečné při generování globálních metadat klíčových slov pro soubory dat ve vašem ERDDAP .
-    * Jednání s Boty... Přečtěte si prosím tuto radu [zabránit botům v plazení ERDDAP™ v hloupém způsobem](/docs/server-admin/additional-information#robotstxt) .
-    * Překlad -- Text o ERDDAP Webové stránky jsou nyní většinou v messages.xml a tak vhodné pro překlad do různých jazyků (např. němčina, francouzština) . Zprávy nyní často používají MessageFormat pro formátování, také pomoci při provádění překladů. Pokud máte zájem o překlad, prosím, e-mail erd dot data at noaa dot gov .
-    * Vzorek datasets.xml -- Ve vzorku bylo několik malých, ale významných chyb. datasets.xml . Pokud používáte tyto soubory dat, prosím, získejte novější verze z nového vzorku datasets.xml v novém erddapContent .zip Složka. Díky Jamesu Wilkinsonovi.
-    * Git... I will try hard to make ERDDAP™ projekt GitHub ASAP po tomto vydání.
-*    **Malé změny / Fixy chyb:** 
-    * Nová paleta, OceanDepth, je užitečná pro hloubkové hodnoty (Pozitivní je dole.) např. 0 (mělký) až 8000 (hluboké) .
-    * U .kml výstup z tabledap používá lepší ikonu značky (Není to rozmazané.) . A vznášet se nad značkou to teď dělá větší.
-    * EDDTableFromFiles -- V posledním upgradu, nová netcdf-java knihovna měla přísnější omezení pro proměnné názvy v .nc složky. To způsobilo problémy pro EDDTableFromFiles, pokud proměnné sourceName měl určité interpunkční znaky. EDDTableFromFiles je nyní upraven, aby se tomuto problému vyhnul. Díky Thomasu Holcombovi.
-    * Stránka .subset nyní podporuje 0 / 10 / 100 / 1000 / 10000 / 100000 místo zaškrtávacího políčka pro související údaje. Tip nástrojů varuje, že 100000 může způsobit pád prohlížeče. Díky Annette DesRochers, Richarde. (Abe.) Coughlin a biologický projekt IOOS.
-    * ... / erddap / info / _ datasetID @ info: whatsthis Díky Richardovi. (Abe.) Coughlin a biologický projekt IOOS.
-    * Oprava chyb: in tabledap , pro soubory dat s nadmořskou výškou MetersPerSourceUnit&lt;0, dotazy s omezeními nadmořské výšky byly zodpovězeny nesprávně. Díky Kylovi Wilcoxovi.
-    * Oprava chyb: EDDGrid Aggregates FromExistingDimension nyní podporuje rozmanitější URL TDS. Díky?
+určit, kolik řádků dat lze získat najednou, protože výchozí hodnota je 10, což je strašně neefektivní. Viz [ Oracle Dokumentace](https://docs.oracle.com/cd/B10501_01/java.920/a96654/basic.htm) . MySql a PostgreSQL se zdají mít lepší výchozí hodnoty pro toto nastavení. Díky Kevinu O'Brienovi.
+    * Pokud používáte EdDtableFromDatabase, podívejte se na vylepšené [Dokumentace "Speed"](/docs/server-admin/datasets#eddtablefromdatabase) pro další návrhy na zlepšení výkonnosti. Díky Kevinu O'Brienovi.
+    * In datasets.xml , pro všechny EDDTable... soubory údajů, v úmluvách a Metadata\\_Conventions globální atributy, viz CF-1.6 (ne CF-1,0, 1.1, 1.2, 1.3, 1.4 nebo 1.5) , protože CF-1.6 je první verzí, která zahrnuje změny týkající se geometrie odběru vzorků diskrétních vzorků.
+    * Programátoři, kteří sestavují ERDDAP™ kód je třeba přidat lib/lucene-core.jar do seznamu jar souborů v jejich Javac a Java příkazových řádkách.
+    *    ERDDAP™ má [nová služba](https://coastwatch.pfeg.noaa.gov/erddap/convert/keywords.html) převést CF Standardní jméno na / z GCMD Science Klíčové slovo. To lze najít užitečné při generování globálních klíčových slov metadat pro soubory souborů ve vašem ERDDAP .
+    * Řešit s Boty... Přečtěte si tuto radu [zabránit robotům v plazení ERDDAP™ hloupým způsobem.](/docs/server-admin/additional-information#robotstxt) .
+    * Překlad -- Text ERDDAP 's webové stránky je nyní většinou ve zprávách.xml a tak vhodné pro překlad do různých jazyků (např. němčina, francouzština) . Zprávy nyní často používají zprávuFormat pro formátování, také pomoci při překladu. Pokud máte zájem o překlad, prosím e-mail erd dot data at noaa dot gov .
+    * Vzorek datasets.xml -- Ve vzorku bylo několik malých, ale významných chyb datasets.xml . Pokud použijete tyto soubory souborů, zvolte novější verze z nového vzorku datasets.xml v novém erddapContent .zip Složka. Díky Jamesi Wilkinsonovi.
+    * Git -- Budu se snažit udělat ERDDAP™ projekt GitHub ASAP po tomto vydání.
+*    **Malé změny/Opravy chyb:** 
+    * Nová paleta, OceanDepth, je užitečná pro hodnoty hloubky (Pozitivní je dolů.) , např. 0 (mělké) až 8000 (hluboký) .
+    * The .kml výstup z tabledap používá lepší ikonu značky (Není to rozmazané.) . A vznášet se nad fixou to teď dělá větší.
+    * EDDTableFromFoles -- V poslední upgrade, nová netcdf-java knihovna měla přísnější omezení pro variabilní názvy v .nc Složky. To způsobilo problémy pro EDDTableFromFoles, pokud proměnná je sourceName měl určité interpunkční postavy. EDDTableFromFoles je nyní upraven, aby se zabránilo tomuto problému. Díky Thomasi Holcombovi.
+    * Stránka .subset nyní podporuje 0/10/1000/10000/100000 namísto zaškrtávacího políčka pro související údaje. Tip nástrojů varuje, že 100000 může způsobit pád vašeho prohlížeče. Díky Annette DesRochersové, Richard (Abe) Coughlin a biologický projekt IOOS.
+    * .../erddap/info/_ datasetID _/index.html webové stránky nyní zobrazují urls a e-mailové adresy jako kliknutelné odkazy. Díky Richardovi (Abe) Coughlin a biologický projekt IOOS.
+    * Oprava chyb: tabledap , pro datové soubory s nadmořskou výškou MěřičePerSourceUnit&lt;0, dotazy s nadmořskými omezeními byly řešeny nesprávně. Díky Kyleu Wilcoxovi.
+    * Oprava chyb: EDDGrid AgregátOdExistingDimension nyní podporuje různorodější TDS URL adresy. Díky?
 
 ## Verze 1.36{#version-136} 
- (vydání 2011-08-01) 
+ (propuštěn 2011-08-01) 
 
 *    **Nové funkce:** 
     * Žádné významné změny z pohledu uživatele.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * PmelTao datový soubor, který byl často používán jako soubor vzorků pro tabledap   
-Dokumentace již není k dispozici. ERDDAP™ administrátoři musí provést tyto změny:
-        * Ve vaší datasets.xml , pokud máte datasetID = "pmelTao" dataset, add
-aktivní = "false" těsně před "&gt;" na konci tohoto řádku.
-        * V setup.xml, pokud máte&lt;EDDTableIdPříklad &gt; je pmelTao, pak:
-            * Jestliže datasets.xml nemá datový soubor s datasetID = "erdGlobecBottle", add
+    * Databáze pmelTao, která byla často použita jako soubor vzorků pro tabledap   
+dokumentace již není k dispozici. ERDDAP™ Správci MUSÍ provést tyto změny:
+        * Ve vašem datasets.xml , pokud máte datasetID = "pmelTao" soubor, přidat
+active="false" přímo před "&gt;" na konci tohoto řádku.
+        * Ve vašem nastavení.xml, pokud vaše&lt;EDDTableIdExample&gt; je pmelTao, pak:
+            * Jestliže datasets.xml nemá datový soubor s datasetID = "erdGlobecBottle," přidat
 ```
                 <dataset type="EDDTableFromErddap" datasetID="erdGlobecBottle" active="true">  
                   <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGlobecBottle</sourceUrl>  
                 </dataset>
 ```
-            * V setup.xml, nahradit všechny značky z&lt;EDDTableIdPříklad &gt; skrz
-                &lt;EDDTable Matlab PlotExample &gt; s
+            * Ve vašem nastavení.xml, nahradit všechny značky z&lt;EDDTableIdExample&gt; přes
+                &lt;EDDTabulka Matlab PlotExample&gt; s
 ```
                 <!-- Tabledap Examples
                 This group of settings is used to make examples for the tabledap documentation 
@@ -2275,68 +2292,68 @@ aktivní = "false" těsně před "&gt;" na konci tohoto řádku.
                 <EDDTableMatlabPlotExample>plot(erdGlobecBottle.bottle\\_posn, erdGlobecBottle.temperature1)</EDDTableMatlabPlotExample>
 ```
                 
-    * Pro soubory dat, kde je typ podtřídou EDDTableFromFiles, si nyní můžete vytvořit data z metadat.
-Konkrétně nyní můžete z hodnot atributu jedné z původních proměnných vytvořit proměnnou.
-Například: datasets.xml ,&lt; dataVariable &gt; tag, pokud používáte
+    * Pro datové soubory, kde je typ podtřídou EDDTableFromFoles, můžete nyní vytvářet data z metadat.
+Konkrétně nyní můžete vytvořit proměnnou z hodnot atributu jedné z původních proměnných.
+Například datasets.xml , uvnitř&lt; dataVariable &gt; značka, pokud používáte
 ```
         <sourceName>variable:cruise:PI</sourceName>  
 ```
-         ERDDAP™ vytvoří proměnnou s hodnotami atributu PI proměnné cruise.
+         ERDDAP™ vytvoří proměnnou s hodnotami atributu PI proměnné plavby.
 Díky WOD.
 *    **Změny:** 
     * Malé změny
 
 ## Verze 1.34{#version-134} 
- (uvolněno 2011-06-15) 
+ (propuštěn 2011-06-15) 
 
 *    **Změny:** 
-    * Oprava chyb: Opravil únik paměti, ke kterému došlo na 64bitu. Java zařízení.
-    * Oprava chyb: ERDDAP™ Nyní správně nastavuje tyto globální atributy, když hodnoty zeměpisné šířky se pohybují od vysoké k nízké: geoprostorové\\ _ lat\\ _ min, geoprostorové\\ _ lat\\ _ max, Southernmost\\ _ Northing, Northernmost\\ _ Northing.
+    * Oprava chyb: Opravený únik paměti, který se objevil na 64bitu. Java zařízení.
+    * Oprava chyb: ERDDAP™ Nyní správně nastavuje tyto globální atributy, když se hodnoty rozměru zeměpisné šířky pohybují od vysoké po nízké: geospatial\\_lat\\_min, geospatial\\_lat\\_max, Southernmost\\_severing, Northernmost\\_severing.
         
-Všimněte si, že actual\\_range je beze změny: může mít nízké, vysoké nebo vysoké, nízké hodnoty, protože je určen k označení rozsahu a pořadí skladování.
+Všimněte si, že actual\\_range je nezměněna: může mít nízké, vysoké nebo nízké hodnoty, protože je určena k označení rozsahu a pořadí skladování.
         
     * Malé změny.
-    *    ERDDAP™ administrátoři nemusí provádět žádné změny v jejich setup.xml nebo datasets.xml .
+    *    ERDDAP™ Správci nemusí provádět žádné změny v jejich nastavení.xml nebo datasets.xml .
 
 ## Verze 1.32{#version-132} 
- (uvolněno 2011-05-20) 
+ (propuštěn 2011-05-20) 
 
 *    **Změny:** 
-    * Podpora nově ratifikovaných geometrií odběru vzorků s obsahem uhlíku CF (který bohužel ještě není k dispozici online) , který nahrazuje navrhované úmluvy o pozorování podle bodu CF.
-         ERDDAP™ Uživatelé uvidí, že cdm\\ _ feature\\ _ type = Station je nahrazen TimeSeries a existují malé změny v souborech vytvořených pro .nc Typ souboru CF (plochý\\ _ rozměr se nyní nazývá vzorek\\ _ rozměr) .
-         ERDDAP™ Administrátoři budou muset provést tyto změny v datasets.xml :
-        * cdm\\ _ data\\ _ type = Station by měla být změněna na cdm\\ _ data\\ _ type = TimeSeries.
-        * cdm\\ _ data\\ _ type = StationProfile by měla být změněna na cdm\\ _ data\\ _ type = TimeSeriesProfile.
-        * cdm\\ _ station\\ _ proměnné by měly být změněny na cdm\\ _ timeseries\\ _ proměnných.
-        * cf\\ _ role = stanice\\ _ id by měla být změněna na cf\\ _ role = timeseries\\ _ id.
-    * Nový ioos\\_category Možnosti: "Barevná rozpuštěná organická hmota", "pCO2", "Stream Flow", "Celková suspendovaná hmota".
-    * Možné řešení možného úniku paměti na 64bitu Java . \\[ Nefungovalo to. \\] 
+    * Podpora nově ratifikovaných, CF diskrétních geometrie odběru vzorků (který bohužel není ještě k dispozici on-line) , které nahrazuje navrhované úmluvy o sledování CF Point.
+         ERDDAP™ uživatelé uvidí, že cdm\\_feature\\_type=Station je nahrazen TimeSeries a existují malé změny souborů vytvořených pro .nc Typ CF souboru (flat\\_dimension se nyní nazývá vzorek\\_dimension) .
+         ERDDAP™ Správci budou muset provést tyto změny v datasets.xml :
+        * cdm\\_data\\_type=Station by mělo být změněno na cdm\\_data\\_type=TimeSeries.
+        * cdm\\_data\\_type=StationProfile by měl být změněn na cdm\\_data\\_type=TimeSeriesProfile.
+        * cdm\\_station\\_variables by měly být změněny na cdm\\_timeseries\\_variables.
+        * cf\\_role=station\\_id by měla být změněna na cf\\_role=timeseries\\_id.
+    * Nový ioos\\_category možnosti: "Barevná rozpuštěná organická hmota," "pCO2," "Stream Flow," "Total Suspended Matter."
+    * Možné řešení možného úniku paměti na 64bit Java . \\[ Nefungovalo to. \\] 
     * Malé změny.
 
 ## Verze 1.30{#version-130} 
  (propuštěn 2011-04-29) 
 
 *    **Nové funkce:** 
-    * Podpora 64bitu Java . Při použití s 64 bitem Java , ERDDAP™ nyní může využít mnohem více hromadné paměti a zvládnout mnoho dalších současně požadavky.
-    * Podpora .nc žádosti do 2GB (i bez 64bitu Java ) prostřednictvím lepšího používání ERDDAP zpracovává data v kusech.
-    * Mnoho 2X rychlost zlepšení v kódu a 2X rychlosti od Java 1, 6 ERDDAP™ 2X na 4X rychleji než předtím.
-    * Úspora paměti výrazně nižší ERDDAP základní využití paměti.
-    * Pro tabulky datových souborů, ERDDAP™ je nyní plně obeznámen s cdm\\ _ date\\ _ type a jak data mapuje na typ CDM. Viz [CF Specifikace geometrie odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Možná, že jednou brzy, že soubor Word bude převeden na .html a nahradit aktuální "OBSOLETE" informace na této webové stránce. Díky NOAA Projekt UAF.
-    * Pro většinu souborů dat EDDTable je nová volba typu výstupního souboru, .nc CF, vytvoří kontiguous Ragged Array .nc soubory, které odpovídají nejnovější verzi [CF Konvence geometrie odběru vzorků](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Tyto soubory jsou strukturovány tak, aby odrážely typ dat CDM souboru. Vzhledem k tomu, že se navrhované úmluvy právě změnily, od tohoto psaní, netcdf-java knihovna ještě podporuje čtení formátů souborů vytvořených ERDDAP a interpretovat je jako soubory CDM. Pravděpodobně brzy. Díky NOAA Projekt UAF.
-    * Pohled: Distinct Datová volba na webové stránce .subset je nyní seznamem, který umožňuje uživatelům určit maximální počet řádků různých dat, která mají být zobrazena (výchozí hodnota = 1000) . Tato změna a ostatní umožňují ERDDAP™ pracovat s soubory dat, které mají velmi velký počet řádků různých dat. (Počet unikátních hodnot pro každou jednotlivou proměnnou je stále problém, ale může být docela vysoká (20 000?) před .subset a další webové stránky načíst opravdu pomalu.) Díky NOAA Projekt UAF.
-    * .subset webové stránky mají novou možnost: Zobrazit Distinct Data Counts. Díky projektu GTOPP.
-    * Na pomoc uživatelům, odlišné hodnoty (např. názvy stanic) jsou nyní zobrazeny na formulářích Make-A-Graph a Data Access. Díky NOAA Projekt UAF.
-    * .transparentní Png požadavky nyní podporují všechny typy grafů a údajů. Kreslí jen data -- žádné osy, legendy, landmask nebo cokoliv jiného. To umožňuje vytvářet obrázky jako vrstvy transparentPngs. Pokud & .size = _ width _ | _ výška _ je specifikována v dotazu (doporučeno) Je mi ctí. Výchozí je 360x360 pixelů. Jedinou výjimkou je EDDGrid & .draw = povrch, kde výchozí (jako předtím) je obrázek s ~ 1 / pixel na datový bod (až 3000 x a y pixelů) . Díky Fredu Hochstaedterovi.
-    * U WMS Webové stránky nyní zobrazí barevný pruh proměnné datového souboru (s) . Díky Emiliovi Mayorgovi a dalším.
+    * Podpora pro 64-bit Java . Při použití s 64 bity Java , ERDDAP™ nyní může použít mnohem více hromady paměti a zvládnout mnoho dalších simultánních požadavků.
+    * Podpora .nc žádosti o soubor až do 2GB (i bez 64 bitů Java ) lepším použitím ERDDAP Zpracovává data v kouscích.
+    * Mnoho 2X zlepšení rychlosti v kódu a 2X rychlost ups od Java 1.6 výrobce ERDDAP™ 2X až 4X rychleji než předtím.
+    * Zlepšení úspor paměti výrazně nižší ERDDAP Je to základní využití paměti.
+    * Pro soubor tabulkových dat, ERDDAP™ je si plně vědom cdm\\_data\\_typu datového souboru a toho, jak data mapují do typu CDM. Viz [CF Specifikace diskrétního odběru vzorků Geometrie](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Snad brzy, že soubor Word bude převeden na .html a nahradit aktuální "OBSOLETE" informace na této webové stránce. Díky NOAA Projekt UAF.
+    * Pro většinu souborů EDDTable je nová volba typu výstupního souboru, .nc CF, vytváří kontiguous Ragged Array .nc soubory, které odpovídají nejnovější verzi [CF Konvence o diskrétním odběru vzorků geometrie](https://cfconventions.org/Data/cf-conventions/cf-conventions-1.8/cf-conventions.html#discrete-sampling-geometries) . Tyto soubory jsou strukturovány tak, aby odrážely datový typ CDM datového souboru. Vzhledem k tomu, že navrhované úmluvy se právě změnily, od tohoto psaní, netcdf-java knihovna ještě nepodporuje čtení formátů souborů vytvořených ERDDAP a interpretovat je jako CDM datové soubory. Pravděpodobně brzy. Díky NOAA Projekt UAF.
+    * The View : Distinct Data option on the .subset web page is now a drop-down list that lets users specified the maximum number of rows of different data to be looked (výchozí = 1000) . Tato změna, a další, povolit ERDDAP™ pracovat s datovými soubory, které mají velmi velký počet řádků různých dat. (Počet unikátních hodnot pro každou jednotlivou proměnnou je stále problém, ale může být docela vysoká. (20 000?) před .subset a další webové stránky se načítají opravdu pomalu.) Díky NOAA Projekt UAF.
+    * .subset webové stránky mají novou možnost: Zobrazit Distinct Data počítá. Díky projektu GTOPP.
+    * Na pomoc uživatelům, odlišné hodnoty (např. názvy stanic) jsou nyní zobrazeny na Make-A-Graph a Data Access Forms. Díky NOAA Projekt UAF.
+    * .transparentní Png žádosti nyní podporují všechny typy grafů a datových reprezentací. To kreslí jen data -- žádné osy, legendy, pevnina, nebo něco jiného. Díky tomu je možné vytvářet obrázky jako vrstvy transparentních Pngů. Pokud &.size=_width_ | _výška_ je uvedena v dotazu (doporučené) Je mi ctí. Výchozí hodnota je 360x360 pixelů. Jediná výjimka je EDDGrid &.draw=povrch, kde je výchozí (jako dříve) je obrázek s ~1/pixel na datový bod (až 3000 x a y pixelů) . Díky Fredu Hochstaedterovi.
+    * The WMS Webové stránky nyní zobrazují barevnou lištu proměnné datového souboru (án) . Díky Emiliovi starostovi a dalším.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Toto vydání zahrnuje spoustu změn. Všichni jsou důležití. Buďte prosím trpěliví a propracujte všechny změny uvedené níže.
-    * Tato verze je vytlačována dříve, než se zamýšlí vypořádat s některými Java Bezpečnostní štěnice. Bohužel, několik funkcí / oprav určených k tomuto ERDDAP™ verze není v této verzi. Promiň. Doufejme, že příští verze bude relativně brzy. (a mnohem jednodušší na upgrade) .
-    * Aby se zabránilo několika bezpečnostních chyb v Java 6 aktualizace 23 a níže, stáhnout a nainstalovat nejnovější verzi Java   ( Java 6 aktualizace 24 nebo vyšší) . Pokud máte 64bitový operační systém, prosím, získejte 64bitovou verzi Java .
-    * Pokud používáte Tomcat 5, musíte upgradovat na Tomcat 6 nebo 7 (preferované) . Pokud používáte Tomcat6, zvažte upgrade na Tomcat verze7.
-    * Prosím postupujte podle všech pokynů pro [nastavení nového ERDDAP™ ](/docs/server-admin/deploy-install) , ale tam, kde je to relevantní, budete kopírovat soubory ze své staré instalace do nové instalace, zejména \\[ tomcat \\] / content / erddap adresář a soubory. V rámci toho, Všimněte si [nová doporučení pro nastavení Tomcat](/docs/server-admin/deploy-install#tomcat) .
+    * Toto vydání zahrnuje mnoho změn. Všechny jsou důležité. Buďte prosím trpěliví a propracujte všechny níže uvedené změny.
+    * Tato verze je vytlačena dříve, než se má vypořádat s některými Java Bezpečnostní brouci. Bohužel několik funkcí/fixů určených k tomuto účelu ERDDAP™ verze není v této verzi. Promiň. Doufejme, že další verze bude poměrně brzy (a mnohem jednodušší upgrade na) .
+    * Aby se zabránilo několika bezpečnostních chyb v Java 6 aktualizace 23 a níže, stáhnout a nainstalovat nejnovější verzi Java   ( Java 6 aktualizace 24 nebo vyšší) . Pokud máte 64-bitový operační systém, prosím, získejte 64-bitovou verzi Java .
+    * Pokud používáte Tomcat 5, musíte upgradovat na Tomcat 6 nebo 7 (preferovaný) . Pokud používáte Tomcat 6, zvažte upgrade na Tomcat verzi 7.
+    * Dodržujte prosím všechny pokyny pro [zřízení nového ERDDAP™ ](/docs/server-admin/deploy-install) , ale tam, kde je to relevantní, budete kopírovat soubory od své staré instalace do nové instalace, zejména \\[ tomcat \\] /content/erddap adresář a soubory. Jako součást tohoto, všimněte si [nová doporučení nastavení Tomcat](/docs/server-admin/deploy-install#tomcat) .
     * Výchozí erddap.css je nyní součástí souboru erddap.war.
-        * Pro použití výchozí erddap.css, **smazat** Tvůj starý \\[ tomcat \\] / obsah / erddap / images / erddap.css.
-        * If you modified \\[ tomcat \\] / obsah / erddap / obrázky / erddap.css, a chcete jej používat: stačí nechat na místě a nahradit&lt;vstup &gt; sekce s:
+        * Chcete-li použít výchozí erddap.css, **smazat** Tvůj starý \\[ tomcat \\] /content/erddap/images/erddap.csss .
+        * Pokud jste upravil (a) \\[ tomcat \\] /content/erddap/images/erddap.css, a chcete jej nadále používat: stačí nechat na místě a nahradit&lt;vstup &gt; oddíl s:
 ```
             /\\* Small input items let more be shown on one screen  
             (esp. Chrome and Safari). Google Chrome and Safari have  
@@ -2352,8 +2369,8 @@ Všimněte si, že actual\\_range je beze změny: může mít nízké, vysoké n
             input.skinny {padding:0px 1px; }
 ```
 
-    * Ve vaší \\[ tomcat \\] / obsah / erddap / setup.xml:
-        * Nahradit komentáře a tagy související&lt;partialRequestMaxBytes &gt; a&lt;partialRequestMaxCells &gt; s
+    * Ve vašem \\[ tomcat \\] /content/erddap/setup.xml:
+        * Nahradit komentáře a značky související&lt;parciálníRequestMaxBytes&gt; a&lt;partitionalRequestMaxCells&gt; s
 ```
             <!-- When possible (and it isn't always possible),  
             ERDDAP™ breaks source data requests into chunks to  
@@ -2366,7 +2383,7 @@ Všimněte si, že actual\\_range je beze změny: může mít nízké, vysoké n
              <partialRequestMaxCells>100000</partialRequestMaxCells>  
             \\-->
 ```
-        * Nahradit připomínky týkající se&lt; categoryAttributes &gt; a zvažte změnu hodnoty značky:
+        * Nahradit připomínky týkající se&lt; categoryAttributes &gt; a zvážit úpravu hodnoty značky:
 ```
             <!-- This is the comma-separated list (recommended:  
             in alphabetical order) of the global attribute and  
@@ -2381,64 +2398,64 @@ Všimněte si, že actual\\_range je beze změny: může mít nízké, vysoké n
             long\\_name, standard\\_name</categoryAttributes>  
 ```
 
-Individuální&lt; categoryAttributes &gt; které jsou globálními atributy nyní Nutno identifikovat pomocí prefixu global: (Například globální: instituce) . Ostatní atributy se považují za proměnné atributy (např. standard\\_name ) . Také hodnoty institucí (The only one) byly ponechány v původním případě. Nyní jsou všechny kategorie přepočteny na malé.
-    * Ve vaší \\[ tomcat \\] / obsah / erddap / datasets.xml :
-        * Velké zlepšení: ERDDAP™ má nové požadavky týkající se datového souboru tabulky cdm\\ _ data\\ _ type. Zejména musí mít každý datový soubor správná metadata a proměnné vztahující se k cdm\\ _ data\\ _ type. Pokud ne, datový soubor se nenačte a nehodí chybu. Viz dokumentace pro [cdm\\ _ data\\ _ type](/docs/server-admin/datasets#cdm_data_type) .
+Individuální&lt; categoryAttributes &gt; které jsou nyní globálními atributy MUSÍ být identifikovány prostřednictvím globální předpony: (např. globální:instituce) . Ostatní atributy se považují za proměnné atributy (např. standard\\_name ) . Také hodnoty institucí (Jediní) byly ponechány v původním případě. Nyní jsou všechny hodnoty kategorie převedeny na malé.
+    * Ve vašem \\[ tomcat \\] / content/ erddap/ datasets.xml :
+        * Big Improved: ERDDAP™ má nové požadavky týkající se cdm\\_data\\_typu souboru. Každý datový soubor musí mít zejména správná metadata a proměnné týkající se cdm\\_data\\_type. Pokud ne, data se nenačte a hází chybu. Viz dokument [cdm\\_data\\_type](/docs/server-admin/datasets#cdm_data_type) .
         * FYI: Existuje nový typ datového souboru: EDDTableFromAsciiServiceNOS.
-        * FYI: Existují tři nově povolené ioos\\_category možnosti: Hydrologie, kvalita (např. pro vlajky jakosti) , a statistika (např. průměr) .
-        * Pro EDDTableFrom... Soubory soubory soubory soubory, odstranit&lt;nDimensions &gt; tagy. Už nejsou potřeba nebo použity.
-        * Pro proměnné s destinationName = nadmořská výška, ERDDAP™ již sílu long\\_name být nadhoz. Projděte si to, prosím. datasets.xml a opakovaně hledat&lt; destinationName &gt; nadmořská výška a přidat k této proměnné&lt; addAttributes &gt;:
+        * FYI: Existují tři nově povoleny ioos\\_category možnosti: Hydralogie, kvalita (např. pro označení kvality) , a statistiky (např. průměr) .
+        * Pro EDDTableFrom... Soubory souborů, odstranit všechny soubory&lt;nRozměry &gt; značky. Už nejsou zapotřebí ani používány.
+        * Pro proměnné s destinationName = výška, ERDDAP™ již nenutí long\\_name být nadmořskou výškou. Prosím, projděte si svou datasets.xml a opakovaně hledat&lt; destinationName &gt; nadmořská výška a přidat k této proměnné&lt; addAttributes &gt;:
 ```
               <att name="long\\_name">Altitude</att>  
 ```
-             (nebo mírně odlišné long\\_name ve zvláštních případech) .
-        * Volitelné: Všechny podtřídy EDDTableFromFiles podporují proměnnou [ sourceName = globální:...](/docs/server-admin/datasets#global-sourcenames) převést globální metadata z každého souboru do datové proměnné. Díky Lynn DeWittové.
-    * Uživatelé EDDTableFromDatabase -- ERDDAP™ přichází s novým JDBC 4 ovladač pro Postgres. Pro jiné databáze, zkontrolujte web pro nejnovější JDBC .jar soubor pro vaši databázi. Od ERDDAP™ nyní používá Java 1, 6 +, JDBC 4 (ne 3) je pravděpodobně doporučeno.
+             (nebo mírně jiný long\\_name ve zvláštních případech) .
+        * Volitelné: Všechny podtřídy EDDTableFromFromFoles podporují proměnnou [ sourceName = Globální:...](/docs/server-admin/datasets#global-sourcenames) převést globální metadata z každého souboru do datové proměnné. Díky Lynn DeWittové.
+    * EDDTableFromDatabase uživatelé -- ERDDAP™ přichází s novým ovladačem JDBC 4 pro Postgres. Pro další databáze, zkontrolujte web pro nejnovější JDBC .jar soubor pro vaši databázi. Od ERDDAP™ použití Java 1.6+, JDBC 4 (ne 3) pravděpodobně se doporučuje.
     * FYI
-        *    EDDGrid Z... Soubory a EDDTable Od... Soubory datových souborů nyní ukládat informace o souboru
-             \\[ bigParentDirectory \\] / datový soubor Informace / \\[  datasetID  \\] /\\ * .nc složky.
-Také, EDDTable soubory dat nyní ukládat informace o podmnožině v
-             \\[ bigParentDirectory \\] / datový soubor Informace / \\[  datasetID  \\] /\\ * .nc složky. Tyto soubory bývaly
-             \\[ bigParentDirectory \\] / datový soubor Informace / \\[  datasetID  \\] . .json složky.
-Staré soubory budou smazány automaticky, když ERDDAP™ začíná. Nebo můžete smazat všechny soubory (ale nechte prázdné podadresáře) n \\[ bigParentDirectory \\] / datasetInfo /.
-        * Pracoval jsem na nových souborech EDDTableFromNcCFFiles, které budou číst data z místních a vzdálených souborů pomocí navržených, nových konvencí pro pozorování CF Point. Ale není to v tomto vydání. V knihovnách netcdf-java existují problémy související s některými metodami pro čtení těchto souborů. A v navrhovaných úmluvách o pozorování CF Point došlo k několika nedávným změnám. Až bude knihovna netcdf-java opravena a aktualizována k poslednímu návrhu, budu pokračovat v práci na tomto.
-        * Běžící ERDDAP™ na Windows může mít problémy: zejména, můžete vidět v \\[ bigParentDirectory / log.txt soubor, který ERDDAP™ není někdy schopen rychle smazat a / nebo přejmenovat soubory. Je to kvůli antivirovému softwaru. (např. z McAfee a Norton) což je kontrola souborů na viry. Pokud narazíte na tento problém (které lze vidět chybovými zprávami v log.txt souboru jako "Nelze smazat"...) , změna nastavení antivirového softwaru může částečně zmírnit problém.
-Pokud ERDDAP™ ve Windows je jen test běží na ploše, je to jen otrava.
+        *    EDDGrid Z...Files a EDDTable Z... Soubory souborů nyní ukládají informace souboruTable v
+             \\[ velkýRodič rodičů \\] /dataset Info/ \\[  datasetID  \\] /\\* .nc Složky.
+Také soubory EDDTable nyní ukládají podmnožinu informace v
+             \\[ velkýRodič rodičů \\] /dataset Info/ \\[  datasetID  \\] /\\* .nc Složky. Tyto soubory bývaly
+             \\[ velkýRodič rodičů \\] /dataset Info/ \\[  datasetID  \\] .\\* .json Složky.
+Staré soubory budou automaticky smazány, pokud ERDDAP™ Začneme. Nebo můžete smazat všechny soubory (Ale nechte prázdné podadresáře.) v \\[ velkýRodič rodičů \\] /datasetInfo/.
+        * Pracoval jsem na novém programu EDDTableFromNcCFFiles, který by četl data z místních i vzdálených souborů pomocí navrhovaných nových úmluv o sledování CF Point. Ale není to v tomhle vydání. V knihovnách netcdf-java jsou problémy týkající se některých metod čtení těchto souborů. A došlo k několika nedávným změnám navrhovaných úmluv o pozorování CF Point. Až bude knihovna netcdf-java opravena a aktualizována do posledního návrhu, budu na tom pokračovat.
+        * Běh ERDDAP™ na Windows může mít problémy: zejména můžete vidět v \\[ bigDirectory/logs/log.txt soubor, který ERDDAP™ není někdy schopen rychle smazat a/nebo přejmenovat soubory. To je způsobeno antivirovým softwarem (např. z McAfee a Norton) který kontroluje soubory na viry. Pokud narazíte na tento problém (které lze vidět chybovými zprávami v log.txt souboru jako "Neschopen odstranit ...") , změna nastavení antivirového softwaru může částečně zmírnit problém.
+Pokud ERDDAP™ ve Windows je jen test běžící na ploše, to je jen nepříjemnost.
 Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na Linux server.
-    * Pomalý první start... Když poprvé utečeš ERDDAP™ po modernizaci, ERDDAP™ může být pomalé načítání souborů dat. Cesta ERDDAP™ ukládá informace o agregovaných souborech se změnila, takže ERDDAP™ bude muset přečíst nějaké informace ze všech těchto souborů. To bude chvíli trvat.
-    * Chyby na Startupu... Vzhledem ke změnám týkajícím se cdm\\ _ data\\ _ type je pravděpodobné, že některé z vašich souborů dat nebudou načítat a budou házet chyby. Opatrně si přečtěte e-mail Daily Report, že ERDDAP™ pošle tě, když ERDDAP™ je hotový. Bude mít seznam souborů dat, které nenahrály (nahoře) a důvod, proč nenabili (u dna) .
-    * Pokud se zaseknete nebo budete mít jiné otázky, pošlete mi e-mail podrobnosti: erd.data at noaa.gov .
-    * Programátoři -- Pokud píšete Java programy, které běží ERDDAP™ kód, musíte změnit některé reference parametru příkazového řádku:
-        * Změna joda- time- 1.6.2.jar na joda- time. sklenice
-        * Změnit postgres JDBC .jar odkaz na postgresql.jdbc.jar
-*    **Malé změny a chyby:** 
+    * Pomalé první spuštění -- Když poprvé utíkáš ERDDAP™ po modernizaci, ERDDAP™ může být pomalé načíst soubory dat. Cesta ERDDAP™ ukládá informace o souhrnných souborech se změnila, takže ERDDAP™ bude muset znovu přečíst nějaké informace ze všech těchto souborů. To bude chvíli trvat.
+    * Chyby při spuštění -- Vzhledem ke změnám souvisejícím s cdm\\_data\\_type, je pravděpodobné, že některé vaše soubory souborů nebudou načítat a budou házet chyby. Pečlivě si přečtěte Daily Report email, že ERDDAP™ Pošle vás, když ERDDAP™ je hotovo. Bude mít seznam souborů, které nebyly načteny (nahoře) a důvod, proč nenaložili (v blízkosti dna) .
+    * Pokud zaseknete nebo budete mít jiné otázky, pošlete mi podrobnosti: erd.data at noaa.gov .
+    * Programátoři -- Když píšeš Java programy, které běží ERDDAP™ kód, musíte změnit některé reference parametru příkazového řádku:
+        * Změňte joda-time-1.6.2.jar na joda-time. sklenice
+        * Změnit odkaz Postgres JDBC .jar na postgresql.jdbc.jar
+*    **Malé změny a opravy chyb:** 
     
-    * Lepší manipulace s připojením, aby se zabránilo závitům.
-    * Zlepšené konměny pro efektivnější zvládání téměř souběžných identických požadavků.
-    *    ERDDAP™ nyní používá netcdfAll-4.2.jar (Přejmenováno na netcdfAll- last. sklenice) . Tento přepínač vyžadoval několik vnitřních změn a způsobil několik drobných externích změn, např. změny, jak se čtou grib soubory a drobné změny .nc Výstup hlavy.
-    * Nová funkce: \\[ erddap \\] / convert / fipscounty.html konverts FIPS Okresní kódy na / z okresní názvy.
-    * Na mapách, státní hranice jsou nyní tmavě fialové, takže vynikají lépe na všech pozadí barvy.
-    * Tabulární .kml výstup opět používá kruhovou ikonu k označení bodů (ne ikona letadla Google nedávno přešel na) .
-    * Datové soubory ErdCalcofi byly přepracovány a jsou nyní podávány z místních souborů (rychleji) .
-    * GeneteDatasets Xml Trojúhelníky Katalog nyní vytváří soubor výsledků:
-         \\[ tomcat \\] / webové aplikace / erddap / WEB-INF / temp / EDDGrid FromThreddsCatalog.xml. Díky Kevinu O 'Brienovi.
-    * GeneteDatasets Xml Trojúhelníky Katalog se nyní snaží odstranit zbytečná čísla portu ze zdrojových URL (např.: 8080 a: 8081 lze někdy odstranit) . Díky NOAA Centrální bezpečnostní tým.
-    * Pro .subset webové stránky, Mapa Distinct Data má nyní variabilní rozsah lat.
-    * Několik seznamů v ERDDAP™   (např. tabulka, která zobrazuje všechny soubory dat) byly tříděny tak, aby A.. Z třídil před. .z . Teď třídí případ necitlivě.
-    * Malé změny na webových stránkách .subset, včetně: jednotky jsou nyní uvedeny.
-    * GeneteDatasets Xml a DasDds již nehází výjimku, pokud nejsou schopni dát výsledky na systémové schránky nebo zobrazovat InBrowser. Díky Ericovi Bridgerovi a Gregovi Williamsovi.
-    * Oprava chyb: Při načtení souborů dat, ERDDAP™ nyní odstraňuje nebo upravuje geoprostorové globální atributy. Díky Charlesovi Carletonovi.
-    * Oprava chyb: String2.getClassPath () nyní správně dekóduje třídu Cesta (Zejména na Windows se mezery v názvu souboru objevily jako% 20) . Toto ovlivnění ERDDAP™ EDStatic calling SSR.getContextDirectory () a nalezení obsahu / erddap. Díky Abe Coughlinovi.
-    * Oprava chyb: v EDDTableFromFiles související s getDataForDapQuery manipulace s odlišným () žádosti. Díky Ericu Bridgerovi.
-    * Oprava chyb: tabledap požadavky správně neodpovídaly omezením nadmořské výšky při nadmořské výšce datového souboru MetersPerSourceUnit byl -1. Díky Ericu Bridgerovi.
-    * Oprava chyb: EDDTableFrom... Soubory datových souborů nyní správně zpracovávají požadavky, které zahrnují = NaN a&#33; = NaN.
+    * Vylepšená manipulace s připojením, aby se zabránilo zavěšení vláken.
+    * Vylepšená kurzová praxe, která má efektivněji řešit téměř současně stejné požadavky.
+    *    ERDDAP™ nyní používá netcdfAll-4.2.jar (přejmenována na netcdfAll-latest. sklenice) . Tento spínač vyžadoval několik interních změn a způsobil několik malých vnějších změn, např. změny v tom, jak jsou čteny grib soubory a drobné změny v .nc Výstup hlavy.
+    * Nová funkce: \\[ erddap \\] /konvertovat/fipscounty.html konvertuje FIPS okresní kódy do/z okresních jmen.
+    * Na mapách jsou státní hranice nyní tmavě fialové, takže vynikají lépe na všech barvách pozadí.
+    * Tabulkové .kml výstup opět používá kruhovou ikonu k označení bodů (Ne ikona letadla Google nedávno přešel na) .
+    * ErdCalcofi soubory byly přeorganizovány a nyní jsou podávány z místních souborů (rychleji) .
+    * Generovat soubory dat Xml od Třísky Katalog nyní vytváří soubor výsledků:
+         \\[ tomcat \\] /webapps/erddap/WEB-INF/ temp/ EDDGrid OdThreddsCatalog.xml . Díky Kevinu O'Brienovi.
+    * Generovat soubory dat Xml od Třísky Katalog se nyní snaží odstranit nepotřebná čísla portu ze zdrojových URL (např.:8080 a :8081 lze někdy odstranit) . Díky NOAA Centrální bezpečnostní tým.
+    * Pro webové stránky .subset má nyní Mapa Distinct Data variabilní rozsah lat lon.
+    * Několik seznamů ERDDAP™   (Například tabulka zobrazující všechny soubory údajů) byly vyřešeny tak, že A.Z třídit před A. .z . Teď to řeší necitlivě.
+    * Malé změny webových stránek .subset, včetně: jednotky jsou nyní uvedeny.
+    * Generovat soubory dat Xml a DasDds již házet výjimku, pokud nemohou dát výsledky do systémové schránky nebo displejeInBrowser. Díky Ericu Bridgerovi a Gregovi Williamsovi.
+    * Oprava chyb: Při načtení dat, ERDDAP™ nyní odstraní nebo upraví globální geoprostorové atributy. Díky Charlesi Carletonovi.
+    * Oprava chyb: String2.getClassPath () Nyní správně procent-decodes třída Cesta (a to zejména na Windows, mezery v názvu souboru se objevily jako% 1) . To ovlivnilo ERDDAP™ ED Statické volání SSR.getContextAdresář () a hledání obsahu/hřeben. Díky Abe Coughlinovi.
+    * Oprava chyb: v EDDTableFromFromFoles související s getDataForDapQuery manipulace s odlišným () žádosti. Díky Ericu Bridgerovi.
+    * Oprava chyb: tabledap žádosti řádně nezvládly omezení výšky, když byl datový soubor nadmořské výšce MetryPerSourceUnit byly -1. Díky Ericu Bridgerovi.
+    * Oprava chyb: EDDTableFrom... Soubory souborů nyní správně řeší požadavky, které zahrnují =NaN a &#33;=NaN.
     
 ## Verze 1.28{#version-128} 
  (propuštěn 2010-08-27) 
 
 *    **Nové funkce:** žádné.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** žádné.
-*    **Oprava chyb:** Napravit chybu v programování (pouze v ver 1.26) které ERDDAP™ Velmi pomalu.
+*    **Oprava chyb:** Opravit chybu v programování (pouze ver 1.26) které ERDDAP™ Pomalu.
      
 
 ## Verze 1.26{#version-126} 
@@ -2446,10 +2463,10 @@ Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na L
 
 *    **Nové funkce:** žádné.
 *    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** 
-    * Od tvého \\[ tomcat \\] / obsah / erddap / setup.xml,
-        * V&lt;právní &gt;, na novém řádku níže \\[ standardní DataLicenses \\] , vložte \\[ normyKontakt \\] . \\[ normyKontakt \\] vá&lt;Adminal Email &gt; specifikováno výše v setup.xml.
-        * Odstranit&lt;tableCommonBGColor &gt; a&lt;tableHighlightBGColor &gt;.
-        * Doporučeno: Změna&lt;endBodyHtml &gt;
+    * Z tvého \\[ tomcat \\] /content/erddap/setup.xml,
+        * In&lt;Legální &gt;, na novém řádku níže \\[ standardní DataLicence \\] , vložit \\[ StandardKontakt \\] . \\[ StandardKontakt \\] odkazuje na&lt;adminEmail &gt; specifikováno výše v setup.xml.
+        * Odstranit&lt;TabulkaSpolečnáBGColor&gt; a&lt;tableHighlightBGColor&gt;.
+        * Doporučeno: Změna&lt;endBodyHtml &gt; to
 ```
             <endBodyHtml><!\\[CDATA\\[  
             <br>&nbsp;  
@@ -2462,17 +2479,17 @@ Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na L
             \\]\\]></endBodyHtml>
 ```
 
-    * Požadováno: Na tvou \\[ tomcat \\] / content / erddap / images / erddap.css a erddapAlt.css, add at the bottom:
+    * Požadované: Na tvou \\[ tomcat \\] /content/erddap/images/erddap.css a erddapAlt.css, přidat dole:
 ```
         /\\* This is used on the /info/\\[datasetID\\]/index.html pages to highlight a row or cell. \\*/  
         tr.highlightBGColor {background-color:#cceecc; }  
         td.highlightBGColor {background-color:#cceecc; }
 ```
-*    **Fixy chyb a malé změny:** 
+*    **Opravy chyb a malé změny:** 
     
-    * Oprava chyb: v některých situacích nefungovaly formuláře v některých verzích Internet Explorer. Děkuji Gregovi Williamsovi.
-    * Oprava chyb: Tlačítka Make A Graph nefungovala, pokud byl datový soubor ze vzdáleného ERDDAP .
-    * Oprava chyb: WMS Někdy to nefungovalo, když byl datový soubor ze vzdáleného zařízení. ERDDAP .
+    * Oprava chyb: v některých situacích, formy nefungovaly v některých verzích Internet Explorer. Díky moc Gregovi Williamsovi.
+    * Oprava chyb: Tlačítka Make A Graph nefungovala, pokud byl soubor ze vzdáleného ERDDAP .
+    * Oprava chyb: WMS Někdy to nefungovalo, když byl datový soubor ze vzdáleného ERDDAP .
     * Mnoho malých změn a oprav chyb.
     
 
@@ -2480,37 +2497,37 @@ Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na L
  (propuštěn 2010-08-06) 
 
 *    **Nové funkce:** 
-    * Nový [Subset webové stránky](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/index.html) použít facetované vyhledávání pro výběr podskupin datových souborů tabulek. Díky POST.
-    * Nový [Pokročilé vyhledávání](https://coastwatch.pfeg.noaa.gov/erddap/search/advanced.html) kombinuje všechny ostatní možnosti vyhledávání a přidává zeměpisnou délku, šířku a časové ohraničení. Díky Ellyn Montgomeryové. (Omlouvám se za zpoždění.) 
-    * Nový [Převést čas](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) webové stránky a služby vám umožní převést numerické časy do / z ISO řetězce krát.
-    * Nový [Převést Jednotky](https://coastwatch.pfeg.noaa.gov/erddap/convert/units.html) webové stránky a služby vám umožní převést UDUNITS do / z jednotek UCUM. Díky NOAA IOOS SOS .
-    * Pokud tabledap žádost obsahuje & jednotky ("UCUM") , názvy jednotek budou převedeny z původních jmen (obvykle UDUNITS ) do [UKUM](https://unitsofmeasure.org/ucum.html) Jména jednotek. To se týká pouze jednotek\\*názvy\\*, ne hodnoty dat. Díky NOAA IOOS SOS .
-    * Zlepšení tvorby webových stránek grafů a grafů a map:
-        * Pokud je graf mapa, existují nové Make A Graph tlačítka přiblížit / out a novou volbou klepněte na tlačítko změnit střed mapy. Díky POST.
-        * Nastavení filtru přidáno ke spodu. Díky Gregovi Williamsovi.
-        * Zabudované v pobřežních datových souborech byly aktualizovány na GSHHS v2.0. Díky POST.
-        * Mapy nyní zahrnují jezera a řeky. Díky POST. (Je mi líto, delta řeky Sacramento chybí, protože ani data z pobřeží, ani data z jezera / řeky se s tím netýkají.) 
-        * Byly aktualizovány soubory z pscoast- odvozené země / státu. Díky POST.
-        * Topography.cpt byl mírně upraven. (Promiň, jestli tě to nepříznivě ovlivní.) Díky POST.
-        * V Griddap je Make A Graph, pokud uživatel změní proměnnou, formulář je automaticky znovu odeslán tak, aby axisVariable s 'showStartAndStop vždy odráží proměnné grafu. Díky Joaquin Trinanes.
-        * Pro Png a pdf image URL:
-            * Nový & .land = _ value _, kde _ value _ může být "under" (výstavní topografie) nebo "přes" (jen ukázat batymetrii) . Není-li zadáno, nastavuje se výchozí hodnota [ drawLandMask ](/docs/server-admin/datasets#global-drawlandmask) n datasets.xml nebo setup.xml. Díky POST.
+    * Nový [Subset webové stránky](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/index.html) použít faceted vyhledávání pro výběr podskupin tabulkových souborů. Díky POST.
+    * Nový [Pokročilé vyhledávání](https://coastwatch.pfeg.noaa.gov/erddap/search/advanced.html) kombinuje všechny ostatní možnosti vyhledávání a přidává délku, šířku a časové hranice boxů. Díky Ellyn Montgomeryové. (Omlouvám se za zpoždění.) 
+    * Nový [Převést čas](https://coastwatch.pfeg.noaa.gov/erddap/convert/time.html) webová stránka a služba vám umožní převést numerické časy do / z ISO string times.
+    * Nový [Převést jednotky](https://coastwatch.pfeg.noaa.gov/erddap/convert/units.html) webová stránka a služba vám umožní převést UDUNITS do/z jednotek UCUM. Díky NOAA IOOS SOS .
+    * Pokud a tabledap požadavek obsahuje & jednotky ("UCUM") , názvy jednotek budou převedeny z původních jmen (obvykle UDUNITS ) až [UCUM](https://unitsofmeasure.org/ucum.html) jména jednotek. To ovlivňuje pouze jednotky.\\*názvy\\*, nikoli hodnoty dat. Díky NOAA IOOS SOS .
+    * Zlepšení tvorby grafických webových stránek a grafů a map:
+        * Je-li graf mapou, jsou zde nová tlačítka Make A Graph pro přiblížení/oddálení a nová volba pro změnu středu mapy. Díky POST.
+        * Nastavení filtru přidáno v blízkosti dna. Díky Gregovi Williamsovi.
+        * Vestavěné soubory údajů o pobřeží byly aktualizovány na GSHHS v2.0. Díky POST.
+        * Mapy nyní zahrnují jezera a řeky. Díky POST. (Promiňte, Sacramento River Delta chybí, protože se s tím nevypořádají ani údaje o pobřeží, ani údaje o jezeru/řece.) 
+        * Vestavěné v národních/státních souborech odvozených z pscoastu byly aktualizovány. Díky POST.
+        * Topography.cpt byl mírně upraven. (Promiň, jestli tě to nepříznivě ovlivňuje.) Díky POST.
+        * V griddap je Make A Graph, pokud uživatel změní proměnnou, formulář se automaticky resetuje tak, aby axisVariable s' showStartAndStop vždy odráží proměnné grafu. Díky Joaquinu Trinanesovi.
+        * URL obrázků png a pdf:
+            * Nová &.land=_value_, kde _value_ může být "pod" (show topografie) nebo "přes" (Jen ukázat koupelnu) . Není-li uvedeno, je výchozí hodnota nastavena [ drawLandMask ](/docs/server-admin/datasets#global-drawlandmask) v datasets.xml nebo nastavení.xml. Díky POST.
             * Novinka: řádky v legendě, které jsou příliš dlouhé, jsou automaticky rozděleny do více řádků. Díky POST.
-        * Pro Png image URL:
-            * New & .legend = _ value _, where _ value _ can be "Bottom" (výchozí) "Vypnout" nebo "Pouze". To vám umožní zahrnout legendu, vyloučit legendu, nebo získat pouze legendu. Díky Care Wilsonové.
-            * Nový & .trim = _ n Pixels _ leaves a border of nPixels (např. 10) v dolní části obrázku. Aplikuje se po .legend = Off. Díky Care Wilsonové.
-            * Nová & .size = _ width _ | _ výška _ umožňuje určit šířku a výšku obrázku v pixelech.
-    * Nové formáty výstupních souborů:
-        * .csvp a .tsv p -- jako .csv a .tsv , ale s " (_ jednotky _) "připojen ke jménům sloupců na první řádku.
-        * .odvTxt -- vytvoří soubor .txt, který zjednoduší získávání dat do [Údaje o oceánu Pohled (ODV) ](https://odv.awi.de/) .
-        * .esriCsv -- vytvoří soubor .csv vhodný pro import v ESRI ArcGIS . (pouze tabulky souborů údajů) Díky Jan Masonovi, Jeffovi de La Beaujardiere, a NOAA IOOS SOS Projekt.
-    * Zdokonalení GUI [Akreditace](https://coastwatch.pfeg.noaa.gov/erddap/categorize/index.html) webové stránky. Také kategorizovat hodnoty (ostatní než instituce) Teď jsou všichni malí. Žádosti o neomezené případy jsou přijímány (přesměrováno) pro zpětnou kompatibilitu. Díky Royi Mendelssohnovi.
+        * URL obrázků png:
+            * Nová &.legend=_value_, kde _value_ může být "Bottom" (výchozí) "Off" nebo "Only." To vám umožní zahrnout legendu, vyloučit legendu, nebo získat pouze legendu. Díky Cara Wilsonové.
+            * Nový &.trim=_n Pixels_ opouští hranici nPixels (např. 10) na spodní části obrázku. Aplikuje se po .legend=Off. Díky Cara Wilsonové.
+            * Nová &.size=_šířka_ | _výška_ umožňuje zadat šířku a výšku obrázku v pixelech.
+    * Nové výstupní formáty souborů:
+        * .csvp a .tsv p -- jako .csv a .tsv , ale s " (_jednotky_) "Přiložen k jménům sloupců na prvním řádku.
+        * .odvTxt -- vytvoří soubor .txt, který zjednodušuje získání dat do [Údaje o oceánu Pohled (ODV) ](https://odv.awi.de/) .
+        * .esriCsv -- dělá soubor .csv vhodný pro import v ESRI ArcGIS . (Pouze tabulární data) Díky Janu Masonovi, Jeffovi de La Beaujardierovi a NOAA IOOS SOS projekt.
+    * Zlepšení GUI [Kategorie](https://coastwatch.pfeg.noaa.gov/erddap/categorize/index.html) webové stránky. Také kategorizační hodnoty (jiné než instituce) jsou teď všichni malí. Žádosti o nelehčí případy jsou přijímány (přesměrováno) pro zpětnou kompatibilitu. Díky Royi Mendelssohnovi.
     * Chybové zprávy jsou nyní ještě kratší a orientovanější na uživatele. Díky Gregovi Williamsovi.
-    * Vnitřní změna, která značně snižuje ERDDAP základní využití paměti.
+    * Vnitřní změna, která výrazně snižuje ERDDAP Je to základní využití paměti.
     * Mnoho nových funkcí, které jsou relevantní pouze pro projekt POST.
-*    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** Je tu spousta změn. Promiň. Ale každý z nich přináší nějaké dobré výhody.
-    * Velké změny v systému GenetateDatasetXml - nyní často klade více otázek (viz příslušný [datový soubor Typy](/docs/server-admin/datasets#detailed-descriptions-of-dataset-types) informace) a nyní vždy generuje v podstatě ready- to- use obsah pro datasets.xml . Stále jste zodpovědní za nastavení, takže byste měli stále zkontrolovat datasets.xml obsah před použitím. Lidské vložení úsilí do projektu bude vždy lepší než počítačový program. Díky projektu UAF.
-    * POŽADOVANÉ: V setup.xml, musíte revidovat WMS sekce. Nyní by měla obsahovat tyto značky (ale klidně změňte hodnoty.) :
+*    **Věci ERDDAP™ Administrátoři potřebují vědět a udělat:** Je tu spousta změn. Promiň. Ale každý z nich přináší nějaké pěkné výhody.
+    * Velké změny na GenerateDatasetXml -- to nyní často klade více otázek (viz relevantní [Soubor údajů Typy](/docs/server-admin/datasets#detailed-descriptions-of-dataset-types) informace) a nyní vždy generuje v podstatě připravený obsah pro datasets.xml . Jste stále zodpovědný za nastavení, takže byste měli stále přezkoumat datasets.xml obsah před použitím. Lidská snaha do projektu bude vždy lepší než počítačový program. Díky projektu UAF.
+    * Požadované: V setup.xml, musíte revidovat WMS sekce. Nyní by měla obsahovat tyto značky (ale neváhejte změnit hodnoty) :
 ```
         <!-- These default accessConstraints, fees, and keywords are used 
         by the SOS, WCS, and WMS services.
@@ -2557,7 +2574,7 @@ Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na L
         <wmsSampleBBox>0,-75,360,75</wmsSampleBBox>
 ```
 
-    * POŽADOVANÉ: V setup.xml zkopírujte a vložte tento nový návrh&lt;startHeadHtml &gt; pro nahrazení vaší staré verze. Ale klidně udělejte změny pro své preference.
+    * Požadované: V setup.xml, kopírovat a vložit tento nový navrhl&lt;startHeadHtml &gt; nahradit svou starou verzi. Ale neváhejte udělat změny pro vaše preference.
 ```
         <!-- startHeadHtml has the start of the HTML document and the 
         'head' tags (starting at "<!DOCTYPE>", but not including 
@@ -2617,9 +2634,9 @@ Pokud ERDDAP™ ve Windows je vaše veřejnost ERDDAP™ , Zvažte přechod na L
         <tableHighlightBGColor>#cceecc</tableHighlightBGColor>
 ```
 
-Díky POST, Hans Vedo a Rick Blair.
-    * POŽADOVANÉ: V setup.xml, in&lt;startBodyHtml &gt;, změnit&lt;tělo &gt; tag to be just&lt;tělo &gt;, protože styl je nyní nastavena erddap.cs.
-    * POŽADOVANÉ: V setup.xml změňte na&lt;endBodyHtml &gt; (ale změnit e-mailovou adresu na vaši e-mailovou adresu a neváhejte dělat jiné změny) :
+Díky POST, Hansi Vedo a Ricku Blairovi.
+    * Požadované: In setup.xml, in&lt;spustitBodyHtml &gt;, změnit&lt;karosérie &gt; značka just&lt;body &gt;, protože styl je nyní nastaven erddap.css.
+    * Požadované: V nastavení.xml, změna na toto&lt;endBodyHtml&gt; (ale změnit e-mailovou adresu na vaši e-mailovou adresu a neváhejte provést další změny) :
 ```
         <!-- The end of the body of the HTML code for all HTML web pages
           (with "</body>" at the end). 
@@ -2649,7 +2666,7 @@ Díky POST, Hans Vedo a Rick Blair.
         \\]\\]></endBodyHtml>
 ```
 
-    * VYSOKÉ DOPORUČENO: V setup.xml, doporučený&lt;ShortDescriptionHtml &gt; je nyní
+    * VYŠETŘENO: V setup.xml se doporučuje&lt;ShortDescriptionHtml&gt; je nyní
 ```
         <theShortDescriptionHtml><!\\[CDATA\\[ 
         <h1>ERDDAP</h1>
@@ -2664,30 +2681,30 @@ Díky POST, Hans Vedo a Rick Blair.
         \\]\\]></theShortDescriptionHtml>
 ```
 
-Klidně to změňte, zejména poslední věta v prvním odstavci.
-    * V setup.xml, emailEvelthingTo a emailDailDailyReport Nyní můžete komma- oddělené seznamy e-mailových adres. První e-mail Všechno Chcete-li je speciální, např., předplatné EDDXxxxxxFromErddap soubory dat použít tuto e-mailovou adresu. Díky Johnu Maurerovi.
-    * Emailové chyby jsou nyní přihlášeny do \\[ bigParentDirectory \\] / logs / emailLogailLogabr -MM-DD.txt soubor.
-    * V setup.xml je nový, volitelný parametr pro nastavení vlastností e-mailového účtu (obvykle hned po&lt;emailHeslo &gt;):
+Neváhejte to změnit, zejména poslední věta v prvním odstavci.
+    * In setup.xml, emailEverythingTo a emailDailyReport Chcete-li nyní mohou být čárky oddělené seznamy e-mailových adres. První e-mailVšechno To je speciální, např. předplatné EDDXxxxFromErddap soubory používají tuto e-mailovou adresu. Díky Johnu Maurerovi.
+    * E-mailové chyby jsou nyní přihlášeny k \\[ velkýRodič rodičů \\] /logs/emailLogRRRR-MM-DD.txt file.
+    * V setup.xml je nový, volitelný parametr pro nastavení vlastnosti e-mailového účtu (obvykle hned po&lt;EmailPassword&gt;:
 ```
           <emailProperties>_propertyName1_|_propertyValue1_|_propertyName2_| _propertyValue2_|...</emailProperties>  
         For example, gmail accounts need  
           <emailProperties>mail.smtp.starttls.enable|true</emailProperties>  
 ```
 
-Výchozí hodnota není nic. Díky Richovi Signellovi.
-    * POŽADOVANÉ: Pokud používáte EDDTableCopy nebo EDDGrid Kopírovat, musíte DELETE všechny \\[ bigParentDirectory \\] / kopírovat / adresáře a soubory, které obsahují "xh" v adresáři nebo názvy souborů po zastavení starého ERDDAP™ a před zahájením nového ERDDAP™ Takže ty soubory budou překopírovány. Je mi to velmi líto, ale bylo důležité provést změnu a doufejme, že to ovlivní několik administrátorů a několik souborů.
-V Linuxu můžete tyto soubory najít pomocí cd \\[ bigParentDirectory \\] / kopie
-Najít.\\*xh\\*  
-Ve Windows můžete tyto soubory najít s, Start | Hledat
+Výchozí hodnota není nic. Díky Richi Signellovi.
+    * Požadované: Pokud používáte EDDtableCopy nebo EDDGrid Rozumím, musíte vypnout všechny \\[ velkýRodič rodičů \\] /kopie/ adresáře a soubory, které obsahují "xh" v adresáři nebo názvy souborů po zastavení staré ERDDAP™ a před spuštěním nového ERDDAP™ Takže ty soubory budou znovu zkopírovány. Je mi to velmi líto, ale bylo důležité provést změnu a doufejme, že se to týká několika admin a několika souborů.
+V Linuxu můžete najít tyto soubory s, cd \\[ velkýRodič rodičů \\] /kopie
+najít .\\*xh\\*  
+Ve Windows můžete najít tyto soubory s, Start | Hledat
 Co chcete hledat: Dokumenty
-Celý název souboru nebo jeho část: xh
-Podívejte se na: Procházet - &gt; \\[ bigParentDirectory \\] / kopie
-Klikněte na 'Search'
-^ A vybrat všechny
-Del smazat všechny
-    * POŽADOVANÉ: V datasets.xml , pro soubory dat EDDTableFromDatabase, pro proměnné data a časové razítko, změnit data Od roku 1970- 01- 01T00: 00: 00Z zadejte dvojnásobek a jednotky na sekundy. Žádáme, abyste uložili data s časovým razítkem do databáze.\\*s\\*Časovou zónu. Bez informací o časové zóně, dotazy, které ERDDAP™ odešle do databáze a výsledky, které ERDDAP™ dostane z databáze přes JDBC jsou nejednoznačné a pravděpodobně se mýlí. Zkoušeli jsme to, ale nenašli jsme žádný spolehlivý způsob, jak se vypořádat s daty "timestamp without timezone". Myslíme si, že je to dobrá praxe. Koneckonců, "časové razítko bez časového pásma" data mají implicitní časové pásmo. I když je skvělé, že časové pásmo je zřejmé pro admin databáze, má smysl specifikovat ji výslovně tak, aby jiný software mohl správně komunikovat s vaší databází. Díky / promiň Michael Urzen.
-    * VYSOKÉ DOPORUČENO: datasets.xml , Chcete-li povolit .subset webové stránky pro facetované vyhledávání vašich tabulkových souborů dat, musíte přidat [&lt; subsetVariables &gt;] (/ docs / server- admin / datasets # subsetproměnné) globální atributy datového souboru.
-    * DOPORUČENÉ: datasets.xml , pokud máte datový soubor datasetID = "pmelGtsppp", prosím, změňte to na
+Název souboru nebo jeho část: xh
+Podívejte se do: Procházet - &gt; \\[ velkýRodič rodičů \\] /kopie
+Klikněte na 'Hledat'
+^A vybrat všechny
+Del je všechny vymaže.
+    * Požadované: datasets.xml , pro soubory EDDTableFromDatabase, pro proměnné datumu a času změnit data Napiště na dvojnásobek a jednotky na sekundy od 1970-01-01T00:00:00Z. VYŽÁDÁME, abyste v databázi uložili data časového razítka\\*s\\*Časové pásmo. Bez informací o časové zóně, dotazy, které ERDDAP™ odešle do databáze a výsledky, které ERDDAP™ Dostat se z databáze přes JDBC jsou nejednoznačné a pravděpodobně se mýlí. Snažili jsme se, ale nenašli jsme spolehlivý způsob, jak se vypořádat s daty "časové razítko bez časového pásma." Stejně si myslíme, že je to dobrá praxe. Koneckonců, data "časového razítka bez časového pásma" mají implikované časové pásmo. I když je skvělé, že časové pásmo je zřejmé pro admin databáze, to dává smysl výslovně určit, aby jiný software může správně komunikovat s vaší databází. Díky/promiňte Michaele Urzene.
+    * VYŠETŘENO: datasets.xml , Chcete-li povolit .subset webové stránky pro faceted vyhledávání vašich tabulkových souborů, musíte přidat [&lt; subsetVariables &gt;] (/docs/server-admin/datasets#subsetvariables) globální atributy datového souboru.
+    * DOPORUČUJE: datasets.xml , pokud máte datový soubor s datasetID = "pmelGtsppp," prosím, změň to na
 ```
           <dataset type="EDDTableFromDapSequence" datasetID="pmelGtsppp" active="false">  
         Whether or not you had that dataset, feel free to add this new GTSPP dataset:  
@@ -2695,45 +2712,45 @@ Del smazat všechny
             <sourceUrl>https://coastwatch.pfeg.noaa.gov/erddap/tabledap/erdGtsppBest</sourceUrl>  
           </dataset>
 ```
-    * DOPORUČENÉ: datasets.xml , Existují nové platné možnosti pro [&lt;cdm\\ _ data\\ _ type & gt;] (/ docs / server-admin / datasets # cdm _ data _ type) globální atribut, takže byste měli přezkoumat / změnit hodnotu pro soubory dat.
-    * V datasets.xml , nový [&lt;sourceNeedsExpandedFP\\ _ EQ & gt;] (/ docs / server-admin / datasets # sourceneedsexpandedfp _ eq) je užitečné, pokud zdrojový server nemanipuluje s proměnnými _\\ = _ value _ tests správně (vzhledem k [obecné potíže s testováním rovnosti čísel pohyblivých bodů](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/) ) . sourceNeedsExpandedFP\\ _ EQ je nastaveno na true ve výchozím nastavení (nejbezpečnější nastavení) Takže nemusíš dělat žádné změny.
+    * DOPORUČUJE: datasets.xml , existují nové platné možnosti pro [&lt;cdm\\_data\\_type&gt;] (/docs/server-admin/datasets#cdm_data_type) globální atribut, takže byste měli přezkoumat/změnit hodnotu pro vaše soubory dat.
+    * In datasets.xml , nový [&lt;zdrojNeedsExpandedFP\\_EQ&gt;] (/docs/server-admin/datasets#sourceneedsexpandedfp_eq) je užitečné, pokud zdrojový server trvale nezvládá &_variable_\\=_value_ testy správně (kvůli [celková obtížnost testování rovnosti čísel plovoucích bodů](https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/) ) . zdrojNeedsExpandedFP\\_EQ je nastavena na true defaultně (nejbezpečnější nastavení) Takže nemusíte dělat žádné změny.
     * Nový [EDDTableFromAsciiFiles](/docs/server-admin/datasets#eddtablefromasciifiles) . Díky Jerrymu Yun Panovi.
-    * Nový [Soubory EDDTableFromThreddsName](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Díky Royi Mendelssohnovi.
+    * Nový [EDDTableFromThreddsFiles](/docs/server-admin/datasets#eddtablefromthreddsfiles) . Díky Royi Mendelssohnovi.
     * Změny [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) umožňuje použití s širší škálou souborů.
-    * EDDTableFromBMDE byl vyřazen. Již neexistují žádné aktivní, vhodné zdroje údajů.
-    * V GenetateDatasetXml, nový EDDGrid FromThredds Katalog sklízí celý katalog HITDDS (nebo podmnožinu) a generuje datasets.xml obsah. Díky projektu UAF.
-    * GeneteDatasets Xml a DasDds nyní také dát své výsledky v \\[ bigParentDirectory \\] / logs / log.txt Díky Richovi Signellovi a Charlesovi Carletonovi.
+    * EDDTableFromBMDE byl zakázán. Už neexistují žádné aktivní, vhodné zdroje dat.
+    * V GenerateDatasetXml, nový EDDGrid FromThredds Katalog sklízí celý katalog THREDDS (nebo podmnožina) a generuje datasets.xml obsah. Díky projektu UAF.
+    * Generovat soubory dat Xml a DasDds nyní také dát své výsledky v \\[ velkýRodič rodičů \\] /logs/log.txt. Díky Richi Signellovi a Charlesi Carletonovi.
     * Mnoho vylepšení přihlašovacího systému. Díky POST.
-*    **Věci ERDDAP™ Programátoři Musím vědět a udělat:** 
-    * V adresáři / WEB-INF / lib / došlo ke změnám. Změňte prosím nastavení javac a java classpath.
-    * Je tu nový \\[ Vaše Url \\] / erddap / verze služby pro určení verze ERDDAP . Reakce je text, např., ERDDAP \\ _ version = 1.24 Pokud dostanete HTTP 404 Not- Nalezeno chybové zprávy, léčit ERDDAP™ jako verze 1.22 nebo nižší. Díky POST.
-*    **Malé změny a chyby:** 
+*    **Věci ERDDAP™ Programátoři Potřeba vědět a udělat:** 
+    * V adresáři /WEB-INF/lib/ došlo ke změnám. Prosím, změňte nastavení java a java třídypath.
+    * Je tu nový. \\[ Vaše Url \\] /erddap/version service pro určení verze ERDDAP . Odpověď je text, např. ERDDAP \\_version=1.24 Pokud dostanete chybovou zprávu HTTP 404 Not- Found ERDDAP™ jako verze 1.22 nebo nižší. Díky POST.
+*    **Malé změny a opravy chyb:** 
     
     * EDDTableFrom Sos změny:
-        * Upustila podpora pro čtení IOOS SOS XML odpovědi.
-        * Přidána podpora pro čtení IOOS SOS text / csv. (Takže NOS SOS servery nejsou momentálně podporovány.) 
-        * Udělal spoustu změn souvisejících s IOOS SOS detaily serveru.
-        * Přidaná podpora pro dotazy BOX pro IOOS SOS a OOSTethys   SOS servery. Tyto změny vedou k velké rychlosti pro příslušné požadavky na údaje. Díky IOOS SOS .
+        * Upuštěná podpora pro čtení IOOS SOS XML odpovědi.
+        * Přidána podpora pro čtení IOOS SOS text/csv. (Takže NOS SOS servery momentálně nejsou podporovány.) 
+        * Udělal mnoho změn souvisejících s IOOS SOS Detaily serveru.
+        * Přidána podpora BBOX dotazů pro IOOS SOS a OOSTethys   SOS servery. Tyto změny vedou k velké rychlosti pro příslušné žádosti o údaje. Díky IOOS SOS .
     * Text v .mat Tabulkové datové soubory jsou nyní správně uloženy. Díky Royi Mendelssohnovi.
     *    WMS 
-        *    OpenLayers je nyní svázaný s ERDDAP™ pro použití WMS webové stránky. To řeší problém způsobený OpenLayers před několika měsíci se změnil a zabraňuje budoucím problémům.
-        * Ve WMS   GetCapabilities odpověď,&lt;OnlineResource &gt; hodnota je nyní URL WMS Servis. Díky Charltonu Galvarinovi.
-        * Legenda se zobrazí na WMS webová stránka pro zobrazení barevného panelu. Díky Emiliovi Mayorgovi.
-    *    EDDGrid Konstruktor Aggregates ExistingDimension měl problémy, pokud zdroj osy Hodnoty se nerovnaly jejich cíli. Hodnoty, např., pokud zdroj čas byl něco jiného než "seconds since 1970-01-01" . Díky Todd Spindler.
-    * In TableWriterGeoJson, the overface ',' after bbox \\[ ... \\] byla odstraněna. Díky Gregovi Williamsovi.
+        *    OpenLayers je nyní spojena s ERDDAP™ pro použití na WMS webové stránky. Tím se vyřeší problém způsobený, když OpenLayers změnil před několika měsíci a zabraňuje budoucím problémům.
+        * V WMS   GetCapabilities odpověď,&lt;OnlineResource&gt; hodnota je nyní URL WMS služba. Díky Charltonu Galvarinovi.
+        * Legenda je zobrazena na WMS webové stránky pro zobrazení barevné lišty. Díky Emiliovi starostovi.
+    *    EDDGrid AgregátExisingRozdělovací konstruktér měl problémy, pokud zdroj osy Hodnoty se nerovnaly jejich cíli. Hodnoty, např. pokud zdrojový čas byl něco jiného než "seconds since 1970-01-01" . Díky Todd Spindler.
+    * V tabulceWriterGeoJson, přebytek ',' za bbox \\[ ... \\] byl odstraněn. Díky Gregovi Williamsovi.
     * Mnoho malých změn a oprav chyb.
     
 ## Verze 1.22{#version-122} 
  (propuštěn 2009-07-05) 
 
-* Chyba SlideSorter zavedená v 1.20 je opravena.
+* Chyba SlideSorter zavedená v 1.20 je pevná.
 * Chyba OBIS zavedená v 1.20 je opravena.
-* Odkazy na Jasonovy datové soubory na stránce obrázky / gadgets / GoogleGadgets byly odstraněny.
+* Odkazy na Jason soubory souborů na obrazech / gadgets / GoogleGadgets stránky byly odstraněny.
      
 ## Verze 1.20{#version-120} 
- (propuštěn 2009- 07- 02) 
+ (propuštěn 2009-07-02) 
 
-*    ERDDAP™ administrátoři, prosím přidejte toto do souboru setup.xml:
+*    ERDDAP™ Administrátoři, přidejte prosím toto do souboru setup.xml:
 ```
     <!-- If you want to restrict access to some datasets, you need to 
     specify the method used for logging on (authentication). See the info 
@@ -2775,75 +2792,75 @@ Del smazat všechny
     <unusualActivity>10000</unusualActivity>
 ```
 
-* Nové typy datových souborů [ EDDGrid Kopírovat](/docs/server-admin/datasets#eddgridcopy) a [EDDTableCopy](/docs/server-admin/datasets#eddtablecopy) vytvořit a udržovat místní kopii jiného EDDGrid nebo data EDDTable datového souboru a slouží data z lokální kopie. Tyto jsou velmi snadné a velmi účinné **řešení některých největších problémů s obsluhou dat ze vzdálených zdrojů dat:** 
+* Nové typy souborů údajů [ EDDGrid Kopírovat](/docs/server-admin/datasets#eddgridcopy) a [EDDtableCopy](/docs/server-admin/datasets#eddtablecopy) vytvořit a udržovat místní kopii jiného EDDGrid nebo data datového souboru EDDTable a slouží datům z místní kopie. Ty jsou velmi snadné použití a velmi efektivní **řešení některých největších problémů se službou dat ze vzdálených zdrojů dat:** 
     
     * Přístup k datům ze vzdáleného zdroje dat může být pomalý (z různých důvodů) .
-    * Vzdálený datový soubor je někdy nedostupný (opět, z různých důvodů) .
-    * Spoléhání na jeden zdroj pro data není měřítko dobře (např., když mnoho uživatelů a mnoho ERDDAP s použití) .
+    * Vzdálený datový soubor je někdy nedostupný (znovu, z různých důvodů) .
+    * Spoléhání na jeden zdroj pro data se neměří dobře (např. když je mnoho uživatelů a mnoho uživatelů ERDDAP Využijte ho.) .
     
-Navíc, místní kopie je záloha originálu, což je užitečné v případě, že se něco stane originálu.
+Navíc místní kopie je záloha originálu, což je užitečné pro případ, že by se něco stalo s originálem.
     
-Na vytváření místní kopie datového souboru není nic nového. Co je tu nového je, že tyto třídy to dělají\\*snadné\\*vytvořit a\\*udržovat\\*místní kopie dat z\\*odrůda\\*typu vzdálených zdrojů dat a\\*přidat metadata\\*při kopírování dat.
+Na vytvoření místní kopie souboru není nic nového. Co je tady nového je, že tyto třídy to dělají\\*snadné\\*vytvořit a\\*udržovat\\*místní kopie údajů z\\*odrůda\\*typů vzdálených zdrojů dat a\\*přidat metadata\\*při kopírování dat.
     
-Tyto typy datových souborů jsou součástí kompletního souboru prvků, které zjednodušují tvorbu [mřížky / klastry / federace ERDDAP s](/docs/server-admin/scaling) zvládat velmi těžká zatížení (např. v datovém centru) .
+Tyto datové typy jsou součástí kompletního souboru funkcí, které zjednodušují tvorbu [mřížky/klastry/federace ERDDAP án](/docs/server-admin/scaling) zvládnout velmi těžké zatížení (např. v datovém centru) .
     
-* Nový typ datového souboru [EDDTableFromDatabase](/docs/server-admin/datasets#eddtablefromdatabase) získává data z místní nebo vzdálené tabulky databáze.
-*    ERDDAP™ Teď má [bezpečnost](/docs/server-admin/additional-information#security) systém, který podporuje autentizaci (umožňuje uživatelům přihlásit se) a povolení (poskytování přístupu k určitým soukromým datovým systémům) .
-* Jsou. [dva, nové, velitelské nástroje](/docs/server-admin/datasets#tools) pomoci ERDDAP™ administrátoři generují XML pro nový datový soubor v datasets.xml :
-    * GeneteDatasets Xml může generovat hrubý návrh souboru dat XML pro téměř jakýkoli typ souborů dat.
-    * DasDds vám pomáhá opakovaně testovat a vylepšovat XML pro datový soubor. ERDDAP GeneteDatasety Byly odstraněny webové stránky Xml. Z bezpečnostních důvodů podporovali pouze několik typů datových souborů. Nové příkazové řádky jsou lepším řešením.
-* Nový [stavová stránka](/docs/server-admin/additional-information#status-page) Nech někoho (ale zejména správci) zobrazit stav ERDDAP™ z jakéhokoliv prohlížeče jít do \\[ baseurl \\]  /erddap/status.html .
-* Tabledap nyní podporuje [serverboard funkce](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#functions) :
-    * & odlišné () odstraňuje duplicitní řádky z tabulky odezvy,
-    * & orderBy  (...) umožňuje určit, jak by měla být tabulka odezvy tříděna,
-    * & orderByMax  (...) umožňuje určit, jak by měla být tabulka odpovědí roztříděna a odstraní všechny řádky s výjimkou řádků s maximálními hodnotami v posledním zadaném sloupci. To lze použít například k získání posledních dostupných dat pro každou stanici.
-* Tabulární soubory dat mohou nyní obsahovat další proměnné dateTime, které nejsou pojmenovány "time" . Tyto proměnné jsou uznávány jejich metadaty "jednotek", které musí obsahovat " since "   (pro číselné datum Časy) nebo "rr" nebo "rr" (pro formátované String dateTimes) . Ale prosím, stále použijte destinationName   "time" pro hlavní datum Časová proměnná.
-*    ERDDAP™ Nyní generuje [sitemap.xml](/docs/server-admin/additional-information#sitemapxml) soubor, který říká vyhledávačům, že ERDDAP Stačí se plazit každý měsíc. ERDDAP™ Administrátoři, prosím následujte [Tyto pokyny](/docs/server-admin/additional-information#sitemapxml) informovat vyhledávače o novém souboru sitemap.xml.
-*    ERDDAP Chybové zprávy jsou nyní mnohem kratší a orientované na klienty (neprogramátoři) . Díky Gregovi Williamsovi.
-* [&lt;requestBlacklist &gt;] (/ docs / server- admin / datasets # requestblacklist) Nyní také podporuje IP adresy, kde bylo poslední číslo nahrazeno\\ *.
-* Žádosti .json a .geoJson soubory mohou nyní obsahovat volitelné [jsonp](https://niryariv.wordpress.com/2009/05/05/jsonp-quickly/) požadavek přidáním "& .json p = _ functionName _ "až do konce dotazu. V podstatě to jen říká, ERDDAP™ přidat "_ functionName _ ("na začátek reakce a") "až do konce odpovědi. Pokud původně nebyl žádný dotaz, nechte" & "ve svém dotazu. Díky Gregovi Williamsovi.
+* Nový typ souboru [EDDtableFromDatabase](/docs/server-admin/datasets#eddtablefromdatabase) získává data z místní nebo vzdálené tabulky databáze.
+*    ERDDAP™ Teď má [bezpečnost](/docs/server-admin/additional-information#security) systém podporující ověřování (možnost přihlášení uživatelů) a povolení (umožnit jim přístup k určitým soukromým souborům údajů) .
+* Jsou. [dva, nové nástroje příkazového řádku](/docs/server-admin/datasets#tools) pomoct ERDDAP™ Správci generují XML pro nový datový soubor v datasets.xml :
+    * Generovat soubory dat Xml může generovat hrubý návrh souboru XML pro téměř jakýkoli typ souborů dat.
+    * DasDds vám pomáhá opakovaně testovat a vylepšovat XML pro datový soubor. ERDDAP 's GenerateDatasets Xml webové stránky byly odstraněny. Z bezpečnostních důvodů podporovali pouze několik typů souborů údajů. Nové nástroje pro příkazovou řadu jsou lepším řešením.
+* Nový [stavová stránka](/docs/server-admin/additional-information#status-page) Nechá každého (ale zejména správci) Zobrazit stav ERDDAP™ z jakéhokoliv prohlížeče tím, že jde do \\[ baseUrl \\]  /erddap/status.html .
+* Tabledap nyní podporuje [funkce na straně serveru](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#functions) :
+    * & Distinct () odstraňuje z tabulky odezvy duplikát řádků,
+    * & orderBy  (...) vám umožní určit, jak má být tabulka odpovědí seřazena,
+    * & orderByMax  (...) Umožní vám určit, jak má být tabulka odezvy seřazena a odstraní všechny řádky kromě řádků s maximálními hodnotami v posledním zadaném sloupci. To lze například použít pro získání posledních dostupných údajů pro každou stanici.
+* Tabulkové soubory nyní mohou obsahovat další proměnné DateTime, které nejsou pojmenovány "time" . Tyto proměnné jsou rozpoznány jejich metadaty "jednotek," které musí obsahovat " since "   (pro číselné datum Časy) nebo "yyy" nebo "YY" (pro formátované datum strun) . Ale použij prosím destinationName   "time" pro hlavní datum Časová proměnná.
+*    ERDDAP™ Nyní generuje a [sitemap.xml](/docs/server-admin/additional-information#sitemapxml) soubor, který říká vyhledávače, že váš ERDDAP Stačí se plazit každý měsíc. ERDDAP™ Správci, prosím následujte [Tyto pokyny](/docs/server-admin/additional-information#sitemapxml) informovat vyhledávače o novém souboru sitemap.xml.
+*    ERDDAP 's chybové zprávy jsou nyní mnohem kratší a zaměřené na klienty (neprogramátoři) . Díky Gregovi Williamsovi.
+* [&lt;requestBlacklist&gt;] (/docs/server-admin/datasets#requestblacklist) nyní také podporuje IP adresy, kde bylo poslední číslo nahrazeno \\*.
+* Žádosti o .json a .geoJson soubory mohou nyní zahrnovat volitelné [jsonp](https://niryariv.wordpress.com/2009/05/05/jsonp-quickly/) žádost přidáním "& .json p=_funkceName_" na konec dotazu. V podstatě to říká ERDDAP™ přidat "_funkceName_ ("na začátek odpovědi a ") "na konec odpovědi. Pokud původně nebyl dotaz, vynechte "&" v dotazu. Díky Gregovi Williamsovi.
 * Mnoho nových statistik bylo přidáno do [Denní zpráva](/docs/server-admin/additional-information#daily-report) .
-* Na webových stránkách se seznamy datových souborů, instituce a ID jsou nyní na pravé straně. To posune předplatné a další užitečné sloupce do pohledu na úzkých počítačových obrazovek.
-* Na všech webových stránkách, název stránky (na základě&lt;název &gt; v&lt;startHeadHtml &gt; který definujete v setup.xml) je upraven tak, aby obsahoval lepší popis webové stránky (například zahrnutím názvu a instituce stávajícího souboru údajů) .
-* Informace Xmx jsou nyní zahrnuty v paměťových informacích vytištěných v log.txt, Daily Report a na status.html. Díky Ellyn Montgomeryové.
-*    ERDDAP™ má dodatečnou, všeobecnou ochranu proti všem chybám (Např., Chyba v paměti) . Díky Charlesovi Carletonovi.
-* Zlepšení řešení chyb v případě, že odpověď již byla přijata.
-* ZLEPŠENO: EDDTableFromFiles a EDDGrid FromFiles nyní stačí povolit&lt;metadataFrom &gt; první nebo poslední. Předposlední verze již není podporována. A první a poslední jsou nyní založeny na posledním ModifiedTime.
-* Oprava chyb: v EDDTableFrom SOS , neplatné informace pro jednu stanici hodil výjimku a způsobil, že celý datový soubor byl zamítnut. Tyhle stanice jsou ignorovány. (a chybová zpráva je přihlášena do log.txt) . Díky Rickovi Blairovi.
+* Na webových stránkách se seznamy souborů dat, instituce a ID jsou nyní na krajní pravici. To posune předplatné a další užitečné sloupce do zobrazení na úzkých počítačových obrazovkách.
+* Na všech webových stránkách je název stránky (na základě&lt;Název &gt; v&lt;startHeadHtml&gt;, který definujete v setup.xml) je upraven tak, aby obsahoval lepší popis webové stránky (Například zahrnutím názvu a instituce aktuálního datového souboru) .
+* Informace o Xmx jsou nyní součástí informací o paměti vytištěných v log.txt, Daily Report a na status.html. Díky Ellyn Montgomeryové.
+*    ERDDAP™ má dodatečnou univerzální ochranu proti všem chybám (např. OutOfMemoryError) . Díky Charlesi Carletonovi.
+* Zlepšení manipulace s chybami, pokud odpověď již byla přijata.
+* ZLEPŠENÉ: EDDTableFromFoles a EDDGrid FromFiles nyní stačí povolit&lt;metadataOd &gt; první nebo poslední. Předposlední není nadále podporován. A první a poslední jsou nyní založeny na posledním zkráceném čase souborů.
+* Oprava chyb: v EDDTableFrom SOS , neplatné informace pro jednu stanici hodil výjimku a způsobil, že celý datový soubor byl zamítnut. Ty stanice jsou ignorovány. (a chybová zpráva je logována pro log.txt) . Díky Ricku Blairovi.
      
 
 ## Verze 1.18{#version-118} 
  (propuštěn 2009-04-08) 
 
-* Oprava chyb: Od 1.14, EDDTable Data Access Form a Make A Graph webové stránky se řádně vypořádat s citovanými omezeními.
-* Oprava chyb: Start v 1.14, EDDTableFromDapSequence nezvládal správně časová omezení, pokud zdrojové časové jednotky nebyly "sekundy od roku 1970- 01- 01T00: 00".
+* Oprava chyb: Začínáme v 1,14, formulář pro přístup k datům a vytvořit webovou stránku grafu, která se řádně nezabývala citovanými omezeními.
+* Oprava chyb: Od 1.14, EDDTableFromDapSequence nezvládla časová omezení správně, pokud zdrojové časové jednotky nebyly "sekundy od 1970-01-01T00:00:00."
      
 
 ## Verze 1.16{#version-116} 
- (propuštěn 2009- 03- 26) 
+ (propuštěn 2009-03-26) 
 
-*    ERDDAP™ administrátoři:
-    * Toto je důležité uvolnění, protože opravuje chybu, která zanechala ERDDAP™ závity běží, pokud jste použili Tomcat Manager zastavit / Start nebo obnovit ERDDAP . Takže když nainstalujete 1.16, nepoužívejte jen Tomcat manažera k uvolnění staré ERDDAP™ a nasadit nové ERDDAP . Místo toho: **rozložit staré ERDDAP™ , restartovat Tomcat (nebo server) , pak nasadit nové ERDDAP .** Vždy je dobrý nápad to udělat při instalaci nové verze.
-    * Prosím přidejte [&lt;requestBlacklist &gt;&lt;/ requestBlacklist &gt;] (/ docs / server- admin / datasets # requestblacklist) na vaši datasets.xml . To lze použít k určení seznamu IP adres klienta, které mají být blokovány (např., odrazit odmítnutí servisního útoku nebo příliš horlivý web robot) .
-* Teď je tu \\[ bigParentDirectory \\] / Logs adresář držet ERDDAP™ Záznamy. When you start ERDDAP™ , to dělá archivní kopii log.txt a log. txt.předchozí soubory s časovým razítkem. Pokud byly problémy před restartem, může být užitečné analyzovat tyto soubory.
-*    ERD s ERDDAP™ Nyní je zapnutý předplatný systém.
-*    ERDDAP™ opět umožňuje (ale stále nedoporučuje) kódování URL "% 26" v požadavku (viz [související v1.14 změna](#percent26) ) .
-* Několik nových přírůstků do části Tally [Denní zpráva](/docs/server-admin/additional-information#daily-report) .
-* Malé opravy chyb v generateDatasetsXml.
-* Pár malých oprav chyb.
+*    ERDDAP™ Správci:
+    * To je důležité uvolnění, protože to opraví chybu, která zanechala ERDDAP™ nit běží, pokud jste použili Tomcat Manager k zastavení / spuštění nebo obnovení ERDDAP . Takže když nainstalujete 1.16, nepoužívej jen manažera Tomcatu k odpojení starého ERDDAP™ a rozmístit nové ERDDAP . Místo toho: **nenasadit staré ERDDAP™ , restartovat Tomcat (nebo server) , pak nasadit nový ERDDAP .** Vždy je dobrý nápad to udělat při instalaci nové verze.
+    * Prosím přidejte [&lt;requestBlacklist&gt;&lt;/RequestBlacklist&gt;] (/docs/server-admin/datasets#requestblacklist) ke svému datasets.xml . To lze použít pro upřesnění seznamu IP adres klienta, které mají být blokovány (např. odrazit od zapírání útoku služby nebo příliš horlivého web robota) .
+* Je tu \\[ velkýRodič rodičů \\] /logs adresář držet ERDDAP™ záznamy. Když začneš ERDDAP™ , dělá archivní kopii log.txt a log. txt.předchozí soubory s časovým razítkem. Pokud byly problémy před restartem, může být užitečné tyto soubory analyzovat.
+*    ERD 's ERDDAP™ Teď je zapnutý systém předplatného.
+*    ERDDAP™ znovu umožňuje (Ale stejně to nedoporučuju.) kódování "% 26" "&" v URL žádosti (viz [související změna v1.14](#percent26) ) .
+* Několik nových doplňků k části Tally [Denní zpráva](/docs/server-admin/additional-information#daily-report) .
+* Malé opravy chyb v generováníDatasetsXml.
+* Pár drobných oprav.
      
 
 ## Verze 1.14{#version-114} 
- (propuštěn 2009- 03- 17) 
+ (propuštěn 2009-03-17) 
 
 * Změny pro uživatele:
-    * v žádostech o údaje o síti, ERDDAP™ nyní podporuje: [last- n](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#last) kde n je celé číslo indexů a [ (last- d) ](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#lastInParentheses) kde d je číselná hodnota (čas, to je v sekundách) .
-    * V tabulkových požadavcích na data, String omezení nyní vyžadují [dvojité kotace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#QuoteStrings) kolem hodnoty, například, & id = "NDBC40121" To vyžaduje DAP Protokol.
-    * V požadavcích na údaje v tabulkách, ERDDAP™ Nyní vyžaduje, aby [všechna omezení jsou řádně zakódována v procentech](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#PercentEncode) . Prohlížeče to dělají automaticky, takže to má většinou vliv na počítačové programy / skripty, které jsou přístupné ERDDAP .
-#### POKYNY{#percent26} 
-*    [V minulých dílech...](#percent26) s [vložil webovou stránku grafu](https://coastwatch.pfeg.noaa.gov/erddap/images/embed.html) a [ ERDDAP™ Google Gadget webové stránky](https://coastwatch.pfeg.noaa.gov/erddap/images/gadgets/GoogleGadgets.html) řekl nahradit URL "&" na obrázku "% 26". Od této chvíle, byste měli nahradit "&" v URL obrázku "& amp;". Takže musíte nahradit jakékoliv "% 26" na stávajících webových stránkách a Google Gadgets "& amp;". (Promiň.) 
-*    ERDDAP™ Administrátoři, prosím:
-    * Přidat do svého [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (a změnit vlajku Hodnota klíče) :
+    * V požadavcích na údaje sítě ERDDAP™ nyní podporuje: [poslední-n](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#last) kde n je celé číslo indexů a [ (poslední-d) ](https://coastwatch.pfeg.noaa.gov/erddap/griddap/documentation.html#lastInParentheses) kde d je numerická hodnota (na čas, to je v sekundách) .
+    * V tabulkových požadavcích na údaje, String omezení nyní vyžadují [dvojité kotace](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#QuoteStrings) o hodnotě, například, &id="NDBC40121" To vyžaduje DAP protokol.
+    * V tabulkových požadavcích na údaje, ERDDAP™ Teď to vyžaduje [všechna omezení jsou řádně zakódována v procentech](https://coastwatch.pfeg.noaa.gov/erddap/tabledap/documentation.html#PercentEncode) . Prohlížeče to dělají automaticky, takže to většinou ovlivňuje počítačové programy/skripty, které mají přístup ERDDAP .
+#### Procent26{#percent26} 
+*    [V předchozích dílech...](#percent26) vá [vložit webové stránky grafu](https://coastwatch.pfeg.noaa.gov/erddap/images/embed.html) a [ ERDDAP™ Google Gadget webové stránky](https://coastwatch.pfeg.noaa.gov/erddap/images/gadgets/GoogleGadgets.html) řekl vyměnit "&" na URL obrázku za "% 26." Odteď byste měli nahradit "&" na URL obrázku "&amp;." Takže musíte nahradit jakékoliv "% 26" na stávajících webových stránkách a Google Gadgets s "&amp;." (Promiň.) 
+*    ERDDAP™ Správci, prosím:
+    * Přidat následující [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (a změnit vlajku Hodnota klíče) :
 ```
         <!-- ERDDAP™ has a service that lets remote users set a flag
         to notify ERDDAP™ to try to reload a dataset.
@@ -2873,12 +2890,12 @@ Tyto typy datových souborů jsou součástí kompletního souboru prvků, kter�
         <subscriptionSystemActive>true</subscriptionSystemActive>  
 ```
 
-    * Na řádku po&lt;emailUserName &gt; ve Vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor, přidat
+    * Na lince po&lt;e-mailUživatelNázev&gt; ve vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor, přidat
 ```
         <emailPassword>_myPassword_</emailPassword> <!-- optional; if absent, emails can't be sent to non-local addresses -->  
 ```
 a zadejte své skutečné heslo.
-    * Můžeš se změnit.&lt;wmSSampleBBox &gt; ve Vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor obsahující hodnoty délky do 360, např.
+    * Můžeš se změnit.&lt;wmsSampleBBox&gt; ve vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor obsahující hodnoty délky do 360, např.
 ```
         <!-- The bounding box values are 
            minLongitude,minLatitude,maxLongitude,maxLatitude.
@@ -2886,89 +2903,89 @@ a zadejte své skutečné heslo.
         <wmsSampleBBox>0,-75,360,75</wmsSampleBBox>  
 ```
 
-    * Ve vaší datasets.xml soubor, přejmenovat datový soubor typu EDDTableFromNc4DFiles na EDDTableFromNcFiles (který nyní podporuje soubory s libovolným počtem rozměrů) . Pokud máte soubor EDDTableFromNc4DFiles:
+    * Ve vašem datasets.xml soubor, přejmenovat typ souboru EDDTableFromNc4DFiles na EDDTableFromNcFiles (který nyní podporuje soubory s libovolným počtem rozměrů) . Pokud máte EDDTableFromNc4DFiles soubor:
         
-        1. Musíte změnit na typ = "EDDTableFromNcFiles" ve svých souborech dat. XML soubor.
-        2. Musíte přidat&lt;nRozměry &gt; 4&lt;/ nDimensions &gt; tag na XML datového souboru.
-        3. Můžete přidat nový&lt;sortFilesBySourceName &gt; tag pro určení vnitřního pořadí souborů, který určuje celkové pořadí vrácených dat.
+        1. Musíte změnit na typ="EDDTableFromNcFiles" ve svých datových souborech. XML soubor.
+        2. Musíte přidat&lt;nRozměry &gt; 4&lt;/nDimensions &gt; tag na XML souboru.
+        3. Můžete přidat nové&lt;seřazenoFillesBySourceNames&gt; tag pro upřesnění interního pořadí souborů, který určuje celkový řád vrácených dat.
         
-Podrobnosti viz [EDDTableFromFiles](/docs/server-admin/datasets#eddtablefromfiles) .
-    * V minulosti, pro EDDTableFromDapSequence, pro OPeNDAP servery DRDS, in datasets.xml , použili jsme&lt;sourceCanConstrainStringsRegex &gt; ~ =&lt;/ sourceCanConstrainStringRegex &gt;. Ale nyní vidíme, že podpora DRDS regex je omezenější než ERDDAP Je, takže doporučujeme&lt;sourceCanConstrainStringsRegex &gt;&lt;/ sourceCanConstrainStringRegix &gt; tak, že regex omezení nejsou předány na zdroj, ale jsou místo toho zpracovávány ERDDAP .
-    * Revamped manipulace sourceCanConkmen... n datasets.xml podle [EDDTableFromDapSequence](/docs/server-admin/datasets#eddtablefromdapsequence) a (vnitřní) všechny typy datových souborů EDDTable. Nový systém je jednodušší a lépe odráží variabilitu různých zdrojů dat. Možná budete muset upravit XML pro vaše soubory dat v datasets.xml .
-* Existuje několik nových funkcí, které jsou užitečné samy o sobě, ale při kombinaci, také usnadnit vytvoření [mřížky / klastry / federace ERDDAP s](/docs/server-admin/additional-information#grids-clusters-and-federations) .
-    * Nové typy datových souborů:
-        *    [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) a [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) který nechal jeden ERDDAP™ obsahovat datový soubor od jiného ERDDAP™ velmi jednoduchým a velmi účinným způsobem.
-        *    [ EDDGrid FromFiles](/docs/server-admin/datasets#eddgridfromfiles)   (a podtřídy, [ EDDGrid FromNcFiles](/docs/server-admin/datasets#eddgridfromncfiles) které mohou číst NetCDF   .nc , GRIB .grb a HDF   .hdf soubory) .
-        *    [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) které mohou číst NetCDF   .nc které mají strukturu podobnou stolu.
-    * RunLoadDatasets a LoadDatasets byly přepracovány tak, aby ERDDAP™ je velmi citlivý na reloading souborů na základě [vlajka](/docs/server-admin/additional-information#flag) adresář (často&lt;5 sekund v případě, že hlavní načítání Datasets je v současné době provedeno).
-    * Nová služba umožňující [URL pro vytvoření souboru vlajky](/docs/server-admin/additional-information#set-dataset-flag) pro daný soubor dat, např.
+Podrobnosti viz [EDDTableFromFoles](/docs/server-admin/datasets#eddtablefromfiles) .
+    * V minulosti pro EDDTableFromDapSequence, pro OPeNDAP DRDS servery, in datasets.xml , jsme použili&lt;sourceCanCanstrainStringsRegex&gt;~=&lt;/sourceCanCanstrainStringRegex&gt;. Ale nyní vidíme, že podpora DRDS regexu je omezenější než ERDDAP Takže doporučujeme&lt;sourceCanCanstrainStringsRegex&gt;&lt;/sourceCanCanstrainStringRegex&gt; tak, aby omezení regexu nebyla přenesena na zdroj, ale jsou místo toho řešeny ERDDAP .
+    * Obnovená manipulace se zdrojemCanConstrain... v datasets.xml od [EDDTableFromDapSekvence](/docs/server-admin/datasets#eddtablefromdapsequence) a (interně) všechny typy souborů údajů podle protokolu EDDTable. Nový systém je jednodušší a lépe odráží variabilitu různých zdrojů dat. Můžete potřebovat upravit XML pro vaše soubory dat v datasets.xml .
+* Existuje několik nových funkcí, které jsou užitečné samy o sobě, ale při kombinaci, také usnadnit vytvoření [mřížky/klastry/federace ERDDAP án](/docs/server-admin/additional-information#grids-clusters-and-federations) .
+    * Nové typy souborů údajů:
+        *    [ EDDGrid FromErddap](/docs/server-admin/datasets#eddfromerddap) a [EDDTableFromErddap](/docs/server-admin/datasets#eddfromerddap) který nechal jeden ERDDAP™ zahrnují soubor údajů z jiného souboru ERDDAP™ velmi jednoduchým a velmi účinným způsobem.
+        *    [ EDDGrid FromFiles](/docs/server-admin/datasets#eddgridfromfiles)   (a podtřídou, [ EDDGrid FromNcFiles](/docs/server-admin/datasets#eddgridfromncfiles) který umí číst NetCDF   .nc , GRIB .grb a HDF   .hdf soubory) .
+        *    [EDDTableFromNcFiles](/docs/server-admin/datasets#eddtablefromncfiles) který umí číst NetCDF   .nc které mají strukturu jako stůl.
+    * RunLoadDatasets a LoadDatasets byly přeformulovány tak, aby ERDDAP™ je velmi citlivý na přehrávání souborů na základě souborů v [vlajka](/docs/server-admin/additional-information#flag) adresář (často)&lt;5 sekund v případě hlavního zatíženíDatasety jsou v současné době hotové).
+    * Nová služba umožňující [URL pro vytvoření souboru vlajky](/docs/server-admin/additional-information#set-dataset-flag) pro daný datový soubor, např.
     ```
         https://coastwatch.pfeg.noaa.gov/erddap/setDatasetFlag.txt?datasetID=rPmelTao&flagKey=123456789  
     ```
-vytvoří soubor vlajky v adresáři vlajky pro rPmelTao (i když vlajka Klíč tady je špatný.) .
-    * Nový [předplatné](https://coastwatch.pfeg.noaa.gov/erddap/subscriptions) služba tak, aby každý klient mohl určit akci, která bude provedena při vytvoření konkrétního datového souboru (kdy ERDDAP™ je znovu spuštěn) a kdykoli se datový soubor nějakým způsobem změní. Tento systém lze vypnout pomocí&lt;Předplatné SystemActive &gt; ve Vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) Složka. U ERDDAP™   [Denní zpráva](/docs/server-admin/additional-information#daily-report) nyní uvádí všechny předplatné a obsahuje URL potřebné ke zrušení každé z nich, v případě, že máte pocit, že systém je zneužíván. V datasets.xml , tam je nový, volitelný [&lt;předplatné EmailBlacklist &gt;] (/ docs / server-admin / datasets # subscriptionailblacklist) tag tak, aby administrátoři mohli zadat comma- oddělený seznam e-mailových adres, které jsou okamžitě černé listině ze systému předplatného.
-    * Nové [&lt;onChange &gt;] (/ docs / server- admin / soubory dat # onchange) atribut in datasets.xml umožňuje ERDDAP™ administrátor specifikuje akci, která bude provedena při vytvoření konkrétního datového souboru (kdy ERDDAP™ je znovu spuštěn) a kdykoli se datový soubor nějakým způsobem změní.
-    * Zlepšení plného hledání textu: uložení vyhledávacího řetězce pro každý datový soubor nyní používá 1 / 2 paměti. Vyhledávací algoritmus (Chlapec - Moore- jako) Teď je 3X rychlejší.
-    * E-maily od ERDDAP™ nyní vždy prepend předmět a obsah s \\[ erddap Url \\] aby bylo jasné, který ERDDAP™ Tohle přišlo od (v případě, že podáváte více ERDDAP s) .
-    * Rozsáhlejší statistika pro [Denní zpráva](/docs/server-admin/additional-information#daily-report) E-mail.
-    * Nový soubor záznamu \\[ bigParentDirectory \\] / emailLogYEAR- MM- DD.txt zaznamenává všechny e-maily odeslané ERDDAP™ Každý den. To je obzvláště užitečné, pokud váš server nemůže skutečně posílat e-maily - můžete si je alespoň přečíst v záznamu.
-    *    ERDDAP™ Teď dělá \\[ bigParentDirectory \\] / cache / ( datasetID ) adresář pro každý datový soubor, protože může být mnoho souborů cached.
-* Nový [ RSS 2. 01](https://coastwatch.pfeg.noaa.gov/erddap/information.html#subscriptions) krmivo pro každý datový soubor (Hledejte oranžovou. RSS ikony na seznamech datových souborů, formulářů pro přístup k datům, a vytvořit graf webové stránky) .
-*    EDDGrid   .kml odpovědi nyní používají dlaždicové obrázky ("superoverlays" -- dynamicky generované obrázky kvadtree) . Počáteční obraz se nahrává do GoogleEarth mnohem rychleji než předtím. Rozlišení mapy se zvyšuje, jak se přiblížíte, až do úplného rozlišení datového souboru. Doporučit: uživatelé by měli požádat .kml pro jeden časový bod, ale datový soubor je celá délka, zeměpisná šířka. Bohužel byla odstraněna podpora časového rozmezí (Doufám, že se vrátí.) .
-*    ERDDAP™ Nyní přidává [Expires and Cache- Control max- age headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) do všech souborů požadovaných z adresáře / obrázků. To výrazně snižuje počet statických žádostí o soubory zaslaných na ERDDAP a tak výrazně zrychluje nejvíce ERDDAP™ Page loads. Také, mnoho Java Odkazy na skriptové soubory přesunuty na spodní část svých HTML stránek, což také urychluje mnoho ERDDAP™ Page loads. Díky knize "High Performance Web Sites" by Steve Souders a ySlow doplněk k plugin FireBug v FireFox.
-*    ERDDAP™ přepnuto z netcdf-java 2.2.22 na netcdf-java 4.0. Mimo jiné to umožňuje EDDGrid FromNcFiles ke čtení HDF   .hdf , stejně jako GRIB .grb a NetCDF   .nc složky.
-*    EDDGrid FromDap a EDDGrid FromNcFiles nyní také podporují DArray (stejně jako DGRID)   dataVariable "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a. Pokud rozměr nemá odpovídající souřadnicovou proměnnou, ERDDAP™ vytvoří osovou proměnnou s hodnotami indexu (např. 0, 1, 2,..., 311, 312) . Takže všechny ostatní aspekty EDDGrid zůstávají stejné:
-\\ * Stále slouží všem datovým setům jako Grids, s osovou proměnnou pro každý rozměr.
-\\ * Dotazy mohou stále požadovat hodnoty z proměnných osy.
-Díky Charlesovi Carletonovi, Thomasovi Im, Dorianu Raymerovi a dalším.
-* U WMS   OpenLayers Stránky nyní mají výchozí délku, zeměpisnou šířku, která je trochu větší než rozsah datového souboru (není přesný rozsah, takže kontext malých souborů dat je jasnější) . Výchozí rozsah může být nyní 0 až 360, což umožňuje, aby byl nyní zobrazen celý rozsah mnoha souborů dat. Díky Todd Spindler.
-* Nové posuvníky na některých formulářích pro přístup k datům a vytvořit graf webové stránky. Zjednodušují (surový) specifikace požadovaných dat a nabízejí dobrou vizuální zpětnou vazbu.
-* Nová volba pro&lt;Datový soubor &gt; štítky v datasets.xml : [aktivní = "false"](/docs/server-admin/datasets#active) .
-* Odkazy na ERD s ERDDAP™ Změna z coast watch.pfel (funguje i přes proxy) na pobřeží. (preferované) .
-* Nová podpora pro [ data\\_min a data\\_max ](/docs/server-admin/datasets#data_min-and-data_max) atributy proměnných metadat.
-* Částečný roztok [WaitThenTryAgain / Partial Results Exception](/docs/server-admin/additional-information#waitthentryagain-exception) : Některé požadavky, které předtím selhaly, když byla zjištěna změna zdroje dat, budou úspěšné, protože ERDDAP™ reload dataset a re- request data automaticky, vše v kontextu původního požadavku.
-* Oprava chyb: generovat Datové soubory Xml byl deaktivován ERDDAP™ verze 1.12. Díky Ellyn Montgomeryové, že na to poukázala.
+vytvoří soubor vlajky v adresáři vlajky pro rPmelTao (i když vlajka Klíč je špatný.) .
+    * Nový [předplatné](https://coastwatch.pfeg.noaa.gov/erddap/subscriptions) služba tak, aby každý klient mohl určit akci, která bude provedena při vytvoření konkrétního datového souboru (kdy ERDDAP™ restartováno) a kdykoli se soubor údajů jakýmkoli způsobem změní. Tento systém může být vypnut přes&lt;předplatnéSystemActive&gt; ve vašem [setup.xml](/docs/server-admin/deploy-install#setupxml) Složka. The ERDDAP™   [Denní zpráva](/docs/server-admin/additional-information#daily-report) Nyní uvádí všechny předplatné a obsahuje URL potřebné ke zrušení každé z nich, v případě, že máte pocit, že systém je zneužíván. In datasets.xml , je nový, volitelný [&lt;předplatné EmailBlacklist&gt;] (/docs/server-admin/datasets#subscribemailblacklist) tag tak, aby správci mohli zadat čárku oddělený seznam e-mailových adres, které jsou okamžitě vymazané ze systému předplatného.
+    * Nový [&lt;oZměnit&gt;] (/docs/server-admin/datasets#onchange) atribut v datasets.xml Nechává ERDDAP™ Správce určí akci, která bude provedena při vytvoření konkrétního datového souboru (kdy ERDDAP™ restartováno) a kdykoli se soubor údajů jakýmkoli způsobem změní.
+    * Zlepšení plného vyhledávání textu: uložení vyhledávacího řetězce pro každý datový soubor nyní používá paměť 1/2. Algoritmus vyhledávání (Boyer-Moore) je nyní 3X rychlejší.
+    * Emaily od ERDDAP™ Nyní vždy předpokládejte téma a obsah s \\[ erddap Url \\] , aby bylo jasné, který ERDDAP™ Tohle přišlo z (v případě vícenásobného podání ERDDAP án) .
+    * Rozsáhlejší shromažďování statistik pro [Denní zpráva](/docs/server-admin/additional-information#daily-report) e-mail.
+    * Nový soubor záznamu \\[ velkýRodič rodičů \\] /emailLogYear-MM-DD.txt zaznamenává všechny e-maily odeslané ERDDAP™ každý den. To je zvláště užitečné, pokud váš server nemůže poslat e-maily - můžete si je alespoň přečíst v logu.
+    *    ERDDAP™ Teď dělá \\[ velkýRodič rodičů \\] /cache/ ( datasetID ) adresář pro každý soubor dat, protože tam může být spousta souborů cache.
+* Nový [ RSS 2. 01](https://coastwatch.pfeg.noaa.gov/erddap/information.html#subscriptions) krmiva pro každý soubor údajů (Hledej pomeranč. RSS ikony na seznamech souborů dat, formuláře pro přístup k datům a webové stránky Make A Graph) .
+*    EDDGrid   .kml reakce nyní používají kachlové obrázky ("superoverlays" -- dynamicky generované quadtree obrázky) . Počáteční obraz se načítá do GoogleEarth mnohem rychleji než předtím. Rozlišení mapy se při přiblížení zvyšuje až do úplného rozlišení datového souboru. Doporučit: uživatelé by měli požádat .kml za jeden časový bod, ale soubor dat má celou délku, rozsah šířky. Bohužel byla odstraněna podpora časových rozsahů (Doufám, že se vrátí.) .
+*    ERDDAP™ nyní přidává [Vyhovuje a Cache-Control max-age hlavičky](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) do všech souborů požadovaných z adresáře /images. To výrazně snižuje počet statických žádostí o soubor zaslaných na ERDDAP a tím značně urychluje většinu ERDDAP™ načítání stránek. Také mnoho Java Odkazy na skriptový soubor se přesunuly na dno jejich HTML stránek, což také urychluje mnoho ERDDAP™ načítání stránek. Díky knize "High Performance Web Sites" od Steve Suders a YSlow doplněk k FireBug plugin ve FireFoxu.
+*    ERDDAP™ přepnuto z netcdf-java 2.2.22 na netcdf-java 4.0. To mimo jiné umožňuje EDDGrid FromNcFiles číst HDF   .hdf , jakož i GRIB .grb a NetCDF   .nc Složky.
+*    EDDGrid OdDap a EDDGrid FromNcFiles nyní také podporuje DArray (stejně jako DGrid)   dataVariable s. Pokud rozměr nemá odpovídající souřadnicovou proměnnou, ERDDAP™ vytvoří osovou proměnnou s indexovými hodnotami (např. 0, 1, 2, ..., 311, 312) . Takže všechny ostatní aspekty EDDGrid zůstávají stejné:
+\\* Stále slouží všem souborům dat jako mřížky, s osovou proměnnou pro každý rozměr.
+\\* Dotazy mohou stále požadovat hodnoty z osových proměnných.
+Díky Charlesi Carletonovi, Thomasi Imovi, Dorianu Raymerovi a dalším.
+* The WMS   OpenLayers stránky nyní mají výchozí délku, rozsah šířky, který je trochu větší než rozsah datového souboru (není přesný rozsah, takže kontext malých souborů dat je více zřejmé) . Výchozí rozsah může být nyní také 0 až 360, což umožňuje zobrazovat celý rozsah mnoha souborů dat. Díky Todd Spindler.
+* Nové posuvníky na některých formulářích Data Access a vytvořit grafické webové stránky. Zjednodušují (surové) specifikace požadovaných dat a nabízí dobrou vizuální zpětnou vazbu.
+* Nová možnost pro&lt;Databáze &gt; značky v datasets.xml : [active="false"](/docs/server-admin/datasets#active) .
+* Odkazy na ERD 's ERDDAP™ změna z pobřežní hlídky.pfel (stále funguje přes proxy) do pobřežní hlídky.pfeg (preferovaný) .
+* Nová podpora [ data\\_min a data\\_max ](/docs/server-admin/datasets#data_min-and-data_max) proměnné atributy metadat.
+* Částečné řešení [Počkejte a zkuste znovu / částečné výsledky výjimky](/docs/server-admin/additional-information#waitthentryagain-exception) : Některé požadavky, které dříve selhaly, když byla zjištěna změna zdroje dat, uspějí, protože ERDDAP™ bude soubor údajů znovu načíst a údaje automaticky vyžádá, a to vše v rámci původní žádosti.
+* Oprava chyb: generovat Datové soubory Xml byl zakázán v ERDDAP™ verze 1.12. Díky Ellyn Montgomeryové za upozornění.
 * Malé změny v manipulaci s chybami.
-* Mnoho zlepšení, aby se zabránilo / vypořádat se s možnými podmínkami závodu (Tj. možné problémy vyplývající z multizávitové povahy ERDDAP ) které způsobily malé, vzácné problémy.
-* Nyní, pokud je na obrázku zapsána chybová zpráva, zůstane obraz v úschově pouze ~ 5-10 minut (ne 60) . Díky Care Wilsonové.
-* Standardní zpráva, když nejsou žádná data, je nyní "Váš dotaz nevytvořil žádné odpovídající výsledky.", který je kratší, přesnější a odpovídá OPeNDAP servery.
-*    EDDGrid již neumožňuje vázat hodnoty osy.
-* Malé změny požadavků .ver a .help.
+* Mnoho zlepšení, aby se zabránilo / uzavřít s možnými závodní podmínky (tj. možné problémy vyplývající z vícevláknité povahy ERDDAP ) což způsobilo malé, vzácné problémy.
+* Pokud je na obrázku napsána chybová zpráva, obrázek zůstane v cache pouze po dobu ~5-10 minut (ne 60) . Díky Care Wilsonové.
+* Standardní zpráva, když nejsou žádná data, je nyní "Váš dotaz přinesl žádné odpovídající výsledky." což je kratší, přesnější, a zápasy OPeNDAP servery.
+*    EDDGrid již neumožňuje hodnoty vázané osy.
+* Malé změny .ver a .help požadavky.
 * Mnoho malých změn a oprav chyb.
      
 
 ## Verze 1.12{#version-112} 
- (propuštěn 2008- 10- 31) 
+ (propuštěn 2008-10-31) 
 
 * EDDTableFrom SOS opět pracuje s NDBC SOS a pracuje s novým NOS SOS .
-* EDDTableFromBMDE nyní vyžaduje ERDDAP™ admin pro upřesnění dataVariable "Technologie" ve smyslu všeobecné poznámky k technologii pro "vývoj" nebo "výrobu" zařízení uvedených v položkách 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.2., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.3., 3A001.a.2., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.a.2., 3A001.b., 3A001.a.2., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 3A001.b., 6A001.b., 6A002.a.2., d., d. a.
-*    EDDGrid již nevyžaduje rovnoměrné rozestupy. transparentní Png nebo .kml . Díky Todd Spindler.
+* EDDTableFromBMDE nyní vyžaduje ERDDAP™ admin pro upřesnění dataVariable s.
+*    EDDGrid již nevyžaduje, aby lat a lon být rovnoměrně mezera pro . transparentní Png nebo .kml . Díky Todd Spindler.
 * Pár drobných změn.
      
 
 ## Verze 1.10{#version-110} 
- (propuštěn 2008- 10- 14) 
+ (propuštěn 2008-10-14) 
 
-* Nová metadata "colorBar" pro datové proměnné v datasets.xml definuje výchozí nastavení barevného panelu pro grafy a mapy. Viz [více informací](/docs/server-admin/datasets#color-bar-attributes) . To je důležité proto, že výrazně zlepšuje vzhled výchozích grafů a map vytvořených Make A Graph a protože výchozí grafy a mapy mají nyní konzistentní barevnou lištu, i když klient mění požadovaný čas nebo zeměpisný rozsah. Také to bylo nezbytné pro WMS .
-*    ERDDAP™ nyní slouží většina dat mřížky přes WMS Servis. To je důležité, protože ukazuje, že kromě získávání dat z mnoha typů datových serverů, ERDDAP™ umí distribuovat data pomocí různých protokolů ( DAP , WMS ,... více v budoucnosti) . Viz [dokumentace klienta](https://coastwatch.pfeg.noaa.gov/erddap/wms/documentation.html) . Nebo [dokumentace pro správce](/docs/server-admin/datasets#wms) . nebo [Vyzkoušej to.](https://coastwatch.pfeg.noaa.gov/erddap/wms/index.html) .
-* Nová podpora hodnot délky &gt; 180 v .kml složky.
-* Nový cdm\\ _ data\\ _ type: Ostatní.
-*    ERDDAP™ nyní podporuje "boolean" zdroj dataType. Viz [více informací](/docs/server-admin/datasets#boolean-data) To bude užitečné pro budoucí EDDTableFromDatabase.
-* Nová EDDTableFromBMDE podporuje zdroje dat DiGIR / BMDE.
-* EDVGridaxis nyní umožňuje sestupné tříděné hodnoty. PmelOscarovy soubory dat tohle potřebovaly.
-*    ERDDAP™ nyní vrací HTTP chyby (např. "404 pro zdroj / stránku nenalezen") ve více situacích místo HTML stránek s chybovými zprávami.
-* Mnoho změn / doplnění na ERDDAP™ dokumentaci.
+* Nové metadata "colorBar" pro datové proměnné v datasets.xml definuje výchozí nastavení barevné lišty pro grafy a mapy. Viz [více informací](/docs/server-admin/datasets#color-bar-attributes) . To je důležité, protože to výrazně zlepšuje vzhled výchozích grafů a map vyrobených Make A Graph a protože výchozí grafy a mapy mají nyní konzistentní barevnou lištu, i když klient změní požadovaný čas nebo geografický rozsah. Také to bylo nutné pro WMS .
+*    ERDDAP™ nyní slouží většina dat sítě prostřednictvím WMS služba. To je důležité, protože ukazuje, že kromě získání dat z mnoha typů datových serverů, ERDDAP™ může šířit data prostřednictvím různých protokolů ( DAP , WMS , ... více v budoucnu) . Viz [dokumentace klienta](https://coastwatch.pfeg.noaa.gov/erddap/wms/documentation.html) . Nebo [dokumentace pro správce](/docs/server-admin/datasets#wms) . nebo [Zkus to.](https://coastwatch.pfeg.noaa.gov/erddap/wms/index.html) .
+* Nová podpora pro hodnoty délky &gt;180 v .kml Složky.
+* Nový cdm\\_data\\_type: Ostatní .
+*    ERDDAP™ nyní podporuje "boolean" source dataType. Viz [více informací](/docs/server-admin/datasets#boolean-data) To bude užitečné pro budoucí EDDTableFromDatabase.
+* Nový EDDTableFromBMDE podporuje zdroje dat DiGIR/BMDE.
+* EDVGridAxis nyní umožňuje sestupné seřazené hodnoty. Pmeloscarovy soubory tohle potřebovaly.
+*    ERDDAP™ nyní vrací HTTP chyby (např. "404 pro nenalezený zdroj/page") ve více situacích místo HTML stránek s chybovými zprávami.
+* Mnoho změn / změn ERDDAP™ dokumentace.
 * Hodně drobných změn.
-* Nějaké opravy chyb.
-*    **Věci ERDDAP™ Administrátoři by měli udělat upgrade na tuto verzi:** 
-    * V datasets.xml , pro všechny EDDTableFrom SOS Datové soubory, změna "observedProperty" metadata na "sourceObservedProperty".
-    * Pravidla pro axisVariable nebo dataVariable s destinationName jsou nyní [přísnější](/docs/server-admin/datasets#datavariable-addattributes) . Musíte zkontrolovat, zda jsou vaše variabilní jména platná. Buď je ručně zkontrolujte, nebo utečte. ERDDAP™ a podívejte se na chybové zprávy ve zprávě, která je emailem administrátorovi.
-    * V datasets.xml , pokud chcete, aby byla datová proměnná mřížky přístupná prostřednictvím WMS , musíte přidat colorBar metadata. Alespoň, například,&lt;att name = " colorBarMinimum "type =" double "&gt; 0&lt;/ att &gt;
+* Nějaké opravy brouků.
+*    **Věci ERDDAP™ Správci by měli provést aktualizaci této verze:** 
+    * In datasets.xml , pro jakýkoli EDDtableFrom SOS Databáze, změňte metadata "observedProperty" na "sourceObservedProperty."
+    * Pravidla pro axisVariable nebo dataVariable 's destinationName jsou nyní [přísnější](/docs/server-admin/datasets#datavariable-addattributes) . Musíte zkontrolovat, zda jsou vaše názvy proměnných platné. Buď je zkontroluj ručně, nebo uteč. ERDDAP™ a podívejte se na chybové zprávy ve zprávě, která je odeslána správci.
+    * In datasets.xml , pokud chcete, aby proměnná dat sítě byla přístupná prostřednictvím WMS , musíte přidat barevnéBar metadata. Alespoň, například,&lt;att name=" colorBarMinimum "type="double [51]0&lt;/att &gt;
 ```
           <att name="colorBarMaximum" type="double">32</att>  
 ```
 Viz [více informací](/docs/server-admin/datasets#wms) .
-    * Přidat do svého [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (ale přizpůsobit s vašimi informacemi) :
+    * Přidat následující [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (ale přizpůsobit ji s vašimi informacemi) :
 
 ```
         <!-- drawLand specifies the default Make A Graph setting for 
@@ -3030,49 +3047,49 @@ Viz [více informací](/docs/server-admin/datasets#wms) .
 ```
 
 ## Verze 1.08{#version-108} 
- (propuštěn 2008- 07- 13) 
+ (propuštěn 2008-07-13) 
 
-* Nová webová služba v ERDDAP™ , generovat Datové soubory Xml, asistence ERDDAP™ administrátoři vytvořením hrubého návrhu XML potřebné k popisu datového souboru datasets.xml 
-* Některé změny / opravy chyb související s tím, že Griddap může být viděn netcdf-java jako opendap server, včetně: globální metadata jsou nyní označeny "NC\\ _ GLOBAL" (místo GLOBAL) .
-* U EDDGrid a EDDTable Data Access Forms nyní využívají informace o dotazech v URL. Takže například, pokud uživatel přechází z formuláře Make A Graph do formuláře pro přístup k datům, omezení jsou nyní správně přenášena.
-*    tabledap Graf Make A nyní umožňuje omezení na proměnné String.
-* EDDTable 's Make A Graph nyní umožňuje NaN omezení. Díky Stevu Hankinovi.
-* Oprava chyb: Uložit EDDTable AsImage nerozpoznal správně hodnoty .colorbar min a max. Díky Stevu Hankinovi.
-* Mnoho vylepšení setupDatasetsXml. Díky Ellyn Montgomeryové.
-* Žádosti Griddapu nyní povolit () -styl požaduje mírně mimo skutečný rozsah osy. To je vhodné od () -hodnoty jsou zaokrouhleny na nejbližší skutečnou hodnotu. Díky Cindy Besseyové.
-* Udělal jsem test na plachtění a DoubleArray, který je sofistikovanější. Vždycky to bude nedokonalé. (protože test by musel být přizpůsoben pro každý datový soubor) Ale mělo by to být lepší. Díky Ellyn Montgomeryové.
-* Přesunul jsem setup.html a setupDatasets Xml.html erddap 's / download adresář a pevně kódované všechny odkazy na ně. Nyní mohu provést změny a okamžitě aktualizovat informace o nastavení.
-* Mnoho malých změn. Pár malých oprav chyb.
-*    **Věci ERDDAP™ Administrátoři by měli udělat upgrade na tuto verzi:** 
-    * Pohyb.&lt;Popis zkratky Html &gt; z Vašich zpráv. [setup.xml](/docs/server-admin/deploy-install#setupxml) Složka. Udává text, který se objeví uprostřed levé strany ERDDAP™ Úvodní stránka. Také přidejte&lt;h1 &gt; ERDDAP &lt;/ h1 &gt; (nebo nějaký jiný titulek) na vrchol. **Nebo** kopírování&lt;ShortDescriptionHtml &gt; v novém [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (z nového erddapContent .zip ) Do vašeho setup.xml.
+* Nová webová služba v ERDDAP™ , generovat Datové soubory Xml, asistence ERDDAP™ Správci vytvořením hrubého návrhu XML potřebného k popisu datového souboru v datasets.xml 
+* Některé změny/úpravy chyb související s umožněním, aby byl netcdf-java vnímán jako opendap server, včetně: globální metadata jsou nyní označena jako "NC\\_GLOBAL" (místo "GLOBAL") .
+* The EDDGrid a AdDTable Data Access Forms nyní využívají informace o dotazu v URL. Například pokud uživatel přejde z formuláře Make A Graph do formuláře pro přístup k datům, jsou omezení nyní správně přenesena.
+*    tabledap 's Make A Graph nyní umožňuje omezení proměnných Stringu.
+* EDDTable je Vytvořit graf nyní umožňuje NaN omezení. Díky Stevu Hankinovi.
+* Oprava chyb: EDDTable uložit AsImage správně nerozpoznala hodnoty .colorbar min a max. Díky Stevu Hankinovi
+* Mnoho vylepšení nastaveníDatasetsXml. Díky Ellyn Montgomeryové.
+* Griddap požadavky nyní povolit () -style vyžaduje mírně mimo rozsah skutečné osy. To je vhodné, protože () -hodnoty jsou zaokrouhleny na nejbližší skutečnou hodnotu. Díky Cindy Bessey.
+* Udělal jsem FloatArray a DoubleArray test IsEvenlySpaced sofistikovanější. Vždy to bude nedokonalé. (Protože test by měl být přizpůsoben pro každý soubor údajů) Ale mělo by to být lepší. Díky Ellyn Montgomeryové.
+* Přestěhoval jsem setup.html a nastaveníDatasets Xml.html erddap /download adresář a hard kóded všechny odkazy na ně. Nyní mohu provést změny a okamžitě aktualizovat informace o nastavení.
+* Mnoho malých změn. Pár drobných oprav.
+*    **Věci ERDDAP™ Správci by měli provést aktualizaci této verze:** 
+    * Pohyb.&lt;ShortDescription Html &gt; od Vašich zpráv.xml do Vaší [setup.xml](/docs/server-admin/deploy-install#setupxml) Složka. Určuje text, který se objeví uprostřed levé strany ERDDAP™ domovská stránka. Také přidat&lt;h1&gt; ERDDAP &lt;/h1&gt; (nebo nějaký jiný titulek) až na vrchol. **Nebo,** kopírovat&lt;theShortDescriptionHtml&gt; in the new [setup.xml](/docs/server-admin/deploy-install#setupxml) soubor (z nového erddapContent .zip ) do vašeho nastavení.xml.
          
 
 ## Verze 1.06{#version-106} 
  (propuštěn 2008-06-20) 
 
-* Nová podpora pro IOOS DIF SOS zdroje údajů.
-* Mnoho malých změn. Pár malých oprav chyb.
+* Nová podpora IOOS DIF SOS zdroje dat.
+* Mnoho malých změn. Pár drobných oprav.
      
 
 ## Verze 1.04{#version-104} 
  (propuštěn 2008-06-10) 
 
 * Nová funkce Slide Sorter.
-* Nová stránka a příklady Google Gadgets.
-* Oprava chyb EDDGrid .saveAsNc pro proměnnou s měřítkem a addOffset.
+* Nová stránka Google Gadgets a příklady.
+* Opravit chybu EDDGrid .saveAsNc pro proměnnou s měřítkem a addOffset.
      
 
 ## Verze 1.02{#version-102} 
- (propuštěn 2008- 05- 26) 
+ (propuštěn 2008-05-26) 
 
-* Nový EDDGrid SideBySide umožňuje různé axisVariable s \\[ 0 \\] zdroj Hodnoty.
-* Všechny proudy a větrné datové soubory byly sloučeny do EDDGrid Datové soubory SideBySide.
-* Obrázky z požadavků na obrázky jsou nyní 1 hodinu v pouzdře.
+* Nový EDDGrid SideBySide umožňuje různé axisVariable án \\[ 0 \\] zdroj Hodnoty.
+* Všechny proudy a větrné soubory byly sloučeny do EDDGrid SideBySide data.
+* Obrázky z požadavků na obraz jsou nyní cachovány 1 hodinu.
      
 
 ## Verze 1.00{#version-100} 
  (propuštěn 2008-05-06) 
 
-* Vytvořit Graf webové stránky a grafické příkazy v URL.
-* Podpora pro soubory s vlajkou pro vynucení překládání datového souboru.
-* Nový typ datového souboru: EDDTableFrom4DFiles (první podtřída EDDTableFromFiles) .
+* Vytvořit webové stránky a grafické příkazy v URL.
+* Podpora vlajkových souborů k donucení opětovného načtení datového souboru.
+* Nový typ datového souboru: EDDTableFrom4DFiles (první podtřída EDDTableFromFoles) .
