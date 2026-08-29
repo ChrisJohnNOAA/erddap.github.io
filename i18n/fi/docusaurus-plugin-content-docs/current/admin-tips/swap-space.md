@@ -1,4 +1,4 @@
-Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP Käyttäjäryhmä](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP™ Käyttäjäryhmä](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Monet apupyynnöt meillä on mukana ongelmia muistin käytön ERDDAP™ . Osa tästä johtuu muistinhallinnan muutoksista Java myös vuorovaikutusta Linux OS -muistinhallinnan kanssa. Aloitan uskomalla Java 17, Java käyttää enemmän muistia kuin mitä kasveihin on laitettu. Voit nähdä tämän, jos tarkastelet kasa asetuksia ja sitten käyttää komentoja, kuten top, htop tai btop tarkistaa muistin käyttöä sovelluksia. Esimerkiksi voimakkaasti käytetty ERDDAP™ 21 Gt: ssä on kallis tila, mutta muistin käyttö voi olla 28 GB-30GB, joskus korkeampi. Tämä arvo voi piristyä, jos järjestelmässä on paljon samanaikaisia suuria pyyntöjä.
 

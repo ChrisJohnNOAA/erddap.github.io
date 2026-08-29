@@ -1,4 +1,4 @@
-Este conteúdo é baseado em um [mensagem de Roy Mendelssohn para o ERDDAP grupo de usuários](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Este conteúdo é baseado em um [mensagem de Roy Mendelssohn para o ERDDAP™ grupo de usuários](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Muitos dos pedidos de ajuda que recebemos envolvem problemas com o uso de memória em ERDDAP™ . Algumas delas vêm de mudanças no gerenciamento de memória Java , e também interações com o gerenciamento de memória Linux OS. Começando eu acredito em Java 17. Java usa mais memória do que o que é colocado no heap configurações. Você pode ver isso se você olhar para suas configurações de heap e, em seguida, usar comandos como topo, htop ou btop para verificar o uso de memória de aplicativos. Então, por exemplo, nosso uso pesado ERDDAP™ tem espaço de pilha definido em 21GB, mas na verdade o uso de memória pode correr para 28GB-30GB, às vezes mais alto. Este valor pode aumentar se houver um monte de pedidos grandes simultâneos para o sistema.
 

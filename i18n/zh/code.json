@@ -63,10 +63,6 @@
     "message": "面包屑",
     "description": "The ARIA label for the breadcrumbs"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1项|{count}项目",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
   "theme.docs.paginator.navAriaLabel": {
     "message": "文档页面",
     "description": "The ARIA label for the docs pagination"
@@ -138,10 +134,6 @@
     "message": "标记 :",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "关闭",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "小心点",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -166,6 +158,10 @@
     "message": "警告",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "关闭",
+    "description": "The ARIA label for close button of announcement bar"
+  },
   "theme.blog.sidebar.navAriaLabel": {
     "message": "最近的文章导航",
     "description": "The ARIA label for recent posts in the blog sidebar"
@@ -177,6 +173,10 @@
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
     "message": "折叠侧边栏类别  '{label} '",
     "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(打开新标签)",
+    "description": "The ARIA label for the external link icon"
   },
   "theme.NavBar.navAriaLabel": {
     "message": "主要",
@@ -230,6 +230,10 @@
     "message": "主页",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "侧边栏",
+    "description": "The ARIA label for the sidebar navigation"
+  },
   "theme.docs.sidebar.collapseButtonTitle": {
     "message": "折叠侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
@@ -237,10 +241,6 @@
   "theme.docs.sidebar.collapseButtonAriaLabel": {
     "message": "折叠侧边栏",
     "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "侧边栏",
-    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "关闭导航栏",
@@ -345,6 +345,10 @@
     "message": "此页面为草稿. 它只在dev中可见,并被排除在生产建设之外.",
     "description": "The draft content banner message"
   },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1项|{count}项目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
   "theme.ErrorPageContent.tryAgain": {
     "message": "再试一次",
     "description": "The label of the button to try again rendering when the React error boundary captures an error"
@@ -356,9 +360,5 @@
   "theme.tags.tagsPageTitle": {
     "message": "标记",
     "description": "The title of the tag list page"
-  },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(打开新标签)",
-    "description": "The ARIA label for the external link icon"
   }
 }

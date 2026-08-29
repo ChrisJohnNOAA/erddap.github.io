@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 #  ERDDAP™ Processus de libération
-* Assurez-vous que les fichiers de comparaison d'images sont disponibles (ça pourrait vouloir dire courir `mvn vérifier` , si vous voulez accélérer cette limite jusqu'à seulement le groupe ImageComparison bien que note qui nécessite toujours des tests Jetty) 
+* Assurez-vous que les fichiers de comparaison d'images sont disponibles (ça pourrait vouloir dire courir `mvn vérifier` , si vous voulez accélérer cette limite jusqu'au seul groupe ImageComparison bien que note qui nécessite toujours des tests Jetty) 
 * Mise à jour des dépendances
 ```
 mvn versions:display-dependency-updates   // (displays updates)
@@ -20,8 +20,8 @@ mvn verify -P external
 mvn verify -P slowAWS
 ```
 * Utilisation `python translation/translate.py` mettre à jour les traductions si nécessaire.
-* EDStatic.java ensemble développement Mode à faux, modifier le numéro de version et spécifier la date de sortie.
-* Faites la construction.
+* EDStatic.java définit le développement Mode à faux, modifier le numéro de version et spécifier la date de sortie.
+* Fais la construction.
 ```
 mvn clean
 mvn compile
@@ -34,19 +34,19 @@ Nous voulons essayer de trouver des erreurs avant une distribution plus large de
 Inclure le message lorsqu'on parle d'une nouvelle version.
 
 La procédure standard est la suivante:
-* Télécharger le fichier .war sur Coastwatch \\[ tomcat \\] /content/erddap/
-* En tant qu'utilisateur=tomcat:
-  * Dans \\[ tomcat \\] /bin/ :
+* Télécharger le fichier .war vers Coastwatch \\[ Tomcat \\] /content/erddap/
+* Comme utilisateur=tomcat:
+  * En \\[ Tomcat \\] /bin/ :
 ./shutdown.sh //utiliser "ps -fu tomcat" pour s'assurer qu'il a cessé
-  * Dans \\[ tomcat \\] /webapps/ :
-rm erddap
-- Oui. guerre
-cp ../contenu/erddap/erddap2. erddap.war //ou quel que soit le numéro
-  * Dans \\[ tomcat \\] /bin/ :
+  * En \\[ Tomcat \\] /webapps/ :
+rm -rf erddap
+Je suis erddap. guerre
+cp ../content/erddap/erddap2.22. guerre erddap.war //ou quel que soit le numéro
+  * En \\[ Tomcat \\] /bin/ :
 ./démarrage.sh
-  * Après ERDDAP a retourné une page Web, dans \\[ tomcat \\] /webapps/ :
--R erddap erddap
-Chmod -R g+rw erddap
+  * Après ERDDAP a retourné une page Web, dans \\[ Tomcat \\] /webapps/ :
+erddap erddap
+erddap
 erddap
 
 ## Sortie de GitHub
@@ -57,18 +57,20 @@ décrire: Voir la liste des modifications à
        https://erddap.github.io/changes#version-225
  
 
-## Mise à jour de documentation
-* Mettre à jour le numéro de version dans le fichier docusaurus.config.ts (dans la section de pied de page) .
+## Mise à jour de la documentation
+* Mettre à jour le numéro de version dans le fichier docusaurus.config.ts (dans la section du pied de page) .
+* Supprimer le répertoire i18n/fr (n'écrasera pas un fichier existant) et courir `npm exécution écriture-traductions` pour exporter la nouvelle corde de pied.
 * Modifier les pages de documentation (deploy-install.md et deploy-update.md) .
   * Rechercher \\[ Guerre \\]  
-  * Copier les informations existantes (légèrement reformaté) à la liste des installations antérieures 2.
+  * Copier les informations existantes (légèrement reformaté) à la liste des installations précédentes.
   * Modifier l'information de publication actuelle pour erddap. la guerre à \\[ Guerre \\] 
-* Exécutez les traductions pour le site de documentation.
-* Faites une requête de tirage et fusionnez les modifications.
+* Exécutez les traductions pour le site de documentation. Il est recommandé de ne traduire que les pages qui ont changé puisque cette étape peut être très lente.
+  * Assurez-vous que les pied de page sont traduits avec le nouveau numéro de version.
+* Faites une demande de tirage et fusionnez les modifications.
 * Déployer le site de documentation (voir lecture) .
 
 ## S'assurer que les autres dépôts sont à jour au besoin
-Cela signifie principalement ErddapContent et ErddapTest, mais ils devraient être tenus à jour pendant les changements de développement.
+Cela signifie principalement ErddapContent et ErddapTest, mais ils doivent être tenus à jour pendant les changements de développement.
 
 ## Aviser les utilisateurs
 Informez d'abord les utilisateurs des modifications demandées (ou dont les bogues ont été corrigés) . Donnez-leur le temps de vérifier les changements et/ou de soulever des questions.
@@ -79,7 +81,7 @@ Vous pouvez lire les changements à
  https://erddap.github.io/changes#version-225
  
 
-Certains changements sont des changements que vous avez suggérés. Merci beaucoup pour vos suggestions. Recherchez votre nom dans la liste des modifications pour voir les détails. Ce serait génial si vous pouviez essayer les nouvelles fonctionnalités bientôt, avant que je annonce cette nouvelle version à un public plus large.
+Certains changements sont des changements que vous avez suggérés. Merci beaucoup pour vos suggestions. Recherchez votre nom dans la liste des modifications pour voir les détails. Ce serait super si vous pouviez essayer les nouvelles fonctionnalités bientôt, avant que je annonce cette nouvelle version à un public plus large.
 
 Si vous êtes un ERDDAP administrateur, les instructions pour la mise à niveau sont à
  https://erddap.github.io/docs/server-admin/deploy-update

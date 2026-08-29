@@ -1,4 +1,4 @@
-Este contenido se basa en un [mensaje de Roy Mendelssohn al ERDDAP Grupo de usuarios](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Este contenido se basa en un [mensaje de Roy Mendelssohn al ERDDAP™ Grupo de usuarios](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimización de archivos netcdf para la nube
 ———————————————
@@ -7,7 +7,8 @@ a. embalaje y tamaño de página
 
 Recientemente en hacer algunas investigaciones me encontré con este artículo muy interesante:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Nada parece inflamar pasiones como discusiones de lenguajes de programación, editores y formatos de archivo, y esto no es una recomendación de qué formato (s) debe utilizar, pero más bien para entender lo que está en ese papel y para ver cuánto mejor se puede conseguir ( ERDDAP™ ha intentado siempre ser agnóstico sobre muchos de estos asuntos, más bien elegir tratar de trabajar con cómo la gente realmente trabaja con datos) .
 
@@ -86,26 +87,27 @@ Así que el tradeoff es que hay un aumento no insignificante del tamaño de arch
 
 d. Pero si tengo que reprocesar los archivos de todos modos...
 
-Una buena pregunta es si tengo que escribir un script para reprocesar los archivos, ¿por qué no escribir un script para traducir a un formato como decir zarr? zarr tiene muchos proponentes y si usted está interesado en zarr sólo hacer una búsqueda rápida de pato y allí muchos buenos posts, una vista quizás más equilibrada está enhttps://www.youtube.com/watch?v=IEAcCmcOdJs  (es interesante que muchos de los puntos que plantea son lo que el formato de icechunk están tratando de abordar) . Así que, ¿por qué no desea traducir sus archivos a algo como zarr, Primero, si crea archivos netcdf regularmente, puede comenzar a optimizar los archivos de ahora en adelante, que con el tiempo verá ganancias de velocidad y no tendrá que reformar archivos pasados, y ERDDAP™ todavía será capaz de agregar sobre los archivos aunque algunos de los ajustes internos difieren. En segundo lugar, usted podría tener un montón de herramientas que depende de los archivos netcdf, y este enfoque significaría no tener que retocar lo que podría ser una gran cantidad de código. El punto es ser consciente de las opciones y elegir lo que funciona mejor para su situación. Como recordatorio, si elige usar archivos zarr con ERDDAP™ , deben ser archivos zarr formato v2.
+Una buena pregunta es si tengo que escribir un script para reprocesar los archivos, ¿por qué no escribir un script para traducir a un formato como decir zarr? zarr tiene muchos proponentes y si usted está interesado en zarr sólo hacer una búsqueda rápida de pato y allí muchos buenos posts, una vista quizás más equilibrada está en https://www.youtube.com/watch?v=IEAcCmcOdJs   (es interesante que muchos de los puntos que plantea son lo que el formato de icechunk están tratando de abordar) . Así que, ¿por qué no desea traducir sus archivos a algo como zarr, Primero, si crea archivos netcdf regularmente, puede comenzar a optimizar los archivos de ahora en adelante, que con el tiempo verá ganancias de velocidad y no tendrá que reformar archivos pasados, y ERDDAP™ todavía será capaz de agregar sobre los archivos aunque algunos de los ajustes internos difieren. En segundo lugar, usted podría tener un montón de herramientas que depende de los archivos netcdf, y este enfoque significaría no tener que retocar lo que podría ser una gran cantidad de código. El punto es ser consciente de las opciones y elegir lo que funciona mejor para su situación. Como recordatorio, si elige usar archivos zarr con ERDDAP™ , deben ser archivos zarr formato v2.
 
 e. Big data - un lado
 
 Big data se habla mucho, pero lo grande es los datos que la mayoría de la gente utiliza y cómo se compara con las capacidades de los portátiles modernos (sí portátiles, no servidores) . Una toma interesante es en:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Comienza alrededor del minuto 37 aunque toda la charla es interesante
+ https://www.youtube.com/watch?v=GELhdezYmP0 Comienza alrededor del minuto 37 aunque toda la charla es interesante
 
 El estudio que menciona es en:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Así que hay un porcentaje relativamente pequeño de usuarios que realmente necesitan para subir el poder, pero la mayoría abrumadora de usuarios pueden hacer sus análisis en un portátil, 26 unidades externas de TB están ahora bajo $300 y rumores son que 60 unidades externas de TB estarán disponibles a finales de año. Algo en lo que pensar.
 
 2. Uso ERDDAP™ con Google Cloud Platform u otros proveedores de cloud además de AWS
 --------------------------------------------------------------------------------------------------------------------
 
-En este momento ERDDAP™ es conocido sólo para trabajar con las tiendas de objetos AWS (S3) , aunque mejorando y generalizando ERDDAP™ ’s soporte de la tienda de objetos está en la lista de todo (verhttps://github.com/ERDDAP/erddap/issues/158) . Así que qué hacer si te dicen que tienes que ejecutar tu ERDDAP™ en Google Cloud Platform (GCP) o una plataforma similar? En primer lugar, la mayoría de las plataformas de nube ofrecen diferentes niveles de almacenamiento, generalmente incluyendo uno que es similar al almacenamiento local y es reconocido por el sistema operativo, uno que está conectado sobre la red generalmente utilizando NFS para el acceso (de nuevo accesible directamente por el sistema operativo) , y uno que es una tienda de objetos. La primera solución es no utilizar las tiendas de objetos, y usted sería bueno para ir. Pero como siempre, TANSTAAFL y el inconveniente en este caso es como usted va de la tienda de objetos - Acceso NFS - confía local tus costos también suben. (Agrego que NFS también se accede a través de la red, y tiene sus propios problemas de latencia, esto también se beneficiaría de la optimización de archivos) .
+En este momento ERDDAP™ es conocido sólo para trabajar con las tiendas de objetos AWS (S3) , aunque mejorando y generalizando ERDDAP™ ’s soporte de la tienda de objetos está en la lista de todo (ver https://github.com/ERDDAP/erddap/issues/158 ) . Así que qué hacer si te dicen que tienes que ejecutar tu ERDDAP™ en Google Cloud Platform (GCP) o una plataforma similar? En primer lugar, la mayoría de las plataformas de nube ofrecen diferentes niveles de almacenamiento, generalmente incluyendo uno que es similar al almacenamiento local y es reconocido por el sistema operativo, uno que está conectado sobre la red generalmente utilizando NFS para el acceso (de nuevo accesible directamente por el sistema operativo) , y uno que es una tienda de objetos. La primera solución es no utilizar las tiendas de objetos, y usted sería bueno para ir. Pero como siempre, TANSTAAFL y el inconveniente en este caso es como usted va de la tienda de objetos - Acceso NFS - confía local tus costos también suben. (Agrego que NFS también se accede a través de la red, y tiene sus propios problemas de latencia, esto también se beneficiaría de la optimización de archivos) .
 
-Si tiene que utilizar la tienda de objetos, o sólo puede permitirse una tienda de objetos, la respuesta es un sistema de archivos FUSE (https://github.com/libfuse/libfuse) . En GCP, esto se llama gcsfuse, y los pasos para instalarlo son:
+Si tiene que utilizar la tienda de objetos, o sólo puede permitirse una tienda de objetos, la respuesta es un sistema de archivos FUSE ( https://github.com/libfuse/libfuse ) . En GCP, esto se llama gcsfuse, y los pasos para instalarlo son:
 
 • Instalar gcsfuse en su imagen de GCP Linux:
 sudo apt update

@@ -1,4 +1,4 @@
-Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP gebruikersgroep](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP™ gebruikersgroep](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Veel van de hulp verzoeken die we krijgen betrekken problemen met geheugengebruik in ERDDAP™ . Dit komt deels door veranderingen in geheugenbeheer in Java , en ook interacties met Linux OS geheugenbeheer. Begin ik geloof in Java 17, Java gebruikt meer geheugen dan wat er wordt neergezet in de hopen instellingen. Je kunt dit zien als je kijkt naar je hopen instellingen en vervolgens commando's zoals top, htop, of btop gebruiken om het geheugengebruik van toepassingen te controleren. Dus bijvoorbeeld onze zwaar gebruikte ERDDAP™ heeft hoop ruimte ingesteld op 21GB, maar eigenlijk geheugengebruik kan lopen tot 28GB-30GB, soms hoger. Deze waarde kan pieken als er veel gelijktijdige grote verzoeken aan het systeem.
 

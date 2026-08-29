@@ -5,13 +5,13 @@ sidebar_position: 1
 # 설치하기
 초기 설정 방법 ERDDAP™ 서버에서
 
- ERDDAP™ 지원되는 서버에서 실행할 수 있습니다. Java 톰캣 (Jetty와 같은 다른 응용 서버, 그러나 우리는 그들을 지원하지 않습니다) ·
+ ERDDAP™ 지원되는 모든 서버에 실행할 수 있습니다. Java 톰캣 (Jetty와 같은 다른 응용 서버, 그러나 우리는 그들을 지원하지 않습니다) ·
  ERDDAP™ Linux에서 테스트되었습니다. (Amazon의 AWS를 포함한) , Mac 및 Windows 컴퓨터.
 
 *  **팟캐스트** -- 우리는 제공합니다 [ ERDDAP™ Docker 컨테이너](https://hub.docker.com/r/erddap/erddap) 
 IOOS는 이제 [빠른 시작 가이드 ERDDAP™ Docker 컨테이너](https://ioos.github.io/erddap-gold-standard/index.html) ·
 그것은 기준입니다 ERDDAP™ 설치, Docker 컨테이너.
-Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 방법을 제공, 더 읽기 [Docker 문서](https://github.com/ERDDAP/erddap/blob/main/DOCKER.md) ·
+Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 방법을 제공, 자세히 읽기 [Docker 문서](https://github.com/ERDDAP/erddap/blob/main/DOCKER.md) ·
 이미 Docker를 사용한다면 Docker 버전을 선호합니다.
 클라우드 서비스에 실행하려면 Docker 버전을 선호합니다.
 *  **아마존 320** -- 설치 방법 ERDDAP™ Amazon Web Services EC2 인스턴스에서, 이 참조 [Amazon 웹 서비스 개요](/docs/server-admin/additional-information#amazon) 처음.
@@ -20,25 +20,25 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
 그러나 우리는 대중을 위해 그것을 사용하는 것이 좋습니다 ERDDAP™ 설치. 지원하다 ERDDAP™ Windows에는 문제가 있을지도 모릅니다:
 아니, ERDDAP™ 삭제 및/또는 파일 이름을 신속하게 변경할 수 없습니다. 이것은 아마도 바이러스 백신 소프트웨어로 인해
    (예를 들어, McAfee와 Norton에서) 바이러스에 대한 파일을 검사하는 것. 이 문제로 실행하는 경우
-(내 오류 메시지로 볼 수 있음) [로그.txt](/docs/server-admin/additional-information#log) 같은 파일
+(내 오류 메시지에 의해 볼 수 있음) [로그.txt](/docs/server-admin/additional-information#log) 같은 파일
 "Unable to delete ..."), 바이러스 백신 소프트웨어의 설정을 변경하면 부분적으로 문제를 완화 할 수 있습니다. 또는 대신 Linux 또는 Mac 서버를 사용하는 것이 좋습니다.
 
  **표준 ERDDAP™ Linux, Mac 및 Windows 컴퓨터의 설치 지침은 다음과 같습니다.** 
 
-0. 어떤 의존도가 설치되어 있는지 확인하십시오. 비 Windows 기계에 (리눅스 및 맥) , 당신은 csh를 필요로 합니다.
+0. 어떤 의존도가 설치되어 있는지 확인하십시오. 비 Windows 기계에 (리눅스와 맥) , 당신은 csh를 필요로 합니다.
 
 ##  Java  {#java} 
 
 1.  [제품 정보 ERDDAP™ v2.29.0+, 설정 Java 25. ·](#java) 
 보안상의 이유로, 그것은 항상 최신 버전을 사용하는 것이 가장 좋습니다 Java 25. ·
-최신 버전을 다운로드하고 설치하십시오.
+최신 버전을 다운로드하고 설치하십시오
     [채택의 OpenJDK (테무린) 25 분 (사이트맵) ](https://adoptium.net/temurin/releases/?version=25) ·
 설치를 확인하려면 실행 `/javaJreBin감독/java -버전` , 예를 들면
     `/usr/local/jdk-25.0.1+8/jre/bin/java -버전` ·
 
     ERDDAP™ 일하기 Java 다른 소스에서, 하지만 우리는 Adoptium을 권장 하기 때문에 주요, 지역 사회 지원,
 무료 와이파이 (맥주와 연설) 버전의 Java 장기 지원을 제공하는 25 (몇 년 동안 무료 업그레이드 초기 출시) ·
-보안상의 이유로, 업데이트하십시오 ERDDAP 's 버전의 Java 주기적으로 새로운 버전의 Java 25는 Adoptium에서 유효합니다.
+보안상의 이유로, 업데이트하십시오 ERDDAP 's 버전 Java 주기적으로 새로운 버전의 Java 25는 Adoptium에서 유효합니다.
 
     ERDDAP™ 테스트 되었으며 널리 25, 다른 버전. 다양한 이유로, 우리는 다른 버전을 지원하지 않습니다 Java ·
      
@@ -46,9 +46,9 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
 
 2.  [설치하기](#tomcat)   [톰캣](https://tomcat.apache.org) · Tomcat은 널리 사용됩니다. Java 신청 서버,
 이름 * Java 운영 체제의 네트워크 서비스 및 Java 서버 소프트웨어 like ERDDAP™ ·
-그것은 무료이며 오픈 소스 소프트웨어 (제품정보) ·
+그것은 무료 및 오픈 소스 소프트웨어 (제품정보) ·
 
-다른 것을 사용할 수 있습니다. Java Application 서버 (예, Jetty) , 그러나 우리는 단지 시험 및 지원 Tomcat.
+다른 것을 사용할 수 있습니다. Java Application 서버 (예, Jetty) , 하지만 우리는 단지 테스트와 지원 Tomcat.
 
    * Tomcat을 다운로드하고 서버 또는 PC에서 해제하십시오.
 보안상의 이유로 Tomcat 10의 최신 버전을 사용하는 것이 거의 항상 최고입니다. (버전 9 이하 허용되지 않습니다) 
@@ -63,23 +63,23 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
      * Mac에서 Tomcat은 이미 설치되었습니다. `/라이브 /Tomcat` ,하지만 Tomcat 10의 최신 버전으로 업데이트해야합니다.
 다운로드하면, [다운로드 "Core" "tar .gz "톰캣 배포](https://tomcat.apache.org/download-10.cgi) 그리고 그것을 풀 `/라이브 /Tomcat` ·
      * Windows에서, 당신은 할 수 있습니다 [다운로드 "Core" "zip"Tomcat 배포](https://tomcat.apache.org/download-10.cgi) 
-        (Windows 레지스트리를 가진 메시가 아니며 DOS 명령 줄에서 제어할 수 없습니다.) 그리고 적절한 디렉토리에 해제.
+        (Windows 레지스트리를 가진 메시가 아니며 DOS 명령 줄에서 제어할 수 없습니다.) 그리고 적절한 디렉토리에 붙여넣기.
         (개발을 위해 "Core" "zip" 배포를 사용합니다. 우리는 `/프로그램` 디렉토리와 그것을 풀.) 
-또는 더 많은 기능을 포함하는 "Core" "64-bit Windows zip" 배포를 다운로드 할 수 있습니다.
+또는 "Core" "64-bit Windows zip" 배포를 다운로드 할 수 있습니다.
 배포가 Windows 설치자 인 경우, 예를 들어 Tomcat을 넣을 것입니다. `/프로그램 파일/apache-tomcat-10.0.23` ·
              
 ### 서버.xml{#serverxml} 
 
 *  [서버.xml](#serverxml) - 에서 `파일 형식` 파일, 두 가지 변경 사항이 있습니다. ` <Connector> ` 이름 *
-   (1 대 `&lt;커넥터 포트="808080"` 그리고 하나 `&lt;Conector 포트="8443"` ) ·
-   1.  ((주)) 더 보기 `연결하기 시간 아웃` 매개변수 값, 아마 300000 (밀리 초, 이는 5 분) ·
+   (1 대 `&lt;연결 포트="808080"` 그리고 하나 `&lt;Conector 포트="8443"` ) ·
+   1.  ((주)) 더 보기 `연결하기 시간 아웃` 매개변수 값, 아마 300000 (밀리 초, 5 분) ·
    2.  ((주)) 새로운 모수를 추가하십시오: `relaxedQueryChars="[]를 | ·` · 이것은 선택적이고 약간 더 적은 안전,
-하지만 사용자의 요청 URL의 매개 변수에 발생할 때 이러한 문자를 % 인코딩하는 데 필요한 것을 제거합니다.
+하지만 사용자의 요청 URL의 매개 변수에서 발생할 때 이러한 문자를 % 인코딩하는 데 필요한 것을 제거합니다.
              
 ### 콘텐츠.xml{#contentxml} 
 
 * 엠에디터 플러그 인 참조:Cert.xml -- 자원 캐시 - In `tomcat/conf/콘텍스.xml` , 오른쪽 전에 ` </Context> ` 태그, 리소스 태그 변경
-   (또는 이미 없다면 그것을 추가) 캐시 설정 80000에 MaxSize 모수:
+   (또는 이미 없다면 추가) 캐시 설정 80000에 MaxSize 모수:
   ```
   <Resources cachingAllowed="true" cacheMaxSize="80000" />
   ```
@@ -93,19 +93,19 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
 * Linux 컴퓨터에서 Apache 타임아웃 설정을 변경하여 사용자 요청이 타임아웃되지 않도록
    (종종 "Proxy" 또는 "Bad Gateway" 오류로 나타납니다.) · 루트 사용자로서:
   * 아파치 수정 ` http 사이트맵` 파일 형식 (일반적으로 `/기타 http ₢ 킹` ) ::
-    * 기존의 변화 ` <Timeout> ` 설치하기 (또는 파일의 끝에 하나를 추가) 에 3600 (지원하다) , 대신 기본 60 또는 120 초.
-    * 기존의 변화 ` <ProxyTimeout> ` 설치하기 (또는 파일의 끝에 하나를 추가) 에 3600 (지원하다) , 대신 기본 60 또는 120 초.
+    * 현재 변경 ` <Timeout> ` 설치하기 (또는 파일의 끝에 하나를 추가) 에 3600 (지원하다) , 대신 기본 60 또는 120 초.
+    * 현재 변경 ` <ProxyTimeout> ` 설치하기 (또는 파일의 끝에 하나를 추가) 에 3600 (지원하다) , 대신 기본 60 또는 120 초.
   * 아파치 재시작: `아파치 /usr/sbin/apachectl -k 우아한`   (하지만 때로는 다른 디렉토리에) ·
 
 ### 보안 보안{#security} 
          
 * 보안 권고: 이름 * [이 지침](https://tomcat.apache.org/tomcat-10.0-doc/security-howto.html) 보안을 높이기 위해
-톰캣 설치, 특히 공공 서버.
+Tomcat 설치, 특히 공공 서버.
          
-* 관련 기사 ERDDAP™ Linux 및 Mac의 설치, Tomcat을 설정하는 것이 가장 좋습니다. (한국어) 사용자 이름 `뚱 베어` 
-   (제한된 권한과 함께 별도의 사용자 [비밀번호](https://unix.stackexchange.com/questions/56765/creating-an-user-without-a-password) ) ·
+* 관련 기사 ERDDAP™ Linux 및 Mac에서 설치, Tomcat을 설정하는 것이 가장 좋습니다. (한국어) 사용자 이름 `뚱 베어` 
+   (제한된 권한과 별도의 사용자 [비밀번호](https://unix.stackexchange.com/questions/56765/creating-an-user-without-a-password) ) ·
 따라서, 슈퍼 사용자는 사용자로 작동 할 수 있습니다 `뚱 베어` · 이것은 사용자가 서버에 로그인하는 해커에 대해 불가능합니다. `뚱 베어` ·
-그리고 어떤 경우에, 당신은 그것을 이렇게 해야 합니다 `뚱 베어` 사용자는 서버의 파일 시스템에 매우 제한된 권한이 있습니다 (read+write+execute 특권
+그리고 어떤 경우에, 당신은 그것을 그렇게해야 `뚱 베어` 사용자는 서버의 파일 시스템에 매우 제한된 권한이 있습니다 (read+write+execute 특권
 제품정보 `아파치` 디렉토리 트리와 ` <bigParentDirectory> ` and read-only specials for Directories 와 data 그 ERDDAP™ 연결하기
   * 당신은 만들 수 있습니다 `뚱 베어` 사용자 계정 (비밀번호) 명령을 사용하여:
     ```
@@ -120,15 +120,15 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
     ```
     exit
     ````
-    * 톰캣의 나머지와 ERDDAP™ 설정 설명서 `뚱 베어` · 나중에, 실행 `시작.sh` · `종료. 뚱 베어` user로 스크립트 `뚱 베어` 
+    * 톰캣의 나머지와 ERDDAP™ 설정 설명서 `뚱 베어` · 나중에, 실행 `시작.sh` 이름 * `종료. 뚱 베어` user로 스크립트 `뚱 베어` 
 그래서 Tomcat은 로그 파일에 쓰기 권한이 있습니다.
     * Tomcat을 포장 한 후, 부모로부터 `아파치` 디렉토리:
-      * apache-tomcat 디렉토리 트리의 소유권을 tomcat 사용자로 변경합니다.
+      * apache-tomcat 디렉토리 트리의 소유권을 tomcat 사용자로 변경하십시오.
         ```
         chown -R tomcat apache-tomcat-10.0.23
         ```
          (하지만 tomcat 디렉토리의 실제 이름을 대체) ·
-      * "group"를 tomcat로 변경, 사용자 이름, 또는 Tomcat의 모든 관리자를 포함하는 작은 그룹의 이름 ERDDAP ::
+      * "그룹"을 tomcat로 변경, 사용자 이름, 또는 Tomcat/의 모든 관리자를 포함하는 작은 그룹의 이름 ERDDAP ::
         ```
         chgrp -R yourUserName apache-tomcat-10.0.23
         ```
@@ -136,7 +136,7 @@ Docker를 통해 Compose 우리는 SSL 및 모니터링을 설정하는 쉬운 �
         ```
         chmod -R ug+rwx apache-tomcat-10.0.23
         ```
-      * "other" user's permissions to read, 쓰기, 또는 실행:
+      * "other"사용자의 권한을 읽고, 쓰기, 또는 실행:
         ```
         chmod -R o-rwx apache-tomcat-10.0.23
         ```
@@ -148,7 +148,7 @@ Tomcat의 환경 변수 설정
 
 * Linux 및 Mac에서:
 파일 만들기 `tomcat/빈/setenv.sh`   (또는 Red Hat Enterprise Linux에서 \\[ IR 정보 \\] , 편집 `~tomcat/conf/tomcat10.conf의 경우` ) Tomcat의 환경 변수 설정.
-이 파일은 `tomcat/빈/startup.sh` · `종료. 뚱 베어` · 파일은 다음과 같은 무언가를 포함해야합니다.
+이 파일은 `tomcat/빈/startup.sh` 이름 * `종료. 뚱 베어` · 파일은 다음과 같이 무언가를 포함해야 한다:
   ```
   export JAVA_HOME=/usr/local/jdk-25.0.1+8
   export JAVA_OPTS='-server -Djava.awt.headless=true -Xmx1500M -Xms1500M'
@@ -161,8 +161,8 @@ Mac에서 설정할 필요가 없습니다. `자바 스크립트` ·
 
 * Windows에서:
 파일 만들기 `tomcat\bin\\setenv.bat에 대 한` Tomcat의 환경 변수 설정.
-이 파일은 `tomcat\bin\\startup.bat로 이동` · ` shutdown.bat ` ·
-파일은 다음과 같은 무언가를 포함해야합니다.
+이 파일은 `tomcat\bin\\startup.bat로 이동` 이름 * ` shutdown.bat ` ·
+파일은 다음과 같이 무언가를 포함해야 한다:
   ```
   SET "JAVA_HOME=\\someDirectory\\jdk-25.0.1+8"
   SET "JAVA_OPTS=-server -Xmx1500M -Xms1500M"
@@ -173,33 +173,33 @@ Mac에서 설정할 필요가 없습니다. `자바 스크립트` ·
 로컬 테스트의 경우 "-server"를 제거하십시오.
    (이전 설정 `JRE` , 당신은 그것을 제거할 수 있습니다.) 
 
-더 보기 `-Xmx의` · `-XMS의` 메모리 설정이 중요하기 때문에 ERDDAP™ 더 많은 메모리와 잘 작동합니다.
+더 보기 `-Xmx의` 이름 * `-XMS의` 메모리 설정이 중요하기 때문에 ERDDAP™ 더 많은 메모리와 잘 작동합니다.
 항상 설정 `-XMS의` 같은 값으로 `-Xmx의` ·
 
 * 32 비트 운영 체제 및 32 비트 Java ::
 64 비트 Java 32 조금 보다는 매우 더 낫습니다 Java , 하지만 32 비트 Java 서버가 정말 바쁘지 않다.
-서버의 더 물리적 메모리는 더 나은: 4+ GB는 진짜로 좋습니다, 2개 GB는 좋습니다, 더 적은 추천되지 않습니다.
+서버에서 더 물리적 메모리가 더 나은: 4+ GB는 진짜로 좋습니다, 2 GB는 좋습니다, 더 적은 추천되지 않습니다.
 32 조금으로 Java , 풍부한 신체 기억, Tomcat 및 Java 설정 시도하면 실행되지 않습니다. `-Xmx의` 1500M 이상 (몇몇 컴퓨터에 1200M) ·
 서버가 메모리 2GB 미만인 경우, 감소 `-Xmx의` 제품정보 (에 'M'egaBytes) 컴퓨터의 물리적 기억의 1/2에.
 
 * 64 비트 운영 체제 및 64 비트에 대 한 Java ::
 64 비트 Java 64 비트 운영 체제에서만 작동합니다.
-  * 이름 * Java 8, 당신은 추가해야 `-d64의` 톰캣에 `카테고리` 매개 변수 `다운로드` ·
+  * 이름 * Java 8, 당신은 추가 할 필요가 `-d64의` 톰캣에 `카테고리` 매개 변수 `다운로드` ·
   * 이름 * Java 21, 당신은 64 비트를 선택 Java 다운로드 할 때 버전의 Java 표시된 "64 비트".
 
-64 조금으로 Java , 톰캣과 Java 아주 높은 사용할 수 있습니다 `-Xmx의` · `-XMS의` 설정. 더 나은 서버에서 물리적 메모리.
-단순 제안으로 : 우리는 당신이 설정하는 것이 좋습니다 `-Xmx의` · `-XMS의` 으로 (에 'M'egaBytes) 1/2에서 (또는 더 적은) 컴퓨터의 물리적 기억.
-Tomcat이 있다면 볼 수 있습니다. Java · ERDDAP™ 실제로 64 비트 모드에서 실행하여 "비트,"를 검색하여 ERDDAP 데일리 리포트
+64 조금으로 Java , 톰캣과 Java 아주 높은 사용할 수 있습니다 `-Xmx의` 이름 * `-XMS의` 설정. 더 나은 서버에서 물리적 메모리.
+단순 제안으로 : 우리는 당신이 설정하는 것이 좋습니다 `-Xmx의` 이름 * `-XMS의` 이름 * (에 'M'egaBytes) 1/2에서 (또는 더 적은) 컴퓨터의 물리적 기억.
+Tomcat이 있다면 볼 수 있습니다. Java · ERDDAP™ 실제로 64 비트 모드에서 실행하여 "비트"를 검색하여 ERDDAP 데일리 리포트
 또는 에서 `bigParentDirectory/로그/ [로그.txt](/docs/server-admin/additional-information#log) ` 파일 형식 ( `큰Parent감독` 정의된 [설정.xml](#setupxml) ) ·
 
 #### Garbage 수집{#garbage-collection} 
 
 * 내 계정 ERDDAP™ 이름 * [로그.txt](/docs/server-admin/additional-information#log) 파일, 당신은 많은 "GC를 볼 수 있습니다 (Allocation 실패) " 메시지.
 이것은 일반적으로 문제가 아닙니다. 일반적으로 작동에서 빈번한 메시지입니다 Java 단지 미성년자 쓰레기를 마친다.
-에덴의 방 밖으로 ran 있기 때문에 수집 (의 영역 Java heap 용 대단히 젊은 물체) · 보통 메시지는 당신을 보여줍니다
+에덴의 방에서 벗어나기 때문에 수집 (의 영역 Java heap 용 대단히 젊은 개체) · 보통 메시지는 당신을 보여줍니다
    `memoryUseBefore-&gt;memoryUseAfter에` · 두 숫자가 함께 닫을 경우 쓰레기 수집이 생산되지 않았는 것을 의미합니다.
-메시지는 매우 빈번하다면 문제의 징후입니다. (매 몇 초) , 생산적이지 않으며, 숫자는 크고 성장하지 않습니다,
-그대는 Java 더 많은 메모리를 필요로, 무료 메모리에 struggling, 그리고 메모리를 무료로 할 수 없습니다.
+메시지는 매우 빈번하다면 문제의 징후입니다. (몇 초) , 생산적이지 않으며, 숫자는 크고 성장하지 않습니다,
+그와 함께 Java 더 많은 메모리를 필요로, 무료 메모리에 struggling, 그리고 메모리를 무료로 할 수 없습니다.
 이것은 스트레스가 많은 시간 동안 일어날 수 있습니다. 그러나 그것이 주장한다면, 그것은 문제의 징후입니다.
 * 자주 묻는 질문 `JavaScript licenses API 웹 사이트` s 에 ERDDAP™ 이름 * [로그.txt](/docs/server-admin/additional-information#log) 파일,
 이름 * [아웃OfMemoryError](/docs/server-admin/additional-information#outofmemoryerror) 진단하고 문제를 해결하는 방법에 대한 팁.
@@ -213,7 +213,7 @@ Tomcat이 있다면 볼 수 있습니다. Java · ERDDAP™ 실제로 64 비트 
 
 ### 이름 *{#fonts} 
 
-*  [이미지의 글꼴:](#fonts) 우리는 강력하게 자유롭게 선호합니다. [DejaVu 폰트](https://dejavu-fonts.github.io/) 다른 것 Java 글꼴.
+*  [이미지의 글꼴:](#fonts) 우리는 강하게 자유롭게 선호합니다 [DejaVu 폰트](https://dejavu-fonts.github.io/) 다른 것 Java 글꼴.
 이 글꼴을 사용하여 강력하게 권장하지만 필요하지 않습니다.
 
 DejaVu 글꼴을 사용하지 않는 경우, 당신은 setup.xml의 fontFamily 설정을 변경해야합니다 ` <fontFamily> 샌스Serif </fontFamily> ` ·
@@ -222,7 +222,7 @@ DejaVu 글꼴을 사용하지 않는 경우, 당신은 setup.xml의 fontFamily �
 
 DejaVu 글꼴을 사용하는 경우, 확인하시기 바랍니다 ` <fontFamily> ` setup.xml의 설정은 ` <fontFamily> DejaVu 산 </fontFamily> ` ·
 
-DejaVu 글꼴을 설치하려면 다운로드하십시오. [데자비프 .zip ](/DejaVuFonts.zip)   (5,522,795 바이트, MD5=33E1E61FAB06A547851ED308B4FFEF42) 
+DejaVu 글꼴을 설치하려면 다운로드하십시오. [디자비프 .zip ](/DejaVuFonts.zip)   (5,522,795 바이트, MD5=33E1E61FAB06A547851ED308B4FFEF42) 
 글꼴 파일을 임시 디렉토리에 압축합니다.
 
   * 리눅스에서:
@@ -243,8 +243,8 @@ DejaVu 글꼴을 설치하려면 다운로드하십시오. [데자비프 .zip ](
     * 브라우저에서 URL + ":8080/" 보기 (₢ 킹 [ http://coastwatch.pfeg.noaa.gov:8080/ ](http://coastwatch.pfeg.noaa.gov:8080/) ) ·
 기본적으로 Tomcat을 사용할 수 있습니다. 그것은 공개적으로 접근 할 수 없습니다.
   * Windows 로컬 호스트:
-    * 시스템 트레이에서 Tomcat 아이콘을 클릭하고 "시작 서비스"를 선택하십시오.
-    * - 연혁 [ http://127.0.0.1:8080/ ](http://127.0.0.1:8080/) , 또는 아마 [ http://localhost:8080/ ](http://localhost:8080/) , 브라우저에서. 기본적으로 Tomcat을 사용할 수 있습니다. 그것은 공개적으로 접근 할 수 없습니다.
+    * 시스템 트레이에서 Tomcat 아이콘을 마우스 오른쪽 클릭하고 "Start service"를 선택하십시오.
+    * (주) [ http://127.0.0.1:8080/ ](http://127.0.0.1:8080/) , 또는 아마 [ http://localhost:8080/ ](http://localhost:8080/) , 브라우저에서. 기본적으로 Tomcat을 사용할 수 있습니다. 그것은 공개적으로 접근 할 수 없습니다.
 
 Tomcat "Congratulations" 페이지를 참조하십시오.
 
@@ -252,7 +252,7 @@ Tomcat "Congratulations" 페이지를 참조하십시오.
 
 ### Tomcat 설치를 가진 Troubles?{#troubles-with-the-tomcat-installation} 
 
-* Linux 및 Mac에서 Tomcat에 도달할 수 없는 경우 ERDDAP™   (또는 방화벽 외부에서 컴퓨터에 도달 할 수 없습니다.) ·
+* Linux 및 Mac에서 Tomcat에 도달할 수 없는 경우 ERDDAP™   (또는 아마도 방화벽 외부 컴퓨터에서 그들을 도달할 수 없습니다.) ·
 Tomcat이 8080 포트를 듣는 경우 테스트 할 수 있습니다. (으로 root) 서버의 명령줄에:
 
   ```
@@ -265,13 +265,13 @@ Tomcat이 8080 포트를 듣는 경우 테스트 할 수 있습니다. (으로 r
   tcp 0 0 :::8080 :::* LISTEN ## ##### ####/java
   ```
 
-   (위치안내 `₢ 킹` 몇몇 손가락) , 그것을 나타내는 `다운로드` 제품정보 (톰캣) "tcp" 트래픽에 대한 포트 "808080"을 듣는다.
+   (이름 * `₢ 킹` 몇 자리) , 그것을 나타내는 `다운로드` 제품정보 (톰캣) "tcp" 트래픽에 대한 포트 "808080"을 듣는다.
 라인이 반환되지 않은 경우, 라인이 크게 다르거나, 두 개 이상의 라인이 반환된 경우, 포트 설정에 문제가 있을 수 있습니다.
 
 * Tomcat 로그 파일 보기 `tomcat/로그/catalina.out` · Tomcat 문제 및 일부 ERDDAP™ 시작 문제는 거의 항상 표시된다.
 이것은 당신이 첫번째 조정인 때 일반적입니다 ERDDAP™ ·
 
-* 이름 * [톰캣](https://tomcat.apache.org/) 웹 사이트 또는 도움을위한 웹 검색, 그러나 당신이 가지고있는 문제를 알려 주시기 바랍니다 및 당신이 발견 된 솔루션.
+* 이름 * [톰캣](https://tomcat.apache.org/) 웹 사이트 또는 도움을위한 웹을 검색, 그러나 우리가 당신이 가지고있는 문제를 알고 당신이 발견 한 솔루션.
 
 * 더 보기 [더 많은 지원 얻기에 섹션](/docs/intro#support) ·
              
@@ -292,14 +292,14 @@ __Version 1.0.1, 20683 바이트, MD5=98a8099e7e674da59fe35e9c96efa7b5, 날짜 2
 
 #### 다른 디렉토리{#other-directory} 
 
-Red Hat Enterprise Linux용 (IR 정보) 또는 다른 상황에서 Tomcat 디렉토리를 수정할 수 없거나 원하는 곳
-으로 ERDDAP™ 몇몇 다른 이유로 다른 위치에 있는 내용 디렉토리 (예를 들어, Tomcat 대신 Jetty를 사용하는 경우) ·
+Red Hat Enterprise Linux용 (IR 정보) 또는 다른 상황에서 Tomcat 디렉토리 또는 원하는 곳을 수정할 수 없습니다
+으로 ERDDAP™ 몇몇 다른 이유를 위한 몇몇 다른 위치에 있는 content directory (예를 들어, Tomcat 대신 Jetty를 사용하는 경우) ·
 다운로드 `erddap 내용 .zip ` 원하는 디렉토리에 (으로 `뚱 베어` 비밀번호) 그리고 설정 ` erddapContentDirectory ` 시스템 재산
  (₢ 킹 ` erddapContentDirectory  =~tomcat/content/erddap ` ) · ERDDAP™ 이 새로운 콘텐츠 디렉토리를 찾을 수 있습니다.
 
 ### 설정.xml{#setupxml} 
 
-*  [댓글을 읽으십시오 `tomcat/content/erddap/setup.xml의 경우` ](#setupxml) 자주 묻는 질문 setup.xml은 모든 설정과 함께 파일입니다. ERDDAP™ 관련 기사
+*  [댓글을 읽으십시오 `tomcat/content/erddap/setup.xml의 경우` ](#setupxml) 자주 묻는 질문 setup.xml은 모든 설정으로 파일입니다. ERDDAP™ 관련 기사
 
 초기 설정의 경우, 당신은 적어도이 설정을 변경:
       *  ` <bigParentDirectory> ` 
@@ -315,7 +315,7 @@ bigParentDirectory를 만들 때, bigParentDirectory의 부모 디렉토리에�
       ```
       chown -R tomcat bigParentDirectory
       ```
-    * "group"를 tomcat로 변경, 사용자 이름, 또는 Tomcat의 모든 관리자를 포함하는 작은 그룹의 이름 ERDDAP ::
+    * "그룹"을 tomcat로 변경, 사용자 이름, 또는 Tomcat/의 모든 관리자를 포함하는 작은 그룹의 이름 ERDDAP ::
       ```
       chgrp -R yourUserName bigParentDirectory
       ```
@@ -337,11 +337,11 @@ bigParentDirectory를 만들 때, bigParentDirectory의 부모 디렉토리에�
 환경 변수를 통해 특수 설정을 공급합니다. 비밀 정보를 공급하는 경우 ERDDAP™ 이 방법을 통해,
 정보가 비밀에 남아 있는지 확인해야합니다. ERDDAP™ 시작 당 한 번만 환경 변수를 읽습니다.
 시작의 첫 번째에서, 그래서 이것을 사용하는 방법: 환경 변수를 설정, 시작 ERDDAP ·
-대기 시간 ERDDAP™ 시작하면 환경 변수를 설정하지 않습니다.
+대기 시간 ERDDAP™ 시작하면 환경 변수를 설정할 수 없습니다.
 
 ###  datasets.xml  {#datasetsxml} 
 
-* 댓글을 읽으십시오 [ **일하기 datasets.xml 파일 형식** ](/docs/server-admin/datasets) · 나중에, 당신이 얻은 후에 ERDDAP™ 지원하다
+* 댓글을 읽으십시오 [ **일하기 datasets.xml 파일 형식** ](/docs/server-admin/datasets) · 그 후, ERDDAP™ 지원하다
 처음으로 (일반적으로 기본 datasets로) XML을 수정합니다. `사이트 맵 datasets.xml ` 
 원하는 모든 datasets를 지정하려면 ERDDAP™ 관련 기사 이것은 당신이 당신의 시간의 대량을 보낼 곳
 설정하기 ERDDAP™ 그리고 나중에 유지하면서 ERDDAP™ ·
@@ -349,19 +349,19 @@ bigParentDirectory를 만들 때, bigParentDirectory의 부모 디렉토리에�
 예제를 볼 수 있습니다. [ datasets.xml GitHub에서](https://github.com/ERDDAP/erddap/blob/main/development/jetty/config/datasets.xml) ·
      
 *  (이름 *) 지금 또는 (더 많은 것) erddap의 CSS 파일을 수정하려는 경우, 복사
-   `tomcat/content/erddap/images/erddapStart2.css로 변환` 으로 `tomcat/content/erddap/images/erddap2.css로 변환` 다음으로 변경합니다.
-자주 묻는 질문 `다운로드` 때만 효력 ERDDAP™ 다시 시작하고 종종 브라우저의 캐시 된 파일을 삭제하는 사용자가 필요합니다.
+   `tomcat/content/erddap/images/erddapStart2.css로 변환` 이름 * `tomcat/content/erddap/images/erddap2.css로 변환` 다음으로 변경합니다.
+자주 묻는 질문 `다운로드` 때만 효력 ERDDAP™ 다시 시작하고 자주 브라우저의 캐시 된 파일을 삭제하는 사용자가 필요합니다.
      
  ERDDAP™ setup.xml 또는 설정이 제대로 작동하지 않을 경우 datasets.xml 파일은 잘 만들어진 XML 파일이 아닙니다. 그래서,이 파일을 편집 한 후,
 XML 텍스트를 XML 검수원과 같은 XML 검수원에 붙여진 결과가 잘 형성된 XML인지 확인하는 것이 좋습니다. [XML 유효성](https://www.xmlvalidation.com/) ·
      
 ### erddap 설치. 전쟁 파일{#install-the-erddapwar-file} 
 
-4. 리눅스, Mac 및 Windows에서, __download [다운로드](https://github.com/ERDDAP/erddap/releases/download/v2.30.0/ERDDAP-2.30.0.war) __ 로그인 `tomcat/웹앱` ::
+4. 리눅스, Mac 및 Windows에서, __download [다운로드](https://github.com/ERDDAP/erddap/releases/download/v2.31.0/ERDDAP-2.31.0.war) __ 로그인 `tomcat/웹앱` ::
 
-__Version 2.30.0, 706,939,121 바이트, MD5=CDC4B3D82A20B33A6623B85312F6DC21, 날짜 2026-04-06__
+__Version 2.31.0, 719,567,541 바이트, MD5=DB0AFDE1F441CA9262CB66291A1110D7, dated 2026-08-28__에
 
-.war 파일은 고해상도 해안선, 경계선 및 고각 데이터를 포함하기 때문에 커다란 것입니다.
+.war 파일은 고해상도 해안선, 경계선 및 지도를 생성하는 데 필요한 고도 데이터가 포함되어 있기 때문에 큰 파일입니다.
 
 일부 이전 버전도 있습니다.
 
@@ -376,15 +376,16 @@ __Version 2.30.0, 706,939,121 바이트, MD5=CDC4B3D82A20B33A6623B85312F6DC21, �
    *  [2.27.0의](https://github.com/ERDDAP/erddap/releases/download/v2.27.0/erddap.war)   (620,554,403 바이트, MD5=3b2086c659e4145ca2dff447bf4ef7, 날짜 2025-06-11) 
    *  [2.28.1의](https://github.com/ERDDAP/erddap/releases/download/v2.28.1/erddap.war)   (622,676,238 바이트, MD5=48b4226045f950c8a8d69ef9521b9bc9, 날짜 2025-09-05) 
    *  [2. 명세](https://github.com/ERDDAP/erddap/releases/download/v2.29.0/erddap.war)   (706,788,135 바이트, MD5=A5ED0DCC8D46CA27640FFEB8CE4A8560, 날짜 2025-12-15) 
+   *  [2.30.0의](https://github.com/ERDDAP/erddap/releases/download/v2.30.0/ERDDAP-2.30.0.war)   (706,939,121 바이트, MD5=CDC4B3D82A20B33A6623B85312F6DC21, 날짜 2026-04-06) 
 
 ### 프록시 구성 (특정)  {#proxy} 
 
- ERDDAP™ 일반적으로 웹 서버 역 프록시 뒤에 배포되어 표준 HTTP 포트에 제공 할 수 있습니다. (80 및 443) ·
-SSL/TLS 종료는 종종 웹 서버 프록시 레이어에 설치됩니다. Specifics는 각 배치의 요구에 달려 있습니다.
+ ERDDAP™ 일반적으로 웹 서버 역 프록시 뒤에 배치되어 표준 HTTP 포트에 제공 할 수 있습니다. (80 및 443) ·
+SSL/TLS 종료는 종종 웹서버 프록시 레이어에 설치됩니다. Specifics는 각 배치의 요구에 달려 있습니다.
 
 #### 아파치{#apache} 
 
-1. 견적 요청 `아파치 모듈 mod_proxy` · `아파치 모듈 mod_proxy_ http ` 적재됩니다:
+1. 견적 요청 `아파치 모듈 mod_proxy` 이름 * `아파치 모듈 mod_proxy_ http ` 적재됩니다:
 
 ```
 LoadModule proxy_module modules/mod_proxy.so
@@ -402,8 +403,8 @@ LoadModule proxy_http_module modules/mod_proxy_http.so
 </VirtualHost>
 ```
 
-이름 * ERDDAP™ 다른 경로에 봉사 `팟캐스트` , 또한 세트 `X-포워드` 헤더에
-경로 세그먼트 _before_ `팟캐스트` · 이 설정은 적합 할 것 ERDDAP™ 에 의해
+이름 * ERDDAP™ 다른 경로에 봉사 `팟캐스트` , 또한 놓습니다 `X-포워드` 헤더에
+경로 세그먼트 _before_ `팟캐스트` · 이 설정은 적합 할 것 ERDDAP™ 이름 *
  `/subpath/erddap의 경우` ::
 
 ```
@@ -424,8 +425,8 @@ proxy_set_header X-Forwarded-For   $proxy_add_x_forwarded_for;
 proxy_set_header X-Forwarded-Proto $scheme;
 ```
 
-이름 * ERDDAP™ 다른 경로에 봉사 `팟캐스트` , 또한 세트 `X-포워드` 헤더에
-경로 세그먼트 _before_ `팟캐스트` · 이 설정은 적합 할 것 ERDDAP™ 에 의해
+이름 * ERDDAP™ 다른 경로에 봉사 `팟캐스트` , 또한 놓습니다 `X-포워드` 헤더에
+경로 세그먼트 _before_ `팟캐스트` · 이 설정은 적합 할 것 ERDDAP™ 이름 *
  `/subpath/erddap의 경우` ::
 
 ```
@@ -444,15 +445,15 @@ NGINX 및 ERDDAP™ 자주 묻는 질문 https , 당신은 Tomcat server.xml의 
 ### Tomcat 시작하기{#start-tomcat} 
 
 *  (Tomcat Web Application Manager를 사용하는 것이 좋습니다. 완전 폐쇄 및 시작 Tomcat이 아닌 경우, 빨리 또는 나중에 PermGen 메모리 문제가있을 것입니다.) 
-*  (Linux 또는 Mac OS에서 Tomcat, e.g., tomcat을 실행하는 특별한 사용자를 만들면 다음 단계를 사용자로 기억하십시오.) 
-* Tomcat이 이미 실행중인 경우 Tomcat을 닫습니다. (리눅스 또는 Mac OS에서)   `카테고리` 
+*  (Linux 또는 Mac OS에서 Tomcat, e.g., tomcat을 실행하는 특별한 사용자를 만든 경우 다음 단계를 사용자로 기억하십시오.) 
+* Tomcat이 이미 실행중인 경우 Tomcat을 닫습니다. (Linux 또는 Mac OS에서)   `카테고리` 
 또는 (Windows에서)   `tomcat\\빈\\ shutdown.bat ` 
 
-Linux에서 사용 `₢ 킹 | 사이트맵` 전후 `종료. 뚱 베어` tomcat 프로세스가 중지되었는지 확인합니다.
+Linux에서 사용 `사이트맵 | 사이트맵` 전후 `종료. 뚱 베어` tomcat 프로세스가 중지되었는지 확인합니다.
 프로세스는 종료 전에 나열되어야하며 결국 종료 후 나열되지 않습니다.
-1분 또는 2분 정도 걸릴 수 있습니다. ERDDAP™ 완전히 종료합니다. 환자에게 또는 그것이 그 자체에 멈추지 않는 것처럼 보이는 경우, 사용:
+1분 또는 2분 정도 걸릴 수 있습니다. ERDDAP™ 완전히 종료합니다. 환자에게 또는 그것이 스스로 멈추지 않는 것처럼 보이는 경우, 사용:
    `킬 -9 <processID> ` 
-* Tomcat 시작하기 (리눅스 또는 Mac OS에서)   `tomcat/빈/startup.sh` 또는 (Windows에서)   `tomcat\bin\\startup.bat로 이동` 
+* Tomcat 시작하기 (Linux 또는 Mac OS에서)   `tomcat/빈/startup.sh` 또는 (Windows에서)   `tomcat\bin\\startup.bat로 이동` 
 
 ## 이름 * ERDDAP™ 실행?{#is-erddap-running} 
 
@@ -471,32 +472,32 @@ Tomcat 로그 파일에서 ( `tomcat/로그/catalina.out` 그리고 그 디렉�
 * Tomcat 시작하기 ERDDAP™ Tomcat이 요청할 때까지 ERDDAP™ · 따라서 Tomcat 로그 파일에서 볼 수 있습니다.
 시작하기 ERDDAP™ 또는 그 시도와 관련된 오류 메시지가 있다면.
 * 시간 : ERDDAP™ 시작, 그것은 오래된 이름을 변경 ERDDAP™ log.txt 파일 ( `다운로드 <CurrentTime> 다운로드` ) 새로운 log.txt 파일을 만듭니다.
-그래서 만약 `로그.txt` 파일이 오래된, 그것은 그 기호입니다 ERDDAP™ 최근 재시작하지 않았습니다. ERDDAP™ 쓰기 로그 정보 버퍼
+그래서 만약 `로그.txt` 파일이 오래된, 그것은 표시입니다 ERDDAP™ 최근 재시작하지 않았습니다. ERDDAP™ 쓰기 로그 정보 버퍼
 그리고 단지 로그 파일에 버퍼를 주기적으로 쓰고, 그러나 당신은 강제할 수 있습니다 ERDDAP™ 로그 파일에 버퍼를 쓰기
      ` /erddap/status.html ` ·
 
 ### Trouble: 오래된 버전의 Java  {#trouble-old-version-of-java} 
 
-버전의 경우 Java 너무 오래 된 ERDDAP · ERDDAP™ 실행하지 않고 Tomcat의 로그 파일에 오류 메시지를 볼 수 있습니다.
+버전의 경우 Java 너무 오래 된 ERDDAP · ERDDAP™ 실행되지 않고 Tomcat의 로그 파일에서 오류 메시지를 볼 수 있습니다.
 
 ```
 Exception in thread "main" java.lang.UnsupportedClassVersionError:
 _some/class/name_: Unsupported major.minor version _someNumber_
 ```
 
-이 솔루션은 최신 버전으로 업데이트됩니다. Java 그리고 Tomcat이 그것을 사용하고 있는지 확인합니다.
+이 솔루션은 최신 버전으로 업데이트됩니다. Java Tomcat이 그것을 사용하고 있는지 확인하십시오.
 
 ### Trouble: 느린 시작 첫번째 시간{#trouble-slow-startup-first-time} 
 
-Tomcat은 많은 일을하고 있습니다. ERDDAP™ 시작; notably, 그것은 unpack해야 `다운로드` 파일 형식
+Tomcat은 많은 작업을 수행 할 수 있습니다. ERDDAP™ 시작; notably, 그것은 unpack해야 `다운로드` 파일 형식
  (그것은 .zip 파일 형식) · 일부 서버에서, 첫 번째 시도를 볼 수 ERDDAP™ 기타 제품 (30 초?) 이 작업이 완료 될 때까지.
 다른 서버에서 첫 번째 시도는 즉시 실패합니다. 그러나 30 초를 기다립니다. 다시 시도하면 성공할 것입니다. ERDDAP™ 제대로 설치되었습니다.
 
-이것에 대한 수정이 없습니다. 이것은 Tomcat이 어떻게 작동하나요? 그러나 그것은 당신이 새로운 버전을 설치 한 후 첫 번째 시간 만 발생합니다. ERDDAP™ ·
+이것에 대한 수정이 없습니다. 이것은 Tomcat이 어떻게 작동하나요? 그러나 새로운 버전을 설치 한 후 첫 번째 시간 만 발생합니다. ERDDAP™ ·
 
 ## 종료 및 재시작{#shut-down-and-restart} 
 
-미래에, 종료 (그리고 재시작)   ERDDAP™ , 참조 [톰캣과 재시작하는 방법 ERDDAP ](/docs/server-admin/additional-information#shut-down-and-restart) ·
+미래에, 종료 (그리고 재시작)   ERDDAP™ , 참조 [톰캣과 멈춰가는 방법 ERDDAP ](/docs/server-admin/additional-information#shut-down-and-restart) ·
 
 ## 트러블?{#trouble} 
 
@@ -504,7 +505,7 @@ Tomcat 설치 또는 ERDDAP™ · 더 보기 [더 많은 지원 얻기에 섹션
 
 ## 새 버전의 이메일 알림 ERDDAP  {#email-notification-of-new-versions-of-erddap} 
 
-새 버전을 할 때마다 이메일을 수신하려면 ERDDAP™ 유효한 다른 중요한 것 ERDDAP™ 공지 사항
+새 버전을 할 때마다 이메일을 수신하려면 ERDDAP™ 사용 가능 또는 기타 중요 ERDDAP™ 공지 사항
 참여할 수 있습니다. ERDDAP™ 공지사항 목록 [이름 *](https://groups.google.com/g/erddap-announce) · 이 목록은 대략 1개의 이메일을 매 3 달마다 평균합니다.
 
 ## 사용자 정의{#customize} 
@@ -522,7 +523,7 @@ Tomcat 설치 또는 ERDDAP™ · 더 보기 [더 많은 지원 얻기에 섹션
 (하나가 없는 경우, 기본적으로 복사 ERDDAP™ 이름 * `tomcat/webapps/erddap/WEB-INF/classes/gov/noaa/pfel/erddap/util/messages.xml의` 파일 형식
 로그인 ` datasets.xml ` 그리고 그것을 편집합니다.) 예를 들면, 당신은 할 수 있었습니다:
   * 조직 및/또는 그룹이 무엇인지 설명합니다.
-  * 이 데이터의 어떤 종류의 설명 ERDDAP™ 있습니다.
+  * 이 데이터의 어떤 종류의 설명 ERDDAP™ 이름 *
   * 브라우저 탭에 나타나는 아이콘을 변경하려면 조직의 favicon을 넣으십시오. ico에 `tomcat/content/erddap/이미지/` ·
 이름 * https://en.wikipedia.org/wiki/Favicon.
  

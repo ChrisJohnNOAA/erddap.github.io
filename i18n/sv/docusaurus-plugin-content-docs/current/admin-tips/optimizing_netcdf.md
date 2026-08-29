@@ -1,4 +1,4 @@
-Detta innehåll är baserat på en [från Roy Mendelssohn till ERDDAP användare grupp](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Detta innehåll är baserat på en [från Roy Mendelssohn till ERDDAP™ användare grupp](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimera netcdf-filer för molnet
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -7,7 +7,8 @@ a. ompackning och sidstorlek
 
 Nyligen när jag gjorde lite forskning kom jag över denna mycket intressanta artikel:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Ingenting verkar inflammera passioner som diskussioner om programmeringsspråk, redaktörer och filformat, och detta är inte en rekommendation om vilket format. (s) Du bör använda, men snarare för att förstå vad som finns i det papperet och för att se hur mycket förbättring kan bli ( ERDDAP™ har alltid försökt att vara agnostisk över en hel del av dessa frågor, snarare välja att försöka arbeta med hur människor faktiskt arbetar med data.) .
 
@@ -86,26 +87,27 @@ Så avvägningen är att det finns en inte obetydlig ökning av filstorleken.
 
 d. d. Men om jag måste reprocessa filerna ändå...?
 
-En bra fråga är om jag måste skriva ett manus för att reparera filerna, varför inte bara skriva ett manus för att översätta till ett format som att säga zarr? zarr har många förespråkare och om du är intresserad av zarr gör du bara en snabb duckduckgo-sökning och det finns många bra inlägg, en kanske mer balanserad vy är påhttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Det är intressant att många av de punkter han höjer är vad ischunk-formatet försöker adressera.) . Så varför kanske du inte vill översätta dina filer till något som zarr, Först, om du skapar netcdf-filer regelbundet, kan du börja optimera filerna från och med nu, som med tiden kommer att se hastighetsvinster och du behöver inte reformera tidigare filer, och ERDDAP™ kommer fortfarande att kunna aggregera över filerna även om några av de interna inställningarna skiljer sig. För det andra kan du ha mycket verktyg som beror på netcdf-filer, och detta tillvägagångssätt skulle innebära att du inte behöver retool vad som kan vara en omfattande mängd kod. Poängen är att vara medveten om alternativ och välja vad som fungerar bäst för din situation. Precis som en påminnelse, om du väljer att använda zarrfiler med ERDDAP™ De måste vara zarr format v2 filer.
+En bra fråga är om jag måste skriva ett manus för att reparera filerna, varför inte bara skriva ett manus för att översätta till ett format som att säga zarr? zarr har många förespråkare och om du är intresserad av zarr gör du bara en snabb duckduckgo-sökning och det finns många bra inlägg, en kanske mer balanserad vy är på https://www.youtube.com/watch?v=IEAcCmcOdJs   (Det är intressant att många av de punkter han höjer är vad ischunk-formatet försöker adressera.) . Så varför kanske du inte vill översätta dina filer till något som zarr, Först, om du skapar netcdf-filer regelbundet, kan du börja optimera filerna från och med nu, som med tiden kommer att se hastighetsvinster och du behöver inte reformera tidigare filer, och ERDDAP™ kommer fortfarande att kunna aggregera över filerna även om några av de interna inställningarna skiljer sig. För det andra kan du ha mycket verktyg som beror på netcdf-filer, och detta tillvägagångssätt skulle innebära att du inte behöver retool vad som kan vara en omfattande mängd kod. Poängen är att vara medveten om alternativ och välja vad som fungerar bäst för din situation. Precis som en påminnelse, om du väljer att använda zarrfiler med ERDDAP™ De måste vara zarr format v2 filer.
 
 e. Big data - en åt sidan
 
 Stora data pratas mycket, men hur stora är de data som de flesta använder och hur jämför det med moderna bärbara datorers kapacitet. (Ja bärbara datorer, inte servrar) . En intressant take är på:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Börja runt minuten 37 men hela samtalet är intressant
+ https://www.youtube.com/watch?v=GELhdezYmP0 Börja runt minuten 37 men hela samtalet är intressant
 
 Studien han nämner är på:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Så det finns en relativt liten andel av användare som verkligen behöver vrida upp kraften, men den överväldigande majoriteten av användarna kan göra sina analyser på en bärbar dator, 26TB externa enheter är nu under $ 300 och rykten är att 60TB externa enheter kommer att vara tillgängliga i slutet av året. Något att tänka på.
 
 2. Använda ERDDAP™ Google Cloud Platform eller andra molnleverantörer förutom AWS
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-För tillfället ERDDAP™ är endast känd för att arbeta med AWS objektbutiker (S3) men förbättra och generalisera ERDDAP™ objektbutiksupport finns på todo-listan (sehttps://github.com/ERDDAP/erddap/issues/158) . Så vad du ska göra om du får höra att du måste köra din ERDDAP™ på Google Cloud Platform (GCP) Eller en liknande plattform? För det första erbjuder de flesta molnplattformar olika lagringsnivåer, vanligtvis inklusive en som liknar lokal lagring och erkänns av operativsystemet, en som är ansluten över nätverket som vanligtvis använder NFS för åtkomst. (Återigen direkt tillgänglig via OS) och en som är en objektbutik. Den första lösningen är inte att använda objektbutiker, och du skulle vara bra att gå. Men som alltid är TANSTAAFL och nackdelen i det här fallet när du går från objektaffären -&gt; NFS åtkomst -&gt; lokal butik dina kostnader går också upp. (Jag skulle tillägga att NFS också nås via nätverket och har egna latensproblem, detta skulle också gynnas av filoptimering.) .
+För tillfället ERDDAP™ är endast känd för att arbeta med AWS objektbutiker (S3) men förbättra och generalisera ERDDAP™ objektbutiksupport finns på todo-listan (se https://github.com/ERDDAP/erddap/issues/158 ) . Så vad du ska göra om du får höra att du måste köra din ERDDAP™ på Google Cloud Platform (GCP) Eller en liknande plattform? För det första erbjuder de flesta molnplattformar olika lagringsnivåer, vanligtvis inklusive en som liknar lokal lagring och erkänns av operativsystemet, en som är ansluten över nätverket som vanligtvis använder NFS för åtkomst. (Återigen direkt tillgänglig via OS) och en som är en objektbutik. Den första lösningen är inte att använda objektbutiker, och du skulle vara bra att gå. Men som alltid är TANSTAAFL och nackdelen i det här fallet när du går från objektaffären -&gt; NFS åtkomst -&gt; lokal butik dina kostnader går också upp. (Jag skulle tillägga att NFS också nås via nätverket och har egna latensproblem, detta skulle också gynnas av filoptimering.) .
 
-Om du måste använda objektbutik, eller bara har råd med en objektbutik, är svaret ett FUSE-filsystem. (https://github.com/libfuse/libfuse) . På GCP kallas detta gcsfuse, och stegen för att installera det är:
+Om du måste använda objektbutik, eller bara har råd med en objektbutik, är svaret ett FUSE-filsystem. ( https://github.com/libfuse/libfuse ) . På GCP kallas detta gcsfuse, och stegen för att installera det är:
 
 • Installera gcsfuse på din GCP Linux-bild:
 sudo apt update

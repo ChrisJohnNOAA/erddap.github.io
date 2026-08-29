@@ -1,4 +1,4 @@
-Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP utenti di gruppo](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP™ utenti di gruppo](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ cerca di essere agnostico su quali formati di dati le persone utilizzano per i loro dati, cercando invece di lavorare con i formati di dati di maggior uso alle comunità che serviamo principalmente. Poiché sempre più lavoro è nel cloud, e ci sono una pletora di formati di dati che le persone utilizzano nel cloud, sarebbe bello se ERDDAP™ potrebbe supportare molti di questi formati. Ahi&#33; ERDDAP™ lo sviluppo e la manutenzione è già soppresso, e ciò che sarebbe auspicabile è fare uso del lavoro di altri per raggiungere questo obiettivo, senza dover modificare ERDDAP™ .
 
@@ -9,11 +9,13 @@ Inserisci [DuckDB](https://duckdb.org/) e [Trino](https://trino.io/) . Entrambi 
 
 Per utilizzare DuckDB in ERDDAP™ è necessario installare paperDB sul computer e installare il connettore DuckDB JDBC ERDDAP™ . Istruzioni per l'installazione DuckDB stesso sono a
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Il connettore DuckDB JDBC può essere scaricato da
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Se il tuo tomcat si trova a $TOMCAT_HOME, allora si desidera inserire questo file a $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

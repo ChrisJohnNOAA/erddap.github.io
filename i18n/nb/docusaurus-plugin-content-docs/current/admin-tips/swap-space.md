@@ -1,4 +1,4 @@
-Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP brukergruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) ..
+Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP™ brukergruppe](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) ..
 
 Mange av hjelpforespørslene vi får involvere problemer med minnebruk i ERDDAP™ .. Noe av dette kommer fra endringer i hukommelseshåndtering i Java , og også samspill med Linux OS minnestyring. Jeg begynner å tro på Java 17, Java bruker mer minne enn det som er lagt ned i hauginnstillingene. Du kan se dette hvis du ser på hauginnstillingene og deretter bruke kommandoer som topp, htop eller btop for å sjekke minnebruken av programmer. For eksempel vår mye brukte ERDDAP™ har haug plass satt på 21GB, men faktisk minnebruk kan kjøres til 28GB-30GB, noen ganger høyere. Denne verdien kan pigge hvis det er mange samtidige store forespørsler til systemet.
 

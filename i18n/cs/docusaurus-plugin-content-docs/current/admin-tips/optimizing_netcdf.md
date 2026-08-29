@@ -1,4 +1,4 @@
-Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP skupina uživatelů](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP™ skupina uživatelů](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimalizace netcdf souborů pro cloud
 Ahoj.
@@ -7,7 +7,8 @@ a. přebalování a velikost stránek
 
 Nedávno jsem narazil na tento velmi zajímavý článek:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Zdá se, že nic nezanítí vášně jako diskuse o programovacích jazycích, editorech a formátech souborů, a to není doporučení jakého formátu (án) Měli byste použít, ale spíše pochopit, co je v této knize a vidět, jak velké zlepšení lze získat ( ERDDAP™ vždy se snažil být agnostik ohledně mnoha těchto záležitostí, spíše se rozhodl zkusit a pracovat s tím, jak lidé skutečně pracují s daty) .
 
@@ -86,26 +87,27 @@ Takže obchod je nezanedbatelný nárůst velikosti souboru.
 
 d. Ale když budu muset ty soubory přepracovat...?
 
-Dobrá otázka je, když musím napsat skript, abych mohl soubory zpracovat, proč prostě nenapsat skript, který přeloží do formátu, jako je "zarr"? Zarr má mnoho zastánců a pokud máte zájem o Zarr jen udělat rychlé hledání kachnaduckgo a tam mnoho dobrých pracovních míst, možná vyváženější pohled je nahttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Je zajímavé, že mnoho bodů, které zvedá jsou to, co Icechunk formát se snaží řešit) . Tak proč nechcete přeložit soubory na něco jako Zarr, Za prvé, pokud vytvoříte netcdf soubory pravidelně, můžete začít optimalizovat soubory od teď, které v průběhu času uvidí rychlost zisky a nebudete muset reformovat minulé soubory, a ERDDAP™ bude stále schopen shrnout přes soubory, i když některá interní nastavení se liší. Za druhé, můžete mít mnoho nástrojů, které závisí na netcdf soubory, a tento přístup by znamenalo, že nemusí retool, co by mohlo být rozsáhlé množství kódu. Jde o to, abyste si byli vědomi možností a vybrali si, co nejlépe funguje pro vaši situaci. Jen jako připomínka, pokud se rozhodnete použít soubory Zarr s ERDDAP™ , musí to být zarr formát v2 soubory.
+Dobrá otázka je, když musím napsat skript, abych mohl soubory zpracovat, proč prostě nenapsat skript, který přeloží do formátu, jako je "zarr"? Zarr má mnoho zastánců a pokud máte zájem o Zarr jen udělat rychlé hledání kachnaduckgo a tam mnoho dobrých pracovních míst, možná vyváženější pohled je na https://www.youtube.com/watch?v=IEAcCmcOdJs   (Je zajímavé, že mnoho bodů, které zvedá jsou to, co Icechunk formát se snaží řešit) . Tak proč nechcete přeložit soubory na něco jako Zarr, Za prvé, pokud vytvoříte netcdf soubory pravidelně, můžete začít optimalizovat soubory od teď, které v průběhu času uvidí rychlost zisky a nebudete muset reformovat minulé soubory, a ERDDAP™ bude stále schopen shrnout přes soubory, i když některá interní nastavení se liší. Za druhé, můžete mít mnoho nástrojů, které závisí na netcdf soubory, a tento přístup by znamenalo, že nemusí retool, co by mohlo být rozsáhlé množství kódu. Jde o to, abyste si byli vědomi možností a vybrali si, co nejlépe funguje pro vaši situaci. Jen jako připomínka, pokud se rozhodnete použít soubory Zarr s ERDDAP™ , musí to být zarr formát v2 soubory.
 
 e. Velká data - stranou
 
 Velké údaje se mluví o hodně, ale jak velké jsou údaje, které většina lidí používá a jak se to srovnává s schopnostmi moderních notebooků (ano notebooky, ne servery) . Zajímavý záběr je:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Začněte kolem minuty 37 i když celý rozhovor je zajímavý
+ https://www.youtube.com/watch?v=GELhdezYmP0 Začněte kolem minuty 37 i když celý rozhovor je zajímavý
 
 Studie, kterou zmiňuje, je na:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Existuje tedy relativně malé procento uživatelů, kteří skutečně potřebují zvýšit výkon, ale drtivá většina uživatelů může provést analýzu na notebooku, 26TB externí disky jsou nyní pod 300 dolarů a drby jsou, že 60TB externí disky budou k dispozici do konce roku. Něco k přemýšlení.
 
 2. Použití ERDDAP™ s Google Cloud Platform nebo jinými poskytovateli cloudů kromě AWS
 -------------------------------------------------------------------------------- ---------------------------------------
 
-V tuto chvíli ERDDAP™ je známo pouze pracovat s AWS objekty obchody (S3) , i když zlepšení a zobecnění ERDDAP™ Podpora pro ukládání objektů je na seznamu úkolů (vizhttps://github.com/ERDDAP/erddap/issues/158) . Takže co dělat, když vám řeknou, že musíte běžet ERDDAP™ na platformě Google Cloud (GCP) nebo podobnou platformu? Za prvé, většina cloudových platforem nabízí různé úrovně úložišť, obvykle včetně těch, které jsou podobné lokálnímu úložišti a jsou uznávány operačním systémem, který je připojen po síti obvykle pomocí NFS pro přístup (opět přímo přístupné OS) , a jeden, který je obchod objektů. Prvním řešením je nepoužívat sklady objektů a vy byste mohli jít. Ale jako vždy, TANSTAAFL a nevýhoda v tomto případě je jak si jít z obchodu objektů -&gt; Přístup NFS - &gt; místní sklad Vaše náklady také rostou. (Rád bych dodal, že NFS je také přístupný přes síť, a má své vlastní problémy s latencí, to by také mělo prospěch z optimalizace souborů) .
+V tuto chvíli ERDDAP™ je známo pouze pracovat s AWS objekty obchody (S3) , i když zlepšení a zobecnění ERDDAP™ Podpora pro ukládání objektů je na seznamu úkolů (viz https://github.com/ERDDAP/erddap/issues/158 ) . Takže co dělat, když vám řeknou, že musíte běžet ERDDAP™ na platformě Google Cloud (GCP) nebo podobnou platformu? Za prvé, většina cloudových platforem nabízí různé úrovně úložišť, obvykle včetně těch, které jsou podobné lokálnímu úložišti a jsou uznávány operačním systémem, který je připojen po síti obvykle pomocí NFS pro přístup (opět přímo přístupné OS) , a jeden, který je obchod objektů. Prvním řešením je nepoužívat sklady objektů a vy byste mohli jít. Ale jako vždy, TANSTAAFL a nevýhoda v tomto případě je jak si jít z obchodu objektů -&gt; Přístup NFS - &gt; místní sklad Vaše náklady také rostou. (Rád bych dodal, že NFS je také přístupný přes síť, a má své vlastní problémy s latencí, to by také mělo prospěch z optimalizace souborů) .
 
-Pokud máte používat ukládání objektů nebo si můžete dovolit pouze uložení objektů, odpověď je FUSE souborový systém (https://github.com/libfuse/libfuse) . Na GCP se tomu říká gcsfuse a kroky k jeho instalaci jsou:
+Pokud máte používat ukládání objektů nebo si můžete dovolit pouze uložení objektů, odpověď je FUSE souborový systém ( https://github.com/libfuse/libfuse ) . Na GCP se tomu říká gcsfuse a kroky k jeho instalaci jsou:
 
 • Nainstalujte gcsfuse na obrázek GCP Linux:
 sudo apt update

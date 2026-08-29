@@ -1,4 +1,4 @@
-Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP grupul de utilizatori](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP™ grupul de utilizatori](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Rularea ERDDAP™ în nor a devenit un subiect fierbinte. Ar trebui să observ că ERDDAP™ a rula întotdeauna în nor, doar cele mai multe ori nu pe un server furnizat de un furnizor de cloud comercial, și impedimentul major pentru rularea ERDDAP™ pe un furnizor de cloud comercial este dacă utilizați S3, care nu permite accesul normal Linux bloc. Dacă sunteți dispus să plătească mai mult pentru a utiliza opțiunile de acces bloc furnizate de furnizorul dvs. de cloud comercial, decât rularea pe un server de cloud comercial este practic același cu rularea pe propriul echipament, cu excepția, desigur, costul.
 

@@ -1,4 +1,4 @@
-Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP web development](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Tá an t-ábhar seo bunaithe ar [teachtaireacht ó Roy Mendelssohn go dtí an ERDDAP™ web development](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optamaigh comhaid netcdf don scamall
 —————————————————
@@ -7,7 +7,8 @@ a. athphacáil agus méid an leathanaigh
 
 Le déanaí i déanamh roinnt taighde a tháinig mé trasna an t-alt an-suimiúil:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Ní dhéanfaidh aon ní cosúil le paisin inflame cosúil le plé ar theangacha cláir, eagarthóirí, agus formáidí comhaid, agus nach bhfuil sé seo moladh ar cad formáid (s s) ba chóir duit a úsáid, ach in áit a thuiscint cad atá sa pháipéar agus a fheiceáil cé mhéad is féidir feabhas a chur gotten ( ERDDAP™ Tá iarracht i gcónaí a bheith agnostic faoi a lán de na nithe seo, in áit a roghnú chun iarracht a dhéanamh agus ag obair le conas a oibríonn daoine i ndáiríre le sonraí) .
 
@@ -86,26 +87,27 @@ Mar sin, tá an trádáil nach bhfuil méadú suntasach i méid comhaid.
 
 d. Ach má tá mé a athphróiseáil na comhaid ar aon nós......?
 
-Tá ceist mhaith má tá mé a scríobh script a athphróiseáil na comhaid, cén fáth nach scríobh ach script a aistriú chuig formáid cosúil le rá zarr? zarr Tá go leor togróirí agus má tá suim agat i zarr a dhéanamh ach cuardach lachain tapaidh agus tá a lán de na poist maith, tá dearcadh b'fhéidir níos cothroime aghttps://www.youtube.com/watch?v=IEAcCmcOdJs  (tá sé suimiúil go bhfuil go leor de na pointí ardaíonn sé cad iad an fhormáid icechunk ag iarraidh chun aghaidh a thabhairt) . Mar sin, cén fáth nach bhfuil tú ag iarraidh a aistriú do chuid comhad chun rud éigin cosúil le zarr, An Chéad, má tá tú a chruthú comhaid netcdf go rialta, d'fhéadfaí tú tús a optimizing na comhaid ó anois ar, a bheidh le himeacht ama a fheiceáil gnóthachain luas agus ní bheidh ort a athchóiriú comhaid anuas, agus ERDDAP™ beidh fós in ann a chomhiomlánú thar na comhaid cé go bhfuil roinnt de na socruithe inmheánacha difriúil. Dara, d'fhéadfá a lán de tooling a bhraitheann ar chomhaid netcdf, agus bheadh an cur chuige seo chiallaíonn nach bhfuil a retool cad a d'fhéadfadh a bheith ina méid fairsing de chód. Is é an pointe a bheith ar an eolas faoi roghanna agus a roghnú cad a oibríonn is fearr do do staid. Díreach mar i gcuimhne, má roghnaíonn tú a úsáid comhaid zarr le ERDDAP™ , ní mór dóibh a bheith zarr formáid v2 comhaid.
+Tá ceist mhaith má tá mé a scríobh script a athphróiseáil na comhaid, cén fáth nach scríobh ach script a aistriú chuig formáid cosúil le rá zarr? zarr Tá go leor togróirí agus má tá suim agat i zarr a dhéanamh ach cuardach lachain tapaidh agus tá a lán de na poist maith, tá dearcadh b'fhéidir níos cothroime ag https://www.youtube.com/watch?v=IEAcCmcOdJs   (tá sé suimiúil go bhfuil go leor de na pointí ardaíonn sé cad iad an fhormáid icechunk ag iarraidh chun aghaidh a thabhairt) . Mar sin, cén fáth nach bhfuil tú ag iarraidh a aistriú do chuid comhad chun rud éigin cosúil le zarr, An Chéad, má tá tú a chruthú comhaid netcdf go rialta, d'fhéadfaí tú tús a optimizing na comhaid ó anois ar, a bheidh le himeacht ama a fheiceáil gnóthachain luas agus ní bheidh ort a athchóiriú comhaid anuas, agus ERDDAP™ beidh fós in ann a chomhiomlánú thar na comhaid cé go bhfuil roinnt de na socruithe inmheánacha difriúil. Dara, d'fhéadfá a lán de tooling a bhraitheann ar chomhaid netcdf, agus bheadh an cur chuige seo chiallaíonn nach bhfuil a retool cad a d'fhéadfadh a bheith ina méid fairsing de chód. Is é an pointe a bheith ar an eolas faoi roghanna agus a roghnú cad a oibríonn is fearr do do staid. Díreach mar i gcuimhne, má roghnaíonn tú a úsáid comhaid zarr le ERDDAP™ , ní mór dóibh a bheith zarr formáid v2 comhaid.
 
 e. Sonraí móra - leataobh
 
 Tá sonraí Big Labhair faoi go leor, ach cé chomh mór na sonraí a úsáideann daoine is mó agus conas a dhéanann a chur i gcomparáid le cumais ríomhairí glúine nua-aimseartha (Tá ríomhairí glúine, ní freastalaithe) . Tá a ghlacadh suimiúil ag:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Tosaigh thart ar nóiméad 37 cé go bhfuil an labhairt ar fad suimiúil
+ https://www.youtube.com/watch?v=GELhdezYmP0 Tosaigh thart ar nóiméad 37 cé go bhfuil an labhairt ar fad suimiúil
 
 Is é an staidéar a luann sé ag:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Mar sin, tá céatadán réasúnta beag na n-úsáideoirí a bhfuil gá i ndáiríre a crank suas an chumhacht, ach is féidir leis an chuid is mó mór na n-úsáideoirí a gcuid anailísí a dhéanamh ar ríomhaire glúine, tá 26TB thiomáineann seachtrach anois faoi $300 agus ráflaí go mbeidh 60TB thiomáineann seachtrach a bheith ar fáil faoi dheireadh na bliana. Rud chun smaoineamh ar.
 
 2. Ag baint úsáide as ERDDAP™ le Google Cloud Ardán nó soláthraithe scamall eile seachas AWS
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Ag an nóiméad ERDDAP™ ar eolas ach amháin ag obair le siopaí réad AWS (S3) , cé feabhas a chur agus a ghinearálú ERDDAP™ Tá tacaíocht siopa réad ar an liosta todo (féach arhttps://github.com/ERDDAP/erddap/issues/158) . Mar sin, cad atá le déanamh má tá tú in iúl go bhfuil tú a reáchtáil do ERDDAP™ ar Ardán Google Cloud (GCC) nó ardán den chineál céanna? Ar dtús, cuireann an chuid is mó de na hardáin scamall leibhéil éagsúla stórála, de ghnáth lena n-áirítear ceann atá cosúil le stóráil áitiúil agus aithnítear é ag an gcóras oibriúcháin, ceann atá ceangailte thar an líonra de ghnáth ag baint úsáide as NFS le haghaidh rochtana (arís inrochtana go díreach ag an OS) , agus ceann go bhfuil siopa réad. Níl an chéad réiteach a úsáid siopaí réad, agus go mbeadh tú a bheith go maith chun dul. Ach mar i gcónaí, tá TANSTAAFL agus an aistarraingt sa chás seo mar a théann tú ó siopa réad - ^ NFS rochtain - lí siopa áitiúil do chostais dul suas freisin. (Ba mhaith liom a chur go bhfuil NFS rochtain freisin thar an líonra, agus tá a saincheisteanna latency féin, bheadh sé seo tairbhe freisin ó leas iomlán a bhaint comhad) .
+Ag an nóiméad ERDDAP™ ar eolas ach amháin ag obair le siopaí réad AWS (S3) , cé feabhas a chur agus a ghinearálú ERDDAP™ Tá tacaíocht siopa réad ar an liosta todo (féach ar https://github.com/ERDDAP/erddap/issues/158 ) . Mar sin, cad atá le déanamh má tá tú in iúl go bhfuil tú a reáchtáil do ERDDAP™ ar Ardán Google Cloud (GCC) nó ardán den chineál céanna? Ar dtús, cuireann an chuid is mó de na hardáin scamall leibhéil éagsúla stórála, de ghnáth lena n-áirítear ceann atá cosúil le stóráil áitiúil agus aithnítear é ag an gcóras oibriúcháin, ceann atá ceangailte thar an líonra de ghnáth ag baint úsáide as NFS le haghaidh rochtana (arís inrochtana go díreach ag an OS) , agus ceann go bhfuil siopa réad. Níl an chéad réiteach a úsáid siopaí réad, agus go mbeadh tú a bheith go maith chun dul. Ach mar i gcónaí, tá TANSTAAFL agus an aistarraingt sa chás seo mar a théann tú ó siopa réad - ^ NFS rochtain - lí siopa áitiúil do chostais dul suas freisin. (Ba mhaith liom a chur go bhfuil NFS rochtain freisin thar an líonra, agus tá a saincheisteanna latency féin, bheadh sé seo tairbhe freisin ó leas iomlán a bhaint comhad) .
 
-Má tá tú a úsáid siopa réad, nó is féidir a thabhairt ach siopa réad, is é an freagra córas comhaid FUSE (https://github.com/libfuse/libfuse) . Ar GCP, tugtar csfuse air seo, agus is iad na céimeanna chun é a shuiteáil:
+Má tá tú a úsáid siopa réad, nó is féidir a thabhairt ach siopa réad, is é an freagra córas comhaid FUSE ( https://github.com/libfuse/libfuse ) . Ar GCP, tugtar csfuse air seo, agus is iad na céimeanna chun é a shuiteáil:
 
 • Suiteáil csfuse ar do íomhá GCP Linux:
 nuashonrú sudopt

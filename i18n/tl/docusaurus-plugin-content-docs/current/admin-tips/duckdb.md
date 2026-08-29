@@ -1,4 +1,4 @@
-Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP grupong gumagamit](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP™ grupong gumagamit](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ ay nagsisikap na maging agnostiko tungkol sa kung anong data formats ang ginagamit ng mga tao para sa kanilang datos, sa halip ay sinisikap na gamitin ang mga data format na pinakamadalas gamitin sa mga komunidad na pangunahin nating pinaglilingkuran. Habang parami nang paraming trabaho ang nasa ulap, at maraming data format na ginagamit ng mga tao sa ulap, maganda sana kung ERDDAP™ ang marami sa mga format na ito. Aba, ERDDAP™ Ang pagpapaunlad at pagmamantini ay hindi na gaanong ginagamit, at ang kanais - nais ay gamitin ang gawain ng iba upang makamit ang tunguhing ito, nang hindi na kailangan pang baguhin ERDDAP™ .
 
@@ -9,11 +9,13 @@ Pumasok [DIckDB](https://duckdb.org/) at [Trino](https://trino.io/) . Ang dalawa
 
 Upang magamit ang DuckDB ERDDAP™ Kailangan mong maglagay ng topDB sa iyong computer, at i-install ang DuckDB JDBC linkor ERDDAP™ . Ang mga tagubilin tungkol sa pagkakabit ng DuckDB mismo ay nasa
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Ang DuckDB JDBC connektor ay maaaring i-download mula sa
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Kung ang iyong tomcat ay nasa $TOMCAT_HOME, kung gayon ay nais mong ilagay ang file na ito sa $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

@@ -1,4 +1,4 @@
-Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP Käyttäjäryhmä](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Tämä sisältö perustuu a [Kirjoittanut Roy Mendelssohn ERDDAP™ Käyttäjäryhmä](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Netcdf-tiedostojen optimointi pilveen
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -7,7 +7,8 @@ A. Paluu ja sivun koko
 
 Äskettäin törmäsin tähän mielenkiintoiseen artikkeliin:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Mikään ei tunnu herättävän intohimoja, kuten keskusteluja ohjelmointikielten, editorien ja tiedostomuotojen, ja tämä ei ole suositus siitä, mitä muotoja. (s) Sinun pitäisi käyttää, mutta mieluummin ymmärtää, mitä tuossa paperissa on ja nähdä, kuinka paljon parannusta voi saada. ( ERDDAP™ on aina yrittänyt olla agnostikko monista näistä asioista, mieluummin yrittää työskennellä sen kanssa, miten ihmiset todella työskentelevät tietojen kanssa.) .
 
@@ -86,26 +87,27 @@ Joten kaupankäynti on, että tiedostokoko ei ole vähäinen.
 
 d. Mutta jos tiedostoja on joka tapauksessa...?
 
-Hyvä kysymys on, jos minun on kirjoitettava käsikirjoitus tiedostojen uudelleenkäsittelyyn, miksi en vain kirjoita käsikirjoitusta käännettäväksi muotoon, kuten zarr? zarrilla on monia kannattajia, ja jos olet kiinnostunut zarrista, tee vain nopea anckduckgo-haku ja siellä on paljon hyviä viestejä, ehkä tasapainoisempi näkymä on.https://www.youtube.com/watch?v=IEAcCmcOdJs  (On mielenkiintoista, että monet nostamistaan pisteistä ovat sitä, mitä jäätiköt yrittävät käsitellä.) . Joten miksi et halua kääntää tiedostojasi johonkin, kuten zarr, ensinnäkin, jos luot netcdf-tiedostoja säännöllisesti, voit alkaa optimoida tiedostoja tästä eteenpäin, joka ajan myötä näkee nopeushyötyjä ja sinun ei tarvitse uudistaa aiempia tiedostoja. ERDDAP™ Tiedostoja voidaan edelleen koota, vaikka jotkut sisäiset asetukset eroavat toisistaan. Toiseksi, sinulla voi olla paljon työkaluja, jotka riippuvat netcdf-tiedostoista, ja tämä lähestymistapa tarkoittaa, että sinun ei tarvitse ratkaista, mikä voisi olla laaja koodi. Tärkeintä on olla tietoinen vaihtoehdoista ja valita, mikä toimii parhaiten. Aivan kuten muistutus, jos haluat käyttää zarr-tiedostoja ERDDAP™ Niiden on oltava zarr-muotoisia v2-tiedostoja.
+Hyvä kysymys on, jos minun on kirjoitettava käsikirjoitus tiedostojen uudelleenkäsittelyyn, miksi en vain kirjoita käsikirjoitusta käännettäväksi muotoon, kuten zarr? zarrilla on monia kannattajia, ja jos olet kiinnostunut zarrista, tee vain nopea anckduckgo-haku ja siellä on paljon hyviä viestejä, ehkä tasapainoisempi näkymä on. https://www.youtube.com/watch?v=IEAcCmcOdJs   (On mielenkiintoista, että monet nostamistaan pisteistä ovat sitä, mitä jäätiköt yrittävät käsitellä.) . Joten miksi et halua kääntää tiedostojasi johonkin, kuten zarr, ensinnäkin, jos luot netcdf-tiedostoja säännöllisesti, voit alkaa optimoida tiedostoja tästä eteenpäin, joka ajan myötä näkee nopeushyötyjä ja sinun ei tarvitse uudistaa aiempia tiedostoja. ERDDAP™ Tiedostoja voidaan edelleen koota, vaikka jotkut sisäiset asetukset eroavat toisistaan. Toiseksi, sinulla voi olla paljon työkaluja, jotka riippuvat netcdf-tiedostoista, ja tämä lähestymistapa tarkoittaa, että sinun ei tarvitse ratkaista, mikä voisi olla laaja koodi. Tärkeintä on olla tietoinen vaihtoehdoista ja valita, mikä toimii parhaiten. Aivan kuten muistutus, jos haluat käyttää zarr-tiedostoja ERDDAP™ Niiden on oltava zarr-muotoisia v2-tiedostoja.
 
 e. Big data - sivuun
 
 Suurista tiedoista puhutaan paljon, mutta kuinka suuria ovat tiedot, joita useimmat ihmiset käyttävät ja miten se vertailee nykyaikaisten tietokoneiden ominaisuuksia. (Kyllä, kannettavat, ei palvelimet) . Mielenkiintoinen otos on:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Aloita minuutti 37, vaikka koko keskustelu on mielenkiintoista.
+ https://www.youtube.com/watch?v=GELhdezYmP0 Aloita minuutti 37, vaikka koko keskustelu on mielenkiintoista.
 
 Hänen mainitsemansa tutkimus on:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Joten on olemassa suhteellisen pieni prosentti käyttäjistä, jotka todella tarvitsevat tehoa, mutta suurin osa käyttäjistä voi tehdä analyysejä tietokoneella, 26TB ulkoiset asemat ovat nyt alle 300 dollaria ja huhut ovat, että 60TB ulkoinen asema on käytettävissä vuoden loppuun mennessä. Jotain mitä ajatella.
 
 2. Käyttäminen ERDDAP™ Google Cloud Platformin tai muiden pilvipalveluiden tarjoajien kanssa
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Tällä hetkellä ERDDAP™ Sen tiedetään toimivan vain AWS-objektikauppojen kanssa. (S3) parantamalla ja yleistämällä ERDDAP™ Objektikaupan tuki on todo-listalla (Katso nähkäähttps://github.com/ERDDAP/erddap/issues/158) . Mitä tehdä, jos sinulle sanotaan, että sinun täytyy juosta ERDDAP™ Google Cloud Platform (GCP) Tai vastaavaa alustaa? Ensiksi useimmat pilvialustat tarjoavat erilaisia varastointitasoja, mukaan lukien yksi, joka on samanlainen kuin paikallinen varastointi ja joka on tunnustettu käyttöjärjestelmällä, joka on yhdistetty verkkoon yleensä käyttämällä NFS-yhteyttä. (Jälleen kerran OS:n kautta) Yksi, joka on objektikauppa. Ensimmäinen ratkaisu on olla käyttämättä objektikauppoja ja olisi hyvä mennä. Mutta kuten aina, TANSTAAFL ja haitta tässä tapauksessa on kuin lähdet objektikaupasta. NFS-yhteys - &gt; Paikalliset kustannukset nousevat. (Lisäisin, että NFS:ää käytetään myös verkon kautta, ja sillä on omat viiveongelmansa, mikä hyödyttäisi myös tiedostojen optimointia.) .
+Tällä hetkellä ERDDAP™ Sen tiedetään toimivan vain AWS-objektikauppojen kanssa. (S3) parantamalla ja yleistämällä ERDDAP™ Objektikaupan tuki on todo-listalla (Katso nähkää https://github.com/ERDDAP/erddap/issues/158 ) . Mitä tehdä, jos sinulle sanotaan, että sinun täytyy juosta ERDDAP™ Google Cloud Platform (GCP) Tai vastaavaa alustaa? Ensiksi useimmat pilvialustat tarjoavat erilaisia varastointitasoja, mukaan lukien yksi, joka on samanlainen kuin paikallinen varastointi ja joka on tunnustettu käyttöjärjestelmällä, joka on yhdistetty verkkoon yleensä käyttämällä NFS-yhteyttä. (Jälleen kerran OS:n kautta) Yksi, joka on objektikauppa. Ensimmäinen ratkaisu on olla käyttämättä objektikauppoja ja olisi hyvä mennä. Mutta kuten aina, TANSTAAFL ja haitta tässä tapauksessa on kuin lähdet objektikaupasta. NFS-yhteys - &gt; Paikalliset kustannukset nousevat. (Lisäisin, että NFS:ää käytetään myös verkon kautta, ja sillä on omat viiveongelmansa, mikä hyödyttäisi myös tiedostojen optimointia.) .
 
-Jos haluat käyttää objektikauppaa tai sinulla on varaa vain objektikauppaan, vastaus on FUSE-tiedostojärjestelmä. (https://github.com/libfuse/libfuse) . GCP:ssä tätä kutsutaan gcsfuseksi, ja sen asennuksen vaiheet ovat:
+Jos haluat käyttää objektikauppaa tai sinulla on varaa vain objektikauppaan, vastaus on FUSE-tiedostojärjestelmä. ( https://github.com/libfuse/libfuse ) . GCP:ssä tätä kutsutaan gcsfuseksi, ja sen asennuksen vaiheet ovat:
 
 Asenna gcsfuse GCP Linux -kuvaan:
 Sudo Apt päivitys

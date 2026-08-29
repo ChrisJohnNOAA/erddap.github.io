@@ -1,4 +1,4 @@
-Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP utenti di gruppo](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP™ utenti di gruppo](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Molte delle richieste di aiuto che otteniamo comportano problemi con l'uso della memoria in ERDDAP™ . Alcuni di questi provengono da cambiamenti nella gestione della memoria in Java , e anche le interazioni con la gestione della memoria di Linux OS. Iniziare credo in Java 17. Java utilizza più memoria di quello che viene messo giù nelle impostazioni del mucchio. È possibile vedere questo se si guarda le impostazioni del mucchio e quindi utilizzare comandi come top, htop o btop per controllare l'utilizzo della memoria delle applicazioni. Per esempio, il nostro pesante utilizzo ERDDAP™ ha spazio mucchio impostato a 21GB, ma in realtà l'uso della memoria può funzionare a 28GB-30GB, a volte più alto. Questo valore può puntare se ci sono un sacco di grandi richieste simultanee al sistema.
 

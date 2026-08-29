@@ -1,4 +1,4 @@
-Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP Benutzergruppe](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP™ Benutzergruppe](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimierung von Netcdf-Dateien für die Cloud
 ——————————
@@ -7,7 +7,8 @@ a. Umpacken und Seitengröße
 
 Vor kurzem bei der Durchführung einiger Forschung kam ich über diesen sehr interessanten Artikel:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Nichts scheint Leidenschaften wie Diskussionen über Programmiersprachen, Editoren und Dateiformate zu entzünden, und das ist keine Empfehlung für das Format (S) Sie sollten verwenden, sondern zu verstehen, was in diesem Papier ist und zu sehen, wie viel Verbesserung erhalten werden kann ( ERDDAP™ hat immer versucht, agnostisch über viele dieser Fragen zu sein, anstatt zu versuchen, mit, wie Menschen tatsächlich mit Daten arbeiten) .
 
@@ -86,26 +87,27 @@ So gibt es eine nicht unbedeutende Zunahme der Dateigröße.
 
 d. Aber wenn ich die Dateien trotzdem wieder verarbeiten muss...?
 
-Eine gute Frage ist, ob ich ein Skript schreiben muss, um die Dateien neu zu bearbeiten, warum nicht nur ein Skript schreiben, um in ein Format wie zarr zu übersetzen? zarr hat viele Befürworter und wenn Sie Interesse an zarr nur tun eine schnelle Enteduckgo-Suche und es gibt viele gute Beiträge, eine vielleicht ausgewogenere Ansicht ist beihttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Es ist interessant, dass viele der Punkte, die er aufwirft, das sind, was das eiskalte Format versucht,) . Also warum sollten Sie Ihre Dateien nicht in etwas wie zarr übersetzen möchten, zuerst, wenn Sie netcdf-Dateien regelmäßig erstellen, könnten Sie beginnen, die Dateien von jetzt an zu optimieren, die im Laufe der Zeit Geschwindigkeit Gewinne sehen und Sie müssen nicht zu reformieren Vergangenheit Dateien, und ERDDAP™ wird immer noch in der Lage sein, über die Dateien zu aggregieren, obwohl einige der internen Einstellungen unterschiedlich sind. Zweitens, Sie könnten eine Menge Tooling haben, die von netcdf-Dateien abhängt, und dieser Ansatz würde bedeuten, nicht zu retoolen, was eine umfangreiche Menge an Code sein könnte. Der Punkt ist, sich der Optionen bewusst zu sein und zu wählen, was am besten für Ihre Situation funktioniert. Genau wie eine Erinnerung, wenn Sie zarr Dateien mit ERDDAP™ , sie müssen zarr format v2 Dateien sein.
+Eine gute Frage ist, ob ich ein Skript schreiben muss, um die Dateien neu zu bearbeiten, warum nicht nur ein Skript schreiben, um in ein Format wie zarr zu übersetzen? zarr hat viele Befürworter und wenn Sie Interesse an zarr nur tun eine schnelle Enteduckgo-Suche und es gibt viele gute Beiträge, eine vielleicht ausgewogenere Ansicht ist bei https://www.youtube.com/watch?v=IEAcCmcOdJs   (Es ist interessant, dass viele der Punkte, die er aufwirft, das sind, was das eiskalte Format versucht,) . Also warum sollten Sie Ihre Dateien nicht in etwas wie zarr übersetzen möchten, zuerst, wenn Sie netcdf-Dateien regelmäßig erstellen, könnten Sie beginnen, die Dateien von jetzt an zu optimieren, die im Laufe der Zeit Geschwindigkeit Gewinne sehen und Sie müssen nicht zu reformieren Vergangenheit Dateien, und ERDDAP™ wird immer noch in der Lage sein, über die Dateien zu aggregieren, obwohl einige der internen Einstellungen unterschiedlich sind. Zweitens, Sie könnten eine Menge Tooling haben, die von netcdf-Dateien abhängt, und dieser Ansatz würde bedeuten, nicht zu retoolen, was eine umfangreiche Menge an Code sein könnte. Der Punkt ist, sich der Optionen bewusst zu sein und zu wählen, was am besten für Ihre Situation funktioniert. Genau wie eine Erinnerung, wenn Sie zarr Dateien mit ERDDAP™ , sie müssen zarr format v2 Dateien sein.
 
 e. Big Data - a side
 
 Große Daten werden über viel gesprochen, aber wie groß sind die Daten, die die meisten Menschen verwenden und wie funktioniert das mit den Fähigkeiten der modernen Laptops vergleichen. (ja Laptops, nicht Server) . Ein interessanter Take ist:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Starten Sie um die Minute 37, obwohl das ganze Gespräch interessant ist
+ https://www.youtube.com/watch?v=GELhdezYmP0 Starten Sie um die Minute 37, obwohl das ganze Gespräch interessant ist
 
 Die von ihm erwähnte Studie lautet:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 So gibt es einen relativ kleinen Prozentsatz der Benutzer, die wirklich die Macht kurbeln müssen, aber die überwältigende Mehrheit der Benutzer können ihre Analysen auf einem Laptop, 26TB externe Laufwerke sind jetzt unter $300 und Gerüchte sind, dass 60TB externe Laufwerke bis Ende des Jahres zur Verfügung stehen. Etwas zu denken.
 
 2. Verwendung ERDDAP™ mit Google Cloud Platform oder anderen Cloud-Anbietern neben AWS
 ---------------
 
-Im Moment ERDDAP™ nur mit AWS-Objektspeichern arbeiten (S3) , obwohl Verbesserung und Verallgemeinerung ERDDAP™ ’s object store support is on the todo list (siehehttps://github.com/ERDDAP/erddap/issues/158) . Also, was zu tun, wenn man dir sagt, dass du deine ERDDAP™ auf Google Cloud Plattform (GCP) oder eine ähnliche Plattform? Erstens bieten die meisten Cloud-Plattformen unterschiedliche Speicherstufen an, in der Regel auch eine, die dem lokalen Speicher ähnlich ist und vom Betriebssystem erkannt wird, eine, die über das Netzwerk in der Regel mit NFS für den Zugriff verbunden ist (wieder direkt zugänglich durch das Betriebssystem) , und eine, die ein Objektspeicher ist. Die erste Lösung ist nicht, Objekt-Shops zu verwenden, und Sie wären gut zu gehen. Aber wie immer, TANSTAAFL und der Nachteil in diesem Fall ist, wie Sie von Objekt-Store gehen -&gt; NFS-Zugang -&gt; lokaler Speicher Ihre Kosten auch steigen. (Ich würde hinzufügen, dass NFS auch über das Netzwerk zugegriffen wird und eigene Latenzprobleme hat, würde dies auch von der Dateioptimierung profitieren) .
+Im Moment ERDDAP™ nur mit AWS-Objektspeichern arbeiten (S3) , obwohl Verbesserung und Verallgemeinerung ERDDAP™ ’s object store support is on the todo list (siehe https://github.com/ERDDAP/erddap/issues/158 ) . Also, was zu tun, wenn man dir sagt, dass du deine ERDDAP™ auf Google Cloud Plattform (GCP) oder eine ähnliche Plattform? Erstens bieten die meisten Cloud-Plattformen unterschiedliche Speicherstufen an, in der Regel auch eine, die dem lokalen Speicher ähnlich ist und vom Betriebssystem erkannt wird, eine, die über das Netzwerk in der Regel mit NFS für den Zugriff verbunden ist (wieder direkt zugänglich durch das Betriebssystem) , und eine, die ein Objektspeicher ist. Die erste Lösung ist nicht, Objekt-Shops zu verwenden, und Sie wären gut zu gehen. Aber wie immer, TANSTAAFL und der Nachteil in diesem Fall ist, wie Sie von Objekt-Store gehen -&gt; NFS-Zugang -&gt; lokaler Speicher Ihre Kosten auch steigen. (Ich würde hinzufügen, dass NFS auch über das Netzwerk zugegriffen wird und eigene Latenzprobleme hat, würde dies auch von der Dateioptimierung profitieren) .
 
-Wenn Sie Objektspeicher verwenden müssen oder nur einen Objektspeicher leisten können, ist die Antwort ein FUSE-Dateisystem (https://github.com/libfuse/libfuse) . Auf GCP wird dies gcsfuse genannt, und die Schritte, um es zu installieren sind:
+Wenn Sie Objektspeicher verwenden müssen oder nur einen Objektspeicher leisten können, ist die Antwort ein FUSE-Dateisystem ( https://github.com/libfuse/libfuse ) . Auf GCP wird dies gcsfuse genannt, und die Schritte, um es zu installieren sind:
 
 • Installieren Sie gcsfuse auf Ihrem GCP Linux-Bild:
 sudo apt update

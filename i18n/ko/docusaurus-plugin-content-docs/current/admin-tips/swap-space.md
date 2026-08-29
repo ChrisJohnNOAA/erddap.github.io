@@ -1,4 +1,4 @@
-이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP 사용자 그룹](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) ·
+이 콘텐츠는 [로이 Mendelssohn의 메시지 ERDDAP™ 사용자 그룹](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) ·
 
 많은 도움 요청 우리는 메모리 사용과 관련된 문제를 얻을 ERDDAP™ · 이 중 일부는 메모리 관리의 변경에서 온다 Java , 또한 Linux OS 메모리 관리와 상호 작용. 내가 믿는다 Java 17. 11월 Java heap 설정에서 넣는 것보다 더 많은 메모리를 사용합니다. 힙 설정을 보거나 상단, htop 또는 btop과 같은 명령을 사용하여 응용 프로그램의 메모리 사용을 확인합니다. 그래서 예를 들어 우리의 몹시 사용 ERDDAP™ 21GB에서 설정할 수 있지만 실제로 메모리 사용은 28GB-30GB로 실행할 수 있습니다. 이 값은 시스템에 많은 동시 큰 요청이 있다면 스파이 할 수 있습니다.
 

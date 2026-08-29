@@ -1,6 +1,6 @@
-# যেভাবে গমন করতে হয় ERDDAP কুবরেটে
+# যেভাবে গমন করতে হয় ERDDAP™ কুবরেটে
 
-ডিপ্লোমা ERDDAP কুতারনেটেসে আপনার তথ্য সার্ভার সংক্রান্ত একটি স্ক্রিপ্যপূর্ণ এনভায়রনমেন্ট সরবরাহ করা হয়েছে। এই গাইডটি হোস্ট- এর জন্য প্রয়োজনীয় উপাদান উল্লেখ করে ERDDAP প্রমিত মান ব্যবহার করা হবে কুবাজারনেটস, যার মধ্যে রয়েছে লাগাতার সংরক্ষণ, অ্যাপ্লিকেশন চালু করা, নেটওয়ার্ক কনফিগার করা, এবং নতুন তথ্য ধারণ করা।
+ডিপ্লোমা ERDDAP™ কুতারনেটেসে আপনার তথ্য সার্ভার সংক্রান্ত একটি স্ক্রিপ্যপূর্ণ এনভায়রনমেন্ট সরবরাহ করা হয়েছে। এই গাইডটি হোস্ট- এর জন্য প্রয়োজনীয় উপাদান উল্লেখ করে ERDDAP™ প্রমিত মান ব্যবহার করা হবে কুবাজারনেটস, যার মধ্যে রয়েছে লাগাতার সংরক্ষণ, অ্যাপ্লিকেশন চালু করা, নেটওয়ার্ক কনফিগার করা, এবং নতুন তথ্য ধারণ করা।
 
 ## পূর্বনির্দিষ্ট
 শুরু করার পূর্বে, আপনাকে নিশ্চিত করতে হবে:
@@ -11,7 +11,7 @@
 লোবাম্বা
 
 ## ১. পার্থজ (PVC) 
- ERDDAP ক্যাশে ফাইল, লগ- ইন ও অবস্থা পুনরায় চালু করার জন্য ধারাবাহিক সংগ্রহস্থলের প্রয়োজন। ব্যবহৃত হচ্ছে `পারটিগ্রেক্স`   (PVC) যে আপনার নিশ্চিত `স্বয়ংক্রিয় সংরক্ষণের ডিরেক্টরি`   (কোথায় ERDDAP স্টোরের তথ্য সংরক্ষণ করা হয়েছে) যদি কোন চেম্বার নষ্ট হয়ে যায় তাহলে হারিয়ে যাবে। এই ভলিউমের মধ্যে উপস্থিত তথ্য সংরক্ষণ করা হলে, তথ্য সংরক্ষণের উদ্দেশ্যে খোলা ফাইলগুলি মূল স্থানে করা যাবে।
+ ERDDAP™ ক্যাশে ফাইল, লগ- ইন ও অবস্থা পুনরায় চালু করার জন্য ধারাবাহিক সংগ্রহস্থলের প্রয়োজন। ব্যবহৃত হচ্ছে `পারটিগ্রেক্স`   (PVC) যে আপনার নিশ্চিত `স্বয়ংক্রিয় সংরক্ষণের ডিরেক্টরি`   (কোথায় ERDDAP™ স্টোরের তথ্য সংরক্ষণ করা হয়েছে) যদি কোন চেম্বার নষ্ট হয়ে যায় তাহলে হারিয়ে যাবে। এই ভলিউমের মধ্যে উপস্থিত তথ্য সংরক্ষণ করা হলে, তথ্য সংরক্ষণের উদ্দেশ্যে খোলা ফাইলগুলি মূল স্থানে করা যাবে।
 
 একটি ফাইল নির্মাণ করুন `pvc.yml` যেমন:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 ---
 
-## ২. এটা ERDDAP প্রেরণ
-ডিপ্লোমা প্রকাশ করে দেয় ERDDAP নিজেকে মুক্ত করো। দীর্ঘ সময় ধরে সমর্থনের মাধ্যমে আমরা সরকারি/অনুরোধ/দাস ডকার ছবি ব্যবহার করার সুপারিশ করছি।
+## ২. এটা ERDDAP™ প্রেরণ
+ডিপ্লোমা প্রকাশ করে দেয় ERDDAP™ নিজেকে মুক্ত করো। দীর্ঘ সময় ধরে সমর্থনের মাধ্যমে আমরা সরকারি/অনুরোধ/দাস ডকার ছবি ব্যবহার করার সুপারিশ করছি।
 
 :::তথ্য
 মে হতে, [v2 30. 30](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) সর্বশেষ সংস্করণটা ছিল। মাঝে মাঝে নিরাপত্তার সাথে মানিয়ে নেয়া বিজ্ঞতার কাজ।
 :::
 
-এই কনফিগারেশনের মধ্যে, সময়ের অঞ্চল সংক্রান্ত বৈশিষ্ট্য পরিচালনার উদ্দেশ্যে ব্যবহারযোগ্য কি-বাইন্ডিং ভেরিয়েবল সংক্রান্ত তথ্য চিহ্নিত করা হয়। ভলিউম আন-লক করার সময় সঠিক অনুমতি প্রদান করা হবে এবং বলো: ERDDAP কোয়েরনেট ইনগ্রেসের পিছনে বসে কিভাবে পথ অনুসরণ করতে হয়। আমরা PVC কে মাউন্ট করেছি `/erraplad`   (ডিফল্ট `স্বয়ংক্রিয় সংরক্ষণের ডিরেক্টরি` ) প্রবেশ করতে datasets.xml এবং প্রস্তুতি নাও। `/usr/local/bin/ সুদের মাত্রা` . .
+এই কনফিগারেশনের মধ্যে, সময়ের অঞ্চল সংক্রান্ত বৈশিষ্ট্য পরিচালনার উদ্দেশ্যে ব্যবহারযোগ্য কি-বাইন্ডিং ভেরিয়েবল সংক্রান্ত তথ্য চিহ্নিত করা হয়। ভলিউম আন-লক করার সময় সঠিক অনুমতি প্রদান করা হবে এবং বলো: ERDDAP™ কোয়েরনেট ইনগ্রেসের পিছনে বসে কিভাবে পথ অনুসরণ করতে হয়। আমরা PVC কে মাউন্ট করেছি `/erraplad`   (ডিফল্ট `স্বয়ংক্রিয় সংরক্ষণের ডিরেক্টরি` ) প্রবেশ করতে datasets.xml এবং প্রস্তুতি নাও। `/usr/local/bin/ সুদের মাত্রা` . .
 
 একটি ফাইল নির্মাণ করুন `স্থাপনা` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **তাজি** : টম্যাট সার্ভার এবং সময় অঞ্চল নির্ধারণ করে ERDDAP লগ।
+-  **তাজি** : টম্যাট সার্ভার এবং সময় অঞ্চল নির্ধারণ করে ERDDAP™ লগ।
 
--  **হোস্ট-নেম (_T)** : ডিফল্ট হিসাবে, ERDDAP কন্টেইনার টমকে একজন বিশেষ ব্যবহারকারী হিসেবে চালান । ব্যবহারকারীর দ্বারা সিস্টেমের মধ্যে উপস্থিত লগ-ইন ভিত্তিক ID পৃথক ব্যবহারকারী দ্বারা আপনার ব্যবহৃত হলে স্থায়ীরূপে ভলিউম মাউন্ট করা হবে। ERDDAP অনুমতি প্রত্যাখ্যান করার সময় বিপর্যয় সংক্রান্ত সমস্যা দেখা দিয়েছে। মিল পাওয়া গিয়েছে.
+-  **হোস্ট-নেম (_T)** : ডিফল্ট হিসাবে, ERDDAP™ কন্টেইনার টমকে একজন বিশেষ ব্যবহারকারী হিসেবে চালান । ব্যবহারকারীর দ্বারা সিস্টেমের মধ্যে উপস্থিত লগ-ইন ভিত্তিক ID পৃথক ব্যবহারকারী দ্বারা আপনার ব্যবহৃত হলে স্থায়ীরূপে ভলিউম মাউন্ট করা হবে। ERDDAP™ অনুমতি প্রত্যাখ্যান করার সময় বিপর্যয় সংক্রান্ত সমস্যা দেখা দিয়েছে। মিল পাওয়া গিয়েছে.
 
     :::পরামর্শ
 ব্যবহৃত NFS মাউন্টের জন্য অন্য কোনো ব্যবহারকারীর UID অনুসন্ধান করুন: `আইডি - রো <your-user_name> ` . . এর মান আপনার প্রয়োজন হবে.
     :::
 
--  ** ERDDAP বিপরীত দিশায় ক্রমবিন্যাস (_B) ERDDAP টুল-বার (_T) ইউলার** : কখন ERDDAP একটি সার্ভিস এবং ইনগ্রেসের পেছনে কুবাজারেট চালায়, টম্যাট মনে করে যে এটা স্থানীয় হোস্ট: ৮০। এই ভেরিয়েবলগুলি অগ্রাহ্য করা হবে ERDDAP 'অভ্যন্তরীণ অভ্যন্তরীণ ইউ. আর. এল. সংখ্যা' যাতে লিংক (স্বনির্বাচিত লোগো অথবা ডাটা লিঙ্কের পছন্দ) আপনার পাবলিক-ফাইিং ডোমেইনের নাম সঠিকভাবে সমাধান করুন।
+-  ** ERDDAP বিপরীত দিশায় ক্রমবিন্যাস (_B) ERDDAP টুল-বার (_T) ইউলার** : কখন ERDDAP™ একটি সার্ভিস এবং ইনগ্রেসের পেছনে কুবাজারেট চালায়, টম্যাট মনে করে যে এটা স্থানীয় হোস্ট: ৮০। এই ভেরিয়েবলগুলি অগ্রাহ্য করা হবে ERDDAP 'অভ্যন্তরীণ অভ্যন্তরীণ ইউ. আর. এল. সংখ্যা' যাতে লিংক (স্বনির্বাচিত লোগো অথবা ডাটা লিঙ্কের পছন্দ) আপনার পাবলিক-ফাইিং ডোমেইনের নাম সঠিকভাবে সমাধান করুন।
 
 :::নোট
 যদি আপনি পৃথক উৎপাদন পদ্ধতি এবং কিউএ পরিবেশ পরিচালনা করেন, তাহলে একক পিভিসি শেয়ার করার ব্যাপারে সতর্ক থাকবেন। এক বা একাধিক ফাইলে ক্যাশে তথ্য মুছে ফেলা হবে অথবা সেটি আবর্জনার বাক্সে স্থানান্তর করা হলে অন্য কোনো কাজে প্রভাব ফেলবে। আমরা এটা দিয়ে কিউএ এবং উৎপাদনশীলতা এবং প্রতিটি ওভারলে উপ-তৃতি যোগ করবো। এটি আমাদের কিউএ-এর একটি কিউএ ডাটাসেট দিয়ে পরীক্ষার অনুমতি দেয়। উৎপাদন কেন্দ্র স্পর্শ করার আগে XML।
@@ -137,7 +137,7 @@ spec:
 ---
 
 ## ৩. নেটওয়ার্ক: সার্ভিস এবং ইনগ্রিটর
-আপনার উন্মোচন ERDDAP ওয়েবের কাছে, তোমাকে একটা সার্ভিস সার্ভিসের দরকার যাতে অভ্যন্তরীণ সেতুর ট্রাফিক পার হতে পারে, আর একটা ইনগা্রেস যাতে পাবলিক ডিএনএস নামের সাথে বাঁধতে পারে।
+আপনার উন্মোচন ERDDAP™ ওয়েবের কাছে, তোমাকে একটা সার্ভিস সার্ভিসের দরকার যাতে অভ্যন্তরীণ সেতুর ট্রাফিক পার হতে পারে, আর একটা ইনগা্রেস যাতে পাবলিক ডিএনএস নামের সাথে বাঁধতে পারে।
 
 একটি ফাইল নির্মাণ করুন `সার্ভিস` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-নির্মাণ করুন `বার্তা তালিকা - নতুন বার্তা` সকল রিসোর্স ও ম্যাপ ফাইল একত্রিত করার জন্য আপনার স্বনির্ধারিত বৈশিষ্ট্য নির্ধারণ করুন। এটা আপনার মধ্যে পাস হবে ERDDAP ডকার ছবি যখনই আপনি ব্যবহার করতে পারেন ERDDAP আপনার গিটহাব রিপোজিটরি থেকে তথ্য এবং যোগ করুন `স্বনির্ধারিত` তাদের জাহাজ ঠিক করো.
+নির্মাণ করুন `বার্তা তালিকা - নতুন বার্তা` সকল রিসোর্স ও ম্যাপ ফাইল একত্রিত করার জন্য আপনার স্বনির্ধারিত বৈশিষ্ট্য নির্ধারণ করুন। এটা আপনার মধ্যে পাস হবে ERDDAP™ ডকার ছবি যখনই আপনি ব্যবহার করতে পারেন ERDDAP™ আপনার গিটহাব রিপোজিটরি থেকে তথ্য এবং যোগ করুন `স্বনির্ধারিত` তাদের জাহাজ ঠিক করো.
 
 #### ভিত্তি ( `বেস /kuchart.ymam2` ) 
 মূল কবেশন শুধু আপনার মূল সম্পদ ওভারলে ভাগ করে। আমরা প্রোডাকশন রাখা ` datasets.xml ` এবং `উন্নত ব্যবস্থা।` শুধু কিউএ-এর পরীক্ষার পর এটা আপডেট করে।
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

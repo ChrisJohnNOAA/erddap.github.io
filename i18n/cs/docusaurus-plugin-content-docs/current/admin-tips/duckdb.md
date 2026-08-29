@@ -1,4 +1,4 @@
-Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP skupina uživatelů](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Tento obsah je založen na [Zpráva od Roye Mendelssohna ERDDAP™ skupina uživatelů](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ se snaží být agnostický o tom, jaké datové formáty lidé používají pro svá data, místo toho se snaží pracovat s datovými formáty většiny využití pro komunity, které sloužíme především. Vzhledem k tomu, že stále více práce je v cloudu, a existuje spousta datových formátů, které lidé používají v cloudu, bylo by pěkné, kdyby ERDDAP™ může podpořit mnoho těchto formátů. Bohužel, ERDDAP™ rozvoj a údržba je již málo personál, a co by bylo žádoucí, je využít práci ostatních k dosažení tohoto cíle, aniž by museli upravit ERDDAP™ .
 
@@ -9,11 +9,13 @@ Vstupte [KachnaDB](https://duckdb.org/) a [Trino](https://trino.io/) . Obojí po
 
 K použití DuckDB v ERDDAP™ musíte nainstalovat duckDB do počítače a nainstalovat DuckDB JDBC konektor do ERDDAP™ . Pokyny pro instalaci DuckDB samotné jsou na
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC konektor lze stáhnout z
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Pokud se Váš Tomcat nachází na $TOMCAT_HOME, pak chcete dát tento soubor na $TOMCAT_HOME / Webapps/erddap/WEB-INF/lib.
 

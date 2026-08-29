@@ -1,4 +1,4 @@
-Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP kullanıcılar grubu](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP™ kullanıcılar grubu](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Koşu Koşu ERDDAP™ Bulutta sıcak bir konu haline geldi. Bunu not etmeliyim ki ERDDAP™ Bulutta her zaman koşmuştur, sadece bir ticari bulut sağlayıcısı tarafından sağlanan bir sunucuda değil, koşmak için büyük bir engel. ERDDAP™ Bir ticari bulut sağlayıcısı S3 depolama kullanıyorsanız, normal Linux blok erişime izin vermez. Ticari bulut sağlayıcınız tarafından sağlanan blok erişim seçeneklerini kullanmak için daha fazla ödemeye istekliyseniz, ticari bir bulut sunucusu üzerinde çalışmak, elbette maliyet dışında kendi ekipmanınızda çalışan olarak aynıdır.
 

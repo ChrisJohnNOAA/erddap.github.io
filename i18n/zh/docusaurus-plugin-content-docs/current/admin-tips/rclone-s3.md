@@ -1,8 +1,8 @@
-这一内容基于 [罗伊·门德尔索恩致 ERDDAP 用户组](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) 。 。 。 。
+这一内容基于 [罗伊·门德尔索恩致 ERDDAP™ 用户组](https://groups.google.com/g/erddap/c/zZUt6PKfkoI/m/expZ3UkkBAAJ) 。 。 。 。
 
 最近,我们收到一些查询,寻求帮助访问AWS S3的文件。 ERDDAP™ 。 。 。 。 首先, ERDDAP™ 2.29版本将改进S3访问,它也应与非AWS对象商店合作。 (谢谢赛斯&#33;) 。 。 。 但我之前提到过 使用基于FUSE的系统 使S3商店 看起来像一个文件系统 在你的服务器或VM。
 
-这样做的一种方法是使用“克隆”。 (https://rclone.org/) . rclone在许多不同的S3系统中工作,并且有许多不同的设置来优化性能,包括设置缓存大小,希望这能够抵消运行FUSE时的一些速度罚单. 使用rclone的优点 ERDDAP TM是 rclone 处理所有与 S3 的相互作用,所以数据集类型像 EDDGrid 从NcFiles可以直接使用,好像有本地文件一样. 这意味着你只需要想出如何设置rclone就可以进入你的对象商店,剩下的只是普通的Linux类型设置.
+这样做的一种方法是使用“克隆”。 ( https://rclone.org/ ) . rclone在许多不同的S3系统中工作,并且有许多不同的设置来优化性能,包括设置缓存大小,希望这能够抵消运行FUSE时的一些速度罚单. 使用rclone的优点 ERDDAP™ 是rclone处理所有与 S3 的交互,所以数据集类型像 EDDGrid 从NcFiles可以直接使用,好像有本地文件一样. 这意味着你只需要想出如何设置rclone就可以进入你的对象商店,剩下的只是普通的Linux类型设置.
 
 现在,如果我只留下它,而不举个例子,那我就失职了。 下面我要匿名登上 NOAA Goes17数据是使用于我们Ubuntu服务器之一的可公开访问的AWS S3商店,在初始设置中,rclone进程将在前台运行,以方便测试一切在起作用,然后我将讨论如何将 ii 变成一个在背景中运行的服务. 注意在下面的内容中,缓存被设定为1GB. 通过使缓存大得多,例如5GB-10GB或甚至更大,可以提高性能。 这些设置也是我对什么可以优化性能的猜测,但可能不是最佳的 ERDDAP™ 。 。 。 。
 

@@ -1,4 +1,4 @@
-Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP grupul de utilizatori](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Acest conţinut se bazează pe [mesaj de la Roy Mendelssohn la ERDDAP™ grupul de utilizatori](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ încearcă să fie agnostic despre ce formate de date folosesc oamenii pentru datele lor, în loc să încerce să lucreze cu formatele de date de cele mai multe utilizări pentru comunitățile pe care le servim în principal. Deoarece din ce în ce mai multă muncă este în cloud, și există o multitudine de formate de date pe care oamenii le folosesc în cloud, ar fi frumos dacă ERDDAP™ ar putea sprijini o mulțime de aceste formate. Vai, ERDDAP™ dezvoltarea și întreținerea este deja insuficient de personal, și ceea ce ar fi de dorit este de a face uz de activitatea altora pentru a atinge acest obiectiv, fără a fi nevoie să modifice ERDDAP™ .
 
@@ -9,11 +9,13 @@ Intră [DuckDB](https://duckdb.org/) şi [Trino](https://trino.io/) . Ambele din
 
 Pentru utilizarea DuckDB în ERDDAP™ aveți nevoie pentru a instala rațăDB pe computer, și pentru a instala conectorul DuckDB JDBC în ERDDAP™ . Instrucțiunile privind instalarea DuckDB în sine sunt la
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 Conectorul DuckDB JDBC poate fi descărcat de la
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Dacă Tomcat este situat la $TOMCAT_HOME, atunci doriți să puneți acest fișier la $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

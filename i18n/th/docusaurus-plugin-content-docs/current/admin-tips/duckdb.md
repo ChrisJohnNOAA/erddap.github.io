@@ -1,4 +1,4 @@
-เนื้อหานี้ขึ้นอยู่กับ [ข้อความจากรอย เมนเดลสัน ERDDAP กลุ่มผู้ใช้](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+เนื้อหานี้ขึ้นอยู่กับ [ข้อความจากรอย เมนเดลสัน ERDDAP™ กลุ่มผู้ใช้](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ พยายามอธิบายว่าคนเราใช้รูปแบบข้อมูลอะไรเพื่อข้อมูล แต่พยายามทํางานกับรูปแบบข้อมูล เมื่องานมากขึ้นและมากขึ้นในเมฆ และมีรูปแบบของข้อมูล ที่คนใช้ในเมฆ มันจะดีถ้า ERDDAP™ สามารถรองรับรูปแบบเหล่านี้ได้ อนิจจา ERDDAP™ การ พัฒนา และ การ บํารุง รักษา อยู่ ใต้ อํานาจ แล้ว และ สิ่ง ที่ น่า ปรารถนา คือ การ ใช้ ประโยชน์ จาก งาน ของ คน อื่น ๆ เพื่อ บรรลุ เป้า หมาย นี้ โดย ไม่ ต้อง แก้ไข ERDDAP™ .
 
@@ -9,11 +9,13 @@
 
 ในการใช้ DuckDB ใน ERDDAP™ คุณต้องติดตั้งเป็ด DB บนคอมพิวเตอร์ของคุณ และติดตั้ง ดั๊กดีบี JDBC เชื่อมต่อ ERDDAP™ . คําสั่งในการติดตั้ง DuckDB ตัวเองอยู่ที่
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 ตัวเชื่อมต่อ DIDB JDBC สามารถดาวน์โหลดได้จาก
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 ถ้าทอมแคทของคุณอยู่ที่ $TOMCAT_HOME คุณก็ต้องใส่แฟ้มนี้ที่ $TOMCAT_HME/Webapps/erdap/WEB-NF/lib
 

@@ -1,4 +1,4 @@
-Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP Brugere gruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Dette indhold er baseret på en [besked fra Roy Mendelssohn til te ERDDAP™ Brugere gruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Løb ERDDAP™ i skyen er blevet et varmt emne. Jeg skal bemærke, at ERDDAP™ har altid kørt i skyen, kun det meste af tiden ikke på en server, der leveres af en kommerciel cloud-udbyder, og den store impediment til at køre ERDDAP™ på en kommerciel cloud-udbyder er, hvis du bruger S3-lagring, som ikke tillader normal Linux-blok adgang. Hvis du er villig til at betale mere for at bruge blokeringsadgangsmulighederne fra din kommercielle cloud-udbyder, end du kører på en kommerciel cloud-server er dybest set den samme som at køre på dit eget udstyr, bortset fra naturligvis omkostningerne.
 

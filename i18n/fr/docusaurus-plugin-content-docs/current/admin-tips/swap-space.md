@@ -1,4 +1,4 @@
-Ce contenu est basé sur [message de Roy Mendelssohn au ERDDAP groupe d'utilisateurs](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
+Ce contenu est basé sur [message de Roy Mendelssohn au ERDDAP™ groupe d'utilisateurs](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) .
 
 Beaucoup des demandes d'aide que nous obtenons impliquent des problèmes avec l'utilisation de la mémoire dans ERDDAP™ . Une partie de cela provient de changements dans la gestion de la mémoire en Java , ainsi que les interactions avec la gestion de la mémoire Linux OS. Je commence par croire en Java 17, Java utilise plus de mémoire que ce qui est déposé dans les paramètres de tas. Vous pouvez voir ceci si vous regardez vos paramètres de tas et puis utilisez des commandes telles que top, htop, ou btop pour vérifier l'utilisation de la mémoire des applications. Donc, par exemple, notre très utilisé ERDDAP™ L'espace est fixé à 21 Go, mais l'utilisation de la mémoire peut fonctionner à 28 Go-30 Go, parfois plus haut. Cette valeur peut augmenter s'il y a beaucoup de grandes requêtes simultanées au système.
 

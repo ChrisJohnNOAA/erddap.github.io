@@ -1,4 +1,4 @@
-یہ مواد ایک پر مبنی ہے۔ [رائے میندلسن سے پیغام ERDDAP صارفین](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) . .
+یہ مواد ایک پر مبنی ہے۔ [رائے میندلسن سے پیغام ERDDAP™ صارفین](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) . .
 
  ERDDAP™ اعداد و شمار کے لیے اعداد و شمار کو استعمال کرنے کی کوشش کرنے کی کوشش کریں، اس کی بجائے زیادہ تر استعمال کے ڈیٹا فارمیٹ کے ساتھ کام کرنے کی کوشش کریں جیسا کہ زیادہ تر کام بادل میں ہوتا ہے اور ڈیٹا فارمز کا ایک پلاٹ ہوتا ہے جسے لوگ بادل میں استعمال کرتے ہیں تو یہ اچھا ہوتا اگر ERDDAP™ ان میں سے بہت سی فارمیٹ کی مدد کر سکتے ہیں۔ ہائے افسوس&#33; ERDDAP™ ترقی اور دیکھ بھال پہلے ہی زیرِ اہتمام ہے اور اس مقصد کو حاصل کرنے کے لیے دوسروں کے کام کا استعمال کرنے کی کیا خواہش ہوتی ہے، بغیر ترمیم کے، ERDDAP™ . .
 
@@ -9,11 +9,13 @@
 
 تاکہ DuckDB کا استعمال کیا جا سکے۔ ERDDAP™ آپ کو اپنے کمپیوٹر پر اینٹ ڈی بی نصب کرنے کی ضرورت ہے اور DuckDB JDBC کو اتصال میں نصب کرنے کے لیے DuckDB ERDDAP™ . . خود DuckDB پر ہدایات موجود ہیں۔
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC Compactor سے ڈاؤن لوڈ کیا جا سکتا ہے۔
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 اگر آپ کا Tomcat $CAT_PT پر ہے، تو پھر آپ کو یہ فائل $CAT_T_PE/webapps/erdap/WEB-INF/lib پر ڈالنی چاہئے.
 

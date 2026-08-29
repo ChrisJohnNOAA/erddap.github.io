@@ -1,4 +1,4 @@
-このコンテンツは、 [Roy Mendelssohnからのメッセージ ERDDAP ユーザーグループ](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) お問い合わせ
+このコンテンツは、 [Roy Mendelssohnからのメッセージ ERDDAP™ ユーザーグループ](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) お問い合わせ
 
  ERDDAP™ 主にサービスするコミュニティに最も使用されているデータフォーマットで作業しようとするのではなく、データフォーマットが自分のデータに使用するデータフォーマットについて認識しようとします。 より多くの作業がクラウドにあるため、クラウドで利用するデータフォーマットのplethoraがいるため、クラウドで利用している人にとっては良いでしょう。 ERDDAP™ これらのフォーマットを多くサポートできます。 アラス, ERDDAP™ 開発とメンテナンスはすでに不足しており、変更することなく、他の人の作業を使用してこの目標を達成することが望ましいです ERDDAP™ お問い合わせ
 
@@ -9,11 +9,13 @@
 
 DuckDB を使用するため ERDDAP™ duckDB をコンピュータにインストールし、DuckDB JDBC コネクタをインストールする必要があります。 ERDDAP™ お問い合わせ DuckDB自体をインストールする手順は
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC コネクタは、DuckDB JDBC コネクタからダウンロードできます。
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 tomcat が $TOMCAT_HOME にある場合は、このファイルを $TOMCAT_HOME/webapps/erddap/WEB-INF/lib に置きます。
 

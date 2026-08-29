@@ -1,6 +1,6 @@
-# Kung Paano Lulubog ERDDAP sa Kubernetes
+# Kung Paano Lulubog ERDDAP™ sa Kubernetes
 
-Pag - aalis ng Tubig ERDDAP sa Kubernetes ay naglalaan ng isang ligtas, matatag na kapaligiran para sa iyong data server. Saklaw ng giyang ito ang mahahalagang bahagi na kailangan upang maging punong - abala ERDDAP paggamit ng pamantayan Makikita ang mga bernete, pati na ang patuloy na pag - iimbak, paglalagay ng application, pag - aayos ng networking, at paggawa ng mga bagong dataset na XML mula mismo sa loob ng kumpol.
+Pag - aalis ng Tubig ERDDAP™ sa Kubernetes ay naglalaan ng isang ligtas, matatag na kapaligiran para sa iyong data server. Saklaw ng giyang ito ang mahahalagang bahagi na kailangan upang maging punong - abala ERDDAP™ paggamit ng pamantayan Makikita ang mga bernete, pati na ang patuloy na pag - iimbak, paglalagay ng application, pag - aayos ng networking, at paggawa ng mga bagong dataset na XML mula mismo sa loob ng kumpol.
 
 ## Mga Prerequisite
 Bago ka magsimula, tiyakin na mayroon ka:
@@ -11,7 +11,7 @@ Bago ka magsimula, tiyakin na mayroon ka:
 --
 
 ## 1. Patuloy na Paglitaw (PVC) 
- ERDDAP ay nangangailangan ng patuloy na pag - iimbak upang mapanatili ang mga salansan ng cache, troso, at estado sa ibayo ng mga pod restart. Paggamit ng isang `Patuloy na Pag - aasawa`   (PVC) ay tumitiyak na ang iyong `Malaking Direktoryo`   (kung saan ERDDAP nag - iimbak ng mga impormasyong gawa nito) ay hindi nawawala kapag bumaba ang isang bunga. Ang volume na ito ay maaari ring maiugnay sa iyong data storage na lokasyon kung saan ang mga hilaw na data files ay titira.
+ ERDDAP™ ay nangangailangan ng patuloy na pag - iimbak upang mapanatili ang mga salansan ng cache, troso, at estado sa ibayo ng mga pod restart. Paggamit ng isang `Patuloy na Pag - aasawa`   (PVC) ay tumitiyak na ang iyong `Malaking Direktoryo`   (kung saan ERDDAP™ nag - iimbak ng mga impormasyong gawa nito) ay hindi nawawala kapag bumaba ang isang bunga. Ang volume na ito ay maaari ring maiugnay sa iyong data storage na lokasyon kung saan ang mga hilaw na data files ay titira.
 
 Gumawa ng talaksang may pangalan `pvc.yaml` tulad ng:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 --
 
-## 2. Ang ERDDAP Paglubog
-Ang Deployment ang namamahala sa ERDDAP Ang bunga mismo. Iminumungkahi namin ang paggamit ng opisyal na larawang erddap/erddap Docker na may pangmatagalang suporta.
+## 2. Ang ERDDAP™ Paglubog
+Ang Deployment ang namamahala sa ERDDAP™ Ang bunga mismo. Iminumungkahi namin ang paggamit ng opisyal na larawang erddap/erddap Docker na may pangmatagalang suporta.
 
 :::Pagkain
 Noong Mayo 2026, [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) ang pinakabagong bersiyon. Isang katalinuhan na muling-deploy paminsan-minsan upang makasabay sa seguridad volnerability.
 :::
 
-Sa pagsasaayos na ito, aming itinuturok ang mga pangunahing variable na kapaligiran upang pangasiwaan ang mga timezone setting, tinitiyak na si Tomcat ay may tamang pagbasa/pagsusulat ng mga pahintulot para sa imbakan, at sabihin sa ERDDAP kung paano wastong mapapatakbo ang mga URL kapag nakaupo sa likod ng isang Kubernetes Ingres. Pinaakyat din namin ang PVC hanggang sa `/erddapData`   (ang default `Malaking Direktoryo` ) upang iturok ang datasets.xml at inilagay sa setup.xml `/usr/local/tomcat/content/erddap` .
+Sa pagsasaayos na ito, aming itinuturok ang mga pangunahing variable na kapaligiran upang pangasiwaan ang mga timezone setting, tinitiyak na si Tomcat ay may tamang pagbasa/pagsusulat ng mga pahintulot para sa imbakan, at sabihin sa ERDDAP™ kung paano wastong mapapatakbo ang mga URL kapag nakaupo sa likod ng isang Kubernetes Ingres. Pinaakyat din namin ang PVC hanggang sa `/erddapData`   (ang default `Malaking Direktoryo` ) upang iturok ang datasets.xml at inilagay sa setup.xml `/usr/local/tomcat/content/erddap` .
 
 Gumawa ng talaksang may pangalan `Paglalagay.yaml` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** : Itakda ang timezone para sa Tomcat server at ERDDAP mga troso.
+-  **TZ** : Itakda ang timezone para sa Tomcat server at ERDDAP™ mga troso.
 
--  **TOMCAT_USTER_ID & TOMCAT_GROUP_ID** : Sa pamamagitan ng default, ang ERDDAP Ang container ay tumatakbo Tomcat bilang isang espesipikong gumagamit. Kung ang tuloy-tuloy na volume na inilagay sa /erddapData ay pag-aari ng ibang user/group ID sa inyong host storage system, ERDDAP ay babagsak dahil sa pagpapahintulot sa mga pagkakamali. Ang pagtatakda ng mga variable na ito ay pumupuwersa kay Tomcat na tumakbo kasama ang mga katambal na ID.
+-  **TOMCAT_USTER_ID & TOMCAT_GROUP_ID** : Sa pamamagitan ng default, ang ERDDAP™ Ang container ay tumatakbo Tomcat bilang isang espesipikong gumagamit. Kung ang tuloy-tuloy na volume na inilagay sa /erddapData ay pag-aari ng ibang user/group ID sa inyong host storage system, ERDDAP™ ay babagsak dahil sa pagpapahintulot sa mga pagkakamali. Ang pagtatakda ng mga variable na ito ay pumupuwersa kay Tomcat na tumakbo kasama ang mga katambal na ID.
 
     :::tip
 Hanapin ang inyong user UID sa server kung saan ganito ang NFS mount: `id -u <your-user_name> ` . Ibabalik nito ang halaga ng numero na kailangan mo.
     :::
 
--  ** ERDDAP _baseUrl & ERDDAP _BaseHtps Url** : Kailan ERDDAP ay tumatakbo sa Kubernetes sa likod ng isang Serbisyo at isang Inggress, sa tingin ni Tomcat ito ay naglilingkod sa trapiko sa lokal na holst:8080. Ang mga pagbabagong ito ay nangingibabaw ERDDAP 'di panloob na henerasyon ng URL kaya't nag-uugnay (tulad ng iyong logo ng kaugalian o mga link ng dataset) Hanggang sa pangalang public-facing domain.
+-  ** ERDDAP _baseUrl & ERDDAP _BaseHtps Url** : Kailan ERDDAP™ ay tumatakbo sa Kubernetes sa likod ng isang Serbisyo at isang Inggress, sa tingin ni Tomcat ito ay naglilingkod sa trapiko sa lokal na holst:8080. Ang mga pagbabagong ito ay nangingibabaw ERDDAP 'di panloob na henerasyon ng URL kaya't nag-uugnay (tulad ng iyong logo ng kaugalian o mga link ng dataset) Hanggang sa pangalang public-facing domain.
 
 :::pansinin
 Kung ikaw ay nagpapatakbo ng hiwalay na Production at QA environments, maging maingat sa pagbabahagi ng isang PVC. Ang pag - aalis o pag - aalis ng nakuhang impormasyon sa isang kapaligiran ay agad na makaaapekto sa isa pa. Nagawa namin ito sa pamamagitan ng paglalagay ng mga sapin para sa QA at Production at pagdaragdag ng mga subfolder para sa bawat balot. Ito ay pumapayag sa amin na subukin ang QA sa pamamagitan ng isang QA datasets. XML bago hawakan ang produksyon.
@@ -137,7 +137,7 @@ Kung ikaw ay nagpapatakbo ng hiwalay na Production at QA environments, maging ma
 ---
 
 ## 3. Networking: Paglilingkod at mga Inggles
-Upang ilantad ang iyong sarili ERDDAP Pawang sa web, kailangan mo ng isang Serbisyo upang matahak ang internasyunal na cluster traffic, at isang Ingress upang itali ito sa isang pampublikong pangalan ng DNS.
+Upang ilantad ang iyong sarili ERDDAP™ Pawang sa web, kailangan mo ng isang Serbisyo upang matahak ang internasyunal na cluster traffic, at isang Ingress upang itali ito sa isang pampublikong pangalan ng DNS.
 
 Gumawa ng talaksang may pangalan `paglilingkod.` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-Gumawa ng `mustomisasyon.yaml` ng talaksan upang tipunin ang lahat ng yaman at i - map ang iyong custom setup at datasets XML files. Ang mga ito ay madadaanan mo ERDDAP docker image kapag naka - set upang mapaganda mo ang iyong hitsura ERDDAP pahina at magdagdag ng mga dataset mula sa iyong libingan ng GitHub habang hinahayaang ilagay `Kumbinasyon` ireserba ang mga ito sa iyong paghahanda.
+Gumawa ng `mustomisasyon.yaml` ng talaksan upang tipunin ang lahat ng yaman at i - map ang iyong custom setup at datasets XML files. Ang mga ito ay madadaanan mo ERDDAP™ docker image kapag naka - set upang mapaganda mo ang iyong hitsura ERDDAP™ pahina at magdagdag ng mga dataset mula sa iyong libingan ng GitHub habang hinahayaang ilagay `Kumbinasyon` ireserba ang mga ito sa iyong paghahanda.
 
 #### Base ( `base/kustomisasyon.yaml` ) 
 Ang base kustomization ay basta nagdudurulot sa iyong pangunahing yaman na ibinahagi sa ibayo ng mga balot. Iniingatan namin ang produksiyon ` datasets.xml ` at `setup.xml` sa base at ang mga ito ay updated lamang pagkatapos ng pagsubok sa QA.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

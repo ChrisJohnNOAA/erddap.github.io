@@ -1,4 +1,4 @@
-Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP grup pengguna](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) Sitemap
+Konten ini didasarkan pada [Pesan dari Mendelssohn ke ERDDAP™ grup pengguna](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ) Sitemap
 
 Banyak permintaan bantuan yang kami dapatkan melibatkan masalah dengan penggunaan memori ERDDAP™ Sitemap Beberapa ini berasal dari perubahan dalam manajemen memori dalam Java , dan juga interaksi dengan manajemen memori OS Linux. Mulai saya percaya Java Login Java menggunakan lebih banyak memori daripada apa yang dimasukkan ke dalam pengaturan heap. Anda dapat melihat ini jika Anda melihat pengaturan heap Anda dan kemudian menggunakan perintah seperti atas, htop, atau btop untuk memeriksa penggunaan memori aplikasi. Jadi misalnya kami banyak digunakan ERDDAP™ memiliki ruang heap set pada 21GB, tetapi sebenarnya penggunaan memori dapat berjalan ke 28GB-30GB, kadang-kadang lebih tinggi. Nilai ini dapat lonjakan jika ada banyak permintaan besar simultan ke sistem.
 

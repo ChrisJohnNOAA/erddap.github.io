@@ -1,4 +1,4 @@
-Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP Benutzergruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Dieser Inhalt basiert auf einer [Nachricht von Roy Mendelssohn an die ERDDAP™ Benutzergruppe](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Laufen ERDDAP™ in der Cloud ist ein heißes Thema geworden. Ich sollte darauf hinweisen, dass ERDDAP™ hat immer in der Cloud laufen, nur die meiste Zeit nicht auf einem Server, der von einem kommerziellen Cloud-Anbieter zur Verfügung gestellt wird, und die große Behinderung für den Betrieb ERDDAP™ auf einem kommerziellen Cloud-Anbieter ist, wenn Sie S3 Speicher verwenden, was keinen normalen Linux-Block-Zugriff erlaubt. Wenn Sie bereit sind, mehr zu zahlen, um die von Ihrem kommerziellen Cloud-Anbieter bereitgestellten Blockzugriffsoptionen zu nutzen, als auf einem kommerziellen Cloud-Server zu laufen, ist im Wesentlichen die gleiche wie auf Ihrem eigenen Gerät, außer natürlich die Kosten.
 

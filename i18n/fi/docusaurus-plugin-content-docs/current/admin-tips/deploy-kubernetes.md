@@ -1,6 +1,6 @@
-# Miten ottaa käyttöön ERDDAP Kubernetes
+# Miten ottaa käyttöön ERDDAP™ Kubernetes
 
-Käyttäminen ERDDAP Kubernetes tarjoaa skaalautuvan ja kestävän ympäristön palvelimellesi. Tämä opas kattaa isännöintiin tarvittavat olennaiset osat. ERDDAP Käyttämällä standardia Kubernetes ilmenee, mukaan lukien jatkuvan varastoinnin hallinta, sovelluksen käyttöönotto, verkostoitumisen konfigurointi ja uusien XML-tietojen tuottaminen suoraan klusterista.
+Käyttäminen ERDDAP™ Kubernetes tarjoaa skaalautuvan ja kestävän ympäristön palvelimellesi. Tämä opas kattaa isännöintiin tarvittavat olennaiset osat. ERDDAP™ Käyttämällä standardia Kubernetes ilmenee, mukaan lukien jatkuvan varastoinnin hallinta, sovelluksen käyttöönotto, verkostoitumisen konfigurointi ja uusien XML-tietojen tuottaminen suoraan klusterista.
 
 ## Edellytykset
 Ennen kuin aloitat, varmista, että:
@@ -11,7 +11,7 @@ Ennen kuin aloitat, varmista, että:
 -------
 
 ## 1.1. Pysyvä säilytys (PVC) 
- ERDDAP Vaatii pysyvän tallennuksen säilyttääkseen välimuistitiedostoja, lokeja ja tilaa pod-käynnistyksessä. Käyttämällä a `PysyväVolumeClaim`   (PVC) Varmista, että sinun `isovanhemmat`   (missä missä ERDDAP tallentaa luotuja tietoja) Ei menetetä, jos potti laskee. Tämä volyymi voidaan liittää myös tallennustilaan, jossa raaka-ainetiedostot elävät.
+ ERDDAP™ Vaatii pysyvän tallennuksen säilyttääkseen välimuistitiedostoja, lokeja ja tilaa pod-käynnistyksessä. Käyttämällä a `PysyväVolumeClaim`   (PVC) Varmista, että sinun `isovanhemmat`   (missä missä ERDDAP™ tallentaa luotuja tietoja) Ei menetetä, jos potti laskee. Tämä volyymi voidaan liittää myös tallennustilaan, jossa raaka-ainetiedostot elävät.
 
 Luo tiedosto nimeltä `pvc.yaml` Kuten näin:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 ------
 
-## 2. The ERDDAP käyttöönotto
-Käyttöohje hallitsee ERDDAP Pod itse. Suosittelemme käyttämään virallista erddap/erddap Docker -kuvaa pitkällä aikavälillä.
+## 2. The ERDDAP™ käyttöönotto
+Käyttöohje hallitsee ERDDAP™ Pod itse. Suosittelemme käyttämään virallista erddap/erddap Docker -kuvaa pitkällä aikavälillä.
 
 :::Info
 toukokuussa 2026, [V2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) Se oli viimeisin versio. On viisasta ottaa joskus uudelleen käyttöön turvallisuushaavoittuvuuksia.
 :::
 
-Tässä kokoonpanossa injektoimme keskeisiä ympäristömuuttujat käsittelemään aikavyöhykeasetuksia, varmistamaan, että Tomcatilla on oikeat luku-/kirjoitusoikeudet varastointitilavuuteen. ERDDAP Miten reitittää URL-osoitteet kun istuu Kubernetes Ingressin takana PVC:tä on myös `ErddapData`   (Oletusarvo `isovanhemmat` ) injektoimaan datasets.xml Asennus.xml `Käyttäjä/Paikallinen/Tomcat/Sisältö/Erddap` .
+Tässä kokoonpanossa injektoimme keskeisiä ympäristömuuttujat käsittelemään aikavyöhykeasetuksia, varmistamaan, että Tomcatilla on oikeat luku-/kirjoitusoikeudet varastointitilavuuteen. ERDDAP™ Miten reitittää URL-osoitteet kun istuu Kubernetes Ingressin takana PVC:tä on myös `ErddapData`   (Oletusarvo `isovanhemmat` ) injektoimaan datasets.xml Asennus.xml `Käyttäjä/Paikallinen/Tomcat/Sisältö/Erddap` .
 
 Luo tiedosto nimeltä `Lähde: Yaml` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **T** : Aikavyöhyke Tomcat-palvelimelle ja ERDDAP Lokit.
+-  **T** : Aikavyöhyke Tomcat-palvelimelle ja ERDDAP™ Lokit.
 
--  **TOMCAT_USER_ID & TomCAT_GROUP_ID Näytä tarkat tiedot** : Oletusarvoisesti, ERDDAP Tomcat toimii tiettynä käyttäjänä. Jos säilyvä tilavuus, joka on asennettu /erddapDataan, omistaa eri käyttäjä/ryhmätunnus isäntätallennusjärjestelmässäsi, ERDDAP Syynä ovat luvatut virheet. Näiden muuttujien asettaminen pakottaa Tomcatin kulkemaan yhteensopivien tunnisteiden kanssa.
+-  **TOMCAT_USER_ID & TomCAT_GROUP_ID Näytä tarkat tiedot** : Oletusarvoisesti, ERDDAP™ Tomcat toimii tiettynä käyttäjänä. Jos säilyvä tilavuus, joka on asennettu /erddapDataan, omistaa eri käyttäjä/ryhmätunnus isäntätallennusjärjestelmässäsi, ERDDAP™ Syynä ovat luvatut virheet. Näiden muuttujien asettaminen pakottaa Tomcatin kulkemaan yhteensopivien tunnisteiden kanssa.
 
     :::Vinkki
 Löydä käyttäjätunnuksesi palvelimelta, jossa NFS-vuori on tällainen: `_ _ U <your-user_name> ` . Tämä palauttaa tarvitsemasi numeroarvon.
     :::
 
--  ** ERDDAP _baseUrl & ERDDAP _baseHttps Url** : Milloin ERDDAP Kubernetes toimii palvelun ja Ingressin takana, ja Tomcat uskoo, että se palvelee liikennettä paikalla: 8080. Nämä muuttujat ylittävät ERDDAP Sisäinen URL-sukupolvi niin, että (kuten mukautettu logo tai dataset linkit) Oikein päätät julkisen verkkotunnuksen.
+-  ** ERDDAP _baseUrl & ERDDAP _baseHttps Url** : Milloin ERDDAP™ Kubernetes toimii palvelun ja Ingressin takana, ja Tomcat uskoo, että se palvelee liikennettä paikalla: 8080. Nämä muuttujat ylittävät ERDDAP Sisäinen URL-sukupolvi niin, että (kuten mukautettu logo tai dataset linkit) Oikein päätät julkisen verkkotunnuksen.
 
 :::Huomautus
 Jos käytät erillisiä tuotanto- ja QA-ympäristöjä, ole varovainen yhden PVC:n jakamisesta. Muokkaamalla tai poistamalla välimuistitietoja yhdessä ympäristössä vaikuttaa välittömästi toiseen. Hallitsemme tätä käyttämällä QA: n ja tuotannon käyttöönottopäällysteitä ja lisäämme kuhunkin päällekkäisyyteen alikansioita. Tämä mahdollistaa QA: n testaamisen QA-datalla. XML ennen tuotantoa.
@@ -137,7 +137,7 @@ Jos käytät erillisiä tuotanto- ja QA-ympäristöjä, ole varovainen yhden PVC
 ---
 
 ## 3.3.3. Verkosto: Palvelu ja Ingress
-paljastamaan sinun ERDDAP verkkoon, tarvitset palvelun, joka reitittää sisäisen klusteriliikenteen, ja Ingress sitoa sen julkiseen DNS-nimeen.
+paljastamaan sinun ERDDAP™ verkkoon, tarvitset palvelun, joka reitittää sisäisen klusteriliikenteen, ja Ingress sitoa sen julkiseen DNS-nimeen.
 
 Luo tiedosto nimeltä `Yaml` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-Luoda `Kustomointi.yaml` tiedosto kerätä kaikki resurssit ja kartoittaa mukautetun asennuksen ja tietoaineistot XML-tiedostot. Nämä siirtyvät sinun ERDDAP Docker-kuva, kun se on otettu käyttöön, jotta voit muotoilla ERDDAP sivu ja lisää tietoaineistoja GitHub-varastostasi antaessasi `Kustom` kartoittaa ne käyttöönottoon.
+Luoda `Kustomointi.yaml` tiedosto kerätä kaikki resurssit ja kartoittaa mukautetun asennuksen ja tietoaineistot XML-tiedostot. Nämä siirtyvät sinun ERDDAP™ Docker-kuva, kun se on otettu käyttöön, jotta voit muotoilla ERDDAP™ sivu ja lisää tietoaineistoja GitHub-varastostasi antaessasi `Kustom` kartoittaa ne käyttöönottoon.
 
 #### Perusta ( `Perusta/kustomointi.yaml` ) 
 Peruskustomointi yksinkertaisesti yhdistää ydinresursseja jaettu päällysteiden. Pidämme tuotantoa ` datasets.xml ` ja `Asennus.xml` ja päivittää niitä vain testin jälkeen.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

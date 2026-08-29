@@ -1,4 +1,4 @@
-Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP grupong gumagamit](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP™ grupong gumagamit](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Optimize netcdf files para sa ulap
 — Eixioximanificitixićixiić --
@@ -7,7 +7,8 @@ a. Pagbuklatng muli at page na laki
 
 Kamakailan sa paggawa ng ilang pananaliksik nabasa ko ang kawili - wiling artikulong ito:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Waring walang sinuman ang pumupukaw ng silakbo ng damdamin na gaya ng pagtalakay sa mga wikang pamprograma, mga patnugot, at mga format ng talaksan, at hindi ito isang rekomendasyon kung ano ang format (s) dapat mong gamitin, subalit sa halip ay unawain kung ano ang nasa papel na iyon at tingnan kung gaano kalaking pagsulong ang matatamo ( ERDDAP™ ay laging nagsisikap na maging agnostiko tungkol sa marami sa mga bagay na ito, bagkus ay pinipiling subukin at lutasin kung paano aktuwal na ginagamit ng mga tao ang impormasyon) .
 
@@ -86,26 +87,27 @@ Kaya ang kalakalan ay may maliit na pagtaas sa laki ng talaksan.
 
 d. Subalit kung kailangan kong muling iproseso ang mga file sa paano man...?
 
-Ang isang mabuting tanong ay kung kailangan kong sumulat ng iskrip upang maiprosesong muli ang mga salansan, bakit hindi basta sumulat lamang ng isang iskrip upang isalin sa isang format na gaya ng sabi ni zarr? Sizarr ay maraming tagapagtaguyod at kung ikaw ay interesado sa zarr basta gumawa ng mabilis na pananaliksik sa bibiduckgo at doon ay maraming mabubuting post, marahil ang mas timbang na pangmalas ayhttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Kapansin - pansin na marami sa mga punto na iniaangat niya ay ang sinisikap na banggitin ng icechunk format) . Kaya bakit hindi mo nanaising isalin ang iyong mga salansan sa isang bagay na gaya ng zarr, Una, kung regular kang lilikha ng mga salansan ng netcdf, maaari mong simulan nang husto ang paggawa ng mga file mula ngayon, na sa paglipas ng panahon ay makakakita ng mga pagsulong sa bilis at hindi mo na kakailanganing baguhin ang nakaraang mga file, at sa paglipas ng panahon ay makikita mo ang mga pagsulong ERDDAP™ ay maaari pa ring i-gregate ang ibabaw ng mga file bagaman ang ilang mga panloob na setting ay magkakaiba. Ikalawa, maaaring marami kang kagamitan na depende sa mga salansan ng netcdf, at ang pamamaraang ito ay mangangahulugan na hindi mo na kailangang baguhin pa kung ano ang maaaring maging napakaraming kodigo. Ang punto ay alamin ang mga mapagpipilian at piliin kung ano ang pinakamabuti para sa iyong kalagayan. Bilang paalaala, kung pipiliin mong gumamit ng zarr files ERDDAP™ , ang mga ito ay dapat zarr format v2 files.
+Ang isang mabuting tanong ay kung kailangan kong sumulat ng iskrip upang maiprosesong muli ang mga salansan, bakit hindi basta sumulat lamang ng isang iskrip upang isalin sa isang format na gaya ng sabi ni zarr? Sizarr ay maraming tagapagtaguyod at kung ikaw ay interesado sa zarr basta gumawa ng mabilis na pananaliksik sa bibiduckgo at doon ay maraming mabubuting post, marahil ang mas timbang na pangmalas ay https://www.youtube.com/watch?v=IEAcCmcOdJs   (Kapansin - pansin na marami sa mga punto na iniaangat niya ay ang sinisikap na banggitin ng icechunk format) . Kaya bakit hindi mo nanaising isalin ang iyong mga salansan sa isang bagay na gaya ng zarr, Una, kung regular kang lilikha ng mga salansan ng netcdf, maaari mong simulan nang husto ang paggawa ng mga file mula ngayon, na sa paglipas ng panahon ay makakakita ng mga pagsulong sa bilis at hindi mo na kakailanganing baguhin ang nakaraang mga file, at sa paglipas ng panahon ay makikita mo ang mga pagsulong ERDDAP™ ay maaari pa ring i-gregate ang ibabaw ng mga file bagaman ang ilang mga panloob na setting ay magkakaiba. Ikalawa, maaaring marami kang kagamitan na depende sa mga salansan ng netcdf, at ang pamamaraang ito ay mangangahulugan na hindi mo na kailangang baguhin pa kung ano ang maaaring maging napakaraming kodigo. Ang punto ay alamin ang mga mapagpipilian at piliin kung ano ang pinakamabuti para sa iyong kalagayan. Bilang paalaala, kung pipiliin mong gumamit ng zarr files ERDDAP™ , ang mga ito ay dapat zarr format v2 files.
 
 E. Malaking datos - isang tabi
 
 Maraming pinag - uusapang impormasyon, subalit gaano kalaki ang impormasyon na ginagamit ng karamihan ng mga tao at paano iyan maihahambing sa mga kakayahan ng makabagong mga laptop (oo mga laptop, hindi mga server) . Ang kawili - wiling inumin ay:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Magsimula sa loob ng mga ilang minuto 37 bagaman ang buong pahayag ay kawili - wili
+ https://www.youtube.com/watch?v=GELhdezYmP0 Magsimula sa loob ng mga ilang minuto 37 bagaman ang buong pahayag ay kawili - wili
 
 Ang pag - aaral na binanggit niya ay:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Kaya may maliit na porsiyento ng mga gumagamit nito na talagang nangangailangang magpaandar ng kapangyarihan, subalit ang karamihan ng mga gumagamit ay makagagawa ng kanilang pagsusuri sa isang laptop, 26TB panlabas na mga drive ay wala pang $300 at mga bali - balita ay na 60 mga panlabas na drives ngTB ang makukuha sa pagtatapos ng taon. Isang bagay na dapat pag - isipan.
 
 2. Paggamit ERDDAP™ kasama ng Google Cloud Platform o iba pang mga provider ng ulap bukod sa AWS
 ----,-,,-,,-,,-,-,,-,-,,-,-,,,-,,-,--,-,-,-,-,---,----,----,--------,--------.
 
-Sa pagkakataong iyon ERDDAP™ ay kilala lamang sa pagtatrabaho sa mga tindahan ng AWS (S3) , bagaman bumubuti at pangkalahatan ERDDAP™ Nasa listahan ng todo (tingnanhttps://github.com/ERDDAP/erddap/issues/158) . Kaya kung ano ang gagawin mo kapag sinabi sa iyo na tatakbo ka ERDDAP™ sa Google Cloud Platform (GCP) o isang katulad na plataporma? Una, karamihan sa mga plataporma ng ulap ay nag-aalok ng iba't ibang antas ng imbakan, karaniwang kabilang ang isa na katulad ng imbakang lokal at kinikilala ng sistemang operating, isa na konektado sa ibabaw ng network na karaniwang gumagamit ng NFS para sa access (ay tuwirang mararating ng OS) , at isa na tindahan. Ang unang solusyon ay hindi ang paggamit ng mga tindahan ng bagay, at mabuti pang pumunta ka roon. Subalit gaya ng dati, ang TANSTAAFL at ang disbentaha sa kasong ito ay habang ikaw ay nagtutungo mula sa imbakang -&gt; NFS access -&gt; lokal na tindahan ng iyong mga gastos ay tumataas din. (Sasabihin ko pa na ang NFS ay naka-access din sa network, at may sarili nitong mga isyu tungkol sa latency, ito rin ay makikinabang sa file optimization) .
+Sa pagkakataong iyon ERDDAP™ ay kilala lamang sa pagtatrabaho sa mga tindahan ng AWS (S3) , bagaman bumubuti at pangkalahatan ERDDAP™ Nasa listahan ng todo (tingnan https://github.com/ERDDAP/erddap/issues/158 ) . Kaya kung ano ang gagawin mo kapag sinabi sa iyo na tatakbo ka ERDDAP™ sa Google Cloud Platform (GCP) o isang katulad na plataporma? Una, karamihan sa mga plataporma ng ulap ay nag-aalok ng iba't ibang antas ng imbakan, karaniwang kabilang ang isa na katulad ng imbakang lokal at kinikilala ng sistemang operating, isa na konektado sa ibabaw ng network na karaniwang gumagamit ng NFS para sa access (ay tuwirang mararating ng OS) , at isa na tindahan. Ang unang solusyon ay hindi ang paggamit ng mga tindahan ng bagay, at mabuti pang pumunta ka roon. Subalit gaya ng dati, ang TANSTAAFL at ang disbentaha sa kasong ito ay habang ikaw ay nagtutungo mula sa imbakang -&gt; NFS access -&gt; lokal na tindahan ng iyong mga gastos ay tumataas din. (Sasabihin ko pa na ang NFS ay naka-access din sa network, at may sarili nitong mga isyu tungkol sa latency, ito rin ay makikinabang sa file optimization) .
 
-Kung kailangan mong gumamit ng tindahan, o kaya lamang bumili ng isang tindahan, ang sagot ay isang FUSE file system (https://github.com/libfuse/libfuse) . Sa GCP, ito ay tinatawag na gcsfese, at ang mga hakbang upang i-install ito ay:
+Kung kailangan mong gumamit ng tindahan, o kaya lamang bumili ng isang tindahan, ang sagot ay isang FUSE file system ( https://github.com/libfuse/libfuse ) . Sa GCP, ito ay tinatawag na gcsfese, at ang mga hakbang upang i-install ito ay:
 
 • Iluklok ang gcsfise sa iyong larawang GCP Linux:
 sudo apt update

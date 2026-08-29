@@ -1,4 +1,4 @@
-Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP utenti di gruppo](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
+Questo contenuto si basa su un [messaggio da Roy Mendelssohn a ERDDAP™ utenti di gruppo](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) .
 
 1. Ottimizzazione dei file netcdf per il cloud
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -7,7 +7,8 @@ a. riimballaggio e dimensione della pagina
 
 Recentemente nel fare alcune ricerche ho incontrato questo articolo molto interessante:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Nulla sembra gonfiare passioni come discussioni di linguaggi di programmazione, editori e formati di file, e questo non è una raccomandazione di quale formato (#) si dovrebbe usare, ma piuttosto per capire che cosa è in quella carta e per vedere quanto miglioramento può essere ottenuto ( ERDDAP™ ha sempre cercato di essere agnostico su un sacco di queste questioni, piuttosto scegliendo di provare a lavorare con come le persone effettivamente lavorare con i dati) .
 
@@ -86,26 +87,27 @@ Così il tradeoff è c'è un aumento non insignificante della dimensione del fil
 
 D. Ma se devo ritrattare i file comunque...?
 
-Una buona domanda è se devo scrivere uno script per rielaborazione dei file, perché non solo scrivere uno script per tradurre in un formato come dire zarr? zarr ha molti sostenitori e se siete interessati a zarr solo fare una rapida ricerca di paperduckgo e ci un sacco di buoni post, una vista forse più equilibrata è ahttps://www.youtube.com/watch?v=IEAcCmcOdJs  (è interessante che molti dei punti che solleva sono ciò che il formato icechunk sta cercando di affrontare) . Quindi, perché non si desidera tradurre i file in qualcosa come zarr, in primo luogo, se si crea file netcdf regolarmente, si potrebbe iniziare a ottimizzare i file da ora in poi, che nel tempo vedrà guadagni di velocità e non dovrete riformattare i file passati, e ERDDAP™ sarà ancora in grado di aggregarsi sui file anche se alcune delle impostazioni interne differiscono. In secondo luogo, si potrebbe avere un sacco di strumenti che dipende dai file netcdf, e questo approccio significa non dover retool ciò che potrebbe essere una grande quantità di codice. Il punto è di essere consapevoli delle opzioni e scegliere ciò che funziona meglio per la vostra situazione. Proprio come un promemoria, se si sceglie di utilizzare i file zarr con ERDDAP™ , devono essere zarr formato v2 file.
+Una buona domanda è se devo scrivere uno script per rielaborazione dei file, perché non solo scrivere uno script per tradurre in un formato come dire zarr? zarr ha molti sostenitori e se siete interessati a zarr solo fare una rapida ricerca di paperduckgo e ci un sacco di buoni post, una vista forse più equilibrata è a https://www.youtube.com/watch?v=IEAcCmcOdJs   (è interessante che molti dei punti che solleva sono ciò che il formato icechunk sta cercando di affrontare) . Quindi, perché non si desidera tradurre i file in qualcosa come zarr, in primo luogo, se si crea file netcdf regolarmente, si potrebbe iniziare a ottimizzare i file da ora in poi, che nel tempo vedrà guadagni di velocità e non dovrete riformattare i file passati, e ERDDAP™ sarà ancora in grado di aggregarsi sui file anche se alcune delle impostazioni interne differiscono. In secondo luogo, si potrebbe avere un sacco di strumenti che dipende dai file netcdf, e questo approccio significa non dover retool ciò che potrebbe essere una grande quantità di codice. Il punto è di essere consapevoli delle opzioni e scegliere ciò che funziona meglio per la vostra situazione. Proprio come un promemoria, se si sceglie di utilizzare i file zarr con ERDDAP™ , devono essere zarr formato v2 file.
 
 E. Big data - un da parte
 
 Big data è parlato molto, ma quanto è grande i dati che la maggior parte delle persone utilizzano e come si confronta con le capacità dei computer portatili moderni (sì laptop, non server) . Una presa interessante è a:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Iniziare intorno al minuto 37 anche se l'intero discorso è interessante
+ https://www.youtube.com/watch?v=GELhdezYmP0 Iniziare intorno al minuto 37 anche se l'intero discorso è interessante
 
 Lo studio che menziona è a:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Quindi ci sono una percentuale relativamente piccola di utenti che hanno davvero bisogno di aumentare la potenza, ma la stragrande maggioranza degli utenti possono fare le loro analisi su un computer portatile, unità esterne 26TB sono ora sotto $300 e voci sono che le unità esterne 60TB saranno disponibili entro la fine dell'anno. Qualcosa a cui pensare.
 
 2. Utilizzo ERDDAP™ con Google Cloud Platform o altri provider cloud oltre AWS
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Al momento ERDDAP™ è noto solo per lavorare con AWS oggetti negozi (S3) , pur migliorando e generalizzando ERDDAP™ Il supporto del negozio di oggetti è nella lista di todo (vedihttps://github.com/ERDDAP/erddap/issues/158) . Quindi cosa fare se ti viene detto di dover eseguire il tuo ERDDAP™ su Google Cloud Platform (GCP) o una piattaforma simile? In primo luogo, la maggior parte delle piattaforme cloud offrono diversi livelli di storage, di solito incluso uno simile allo storage locale ed è riconosciuto dal sistema operativo, uno che è collegato sulla rete di solito utilizzando NFS per l'accesso (di nuovo direttamente accessibile dal sistema operativo) , e uno che è un negozio di oggetti. La prima soluzione è non utilizzare oggetti negozi, e si sarebbe bene andare. Ma come sempre, TANSTAAFL e l'inconveniente in questo caso è come si va dal negozio di oggetti -&gt; Accesso NFS -&gt; memorizzare i costi anche salire. (Aggiungo che NFS è anche accessibile sulla rete, e ha i suoi problemi di latenza, questo potrebbe anche beneficiare di ottimizzazione dei file) .
+Al momento ERDDAP™ è noto solo per lavorare con AWS oggetti negozi (S3) , pur migliorando e generalizzando ERDDAP™ Il supporto del negozio di oggetti è nella lista di todo (vedi https://github.com/ERDDAP/erddap/issues/158 ) . Quindi cosa fare se ti viene detto di dover eseguire il tuo ERDDAP™ su Google Cloud Platform (GCP) o una piattaforma simile? In primo luogo, la maggior parte delle piattaforme cloud offrono diversi livelli di storage, di solito incluso uno simile allo storage locale ed è riconosciuto dal sistema operativo, uno che è collegato sulla rete di solito utilizzando NFS per l'accesso (di nuovo direttamente accessibile dal sistema operativo) , e uno che è un negozio di oggetti. La prima soluzione è non utilizzare oggetti negozi, e si sarebbe bene andare. Ma come sempre, TANSTAAFL e l'inconveniente in questo caso è come si va dal negozio di oggetti -&gt; Accesso NFS -&gt; memorizzare i costi anche salire. (Aggiungo che NFS è anche accessibile sulla rete, e ha i suoi problemi di latenza, questo potrebbe anche beneficiare di ottimizzazione dei file) .
 
-Se si deve utilizzare il negozio di oggetti, o può solo permettersi un negozio di oggetti, la risposta è un file system FUSE (https://github.com/libfuse/libfuse) . Su GCP, questo è chiamato gcsfuse, e i passaggi per installarlo sono:
+Se si deve utilizzare il negozio di oggetti, o può solo permettersi un negozio di oggetti, la risposta è un file system FUSE ( https://github.com/libfuse/libfuse ) . Su GCP, questo è chiamato gcsfuse, e i passaggi per installarlo sono:
 
 • Installare gcsfuse sull'immagine GCP Linux:
 sudo apt aggiornamento

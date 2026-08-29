@@ -1,4 +1,4 @@
-Ez a tartalom egy [Roy Mendelssohn üzenete a ERDDAP felhasználók csoport](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) ...
+Ez a tartalom egy [Roy Mendelssohn üzenete a ERDDAP™ felhasználók csoport](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ) ...
 
 1. A netcdf fájlok optimalizálása a felhő számára
 ————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
@@ -7,7 +7,8 @@ a. visszacsomagolás és oldalméret
 
 Nemrégiben néhány kutatást találtam át ebben a nagyon érdekes cikkben:
 
-https://nsidc.github.io/cloud-optimized-icesat2/
+ https://nsidc.github.io/cloud-optimized-icesat2/
+ 
 
 Semmi sem tűnik olyan szenvedélyeket gyulladásnak, mint a programozási nyelvek, szerkesztők és fájlformátumok megvitatása, és ez nem ajánlás arra, hogy milyen formátumú (s) használni kell, de inkább megérteni, mi van ebben a papírban, és látni, hogy mennyi javulást lehet elérni ( ERDDAP™ mindig megpróbált agnosztikus lenni sok ilyen ügyben, inkább úgy döntött, hogy megpróbálja és dolgozzon azzal, hogy az emberek valójában dolgoznak az adatokkal) ...
 
@@ -86,26 +87,27 @@ Tehát a szakadék a fájlméret nem jelentéktelen növekedése.
 
 d. De ha újra kell feldolgoznom a fájlokat...?
 
-Jó kérdés, ha írnom kell egy szkriptet, hogy újra feldolgozza a fájlokat, miért nem csak írni egy szkriptet, hogy lefordítson egy formátumot, mint például zarr? A zarrnak számos előadója van, és ha érdekli a zarr, csak egy gyors kacsengo keresést végez, és sok jó poszt van, egy talán kiegyensúlyozottabb nézet vanhttps://www.youtube.com/watch?v=IEAcCmcOdJs  (Érdekes, hogy az általa felvetett pontok közül sok az, amit a icechunk formátum próbál kezelni) ... Tehát miért nem akarja lefordítani a fájlokat valami olyanra, mint a zarr, Először, ha rendszeresen hoz létre netcdf fájlokat, elkezdheti optimalizálni a fájlokat mostantól, ami idővel meglátja a sebességgyarapodást, és nem kell megreformálnia a korábbi fájlokat, és ERDDAP™ Még mindig képes lesz a fájlok átadására, még akkor is, ha néhány belső beállítás különbözik. Másodszor, lehet, hogy egy csomó eszköz, amely függ a netcdf fájlok, és ez a megközelítés azt jelenti, hogy nem kell újraindítani, hogy mi lehet egy kiterjedt mennyiségű kód. A lényeg, hogy tisztában legyünk a lehetőségekkel, és válasszuk ki, mi működik a legjobban a helyzetedben. Mint emlékeztető, ha úgy dönt, hogy zarr fájlokat használ ERDDAP™ zarr formátumú v2 fájlnak kell lenniük.
+Jó kérdés, ha írnom kell egy szkriptet, hogy újra feldolgozza a fájlokat, miért nem csak írni egy szkriptet, hogy lefordítson egy formátumot, mint például zarr? A zarrnak számos előadója van, és ha érdekli a zarr, csak egy gyors kacsengo keresést végez, és sok jó poszt van, egy talán kiegyensúlyozottabb nézet van https://www.youtube.com/watch?v=IEAcCmcOdJs   (Érdekes, hogy az általa felvetett pontok közül sok az, amit a icechunk formátum próbál kezelni) ... Tehát miért nem akarja lefordítani a fájlokat valami olyanra, mint a zarr, Először, ha rendszeresen hoz létre netcdf fájlokat, elkezdheti optimalizálni a fájlokat mostantól, ami idővel meglátja a sebességgyarapodást, és nem kell megreformálnia a korábbi fájlokat, és ERDDAP™ Még mindig képes lesz a fájlok átadására, még akkor is, ha néhány belső beállítás különbözik. Másodszor, lehet, hogy egy csomó eszköz, amely függ a netcdf fájlok, és ez a megközelítés azt jelenti, hogy nem kell újraindítani, hogy mi lehet egy kiterjedt mennyiségű kód. A lényeg, hogy tisztában legyünk a lehetőségekkel, és válasszuk ki, mi működik a legjobban a helyzetedben. Mint emlékeztető, ha úgy dönt, hogy zarr fájlokat használ ERDDAP™ zarr formátumú v2 fájlnak kell lenniük.
 
 E. Nagy adatok - félre
 
 A nagy adatok sokat beszélnek, de mennyire nagy az adatok, amelyeket a legtöbb ember használ, és hogyan hasonlít a modern laptopok képességeivel (Igen laptopok, nem szerverek) ... Érdekes vétel:
 
-https://www.youtube.com/watch?v=GELhdezYmP0Indítsa el a 37 percet, bár az egész beszélgetés érdekes
+ https://www.youtube.com/watch?v=GELhdezYmP0 Indítsa el a 37 percet, bár az egész beszélgetés érdekes
 
 A tanulmány, amit megemlít, az:
 
-https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ https://motherduck.com/blog/redshift-files-hunt-for-big-data/
+ 
 
 Tehát van egy viszonylag kis százaléka a felhasználóknak, akiknek tényleg fel kell szorítani a hatalmat, de a felhasználók túlnyomó többsége képes elvégezni elemzéseiket egy laptopon, 26TB külső meghajtások jelenleg $ 300 és pletykák, hogy 60TB külső meghajtók lesz elérhető az év végéig. Valami, amire gondolni kell.
 
 2. Használat ERDDAP™ a Google Cloud Platform vagy más felhő szolgáltatókkal az AWS mellett
 ---------------------------------------------------------------------------------------------------------------------------------------------
 
-Jelenleg ERDDAP™ csak az AWS objektumboltokkal dolgozhat (S3) de javulás és általánosítás ERDDAP™ Az objektumbolt támogatása a todo listán (lásd:https://github.com/ERDDAP/erddap/issues/158) ... Mi a teendő, ha azt mondják, hogy futtassa a te ERDDAP™ Google Cloud platform (GCP) vagy hasonló platform? Először is, a legtöbb felhő platform különböző tárolási szintet kínál, általában olyan, amely hasonló a helyi tárolóhoz, és az operációs rendszer felismeri, amely a hálózaton keresztül kapcsolódik, általában NFS-t használ a hozzáféréshez. (ismét közvetlenül hozzáférhető az OS) és az egyik, ami egy objektumbolt. Az első megoldás nem objektumboltokat használ, és jó lenne menni. De mint mindig, a TANSTAAFL és a hátrány ebben az esetben, mint megy a tárgybolt -&gt; NFS-hozzáférés -&gt; helyi áruház a költségek is mennek fel. (Hozzátenném, hogy az NFS a hálózaton keresztül is elérhető, és saját latenciaproblémái vannak, ez szintén profitálna a fájloptimalizálásból.) ...
+Jelenleg ERDDAP™ csak az AWS objektumboltokkal dolgozhat (S3) de javulás és általánosítás ERDDAP™ Az objektumbolt támogatása a todo listán (lásd: https://github.com/ERDDAP/erddap/issues/158 ) ... Mi a teendő, ha azt mondják, hogy futtassa a te ERDDAP™ Google Cloud platform (GCP) vagy hasonló platform? Először is, a legtöbb felhő platform különböző tárolási szintet kínál, általában olyan, amely hasonló a helyi tárolóhoz, és az operációs rendszer felismeri, amely a hálózaton keresztül kapcsolódik, általában NFS-t használ a hozzáféréshez. (ismét közvetlenül hozzáférhető az OS) és az egyik, ami egy objektumbolt. Az első megoldás nem objektumboltokat használ, és jó lenne menni. De mint mindig, a TANSTAAFL és a hátrány ebben az esetben, mint megy a tárgybolt -&gt; NFS-hozzáférés -&gt; helyi áruház a költségek is mennek fel. (Hozzátenném, hogy az NFS a hálózaton keresztül is elérhető, és saját latenciaproblémái vannak, ez szintén profitálna a fájloptimalizálásból.) ...
 
-Ha objektumboltot kell használnia, vagy csak egy objektumboltot engedhet meg, a válasz egy FUSE fájlrendszer (https://github.com/libfuse/libfuse) ... A GCP-n ezt gcsfusenek nevezik, és a telepítendő lépések:
+Ha objektumboltot kell használnia, vagy csak egy objektumboltot engedhet meg, a válasz egy FUSE fájlrendszer ( https://github.com/libfuse/libfuse ) ... A GCP-n ezt gcsfusenek nevezik, és a telepítendő lépések:
 
 • Telepítse a GCP Linux képét:
 sudo apt frissítés

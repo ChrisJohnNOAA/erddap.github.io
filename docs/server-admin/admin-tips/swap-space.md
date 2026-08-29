@@ -1,4 +1,4 @@
-This content is based on a [message from Roy Mendelssohn to the ERDDAP users group](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ).
+This content is based on a [message from Roy Mendelssohn to the ERDDAP™ users group](https://groups.google.com/g/erddap/c/1U0OByOasu4/m/JM39reEsBAAJ).
 
 A lot of the help requests we get involve problems with memory usage in ERDDAP™. Some of this comes from changes in memory management in Java, and also interactions with Linux OS memory management. Starting I believe in Java 17, Java uses more memory than what is put down in the heap settings. You can see this if you look at your heap settings and then use commands such as top, htop, or btop to check the memory usage of applications. So for example our heavily used ERDDAP™ has heap space set at 21GB, but actually memory use can run to 28GB-30GB, sometimes higher. This value can spike if there is a lot of simultaneous large requests to the system.
 

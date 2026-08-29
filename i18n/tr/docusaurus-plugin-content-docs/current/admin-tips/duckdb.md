@@ -1,4 +1,4 @@
-Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP kullanıcılar grubu](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
+Bu içerik bir şeye dayanıyor [Roy Mendelssohn'dan gelen mesaj ERDDAP™ kullanıcılar grubu](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) .
 
  ERDDAP™ İnsanların verileri için kullandıkları şey hakkında birgnostic olmaya çalışır, bunun yerine temel olarak hizmet ettiğimiz topluluklara en çok kullanılan veri biçimleriyle çalışmaya çalışır. Daha fazla ve daha fazla çalışma bulutta olduğu gibi ve insanların bulutta kullandığı veri formatlarının bir plethorası var, güzel olurdu eğer ERDDAP™ Bu formatların çoğunu destekleyebilir. Alas, ERDDAP™ Geliştirme ve bakım zaten şüphelidir ve arzu edilen şey, bu hedefe ulaşmak için başkalarının çalışmalarından yararlanmaktır, değiştirmeden önce bu amacı değiştirmektir. ERDDAP™ .
 
@@ -9,11 +9,13 @@ Enter Enter Enter Enter Enter Enter girin [DuckDB](https://duckdb.org/) ve [Trin
 
 DuckDB'yi kullanmak için ERDDAP™ EDB'yi bilgisayarınıza yüklemeniz ve DuckDB JDBC konektörünü bilgisayara yüklemeniz gerekir. ERDDAP™ . DuckDB'nin kendisini yükleme talimatları
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC konektörü kaldırıldı
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 If your tomcat is located at $TOMCAT_HOME, then you want to put this file at $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

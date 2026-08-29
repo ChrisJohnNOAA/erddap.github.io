@@ -1,6 +1,6 @@
-# Conas a Imlonnú ERDDAP ar Kubernets
+# Conas a Imlonnú ERDDAP™ ar Kubernets
 
-Amharc ar gach eolas ERDDAP ar Kubernetes Soláthraíonn scalable, timpeallacht athléimneach do do fhreastalaí sonraí. Clúdaíonn an treoir seo na comhpháirteanna riachtanacha is gá a óstáil ERDDAP ag baint úsáide as caighdeán Taispeánann Kubernetes, lena n-áirítear stóráil leanúnach a bhainistiú, an t-iarratas a úsáid, líonrú a chumadh, agus XMLanna tacar sonraí nua a ghiniúint go díreach ó laistigh den chnuasach.
+Amharc ar gach eolas ERDDAP™ ar Kubernetes Soláthraíonn scalable, timpeallacht athléimneach do do fhreastalaí sonraí. Clúdaíonn an treoir seo na comhpháirteanna riachtanacha is gá a óstáil ERDDAP™ ag baint úsáide as caighdeán Taispeánann Kubernetes, lena n-áirítear stóráil leanúnach a bhainistiú, an t-iarratas a úsáid, líonrú a chumadh, agus XMLanna tacar sonraí nua a ghiniúint go díreach ó laistigh den chnuasach.
 
 ## Réamhriachtanas
 Sula dtosaíonn tú, déan cinnte go bhfuil tú:
@@ -11,7 +11,7 @@ Sula dtosaíonn tú, déan cinnte go bhfuil tú:
 --
 
 ## 1. Stóráil Persistent (PVC PVC) 
- ERDDAP Éilíonn stóráil leanúnach a choimeád ar bun comhaid taisce, logs, agus stáit ar fud atosú pod. Ag baint úsáide as `Seirbhís do Chustaiméirí`   (PVC PVC) cinnte go bhfuil do `Treoir do Thuismitheoirí`   (i gcás ERDDAP siopaí a sonraí a ghintear) nach bhfuil caillte má théann pod síos. Is féidir an méid seo a nascadh freisin le do shuíomh stórála sonraí ina mbeidh na comhaid sonraí amh ina gcónaí.
+ ERDDAP™ Éilíonn stóráil leanúnach a choimeád ar bun comhaid taisce, logs, agus stáit ar fud atosú pod. Ag baint úsáide as `Seirbhís do Chustaiméirí`   (PVC PVC) cinnte go bhfuil do `Treoir do Thuismitheoirí`   (i gcás ERDDAP™ siopaí a sonraí a ghintear) nach bhfuil caillte má théann pod síos. Is féidir an méid seo a nascadh freisin le do shuíomh stórála sonraí ina mbeidh na comhaid sonraí amh ina gcónaí.
 
 Cruthaigh comhad ainmnithe `cineál gas: in airde` mar sin:
 ```yaml
@@ -34,14 +34,14 @@ spec:
 
 --
 
-## 2. 2. 2. An bhfuil ERDDAP tréimhse saoil: ilbhliantúil
-Bainistíonn an léiriú Imscaradh na ERDDAP pod féin. Molaimid ag baint úsáide as an erddap oifigiúil / erddap Docker íomhá le tacaíocht fadtéarmach.
+## 2. 2. 2. An bhfuil ERDDAP™ tréimhse saoil: ilbhliantúil
+Bainistíonn an léiriú Imscaradh na ERDDAP™ pod féin. Molaimid ag baint úsáide as an erddap oifigiúil / erddap Docker íomhá le tacaíocht fadtéarmach.
 
 :::info
 Ó 2026 Bealtaine, [v2.30.0](https://github.com/erddap/erddap/pkgs/container/erddap/779906687?tag=v2.30.0) Bhí an leagan is déanaí. Tá sé ciallmhar ath-imlonnú ó am go chéile a choinneáil suas le le leochaileachtaí slándála.
 :::
 
-Sa chumraíocht, instealladh againn athróg timpeallacht eochair a láimhseáil suímh crios ama, a chinntiú go bhfuil Tomcat na ceadanna a léamh / scríobh ceart le haghaidh an toirt stórála, agus a insint ERDDAP conas URLanna bealach i gceart nuair a suí taobh thiar de Kubernetes Ingress. Táimid mount freisin ar an PVC a `Sonraí Táirge`   (taiseachas aeir: fliuch `Treoir do Thuismitheoirí` ) a instealladh an datasets.xml agus thus.xml isteach `/ úsáid tírdhreach: coimeádán, flowerbed, teorann` .
+Sa chumraíocht, instealladh againn athróg timpeallacht eochair a láimhseáil suímh crios ama, a chinntiú go bhfuil Tomcat na ceadanna a léamh / scríobh ceart le haghaidh an toirt stórála, agus a insint ERDDAP™ conas URLanna bealach i gceart nuair a suí taobh thiar de Kubernetes Ingress. Táimid mount freisin ar an PVC a `Sonraí Táirge`   (taiseachas aeir: fliuch `Treoir do Thuismitheoirí` ) a instealladh an datasets.xml agus thus.xml isteach `/ úsáid tírdhreach: coimeádán, flowerbed, teorann` .
 
 Cruthaigh comhad ainmnithe `imscaradh.yaml` :
 
@@ -121,15 +121,15 @@ spec:
         persistentVolumeClaim:
           claimName: erddap-pvc
 ```
--  **TZ** : Socraigh an t-amchrios don fhreastalaí Tomcat agus ERDDAP logs.
+-  **TZ** : Socraigh an t-amchrios don fhreastalaí Tomcat agus ERDDAP™ logs.
 
--  **TOMCAT_USER_ID &amp; TOMCAT_GROUP** : De réir réamhshocraithe, an ERDDAP Ritheann coimeádán Tomcat mar úsáideoir ar leith. Má tá an toirt leanúnach suite go /erddapData faoi úinéireacht ag úsáideoir / grúpa ID éagsúla ar do chóras stórála óstach, ERDDAP Beidh tuairteála mar gheall ar chead earráidí dhiúltú. Socrú na fórsaí athróg Tomcat a reáchtáil leis na IDs meaitseáil.
+-  **TOMCAT_USER_ID &amp; TOMCAT_GROUP** : De réir réamhshocraithe, an ERDDAP™ Ritheann coimeádán Tomcat mar úsáideoir ar leith. Má tá an toirt leanúnach suite go /erddapData faoi úinéireacht ag úsáideoir / grúpa ID éagsúla ar do chóras stórála óstach, ERDDAP™ Beidh tuairteála mar gheall ar chead earráidí dhiúltú. Socrú na fórsaí athróg Tomcat a reáchtáil leis na IDs meaitseáil.
 
     :::cineál gas: in airde
 Faigh do UID úsáideora ar an bhfreastalaí ina bhfuil an mount NFS mar seo: `Déan teagmháil linn <your-user_name> ` . Tabharfaidh sé seo ar ais an luach uimhriúil is gá duit.
     :::
 
--  ** ERDDAP Déan Teagmháil Linn ERDDAP Déan Teagmháil Linn irl - Library Service** : Nuair a bheidh ERDDAP Ritheann i Kubernetes taobh thiar de Seirbhís agus Ingress, Measann Tomcat go bhfuil sé ag freastal ar thrácht ar localhost:8080. Na override athróg ERDDAP 's ghlúin URL inmheánach ionas go naisc (cosúil le do lógó saincheaptha nó naisc tacar sonraí) réiteach i gceart le d'ainm fearainn poiblí-facing.
+-  ** ERDDAP Déan Teagmháil Linn ERDDAP Déan Teagmháil Linn irl - Library Service** : Nuair a bheidh ERDDAP™ Ritheann i Kubernetes taobh thiar de Seirbhís agus Ingress, Measann Tomcat go bhfuil sé ag freastal ar thrácht ar localhost:8080. Na override athróg ERDDAP 's ghlúin URL inmheánach ionas go naisc (cosúil le do lógó saincheaptha nó naisc tacar sonraí) réiteach i gceart le d'ainm fearainn poiblí-facing.
 
 :::nóta nótaí
 Má tá tú ag rith ar leith Táirgeadh agus timpeallachtaí QA, a bheith cúramach faoi roinnt PVC amháin. Beidh tionchar láithreach ag na sonraí atá i dtaisce i dtimpeallacht amháin a mhodhnú nó a scriosadh. Bainistímid é seo ag baint úsáide as overlays imscaradh do QA agus Táirgeadh agus fofhillteáin a chur le haghaidh gach forleagan. Ligeann sé seo dúinn tástáil a dhéanamh ar QA le tacair shonraí QA. XML roimh teagmháil a dhéanamh leis an imscaradh táirgthe.
@@ -137,7 +137,7 @@ Má tá tú ag rith ar leith Táirgeadh agus timpeallachtaí QA, a bheith cúram
 ---
 
 ## 3. 3. 3. Líonrú: Seirbhís agus Ingress
-A nochtadh do ERDDAP pod leis an ngréasán, is gá duit Seirbhís chun bealach tráchta braisle inmheánach, agus Ingress chun ceangal é a ainm DNS poiblí.
+A nochtadh do ERDDAP™ pod leis an ngréasán, is gá duit Seirbhís chun bealach tráchta braisle inmheánach, agus Ingress chun ceangal é a ainm DNS poiblí.
 
 Cruthaigh comhad ainmnithe `service.yaml` :
 ```yaml
@@ -211,7 +211,7 @@ erddap/
         └── kustomization.yaml
 ```
 
-taiseachas aeir: fliuch `minicíocht uisce: flúirseach` comhad a bhailiú na hacmhainní agus léarscáil do thus saincheaptha agus datasets comhaid XML. Beidh siad a fháil ar aghaidh isteach i do ERDDAP Docker íomhá nuair a imscaradh ionas gur féidir leat stíl do ERDDAP leathanach agus tacair sonraí a chur ó do stór GitHub agus ligean `kustomize` léarscáil iad chuig do imscaradh.
+taiseachas aeir: fliuch `minicíocht uisce: flúirseach` comhad a bhailiú na hacmhainní agus léarscáil do thus saincheaptha agus datasets comhaid XML. Beidh siad a fháil ar aghaidh isteach i do ERDDAP™ Docker íomhá nuair a imscaradh ionas gur féidir leat stíl do ERDDAP™ leathanach agus tacair sonraí a chur ó do stór GitHub agus ligean `kustomize` léarscáil iad chuig do imscaradh.
 
 #### Bonn bonn ( `bonn / struchtúrú.yaml` ) 
 An kustomization bonn ach bundles do chuid acmhainní lárnacha roinnte ar fud an overlays. Coinnímid an táirgeadh ` datasets.xml ` agus `crios fuar: aon sonraí` i mbonn agus iad seo a nuashonrú ach amháin tar éis tástála ar QA.
@@ -296,7 +296,7 @@ Check the status of your deployment:
 
 ---
 ## 5. Dataset XML Generation in Kubernetes
- Adding new datasets to ERDDAP requires generating an XML block for the `datasets.xml` file. ERDDAP ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
+ Adding new datasets to ERDDAP™ requires generating an XML block for the `datasets.xml` file. ERDDAP™ ships with two interactive utilities, `GenerateDatasetsXml.sh` and `DasDds.sh`, which you can run directly inside your active pod.
 
  ### Step 1: Generate the XML
    - Find the pod ID: `kubectl get pods`
@@ -305,14 +305,14 @@ Check the status of your deployment:
    - Copy the resulting XML output to your `datasets.xml` in your repository and to the `datasets.xml` in your volume mount. After we validate the XML, we can redeploy and the config will map the new `datasets.xml` file to your deployment.
 
 ### Step 2: Validate the new Dataset XML
-Before restarting the entire deployment, test that ERDDAP can successfully read your new XML configuration using the `DasDds.sh` script.
+Before restarting the entire deployment, test that ERDDAP™ can successfully read your new XML configuration using the `DasDds.sh` script.
   - Ensure your updated `datasets.xml` is saved to your mounted config directory.
   - Run the validation script: `kubectl exec -it <erddap-pod-id> -- bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && ./DasDds.sh"`
   - Enter the `datasetID` you just created in the last step.
   - If the XML is valid, the script will print the `.das` and `.dds` structure to your terminal. If there are errors, use the output to troubleshoot and correct your `datasets.xml`. Repeat steps 1 and 2 until there are no more errors.
 
   ### Step 3: Apply the Changes
-  Once validated, restart your deployment so ERDDAP can ingest the new configurations: 
+  Once validated, restart your deployment so ERDDAP™ can ingest the new configurations: 
   `kubectl rollout restart deployment/erddap-deployment`
 
   ---
@@ -330,4 +330,4 @@ Before restarting the entire deployment, test that ERDDAP can successfully read 
 ---
 
 ### Notes
-This is only one way of deploying ERDDAP using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 
+This is only one way of deploying ERDDAP™ using Kubernetes, and is the way we have deployed the [ERDDAP](https://erddap.riddc.brown.edu/erddap/index.html) associated with the [Rhode Island Data Discovery Center](https://riddc.brown.edu/). We use the manifest approach with `kustomize` so it's easier to understand all the connections and we still get the benefits of using overlays and testing on QA. Helm Charts is another viable approach, but would use a completely different configuration approach. 

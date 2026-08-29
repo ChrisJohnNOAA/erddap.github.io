@@ -1,4 +1,4 @@
-Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP brukergruppe](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ..
+Dette innholdet er basert på en [melding fra Roy Mendelssohn til ERDDAP™ brukergruppe](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ) ..
 
  ERDDAP™ prøver å være agnostikert over hvilke dataformater folk bruker til sine data, i stedet prøver å jobbe med dataformatene til mest bruk til samfunnene vi hovedsakelig tjener. Som mer og mer arbeid er i skyen, og det er en rekke dataformater som folk bruker i skyen, ville det være hyggelig hvis ERDDAP™ Kan støtte mange av disse formatene. Alas, ERDDAP™ utvikling og vedlikehold er allerede underpersonell, og det som ville være ønskelig er å gjøre bruk av andres arbeid for å nå dette målet, uten å måtte endre ERDDAP™ ..
 
@@ -9,11 +9,13 @@ Skriv inn [DuckDB](https://duckdb.org/) og [Trino](https://trino.io/) .. Begge d
 
 For å bruke DuckDB i ERDDAP™ du må installere andDB på datamaskinen, og for å installere DuckDB JDBC-kontakten i ERDDAP™ .. Instruksjoner om å installere DuckDB i seg selv er på
 
-https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ https://duckdb.org/docs/installation/?version=stable&environment=cli&platform=macos&download_method=direct
+ 
 
 DuckDB JDBC-kontakten kan lastes ned fra
 
-https://duckdb.org/docs/stable/clients/java.html
+ https://duckdb.org/docs/stable/clients/java.html
+ 
 
 Hvis din tomcat befinner seg på $TOMCAT_HOME, så vil du sette denne filen på $TOMCAT_HOME/webapps/erddap/WEB-INF/lib.
 

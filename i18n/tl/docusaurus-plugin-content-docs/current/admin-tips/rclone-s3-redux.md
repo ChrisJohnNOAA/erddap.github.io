@@ -1,4 +1,4 @@
-Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP grupong gumagamit](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Ang nilalamang ito ay batay sa isang [mensahe mula kay Roy Mendelssohn hanggang sa ERDDAP™ grupong gumagamit](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Pagtakbo ERDDAP™ sa ulap ay naging isang mainit na paksa. Dapat kong pansinin na ERDDAP™ ay laging tumatakbo sa ulap, kadalasan ay wala sa server na inilalaan ng komersiyal na tagapaglaan ng ulap, at ang pangunahing hadlang sa pagtakbo ERDDAP™ sa komersiyal na provider ng ulap ay kung gagamit ka ng S3 storage, na nagpapangyari sa normal na Linux block access. Kung handa kang magbayad nang higit upang gamitin ang mga mapagpipilian sa pagkuha ng block na inilalaan ng iyong komersiyal na tagapaglaan ng ulap, kaysa sa pagpapatakbo sa isang komersiyal na server ng ulap ay pangunahin nang katulad ng pagtakbo sa iyong sariling kagamitan, maliban sa mangyari pa ang halaga.
 

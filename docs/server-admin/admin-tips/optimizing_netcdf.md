@@ -1,4 +1,4 @@
-This content is based on a [message from Roy Mendelssohn to the ERDDAP users group](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ).
+This content is based on a [message from Roy Mendelssohn to the ERDDAP™ users group](https://groups.google.com/g/erddap/c/JWoS_y3cygg/m/zCpcNTxNAAAJ).
 
 1. Optimizing netcdf files for the cloud
 ————————————————-

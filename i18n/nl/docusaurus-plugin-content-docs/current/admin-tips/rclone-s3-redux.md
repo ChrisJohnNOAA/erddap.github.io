@@ -1,4 +1,4 @@
-Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP gebruikersgroep](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
+Deze inhoud is gebaseerd op een [bericht van Roy Mendelssohn aan de ERDDAP™ gebruikersgroep](https://groups.google.com/g/erddap/c/H-vJoGP42TI) .
 
 Uitvoeren ERDDAP™ in de cloud is een hot topic geworden. Ik zou willen opmerken dat ERDDAP™ altijd heeft uitgevoerd in de cloud, gewoon meestal niet op een server die door een commerciële cloud provider, en de belangrijkste belemmering voor het uitvoeren van ERDDAP™ op een commerciële cloudprovider is als je S3 opslag gebruikt, wat geen normale Linux block toegang toelaat. Als u bereid bent meer te betalen om de toegangsmogelijkheden van uw commerciële cloudprovider te gebruiken, dan is het draaien op een commerciële cloudserver in principe hetzelfde als draaien op uw eigen apparatuur, behalve natuurlijk de kosten.
 

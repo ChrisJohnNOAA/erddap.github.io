@@ -1,4 +1,4 @@
-This content is based on a [message from Roy Mendelssohn to the ERDDAP users group](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ).
+This content is based on a [message from Roy Mendelssohn to the ERDDAP™ users group](https://groups.google.com/g/erddap/c/6Hl024ZGkes/m/DS5WzsydAQAJ).
 
 ERDDAP™ tries to be agnostic about what data formats people use for their data, instead trying to work with the data formats of most use to the communities we mainly serve. As more and more work is in the cloud, and there are a plethora of data formats that people use in the cloud, it would be nice if ERDDAP™ could support a lot of these formats. Alas, ERDDAP™ development and maintenance is already understaffed, and what would be desirable is to make use of the work of others to achieve this goal, without having to modify ERDDAP™.
 
