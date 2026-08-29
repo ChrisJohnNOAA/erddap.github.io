@@ -3,7 +3,7 @@ title: "ERDDAP™ Documentation"
 ---
 ## Новини ERDDAP™ версія{#latest-erddap-version} 
 
-2.30.0, див. [документація](/changes#version-2300) і [скачати](https://github.com/ERDDAP/erddap/releases/tag/v2.30.0) й
+2.31.0 див. у [документація](/changes#version-2310) і [скачати](https://github.com/ERDDAP/erddap/releases/tag/v2.31.0) й
 
 ##  ERDDAP™ Інформація{#erddap-information} 
 
@@ -11,8 +11,8 @@ title: "ERDDAP™ Documentation"
 сітчасті та табличні наукові дані у спільних форматах файлів та роблять графіки та карти.
  ERDDAP™ Безкоштовний і відкритий джерело (Статус на сервери)   Java Сервіс NOAA   NMFS   SWFSC Відділ досліджень навколишнього середовища ( ERD ) й
 
-* Для перегляду/використання ERDDAP™ монтаж: [ https://coastwatch.pfeg.noaa.gov/erddap/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/index.html) 
-* Для початку роботи з інсталяцією читати [Встановити керівництво](/docs/server-admin/deploy-install) й
+* Дивитися / використовувати ERDDAP™ монтаж: [ https://coastwatch.pfeg.noaa.gov/erddap/index.html ](https://coastwatch.pfeg.noaa.gov/erddap/index.html) 
+* Для початку роботи з інсталяцією читайте [Встановити керівництво](/docs/server-admin/deploy-install) й
 * Для сприяння коду див. [Керівництво програмістів](/docs/contributing/programmer-guide) й
 
 
@@ -28,13 +28,13 @@ title: "ERDDAP™ Documentation"
 
 ## Встановити свій власний ERDDAP™  {#set-up-your-own-erddap} 
 
- ERDDAP™ є [Безкоштовні та відкриті джерела](https://en.wikipedia.org/wiki/Free_and_open-source_software) , всі Java   (консервлет) , веб-додаток, що працює на сервері веб-додатків (Наприклад, Tomcat (Рекомендовані) , або Jetty (це працює, але ми не підтримуємо) ) й Ця сторінка в основному для людей (« » » » » » » » » » » » » » » ERDDAP™ адміністратори) хто хоче самостійно налаштувати ERDDAP™ установка на власний сайт.
+ ERDDAP™ є [Безкоштовні та відкриті джерела](https://en.wikipedia.org/wiki/Free_and_open-source_software) , всі Java   (консервлет) , веб-додаток, що працює на сервері веб-додатків (Наприклад, Tomcat (Рекомендовані) , або Jetty (ми не підтримуємо) ) й Ця сторінка в основному для людей (« » » » » » » » » » » » » » » ERDDAP™ адміністратори) хто хоче самостійно налаштувати ERDDAP™ установка на власний сайт.
 
-Для початку роботи з інсталяцією читати [Встановити керівництво](/docs/server-admin/deploy-install) й
+Для початку роботи з інсталяцією читайте [Встановити керівництво](/docs/server-admin/deploy-install) й
 
 ### Чому ERDDAP™ поширювати дані?{#why-use-erddap-to-distribute-your-data} 
 
-Оскільки невеликі зусилля, щоб налаштувати ERDDAP™ приносить багато переваг.
+Оскільки невеликі зусилля для встановлення ERDDAP™ приносить багато переваг.
 
 * Якщо ви вже маєте веб-службу для розповсюдження ваших даних,
 Ви можете налаштувати ERDDAP™ для доступу до даних через існуючу послугу.
@@ -59,9 +59,9 @@ title: "ERDDAP™ Documentation"
 
  (Австралія, Бельгія, Канада, Китай, Франція, Індія, Ірландія, Італія, Нова Зеландія, Росія, Південна Африка, Іспанія, Шрі-Ланка, Швеція, Таїланд, Великобританія, США) , в тому числі:
 
-*    [АПДРК](https://apdrc.soest.hawaii.edu/erddap/index.html)   (Науково-дослідний центр Азія-Тихоокеанського регіону, Міжнародний Тихоокеанський науково-дослідний центр) в Гаваї (УГ)  
+*    [АПДРК](https://apdrc.soest.hawaii.edu/erddap/index.html)   (Науково-дослідний центр Азійсько-Тихоокеанського регіону) в Гаваї (УГ)  
 *    [BCO-DMO на WHOI](https://erddap.bco-dmo.org/erddap/index.html)   (Біологічна та хімічна океанографія Управління даними в отворі деревини Oceanographic Інститут)  
-*    [Канвін ERDDAP™ ](https://canwinerddap.ad.umanitoba.ca/erddap/index.html)   (Канадська інфраструктура для водних перевезень) Центр досліджень Землі (Генеральний директор) , Університет Манітоба
+*    [Книжка ERDDAP™ ](https://canwinerddap.ad.umanitoba.ca/erddap/index.html)   (Канадська інфраструктура для водних перевезень) Центр досліджень Землі (Генеральний директор) , Університет Манітоба
 *    [Cайт](https://erddap.cdip.ucsd.edu/erddap/index.html)   (Програма інформації про дані берегових даних на UCSD)  
 *    [СНР-ІСП](https://data.iadc.cnr.it/erddap/index.html)   (Національна науково-дослідна рада Італії, Інститут полярних наук)  
 * CSIRO і IMOS (Спеціалізована науково-дослідна організація Австралії та інтегрована система морського спостереження) 
@@ -69,23 +69,23 @@ title: "ERDDAP™ Documentation"
 *    [Фізика EMODnet](https://erddap.emodnet-physics.eu/erddap/index.html)   (Європейська Морська спостереження та мережа даних - фізика)  
 *    [Гомрі](https://erddap.griidc.org/erddap/index.html)   (Гольф Мехіко Ініціатива досліджень)  
 *    [Інститут гакаї](https://catalogue.hakai.org/erddap/index.html)   (Інститут Хакай на Центральному узбережжі Британської Колумбії, Канада) 
-*    [Послуги з високих технологій](https://myhsts.org) , яка пропонує навчання та підготовку технологій для студентів та дорослих
+*    [Послуги з високих технологій](https://myhsts.org) , яка пропонує навчання для студентів та дорослих
 *    [МІЧ](https://erddap.ichec.ie/erddap/index.html)   (Ірландський центр високого класу) 
 *    [Я NCO ЗАМОВИТИ](https://erddap.incois.gov.in/erddap/index.html)   (Індійський національний центр океанських інформаційних послуг)  
-* ІРД (Установа de Recherche залийте Le Developpement, Франція)   
-СНР (Центр National de la Recherche Scientifique, Франція)   
+* ІКД (Установа de Recherche залийте Le Developpement, Франція)   
+СНР (Центр Національний де ла Речерче Вчений, Франція)   
 УМОВИ (Université П'єр та Маріу CURIE, Париж, Франція)   
 УКАС (Université Cheikh Anta Diop de Dakar, Сенегал)   
 УГБ (Université Gaston Berger - Сент-Люїс du Sénégal)   
-УФХБ (Університет Фелікс HOUPHOUZHT-BOIGNY, Абіджан, Кот-д'Івуар)   
-ТПВ (Інститут П'єр Саймон Ламіс де наука де l'environnement, Париж, Франція)   
+УФХБ (Універсітэт Фелікс HOUPHOUZHT-BOIGNY, Абіджан, Кот-д'Івуар)   
+ТПВ (Установа П'єр Simon Laplace des Sciences de l'environnement, Париж, Франція)   
 LMI ECLAIRS (Laboratoire Mixte Міжнародний «Etude du Climat En Afrique de l’Ouest et de ses Interactions avec l’Environnement Régional, et appui aux послуги climatiques») 
 * ПАР (Європейська комісія - Спільний дослідницький центр Європейського Союзу) 
 *    [Морський інститут](https://erddap.marine.ie/erddap/index.html)   (Ірландія)  
 * Морські інструменти S.A. (Іспанія) 
 * НПП (Національна обчислювальна інфраструктура Австралії) 
 *    [ NOAA Приват24](https://coastwatch.noaa.gov/erddap/index.html)   (Центральний)  
-*    [ NOAA CGOM - Блекджест](https://cwcgom.aoml.noaa.gov/erddap/index.html)   (Карибський/Gulf Мексики Node)  
+*    [ NOAA CGOM - відео @ KGOM](https://cwcgom.aoml.noaa.gov/erddap/index.html)   (Карибський/Gulf Мексики Node)  
 *    [ NOAA Приват24](https://coastwatch.glerl.noaa.gov/erddap/index.html)   (Великі озера Нод)  
 *    [ NOAA CoastWatch Західний берег](https://coastwatch.pfeg.noaa.gov/erddap/index.html) який знаходиться на території і працює з
      [ NOAA   ERD ](https://coastwatch.pfeg.noaa.gov/erddap/index.html)   (Відділ екологічних досліджень SWFSC з NMFS ) 
@@ -96,29 +96,29 @@ LMI ECLAIRS (Laboratoire Mixte Міжнародний «Etude du Climat En Afriq
      [ NOAA IOOS GCOOS Біологічна та соціально-економіка](https://gcoos4.tamu.edu/erddap/index.html)   (Система спостереження за за затокою) 
 *    [ NOAA IOOS NERACOOS](http://www.neracoos.org/erddap/index.html)   (Північно-східна регіональна асоціація берегових і океанських систем спостереження)  
 *    [ NOAA IOOS NGDAC](https://data.ioos.us/gliders/erddap/index.html)   (Національний Глідер Центр збору даних)  
-*    NOAA IOOS НАНООС (Північно-Західна асоціація мережевих систем спостереження) 
+*    NOAA IOOS НАНООС (Північно-західна асоціація мережевих систем спостереження) 
 *    [ NOAA IOOS Пакіос](https://pae-paha.pacioos.hawaii.edu/erddap/index.html)   (Океанські острови Система спостереження за океаном) в Гаваї (УГ)  
 *    NOAA IOOS SCCOOS (Південна Каліфорнія берегова система спостереження за океаном) 
 *    [ NOAA IOOS СЕКТОРА](https://erddap.secoora.org/erddap/index.html)   (Південно-Східний прибережний океан Обстеження регіональної асоціації)  
 *    [ NOAA НЦЕІ](https://www.ncei.noaa.gov/erddap/index.html)   (Національний центр екологічної інформації)    
-*    NOAA NGDC СТП (Національний геофізичний Науково-дослідний центр, Сонячна фізика) 
+*    NOAA NGDC STP (Національний геофізичний Науково-дослідний центр, Сонячна фізика) 
 *    NOAA   NMFS НАВЧАННЯ (Науковий центр Північного Сходу) 
 *    [ NOAA НІС CO-OPS](https://opendap.co-ops.nos.noaa.gov/erddap/index.html)   (Центр операційних океанографічних продуктів та послуг)  
 *    [ NOAA ОСМС](http://osmc.noaa.gov/erddap/index.html)   (Центр моніторингу системи)  
-*    [ NOAA ПІФСК](https://oceanwatch.pifsc.noaa.gov/erddap/index.html)   (Тихоокеанські острови Рибальський науковий центр)  
+*    [ NOAA ПІФС](https://oceanwatch.pifsc.noaa.gov/erddap/index.html)   (Тихоокеанські острови Рибальський науковий центр)  
 *    [ NOAA ПАРТНЕР](https://data.pmel.noaa.gov/pmel/erddap/index.html) 
-*    [ NOAA Поза «69»](https://polarwatch.noaa.gov/erddap/index.html) 
+*    [ NOAA Приват24](https://polarwatch.noaa.gov/erddap/index.html) 
 *    [ NOAA УАФ](https://upwell.pfeg.noaa.gov/erddap/index.html)   (Уніфікована база доступу)  
 *    [Океанські мережі Канада](http://dap.onc.uvic.ca/erddap/index.html)  
 *    [Мережа відстеження океану](https://members.oceantrack.org/erddap/index.html)  
 *    [OOI / Всі дані](https://erddap-goldcopy.dataexplorer.oceanobservatories.org/erddap/index.html)   (Ініціатива з спостереження за океаном)   
 OOI / Нездатні дані
-* Принцтон, група з гідрометеорологічних досліджень
+* Принцтон, група досліджень гідрометеорологічних досліджень
 * R.Tech Engineering, Франція
 *    [Rutgers University, Департамент морських і прибережних наук](https://tds.marine.rutgers.edu/erddap/index.html)   
 * Сан-Франциско Estuary Інститут
 *    [Інститут океанографії, Обприскування підводних каменів](https://spraydata.ucsd.edu/erddap/index.html)  
-*    [Смарт Атлантік](https://www.smartatlantic.ca/erddap/index.html) Музей «Рабочий квартал Амури»
+*    [Смарт Атлантік](https://www.smartatlantic.ca/erddap/index.html) Меморіальний університет Ньюфундланд
 * Південна Африка Екологічна Мережа
 * Шпигунські технології
 * Станфордський університет, Морська станція Хопкінса
@@ -130,12 +130,12 @@ OOI / Нездатні дані
 *    [УГС CMGP](https://geoport.usgs.esipfed.org/erddap/index.html)   (Морська та Морська геологія)  
 *    [ФОТО](https://erddap.observations.voiceoftheocean.org/erddap/index.html)   (Голос океану, Швеція)  
 
-Це список лише деяких організацій, де ERDDAP™ Встановлюється окрема або окрема група. Це не означає, що фізична особа, група або організація рекомендує або ендори ERDDAP й
+Це список лише деяких організацій, де ERDDAP™ Встановлюється окрема або окрема група. Це не означає, що індивід, група, або організація рекомендує або предки ERDDAP й
 
 ###  ERDDAP™ Рекомендовано в межах NOAA й CNRS{#erddap-is-recommended-within-noaa-and-cnrs} 
  [ NOAA 's Data Access процедурний напрям](https://www.ngdc.noaa.gov/wiki/index.php/Data_Access_Technical_Recommendations#Software_implementations) В наявності ERDDAP™ у своєму списку рекомендованих серверів даних для використання груп в межах NOAA й ERDDAP™ вигідно зазначено в розділі 4.2.3 з
 [Guide de bonnes pratiques sur la gestion des données de la recherche
- (Управління даними досліджень Найкращі практики) до ( https://mi-gt-donnees.pages.math.unistra.fr/guide/04-traiter.html#deposer-et-structurer-dans-des-plateformes-de-gestion-de-donnees-locales ) Центр Національний де ла Речерче (СНР) у Франції.
+ (Управління даними досліджень Найкращі практики керівництво) до ( https://mi-gt-donnees.pages.math.unistra.fr/guide/04-traiter.html#deposer-et-structurer-dans-des-plateformes-de-gestion-de-donnees-locales ) Центр Національний де ла Речерче (СНР) у Франції.
 
 ## Шоу слайдів{#slide-shows} 
 
@@ -158,7 +158,7 @@ OOI / Нездатні дані
 *    [2019 IOOS DMAC: Нові можливості в ERDDAP™ в2.0](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/Erddapv2Features.pptx) 
 *    [2018 рік Літній ESIP: Підставка в ERDDAP™ ](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/SimonsErddapSubset2018.pptx) 
 *    [2018 рік Літній ESIP: підтримка JSON ERDDAP™ ](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/SimonsErddapJson2018.pptx) 
-*    [2018 EDM: розподілена система веб-сайтів (Швидше за все, есір, Менше)   (Або, чому я був щасливий 4 роки тому.) ](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/10P.04_Simons_DistributedWebServices2018.pptx) 
+*    [2018 EDM: розподілена система веб-сайтів (Швидше закрутка, вуаєрист, Менше)   (Або, чому я був щасливий 4 роки тому.) ](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/10P.04_Simons_DistributedWebServices2018.pptx) 
 *    [2018 EDM: ERDDAP™ 2018 рік](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/7A4_Simons_ErddapSession2018.pptx) 
 *    [2018 EDM: Нові можливості в ERDDAP™ для зображень, аудіо та відео даних](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/4D4_Simons_ErddapMediaFiles2018.pptx) 
 *    [2018 EDM: UAF і ERDDAP™ Рішення для інтеграції даних](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/3D3_Simons_DataIntegration2018.pptx) 
@@ -170,7 +170,7 @@ OOI / Нездатні дані
 *    [2016 рік Літо ESIP: Велика картина: PARR, OPeNDAP й ERDDAP™ Розподіл даних та даних](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/TheBigPicture.pptx) 
 *    [2016 EDM: Один і Done](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/OneAndDone.pptx) 
 *    [2016 рік Gov API: Next Generation Сервери даних](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/NextGeneration.pptx) 
-*    [2015 рік Літній ESIP: таблична агрегація](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/TabularAggregation.pptx) 
+*    [2015 рік Літній ESIP: Інфраструктура](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/TabularAggregation.pptx) 
 *    [2014 EDM: Боб і не для табличних даних](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/SimonsDosDontsTabular.pptx) 
 *    [2014 EDM: Ідеальний інтерфейс користувача](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/TheIdealUserInterface.pptx) 
 *    [2014 рік Літній ESIP: табличні дані](https://coastwatch.pfeg.noaa.gov/erddap/images/erddapTalk/TabularData.pptx) 
@@ -187,10 +187,10 @@ Kevin O'Brien на глобальній системі спостереженн�
 *    [Використання OOI ERDDAP ![Веб-сайт](/img/youtube.png)](https://www.youtube.com/watch?v=tj4M9hodTG0)   
 від Rich Signell, Лютий 2018.
 *    [ОПИС Технологічна думка: " ERDDAP Легкі розмови![Веб-сайт](/img/youtube.png)](https://youtu.be/2-ydBByYB0M?t=160)   
-Про цікаві речі люди роблять ERDDAP by Jenn Sevadjian, Джим Потемра, Conor Delaney, Kevin O'Brien, Джон Керфут, Стефані Петільо, Чарльз Карлентон і Елі Мисливець представили як ESIP Tech Dive 31 серпня 2017 року.
+Про цікаві речі люди роблять ERDDAP by Jenn Sevadjian, Джим Потемра, Conor Delaney, Kevin O'Brien, Джон Керфут, Стефані Петілло, Чарльз Карлентон і Іллі Мисливець презентували як ESIP Tech Dive 31 серпня 2017 року.
 *    [Використання ERDDAP™ для доступу табличних даних![Веб-сайт](/img/youtube.png)](https://www.youtube.com/watch?v=_BwMHRh7CS8)   
 від Rich Signell, Серпень 2015
 *    [Тестування ERDDAP™ для Синій вуглецевих даних![Веб-сайт](/img/youtube.png)](https://www.youtube.com/watch?v=TbOhElC_-qU)   
 від Rich Signell, Серпень 2015
 *    [Використання даних ERDDAP™ в NOAA Р GNOME Програмне забезпечення![Веб-сайт](/img/youtube.png)](https://www.youtube.com/watch?v=18xZoXu1USM) й
-У цьому відео Rich Signell завантажує дані про океанські струми від ERDDAP™ для моделювання токсичного пропілля в океані за допомогою [ NOAA Р GNOME Програмне забезпечення](https://response.restoration.noaa.gov/oil-and-chemical-spills/oil-spills/response-tools/gnome.html)   (5 хвилин&#33;) й (Одна крихітна помилка в відео: при пошуку даних, не використовуйте і між умовами пошуку. Це наслідок.) By Rich Signell, 8 квітня 2011 р.
+У цьому відео Rich Signell завантажує дані про прогнози океана з ERDDAP™ для моделювання токсичного пропілля в океані за допомогою [ NOAA Р GNOME Програмне забезпечення](https://response.restoration.noaa.gov/oil-and-chemical-spills/oil-spills/response-tools/gnome.html)   (5 хвилин&#33;) й (Одна крихітна помилка в відео: при пошуку даних, не використовуйте і між умовами пошуку. Це наслідок.) By Rich Signell, 8 квітня 2011 р.
