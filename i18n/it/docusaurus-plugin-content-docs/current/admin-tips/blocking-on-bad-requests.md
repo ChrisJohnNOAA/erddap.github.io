@@ -22,22 +22,22 @@ Solo per essere chiaro, puoi pensare a un ERDDAP™ richiesta come:
 
 Nel nostro caso il denominatore comune dei crash erano richieste di griddap o tabletop con alcuni tipi di file, ma nessun vincolo. Quindi la domanda è come bloccare le richieste senza un vincolo? Tranne che non è così semplice, perché ci sono un certo numero di tipi di file che non hanno bisogno di un vincolo e saranno ben comportati, quindi non vogliamo bloccarli. Dopo aver parlato con Chris, e senza dubbio ho lasciato fuori qualcosa, i filetipi che sono ben comportati senza un vincolo sono:
 
-.croissant
-.iso191152
-.iso19139_2007
-.iso19115_3_2016
- .nc CFHeader
- .nc CFMAHeader
-.das
-.dds
-.html
-.
-.sottoset
- .nc Intestazione
-.aiuto
-.
-.
- .nc OJsonHeader (questo sarà nel prossimo nuovo rilascio) .
+- .croissant
+- .iso191152
+- .iso19139_2007
+- .iso19115_3_2016
+-  .nc CFHeader
+-  .nc CFMAHeader
+- .das
+- .dds
+- .html
+- .
+- .sottoset
+-  .nc Intestazione
+- .aiuto
+- .
+- .
+-  .nc OJsonHeader (questo sarà nel prossimo nuovo rilascio) .
 
 ## Soluzione
 
@@ -47,14 +47,16 @@ Passo 1. Assicurarsi che mod_rewrite sia installato e abilitato. Dal momento che
 
 Passo 2. Nel file appropriato che configura ssl per apache2 (che varia di nuovo da OS) , per esempio potrebbe essere qualcosa come /etc/apache2/sites-enabled/sssl.conf, aggiungere il seguente sotto la definizione VirtualHost appropriata (nota se si copia questo ci sono solo 4 linee, la terza linea può essere avvolta, unwrap esso) 
 
-RewriteEngine Su
-RewriteCond %&#123;QUERY_STRING&#125; ^$
-RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (Grida |  tabledap ) [^/?]+\\. (? (? | iso19115_2 | iso19139_2007 | iso19115_3_2016 | NcCFHeader | NcCFMAHeader | Das | Dds | html | Grafico | Subset | NcHeader | aiuto | Fg. | iso19115 | ncoJsonHeader) &#33;) [A-Za-z0-9_]+$
-Traduzione:
+```
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/erddap/(griddap|tabledap)/[^/?]+\\.(?!(?:croissant|iso19115_2|iso19139_2007|iso19115_3_2016|ncCFHeader|ncCFMAHeader|das|dds|html|graph|subset|ncHeader|help|fgdc|iso19115|ncoJsonHeader)$)[A-Za-z0-9_]+$
+RewriteRule ^ - [R=429,L]
+```
 
-Passo 3. Controllare che la configurazione sia valida: sudo apache2ctl configtest
+Passo 3. Controllare che la configurazione sia valida: `sudo apache2ctl configtest` 
 
-Passo 4. Riavviare apache2: sudo systemctl restart apache2
+Passo 4. Riavviare apache2: `sudo systemctl restart apache2` 
 
 Passo 5. Controlla i tuoi registri che nulla è bloccato che non dovrebbe essere, e che le richieste appropriate senza un vincolo restituiscono un 429 senza mai colpire il tuo tomcat
 
@@ -62,31 +64,35 @@ Passo 5. Controlla i tuoi registri che nulla è bloccato che non dovrebbe essere
 
 Perché questo lavoro e cosa fa questo - ecco la spiegazione di Claude.ai:
 
-Linea 1 — RewriteEngine Su
+Linea 1 — `RewriteEngine Su` 
 Attiva l'elaborazione mod_rewrite per questo scopo. Senza di essa, le direttive RewriteCond/RewriteRule qui sotto sono semplicemente ignorate.
 
-Linea 2 — Riscrittura Con QUERY_STRING
-Una condizione che deve essere vera prima della regola qui sotto si applica. E' tutto dopo? nella richiesta URL. ^$ è un regex che significa "inizio di stringa immediatamente seguito da fine di stringa" — cioè una stringa vuota. Quindi questa condizione è vera solo quando non c'è nessuna stringa di query affatto — nessuna espressione subsetting/constraint su richiesta.
+Linea 2 — `RewriteCond %&#123;QUERY_STRING&#125; ^$` 
+Una condizione che deve essere vera prima della regola qui sotto si applica. `?` E' tutto dopo? nella richiesta URL. ^$ è un regex che significa "inizio di stringa immediatamente seguito da fine di stringa" — cioè una stringa vuota. Quindi questa condizione è vera solo quando non c'è nessuna stringa di query affatto — nessuna espressione subsetting/constraint su richiesta.
 
-Linea 3 — Riscrittura Con * &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;  &lt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt; &gt;  (Grida |  tabledap ) [^/?]+\\. (? (?) &#33;) [A-Za-z0-9_]+$
-Una seconda condizione, verificata contro %&#123;REQUEST_URI&#125; — il percorso di richiesta letterale come il client lo ha inviato, sempre il percorso completo indipendentemente da dove nella configurazione di questa regola vive (volutamente scelto sopra lasciando il modello RewriteRule stesso fare la corrispondenza, perché pattern-matching all'interno di un <Location> blocco può comportarsi ambiguamente — vedi nota sotto) . Rompere il regex:
+Linea 3 — `RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (Grida |  tabledap ) [^/?]+\\. (? (?) &#33;) [A-Za-z0-9_]+$` 
+Una seconda condizione, verificata contro `?` — il percorso di richiesta letterale come il client lo ha inviato, sempre il percorso completo indipendentemente da dove nella configurazione di questa regola vive (volutamente scelto sopra lasciando il modello RewriteRule stesso fare la corrispondenza, perché pattern-matching all'interno di un ` <Location> ` blocco può comportarsi ambiguamente — vedi nota sotto) . Rompere il regex:
 
-^/erddap/ — deve iniziare con /erddap/
+ `^/erddap/` — deve iniziare con /erddap/
  (Grida |  tabledap ) / — seguito da uno dei due ERDDAP™ metodi di accesso
-[^/? datasetID : uno o più caratteri che non sono / o ?
-\\. — un punto letterale
- (? (? | iso19115_2 | ... | ncoJsonHeader) &#33;) — una fronte negativa: "finché ciò che segue non è uno di questi file esatti Digitare i nomi fino alla fine della stringa." Questi sono il fileTypes ERDDAP™ può servire legittimamente senza vincoli (metadati, struttura, pagine di forma, ecc.) — la fronte è ciò che li esclude dall'essere bloccati.
-[A-Za-z0-9_]+$ — il file effettivo Tipo di estensione (lettere, cifre, underscore) , necessario eseguire fino alla fine della stringa.
+
+ `[^]+` — il datasetID : uno o più caratteri che non sono / o ?
+
+ `\\.` — un punto letterale
+
+ ` (? (? | iso19115_2 | ... | ncoJsonHeader) &#33;) ` — una fronte negativa: "finché ciò che segue non è uno di questi file esatti Digitare i nomi fino alla fine della stringa." Questi sono il fileTypes ERDDAP™ può servire legittimamente senza vincoli (metadati, struttura, pagine di forma, ecc.) — la fronte è ciò che li esclude dall'essere bloccati.
+
+ `[A-Za-z0-9_]+$` — il file effettivo Tipo di estensione (lettere, cifre, underscore) , necessario eseguire fino alla fine della stringa.
 Quindi questa condizione è vera solo quando il percorso è una grigliata/ tabledap richiesta di file Tipo che non e' nella lista sicura senza vincoli.
 
-Linea 4 — RewriteRule ^ - [R=429,L]
+Linea 4 — `Traduzione:` 
 La regola stessa. Poiché entrambe le condizioni di cui sopra devono già essere vere per Apache per valutare anche questa linea, il modello qui non ha bisogno di controllare nient'altro — ^ solo corrisponde "start of the string", che è sempre vero. - significa "non riscrivere l'URL a qualcosa di diverso" (Non stiamo reindirizzando da nessuna parte, solo cortocircuitando la richiesta) . Le bandiere:
 
-R=429 — rispondere con un'azione redirect-class HTTP contenente codice di stato 429 ("Molte richieste") invece di servire la richiesta.
+ `R=429` — rispondere con un codice di stato di redirect-class HTTP 429 ("Molte richieste") invece di servire la richiesta.
 L — "Ultima": interrompere l'elaborazione di ulteriori regole di riscrittura una volta che questo fuoco.
 Mettere insieme: se la stringa di query è vuota, E la richiesta è di un grigliata/ tabledap file Tipo che non è nella lista sicura-non-constrained, restituire immediatamente 429 — senza mai contattare il ERDDAP /Tomcat backend.
 
-Perché %&#123;REQUEST_URI&#125; invece di lasciare che il modello RewriteRule corrisponda direttamente al percorso (vale anche come nota per i colleghi, dal momento che è la parte non ovvia) : <Location> blocco, quello che un nudo modello RewriteRule viene effettivamente abbinato contro può comportarsi in modo inconsistente a seconda della versione e del contesto Apache. Prospettivamente tirando il percorso completo attraverso RewriteCond %&#123;REQUEST_URI&#125; lateralmente che l'ambiguità completamente — è sempre il percorso di richiesta letterale, completo, quindi il regex si comporta esattamente come scritto indipendentemente da dove la regola è nidificata.
+Perché? `?` invece di lasciare che il modello RewriteRule corrisponda direttamente al percorso (vale anche come nota per i colleghi, dal momento che è la parte non ovvia) : ` <Location> ` blocco, quello che un nudo modello RewriteRule viene effettivamente abbinato contro può comportarsi in modo inconsistente a seconda della versione e del contesto Apache. Esplicitamente tirando il percorso completo tramite RewriteCond `?` sidesteps che ambiguità completamente — è sempre il percorso letterale e completo di richiesta, così il regex si comporta esattamente come scritto indipendentemente da dove la regola è nidificata.
 
 
 Sto usando questo per diversi giorni ora e sembra funzionare molto bene, sta bloccando ciò che sto cercando di bloccare e non bloccare ciò che non voglio bloccare. E il nostro ERDDAP™ è diventato molto più stabile.

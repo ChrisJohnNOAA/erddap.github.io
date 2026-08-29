@@ -22,22 +22,22 @@ Jadi saya jelas, Anda dapat memikirkan Meme it ERDDAP™ permintaan:
 
 Dalam kasus kami denominator umum dari kecelakaan di griddap atau permintaan meja dengan jenis file tertentu tetapi tidak ada batasan. Jadi pertanyaan adalah cara memblokir permintaan tanpa batasan? Kecuali itu tidak sederhana, karena ada sejumlah jenis file yang tidak perlu hambatan dan akan berperilaku dengan baik, jadi kita tidak ingin menghalangi mereka. Setelah berbicara ke Chris, dan tidak ada keraguan saya telah meninggalkan sesuatu, jenis file yang berperilaku dengan baik tanpa batasan adalah:
 
-Login
-.iso19115_2
-.iso19139_2007
-.iso19115_3_2016
- .nc Login
- .nc Login
-Login
-Login
-Login
-Login
-Login
- .nc Login
-Login
-Login
-.iso19115
- .nc Login (satu ini akan di rilis baru mendatang) Sitemap
+- Login
+- .iso19115_2
+- .iso19139_2007
+- .iso19115_3_2016
+-  .nc Login
+-  .nc Login
+- Login
+- Login
+- Login
+- Login
+- Login
+-  .nc Login
+- Login
+- Login
+- .iso19115
+-  .nc Login (satu ini akan di rilis baru mendatang) Sitemap
 
 ## Login
 
@@ -47,14 +47,16 @@ Langkah 1. Pastikan mod_rewrite dipasang dan diaktifkan. Karena bagaimana melaku
 
 Langkah 2. Dalam file yang tepat yang mengkonfigurasi sl untuk apache2 (yang lagi bervariasi oleh OS) misalnya mungkin sesuatu seperti /etc/apache2/sites-enabled/ssl.conf, tambahkan berikut di bawah definisi VirtualHost yang tepat (catatan jika Anda menyalin ini hanya ada 4 baris, garis ketiga dapat dibungkus, tidak membungkusnya) 
 
-Login Sitemap
-RewriteCond %&#123;QUERY_STRING&#125; ^$
-RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (Login |  tabledap ) /[^/?]+\\. (Sitemap (Login | iso19115_2 | iso19139_2007 | iso19115_3_2016 | Login | Login | Login | Login | Login | Login | Login | Login | Sitemap | Login | iso19115 | Login) Sitemap) [A-Za-z0-9_]+$
+```
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/erddap/(griddap|tabledap)/[^/?]+\\.(?!(?:croissant|iso19115_2|iso19139_2007|iso19115_3_2016|ncCFHeader|ncCFMAHeader|das|dds|html|graph|subset|ncHeader|help|fgdc|iso19115|ncoJsonHeader)$)[A-Za-z0-9_]+$
 RewriteRule ^ - [R=429,L]
+```
 
-Langkah 3. Periksa bahwa konfigurasi valid: sudo apache2ctl configtest
+Langkah 3. Periksa bahwa konfigurasi berlaku: `sudo apache2ctl configtest` 
 
-Login 4. Restart apache2: sudo sistemctl restart apache2
+Login 4. Restart apache2: `sudo sistemctl restart apache2` 
 
 Langkah 5. Periksa log Anda bahwa tidak ada yang diblokir yang seharusnya tidak, dan permintaan yang tepat tanpa batasan mengembalikan 429 tanpa pernah memukul jari Anda
 
@@ -62,31 +64,35 @@ Langkah 5. Periksa log Anda bahwa tidak ada yang diblokir yang seharusnya tidak,
 
 Mengapa pekerjaan ini dan apa yang dilakukan ini - ini adalah penjelasan dari Claude.ai:
 
-Garis 1 - RewriteEngine Sitemap
+Promo `Login Sitemap` 
 Nyalakan pemrosesan mod_rewrite untuk ruang lingkup ini. Tanpa itu, arahan RewriteCond/RewriteRule di bawah ini hanya diabaikan.
 
-Garis 2 — Rewrite Login %&#123;QUERY_STRING&#125;^$
-Kondisi yang harus benar sebelum aturan di bawah berlaku. %&#123;QUERY_STRING&#125; di URL permintaan. ^$ adalah makna regex "start string segera diikuti oleh akhir string" — yaitu, string kosong. Jadi kondisi ini benar hanya ketika tidak ada string query sama sekali — tidak ada ekspresi subsetting/kontraint atas permintaan.
+Garis 2 — `RewriteCond %&#123;QUERY_STRING&#125; ^$` 
+Kondisi yang harus benar sebelum aturan di bawah berlaku. `Sitemap` Apakah semuanya setelah? di URL permintaan. ^$ adalah makna regex "start string segera diikuti oleh akhir string" — yaitu, string kosong. Jadi kondisi ini benar hanya ketika tidak ada string query sama sekali — tidak ada ekspresi subsetting/kontraint atas permintaan.
 
-Garis 3 — Rewrite Login %&#123;REQUEST_URI&#125; ^/erddap/ (Login |  tabledap ) /[^/?]+\\. (Sitemap (Sitemap) Sitemap) [A-Za-z0-9_]+$
-Kondisi kedua, diperiksa terhadap %&#123;REQUEST_URI&#125; — path permintaan literal sebagai klien mengirimkannya, selalu jalur penuh terlepas dari di mana dalam konfigurasi aturan ini hidup (sengaja memilih untuk membiarkan pola RewriteRule itu sendiri melakukan pencocokan, karena pola-matching di dalam <Location> blok dapat berperilaku ambiguously - lihat catatan di bawah ini) Sitemap Breaking turun regex:
+Login `RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (Login |  tabledap ) /[^/?]+\\. (Sitemap (Sitemap) Sitemap) [A-Za-z0-9_]+$` 
+Kondisi kedua, diperiksa terhadap `Facebook Twitter Google Plus Pinterest Email` - jalur permintaan literal sebagai klien mengirimkannya, selalu jalan penuh terlepas dari di mana di mengkonfigurasi kehidupan aturan ini (sengaja memilih untuk membiarkan pola RewriteRule itu sendiri melakukan pencocokan, karena pola-matching di dalam ` <Location> ` blok dapat berperilaku ambiguously - lihat catatan di bawah ini) Sitemap Breaking turun regex:
 
-^/erddap/
+ `Sitemap` — harus dimulai dengan /erddap/
  (Login |  tabledap ) / — diikuti oleh salah satu dari dua ERDDAP™ metode akses
-[^/?]+ — datasetID : satu atau lebih karakter yang tidak / atau?
-\\. — titik literal
- (Sitemap (Login | iso19115_2 | Login | Login) Sitemap) — lookahead negatif: "selama apa yang berikut bukan salah satu file yang tepat Jenis nama semua cara untuk akhir string. " Ini adalah fileTypes ERDDAP™ dapat secara sah melayani tanpa batasan (metadata, struktur, halaman bentuk, dll.) - lookahead adalah apa yang tidak termasuk mereka dari diblokir.
-[A-Za-z0-9_]+$ — file aktual Jenis ekstensi (huruf, digit, underscore) Diperlukan untuk menjalankan ujung string.
+
+ `[^/?]+` Login datasetID : satu atau lebih karakter yang tidak / atau?
+
+ `Login` - titik literal
+
+ ` (Sitemap (Login | iso19115_2 | Login | Login) Sitemap) ` — lookahead negatif: "selama apa yang berikut bukan salah satu file yang tepat Jenis nama semua cara untuk akhir string. " Ini adalah fileTypes ERDDAP™ dapat secara sah melayani tanpa batasan (metadata, struktur, halaman bentuk, dll.) - lookahead adalah apa yang tidak termasuk mereka dari diblokir.
+
+ `[A-Za-z0-9_]+$` - file yang sebenarnya Jenis ekstensi (huruf, digit, underscore) Diperlukan untuk menjalankan ujung string.
 Jadi kondisi ini benar hanya ketika jalan adalah griddap / tabledap permintaan untuk beberapa file Jenis yang tidak ada di daftar tanpa hambatan yang aman.
 
-Login 4 — RewriteRule ^ - [R=429,L]
+Garis 4 — `RewriteRule ^ - [R=429,L]` 
 Aturan itu sendiri. Karena kedua kondisi di atas harus sudah benar untuk Apache bahkan mengevaluasi garis ini, pola di sini tidak perlu memeriksa apa pun — ^ hanya pertandingan "start string," yang selalu benar. - berarti "tidak menulis ulang URL ke apa pun yang berbeda" (kami tidak mengarahkan ke mana saja, hanya hubung singkat permintaan) Sitemap Bendera:
 
-R=429 — meresponi kode status pelaksanaan kelas redirect HTTP 429 ("Too Banyak Permintaan") bukan melayani permintaan.
+ `G=429` - menanggapi dengan tindakan langsung-klaim HTTP yang membawa kode status 429 ("Too Banyak Permintaan") bukan melayani permintaan.
 L — "Last": berhenti memproses aturan menulis ulang lebih lanjut setelah satu kebakaran ini.
 Masukkan bersama: jika string query kosong, dan permintaannya adalah untuk griddap / tabledap Login Jenis yang tidak ada di daftar yang aman, segera kembali 429 - tanpa pernah menghubungi ERDDAP Login
 
-Mengapa %&#123;REQUEST_URI&#125; bukan membiarkan pola RewriteRule cocok jalur secara langsung (layak termasuk sebagai catatan untuk rekan-rekan, karena itu bagian non-obvious) : di dalam <Location> blok, apa pola RewriteRule telanjang sebenarnya akan cocok melawan dapat berperilaku secara tidak konsisten tergantung pada versi Apache dan konteks. Jelas menarik jalan penuh melalui RewriteCond %&#123;REQUEST_URI&#125; sisi langkah-langkah yang ambiguitas sepenuhnya — itu selalu literal, jalur permintaan lengkap, sehingga regex berperilaku persis seperti yang ditulis terlepas dari mana aturan bersarang.
+Sitemap `Facebook Twitter Google Plus Pinterest Email` bukan membiarkan pola RewriteRule cocok jalan secara langsung (layak termasuk sebagai catatan untuk rekan-rekan, karena itu bagian non-obvious) : di dalam ` <Location> ` blok, apa pola RewriteRule telanjang sebenarnya akan cocok melawan dapat berperilaku secara tidak konsisten tergantung pada versi Apache dan konteks. Jelas menarik jalan penuh melalui RewriteCond `Facebook Twitter Google Plus Pinterest Email` langkah samping bahwa ambiguitas sepenuhnya - itu selalu literal, jalur permintaan lengkap, sehingga regex berperilaku persis seperti yang ditulis terlepas dari di mana aturan bersarang.
 
 
 Saya telah menggunakan ini selama beberapa hari sekarang dan tampaknya bekerja dengan sangat baik, itu memblokir apa yang saya mencoba untuk memblokir dan tidak menghalangi apa yang tidak ingin saya blok. Kami ERDDAP™ telah menjadi lebih stabil.

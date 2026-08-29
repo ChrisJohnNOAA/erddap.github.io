@@ -22,22 +22,22 @@ Kung paanong ako'y maliwanag, maaari kang mag - isip ng isang bagay ERDDAP™ hu
 
 Sa aming kaso ang karaniwang hangganan ng mga banggaan ay ang mga kahilingan sa griddap o tabletop na may ilang filetype subalit walang pumipigil. Kaya ang tanong ay kung paano hahadlangan ang mga kahilingan nang walang hadlang? Maliban sa hindi ganiyang kapayakan, dahil may anumang bilang ng mga filetype na nangangailangan ng doniket at magiging well-behaved, kaya't nais nating pigilan ang mga iyon. Pagkatapos makipag - usap kay Chris, at walang alinlangang may iniwan ako, ang mga filetype na pinangangasiwaan nang walang hadlang ay:
 
-.croissant
-.iso19115_2
-.iso19139_2007
-.iso19115_3_2016
- .nc CFHeader
- .nc CFMAHeader
-.das
-.ds
-.html
-.grap
-.subset
- .nc Ulo
-.help
-.fgdc
-.iso19115
- .nc OJson Header (ito ay sa darating na bagong release) .
+- .croissant
+- .iso19115_2
+- .iso19139_2007
+- .iso19115_3_2016
+-  .nc CFHeader
+-  .nc CFMAHeader
+- .das
+- .ds
+- .html
+- .grap
+- .subset
+-  .nc Ulo
+- .help
+- .fgdc
+- .iso19115
+-  .nc OJson Header (ito ay sa darating na bagong release) .
 
 ## Lunas
 
@@ -47,14 +47,16 @@ Hakbang 1. Tiyakin na ang mod_rewrite ay naka-install at kaya. Yamang ang paraan
 
 Hakbang 2. Sa angkop na talaksan na nag-aayos ng ssl para sa apache2 (na muling nagkakaiba - iba sa pamamagitan ng OS) , halimbawa ito ay maaaring isang bagay na katulad ng /etc/apache2/sites-enabled/ssl.conf, idagdag ang mga sumusunod sa ilalim ng angkop na totalHost na depinisyon (Pansinin kung kinopya mo ito nang 4 na linya lamang, ang ikatlong linya ay maaaring nakabalot, nang walang takip) 
 
-Muling Pagsulat Patuloy
-Isulat muli ang %ićQURY_STRINGivić ^$
-Isulat ang % EXTREQUESST_URI&#125; ^/erddap/ (" griddap " |  tabledap ) /[^/?]+\\. (?&#33; (?: Croissant | iso19115_2 | iso19139_2007 | iso19115_3_2016 | " ncCFHeader " | " ncCFMA Header " | mga da | Mga dd | html | Larawan | subset | Tagapagpagaling | tulong | fgdc | iso19115 | NcoJson Header) $) [A-Za-z0-9_]+$
+```
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/erddap/(griddap|tabledap)/[^/?]+\\.(?!(?:croissant|iso19115_2|iso19139_2007|iso19115_3_2016|ncCFHeader|ncCFMAHeader|das|dds|html|graph|subset|ncHeader|help|fgdc|iso19115|ncoJsonHeader)$)[A-Za-z0-9_]+$
 RewriteRule ^ - [R=429,L]
+```
 
-Hakbang 3. Suriin na ang kaayusan ay may bisa: sudo apache2ctl refict
+Hakbang 3. Tiyakin na ang pagsasaayos ay may bisa: `sudo apache2ctl Decreetest` 
 
-Hakbang 4. Restart apache2: sudo systemctl remeart apache2
+Hakbang 4. Restarm apache2: `sudo systemctl restart apache2` 
 
 Hakbang 5. Suriin ang iyong mga troso na walang anumang bagay na nababarahan, at na ang angkop na mga kahilingan nang hindi pinagbabawalang ibalik ang 429 nang hindi kailanman tinatamaan ang iyong tomcat
 
@@ -62,31 +64,35 @@ Hakbang 5. Suriin ang iyong mga troso na walang anumang bagay na nababarahan, at
 
 Bakit ito ginagawa at ang ginagawa nito ay paliwanag mula kay Claude.ai:
 
-Line 1 — Muling Sulat Patuloy
+Line 1 — `Muling Pagsulat Patuloy` 
 Buksan ang mod_rewrite processing para sa saklaw na ito. Kung wala ito, ang mga instruksiyon ng RewriteCond/RewriteRule sa ibaba ay basta hindi pinapansin.
 
-Line 2 — Muling Sulat Kumpil %°EQURY_STRINGivić ^$
-Isang kalagayan na kailangang maging totoo bago ikapit ang tuntunin sa ibaba. %&#123;EXOURY_STRING&#125; ang lahat ng bagay pagkatapos ng ? sa kahilingan ng URL. Ang ^$ ay isang regex na nangangahulugang "bituin ng kuwerdas na kaagad na sinusundan ng dulo ng kuwerdas" — i.e., isang walang laman na strando. Kaya ang kondisyong ito ay totoo lamang kapag walang query string — walang subsetting/constraint expression sa kahilingan.
+Line 2 — `Isulat muli ang %ićQURY_STRINGivić ^$` 
+Isang kalagayan na kailangang maging totoo bago ikapit ang tuntunin sa ibaba. `%°EQURY_STRINGiON` ang lahat ng bagay pagkatapos ng ? sa kahilingan ng URL. Ang ^$ ay isang regex na nangangahulugang "bituin ng kuwerdas na kaagad na sinusundan ng dulo ng kuwerdas" — i.e., isang walang laman na strando. Kaya ang kondisyong ito ay totoo lamang kapag walang query string — walang subsetting/constraint expression sa kahilingan.
 
-Line 3 — Muling Sulat Kumpil %°REQUEST_URI&#125; ^/erddap/ (" griddap " |  tabledap ) /[^/?]+\\. (?&#33; (?:...) $) [A-Za-z0-9_]+$
-Ang ikalawang kalagayan, na sinuri laban sa %iVERQUEST_URI&#125; — ang literal na landas ng paghiling habang ipinadadala ito ng kliyente, laging ang buong landas saanman nakatira ang namamahalang ito (Sadyang pinili sa pagpapaubaya sa rewriteRule pattern na gawin mismo ang pagtutugma, dahil ang pattern-match sa loob ng isang a <Location> Ang block ay maaaring kumilos nang malabo — tingnan ang nota sa ibaba) . Pagpapahinto sa regex:
+Line 3 — `Isulat ang % EXTREQUESST_URI&#125; ^/erddap/ (" griddap " |  tabledap ) /[^/?]+\\. (?&#33; (?:...) $) [A-Za-z0-9_]+$` 
+Ikalawang kondisyon, laban sa `%°TQUEST_URI&#125;` — ang literal na landas ng paghiling habang ipinadadala ito ng kliyente, laging ang ganap na landas saanman nakatira ang tuntuning ito (Sadyang pinili sa pagpapaubaya sa rewriteRule pattern na gawin mismo ang pagtutugma, dahil ang pattern-match sa loob ng isang a ` <Location> ` Ang block ay maaaring kumilos nang malabo — tingnan ang nota sa ibaba) . Pagpapahinto sa regex:
 
-^/erddap/ — dapat magsimula sa /erddap/
+ `^/erddap/` — dapat magsimula sa /erddap/
  (" griddap " |  tabledap ) / — sinundan ng isa sa dalawa ERDDAP™ paraan ng pag-akses
-[^/?]+ — ang datasetID : isa o higit pang karakter na hindi / o ?
-\\. — literal na tuldok
- (?&#33; (?: Croissant | iso19115_2 | ... | NcoJson Header) $) — negatibong anyo: "Habang ang sumusunod ay hindi isa sa eksaktong talaksang ito Pangalan ng tipo hanggang dulo ng kuwerdas." Ito ang mga fileType ERDDAP™ ay maaaring maglingkod nang walang hadlang (metadata, istruktura, mga anyong pahina, atbp.) — ang ulo ng tingin ang dahilan kung bakit hindi sila nahahadlangan.
-[A-Za-z0-9_]+$ — ang aktuwal na talaksan Karagdagang uri (, numero, diin) , kailangan tumakbo sa dulo ng kuwerdas.
+
+ `[^/?]+` — ang datasetID : isa o higit pang karakter na hindi / o ?
+
+ `\\.` — isang literal na tuldok
+
+ ` (?&#33; (?: Croissant | iso19115_2 | ... | NcoJson Header) $) ` — negatibong anyo: "Habang ang sumusunod ay hindi isa sa eksaktong talaksang ito Pangalan ng tipo hanggang dulo ng kuwerdas." Ito ang mga fileType ERDDAP™ ay maaaring maglingkod nang walang hadlang (metadata, istruktura, mga anyong pahina, atbp.) — ang ulo ng tingin ang dahilan kung bakit hindi sila nahahadlangan.
+
+ `[A-Za-z0-9_]+$` — ang aktuwal na talaksan Karagdagang uri (, numero, diin) , kailangan tumakbo sa dulo ng kuwerdas.
 Kaya ang kondisyong ito ay totoo lamang kapag ang landas ay isang griddap/ tabledap Humingi ng talaksan Type na hindi nasa ligtas-walang-constraint na talaan.
 
-Linya 4 — RewriteRule ^ - [R=429,L]
+Linya 4 — `RewriteRule ^ - [R=429,L]` 
 Ang tuntunin mismo. Dahil ang dalawang kondisyong ito sa itaas ay dapat nang totoo para sa Apache na suriin pa ang linyang ito, ang padron dito ay hindi na kailangang suriin ang anumang bagay — ^ lamang ang mga posporong "bituin ng strando," na laging totoo. - nangangahulugang "huwag isulat muli ang URL sa anumang kakaibang bagay" (Hindi kami nagreredirect kahit saan, pero sandali lang.) . Ang mga bandila:
 
-R=429 — tumugon sa pamamagitan ng isang HTTP redirect-class aksyon na nagdadala ng status code 429 ("Ato Maraming Kahilingan") sa halip na sundin ang kahilingan.
+ `R=429` — tumutugon sa pamamagitan ng isang HTTP redirect-class aksyon na nagdadala ng status code 429 ("Ato Maraming Kahilingan") sa halip na sundin ang kahilingan.
 L — "Huli": itigil na ang pagpoproseso ng anumang karagdagang mga tuntunin sa muling pagsulat minsang ang isang ito ay magliyab.
 Pinagsama-sama: kung walang laman ang query string, AT ang hiling ay para sa isang griddap/ tabledap talaksan Uri na hindi nasa ligtas na-unconstrained list, agad bumalik 429 — nang hindi man lamang nakikipag-ugnayan sa ERDDAP /Tomcat backend.
 
-Kung bakit %&#123;RojREQUST_URI&#125; sa halip na hayaan ang rewriteRule pattern na direktang tumutugma sa landas (halaga bilang isang nota para sa mga kasamahan, dahil ito ang hindi-obvious na bahagi) : sa loob ng a <Location> block, anong walang palamang RewriteRule pattern ay aktuwal na nagtutugma laban ay maaaring mag-aasal na pabagu-bago depende sa Apache bersiyon at konteksto. Dahan - dahang hinihila ang buong landas sa pamamagitan ng RewriteCond %iERQUEQUEST_URI&#125;) na hindi tiyak ang mga bakas — ito'y laging ang literal, kumpletong landas sa paghiling, kaya ang regex ay kumikilos na kagayang - kagaya ng nasusulat saanmang dako ginagawa ang tuntunin.
+Bakit `%°TQUEST_URI&#125;` Sa halip na hayaan ang rewriteRule pattern ay tuwirang tumutugma sa landas (halaga bilang isang nota para sa mga kasamahan, dahil ito ang hindi-obvious na bahagi) : sa loob ng a ` <Location> ` block, anong walang palamang RewriteRule pattern ay aktuwal na nagtutugma laban ay maaaring mag-aasal na pabagu-bago depende sa Apache bersiyon at konteksto. May kasanayang hinihila ang buong landas sa pamamagitan ng RewriteCond `%°TQUEST_URI&#125;` Ang di - tiyak na mga hakbang na iyon — ito ang laging literal, kumpletong paraan ng paghiling, kaya ang regex ay kumikilos na kagayang - kagaya ng nasusulat saanmang dako ginagawa ang tuntunin.
 
 
 Ginagamit ko ito sa loob ng ilang araw na ngayon at wari bang ito'y gumagana nang mahusay, hinahadlangan nito ang sinisikap kong hadlangan at hindi hinahadlangan ang gusto kong hadlangan. At ang aming ERDDAP™ ay naging mas matatag.

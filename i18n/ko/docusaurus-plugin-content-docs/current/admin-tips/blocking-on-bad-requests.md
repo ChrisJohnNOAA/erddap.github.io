@@ -22,22 +22,22 @@
 
 우리의 경우 충돌의 일반적인 denominator는 특정 파일 형식을 가진 griddap 또는 탁상 요구 그러나 제약이 없습니다. 그래서 질문은 제약없이 요청을 차단하는 방법? 간단한 것은 아닙니다. 변형이 필요없는 파일 유형의 수는 없기 때문에 잘 행동 할 것입니다. 그래서 우리는 그들을 막을 필요가 없습니다. Chris에게 이야기 한 후, 의심의 여지가 나는 무언가를 남겼다, 잘 제약없이 행동하는 파일 유형은 다음과 같습니다.
 
-.croissant에
-.iso19115_2의
-.iso19139_2007년
-.iso19115_3_2016년
- .nc CFHeader의 특징
- .nc CFMAHeader의 특징
-· .das
-사이트맵
-사이트맵
-·
-.subset에
- .nc 기타 제품
-· .help
-사이트맵
-· .iso19115
- .nc 오존헤더 (이 것은 곧 새로운 릴리스에있을 것입니다.) ·
+- .croissant에
+- .iso19115_2의
+- .iso19139_2007년
+- .iso19115_3_2016년
+-  .nc CFHeader의 특징
+-  .nc CFMAHeader의 특징
+- · .das
+- 사이트맵
+- 사이트맵
+- ·
+- .subset에
+-  .nc 기타 제품
+- · .help
+- 사이트맵
+- · .iso19115
+-  .nc 오존헤더 (이 것은 곧 새로운 릴리스에있을 것입니다.) ·
 
 ## 제품정보
 
@@ -47,14 +47,16 @@
 
 단계 2. apache2를 위해 SSL을 구성하는 적절한 파일 (OS에 의해 다시 변화) , 예를 들어 /etc/apache2/sites-enabled/sssl.conf와 같은 무언가가 될 수 있으며 적절한 VirtualHost 정의 아래를 추가합니다. (이 4 줄 만 복사하면 세 번째 라인이 포장 될 수 있습니다.) 
 
-RewriteEngine의 장점 에 의해
-% &#123;QUERY_STRING&#125; ^ $
-RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (다운로드 |  tabledap ) /[^/?]+\\. (· (?:크리스 | 모델 번호: ISO19115_2 | 모델 번호: ISO19139 | ISO19115_3_2016년 | 채용정보 | 채용정보 | 뚱 베어 | 팟캐스트 | 사이트맵 | 사이트맵 | 기타 제품 | 채용정보 | 지원하다 | 사이트맵 | 모델 번호: ISO19115 | ncoJson헤더) $ 6,000 원) [A-Za-z0-9_]+$
-RewriteRule ^ - [R = 429,L]
+```
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/erddap/(griddap|tabledap)/[^/?]+\\.(?!(?:croissant|iso19115_2|iso19139_2007|iso19115_3_2016|ncCFHeader|ncCFMAHeader|das|dds|html|graph|subset|ncHeader|help|fgdc|iso19115|ncoJsonHeader)$)[A-Za-z0-9_]+$
+RewriteRule ^ - [R=429,L]
+```
 
-3 단계 구성이 유효하다는 것을 확인합니다 : sudo apache2ctl configtest
+3 단계 설정이 유효하다는 것을 확인: `sudo apache2ctl 설정` 
 
-한국어 4. 나머지 apache2: sudo systemctl 재시작 apache2
+한국어 4. 나머지 아파치: `sudo systemctl 재시작 apache2` 
 
 단계 5. 여러분의 로그를 확인 하지 않는 차단된, 그리고 그 적절 한 요청 없이 제약 없이 반환 429 절대로 당신의 tomcat
 
@@ -62,31 +64,35 @@ RewriteRule ^ - [R = 429,L]
 
 왜이 일을하고 이것이 무엇을합니까 - 여기에 Claude.ai의 설명입니다 :
 
-라인 1 — RewriteEngine 에 의해
+라인 1 — `RewriteEngine의 장점 에 의해` 
 이 범위에 대한 mod_rewrite 처리 설정. 그것이 없다면, RewriteCond/RewriteRule 지시어는 단순히 무시한다.
 
-라인 2 — Rewrite 지원하다 % &#123;QUERY_STRING&#125; ^ $
-아래 규칙이 적용되기 전에 진정한 조건. %&#123;QUERY_STRING&#125; 은 ? 요청 URL에서. ^ $는 "문자 문자열의 시작은 즉시 문자열의 끝"-즉, 빈 문자열. 그래서이 조건은 모두 쿼리 문자열이 없을 때만 true입니다. - 요청시 하위 설정/constraint 표현이 없습니다.
+라인 2 — `% &#123;QUERY_STRING&#125; ^ $` 
+아래 규칙이 적용되기 전에 진정한 조건. `장바구니에 담기` 후 모든 것입니까? 요청 URL에서. ^ $는 "문자 문자열의 시작은 즉시 문자열의 끝"-즉, 빈 문자열. 그래서이 조건은 모두 쿼리 문자열이 없을 때만 true입니다. - 요청시 하위 설정/constraint 표현이 없습니다.
 
-라인 3 — Rewrite 지원하다 %&#123;REQUEST_URI&#125; ^/erddap/ (다운로드 |  tabledap ) /[^/?]+\\. (· (?:...) $ 6,000 원) [A-Za-z0-9_]+$
-두 번째 조건은 %&#123;REQUEST_URI&#125;에 대해 확인했습니다. 클라이언트로 리터 요청 경로는 항상 config에 상관없이 전체 경로가 생명을 위협합니다. (rewriteRule 패턴 자체가 일치하기 때문에 deliberately 선택, 패턴 매칭 내부 <Location> 블록은 주변에서 행동 할 수 있습니다 - 아래 메모 참조) · regex를 중단 :
+라인 3 — `RewriteCond %&#123;REQUEST_URI&#125; ^/erddap/ (다운로드 |  tabledap ) /[^/?]+\\. (· (?:...) $ 6,000 원) [A-Za-z0-9_]+$` 
+두 번째 조건, 에 대해 확인 `장바구니` — 클라이언트로 리터 요청 경로가 전송, 항상이 규칙의 구성에 관계없이 전체 경로 (rewriteRule 패턴 자체가 일치하기 때문에 deliberately 선택, 패턴 매칭 내부 ` <Location> ` 블록은 주변에서 행동 할 수 있습니다 - 아래 메모 참조) · regex를 중단 :
 
-^/erddap/ — /erddap/로 시작해야 합니다.
+ `₢ 킹` — /erddap/로 시작해야 합니다.
  (다운로드 |  tabledap ) / — 둘 중 하나에 따라 ERDDAP™ 접근 방법
-[^/?]+ — datasetID : 하나 이상의 문자가 아닌 / 또는?
-\\. - 리터 도트
- (· (?:크리스 | 모델 번호: ISO19115_2 | · | ncoJson헤더) $ 6,000 원) — 부정적인 lookahead: "다음이 정확한 파일 중 하나가 아닙니다. 문자열의 끝에 모든 방법을 입력합니다." 이 파일은 ERDDAP™ 합법적으로 no constraint 제공 (metadata, 구조, 모양 페이지, 등.) — lookahead는 차단 된 것에서 제외됩니다.
-[A-Za-z0-9_]+$ - 실제 파일 유형 연장 (문자, 숫자, 밑줄) 문자열의 끝에 실행해야합니다.
+
+ `[^/?]+` - 한국어 datasetID : 하나 이상의 문자가 아닌 / 또는?
+
+ `이름 *` — 리터 도트
+
+ ` (· (?:크리스 | 모델 번호: ISO19115_2 | · | ncoJson헤더) $ 6,000 원) ` — 부정적인 lookahead: "다음이 정확한 파일 중 하나가 아닙니다. 문자열의 끝에 모든 방법을 입력합니다." 이 파일은 ERDDAP™ 합법적으로 no constraint 제공 (metadata, 구조, 모양 페이지, 등.) — lookahead는 차단 된 것에서 제외됩니다.
+
+ `[A-Za-z0-9_]+$` - 실제 파일 유형 연장 (문자, 숫자, 밑줄) 문자열의 끝에 실행해야합니다.
 그래서이 조건은 경로가 griddap/일 때만 true입니다. tabledap 몇몇 파일을 위한 요구 안전한 제약 리스트에 있지 않는 유형.
 
-제품정보 4 - RewriteRule ^ - [R = 429,L]
+라인 4 — `RewriteRule ^ - [R = 429,L]` 
 규칙 자체. 위의 두 조건이 이미 Apache에 대한 사실이기 때문에이 줄을 평가하려면 패턴이 다른 것을 확인할 필요가 없습니다. ^는 항상 진실한 문자열의 "시작"과 일치합니다. - "다른 URL을 다시 작성하지 마십시오" (우리는 어디에서도 리디렉션하지 않습니다, 그냥 요청 단락) · 플래그:
 
-R=429 - HTTP 리디렉션 클래스 액션 나르는 상태 코드 429에 응답 ("Too 많은 요청") 대신 요청을 제공.
+ `R = 429의` — HTTP 리디렉션 클래스 액션 나르는 상태 코드 429에 응답 ("Too 많은 요청") 대신 요청을 제공.
 L - "Last": 이 한 불을 한 번 추가 리깅 규칙을 처리 중지.
 함께 넣어: 쿼리 문자열이 빈 경우, 그리고 요청은 griddap/ tabledap 파일 형식 안전하지 않은 목록에없는 유형은 즉시 429을 반환합니다. ERDDAP /Tomcat 백엔드.
 
-왜 %&#123;REQUEST_URI&#125; 대신 RewriteRule 패턴이 경로에 직접 일치 (동료를 위한 주와 같은 가치, 그것이 비 명백한 부분이기 때문에) : 내부 <Location> block, bare RewriteRule 패턴이 실제로 일치하면 Apache 버전과 context에 따라 inconsistently 행동할 수 있습니다. RewriteCond %&#123;REQUEST_URI&#125; sidesteps를 통해 전체 경로를 완전히 끌어 당기십시오. 항상 리터럴, 완전한 요청 경로이므로 규칙이 배열되는지 여부에 관계없이 regexs가 정확히 작성됩니다.
+이름 * `장바구니` 대신 RewriteRule 패턴이 경로에 직접 일치 (동료를 위한 주와 같은 가치, 그것이 비 명백한 부분이기 때문에) : 내부 ` <Location> ` block, bare RewriteRule 패턴이 실제로 일치하면 Apache 버전과 context에 따라 inconsistently 행동할 수 있습니다. RewriteCond를 통해 전체 경로의 폭발 `장바구니` 완전히 주변의 측면 - 그것은 항상 리터, 완전한 요청 경로입니다, 그래서 regex는 규칙이 배열되는지 여부와 정확히 서면으로 행동한다.
 
 
 나는 몇 일 동안 이것을 사용하고 있으며 매우 잘 작동하기 때문에 차단하고 차단하지 않고 차단하려고하는 것을 차단하고 있습니다. 그리고 우리의 ERDDAP™ 훨씬 안정되어 있습니다.

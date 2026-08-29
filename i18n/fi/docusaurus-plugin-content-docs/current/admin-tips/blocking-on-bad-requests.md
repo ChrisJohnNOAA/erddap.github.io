@@ -22,22 +22,22 @@ Niin, että olen selvä, voit ajatella ERDDAP™ Pyyntö:
 
 Tapauksessamme onnettomuuksien yhteinen nimittäjä oli griddap- tai tabletop-pyyntö tietyillä tiedostotyypeillä, mutta ei rajoituksia. Kysymys on siitä, miten hakemukset voidaan estää ilman rajoitusta. Paitsi että se ei ole niin yksinkertainen, koska on olemassa useita tiedostotyyppejä, jotka eivät tarvitse rajoitusta ja ovat hyvin käyttäytyviä, joten emme halua estää niitä. Puhuttuani Chrisille, ja epäilemättä olen jättänyt jotain, tiedostotyypit, jotka toimivat hyvin ilman rajoituksia ovat:
 
-.croissant
-.iso19115_2
-.iso19139_2007
-.iso19115_3_2016
- .nc CF Header
- .nc CFMA Head
-.das
-.dds
-.html
-.grafiikka
-.subset
- .nc Pääjohtaja
-.help
-.fgdc
-.iso19115
- .nc OJson Head (Tämä on tulossa uuteen julkaisuun) .
+- .croissant
+- .iso19115_2
+- .iso19139_2007
+- .iso19115_3_2016
+-  .nc CF Header
+-  .nc CFMA Head
+- .das
+- .dds
+- .html
+- .grafiikka
+- .subset
+-  .nc Pääjohtaja
+- .help
+- .fgdc
+- .iso19115
+-  .nc OJson Head (Tämä on tulossa uuteen julkaisuun) .
 
 ## Ratkaisu
 
@@ -47,14 +47,16 @@ Ratkaisu "löysin" toimii Apache2:ssa, en tiedä nginxiä, mutta kuvittelen, ett
 
 Vaihe 2. Sopiva tiedosto, joka määrittää sl apache2 (joka taas vaihtelee) Esimerkiksi se voi olla jotain, kuten /etc/apache2/sites-yhteensopiva/sl.conf, lisätä seuraavan asianmukaisen VirtualHost määritelmän mukaisesti. (Huomaa, että jos kopioit tämän on vain neljä riviä, kolmas rivi voidaan kääriä, poista se.) 
 
-Uudelleenkirjoitus On On On
-RewriteCond % [QUERY_STRING]
-RewriteCond % [REQUEST_URI] (Griddap |  tabledap ) [ ] (??&#33; (:croissant | 115_2 | 139_2007 | 115_3_2016 | nccfheader | nccfmaheader | Das | dd | html | Grafiikka | substanssi | ncheader | Auta auttamaan | fgdc | Isoäiti 115 | ncoJson Header) $) [A-Za-z0-9_+]
-Rewrite Rule - [R=429, L]
+```
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^$
+RewriteCond %{REQUEST_URI} ^/erddap/(griddap|tabledap)/[^/?]+\\.(?!(?:croissant|iso19115_2|iso19139_2007|iso19115_3_2016|ncCFHeader|ncCFMAHeader|das|dds|html|graph|subset|ncHeader|help|fgdc|iso19115|ncoJsonHeader)$)[A-Za-z0-9_]+$
+RewriteRule ^ - [R=429,L]
+```
 
-Vaihe 3. Tarkista, että kokoonpano on voimassa: sudo apache2ctl configtest
+Vaihe 3. Tarkista, että kokoonpano on voimassa: `Sudo Apache2ctl konfigurtti` 
 
-Askel 4. Käynnistä apache2: Sudo Systemctl uudelleenkäynnistetty apache2
+Askel 4. Käynnistä apache2: `Sudo Systemctl uudelleenkäynnistetty Apache2` 
 
 Vaihe 5 Tarkista lokisi, että mitään ei ole estetty, ja että asianmukaiset pyynnöt ilman rajoitusta palauttaa 429 osumatta tomcat.
 
@@ -62,31 +64,35 @@ Vaihe 5 Tarkista lokisi, että mitään ei ole estetty, ja että asianmukaiset p
 
 Miksi tämä toimii ja mitä se tekee - tässä on selitys Claude.ai:lle:
 
-Alkuperäinen nimi: RewriteEngine On On On
+Linja 1 - `Uudelleenkirjoitus On On On` 
 Käännä mod_rewrite-prosessointi tälle laajuudelle. Ilman sitä alla olevat RewriteCond/RewriteRule -direktiivit jätetään huomiotta.
 
-Linja 2 - Rewrite Cond % [QUERY_STRING]
-Ehto, joka on totta ennen alla olevaa sääntöä, on voimassa. Mikä on kaikki sen jälkeen? pyynnöstä URL. • on regex, joka tarkoittaa "jousi alkua, jota seuraa välittömästi merkkijonon päättyessä" eli tyhjää jonoa. Joten tämä ehto on totta vain silloin, kun kyselylomaketta ei ole lainkaan – ei alisäämistä tai rajoittavaa ilmaisua pyynnöstä.
+Linja 2 - `RewriteCond % [QUERY_STRING]` 
+Ehto, joka on totta ennen alla olevaa sääntöä, on voimassa. `Prosentti (QUERY)` Onko kaikki sen jälkeen? pyynnöstä URL. • on regex, joka tarkoittaa "jousi alkua, jota seuraa välittömästi merkkijonon päättyessä" eli tyhjää jonoa. Joten tämä ehto on totta vain silloin, kun kyselylomaketta ei ole lainkaan – ei alisäämistä tai rajoittavaa ilmaisua pyynnöstä.
 
-3. Kirjoita uudelleen Cond Prosentti (REQUEST_URI) (Griddap |  tabledap ) [ ] (??&#33; (? :-)) $) [A-Za-z0-9_+]
-Toinen ehto, joka on tarkistettu prosentista [REQUEST_URI] – asiakkaan lähettämä kirjaimellinen pyyntöpolku, on aina täysi tie riippumatta siitä, missä tämä sääntö on. (tarkoituksellisesti valittu, kun RewriteRule-kuvio itsessään tekee sovituksen, koska kuvio-ottelu sisällä <Location> blokki voi käyttäytyä epäselvästi – katso alapuolelta) . Ryöstää regex:
+Linja 3 - `RewriteCond % [REQUEST_URI] (Griddap |  tabledap ) [ ] (??&#33; (? :-)) $) [A-Za-z0-9_+]` 
+Toinen ehto, tarkastettu `Prosentti (viittaukset)` - kirjaimellinen pyyntöpolku asiakkaan lähettämänä, aina täysi tie riippumatta siitä, missä konfiguraatiossa tämä sääntö elää. (tarkoituksellisesti valittu, kun RewriteRule-kuvio itsessään tekee sovituksen, koska kuvio-ottelu sisällä ` <Location> ` blokki voi käyttäytyä epäselvästi – katso alapuolelta) . Ryöstää regex:
 
-↑/erddap/ - on aloitettava
+ `^/erddap/` Pitäisi aloittaa /erddap
  (Griddap |  tabledap ) • seuraa yksi kahdesta ERDDAP™ Käyttötavat
-[ ] + [ ] datasetID Yksi tai useampi henkilö, jotka eivät ole / tai
-- kirjaimellinen piste
- (??&#33; (:croissant | 115_2 | ............ | ncoJson Header) $) kielteinen näkemys: "Niin kauan kuin seuraa, ei ole yksi näistä tarkoista tiedostoista. Tyypin nimet ovat tien päähän asti.” Nämä ovat tiedostotyypit ERDDAP™ voi laillisesti toimia ilman rajoituksia (Metadata, rakenne, muotosivut jne.) – Näkö on se, mikä sulkee heidät pois.
-[A-Za-z0-9_] + - todellinen tiedosto Tyypin laajennus (Kirjaimet, Digits, Underscore) Jouduttiin juoksemaan loppuun asti.
+
+ `[ ] +` - datasetID Yksi tai useampi henkilö, jotka eivät ole / tai
+
+ `\\.` Kirjaimellinen piste
+
+ ` (??&#33; (:croissant | 115_2 | ............ | ncoJson Header) $) ` kielteinen näkemys: "Niin kauan kuin seuraa, ei ole yksi näistä tarkoista tiedostoista. Tyypin nimet ovat tien päähän asti.” Nämä ovat tiedostotyypit ERDDAP™ voi laillisesti toimia ilman rajoituksia (Metadata, rakenne, muotosivut jne.) – Näkö on se, mikä sulkee heidät pois.
+
+ `[A-Za-z0-9_+]` Todellinen tiedosto Tyypin laajennus (Kirjaimet, Digits, Underscore) Jouduttiin juoksemaan loppuun asti.
 Tämä ehto on totta vain silloin, kun reitti on verho/ tabledap Pyydä tiedostoa Tyyppi, joka ei ole turvassa ilman rajoituksia.
 
-Linja 4 - Rewrite Rule - [R=429, L]
+Linja 4 - `Rewrite Rule - [R=429, L]` 
 itse sääntö. Koska molemmat edellä mainitut olosuhteet ovat jo totta, että Apache voi jopa arvioida tämän linjan, kuvion ei tarvitse tarkistaa mitään muuta - ↑ vain vastaa "jousi alkua", joka on aina totta. tarkoittaa ”Älä kirjoita URL-osoitetta uudelleen mihinkään muuhun” (Emme ole uudelleenohjautumassa mihinkään, vain lyhytkestoinen pyyntö.) . Liput:
 
-R = 429 - Vastaa HTTP:n uudelleenohjaustoiminnolla, jolla on statuskoodi 429 ("Liikaa pyyntöjä") pyynnön sijaan.
+ `R = 429` vastata HTTP:n uudelleenohjaustoiminnolla, jolla on statuskoodi 429 ("Liikaa pyyntöjä") pyynnön sijaan.
 L - "Last": Lopeta uusien sääntöjen käsittely, kun tämä tulee.
 Yhdessä: jos kyselylomake on tyhjä, ja pyyntö on verkon/ tabledap tiedostotiedosto Tyyppi, joka ei ole turvallista rajoittamatonta luetteloa, palauttaa välittömästi 429 - ilman, että otat yhteyttä. ERDDAP Tomcat taustalla.
 
-Miksi % [Kysymys_URI] sen sijaan, että RewriteRule-malli sopisi suoraan polkuun (Se on arvokasta, sillä se on ei-selvä osa.) Sisällä A <Location> blokki, mitä paljas RewriteRule-malli todella sopii, voi käyttäytyä epäjohdonmukaisesti Apache-version ja kontekstin mukaan. RewriteCond % (REQUEST_URI) -kohdan avulla koko polun vetäminen on aina kirjaimellista, täydellistä pyyntöpolkua, joten regex toimii kirjallisesti riippumatta siitä, missä sääntö on pestetty.
+Miksi miksi miksi `Prosentti (viittaukset)` Sen sijaan, että RewriteRule-malli sopisi suoraan polkuun (Se on arvokasta, sillä se on ei-selvä osa.) Sisällä A ` <Location> ` blokki, mitä paljas RewriteRule-malli todella sopii yhteen, voi käyttäytyä epäjohdonmukaisesti Apache-version ja kontekstin mukaan. Täydellistä reittiä RewriteCondin kautta `Prosentti (viittaukset)` Se on aina kirjaimellinen, täydellinen pyyntöpolku, joten regex käyttäytyy kirjallisesti riippumatta siitä, missä sääntö on pestetty.
 
 
 Olen käyttänyt tätä jo useita päiviä ja se näyttää toimivan hyvin, se estää sen, mitä yritän estää ja estää sen, mitä en halua estää. Ja meidän ERDDAP™ Siitä on tullut paljon vakaampi.
