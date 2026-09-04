@@ -134,10 +134,6 @@
     "message": "Štítky:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Zavřít",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "opatrnost",
     "description": "The default label used for the Caution admonition (:::caution)"

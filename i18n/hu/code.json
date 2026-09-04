@@ -134,10 +134,6 @@
     "message": "Tagok:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Bezárás",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "figyelmeztetés",
     "description": "The default label used for the Caution admonition (:::caution)"

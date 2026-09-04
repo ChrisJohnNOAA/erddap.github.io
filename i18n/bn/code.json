@@ -134,10 +134,6 @@
     "message": "ট্যাগ:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "বন্ধ",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "সতর্কতা",
     "description": "The default label used for the Caution admonition (:::caution)"
@@ -162,6 +158,10 @@
     "message": "সতর্কতা",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "সম্প্রতি ব্যবহৃত ব্লগ",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
     "message": "সাইডবারের প্রান্তিক মাপ 'আ'{label}'আ'",
     "description": "The ARIA label to expand the sidebar category"
@@ -170,9 +170,13 @@
     "message": "স্থানীয় হোস্ট-নেম সম্পাদনা 'আ'{label}'আ'",
     "description": "The ARIA label to collapse the sidebar category"
   },
-  "theme.IconExternalLink.ariaLabel": {
-    "message": "(নতুন ট্যাবের মধ্যে খোলা হবে)",
-    "description": "The ARIA label for the external link icon"
+  "theme.NavBar.navAriaLabel": {
+    "message": "প্রধান",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "ভাষা",
+    "description": "The label for the mobile language switcher dropdown"
   },
   "theme.NotFound.p1": {
     "message": "তুমি যা খুঁজছিলে আমরা তা খুঁজে পাইনি।",
@@ -225,6 +229,18 @@
   "theme.docs.breadcrumbs.home": {
     "message": "হোম পেজ",
     "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "স্থানীয় অ্যাড্রেস বই",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "স্থানীয় অ্যাড্রেস বই",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "সাইডবার",
+    "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
     "message": "ন্যাভিগেশন বার বন্ধ করো",

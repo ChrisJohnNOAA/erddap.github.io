@@ -134,10 +134,6 @@
     "message": "태그 :",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "이름 *",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "주 메뉴",
     "description": "The default label used for the Caution admonition (:::caution)"

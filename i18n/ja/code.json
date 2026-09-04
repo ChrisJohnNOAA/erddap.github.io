@@ -134,10 +134,6 @@
     "message": "タグ:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "ふりがな",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "アクセサリー",
     "description": "The default label used for the Caution admonition (:::caution)"

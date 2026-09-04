@@ -134,10 +134,6 @@
     "message": "Mga Tag:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Malapit",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "Mag - ingat",
     "description": "The default label used for the Caution admonition (:::caution)"

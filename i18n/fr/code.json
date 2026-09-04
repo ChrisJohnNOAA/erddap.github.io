@@ -134,10 +134,6 @@
     "message": "Étiquettes :",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Fermer",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "Mise en garde",
     "description": "The default label used for the Caution admonition (:::caution)"

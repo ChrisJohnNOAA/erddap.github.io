@@ -134,10 +134,6 @@
     "message": "Clibeanna:",
     "description": "The label alongside a tag list"
   },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Dún na nGall",
-    "description": "The ARIA label for close button of announcement bar"
-  },
   "theme.admonition.caution": {
     "message": "rabhadh",
     "description": "The default label used for the Caution admonition (:::caution)"
