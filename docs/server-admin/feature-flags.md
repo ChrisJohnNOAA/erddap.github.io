@@ -7,82 +7,13 @@ This page documents the configuration flags available in the system. These flags
 * **Stable:** Intended as long-term flags to allow admins to change functionality. Safe for production.  
 * **Testing:** Features that are ready for testing. These will either graduate to "Stable" or eventually be set to their target value and have the flag removed.  
 * **Under Construction:** Currently hardcoded to false in the code, regardless of configuration. The feature is not yet ready for use.
+* **Removed:** Flags that have been removed from the application because the underlying feature or code is now considered stable or standard behavior.
 
 ## **🚀 Optimizations in testing**
 
 These are flags likely to be removed in the future. 
 
-### **touchThreadOnlyWhenItems**
-
-Description  
-Optimization flag. If true, the touch thread only runs when there are items to process.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.29.0 |
-
-### **taskCacheClear**
-
-Description  
-Enables the background task that clears expired items from the cache.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.27.0 |
-
-### **ncHeaderMakeFile**
-
-Description  
-If true the server will generate the entire nc file before creating the ncheader result. The new (preferred) behavior when false is to directly generate the ncheader result.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | false |
-| **Long-term Goal** | false |
-| **History** | Added in 2.29.0 |
-
-### **useEddReflection**
-
-Description  
-Enables the use of Java Reflection to instantiate EDD (ERDDAP Dataset) classes.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Default changed to true in 2.28.0, added in 2.25 |
-
-### **backgroundCreateSubsetTables**
-
-Description  
-Allows subset tables to be created in background threads to improve datasets loading time.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.29.0 |
-
-### **useNcMetadataForFileTable**
-
-Description  
-Uses NetCDF metadata to populate the file table view. In particular if an nc file includes actual_range for each variable, the dataset loading can skip reading the entire file.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.29.0 |
+*(No active flags currently in this category)*
 
 ## **🛠 System & Core Behavior**
 
@@ -127,18 +58,6 @@ Sets the default behavior for whether a dataset's underlying files can be access
 | **History** | Added in 2.10 |
 
 ## **🗃️ Datasets**
-
-### **quickRestart**
-
-Description  
-If enabled, the system attempts to start up faster by skipping certain deep validation checks on datasets during initialization.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.38 |
 
 ### **enableEnvParsing**
 
@@ -214,18 +133,6 @@ Generates and serves FGDC (Federal Geographic Data Committee) metadata.
 | **Long-term Goal** | true |
 | **History** | Added in 1.38 |
 
-### **iso19115Active**
-
-Description  
-Generates and serves ISO 19115 metadata.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.38 |
-
 ### **useSisISO19115**
 
 Description  
@@ -250,30 +157,6 @@ Uses the Apache SIS library to generate ISO19139_2007 metadata.
 | **Long-term Goal** | false |
 | **History** | Added in 2.29.0 |
 
-### **jsonldActive**
-
-Description  
-Generates and serves JSON-LD (Linked Data) metadata.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Legacy |
-
-### **generateCroissantSchema**
-
-Description  
-Generates "Croissant" metadata schema as the default schema for machine learning readiness.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.28.0 |
-
 ### **variablesMustHaveIoosCategory**
 
 Description  
@@ -285,18 +168,6 @@ Enforces that variables must have an IOOS category attribute.
 | **Current Default** | true |
 | **Long-term Goal** | set as desired |
 | **History** | Legacy |
-
-### **includeNcCFSubsetVariables**
-
-Description  
-Legacy behavior was to generate subset variables only for EDDTableFromNcCFFiles datasets. This was added to default the behavior for EDDTableFromNcCFFiles to be consistent with other dataset types. If you need the legacy automatic subsetVariables you can enable this. The better solution would be to add subsetVariables to the dataset definition.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Testing |
-| **Current Default** | false |
-| **Long-term Goal** | false |
-| **History** | Added in 2.26 |
 
 ## **🔔 Subscriptions and Notifications**
 
@@ -323,18 +194,6 @@ Allows this ERDDAP instance to subscribe to remote ERDDAP datasets for updates.
 | **Current Default** | true |
 | **Long-term Goal** | true |
 | **History** | Added in 1.70 |
-
-### **updateSubsRssOnFileChanges**
-
-Description  
-Triggers subscription and RSS updates when underlying files change. The legacy behavior was only to do updates on dataset reload (which some servers had as infrequently as weekly).
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 2.26 |
 
 ### **enableMqttBroker**
 
@@ -426,70 +285,10 @@ Enables the "Files" browser view for datasets that support it.
 | **Long-term Goal** | true |
 | **History** | Added in 1.58 |
 
-### **convertersActive**
-
-Description  
-Enables conversion tools in the UI.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.44 |
-
-### **slideSorterActive**
-
-Description  
-Enables the Slide Sorter.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.44 |
-
 ### **dataProviderFormActive**
 
-Description  
+Description
 Enables the form allowing data providers to input metadata.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Legacy |
-
-### **outOfDateDatasetsActive**
-
-Description  
-Enables the reporting of out-of-date datasets.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.82 |
-
-### **wmsActive**
-
-Description  
-Enables the Web Map Service (WMS) interface.
-
-| Property | Details |
-| :---- | :---- |
-| **Lifecycle** | Stable |
-| **Current Default** | true |
-| **Long-term Goal** | true |
-| **History** | Added in 1.44 |
-
-### **wmsClientActive**
-
-Description  
-Enables the internal WMS client features.
 
 | Property | Details |
 | :---- | :---- |
@@ -500,7 +299,7 @@ Enables the internal WMS client features.
 
 ### **geoServicesRestActive**
 
-Description  
+Description
 Enables the RESTful interface for Geospatial Services. Not fully implemented.
 
 | Property | Details |
@@ -511,7 +310,7 @@ Enables the RESTful interface for Geospatial Services. Not fully implemented.
 
 ### **wcsActive**
 
-Description  
+Description
 Enables the Web Coverage Service (WCS) interface. Not fully implemented.
 
 | Property | Details |
@@ -522,7 +321,7 @@ Enables the Web Coverage Service (WCS) interface. Not fully implemented.
 
 ### **sosActive**
 
-Description  
+Description
 Enables the Sensor Observation Service (SOS) interface.
 
 | Property | Details |
@@ -530,3 +329,211 @@ Enables the Sensor Observation Service (SOS) interface.
 | **Lifecycle** | Under Construction |
 | **Current Default** | false (Hardcoded) |
 | **Long-term Goal** | true |
+
+## **🗑️ Removed Flags**
+
+These flags have been removed from ERDDAP because the new code/behavior is considered stable and standard.
+
+### **backgroundCreateSubsetTables**
+
+Description
+Allows subset tables to be created in background threads to improve datasets loading time.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.29.0 |
+
+### **convertersActive**
+
+Description  
+Enables conversion tools in the UI.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.44 |
+
+### **generateCroissantSchema**
+
+Description  
+Generates "Croissant" metadata schema as the default schema for machine learning readiness.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.28.0 |
+
+### **includeNcCFSubsetVariables**
+
+Description  
+Legacy behavior was to generate subset variables only for EDDTableFromNcCFFiles datasets. This was added to default the behavior for EDDTableFromNcCFFiles to be consistent with other dataset types. If you need the legacy automatic subsetVariables you can enable this. The better solution would be to add subsetVariables to the dataset definition.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | false |
+| **Long-term Goal** | false |
+| **History** | Removed in 2.32.0, added in 2.26 |
+
+### **iso19115Active**
+
+Description
+Generates and serves ISO 19115 metadata.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.38 |
+
+### **jsonldActive**
+
+Description
+Generates and serves JSON-LD (Linked Data) metadata.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, Legacy |
+
+### **ncHeaderMakeFile**
+
+Description
+If true the server will generate the entire nc file before creating the ncheader result. The new (preferred) behavior when false is to directly generate the ncheader result.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | false |
+| **Long-term Goal** | false |
+| **History** | Removed in 2.32.0, added in 2.29.0 |
+
+### **outOfDateDatasetsActive**
+
+Description  
+Enables the reporting of out-of-date datasets.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.82 |
+
+### **quickRestart**
+
+Description  
+If enabled, the system attempts to start up faster by skipping certain deep validation checks on datasets during initialization.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.38 |
+
+### **slideSorterActive**
+
+Description  
+Enables the Slide Sorter.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.44 |
+
+### **taskCacheClear**
+
+Description
+Enables the background task that clears expired items from the cache.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.27.0 |
+
+### **touchThreadOnlyWhenItems**
+
+Description
+Optimization flag. If true, the touch thread only runs when there are items to process.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.29.0 |
+
+### **updateSubsRssOnFileChanges**
+
+Description
+Triggers subscription and RSS updates when underlying files change. The legacy behavior was only to do updates on dataset reload (which some servers had as infrequently as weekly).
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.26 |
+
+### **useEddReflection**
+
+Description
+Enables the use of Java Reflection to instantiate EDD (ERDDAP Dataset) classes.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, default changed to true in 2.28.0, added in 2.25 |
+
+### **useNcMetadataForFileTable**
+
+Description
+Uses NetCDF metadata to populate the file table view. In particular if an nc file includes actual_range for each variable, the dataset loading can skip reading the entire file.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 2.29.0 |
+
+### **wmsActive**
+
+Description
+Enables the Web Map Service (WMS) interface.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, added in 1.44 |
+
+### **wmsClientActive**
+
+Description
+Enables the internal WMS client features.
+
+| Property | Details |
+| :---- | :---- |
+| **Lifecycle** | Removed |
+| **Current Default** | true |
+| **Long-term Goal** | true |
+| **History** | Removed in 2.32.0, Legacy |
